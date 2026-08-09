@@ -5,8 +5,12 @@ import datetime as dt
 import json
 import os
 import re
+import statistics
 from collections import Counter
+from collections import deque
 from pathlib import Path
+
+from PIL import Image
 
 
 REPO = Path(__file__).resolve().parent.parent
@@ -15,6 +19,14 @@ CHAIN = REPO / "data" / "question_chain.json"
 ROSTER_DIR = REPO / "data" / "rosters"
 SRC_DIR = REPO / "src"
 INDEX = SRC_DIR / "README.md"
+
+# Normalize the displayed glyph size across scanned papers.  Their crops have
+# different widths, so merely constraining every image to the page width makes
+# text in narrow crops much larger than text in wide crops.
+DISPLAY_TEXT_PX = 11
+DISPLAY_MAX_WIDTH = 760
+DISPLAY_MIN_WIDTH = 150
+SAMPLES_PER_YEAR = 6
 
 
 def read_json(path):
@@ -34,6 +46,71 @@ def question_path(date):
 
 def relative_link(origin, target):
     return Path(os.path.relpath(target, origin.parent)).as_posix()
+
+
+def glyph_height(path):
+    """Return a robust proxy for Chinese glyph height in a scanned question."""
+    im = Image.open(path).convert("L")
+    width, height = im.size
+    pixels = im.load()
+    dark = [[pixels[x, y] < 140 for x in range(width)] for y in range(height)]
+    seen = [[False] * width for _ in range(height)]
+    heights = []
+    for y0 in range(height):
+        for x0 in range(width):
+            if not dark[y0][x0] or seen[y0][x0]:
+                continue
+            min_y = max_y = y0
+            min_x = max_x = x0
+            count = 0
+            queue = deque([(y0, x0)])
+            seen[y0][x0] = True
+            while queue:
+                y, x = queue.popleft()
+                count += 1
+                min_y, max_y = min(min_y, y), max(max_y, y)
+                min_x, max_x = min(min_x, x), max(max_x, x)
+                for dy in (-1, 0, 1):
+                    for dx in (-1, 0, 1):
+                        ny, nx = y + dy, x + dx
+                        if (
+                            0 <= ny < height
+                            and 0 <= nx < width
+                            and dark[ny][nx]
+                            and not seen[ny][nx]
+                        ):
+                            seen[ny][nx] = True
+                            queue.append((ny, nx))
+            component_height = max_y - min_y + 1
+            component_width = max_x - min_x + 1
+            if count >= 15 and 12 <= component_height <= 60 and 6 <= component_width <= 60:
+                heights.append(component_height)
+    return statistics.median(heights) if heights else None
+
+
+def display_widths():
+    """Compute a per-question width that gives each year the same text size."""
+    widths = {}
+    for year_dir in sorted((REPO / "bank").glob("*")):
+        if not year_dir.is_dir() or not year_dir.name.isdigit():
+            continue
+        samples = []
+        for image in sorted(year_dir.glob("q*.png"), key=lambda path: path.stat().st_size, reverse=True):
+            height = glyph_height(image)
+            if height:
+                samples.append(height)
+            if len(samples) == SAMPLES_PER_YEAR:
+                break
+        if not samples:
+            raise ValueError(f"could not measure glyph height: {year_dir.name}")
+        scale = DISPLAY_TEXT_PX / statistics.median(samples)
+        for image in year_dir.glob("q*.png"):
+            number = int(image.stem[1:])
+            image_width = Image.open(image).size[0]
+            widths[f"{year_dir.name}-{number:02d}"] = max(
+                DISPLAY_MIN_WIDTH, min(DISPLAY_MAX_WIDTH, round(image_width * scale))
+            )
+    return widths
 
 
 def validate_source(data):
@@ -121,7 +198,7 @@ def existing_result(path):
     return "\n".join(lines).rstrip()
 
 
-def render_node(node, nodes, result=""):
+def render_node(node, nodes, widths, result=""):
     path = REPO / node["file"]
     links = nav(node, nodes, path)
     lines = [
@@ -146,12 +223,15 @@ def render_node(node, nodes, result=""):
     for index, qid in enumerate(node["questions"], 1):
         year, number = question_parts(qid)
         image = REPO / "bank" / year / f"q{number:02d}.png"
+        width_percent = widths[qid] / DISPLAY_MAX_WIDTH * 100
         lines.extend(
             [
                 f"### {index:02d} · {qid}",
                 "",
+                f'<div style="width:min(100%, {DISPLAY_MAX_WIDTH}px);">',
                 f'<img src="{relative_link(path, image)}" alt="{qid}" '
-                'style="max-width:100%; height:auto;">',
+                f'style="width:{width_percent:.4g}%; height:auto;">',
+                "</div>",
                 "",
             ]
         )
@@ -224,6 +304,7 @@ def build(check_only=False):
     data = read_json(SOURCE)
     counts = validate_source(data)
     nodes = compile_chain(data)
+    widths = display_widths()
     payload = {
         "version": data["version"],
         "name": data["name"],
@@ -240,7 +321,7 @@ def build(check_only=False):
     }
     for node in nodes:
         path = REPO / node["file"]
-        rendered[path] = render_node(node, nodes, existing_result(path))
+        rendered[path] = render_node(node, nodes, widths, existing_result(path))
         rendered[ROSTER_DIR / f"{node['key']}.json"] = (
             json.dumps(roster(node), ensure_ascii=False, indent=2) + "\n"
         )
