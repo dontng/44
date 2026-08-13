@@ -25,8 +25,9 @@ INDEX = SRC_DIR / "README.md"
 # text in narrow crops much larger than text in wide crops.  Rendering the
 # measured width in em keeps scanned glyphs coupled to Markdown text zoom; a
 # roomy scrolling viewport limits exceptional images without interrupting
-# ordinary question reading.
-DISPLAY_TEXT_PX = 11
+# ordinary question reading.  The 9px target is tuned for a VS Code split
+# preview with the Explorer sidebar open.
+DISPLAY_TEXT_PX = 9
 DISPLAY_BASE_FONT_PX = 16
 DISPLAY_MAX_WIDTH = 760
 DISPLAY_MIN_WIDTH = 150
