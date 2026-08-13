@@ -22,7 +22,9 @@ INDEX = SRC_DIR / "README.md"
 
 # Normalize the displayed glyph size across scanned papers.  Their crops have
 # different widths, so merely constraining every image to the page width makes
-# text in narrow crops much larger than text in wide crops.
+# text in narrow crops much larger than text in wide crops.  Rendering the
+# measured width in em keeps scanned glyphs coupled to Markdown text zoom; a
+# bounded scrolling viewport limits both axes without rescaling the image.
 DISPLAY_TEXT_PX = 11
 DISPLAY_MAX_WIDTH = 760
 DISPLAY_MIN_WIDTH = 150
@@ -223,14 +225,18 @@ def render_node(node, nodes, widths, result=""):
     for index, qid in enumerate(node["questions"], 1):
         year, number = question_parts(qid)
         image = REPO / "bank" / year / f"q{number:02d}.png"
-        width_percent = widths[qid] / DISPLAY_MAX_WIDTH * 100
+        # Express the normalized image width in em so Markdown zoom changes
+        # prose and scanned text together.  The bounded viewport scrolls on
+        # oversized questions instead of shrinking their glyphs a second time.
+        width_em = widths[qid] / DISPLAY_TEXT_PX
         lines.extend(
             [
                 f"### {index:02d} · {qid}",
                 "",
-                f'<div style="width:min(100%, {DISPLAY_MAX_WIDTH}px);">',
+                '<div style="max-width:100%; max-height:min(70vh, 48em); overflow:auto;">',
                 f'<img src="{relative_link(path, image)}" alt="{qid}" '
-                f'style="width:{width_percent:.4g}%; height:auto;">',
+                f'style="display:block; width:{width_em:.4g}em; '
+                'max-width:none; height:auto;">',
                 "</div>",
                 "",
             ]
