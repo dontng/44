@@ -1,22 +1,22 @@
-# 线性表：先掌握两种基本动作
+# ch02 线性表：先掌握两种基本动作
 
-顺序表和链表共同表达线性关系，但代码动作完全不同：顺序表靠移动数组元素腾位或补位；链表靠改写 `next` 重接关系。本模块把这两个动作各压缩成一份能直接运行的母版。
+顺序表和链表共同表达线性关系，但代码动作完全不同：顺序表靠移动数组元素腾位或补位；链表靠改写指针重接关系。`01`、`02` 是两份基本操作母版，`03` 把母版变为双链表、循环链表和静态链表，`04` 承担逆置与有序归并。
 
 ## 运行
 
 在仓库根目录执行：
 
 ```bash
-bash code/linear-list/check.sh
+bash code/check.sh
 ```
 
 也可以只编译一份：
 
 ```bash
-cc -std=c11 -Wall -Wextra -Wpedantic -Werror code/linear-list/sequential_list.c -o /tmp/sequential_list
+cc -std=c11 -Wall -Wextra -Wpedantic -Werror code/ch02-linear-list/01_sequential_list.c -o /tmp/sequential_list
 /tmp/sequential_list
 
-cc -std=c11 -Wall -Wextra -Wpedantic -Werror code/linear-list/singly_linked_list.c -o /tmp/singly_linked_list
+cc -std=c11 -Wall -Wextra -Wpedantic -Werror code/ch02-linear-list/02_singly_linked_list.c -o /tmp/singly_linked_list
 /tmp/singly_linked_list
 ```
 
