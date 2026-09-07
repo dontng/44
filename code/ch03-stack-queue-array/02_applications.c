@@ -2,6 +2,13 @@
 #include <stdbool.h>
 #include <ctype.h>
 
+/*
+ * 栈和队列的“应用”没有改变容器代码，改变的是入栈/出栈规则。
+ * 本文件用三个问题训练规则：
+ * 1. 括号匹配：最近出现且尚未配对的左括号必须先处理；
+ * 2. 表达式：栈保存已经看见、但暂时不能输出或计算的内容；
+ * 3. BFS 距离：队列保存已经发现、但邻接点尚未展开的顶点。
+ */
 #define CAP 64
 
 static bool BracketsMatch(const char *text)
@@ -16,7 +23,7 @@ static bool BracketsMatch(const char *text)
         } else if (*text == ')' || *text == ']' || *text == '}') {
             if (top == 0)
                 return false;
-            char left = stack[--top];
+            char left = stack[--top]; /* 当前右括号只能匹配最近的左括号。 */
             if ((*text == ')' && left != '(') || (*text == ']' && left != '[') ||
                 (*text == '}' && left != '{'))
                 return false;
@@ -39,7 +46,7 @@ static bool EvalPostfix(const char *expr, int *result)
         }
         if (top < 2)
             return false;
-        int right = stack[--top];
+        int right = stack[--top]; /* 后入栈的是右操作数，所以先弹出。 */
         int left = stack[--top];
         if (*expr == '+') stack[top++] = left + right;
         else if (*expr == '-') stack[top++] = left - right;
@@ -76,6 +83,7 @@ static bool InfixToPostfix(const char *infix, char postfix[CAP])
             if (top == 0) return false;
             --top; /* 左括号只控制边界，不进入后缀表达式。 */
         } else if (Priority(*infix) > 0) {
+            /* 栈顶运算符若更急或同级，应先进入结果。 */
             while (top > 0 && Priority(operators[top - 1]) >= Priority(*infix))
                 postfix[out++] = operators[--top];
             operators[top++] = *infix;
@@ -98,12 +106,13 @@ static void UnweightedDistance(const int graph[5][5], int start, int distance[5]
     int front = 0, rear = 0;
     for (int i = 0; i < 5; ++i)
         distance[i] = -1;
-    distance[start] = 0;
+    distance[start] = 0; /* -1 兼作“尚未发现”标记。 */
     queue[rear++] = start;
     while (front < rear) {
         int v = queue[front++];
         for (int w = 0; w < 5; ++w) {
             if (graph[v][w] && distance[w] == -1) {
+                /* w 第一次被发现时的层数就是最短无权距离。 */
                 distance[w] = distance[v] + 1;
                 queue[rear++] = w;
             }
@@ -113,6 +122,7 @@ static void UnweightedDistance(const int graph[5][5], int start, int distance[5]
 
 int main(void)
 {
+    /* 错配、左右操作数次序、括号优先级和 BFS 层数分别有独立断言。 */
     assert(BracketsMatch("a*(b+[c])"));
     assert(!BracketsMatch("([)]"));
     int value = 0;

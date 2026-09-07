@@ -2,19 +2,28 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+ * 本文件放在一起的三种排序都不靠两两交换完成：
+ * 归并排序合并两个已排序子段，需要 O(n) 辅助数组；
+ * 基数排序从低位到高位做稳定分配，逐位扩大“已有序”的位数；
+ * 计数排序直接统计每个值出现次数，适合值域相对较小的整数。
+ */
 static void Merge(int a[], int temp[], int left, int mid, int right)
 {
+    /* i、j 分别指向左右有序段尚未取走的最小元素。 */
     int i = left, j = mid + 1, k = left;
     while (i <= mid && j <= right)
         temp[k++] = a[i] <= a[j] ? a[i++] : a[j++];
     while (i <= mid) temp[k++] = a[i++];
     while (j <= right) temp[k++] = a[j++];
+    /* temp[left..right] 已有序，最后复制回原数组。 */
     for (i = left; i <= right; ++i) a[i] = temp[i];
 }
 static void MergeRange(int a[], int temp[], int left, int right)
 {
     if (left >= right) return;
     int mid = left + (right - left) / 2;
+    /* 先保证左右两半各自有序，再进行线性归并。 */
     MergeRange(a, temp, left, mid);
     MergeRange(a, temp, mid + 1, right);
     Merge(a, temp, left, mid, right);
@@ -33,6 +42,7 @@ static void RadixSort(int a[], int n)
     int max = 0;
     assert(n <= 64);
     for (int i = 0; i < n; ++i) { assert(a[i] >= 0); if (a[i] > max) max = a[i]; }
+    /* exp=1、10、100... 分别表示当前按个位、十位、百位分配。 */
     for (int exp = 1; max / exp > 0; exp *= 10) {
         int count[10] = {0};
         for (int i = 0; i < n; ++i) ++count[(a[i] / exp) % 10];
@@ -54,6 +64,7 @@ static void CountingSort(int a[], int n)
     int range = max - min + 1;
     int *count = calloc((size_t)range, sizeof *count);
     if (count == NULL) abort();
+    /* 减去 min 后，负数也能映射到从 0 开始的计数下标。 */
     for (int i = 0; i < n; ++i) ++count[a[i] - min];
     int k = 0;
     for (int value = min; value <= max; ++value)
@@ -71,6 +82,7 @@ static void Check(void (*sort)(int *, int), const int source[], int n)
 }
 int main(void)
 {
+    /* 三种机制使用同一输入和期望结果，便于只比较过程差异。 */
     const int source[] = {5, 2, 4, 2, 1, 3};
     Check(MergeSort, source, 6); Check(RadixSort, source, 6); Check(CountingSort, source, 6);
     return 0;

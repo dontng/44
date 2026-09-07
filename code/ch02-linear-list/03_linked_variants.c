@@ -2,6 +2,15 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+/*
+ * 本文件不再重复完整单链表，而是专门展示三种“变体到底多了什么”：
+ *
+ * 双链表：多维护一条 prior 反向关系；
+ * 循环链表：遍历终点从 NULL 改成重新遇到头结点；
+ * 静态链表：用数组下标代替真实地址，next 仍然表达逻辑后继。
+ *
+ * 读变体代码时先找新增的不变量，再看哪些语句专门维护它。
+ */
 typedef struct DNode {
     int data;
     struct DNode *prior;
@@ -25,6 +34,7 @@ static bool DInsertAfter(DNode *p, int value)
     if (s == NULL)
         return false;
     s->data = value;
+    /* 改链顺序按“先接外侧、再接内侧”读，任何旧地址都不能提前丢失。 */
     s->next = p->next;               /* 先接住原后继。 */
     if (p->next != NULL)
         p->next->prior = s;          /* 原后继改认新前驱。 */
@@ -39,9 +49,9 @@ static bool DDeleteAfter(DNode *p, int *value)
     if (q == NULL)
         return false;
     *value = q->data;
-    p->next = q->next;
+    p->next = q->next;             /* 修复正向关系。 */
     if (q->next != NULL)
-        q->next->prior = p;
+        q->next->prior = p;        /* 若存在后继，再修复反向关系。 */
     free(q);
     return true;
 }
@@ -83,6 +93,7 @@ static bool CInsertAfter(CNode *p, int value)
 static int CLength(const CNode *head)
 {
     int n = 0;
+    /* 从首元结点出发；再次遇到 head 说明完整绕了一圈。 */
     for (const CNode *p = head->next; p != head; p = p->next)
         ++n;
     return n;
@@ -106,8 +117,8 @@ typedef struct {
 } SNode;
 
 typedef struct {
-    SNode node[STATIC_CAP];
-    int free_head;
+    SNode node[STATIC_CAP]; /* node[0] 作头结点，其余格子可分配。 */
+    int free_head;          /* 备用链第一个空闲格子的下标。 */
 } StaticList;
 
 /* node[0] 是头结点；0 同时充当空下标。其余格子先串成备用链。 */
@@ -124,13 +135,14 @@ static bool StaticInsert(StaticList *list, int position, int value)
 {
     if (position < 1 || list->free_head == 0)
         return false;
-    int pre = 0;
+    int pre = 0; /* 下标 0 对应头结点；沿 next 寻找插入位置的前驱。 */
     for (int j = 1; j < position; ++j) {
         pre = list->node[pre].next;
         if (pre == 0)
             return false;
     }
 
+    /* 先从备用链摘一个格子，再把它接入数据链。 */
     int fresh = list->free_head;
     list->free_head = list->node[fresh].next;
     list->node[fresh].data = value;
@@ -149,6 +161,7 @@ static int StaticLength(const StaticList *list)
 
 int main(void)
 {
+    /* 双链表：正向和反向关系必须同时通过。 */
     DNode *d = DInit();
     assert(d != NULL);
     assert(DInsertAfter(d, 10));
@@ -160,6 +173,7 @@ int main(void)
     assert(DDeleteAfter(d->next, &removed) && removed == 20);
     DDestroy(d);
 
+    /* 循环链表：空表自环，插入后仍能回到头结点。 */
     CNode *c = CInit();
     assert(c != NULL && c->next == c);
     assert(CInsertAfter(c, 2));
@@ -167,6 +181,7 @@ int main(void)
     assert(CLength(c) == 2);
     CDestroy(c);
 
+    /* 静态链表：物理下标没有移动，但 next 下标组成了 10,20,30。 */
     StaticList s;
     StaticInit(&s);
     assert(StaticInsert(&s, 1, 10));

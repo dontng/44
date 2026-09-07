@@ -1,6 +1,11 @@
 #include <assert.h>
 #include <stdlib.h>
 
+/*
+ * 矩阵压缩代码的共同问题是：二维坐标 (i,j) 到底映射到一维哪里。
+ * 本文件全部使用 0 基下标。不要孤立背公式，要先数目标元素之前完整
+ * 存过多少行/列，再加上它在当前行/列中的偏移。
+ */
 static int RowMajorIndex(int i, int j, int cols) { return i * cols + j; }
 static int ColumnMajorIndex(int i, int j, int rows) { return j * rows + i; }
 
@@ -26,8 +31,8 @@ static int TridiagonalIndex(int i, int j, int n)
 }
 
 typedef struct {
-    int row;
-    int col;
+    int row;   /* 非零元原来的行号。 */
+    int col;   /* 非零元原来的列号。 */
     int value;
 } Triple;
 typedef struct {
@@ -44,10 +49,13 @@ static void FastTranspose(const SparseMatrix *a, SparseMatrix *b)
     b->rows = a->cols;
     b->cols = a->rows;
     b->terms = a->terms;
+    /* count[col]：原矩阵这一列有几个非零元。 */
     for (int k = 0; k < a->terms; ++k)
         ++count[a->data[k].col];
+    /* start[col]：这一列转置成行后，在 b.data 中从哪里开始写。 */
     for (int col = 1; col < a->cols; ++col)
         start[col] = start[col - 1] + count[col - 1];
+    /* 每个三元组现在可以直接落位，不再为每一列反复扫描。 */
     for (int k = 0; k < a->terms; ++k) {
         int col = a->data[k].col;
         int pos = start[col]++;
@@ -57,6 +65,7 @@ static void FastTranspose(const SparseMatrix *a, SparseMatrix *b)
 
 int main(void)
 {
+    /* 先验算地址公式，再验算转置后的三元组次序。 */
     assert(RowMajorIndex(2, 1, 4) == 9);
     assert(ColumnMajorIndex(2, 1, 3) == 5);
     assert(SymmetricIndex(3, 1) == 7);

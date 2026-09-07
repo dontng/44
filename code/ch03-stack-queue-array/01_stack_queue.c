@@ -2,6 +2,15 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+/*
+ * 本文件把栈和队列的常见存储集中对照。
+ *
+ * 最先确认的不是函数名，而是游标约定：
+ * - SqStack.top 指向当前栈顶，因此空栈为 -1；
+ * - CircularQueue.front 指向队头，rear 指向下一个可写位置；
+ * - Deque 用 front + size 表示状态，所有下标都通过取模回绕；
+ * - LinkQueue.front 指向头结点，rear 指向最后一个数据结点。
+ */
 #define CAP 8
 
 typedef struct {
@@ -14,14 +23,14 @@ static bool SqPush(SqStack *s, int x)
 {
     if (s->top == CAP - 1)
         return false;
-    s->data[++s->top] = x;
+    s->data[++s->top] = x; /* top 指当前元素，所以先上移、再写入。 */
     return true;
 }
 static bool SqPop(SqStack *s, int *x)
 {
     if (s->top == -1)
         return false;
-    *x = s->data[s->top--];
+    *x = s->data[s->top--]; /* 先读当前栈顶，再让 top 下移。 */
     return true;
 }
 
@@ -36,8 +45,8 @@ static bool LinkPush(StackNode **top, int x)
     if (s == NULL)
         return false;
     s->data = x;
-    s->next = *top;
-    *top = s;
+    s->next = *top; /* 新结点接住旧栈顶。 */
+    *top = s;       /* 调用者的 top 改指向新栈顶。 */
     return true;
 }
 static bool LinkPop(StackNode **top, int *x)
@@ -75,6 +84,7 @@ static bool PushFront(Deque *q, int x)
 static bool PushBack(Deque *q, int x)
 {
     if (q->size == CAP) return false;
+    /* 队尾空位位于“队头向后数 size 格”的位置。 */
     q->data[(q->front + q->size) % CAP] = x;
     ++q->size;
     return true;
@@ -104,7 +114,7 @@ static bool EnQueue(CircularQueue *q, int x)
 {
     if ((q->rear + 1) % CAP == q->front) /* 牺牲一个格子区分空与满。 */
         return false;
-    q->data[q->rear] = x;
+    q->data[q->rear] = x;          /* 在 rear 所指空位写入。 */
     q->rear = (q->rear + 1) % CAP;
     return true;
 }
@@ -112,7 +122,7 @@ static bool DeQueue(CircularQueue *q, int *x)
 {
     if (q->front == q->rear)
         return false;
-    *x = q->data[q->front];
+    *x = q->data[q->front];        /* front 所指元素最早入队。 */
     q->front = (q->front + 1) % CAP;
     return true;
 }
@@ -132,7 +142,7 @@ static bool LinkQueueInit(LinkQueue *q)
     if (q->front == NULL)
         return false;
     q->front->next = NULL;
-    q->rear = q->front;
+    q->rear = q->front; /* 空队列时两个指针共同指向头结点。 */
     return true;
 }
 static bool LinkEnQueue(LinkQueue *q, int x)
@@ -153,7 +163,7 @@ static bool LinkDeQueue(LinkQueue *q, int *x)
         return false;
     *x = p->data;
     q->front->next = p->next;
-    if (q->rear == p)             /* 删除最后一个数据结点。 */
+    if (q->rear == p)             /* 删除最后一个数据结点时，rear 不能悬空。 */
         q->rear = q->front;
     free(p);
     return true;
@@ -161,6 +171,7 @@ static bool LinkDeQueue(LinkQueue *q, int *x)
 
 int main(void)
 {
+    /* 每组断言不仅测正常结果，也刻意触发满、回绕和删空边界。 */
     int x = 0;
     SqStack s;
     SqStackInit(&s);

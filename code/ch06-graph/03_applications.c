@@ -2,18 +2,29 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+/*
+ * 图应用代码统一按三种状态来读：
+ * 1. 已确定：结果不会再改变；
+ * 2. 候选：根据已知信息得到的当前最好值；
+ * 3. 未到达：还没有足够信息，常用 INF 表示。
+ *
+ * Prim 确定生成树顶点，Dijkstra 确定最短距离；
+ * Kruskal 确定不会成环的边；拓扑排序确定当前入度为 0 的顶点。
+ */
 #define MAX_V 8
 #define INF 1000000
 
 static int Prim(const int graph[MAX_V][MAX_V], int n)
 {
-    int low[MAX_V];
+    int low[MAX_V]; /* 每个树外顶点连接当前生成树的最小边权。 */
     bool in_tree[MAX_V] = {false};
     for (int v = 0; v < n; ++v) low[v] = graph[0][v];
     in_tree[0] = true;
     int total = 0;
     for (int count = 1; count < n; ++count) {
+        /* 从树外选 low 最小者；它与树的连接现在可以确定。 */
         int next = -1;
+        /* 新顶点入树后，可能为其他树外顶点提供更便宜的连接。 */
         for (int v = 0; v < n; ++v)
             if (!in_tree[v] && (next == -1 || low[v] < low[next])) next = v;
         if (next == -1 || low[next] == INF) return -1;
@@ -40,7 +51,7 @@ static int Kruskal(Edge edges[], int edge_count, int n)
 {
     int parent[MAX_V];
     for (int i = 0; i < n; ++i) parent[i] = -1;
-    qsort(edges, (size_t)edge_count, sizeof edges[0], CompareEdge);
+    qsort(edges, (size_t)edge_count, sizeof edges[0], CompareEdge); /* 先按边权递增。 */
     int selected = 0, total = 0;
     for (int i = 0; i < edge_count && selected < n - 1; ++i) {
         int a = Root(parent, edges[i].from), b = Root(parent, edges[i].to);
@@ -58,7 +69,9 @@ static void Dijkstra(const int graph[MAX_V][MAX_V], int n, int source, int dist[
     for (int v = 0; v < n; ++v) dist[v] = graph[source][v];
     dist[source] = 0;
     for (int count = 0; count < n; ++count) {
+        /* 非负边权下，未确定顶点中 dist 最小者不可能再被绕路改小。 */
         int next = -1;
+        /* 松弛：尝试用 source -> next -> v 改善当前候选距离。 */
         for (int v = 0; v < n; ++v)
             if (!fixed[v] && (next == -1 || dist[v] < dist[next])) next = v;
         if (next == -1 || dist[next] == INF) break;
@@ -72,6 +85,7 @@ static void Dijkstra(const int graph[MAX_V][MAX_V], int n, int source, int dist[
 
 static void Floyd(int dist[MAX_V][MAX_V], int n)
 {
+    /* 第 k 轮结束后，只使用 0..k 作中间点的最短路已经确定。 */
     for (int k = 0; k < n; ++k)        /* 允许 0..k 作为中间点。 */
         for (int i = 0; i < n; ++i)
             for (int j = 0; j < n; ++j)
@@ -89,6 +103,7 @@ static bool TopologicalOrder(const int dag[MAX_V][MAX_V], int n, int order[MAX_V
             if (dag[u][v] > 0) ++indegree[v];
     for (int v = 0; v < n; ++v)
         if (indegree[v] == 0) stack[top++] = v;
+    /* 删除一个入度为 0 的顶点，相当于删除它发出的全部边。 */
     while (top > 0) {
         int u = stack[--top];
         order[count++] = u;
@@ -102,7 +117,7 @@ static int CriticalEdgeCount(const int dag[MAX_V][MAX_V], int n)
 {
     int order[MAX_V];
     assert(TopologicalOrder(dag, n, order));
-    int earliest[MAX_V] = {0};
+    int earliest[MAX_V] = {0}; /* 事件最早发生时间：沿拓扑序向前取最大。 */
     for (int i = 0; i < n; ++i) {
         int u = order[i];
         for (int v = 0; v < n; ++v)
@@ -112,7 +127,7 @@ static int CriticalEdgeCount(const int dag[MAX_V][MAX_V], int n)
     int duration = 0;
     for (int i = 0; i < n; ++i)
         if (earliest[i] > duration) duration = earliest[i];
-    int latest[MAX_V];
+    int latest[MAX_V];         /* 事件最迟发生时间：沿逆拓扑序向后取最小。 */
     for (int i = 0; i < n; ++i) latest[i] = duration;
     for (int i = n - 1; i >= 0; --i) {
         int u = order[i];
@@ -123,12 +138,14 @@ static int CriticalEdgeCount(const int dag[MAX_V][MAX_V], int n)
     int critical = 0;
     for (int u = 0; u < n; ++u)
         for (int v = 0; v < n; ++v)
+            /* 活动最早开始 == 最迟开始，说明没有机动时间。 */
             if (dag[u][v] > 0 && earliest[u] == latest[v] - dag[u][v]) ++critical;
     return critical;
 }
 
 int main(void)
 {
+    /* 同一无向网分别交给 Prim、Kruskal 和最短路算法，便于对照状态含义。 */
     int g[MAX_V][MAX_V];
     for (int i = 0; i < MAX_V; ++i)
         for (int j = 0; j < MAX_V; ++j) g[i][j] = i == j ? 0 : INF;
