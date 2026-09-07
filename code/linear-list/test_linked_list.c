@@ -1,6 +1,10 @@
-/* 维护者验证；学习入口是 linked_list.c。 */
-#define LINKED_LIST_NO_MAIN
-#include "linked_list.c"
+/* 维护者回归检查；教学最小实验在 experiments/。 */
+#include "linked_list.h"
+#include <stdio.h>
+#include <stdlib.h>
+#ifdef NDEBUG
+#error "Tests require assertions; do not define NDEBUG."
+#endif
 #include <assert.h>
 #include <limits.h>
 
