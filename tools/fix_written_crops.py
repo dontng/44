@@ -186,15 +186,22 @@ def run() -> dict:
                 "restored_from_pdf": path in restored,
             })
 
+    previous = json.loads(AUDIT.read_text(encoding="utf-8")) if AUDIT.exists() else {}
+    changed_by_path = {item["path"]: item for item in previous.get("changed", [])}
+    for item in changed:
+        if item["before"] != item["after"] or item["path"] not in changed_by_path:
+            changed_by_path[item["path"]] = item
+    restored_ids = set(previous.get("restored", []))
+    restored_ids.update(
+        f"{path.parent.name}-{int(path.stem[1:])}" for path in restored
+    )
     audit = {
         "method": "targeted PDF restore; footer-shaped final cluster removal; trailing whitespace crop",
         "scope": "2009-2025 q41-q47",
         "guardrail": "no internal image rows are deleted",
         "count_checked": len(all_written_images()),
-        "restored": [
-            f"{path.parent.name}-{int(path.stem[1:])}" for path in sorted(restored)
-        ],
-        "changed": changed,
+        "restored": sorted(restored_ids),
+        "changed": [changed_by_path[path] for path in sorted(changed_by_path)],
     }
     AUDIT.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"checked 119 images; changed {len(changed)}; restored 2")
