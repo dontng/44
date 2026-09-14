@@ -157,8 +157,11 @@ def run() -> dict:
     restored = {restore_question(year, number, markers) for year, number in RESTORE}
     changed = []
     for path in all_written_images():
-        with Image.open(path) as source:
-            original = source.convert("RGB")
+        try:
+            with Image.open(path) as source:
+                original = source.convert("RGB")
+        except (OSError, SyntaxError) as exc:
+            raise RuntimeError(f"cannot decode {path.relative_to(ROOT)}: {exc}") from exc
         cleaned, tail_changed = clean_tail(original)
         if path in restored or tail_changed:
             cleaned.save(path, format="PNG", optimize=True)
