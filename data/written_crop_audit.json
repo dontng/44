@@ -4,27 +4,131 @@
   "guardrail": "no internal image rows are deleted",
   "count_checked": 119,
   "restored": [
+    "2009-41",
+    "2009-44",
+    "2009-47",
+    "2010-42",
+    "2010-44",
+    "2010-46",
+    "2011-43",
+    "2011-45",
+    "2011-47",
+    "2012-42",
+    "2012-44",
+    "2012-47",
+    "2013-41",
     "2013-44",
+    "2013-45",
+    "2013-47",
+    "2014-42",
+    "2014-45",
     "2015-42",
     "2015-43",
+    "2015-44",
+    "2015-45",
+    "2015-47",
+    "2016-45",
     "2017-41",
+    "2017-44",
+    "2017-46",
+    "2018-42",
+    "2018-44",
+    "2018-47",
+    "2019-41",
+    "2019-45",
+    "2020-43",
+    "2020-46",
     "2021-41",
+    "2021-43",
+    "2021-45",
+    "2022-43",
+    "2022-45",
     "2023-43",
+    "2023-45",
+    "2024-41",
+    "2024-42",
+    "2024-43",
+    "2024-44",
+    "2024-45",
+    "2024-46",
+    "2024-47",
+    "2025-42",
     "2025-44",
+    "2025-45",
     "2025-47"
   ],
   "changed": [
     {
+      "path": "bank/2009/q41.png",
+      "before": [
+        1509,
+        415
+      ],
+      "after": [
+        1453,
+        461
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2009/q44.png",
+      "before": [
+        1442,
+        1368
+      ],
+      "after": [
+        1451,
+        1465
+      ],
+      "restored_from_pdf": true
+    },
+    {
       "path": "bank/2009/q47.png",
       "before": [
         1473,
-        2465
-      ],
-      "after": [
-        1473,
         984
       ],
-      "restored_from_pdf": false
+      "after": [
+        1476,
+        2732
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2010/q42.png",
+      "before": [
+        1386,
+        329
+      ],
+      "after": [
+        1346,
+        333
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2010/q44.png",
+      "before": [
+        1503,
+        854
+      ],
+      "after": [
+        1503,
+        900
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2010/q46.png",
+      "before": [
+        1381,
+        1266
+      ],
+      "after": [
+        1346,
+        1231
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2010/q47.png",
@@ -39,6 +143,18 @@
       "restored_from_pdf": false
     },
     {
+      "path": "bank/2011/q43.png",
+      "before": [
+        1336,
+        747
+      ],
+      "after": [
+        1336,
+        736
+      ],
+      "restored_from_pdf": true
+    },
+    {
       "path": "bank/2011/q44.png",
       "before": [
         1191,
@@ -49,6 +165,54 @@
         1254
       ],
       "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2011/q45.png",
+      "before": [
+        1296,
+        826
+      ],
+      "after": [
+        1296,
+        860
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2011/q47.png",
+      "before": [
+        1358,
+        2789
+      ],
+      "after": [
+        1302,
+        2906
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2012/q42.png",
+      "before": [
+        1182,
+        562
+      ],
+      "after": [
+        1182,
+        610
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2012/q44.png",
+      "before": [
+        1313,
+        1507
+      ],
+      "after": [
+        1345,
+        1644
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2012/q45.png",
@@ -63,16 +227,28 @@
       "restored_from_pdf": false
     },
     {
+      "path": "bank/2012/q47.png",
+      "before": [
+        1425,
+        1805
+      ],
+      "after": [
+        1425,
+        1940
+      ],
+      "restored_from_pdf": true
+    },
+    {
       "path": "bank/2013/q41.png",
       "before": [
         1654,
-        560
-      ],
-      "after": [
-        1654,
         387
       ],
-      "restored_from_pdf": false
+      "after": [
+        1401,
+        422
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2013/q44.png",
@@ -87,16 +263,52 @@
       "restored_from_pdf": true
     },
     {
+      "path": "bank/2013/q45.png",
+      "before": [
+        1395,
+        1102
+      ],
+      "after": [
+        1398,
+        1306
+      ],
+      "restored_from_pdf": true
+    },
+    {
       "path": "bank/2013/q47.png",
       "before": [
         1356,
-        2096
-      ],
-      "after": [
-        1356,
         1088
       ],
-      "restored_from_pdf": false
+      "after": [
+        1322,
+        2153
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2014/q42.png",
+      "before": [
+        1442,
+        1223
+      ],
+      "after": [
+        1350,
+        1347
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2014/q45.png",
+      "before": [
+        1188,
+        456
+      ],
+      "after": [
+        1167,
+        425
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2014/q47.png",
@@ -113,8 +325,8 @@
     {
       "path": "bank/2015/q42.png",
       "before": [
-        1315,
-        347
+        1485,
+        614
       ],
       "after": [
         1485,
@@ -135,14 +347,86 @@
       "restored_from_pdf": true
     },
     {
+      "path": "bank/2015/q44.png",
+      "before": [
+        1412,
+        1689
+      ],
+      "after": [
+        1412,
+        1819
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2015/q45.png",
+      "before": [
+        1330,
+        652
+      ],
+      "after": [
+        1315,
+        837
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2015/q47.png",
+      "before": [
+        1427,
+        2892
+      ],
+      "after": [
+        1427,
+        3081
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2016/q45.png",
+      "before": [
+        1449,
+        929
+      ],
+      "after": [
+        1449,
+        962
+      ],
+      "restored_from_pdf": true
+    },
+    {
       "path": "bank/2017/q41.png",
       "before": [
-        1239,
-        492
+        1280,
+        772
       ],
       "after": [
         1280,
-        772
+        733
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2017/q44.png",
+      "before": [
+        1304,
+        631
+      ],
+      "after": [
+        1304,
+        938
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2017/q46.png",
+      "before": [
+        1316,
+        489
+      ],
+      "after": [
+        1314,
+        861
       ],
       "restored_from_pdf": true
     },
@@ -159,22 +443,94 @@
       "restored_from_pdf": false
     },
     {
+      "path": "bank/2018/q42.png",
+      "before": [
+        1464,
+        623
+      ],
+      "after": [
+        1570,
+        1031
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2018/q44.png",
+      "before": [
+        1511,
+        1382
+      ],
+      "after": [
+        1407,
+        1486
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2018/q47.png",
+      "before": [
+        1350,
+        2381
+      ],
+      "after": [
+        1313,
+        2587
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2019/q41.png",
+      "before": [
+        1178,
+        466
+      ],
+      "after": [
+        1171,
+        435
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2019/q45.png",
+      "before": [
+        1196,
+        1274
+      ],
+      "after": [
+        1182,
+        1302
+      ],
+      "restored_from_pdf": true
+    },
+    {
       "path": "bank/2020/q43.png",
       "before": [
         1404,
-        720
-      ],
-      "after": [
-        1404,
         683
       ],
-      "restored_from_pdf": false
+      "after": [
+        1200,
+        789
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2020/q46.png",
+      "before": [
+        1261,
+        511
+      ],
+      "after": [
+        1254,
+        597
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2021/q41.png",
       "before": [
-        1175,
-        676
+        1170,
+        831
       ],
       "after": [
         1170,
@@ -186,23 +542,71 @@
       "path": "bank/2021/q43.png",
       "before": [
         1235,
-        978
-      ],
-      "after": [
-        1235,
         944
       ],
-      "restored_from_pdf": false
+      "after": [
+        1170,
+        975
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2021/q45.png",
+      "before": [
+        1198,
+        864
+      ],
+      "after": [
+        1395,
+        1007
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2022/q43.png",
+      "before": [
+        1412,
+        1007
+      ],
+      "after": [
+        1412,
+        1168
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2022/q45.png",
+      "before": [
+        1372,
+        738
+      ],
+      "after": [
+        1372,
+        794
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2023/q43.png",
       "before": [
-        1385,
-        905
-      ],
-      "after": [
         1384,
         1063
+      ],
+      "after": [
+        1385,
+        933
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2023/q45.png",
+      "before": [
+        1417,
+        724
+      ],
+      "after": [
+        1417,
+        789
       ],
       "restored_from_pdf": true
     },
@@ -222,85 +626,85 @@
       "path": "bank/2024/q41.png",
       "before": [
         1654,
-        1457
+        1077
       ],
       "after": [
         1654,
-        1077
+        1136
       ],
-      "restored_from_pdf": false
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2024/q42.png",
       "before": [
         1381,
-        2035
-      ],
-      "after": [
-        1381,
         412
       ],
-      "restored_from_pdf": false
+      "after": [
+        1654,
+        569
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2024/q43.png",
       "before": [
         1382,
-        3586
-      ],
-      "after": [
-        1382,
         1582
       ],
-      "restored_from_pdf": false
+      "after": [
+        1654,
+        2233
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2024/q44.png",
       "before": [
         1381,
-        1860
-      ],
-      "after": [
-        1381,
         1281
       ],
-      "restored_from_pdf": false
+      "after": [
+        1654,
+        1611
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2024/q45.png",
       "before": [
         1381,
-        2043
-      ],
-      "after": [
-        1381,
         717
       ],
-      "restored_from_pdf": false
+      "after": [
+        1654,
+        871
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2024/q46.png",
       "before": [
         1382,
-        2133
-      ],
-      "after": [
-        1382,
         714
       ],
-      "restored_from_pdf": false
+      "after": [
+        1654,
+        769
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2024/q47.png",
       "before": [
         1392,
-        1613
+        1612
       ],
       "after": [
         1392,
-        1612
+        2490
       ],
-      "restored_from_pdf": false
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2025/q41.png",
@@ -318,13 +722,13 @@
       "path": "bank/2025/q42.png",
       "before": [
         1319,
-        845
-      ],
-      "after": [
-        1319,
         769
       ],
-      "restored_from_pdf": false
+      "after": [
+        1318,
+        1050
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2025/q43.png",
@@ -341,12 +745,12 @@
     {
       "path": "bank/2025/q44.png",
       "before": [
-        1326,
-        1605
+        1318,
+        2020
       ],
       "after": [
         1318,
-        2020
+        1934
       ],
       "restored_from_pdf": true
     },
@@ -354,23 +758,23 @@
       "path": "bank/2025/q45.png",
       "before": [
         1317,
-        660
+        408
       ],
       "after": [
         1317,
-        408
+        398
       ],
-      "restored_from_pdf": false
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2025/q47.png",
       "before": [
-        1337,
-        1241
+        1320,
+        2464
       ],
       "after": [
         1320,
-        2464
+        2379
       ],
       "restored_from_pdf": true
     }
