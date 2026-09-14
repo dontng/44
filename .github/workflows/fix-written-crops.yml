@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pillow numpy pymupdf
-      - run: python tools/fix_written_crops.py --restore 2015-42 2021-41
+      - run: python tools/fix_written_crops.py --restore-cross-page
       - run: python tools/build_written_chain.py
       - run: python tools/fix_written_crops.py --check
       - run: python tools/build_written_chain.py --check

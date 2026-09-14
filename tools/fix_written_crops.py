@@ -213,6 +213,19 @@ def run() -> dict:
     return audit
 
 
+def cross_page_qids(markers: dict) -> list[str]:
+    qids = []
+    for year, item in sorted(markers["years"].items()):
+        for number in range(41, 47):
+            if item[str(number)][0] != item[str(number + 1)][0]:
+                qids.append(f"{year}-{number}")
+        with fitz.open(paper_for(year)) as doc:
+            end_page = item.get("end", [len(doc) - 1, doc[-1].rect.height])[0]
+        if item["47"][0] != end_page:
+            qids.append(f"{year}-47")
+    return qids
+
+
 def restore_selected(qids: list[str]) -> None:
     markers = json.loads(MARKERS.read_text(encoding="utf-8"))
     audit = json.loads(AUDIT.read_text(encoding="utf-8"))
@@ -255,8 +268,12 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--restore", nargs="+", metavar="YEAR-QUESTION")
+    parser.add_argument("--restore-cross-page", action="store_true")
     args = parser.parse_args()
-    if args.restore:
+    if args.restore_cross_page:
+        markers = json.loads(MARKERS.read_text(encoding="utf-8"))
+        restore_selected(cross_page_qids(markers))
+    elif args.restore:
         restore_selected(args.restore)
     elif args.check:
         check()
