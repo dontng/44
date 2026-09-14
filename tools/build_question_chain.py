@@ -19,6 +19,7 @@ CHAIN = REPO / "data" / "question_chain.json"
 ROSTER_DIR = REPO / "data" / "rosters"
 SRC_DIR = REPO / "src"
 INDEX = SRC_DIR / "README.md"
+WRITTEN_SOURCE = REPO / "data" / "written_lines.json"
 
 # Normalize the displayed glyph size across scanned papers.  Their crops have
 # different widths, so merely constraining every image to the page width makes
@@ -100,7 +101,11 @@ def display_widths():
         if not year_dir.is_dir() or not year_dir.name.isdigit():
             continue
         samples = []
-        for image in sorted(year_dir.glob("q*.png"), key=lambda path: path.stat().st_size, reverse=True):
+        all_images = [
+            image for image in year_dir.glob("q*.png") if re.fullmatch(r"q\d{2}", image.stem)
+        ]
+        choice_images = [image for image in all_images if int(image.stem[1:]) <= 40]
+        for image in sorted(choice_images, key=lambda path: path.stat().st_size, reverse=True):
             height = glyph_height(image)
             if height:
                 samples.append(height)
@@ -109,12 +114,21 @@ def display_widths():
         if not samples:
             raise ValueError(f"could not measure glyph height: {year_dir.name}")
         scale = DISPLAY_TEXT_PX / statistics.median(samples)
-        for image in year_dir.glob("q*.png"):
+        for image in all_images:
             number = int(image.stem[1:])
             image_width = Image.open(image).size[0]
             widths[f"{year_dir.name}-{number:02d}"] = max(
                 DISPLAY_MIN_WIDTH, min(DISPLAY_MAX_WIDTH, round(image_width * scale))
             )
+
+    # The 0731—0908 choice chain is sealed.  Keep its already reviewed display
+    # widths stable when new large-question images enter bank/; otherwise a
+    # large-question build would mechanically rewrite every historical node.
+    pattern = re.compile(r'alt="(\d{4}-\d{2})"[^>]*width:([0-9.]+)em')
+    for markdown in SRC_DIR.glob("[0-9][0-9][0-9][0-9].md"):
+        for qid, width_em in pattern.findall(markdown.read_text(encoding="utf-8")):
+            if int(qid[-2:]) <= 40:
+                widths[qid] = float(width_em) * DISPLAY_BASE_FONT_PX
     return widths
 
 
@@ -144,6 +158,8 @@ def validate_source(data):
         for year in (REPO / "bank").iterdir()
         if year.is_dir() and year.name.isdigit()
         for image in year.glob("q*.png")
+        if re.fullmatch(r"q\d{2}", image.stem)
+        if int(image.stem[1:]) <= 40
     }
     missing = sorted(bank - set(all_refs), key=question_parts)
     unknown = sorted(set(all_refs) - bank, key=question_parts)
@@ -186,6 +202,11 @@ def nav(node, nodes, path):
     if node["next"]:
         nxt = nodes[node["index"]]
         parts.append(f"[{nxt['key']} →]({relative_link(path, REPO / nxt['file'])})")
+    elif WRITTEN_SOURCE.exists():
+        written = read_json(WRITTEN_SOURCE)
+        first_date = dt.date.fromisoformat(written["start_date"])
+        first_key = first_date.strftime("%m%d")
+        parts.append(f"[{first_key} 大题 →]({first_key}.md)")
     return " · ".join(parts)
 
 
@@ -280,6 +301,30 @@ def render_index(data, nodes, counts):
             "",
         ]
     )
+    if WRITTEN_SOURCE.exists():
+        written = read_json(WRITTEN_SOURCE)
+        written_start = dt.date.fromisoformat(written["start_date"])
+        refs = [qid for line in written.get("lines", []) for qid in line.get("questions", [])]
+        lines.extend(
+            [
+                "## 大题训练线",
+                "",
+                written["principle"],
+                "",
+                f"当前共 **{len(written['lines'])} 条大题线、{len(set(refs))} 道完整真题、{len(refs)} 次题目引用**。",
+                "",
+                "| 节点 | 大题线 | 题数 | 年份跨度 |",
+                "|---|---|---:|---|",
+            ]
+        )
+        for index, line in enumerate(written["lines"]):
+            key = (written_start + dt.timedelta(days=index)).strftime("%m%d")
+            years = [question_parts(qid)[0] for qid in line["questions"]]
+            lines.append(
+                f"| [{key}]({key}.md) | {line['title']} | {len(line['questions'])} | "
+                f"{years[0]}–{years[-1]} |"
+            )
+        lines.append("")
     return "\n".join(lines)
 
 

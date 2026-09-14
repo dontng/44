@@ -50,6 +50,8 @@ Before committing, inspect the staged diff and stage only work in scope. Install
 
 `src/MMDD.md` contains the current ability-line question chain. `tldr/README.md` is the authority for analysis quality; `tldr/TEMPLATE.md` fixes the minimum per-question shape, and completed analysis lives under `tldr/sessions/YYYY-MM/MMDD-tldr.md`.
 
+The sealed choice chain ends at `0908`. Files from `0914` onward are large-question lines built from `data/written_lines.json`. A large question is an indivisible attempt unit: do not distribute its subquestions across dates. `data/written_markers.json` is the reviewed 2009—2025 boundary table; historical crops listed there must be preserved, and all other images must close at the next question marker (with cross-page stitching where needed).
+
 For a study turn, read only:
 
 ```text
