@@ -149,6 +149,10 @@ def all_written_images() -> list[Path]:
 
 
 def run() -> dict:
+    if AUDIT.exists():
+        audit = json.loads(AUDIT.read_text(encoding="utf-8"))
+        print("crop audit already exists; refusing an implicit second crop pass")
+        return audit
     markers = json.loads(MARKERS.read_text(encoding="utf-8"))
     before = {}
     corrupt = []
