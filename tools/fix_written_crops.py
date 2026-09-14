@@ -148,13 +148,20 @@ def all_written_images() -> list[Path]:
 def run() -> dict:
     markers = json.loads(MARKERS.read_text(encoding="utf-8"))
     before = {}
+    corrupt = []
     for path in all_written_images():
         if not path.exists():
             raise RuntimeError(f"missing written image: {path.relative_to(ROOT)}")
-        with Image.open(path) as im:
-            before[path] = im.size
+        try:
+            with Image.open(path) as im:
+                before[path] = im.size
+                im.load()
+        except (OSError, SyntaxError):
+            corrupt.append(path)
 
     restored = {restore_question(year, number, markers) for year, number in RESTORE}
+    for path in corrupt:
+        restored.add(restore_question(path.parent.name, int(path.stem[1:]), markers))
     changed = []
     for path in all_written_images():
         try:
@@ -181,7 +188,9 @@ def run() -> dict:
         "scope": "2009-2025 q41-q47",
         "guardrail": "no internal image rows are deleted",
         "count_checked": len(all_written_images()),
-        "restored": [f"{year}-{number}" for year, number in RESTORE],
+        "restored": [
+            f"{path.parent.name}-{int(path.stem[1:])}" for path in sorted(restored)
+        ],
         "changed": changed,
     }
     AUDIT.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
