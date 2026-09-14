@@ -5,8 +5,10 @@
   "count_checked": 119,
   "restored": [
     "2013-44",
+    "2015-42",
     "2015-43",
     "2017-41",
+    "2021-41",
     "2023-43",
     "2025-44",
     "2025-47"
@@ -109,6 +111,18 @@
       "restored_from_pdf": false
     },
     {
+      "path": "bank/2015/q42.png",
+      "before": [
+        1315,
+        347
+      ],
+      "after": [
+        1485,
+        614
+      ],
+      "restored_from_pdf": true
+    },
+    {
       "path": "bank/2015/q43.png",
       "before": [
         1522,
@@ -155,6 +169,18 @@
         683
       ],
       "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2021/q41.png",
+      "before": [
+        1175,
+        676
+      ],
+      "after": [
+        1170,
+        831
+      ],
+      "restored_from_pdf": true
     },
     {
       "path": "bank/2021/q43.png",
