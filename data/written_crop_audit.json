@@ -1,0 +1,352 @@
+{
+  "method": "targeted PDF restore; footer-shaped final cluster removal; trailing whitespace crop",
+  "scope": "2009-2025 q41-q47",
+  "guardrail": "no internal image rows are deleted",
+  "count_checked": 119,
+  "restored": [
+    "2013-44",
+    "2015-43",
+    "2017-41",
+    "2023-43",
+    "2025-44",
+    "2025-47"
+  ],
+  "changed": [
+    {
+      "path": "bank/2009/q47.png",
+      "before": [
+        1473,
+        2465
+      ],
+      "after": [
+        1473,
+        984
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2010/q47.png",
+      "before": [
+        1494,
+        2050
+      ],
+      "after": [
+        1494,
+        1899
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2011/q44.png",
+      "before": [
+        1191,
+        1265
+      ],
+      "after": [
+        1191,
+        1254
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2012/q45.png",
+      "before": [
+        1168,
+        537
+      ],
+      "after": [
+        1168,
+        536
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2013/q41.png",
+      "before": [
+        1654,
+        560
+      ],
+      "after": [
+        1654,
+        387
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2013/q44.png",
+      "before": [
+        1452,
+        1011
+      ],
+      "after": [
+        1452,
+        1011
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2013/q47.png",
+      "before": [
+        1356,
+        2096
+      ],
+      "after": [
+        1356,
+        1088
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2014/q47.png",
+      "before": [
+        1222,
+        1293
+      ],
+      "after": [
+        1222,
+        1235
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2015/q43.png",
+      "before": [
+        1522,
+        1386
+      ],
+      "after": [
+        1522,
+        1386
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2017/q41.png",
+      "before": [
+        1239,
+        492
+      ],
+      "after": [
+        1280,
+        772
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2017/q47.png",
+      "before": [
+        1347,
+        1731
+      ],
+      "after": [
+        1347,
+        1526
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2020/q43.png",
+      "before": [
+        1404,
+        720
+      ],
+      "after": [
+        1404,
+        683
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2021/q43.png",
+      "before": [
+        1235,
+        978
+      ],
+      "after": [
+        1235,
+        944
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2023/q43.png",
+      "before": [
+        1385,
+        905
+      ],
+      "after": [
+        1384,
+        1063
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2023/q47.png",
+      "before": [
+        1368,
+        1047
+      ],
+      "after": [
+        1368,
+        1039
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2024/q41.png",
+      "before": [
+        1654,
+        1457
+      ],
+      "after": [
+        1654,
+        1077
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2024/q42.png",
+      "before": [
+        1381,
+        2035
+      ],
+      "after": [
+        1381,
+        412
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2024/q43.png",
+      "before": [
+        1382,
+        3586
+      ],
+      "after": [
+        1382,
+        1582
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2024/q44.png",
+      "before": [
+        1381,
+        1860
+      ],
+      "after": [
+        1381,
+        1281
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2024/q45.png",
+      "before": [
+        1381,
+        2043
+      ],
+      "after": [
+        1381,
+        717
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2024/q46.png",
+      "before": [
+        1382,
+        2133
+      ],
+      "after": [
+        1382,
+        714
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2024/q47.png",
+      "before": [
+        1392,
+        1613
+      ],
+      "after": [
+        1392,
+        1612
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2025/q41.png",
+      "before": [
+        1653,
+        600
+      ],
+      "after": [
+        1653,
+        525
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2025/q42.png",
+      "before": [
+        1319,
+        845
+      ],
+      "after": [
+        1319,
+        769
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2025/q43.png",
+      "before": [
+        1320,
+        1494
+      ],
+      "after": [
+        1320,
+        1418
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2025/q44.png",
+      "before": [
+        1326,
+        1605
+      ],
+      "after": [
+        1318,
+        2020
+      ],
+      "restored_from_pdf": true
+    },
+    {
+      "path": "bank/2025/q45.png",
+      "before": [
+        1317,
+        660
+      ],
+      "after": [
+        1317,
+        408
+      ],
+      "restored_from_pdf": false
+    },
+    {
+      "path": "bank/2025/q47.png",
+      "before": [
+        1337,
+        1241
+      ],
+      "after": [
+        1320,
+        2464
+      ],
+      "restored_from_pdf": true
+    }
+  ]
+}
