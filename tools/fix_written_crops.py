@@ -25,6 +25,7 @@ DPI = 200
 ZOOM = DPI / 72.0
 PAD = 14
 INK_THRESHOLD = 236
+PAGE_MARGIN = 45
 RESTORE = (("2017", 41), ("2013", 44))
 
 
@@ -121,8 +122,8 @@ def restore_question(year: str, number: int, markers: dict) -> Path:
         end_page, end_y = end
         for page_number in range(start_page, end_page + 1):
             page = doc[page_number]
-            top = start_y - 4 if page_number == start_page else 32
-            bottom = end_y if page_number == end_page else page.rect.height - 32
+            top = start_y - 4 if page_number == start_page else PAGE_MARGIN
+            bottom = end_y if page_number == end_page else page.rect.height - PAGE_MARGIN
             piece = trim_outer(render_piece(page, top, bottom))
             pieces.append(piece)
 
@@ -212,6 +213,34 @@ def run() -> dict:
     return audit
 
 
+def restore_selected(qids: list[str]) -> None:
+    markers = json.loads(MARKERS.read_text(encoding="utf-8"))
+    audit = json.loads(AUDIT.read_text(encoding="utf-8"))
+    changed_by_path = {item["path"]: item for item in audit.get("changed", [])}
+    restored_ids = set(audit.get("restored", []))
+    for qid in qids:
+        year, raw_number = qid.split("-", 1)
+        number = int(raw_number)
+        target = ROOT / "bank" / year / f"q{number}.png"
+        with Image.open(target) as current:
+            before = list(current.size)
+        restore_question(year, number, markers)
+        with Image.open(target) as repaired:
+            repaired.load()
+            after = list(repaired.size)
+        changed_by_path[target.relative_to(ROOT).as_posix()] = {
+            "path": target.relative_to(ROOT).as_posix(),
+            "before": before,
+            "after": after,
+            "restored_from_pdf": True,
+        }
+        restored_ids.add(qid)
+    audit["restored"] = sorted(restored_ids)
+    audit["changed"] = [changed_by_path[path] for path in sorted(changed_by_path)]
+    AUDIT.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"restored {len(qids)} selected cross-page questions without internal row deletion")
+
+
 def check() -> None:
     audit = json.loads(AUDIT.read_text(encoding="utf-8"))
     if audit["count_checked"] != 119:
@@ -225,8 +254,14 @@ def check() -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--restore", nargs="+", metavar="YEAR-QUESTION")
     args = parser.parse_args()
-    check() if args.check else run()
+    if args.restore:
+        restore_selected(args.restore)
+    elif args.check:
+        check()
+    else:
+        run()
 
 
 if __name__ == "__main__":
