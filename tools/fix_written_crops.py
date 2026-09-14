@@ -113,9 +113,12 @@ def render_piece(page: fitz.Page, top: float, bottom: float) -> Image.Image:
 def restore_question(year: str, number: int, markers: dict) -> Path:
     item = markers["years"][year]
     start_page, start_y = item[str(number)]
-    end_page, end_y = item[str(number + 1)] if number < 47 else item["end"]
+    end = item[str(number + 1)] if number < 47 else item.get("end")
     pieces = []
     with fitz.open(paper_for(year)) as doc:
+        if end is None:
+            end = (len(doc) - 1, doc[-1].rect.height)
+        end_page, end_y = end
         for page_number in range(start_page, end_page + 1):
             page = doc[page_number]
             top = start_y - 4 if page_number == start_page else 32
