@@ -9,7 +9,7 @@ This repository has two modes of work:
 
 GitHub is the shared source of truth. At the start of any maintenance or TLDR turn, sync the local work copy before making decisions. Do not turn study work into sync management unless the user asks.
 
-All agent-authored code, documentation, knowledge, analysis, layout, and workflow changes stay local by default. Do not infer permission to commit or push from “ready”, a completed subtask, a natural pause, or a switch of topic. Commit or push those changes only when the user explicitly asks to commit, push, sync, or close out the current work. Near a genuine handoff, report uncommitted changes once and offer a handoff commit; do not create one without confirmation.
+For this repository, the user has granted standing permission to publish completed work. When a task is clear, its scoped changes are complete, and relevant checks pass, commit and push directly to the current shared branch without asking for a separate `commit` or `push` instruction. Keep work local only while it is incomplete, unverified, blocked, or the requested scope is genuinely ambiguous. Never use this standing permission to include unrelated changes.
 
 The scheduled safety net is the sole automatic exception: `tools/autocommit.sh` runs at 02:00 and 20:00 local time. A recovery commit is created only when both conditions hold: a scheduled time has arrived and the worktree has changes. Before committing, it waits for ten minutes without project activity; agents refresh the ignored activity marker with `bash tools/mark-activity.sh` at the start of active project work and before long operations, while direct file edits are detected from their modification time. The wait has a hard cutoff: 04:00 for the 02:00 run and 21:00 for the 20:00 run; at that cutoff it commits even if activity continues, except that an in-progress Git operation must finish first. It then pushes one checkpoint containing all non-ignored changes. Its purpose is off-machine recovery, not normal delivery; agents and workflow commands must not invoke it early or treat a changed worktree as permission for an immediate commit.
 
@@ -49,6 +49,8 @@ Before committing, inspect the staged diff and stage only work in scope. Install
 ## Question-chain and TLDR architecture
 
 `src/MMDD.md` contains the current ability-line question chain. `tldr/README.md` is the authority for analysis quality; `tldr/TEMPLATE.md` fixes the minimum per-question shape, and completed analysis lives under `tldr/sessions/YYYY-MM/MMDD-tldr.md`.
+
+Interactive teaching has a separate calibration source under `src/0731/`. Before explaining questions from `src/MMDD.md` to the user, read `src/0731/teaching-protocol.md`; use `src/0731/answers.md` when a concrete calibration example is needed. These files preserve the real 0731 teaching dialogue and govern explanation order, scope, error handling, and presentation. Do not force the interactive answer into the TLDR document structure or infer the user's reasoning from a historical choice.
 
 The sealed choice chain ends at `0908`. Files from `0914` onward are large-question lines built from `data/written_lines.json`. A large question is an indivisible attempt unit: do not distribute its subquestions across dates. `data/written_markers.json` is the reviewed 2009—2025 boundary table; historical crops listed there must be preserved, and all other images must close at the next question marker (with cross-page stitching where needed).
 
