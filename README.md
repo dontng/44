@@ -44,7 +44,8 @@ python3 tools/recover_written_questions.py --check  # 核对题图与历史裁�
 | `data/written_historical_seeds.json` | 15 张历史题图的 Git commit 与裁剪来源 |
 | `data/written_lines.json` | 119 道完整大题的唯一主归类 |
 | `data/written_chain.json` | 编译后的大题日期、前驱、后继和文件路径 |
-| `src/MMDD.md` | 人看的能力线题单 |
+| `src/MMDD.md` | 人看的真题能力线题单 |
+| `daily-network/` | 2025、2026 年湖科大网络每日一题索引与学习记录 |
 | `data/rosters/MMDD.json` | 答题卡读取的机器题单 |
 | `tldr/README.md` | TLDR 执行协议与质量门槛 |
 | `tldr/TEMPLATE.md` | 每题不可降级的解析骨架 |
