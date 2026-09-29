@@ -52,6 +52,8 @@ Before committing, inspect the staged diff and stage only work in scope. Install
 
 Interactive teaching has a separate calibration source under `src/answer-quality/`. Before explaining questions from `src/MMDD.md`, read `src/answer-quality/quality-gate.md` and the relevant dated context when it exists; use the adjacent `src/MMDD-answer.md` as the study artifact and concrete calibration. The context files preserve the useful teaching dialogue without copying its noise. They govern explanation order, scope, error handling, and presentation; do not force interactive answers into the TLDR structure or infer the user's reasoning from a historical choice.
 
+For multi-question teaching and batch authoring, also read `src/answer-quality/learning-system.md`. Its global checks govern ability inheritance, usable fallback reasoning, the long explanation versus exam-speed path, and evidence for mastery. They are internal checks, not a fixed set of headings to impose on every question. The completed `src/0731-route.md` is a pilot of the short path and is not proof that the user has passed its timed checks. Do not reproduce its complexity-specific approach across unrelated data structures, architecture, operating systems, or networking questions.
+
 The sealed choice chain ends at `0908`. Files from `0914` onward are large-question lines built from `data/written_lines.json`. A large question is an indivisible attempt unit: do not distribute its subquestions across dates. `data/written_markers.json` is the reviewed 2009—2025 boundary table; historical crops listed there must be preserved, and all other images must close at the next question marker (with cross-page stitching where needed).
 
 For a study turn, read only:

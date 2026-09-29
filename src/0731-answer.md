@@ -1,9 +1,10 @@
 # 0731 Answer｜增长量级九道题完整讲解
 
-> 原题入口：[0731 题单](0731.md)｜教学上下文：[0731-context.md](answer-quality/0731-context.md)｜质量门槛：[quality-gate.md](answer-quality/quality-gate.md)
+> 原题入口：[0731 题单](0731.md)｜[九题考场路线与保底](0731-route.md)｜教学上下文：[0731-context.md](answer-quality/0731-context.md)｜质量门槛：[quality-gate.md](answer-quality/quality-gate.md)
 >
 > 这不是九个答案的速记表。它保存的是从不会下手到能够判断的中间过程：第一眼看什么、怎样迈出第一步、哪些错误路线容易成立，以及最后如何收束。
 
+<a id="q01"></a>
 ## 01｜2011-01：固定倍增为什么是对数
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
@@ -24,6 +25,7 @@
 
 ---
 
+<a id="q02"></a>
 ## 02｜2012-01：递归不等于指数增长
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
@@ -48,6 +50,7 @@ fact(n)
 
 ---
 
+<a id="q03"></a>
 ## 03｜2013-01：没有代码时，先想数据会被碰几次
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
@@ -76,6 +79,7 @@ max(m,n) ≤ m + n ≤ 2 × max(m,n)
 
 ---
 
+<a id="q04"></a>
 ## 04｜2014-01：什么时候两层循环可以相乘
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
@@ -98,6 +102,7 @@ n + n + … + n（共 log n 项）= n log n
 
 ---
 
+<a id="q05"></a>
 ## 05｜2017-01：累计到 n，需要反推进行了多少轮
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
@@ -130,6 +135,7 @@ t² ≈ n  →  t ≈ √n
 
 ---
 
+<a id="q06"></a>
 ## 06｜2019-01：条件中的平方是在限制轮数
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
@@ -156,6 +162,7 @@ x + 1 ≤ √n
 
 ---
 
+<a id="q07"></a>
 ## 07｜2022-01：外层是 log n 轮，为什么总量仍是 n
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
@@ -171,10 +178,10 @@ x + 1 ≤ √n
 外层确实只有 `O(log n)` 轮。但内层并不是固定执行 `n` 次，而是执行当前的 `i` 次。因此各轮真正的工作量为：
 
 ```text
-1 + 2 + 4 + 8 + … + n/2 = n - 1
+1 + 2 + 4 + 8 + … + L = 2L - 1
 ```
 
-所以选 **B，O(n)**。
+其中 `L` 是小于 `n` 的最大 2 的幂，满足 `n/2 ≤ L < n`。只有 `n` 恰为 2 的幂时，才有 `L=n/2`、总和 `n-1`；一般情况仍是 `Θ(n)`，所以选 **B，O(n)**。
 
 最关键的区别是：程序变量 `i` 不是“轮数”。第 `k` 轮时，`i` 约为 `2^(k-1)`，所以第 `k` 轮做的是 `2^(k-1)` 次，并不是 `k` 次。也不能写成 `i × log n`，因为 `i` 每一轮都在变化，没有一个固定的 `i` 可以拿出来相乘。
 
@@ -184,6 +191,7 @@ x + 1 ≤ √n
 
 ---
 
+<a id="q08"></a>
 ## 08｜2023-01：直接定位和完成整个操作不是一回事
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
@@ -206,6 +214,7 @@ x + 1 ≤ √n
 
 ---
 
+<a id="q09"></a>
 ## 09｜2025-01：根号 n 轮，每轮做 i 次，为什么是 n
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
@@ -234,7 +243,7 @@ x + 1 ≤ √n
 
 | 结构 | 每轮工作量 | 总和 |
 | --- | --- | --- |
-| 外层翻倍，共 `log n` 轮 | `1，2，4，…，n/2` | `Θ(n)` |
+| 外层翻倍，共 `log n` 轮 | `1，2，4，…，L`，其中 `n/2≤L<n` | `Θ(n)` |
 | 外层递增到 `√n` | `1，2，3，…，√n` | `Θ(n)` |
 | 假设有 `log n` 轮，每轮固定做 `log n` 次 | `log n` 重复 `log n` 轮 | `Θ(log² n)` |
 
