@@ -178,5 +178,41 @@
     "path": "daily-network/2025/1005.md",
     "status": "explained",
     "recall": "把“1、2脚发送数据”中的真正谓语找出来，解释为何不是机械特性。"
+  },
+  "2025-1006": {
+    "skill": "line-code",
+    "path": "daily-network/2025/1006.md",
+    "status": "explained",
+    "recall": "遮住选项：检查的是位中点还是位边界？用连续11说明为何不属于曼彻斯特。"
+  },
+  "2025-1007": {
+    "skill": "modulation",
+    "path": "daily-network/2025/1007.md",
+    "status": "explained",
+    "recall": "分两步回答：为什么是16而不是4？0111与四个最近邻分别差哪一位？"
+  },
+  "2025-1008": {
+    "skill": "capacity-bdp",
+    "path": "daily-network/2025/1008.md",
+    "status": "explained",
+    "recall": "先算15、再算4、最后算5μs：三个数分别代表什么？为什么最终单位是比特？"
+  },
+  "2025-1009": {
+    "skill": "capacity",
+    "path": "daily-network/2025/1009.md",
+    "status": "explained",
+    "recall": "不看公式直接写两个约束各依赖哪些量，然后解释为什么要把30dB换成1000。"
+  },
+  "2025-1010": {
+    "skill": "line-code",
+    "path": "daily-network/2025/1010.md",
+    "status": "explained",
+    "recall": "只用第一位完成辨认：S1位起点变没变？S3位中点向哪边跳？"
+  },
+  "2025-1011": {
+    "skill": "cdma",
+    "path": "daily-network/2025/1011.md",
+    "status": "explained",
+    "recall": "为什么不能把−S1分配给新站？不看解析算(1,1,1,1)与两站的内积。"
   }
 }
