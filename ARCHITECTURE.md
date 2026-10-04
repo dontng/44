@@ -1,77 +1,30 @@
 # 项目地图
 
-这份地图描述仓库**现在实际存在并运行的结构**。它不是未来架构设想；目录定位发生变化时，应先更新这里，再决定是否移动文件。
+## 当前学习链
 
-## 主流程
+[真题题单](src/README.md)与相邻的 `MMDD-answer.md` 是唯一真题教学主线。[计网每日一题](daily-network/README.md)是补充训练；[代码](code/README.md)用于追踪和实现，不额外制造一套必读课程。解析生产完成不等于个人掌握。
 
-[选择题切图](bank/) → [选择题能力线](data/ability_lines.json) → [0731—0908 题单](src/) → [作答与判分](data/) → [TLDR 解析与验证](tldr/)
+## 保留的基础
 
-[Git 历史首批题图 + 原卷题号边界](data/written_markers.json) → [完整大题图](bank/) → [大题线定义](data/written_lines.json) → [0914 起大题题单](src/)
+| 路径 | 职责 |
+| --- | --- |
+| `src/` | 59份题单、59份教学稿与少量已完成的专项验收 |
+| `src/answer-quality/` | 真实教学纠偏、质量约束、已教能力账本 |
+| `src/pdf/` | 59份题单PDF；题面不重复裁剪 |
+| `daily-network/` | 原视频题图、来源、解析与闭卷复盘 |
+| `code/` | 27个独立C程序；用 `bash code/check.sh` 验证样例 |
+| `bank/` | 680张选择题图、119张完整大题图；不能移动导致引用断裂 |
+| `past_papers/` | 原卷，校验题面与裁图的依据 |
+| `data/ability_lines.json`、`question_chain.json` | 选择题归类与编译后题链 |
+| `data/written_lines.json`、`written_chain.json` | 完整大题归类与题链 |
+| `data/written_markers.json`等 | 大题边界、历史题图来源与裁图审计 |
+| `data/answers/`、`results/`、`progress/` | 历史作答证据；不覆盖，不据此假定当前掌握 |
+| `data/reference/answers/` | 选择题参考答案；2025年文件仍标待核，不能冒充官方复核 |
+| `data/rosters/` | 构建所得题号清单及历史题单，保留来源关系 |
+| `tools/`、`tests/` | 内容构建和必要校验；不是用户的学习任务 |
 
-日常学习只需要从下面三个入口进入：
+## 历史内容
 
-- [src/](src/)：0731—0908 是已经封口的 40 条选择题能力线；0914 起是大题训练线。
-- [tldr/](tldr/)：题目解析、纠错、迁移验证和后续回看。
-- [navigator/](navigator/)：时间与现实约束的管理系统，不参与题目判分。
+`navigator/`、`draft/` 在 [archive/pre-review-20261004](https://github.com/dontng/44/tree/archive/pre-review-20261004) 保留原貌，当前分支不再执行其中的计划。旧TLDR解析保留用于查证首次作答、旧解释与验证，不再承担现行规范。
 
-## 可点击目录树
-
-- [`408-from-44/`](./)：408 提分项目
-  - [src/](src/)：当前题单；`0731.md` 至 `0908.md` 为选择题能力线，`0914.md` 起为大题线
-  - [daily-network/](daily-network/)：湖科大教书匠网络“每日一题”；按发布年份管理 2025、2026 两季，保存来源、最小题意、首次作答和紧凑讲解
-  - [tldr/](tldr/)：当前解析协议及已生成的 TLDR
-  - [data/](data/)：程序读取和生成的机器数据
-    - [ability_lines.json](data/ability_lines.json)：能力线的源定义
-    - [question_chain.json](data/question_chain.json)：由能力线编译出的链表关系
-    - [written_markers.json](data/written_markers.json)：2009—2025 年 41—47 题的已复核边界，以及必须保留的历史题图
-    - [written_historical_seeds.json](data/written_historical_seeds.json)：首批 15 张 Git 历史题图的像素来源
-    - [written_lines.json](data/written_lines.json)：119 道完整大题的唯一主归类
-    - [written_chain.json](data/written_chain.json)：由大题线编译出的链表关系
-    - [rosters/](data/rosters/)：答题卡读取的节点题目
-    - [answers/](data/answers/)：你的作答记录
-    - [results/](data/results/)：判分结果
-    - [progress/](data/progress/)：不可覆盖的进度事件及其派生状态
-    - [reference/answers/](data/reference/answers/)：判分程序读取的标准答案
-  - [tools/](tools/)：构建、答题、判分和维护脚本；目前没有再划分 `runtime/`、`build/`
-  - [tests/](tests/)：能力线链和 TLDR 工具的自动检查
-  - [navigator/](navigator/)：独立的时间助理子系统
-  - [archive/](archive/)：已经从当前程序中切除的旧题单、旧调度和历史设计
-
-<details>
-<summary>原始材料：日常不必直接进入</summary>
-
-- [past_papers/](past_papers/)：2009—2025 年真题原卷。
-- [bank/](bank/)：680 道选择题图片和 119 道完整大题图片；历史已有题图保留，其余大题按相邻题号边界切出并处理跨页拼接。
-- [data/reference/answers/](data/reference/answers/)：按年份保存的选择题标准答案。它已从根目录折叠到机器数据层，日常不必直接进入。
-
-</details>
-
-<details>
-<summary>根目录命令：日常实际操作</summary>
-
-- [`./today.sh MMDD`](today.sh)：显示指定能力线节点。
-- [`./answer.sh MMDD`](answer.sh)：打开答题卡并记录作答。
-- [`./tldr.sh MMDD`](tldr.sh)：从判分结果建立 TLDR。
-- [`./tldr.sh --check MMDD`](tldr.sh)：检查 TLDR 结构是否完整。
-
-</details>
-
-## `tools/` 内部职责
-
-下面的 `runtime` 和 `build` 是职责分类，不是已经存在的子目录。
-
-- 当前运行链：[show_question_node.py](tools/show_question_node.py)、[answer.py](tools/answer.py)、[grade_today.py](tools/grade_today.py)、[progress.py](tools/progress.py)、[new_tldr.py](tools/new_tldr.py)、[check_tldr.py](tools/check_tldr.py)。
-- 题库与能力线构建：[slice_paper.py](tools/slice_paper.py)、[slice_paper_ocr.py](tools/slice_paper_ocr.py)、[slice_written_papers.py](tools/slice_written_papers.py)、[extract_answers.py](tools/extract_answers.py)、[build_question_chain.py](tools/build_question_chain.py)、[recover_written_questions.py](tools/recover_written_questions.py)、[build_written_chain.py](tools/build_written_chain.py)。
-- 图片与仓库维护：[imgtrim.py](tools/imgtrim.py)、[patch_q.py](tools/patch_q.py) 及 Git 辅助脚本。
-
-旧 `select_today`、`studio`、固定配额策略及其测试已经整体移入
-[archive/scheduler-v1/](archive/scheduler-v1/)，当前程序不再兼容这套调度。
-
-## 整理原则
-
-1. `src/` 与 `tldr/` 是当前学习主线，整理不能改变它们的入口。
-2. 大量题单已经引用 `bank/`，因此题图暂不移动；不直接使用的标准答案收在 `data/reference/`。
-3. `daily-network/` 是补充训练线，不并入 `src/` 的真题能力线；公开视频只保存链接和必要的最小裁图，不批量转载画面。
-4. `archive/` 是冻结区，不承担运行兼容；当前代码不得反向依赖归档内容。
-5. 项目结构以是否降低学习摩擦为标准；没有运行收益的目录重命名不优先。
-6. 大题只接收能够确认完整边界的材料；一道完整题只进入一个主组，混合机制通过前置线连接，不能按小问拆散到不同节点。
+题链索引和页面有人工作业，重建工具必须保护已有入口与手工内容。普通学习不需要重建题库、切图或重新导出全部PDF；只有对应材料改变时才处理必要输出。
