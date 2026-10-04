@@ -286,5 +286,41 @@
     "path": "daily-network/2025/1023.md",
     "status": "explained",
     "recall": "只看哪个十六进制位就能检查常数项？为什么0x38的问题与最高位前面的零无关？"
+  },
+  "2025-1024": {
+    "skill": "routing",
+    "path": "daily-network/2025/1024.md",
+    "status": "explained",
+    "recall": "在图上只追踪去192.168.1.1的下一跳，找出首次回到旧路由器的地方。什么字段阻止无限转圈？"
+  },
+  "2025-1025": {
+    "skill": "arq-window",
+    "path": "daily-network/2025/1025.md",
+    "status": "explained",
+    "recall": "为何2⁶=64仍不够？写出完整不等式，而非只算log₂64。"
+  },
+  "2025-1026": {
+    "skill": "fragmentation",
+    "path": "daily-network/2025/1026.md",
+    "status": "explained",
+    "recall": "从3792开始按层列出3800、3820、1400、1020各代表什么。"
+  },
+  "2025-1027": {
+    "skill": "arq-window",
+    "path": "daily-network/2025/1027.md",
+    "status": "explained",
+    "recall": "为什么要把8变成16再求编号位数？画出两个不重叠的8个序号窗口。"
+  },
+  "2025-1028": {
+    "skill": "arq-window",
+    "path": "daily-network/2025/1028.md",
+    "status": "explained",
+    "recall": "为什么SR虽然重传更精细，这题仍不能排在GBN上面？什么时候三者可以相等？"
+  },
+  "2025-1029": {
+    "skill": "application",
+    "path": "daily-network/2025/1029.md",
+    "status": "explained",
+    "recall": "给三条箭头各写通信端点，再确定协议。SMTP出现在哪两种角色之间？"
   }
 }
