@@ -70,5 +70,41 @@
     "path": "daily-network/2025/0917.md",
     "status": "explained",
     "recall": "接收端窗口恢复通知丢失后，双方各在等什么？哪种探测能解除这种停顿？"
+  },
+  "2025-0918": {
+    "skill": "ip-multicast",
+    "path": "daily-network/2025/0918.md",
+    "status": "explained",
+    "recall": "不要整串转二进制：226.0.9.26与226.128.9.26究竟差在哪一位？这一位是否被保留进MAC？"
+  },
+  "2025-0919": {
+    "skill": "ipv6",
+    "path": "daily-network/2025/0919.md",
+    "status": "explained",
+    "recall": "说出IPv6替代ARP的机制、基本首部是否有检验和、为何没有广播仍可向一组主机发送。"
+  },
+  "2025-0920": {
+    "skill": "wifi-backoff",
+    "path": "daily-network/2025/0920.md",
+    "status": "explained",
+    "recall": "把四种情形分成：新到达且满足空闲条件、连续发送、重传、遇忙。哪一种可不新增随机退避？还必须等什么？"
+  },
+  "2025-0921": {
+    "skill": "http-state",
+    "path": "daily-network/2025/0921.md",
+    "status": "explained",
+    "recall": "两次HTTP请求如何被关联到同一会话？分别说出Set-Cookie、浏览器保存和Cookie请求首部是谁做的。"
+  },
+  "2025-0922": {
+    "skill": "wifi-nav",
+    "path": "daily-network/2025/0922.md",
+    "status": "explained",
+    "recall": "终止交换的ACK里Duration为0，能否据此说ACK没有Duration字段？本题问存在性还是一定更新？"
+  },
+  "2025-0923": {
+    "skill": "bgp",
+    "path": "daily-network/2025/0923.md",
+    "status": "explained",
+    "recall": "若一路LOCAL-PREF高但AS路径长，另一路LOCAL-PREF低但AS路径短，先比较哪一个？热土豆到底在缩短哪段路？"
   }
 }
