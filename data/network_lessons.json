@@ -358,5 +358,41 @@
     "path": "daily-network/2025/1104.md",
     "status": "explained",
     "recall": "不看解析，给去程三段各写MAC源/目的，再写一遍IP源/目的；它们哪一层随跳改变？"
+  },
+  "2025-1105": {
+    "skill": "integrated-lan",
+    "path": "daily-network/2025/1105.md",
+    "status": "explained",
+    "recall": "先不做8问全套，只闭卷画出三个网段、两条网关、一次NAT前后地址；再解释为什么交换机初始表空却不必把P1泛洪。"
+  },
+  "2025-1106": {
+    "skill": "subnet",
+    "path": "daily-network/2025/1106.md",
+    "status": "explained",
+    "recall": "为什么48也要/26，而30恰好可/27？写出完整256地址的容量账。"
+  },
+  "2025-1107": {
+    "skill": "http-state",
+    "path": "daily-network/2025/1107.md",
+    "status": "explained",
+    "recall": "画出Set-Cookie的方向和下一次Cookie的方向；加密发生在哪一层？"
+  },
+  "2025-1108": {
+    "skill": "error-control",
+    "path": "daily-network/2025/1108.md",
+    "status": "explained",
+    "recall": "分四次独立算：奇偶位、CRC余数、海明四组校验、16位进位回卷。每次写清位序与单位。"
+  },
+  "2025-1109": {
+    "skill": "bgp",
+    "path": "daily-network/2025/1109.md",
+    "status": "explained",
+    "recall": "连接数应数物理链路还是BGP发言人之间的逻辑会话？这题得1依赖哪个隐含条件？"
+  },
+  "2025-1110": {
+    "skill": "tcp-congestion",
+    "path": "daily-network/2025/1110.md",
+    "status": "explained",
+    "recall": "先算填满RTT需要多少字节，再列第13/14轮窗口。第1轮的指数为什么是0？"
   }
 }
