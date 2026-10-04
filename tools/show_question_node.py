@@ -46,10 +46,9 @@ def main():
     print(f"{node['key']} · {node['title']}")
     print(node["file"])
     print(" ".join(node["questions"]))
-    if mode == "choice":
-        print(f"答题卡：http://127.0.0.1:8409/?date={key}")
-    else:
-        print("模式：大题完整作答（暂不进入选择题答题卡）")
+    print(f"讲解：src/{key}-answer.md")
+    print("先独立作答；复做记录写新事件，不覆盖历史首次作答。")
+
 
 
 if __name__ == "__main__":
