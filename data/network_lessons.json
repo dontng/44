@@ -3,576 +3,864 @@
     "skill": "ip-address",
     "path": "daily-network/2025/0906.md",
     "status": "explained",
-    "recall": "不看解析：分别写出默认路由的前缀、首次DHCP发现的源/目的IPv4地址、OSPF骨干区域编号。三处的0各在表示什么？"
+    "recall": "不看解析：分别写出默认路由的前缀、首次DHCP发现的源/目的IPv4地址、OSPF骨干区域编号。三处的0各在表示什么？",
+    "title": "特殊目的地址与DHCP源地址",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0907": {
     "skill": "dhcp",
     "path": "daily-network/2025/0907.md",
     "status": "explained",
-    "recall": "给DISCOVER、OFFER、REQUEST、RELEASE分别标上客户端C或服务器S；再解释为何RELEASE不是服务器发出的回收通知。"
+    "recall": "给DISCOVER、OFFER、REQUEST、RELEASE分别标上客户端C或服务器S；再解释为何RELEASE不是服务器发出的回收通知。",
+    "title": "DHCP客户端与服务器报文角色",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0908": {
     "skill": "ppp",
     "path": "daily-network/2025/0908.md",
     "status": "explained",
-    "recall": "按因果补齐：链路建立 → 可选鉴别 → ？ → 可以传送相应网络层分组。鉴别成功还缺哪类配置？"
+    "recall": "按因果补齐：链路建立 → 可选鉴别 → ？ → 可以传送相应网络层分组。鉴别成功还缺哪类配置？",
+    "title": "PPP阶段与NCP",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0909": {
     "skill": "dhcp",
     "path": "daily-network/2025/0909.md",
     "status": "explained",
-    "recall": "不用四个英文词的首字母背口诀，按“谁有什么信息”恢复初次获取的四步。客户端收到OFFER为何还要REQUEST？"
+    "recall": "不用四个英文词的首字母背口诀，按“谁有什么信息”恢复初次获取的四步。客户端收到OFFER为何还要REQUEST？",
+    "title": "DHCP初次申请与续租",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0910": {
     "skill": "transport-service",
     "path": "daily-network/2025/0910.md",
     "status": "explained",
-    "recall": "不看选项字母：把DHCP、HTTP/1.x/2、FTP、POP3各自接到UDP或TCP，说明“不可靠”是哪一层不承诺什么。"
+    "recall": "不看选项字母：把DHCP、HTTP/1.x/2、FTP、POP3各自接到UDP或TCP，说明“不可靠”是哪一层不承诺什么。",
+    "title": "应用协议与可靠传输",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0911": {
     "skill": "hamming",
     "path": "daily-network/2025/0911.md",
     "status": "explained",
-    "recall": "从“需要区分哪些情况”写出不等式，求11位数据的最少校验位和编码效率。式子末尾的+1表示什么？"
+    "recall": "从“需要区分哪些情况”写出不等式，求11位数据的最少校验位和编码效率。式子末尾的+1表示什么？",
+    "title": "海明冗余位与编码效率",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0912": {
     "skill": "delay",
     "path": "daily-network/2025/0912.md",
     "status": "explained",
-    "recall": "为什么R×传播时延的单位是bit？若用R×发送时延，算出的又是什么？"
+    "recall": "为什么R×传播时延的单位是bit？若用R×发送时延，算出的又是什么？",
+    "title": "时延带宽积的物理含义",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0913": {
     "skill": "hamming",
     "path": "daily-network/2025/0913.md",
     "status": "explained",
-    "recall": "从右向左编号，写出四个偶校验组，特别检查H₁₁属于哪些组。综合结果指向哪个位置？"
+    "recall": "从右向左编号，写出四个偶校验组，特别检查H₁₁属于哪些组。综合结果指向哪个位置？",
+    "title": "海明综合症与纠单错",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0914": {
     "skill": "mac-access",
     "path": "daily-network/2025/0914.md",
     "status": "explained",
-    "recall": "按“是否需要时隙同步、是否要先侦听”区分四种方案。选择最简单方案时牺牲的是什么？"
+    "recall": "按“是否需要时隙同步、是否要先侦听”区分四种方案。选择最简单方案时牺牲的是什么？",
+    "title": "纯ALOHA的同步代价",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0915": {
     "skill": "ppp-stuffing",
     "path": "daily-network/2025/0915.md",
     "status": "explained",
-    "recall": "不背选项：在原串中圈出要转义的五个字节，写出03、1B各自如何变换。为什么新插入的7D不再处理？"
+    "recall": "不背选项：在原串中圈出要转义的五个字节，写出03、1B各自如何变换。为什么新插入的7D不再处理？",
+    "title": "PPP异步字符转义与ACCM",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0916": {
     "skill": "mac-access",
     "path": "daily-network/2025/0916.md",
     "status": "explained",
-    "recall": "给四种协议各写一种获得发送机会的方式，再圈出不靠竞争取得机会的两种。"
+    "recall": "给四种协议各写一种获得发送机会的方式，再圈出不靠竞争取得机会的两种。",
+    "title": "随机与受控介质访问",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0917": {
     "skill": "tcp-window",
     "path": "daily-network/2025/0917.md",
     "status": "explained",
-    "recall": "接收端窗口恢复通知丢失后，双方各在等什么？哪种探测能解除这种停顿？"
+    "recall": "接收端窗口恢复通知丢失后，双方各在等什么？哪种探测能解除这种停顿？",
+    "title": "TCP零窗口与持续计时器",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0918": {
     "skill": "ip-multicast",
     "path": "daily-network/2025/0918.md",
     "status": "explained",
-    "recall": "不要整串转二进制：226.0.9.26与226.128.9.26究竟差在哪一位？这一位是否被保留进MAC？"
+    "recall": "不要整串转二进制：226.0.9.26与226.128.9.26究竟差在哪一位？这一位是否被保留进MAC？",
+    "title": "IPv4组播到MAC的23位映射",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0919": {
     "skill": "ipv6",
     "path": "daily-network/2025/0919.md",
     "status": "explained",
-    "recall": "说出IPv6替代ARP的机制、基本首部是否有检验和、为何没有广播仍可向一组主机发送。"
+    "recall": "说出IPv6替代ARP的机制、基本首部是否有检验和、为何没有广播仍可向一组主机发送。",
+    "title": "IPv6地址、校验与邻居发现",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0920": {
     "skill": "wifi-backoff",
     "path": "daily-network/2025/0920.md",
     "status": "explained",
-    "recall": "把四种情形分成：新到达且满足空闲条件、连续发送、重传、遇忙。哪一种可不新增随机退避？还必须等什么？"
+    "recall": "把四种情形分成：新到达且满足空闲条件、连续发送、重传、遇忙。哪一种可不新增随机退避？还必须等什么？",
+    "title": "802.11 DCF退避条件",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0921": {
     "skill": "http-state",
     "path": "daily-network/2025/0921.md",
     "status": "explained",
-    "recall": "两次HTTP请求如何被关联到同一会话？分别说出Set-Cookie、浏览器保存和Cookie请求首部是谁做的。"
+    "recall": "两次HTTP请求如何被关联到同一会话？分别说出Set-Cookie、浏览器保存和Cookie请求首部是谁做的。",
+    "title": "HTTP会话与Cookie",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0922": {
     "skill": "wifi-nav",
     "path": "daily-network/2025/0922.md",
     "status": "explained",
-    "recall": "终止交换的ACK里Duration为0，能否据此说ACK没有Duration字段？本题问存在性还是一定更新？"
+    "recall": "终止交换的ACK里Duration为0，能否据此说ACK没有Duration字段？本题问存在性还是一定更新？",
+    "title": "802.11 Duration与NAV",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0923": {
     "skill": "bgp",
     "path": "daily-network/2025/0923.md",
     "status": "explained",
-    "recall": "若一路LOCAL-PREF高但AS路径长，另一路LOCAL-PREF低但AS路径短，先比较哪一个？热土豆到底在缩短哪段路？"
+    "recall": "若一路LOCAL-PREF高但AS路径长，另一路LOCAL-PREF低但AS路径短，先比较哪一个？热土豆到底在缩短哪段路？",
+    "title": "BGP路径选择的相对顺序",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0924": {
     "skill": "checksum",
     "path": "daily-network/2025/0924.md",
     "status": "explained",
-    "recall": "分别回答：FCS在哪；IPv4检验和盖住哪部分；UDP不可靠是否等于不检错；TCP伪首部是否实际单独发送。"
+    "recall": "分别回答：FCS在哪；IPv4检验和盖住哪部分；UDP不可靠是否等于不检错；TCP伪首部是否实际单独发送。",
+    "title": "分层检验和覆盖范围",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0925": {
     "skill": "ip-forward",
     "path": "daily-network/2025/0925.md",
     "status": "explained",
-    "recall": "“不转发”至少有哪些不同结局？将Ⅰ—Ⅳ分别放入本机处理、校验失败、TTL耗尽。"
+    "recall": "“不转发”至少有哪些不同结局？将Ⅰ—Ⅳ分别放入本机处理、校验失败、TTL耗尽。",
+    "title": "路由器接收但不继续转发的情况",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0926": {
     "skill": "wifi-address",
     "path": "daily-network/2025/0926.md",
     "status": "explained",
-    "recall": "在A→AP1→AP2→B中圈出题问的一跳，再写To DS、From DS。为何WDS常需四个地址？"
+    "recall": "在A→AP1→AP2→B中圈出题问的一跳，再写To DS、From DS。为何WDS常需四个地址？",
+    "title": "WDS四地址与ToDS/FromDS",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0927": {
     "skill": "icmp",
     "path": "daily-network/2025/0927.md",
     "status": "explained",
-    "recall": "未知中间路由器地址时，如何让第k跳“自己报告”？探测包的目的地址到底填谁？"
+    "recall": "未知中间路由器地址时，如何让第k跳“自己报告”？探测包的目的地址到底填谁？",
+    "title": "traceroute与TTL超时",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0928": {
     "skill": "ospf",
     "path": "daily-network/2025/0928.md",
     "status": "explained",
-    "recall": "依次给Hello、DBD、LSR、LSU各配一个动作：找邻居、对目录、要正文、送正文。哪一种承担LSA洪泛？"
+    "recall": "依次给Hello、DBD、LSR、LSU各配一个动作：找邻居、对目录、要正文、送正文。哪一种承担LSA洪泛？",
+    "title": "OSPF LSU与可靠泛洪",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0929": {
     "skill": "ppp-stuffing",
     "path": "daily-network/2025/0929.md",
     "status": "explained",
-    "recall": "标出接收串中两个应删除的0，只删这两位并拼回。删完以后原数据里能否出现连续六个1？"
+    "recall": "标出接收串中两个应删除的0，只删这两位并拼回。删完以后原数据里能否出现连续六个1？",
+    "title": "PPP比特去填充",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-0930": {
     "skill": "ip-address",
     "path": "daily-network/2025/0930.md",
     "status": "explained",
-    "recall": "不看选项，恢复172私有段的起止范围。172.31.255.253为何不能仅凭255判成广播？"
+    "recall": "不看选项，恢复172私有段的起止范围。172.31.255.253为何不能仅凭255判成广播？",
+    "title": "私有地址与子网广播的区别",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1001": {
     "skill": "packetization",
     "path": "daily-network/2025/1001.md",
     "status": "explained",
-    "recall": "不背根号公式：为什么总发送轮数是包数+1？把会随x变化的两项单独写出来。"
+    "recall": "不背根号公式：为什么总发送轮数是包数+1？把会随x变化的两项单独写出来。",
+    "title": "两段链路的最优分组长度",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1002": {
     "skill": "delay",
     "path": "daily-network/2025/1002.md",
     "status": "explained",
-    "recall": "为什么用10而不是100或1000Mb/s？“两个时延相等”如何把Rτ化成报文长度？"
+    "recall": "为什么用10而不是100或1000Mb/s？“两个时延相等”如何把Rτ化成报文长度？",
+    "title": "发送/传播时延与瓶颈",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1003": {
     "skill": "encapsulation",
     "path": "daily-network/2025/1003.md",
     "status": "explained",
-    "recall": "画出线上由外到内三段：IPv4首部、IPv6首部、PDU，并各写长度。效率分子的有效数据是谁？"
+    "recall": "画出线上由外到内三段：IPv4首部、IPv6首部、PDU，并各写长度。效率分子的有效数据是谁？",
+    "title": "IPv6经IPv4隧道的封装效率",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1004": {
     "skill": "encapsulation",
     "path": "daily-network/2025/1004.md",
     "status": "explained",
-    "recall": "OSPF后面直接接哪一层？把200B之外必需的20、14、4分别说清。为什么不用补齐46B？"
+    "recall": "OSPF后面直接接哪一层？把200B之外必需的20、14、4分别说清。为什么不用补齐46B？",
+    "title": "OSPF Hello以太网封装效率",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1005": {
     "skill": "physical-interface",
     "path": "daily-network/2025/1005.md",
     "status": "explained",
-    "recall": "把“1、2脚发送数据”中的真正谓语找出来，解释为何不是机械特性。"
+    "recall": "把“1、2脚发送数据”中的真正谓语找出来，解释为何不是机械特性。",
+    "title": "物理接口的四类特性",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1006": {
     "skill": "line-code",
     "path": "daily-network/2025/1006.md",
     "status": "explained",
-    "recall": "遮住选项：检查的是位中点还是位边界？用连续11说明为何不属于曼彻斯特。"
+    "recall": "遮住选项：检查的是位中点还是位边界？用连续11说明为何不属于曼彻斯特。",
+    "title": "双极性不归零编码",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1007": {
     "skill": "modulation",
     "path": "daily-network/2025/1007.md",
     "status": "explained",
-    "recall": "分两步回答：为什么是16而不是4？0111与四个最近邻分别差哪一位？"
+    "recall": "分两步回答：为什么是16而不是4？0111与四个最近邻分别差哪一位？",
+    "title": "16-QAM与格雷标记",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1008": {
     "skill": "capacity-bdp",
     "path": "daily-network/2025/1008.md",
     "status": "explained",
-    "recall": "先算15、再算4、最后算5μs：三个数分别代表什么？为什么最终单位是比特？"
+    "recall": "先算15、再算4、最后算5μs：三个数分别代表什么？为什么最终单位是比特？",
+    "title": "香农容量与时延带宽积",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1009": {
     "skill": "capacity",
     "path": "daily-network/2025/1009.md",
     "status": "explained",
-    "recall": "不看公式直接写两个约束各依赖哪些量，然后解释为什么要把30dB换成1000。"
+    "recall": "不看公式直接写两个约束各依赖哪些量，然后解释为什么要把30dB换成1000。",
+    "title": "奈氏/香农联合约束与dB",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1010": {
     "skill": "line-code",
     "path": "daily-network/2025/1010.md",
     "status": "explained",
-    "recall": "只用第一位完成辨认：S1位起点变没变？S3位中点向哪边跳？"
+    "recall": "只用第一位完成辨认：S1位起点变没变？S3位中点向哪边跳？",
+    "title": "差分曼彻斯特转换",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1011": {
     "skill": "cdma",
     "path": "daily-network/2025/1011.md",
     "status": "explained",
-    "recall": "为什么不能把−S1分配给新站？不看解析算(1,1,1,1)与两站的内积。"
+    "recall": "为什么不能把−S1分配给新站？不看解析算(1,1,1,1)与两站的内积。",
+    "title": "CDMA正交码分配",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1012": {
     "skill": "csma-cd",
     "path": "daily-network/2025/1012.md",
     "status": "explained",
-    "recall": "窗口为什么不是2¹²？1024²种选择中，为什么只有1024种会相撞？"
+    "recall": "窗口为什么不是2¹²？1024²种选择中，为什么只有1024种会相撞？",
+    "title": "CSMA/CD退避窗口与条件概率",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1013": {
     "skill": "mac-address",
     "path": "daily-network/2025/1013.md",
     "status": "explained",
-    "recall": "为什么0A不是全球单播？不要看首字节最左边两位，应看哪两位？"
+    "recall": "为什么0A不是全球单播？不要看首字节最左边两位，应看哪两位？",
+    "title": "MAC全局单播地址位",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1014": {
     "skill": "address-space",
     "path": "daily-network/2025/1014.md",
     "status": "explained",
-    "recall": "先写S1、S2、S3再做比较。为什么位数多16不是地址只多16个？"
+    "recall": "先写S1、S2、S3再做比较。为什么位数多16不是地址只多16个？",
+    "title": "地址位数与地址空间数量",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1015": {
     "skill": "cdma",
     "path": "daily-network/2025/1015.md",
     "status": "explained",
-    "recall": "遮住答案，先排除一个候选码，再列三次归一化内积。"
+    "recall": "遮住答案，先排除一个候选码，再列三次归一化内积。",
+    "title": "CDMA相关解码",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1016": {
     "skill": "ip-address",
     "path": "daily-network/2025/1016.md",
     "status": "explained",
-    "recall": "192.168.0.128/25的7个主机位是什么？127段有哪些地址属于环回？"
+    "recall": "192.168.0.128/25的7个主机位是什么？127段有哪些地址属于环回？",
+    "title": "特殊IPv4地址与接口分配",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1017": {
     "skill": "subnet",
     "path": "daily-network/2025/1017.md",
     "status": "explained",
-    "recall": "写出包含.69的/27网络、广播和主机范围。为什么.63有两重问题？"
+    "recall": "写出包含.69的/27网络、广播和主机范围。为什么.63有两重问题？",
+    "title": "/27主机地址边界",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1018": {
     "skill": "subnet",
     "path": "daily-network/2025/1018.md",
     "status": "explained",
-    "recall": "画四次二分，解释为什么要5块却只分4次。最后一对小块各有多少地址？"
+    "recall": "画四次二分，解释为什么要5块却只分4次。最后一对小块各有多少地址？",
+    "title": "完整CIDR五块划分",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1019": {
     "skill": "fragmentation",
     "path": "daily-network/2025/1019.md",
     "status": "explained",
-    "recall": "只列三个量：原第二片起点、再分片增加的偏移、它后面是否还有原数据。"
+    "recall": "只列三个量：原第二片起点、再分片增加的偏移、它后面是否还有原数据。",
+    "title": "IPv4再分片的MF与偏移",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1020": {
     "skill": "routing",
     "path": "daily-network/2025/1020.md",
     "status": "explained",
-    "recall": "站在R2看图，哪些网络有自己的接口直接连着？去左侧LAN的下一跳为何不是192.168.1.254？"
+    "recall": "站在R2看图，哪些网络有自己的接口直接连着？去左侧LAN的下一跳为何不是192.168.1.254？",
+    "title": "静态路由与直连路由",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1021": {
     "skill": "line-code",
     "path": "daily-network/2025/1021.md",
     "status": "explained",
-    "recall": "用连续十个1或0检验各编码：有没有规则保证每位仍可找到时钟线索？"
+    "recall": "用连续十个1或0检验各编码：有没有规则保证每位仍可找到时钟线索？",
+    "title": "线路编码与自同步",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1022": {
     "skill": "checksum",
     "path": "daily-network/2025/1022.md",
     "status": "explained",
-    "recall": "最高位进位怎么处理？计算范围为什么不仅是应用数据？"
+    "recall": "最高位进位怎么处理？计算范围为什么不仅是应用数据？",
+    "title": "UDP反码算术求和",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1023": {
     "skill": "crc",
     "path": "daily-network/2025/1023.md",
     "status": "explained",
-    "recall": "只看哪个十六进制位就能检查常数项？为什么0x38的问题与最高位前面的零无关？"
+    "recall": "只看哪个十六进制位就能检查常数项？为什么0x38的问题与最高位前面的零无关？",
+    "title": "CRC生成多项式的常数项",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1024": {
     "skill": "routing",
     "path": "daily-network/2025/1024.md",
     "status": "explained",
-    "recall": "在图上只追踪去192.168.1.1的下一跳，找出首次回到旧路由器的地方。什么字段阻止无限转圈？"
+    "recall": "在图上只追踪去192.168.1.1的下一跳，找出首次回到旧路由器的地方。什么字段阻止无限转圈？",
+    "title": "静态路由环路与ICMP",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1025": {
     "skill": "arq-window",
     "path": "daily-network/2025/1025.md",
     "status": "explained",
-    "recall": "为何2⁶=64仍不够？写出完整不等式，而非只算log₂64。"
+    "recall": "为何2⁶=64仍不够？写出完整不等式，而非只算log₂64。",
+    "title": "GBN窗口与序号空间",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1026": {
     "skill": "fragmentation",
     "path": "daily-network/2025/1026.md",
     "status": "explained",
-    "recall": "从3792开始按层列出3800、3820、1400、1020各代表什么。"
+    "recall": "从3792开始按层列出3800、3820、1400、1020各代表什么。",
+    "title": "UDP封装后的IPv4分片",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1027": {
     "skill": "arq-window",
     "path": "daily-network/2025/1027.md",
     "status": "explained",
-    "recall": "为什么要把8变成16再求编号位数？画出两个不重叠的8个序号窗口。"
+    "recall": "为什么要把8变成16再求编号位数？画出两个不重叠的8个序号窗口。",
+    "title": "对称SR窗口上界",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1028": {
     "skill": "arq-window",
     "path": "daily-network/2025/1028.md",
     "status": "explained",
-    "recall": "为什么SR虽然重传更精细，这题仍不能排在GBN上面？什么时候三者可以相等？"
+    "recall": "为什么SR虽然重传更精细，这题仍不能排在GBN上面？什么时候三者可以相等？",
+    "title": "SAW/GBN/SR理想利用率",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1029": {
     "skill": "application",
     "path": "daily-network/2025/1029.md",
     "status": "explained",
-    "recall": "给三条箭头各写通信端点，再确定协议。SMTP出现在哪两种角色之间？"
+    "recall": "给三条箭头各写通信端点，再确定协议。SMTP出现在哪两种角色之间？",
+    "title": "网页邮箱三阶段协议",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1030": {
     "skill": "tcp-sequence",
     "path": "daily-network/2025/1030.md",
     "status": "explained",
-    "recall": "32位序号覆盖的是2³²个什么？从BDP恢复速率时用单程还是往返传播时间？"
+    "recall": "32位序号覆盖的是2³²个什么？从BDP恢复速率时用单程还是往返传播时间？",
+    "title": "TCP序号绕回与BDP",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1031": {
     "skill": "network-device",
     "path": "daily-network/2025/1031.md",
     "status": "explained",
-    "recall": "先独立算A/B、C/D的网络号，再决定哪里必须跨子网。"
+    "recall": "先独立算A/B、C/D的网络号，再决定哪里必须跨子网。",
+    "title": "子网边界与互连设备",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1101": {
     "skill": "routing",
     "path": "daily-network/2025/1101.md",
     "status": "explained",
-    "recall": "下一跳是一个IP而非“直接”能推出什么、不能推出什么？"
+    "recall": "下一跳是一个IP而非“直接”能推出什么、不能推出什么？",
+    "title": "由路由表推TTL下界",
+    "minutes": 4,
+    "boundary": true
   },
   "2025-1102": {
     "skill": "routing",
     "path": "daily-network/2025/1102.md",
     "status": "explained",
-    "recall": "不看表，给.3与.4写二进制求公共前缀。为什么新增聚合不改变去.2.132的既有方向？"
+    "recall": "不看表，给.3与.4写二进制求公共前缀。为什么新增聚合不改变去.2.132的既有方向？",
+    "title": "聚合、主机与默认路由",
+    "minutes": 15,
+    "boundary": false
   },
   "2025-1103": {
     "skill": "routing-delay",
     "path": "daily-network/2025/1103.md",
     "status": "explained",
-    "recall": "先选路径，再求速率，最后数包。为什么不是走路由器最少的路线？为什么不是用1Gb/s？"
+    "recall": "先选路径，再求速率，最后数包。为什么不是走路由器最少的路线？为什么不是用1Gb/s？",
+    "title": "OSPF路径、ARP与流水线时间",
+    "minutes": 15,
+    "boundary": false
   },
   "2025-1104": {
     "skill": "routing-arp",
     "path": "daily-network/2025/1104.md",
     "status": "explained",
-    "recall": "不看解析，给去程三段各写MAC源/目的，再写一遍IP源/目的；它们哪一层随跳改变？"
+    "recall": "不看解析，给去程三段各写MAC源/目的，再写一遍IP源/目的；它们哪一层随跳改变？",
+    "title": "RIP路径、逐跳MAC与ARP缓存",
+    "minutes": 15,
+    "boundary": false
   },
   "2025-1105": {
     "skill": "integrated-lan",
     "path": "daily-network/2025/1105.md",
     "status": "explained",
-    "recall": "先不做8问全套，只闭卷画出三个网段、两条网关、一次NAT前后地址；再解释为什么交换机初始表空却不必把P1泛洪。"
+    "recall": "先不做8问全套，只闭卷画出三个网段、两条网关、一次NAT前后地址；再解释为什么交换机初始表空却不必把P1泛洪。",
+    "title": "LAN/NAT/广播域/争用期综合",
+    "minutes": 15,
+    "boundary": false
   },
   "2025-1106": {
     "skill": "subnet",
     "path": "daily-network/2025/1106.md",
     "status": "explained",
-    "recall": "为什么48也要/26，而30恰好可/27？写出完整256地址的容量账。"
+    "recall": "为什么48也要/26，而30恰好可/27？写出完整256地址的容量账。",
+    "title": "VLSM五子网实际需求分配",
+    "minutes": 15,
+    "boundary": false
   },
   "2025-1107": {
     "skill": "http-state",
     "path": "daily-network/2025/1107.md",
     "status": "explained",
-    "recall": "画出Set-Cookie的方向和下一次Cookie的方向；加密发生在哪一层？"
+    "recall": "画出Set-Cookie的方向和下一次Cookie的方向；加密发生在哪一层？",
+    "title": "Cookie存储与传输保护",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1108": {
     "skill": "error-control",
     "path": "daily-network/2025/1108.md",
     "status": "explained",
-    "recall": "分四次独立算：奇偶位、CRC余数、海明四组校验、16位进位回卷。每次写清位序与单位。"
+    "recall": "分四次独立算：奇偶位、CRC余数、海明四组校验、16位进位回卷。每次写清位序与单位。",
+    "title": "奇偶/CRC/海明/Internet检验和综合",
+    "minutes": 15,
+    "boundary": false
   },
   "2025-1109": {
     "skill": "bgp",
     "path": "daily-network/2025/1109.md",
     "status": "explained",
-    "recall": "连接数应数物理链路还是BGP发言人之间的逻辑会话？这题得1依赖哪个隐含条件？"
+    "recall": "连接数应数物理链路还是BGP发言人之间的逻辑会话？这题得1依赖哪个隐含条件？",
+    "title": "iBGP逻辑会话数与部署假设",
+    "minutes": 4,
+    "boundary": true
   },
   "2025-1110": {
     "skill": "tcp-congestion",
     "path": "daily-network/2025/1110.md",
     "status": "explained",
-    "recall": "先算填满RTT需要多少字节，再列第13/14轮窗口。第1轮的指数为什么是0？"
+    "recall": "先算填满RTT需要多少字节，再列第13/14轮窗口。第1轮的指数为什么是0？",
+    "title": "慢开始达到瓶颈的轮次",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1111": {
     "skill": "csma",
     "path": "daily-network/2025/1111.md",
     "status": "explained",
-    "recall": "为什么题目同时限定“降低冲突”和“不显著增加延迟”？用它解释B与C的区别。"
+    "recall": "为什么题目同时限定“降低冲突”和“不显著增加延迟”？用它解释B与C的区别。",
+    "title": "p-坚持CSMA的竞争折中",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1112": {
     "skill": "routing",
     "path": "daily-network/2025/1112.md",
     "status": "explained",
-    "recall": "同一张图分别按代价和跳数选路；再从R6按无权图画三层邻居，标0、30、60秒。"
+    "recall": "同一张图分别按代价和跳数选路；再从R6按无权图画三层邻居，标0、30、60秒。",
+    "title": "OSPF/RIP路径与同步收敛",
+    "minutes": 15,
+    "boundary": true
   },
   "2025-1113": {
     "skill": "ospf",
     "path": "daily-network/2025/1113.md",
     "status": "explained",
-    "recall": "把五个缩写换成动作：发现、对目录、索取、交付、签收，再恢复名称。"
+    "recall": "把五个缩写换成动作：发现、对目录、索取、交付、签收，再恢复名称。",
+    "title": "OSPF数据库同步顺序",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1114": {
     "skill": "arq-window",
     "path": "daily-network/2025/1114.md",
     "status": "explained",
-    "recall": "对比GBN收到ACK5与SR收到ACK1/3/5后的左边界；在SR图上标出旧帧、新帧和可重传帧。"
+    "recall": "对比GBN收到ACK5与SR收到ACK1/3/5后的左边界；在SR图上标出旧帧、新帧和可重传帧。",
+    "title": "不等窗口SR与累积/逐帧确认",
+    "minutes": 15,
+    "boundary": false
   },
   "2025-1115": {
     "skill": "ipv6",
     "path": "daily-network/2025/1115.md",
     "status": "explained",
-    "recall": "为什么两次::不是仅仅“不美观”，而是信息不足？把C恢复到8组试试看。"
+    "recall": "为什么两次::不是仅仅“不美观”，而是信息不足？把C恢复到8组试试看。",
+    "title": "IPv6零压缩合法性",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1116": {
     "skill": "packet-decode",
     "path": "daily-network/2025/1116.md",
     "status": "explained",
-    "recall": "遮住解析，标出14、20、20三段边界；只从字节求源/目的IP、TTL、443、ACK和下一数据序号。"
+    "recall": "遮住解析，标出14、20、20三段边界；只从字节求源/目的IP、TTL、443、ACK和下一数据序号。",
+    "title": "从十六进制帧解码TCP/IP",
+    "minutes": 15,
+    "boundary": true
   },
   "2025-1117": {
     "skill": "ip-header",
     "path": "daily-network/2025/1117.md",
     "status": "explained",
-    "recall": "先列20+2+p，再让总长被4整除。IHL写的是字节数还是4字节单位数？"
+    "recall": "先列20+2+p，再让总长被4整除。IHL写的是字节数还是4字节单位数？",
+    "title": "IPv4选项填充与IHL",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1118": {
     "skill": "tcp-handshake",
     "path": "daily-network/2025/1118.md",
     "status": "explained",
-    "recall": "画两条独立的序号线：甲方向算399→400→500，乙方向不要混入。为什么先收到第4段不把ACK推进到1400？"
+    "recall": "画两条独立的序号线：甲方向算399→400→500，乙方向不要混入。为什么先收到第4段不把ACK推进到1400？",
+    "title": "TCP握手角色、序号与累计ACK",
+    "minutes": 15,
+    "boundary": false
   },
   "2025-1119": {
     "skill": "tcp-timing",
     "path": "daily-network/2025/1119.md",
     "status": "explained",
-    "recall": "在你的时间线上明确写：最后数据是“已发送”还是“已确认”才能发FIN？2MSL从哪个事件开始？"
+    "recall": "在你的时间线上明确写：最后数据是“已发送”还是“已确认”才能发FIN？2MSL从哪个事件开始？",
+    "title": "TCP传输关闭时间的条件边界",
+    "minutes": 15,
+    "boundary": true
   },
   "2025-1121": {
     "skill": "http-delay",
     "path": "daily-network/2025/1121.md",
     "status": "explained",
-    "recall": "用“首次连接／HTML／图片批次”画四行时间，不背8、4、5、3。起算点改变只删除哪一段？"
+    "recall": "用“首次连接／HTML／图片批次”画四行时间，不背8、4、5、3。起算点改变只删除哪一段？",
+    "title": "HTTP连接/流水线与RTT起算点",
+    "minutes": 15,
+    "boundary": false
   },
   "2025-1122": {
     "skill": "dns",
     "path": "daily-network/2025/1122.md",
     "status": "explained",
-    "recall": "example.edu.cn中顶级域是哪一段？一个域名多IP与一个IP多域名是否矛盾？"
+    "recall": "example.edu.cn中顶级域是哪一段？一个域名多IP与一个IP多域名是否矛盾？",
+    "title": "DNS多重映射与.edu政策",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1123": {
     "skill": "checksum",
     "path": "daily-network/2025/1123.md",
     "status": "explained",
-    "recall": "若最终校验值为0x1234，字段填什么？若最终值为0x0000，为什么不能原样填？"
+    "recall": "若最终校验值为0x1234，字段填什么？若最终值为0x0000，为什么不能原样填？",
+    "title": "UDP校验值与零值特殊编码",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1124": {
     "skill": "checksum",
     "path": "daily-network/2025/1124.md",
     "status": "explained",
-    "recall": "不看选项，以十六进制写四个中间值，指出哪步是UDP特有。"
+    "recall": "不看选项，以十六进制写四个中间值，指出哪步是UDP特有。",
+    "title": "反码回卷与UDP零校验值",
+    "minutes": 4,
+    "boundary": false
   },
   "2025-1125": {
     "skill": "ftp-tcp",
     "path": "daily-network/2025/1125.md",
     "status": "explained",
-    "recall": "用段号画每轮发送组，先分清cwnd与min(cwnd,rwnd)。为什么18段用了6个数据批次？"
+    "recall": "用段号画每轮发送组，先分清cwnd与min(cwnd,rwnd)。为什么18段用了6个数据批次？",
+    "title": "FTP连接、被动模式与窗口时间线",
+    "minutes": 15,
+    "boundary": true
   },
   "2026-0907": {
     "skill": "layering",
     "path": "daily-network/2026/0907.md",
     "status": "explained",
-    "recall": "把协议与服务分别放在横向和纵向。某层没有独立命名能否推出功能不存在？"
+    "recall": "把协议与服务分别放在横向和纵向。某层没有独立命名能否推出功能不存在？",
+    "title": "分层体系结构的协议与服务",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0908": {
     "skill": "capacity-bdp",
     "path": "daily-network/2026/0908.md",
     "status": "explained",
-    "recall": "依次写容量、传播时间、乘积的单位。1023是线性功率比还是分贝？"
+    "recall": "依次写容量、传播时间、乘积的单位。1023是线性功率比还是分贝？",
+    "title": "香农上限与首比特到达",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0909": {
     "skill": "hamming",
     "path": "daily-network/2026/0909.md",
     "status": "explained",
-    "recall": "为什么11位信息用4位校验可能够，12位却不够？"
+    "recall": "为什么11位信息用4位校验可能够，12位却不够？",
+    "title": "12位信息的海明冗余位数",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0910": {
     "skill": "capacity-csma",
     "path": "daily-network/2026/0910.md",
     "status": "explained",
-    "recall": "两种容量哪个更紧？为什么碰撞检测要乘往返，而前一道在途量只乘单程？"
+    "recall": "两种容量哪个更紧？为什么碰撞检测要乘往返，而前一道在途量只乘单程？",
+    "title": "双容量约束下的CSMA/CD最短帧",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0911": {
     "skill": "subnet",
     "path": "daily-network/2026/0911.md",
     "status": "explained",
-    "recall": "用末字节区间给Ⅲ、Ⅳ各摆一次，确认没有重叠、没有缺口。"
+    "recall": "用末字节区间给Ⅲ、Ⅳ各摆一次，确认没有重叠、没有缺口。",
+    "title": "/24完整划为五个CIDR块",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0912": {
     "skill": "routing",
     "path": "daily-network/2026/0912.md",
     "status": "explained",
-    "recall": "为什么6与7可以合而5与6不可以？给出聚合后实际覆盖的末字节前缀范围。"
+    "recall": "为什么6与7可以合而5与6不可以？给出聚合后实际覆盖的末字节前缀范围。",
+    "title": "不额外覆盖的精确路由聚合",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0913": {
     "skill": "sdn",
     "path": "daily-network/2026/0913.md",
     "status": "explained",
-    "recall": "分别写出三次交互的两端角色，不借助箭头朝上/朝下猜名字。"
+    "recall": "分别写出三次交互的两端角色，不借助箭头朝上/朝下猜名字。",
+    "title": "SDN北向/南向/东西向接口",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0914": {
     "skill": "reliability",
     "path": "daily-network/2026/0914.md",
     "status": "explained",
-    "recall": "无线链路已经重传，为什么仍需TCP端到端重传？"
+    "recall": "无线链路已经重传，为什么仍需TCP端到端重传？",
+    "title": "HTTP场景的分层可靠机制",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0915": {
     "skill": "routing",
     "path": "daily-network/2026/0915.md",
     "status": "explained",
-    "recall": "把每项标成匹配/不匹配，再在匹配项里写前缀长度。/32为何不参加最后比较？"
+    "recall": "把每项标成匹配/不匹配，再在匹配项里写前缀长度。/32为何不参加最后比较？",
+    "title": "最长前缀匹配先筛选后比较",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0916": {
     "skill": "encapsulation",
     "path": "daily-network/2026/0916.md",
     "status": "explained",
-    "recall": "先算36B再比较46B，填充处在哪一层？填充算不算应用有效数据？"
+    "recall": "先算36B再比较46B，填充处在哪一层？填充算不算应用有效数据？",
+    "title": "8B应用数据与以太网最小帧",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0917": {
     "skill": "routing",
     "path": "daily-network/2026/0917.md",
     "status": "explained",
-    "recall": "把.1.10与.3.166各走一遍：在R1谁的前缀最长？新增黑洞为什么不误杀真实LAN？"
+    "recall": "把.1.10与.3.166各走一遍：在R1谁的前缀最长？新增黑洞为什么不误杀真实LAN？",
+    "title": "聚合空洞、默认路由环路与黑洞",
+    "minutes": 15,
+    "boundary": false
   },
   "2026-0918": {
     "skill": "packetization",
     "path": "daily-network/2026/0918.md",
     "status": "explained",
-    "recall": "不背根号：解释为什么是n+2而不是3n，再从表达式找一大一小两种代价。"
+    "recall": "不背根号：解释为什么是n+2而不是3n，再从表达式找一大一小两种代价。",
+    "title": "三段链路的最优分组长度",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0919": {
     "skill": "collision-domain",
     "path": "daily-network/2026/0919.md",
     "status": "explained",
-    "recall": "先标Hub连到的全部共享段，再把其他直连交换链路标全双工。广播能跨哪台设备？"
+    "recall": "先标Hub连到的全部共享段，再把其他直连交换链路标全双工。广播能跨哪台设备？",
+    "title": "全双工与Hub实际碰撞域",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0920": {
     "skill": "tcp-sequence",
     "path": "daily-network/2026/0920.md",
     "status": "explained",
-    "recall": "每个1024B数据要付哪四项封装开销？写出B到b转换，说明为什么这不是实际完成文件传输的墙钟时间。"
+    "recall": "每个1024B数据要付哪四项封装开销？写出B到b转换，说明为什么这不是实际完成文件传输的墙钟时间。",
+    "title": "TCP最大文件与封装发送时间",
+    "minutes": 4,
+    "boundary": false
   },
   "2026-0921": {
     "skill": "dhcp",
     "path": "daily-network/2026/0921.md",
     "status": "explained",
-    "recall": "对比P1与P2的IP端点，并指出服务器选择客户端地址池主要需要哪个中继字段。"
+    "recall": "对比P1与P2的IP端点，并指出服务器选择客户端地址池主要需要哪个中继字段。",
+    "title": "DHCP中继的外层源与giaddr",
+    "minutes": 4,
+    "boundary": true
   },
   "2026-0922": {
     "skill": "ip-header",
     "path": "daily-network/2026/0922.md",
     "status": "explained",
-    "recall": "在纸上写两行：IP内部20+1+3+20；MAC外部14+44+2+4。谁能从IP总长度看到哪种填充？"
+    "recall": "在纸上写两行：IP内部20+1+3+20；MAC外部14+44+2+4。谁能从IP总长度看到哪种填充？",
+    "title": "IP首部与MAC两次填充",
+    "minutes": 4,
+    "boundary": false
   }
 }
