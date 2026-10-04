@@ -142,5 +142,41 @@
     "path": "daily-network/2025/0929.md",
     "status": "explained",
     "recall": "标出接收串中两个应删除的0，只删这两位并拼回。删完以后原数据里能否出现连续六个1？"
+  },
+  "2025-0930": {
+    "skill": "ip-address",
+    "path": "daily-network/2025/0930.md",
+    "status": "explained",
+    "recall": "不看选项，恢复172私有段的起止范围。172.31.255.253为何不能仅凭255判成广播？"
+  },
+  "2025-1001": {
+    "skill": "packetization",
+    "path": "daily-network/2025/1001.md",
+    "status": "explained",
+    "recall": "不背根号公式：为什么总发送轮数是包数+1？把会随x变化的两项单独写出来。"
+  },
+  "2025-1002": {
+    "skill": "delay",
+    "path": "daily-network/2025/1002.md",
+    "status": "explained",
+    "recall": "为什么用10而不是100或1000Mb/s？“两个时延相等”如何把Rτ化成报文长度？"
+  },
+  "2025-1003": {
+    "skill": "encapsulation",
+    "path": "daily-network/2025/1003.md",
+    "status": "explained",
+    "recall": "画出线上由外到内三段：IPv4首部、IPv6首部、PDU，并各写长度。效率分子的有效数据是谁？"
+  },
+  "2025-1004": {
+    "skill": "encapsulation",
+    "path": "daily-network/2025/1004.md",
+    "status": "explained",
+    "recall": "OSPF后面直接接哪一层？把200B之外必需的20、14、4分别说清。为什么不用补齐46B？"
+  },
+  "2025-1005": {
+    "skill": "physical-interface",
+    "path": "daily-network/2025/1005.md",
+    "status": "explained",
+    "recall": "把“1、2脚发送数据”中的真正谓语找出来，解释为何不是机械特性。"
   }
 }
