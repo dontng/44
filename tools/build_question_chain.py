@@ -359,7 +359,7 @@ def protect_existing_pages(rendered):
     for path, generated in list(rendered.items()):
         if path.suffix != ".md" or not path.exists():
             continue
-        pattern = r"bank/(\d{4})/q(\d{2})\.png"
+        pattern = r"(?m)^### \d+ · (\d{4}-\d{2})"
         expected = re.findall(pattern, generated)
         actual = re.findall(pattern, path.read_text(encoding="utf-8"))
         if expected != actual:

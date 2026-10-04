@@ -44,14 +44,14 @@ class QuestionChainTest(unittest.TestCase):
     def test_rebuild_preserves_manual_prose_but_rejects_changed_questions(self):
         with tempfile.TemporaryDirectory() as folder:
             path = Path(folder) / "0731.md"
-            original = '![q](../bank/2011/q01.png)\nHuman explanation and review links\n'
+            original = '### 01 · 2011-01\n![corrected crop](../bank/2011/q02.png)\nHuman explanation and review links\n'
             path.write_text(original)
-            rendered = {path: '![q](../bank/2011/q01.png)\nGenerated prose'}
+            rendered = {path: '### 01 · 2011-01\n![q](../bank/2011/q01.png)\nGenerated prose'}
             self.builder.protect_existing_pages(rendered)
             self.assertNotIn(path, rendered)
             self.assertEqual(path.read_text(), original)
             with self.assertRaises(ValueError):
-                self.builder.protect_existing_pages({path: '![q](../bank/2012/q01.png)'})
+                self.builder.protect_existing_pages({path: '### 01 · 2012-01\n![q](../bank/2012/q01.png)'})
 
     def test_questions_remain_in_year_order(self):
         for line in self.source["lines"]:
