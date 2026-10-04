@@ -1,0 +1,38 @@
+{
+  "2025-0906": {
+    "skill": "ip-address",
+    "path": "daily-network/2025/0906.md",
+    "status": "explained",
+    "recall": "不看解析：分别写出默认路由的前缀、首次DHCP发现的源/目的IPv4地址、OSPF骨干区域编号。三处的0各在表示什么？"
+  },
+  "2025-0907": {
+    "skill": "dhcp",
+    "path": "daily-network/2025/0907.md",
+    "status": "explained",
+    "recall": "给DISCOVER、OFFER、REQUEST、RELEASE分别标上客户端C或服务器S；再解释为何RELEASE不是服务器发出的回收通知。"
+  },
+  "2025-0908": {
+    "skill": "ppp",
+    "path": "daily-network/2025/0908.md",
+    "status": "explained",
+    "recall": "按因果补齐：链路建立 → 可选鉴别 → ？ → 可以传送相应网络层分组。鉴别成功还缺哪类配置？"
+  },
+  "2025-0909": {
+    "skill": "dhcp",
+    "path": "daily-network/2025/0909.md",
+    "status": "explained",
+    "recall": "不用四个英文词的首字母背口诀，按“谁有什么信息”恢复初次获取的四步。客户端收到OFFER为何还要REQUEST？"
+  },
+  "2025-0910": {
+    "skill": "transport-service",
+    "path": "daily-network/2025/0910.md",
+    "status": "explained",
+    "recall": "不看选项字母：把DHCP、HTTP/1.x/2、FTP、POP3各自接到UDP或TCP，说明“不可靠”是哪一层不承诺什么。"
+  },
+  "2025-0911": {
+    "skill": "hamming",
+    "path": "daily-network/2025/0911.md",
+    "status": "explained",
+    "recall": "从“需要区分哪些情况”写出不等式，求11位数据的最少校验位和编码效率。式子末尾的+1表示什么？"
+  }
+}
