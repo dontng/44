@@ -3,11 +3,11 @@
 This repository has two modes of work:
 
 1. Project maintenance: code, scripts, data layout, and documentation.
-2. TLDR study: turning real 408 attempts into usable mechanisms, verification, and transfer.
+2. Study and review: solve, explain, retrieve without hints, vary conditions, and revisit in mixed practice.
 
 ## Sync discipline
 
-GitHub is the shared source of truth. At the start of any maintenance or TLDR turn, sync the local work copy before making decisions. Do not turn study work into sync management unless the user asks.
+GitHub is the shared source of truth. At the start of any maintenance or study turn, sync the local work copy before making decisions. Do not turn study work into sync management unless the user asks.
 
 For this repository, the user has granted standing permission to publish completed work. When a task is clear, its scoped changes are complete, and relevant checks pass, commit and push directly to the current shared branch without asking for a separate `commit` or `push` instruction. Keep work local only while it is incomplete, unverified, blocked, or the requested scope is genuinely ambiguous. Never use this standing permission to include unrelated changes.
 
@@ -46,30 +46,18 @@ Verified:
 
 Before committing, inspect the staged diff and stage only work in scope. Install the repository commit policy with `bash tools/setup-git-policy.sh`; it supplies the template and rejects messages without the required implementation, rationale, and verification sections.
 
-## Question-chain and TLDR architecture
+## Current study architecture
 
-`src/MMDD.md` contains the current ability-line question chain. `tldr/README.md` is the authority for analysis quality; `tldr/TEMPLATE.md` fixes the minimum per-question shape, and completed analysis lives under `tldr/sessions/YYYY-MM/MMDD-tldr.md`.
+The active teaching artifact is `src/MMDD-answer.md` beside its unchanged question sheet. Read `src/answer-quality/quality-gate.md`, `learning-system.md`, and the relevant dated context before teaching. Their checks govern i+1, executable first steps, fallback reasoning, complete option adjudication, and the difference between explanations and demonstrated mastery. Do not impose their headings on every question.
 
-Interactive teaching has a separate calibration source under `src/answer-quality/`. Before explaining questions from `src/MMDD.md`, read `src/answer-quality/quality-gate.md` and the relevant dated context when it exists; use the adjacent `src/MMDD-answer.md` as the study artifact and concrete calibration. The context files preserve the useful teaching dialogue without copying its noise. They govern explanation order, scope, error handling, and presentation; do not force interactive answers into the TLDR structure or infer the user's reasoning from a historical choice.
+`daily-network/YYYY/MMDD.md` holds the original image and source plus independently checked explanation, closed-book recall, a meaningful condition change, and a small number of useful related questions. Never derive an answer from the index keyword alone: inspect the original image. All subquestions in a composite problem must be closed. Ambiguous assumptions must be stated and investigated; never invent a video author's answer.
 
-For multi-question teaching and batch authoring, also read `src/answer-quality/learning-system.md`. Its global checks govern ability inheritance, usable fallback reasoning, the long explanation versus exam-speed path, and evidence for mastery. They are internal checks, not a fixed set of headings to impose on every question. The completed `src/0731-route.md` is a pilot of the short path and is not proof that the user has passed its timed checks. Do not reproduce its complexity-specific approach across unrelated data structures, architecture, operating systems, or networking questions.
+Review starts with a question, not an exposed solution. Explanations and check answers may be folded; necessary reasoning must remain complete. Reuse a previously taught mechanism through an explicit reference and test the new boundary. Subsequent independent application can reinforce an earlier mechanism; avoid duplicate review queues for the same skill. Do not label a whole ability line mastered after solving one representative question.
 
-The sealed choice chain ends at `0908`. Files from `0914` onward are large-question lines built from `data/written_lines.json`. A large question is an indivisible attempt unit: do not distribute its subquestions across dates. `data/written_markers.json` is the reviewed 2009—2025 boundary table; historical crops listed there must be preserved, and all other images must close at the next question marker (with cross-page stitching where needed).
+Keep real first attempts in `data/answers`, `data/results`, and `data/progress` as historical evidence. Never overwrite them or infer the user's mental process from a choice. New attempts are append-only and dated; distinguish independent work, prompted completion, uncertainty, and failure. No records means unverified, never mastered. Old due dates and box numbers do not schedule current study.
 
-For a study turn, read only:
+Choice sheets end at 0908. From 0914 onward, each full written problem is indivisible, including its shared stem and every subquestion. Preserve `bank/` images, `data/written_markers.json` boundaries and historical crop sources. The existing 59 PDFs are question-sheet exports, not explanation exports.
 
-```text
-tldr/README.md
-data/question_chain.json
-data/results/MMDD.json
-src/MMDD.md
-tldr/sessions/YYYY-MM/MMDD-tldr.md  # when continuing an existing session
-```
+`navigator/` and `draft/` are retired from main and retained at branch `archive/pre-review-20261004`. TLDR is historical teaching evidence, not a second active protocol. Do not restore retired planning, chapter-writing, or fixed-template tasks unless the user explicitly requests it.
 
-The user's first attempt is evidence and must never be overwritten. Independently solve and diagnose before consulting the reference answer. Build only the mechanism needed to read the problem, adjudicate every option, and survive a nearby change of conditions. Use external authority to settle facts or boundaries, not to display research.
-
-After a complete `data/results/MMDD.json` exists, create the analysis scaffold with `./tldr.sh MMDD`. A generated `draft` is not a study state and must not be delivered. After every question is independently closed, run `./tldr.sh --check MMDD`; treat a passing structural check as necessary but not sufficient, then perform the protocol's content review.
-
-Writing an explanation can advance a problem only to `explained`. Advance it to `verified`, `transferred`, or `automatic` only after the corresponding user performance exists. Never ask whether the user understood; design the cheapest falsifiable check instead.
-
-The tenth problem in a batch receives the same standard as the first. If that quality cannot fit in one pass, split the delivery and preserve explicit progress rather than compressing later problems.
+Keep build tools from overwriting manually improved study pages. Validate data separately from page regeneration. For batches, inspect first and last questions at the same depth, verify local links and folds, commit only completed scoped work, and publish small batches to main. Maintain a truthful content progress record; files existing or scripts passing do not prove instructional correctness or user learning.
