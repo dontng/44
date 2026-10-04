@@ -394,5 +394,41 @@
     "path": "daily-network/2025/1110.md",
     "status": "explained",
     "recall": "先算填满RTT需要多少字节，再列第13/14轮窗口。第1轮的指数为什么是0？"
+  },
+  "2025-1111": {
+    "skill": "csma",
+    "path": "daily-network/2025/1111.md",
+    "status": "explained",
+    "recall": "为什么题目同时限定“降低冲突”和“不显著增加延迟”？用它解释B与C的区别。"
+  },
+  "2025-1112": {
+    "skill": "routing",
+    "path": "daily-network/2025/1112.md",
+    "status": "explained",
+    "recall": "同一张图分别按代价和跳数选路；再从R6按无权图画三层邻居，标0、30、60秒。"
+  },
+  "2025-1113": {
+    "skill": "ospf",
+    "path": "daily-network/2025/1113.md",
+    "status": "explained",
+    "recall": "把五个缩写换成动作：发现、对目录、索取、交付、签收，再恢复名称。"
+  },
+  "2025-1114": {
+    "skill": "arq-window",
+    "path": "daily-network/2025/1114.md",
+    "status": "explained",
+    "recall": "对比GBN收到ACK5与SR收到ACK1/3/5后的左边界；在SR图上标出旧帧、新帧和可重传帧。"
+  },
+  "2025-1115": {
+    "skill": "ipv6",
+    "path": "daily-network/2025/1115.md",
+    "status": "explained",
+    "recall": "为什么两次::不是仅仅“不美观”，而是信息不足？把C恢复到8组试试看。"
+  },
+  "2025-1116": {
+    "skill": "packet-decode",
+    "path": "daily-network/2025/1116.md",
+    "status": "explained",
+    "recall": "遮住解析，标出14、20、20三段边界；只从字节求源/目的IP、TTL、443、ACK和下一数据序号。"
   }
 }
