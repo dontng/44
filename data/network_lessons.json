@@ -44,8 +44,8 @@
   "2025-0913": {
     "skill": "hamming",
     "path": "daily-network/2025/0913.md",
-    "status": "disputed",
-    "recall": "从右往左编号，写出接收码中为1的位置，再分别求四组偶校验。结果是否真的能对应选项？"
+    "status": "explained",
+    "recall": "从右向左编号，写出四个偶校验组，特别检查H₁₁属于哪些组。综合结果指向哪个位置？"
   },
   "2025-0914": {
     "skill": "mac-access",
