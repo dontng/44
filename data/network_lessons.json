@@ -214,5 +214,41 @@
     "path": "daily-network/2025/1011.md",
     "status": "explained",
     "recall": "为什么不能把−S1分配给新站？不看解析算(1,1,1,1)与两站的内积。"
+  },
+  "2025-1012": {
+    "skill": "csma-cd",
+    "path": "daily-network/2025/1012.md",
+    "status": "explained",
+    "recall": "窗口为什么不是2¹²？1024²种选择中，为什么只有1024种会相撞？"
+  },
+  "2025-1013": {
+    "skill": "mac-address",
+    "path": "daily-network/2025/1013.md",
+    "status": "explained",
+    "recall": "为什么0A不是全球单播？不要看首字节最左边两位，应看哪两位？"
+  },
+  "2025-1014": {
+    "skill": "address-space",
+    "path": "daily-network/2025/1014.md",
+    "status": "explained",
+    "recall": "先写S1、S2、S3再做比较。为什么位数多16不是地址只多16个？"
+  },
+  "2025-1015": {
+    "skill": "cdma",
+    "path": "daily-network/2025/1015.md",
+    "status": "explained",
+    "recall": "遮住答案，先排除一个候选码，再列三次归一化内积。"
+  },
+  "2025-1016": {
+    "skill": "ip-address",
+    "path": "daily-network/2025/1016.md",
+    "status": "explained",
+    "recall": "192.168.0.128/25的7个主机位是什么？127段有哪些地址属于环回？"
+  },
+  "2025-1017": {
+    "skill": "subnet",
+    "path": "daily-network/2025/1017.md",
+    "status": "explained",
+    "recall": "写出包含.69的/27网络、广播和主机范围。为什么.63有两重问题？"
   }
 }
