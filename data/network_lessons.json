@@ -106,5 +106,41 @@
     "path": "daily-network/2025/0923.md",
     "status": "explained",
     "recall": "若一路LOCAL-PREF高但AS路径长，另一路LOCAL-PREF低但AS路径短，先比较哪一个？热土豆到底在缩短哪段路？"
+  },
+  "2025-0924": {
+    "skill": "checksum",
+    "path": "daily-network/2025/0924.md",
+    "status": "explained",
+    "recall": "分别回答：FCS在哪；IPv4检验和盖住哪部分；UDP不可靠是否等于不检错；TCP伪首部是否实际单独发送。"
+  },
+  "2025-0925": {
+    "skill": "ip-forward",
+    "path": "daily-network/2025/0925.md",
+    "status": "explained",
+    "recall": "“不转发”至少有哪些不同结局？将Ⅰ—Ⅳ分别放入本机处理、校验失败、TTL耗尽。"
+  },
+  "2025-0926": {
+    "skill": "wifi-address",
+    "path": "daily-network/2025/0926.md",
+    "status": "explained",
+    "recall": "在A→AP1→AP2→B中圈出题问的一跳，再写To DS、From DS。为何WDS常需四个地址？"
+  },
+  "2025-0927": {
+    "skill": "icmp",
+    "path": "daily-network/2025/0927.md",
+    "status": "explained",
+    "recall": "未知中间路由器地址时，如何让第k跳“自己报告”？探测包的目的地址到底填谁？"
+  },
+  "2025-0928": {
+    "skill": "ospf",
+    "path": "daily-network/2025/0928.md",
+    "status": "explained",
+    "recall": "依次给Hello、DBD、LSR、LSU各配一个动作：找邻居、对目录、要正文、送正文。哪一种承担LSA洪泛？"
+  },
+  "2025-0929": {
+    "skill": "ppp-stuffing",
+    "path": "daily-network/2025/0929.md",
+    "status": "explained",
+    "recall": "标出接收串中两个应删除的0，只删这两位并拼回。删完以后原数据里能否出现连续六个1？"
   }
 }
