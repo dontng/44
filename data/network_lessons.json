@@ -466,5 +466,41 @@
     "path": "daily-network/2025/1123.md",
     "status": "explained",
     "recall": "若最终校验值为0x1234，字段填什么？若最终值为0x0000，为什么不能原样填？"
+  },
+  "2025-1124": {
+    "skill": "checksum",
+    "path": "daily-network/2025/1124.md",
+    "status": "explained",
+    "recall": "不看选项，以十六进制写四个中间值，指出哪步是UDP特有。"
+  },
+  "2025-1125": {
+    "skill": "ftp-tcp",
+    "path": "daily-network/2025/1125.md",
+    "status": "explained",
+    "recall": "用段号画每轮发送组，先分清cwnd与min(cwnd,rwnd)。为什么18段用了6个数据批次？"
+  },
+  "2026-0907": {
+    "skill": "layering",
+    "path": "daily-network/2026/0907.md",
+    "status": "explained",
+    "recall": "把协议与服务分别放在横向和纵向。某层没有独立命名能否推出功能不存在？"
+  },
+  "2026-0908": {
+    "skill": "capacity-bdp",
+    "path": "daily-network/2026/0908.md",
+    "status": "explained",
+    "recall": "依次写容量、传播时间、乘积的单位。1023是线性功率比还是分贝？"
+  },
+  "2026-0909": {
+    "skill": "hamming",
+    "path": "daily-network/2026/0909.md",
+    "status": "explained",
+    "recall": "为什么11位信息用4位校验可能够，12位却不够？"
+  },
+  "2026-0910": {
+    "skill": "capacity-csma",
+    "path": "daily-network/2026/0910.md",
+    "status": "explained",
+    "recall": "两种容量哪个更紧？为什么碰撞检测要乘往返，而前一道在途量只乘单程？"
   }
 }
