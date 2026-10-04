@@ -250,5 +250,41 @@
     "path": "daily-network/2025/1017.md",
     "status": "explained",
     "recall": "写出包含.69的/27网络、广播和主机范围。为什么.63有两重问题？"
+  },
+  "2025-1018": {
+    "skill": "subnet",
+    "path": "daily-network/2025/1018.md",
+    "status": "explained",
+    "recall": "画四次二分，解释为什么要5块却只分4次。最后一对小块各有多少地址？"
+  },
+  "2025-1019": {
+    "skill": "fragmentation",
+    "path": "daily-network/2025/1019.md",
+    "status": "explained",
+    "recall": "只列三个量：原第二片起点、再分片增加的偏移、它后面是否还有原数据。"
+  },
+  "2025-1020": {
+    "skill": "routing",
+    "path": "daily-network/2025/1020.md",
+    "status": "explained",
+    "recall": "站在R2看图，哪些网络有自己的接口直接连着？去左侧LAN的下一跳为何不是192.168.1.254？"
+  },
+  "2025-1021": {
+    "skill": "line-code",
+    "path": "daily-network/2025/1021.md",
+    "status": "explained",
+    "recall": "用连续十个1或0检验各编码：有没有规则保证每位仍可找到时钟线索？"
+  },
+  "2025-1022": {
+    "skill": "checksum",
+    "path": "daily-network/2025/1022.md",
+    "status": "explained",
+    "recall": "最高位进位怎么处理？计算范围为什么不仅是应用数据？"
+  },
+  "2025-1023": {
+    "skill": "crc",
+    "path": "daily-network/2025/1023.md",
+    "status": "explained",
+    "recall": "只看哪个十六进制位就能检查常数项？为什么0x38的问题与最高位前面的零无关？"
   }
 }
