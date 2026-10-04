@@ -34,5 +34,41 @@
     "path": "daily-network/2025/0911.md",
     "status": "explained",
     "recall": "从“需要区分哪些情况”写出不等式，求11位数据的最少校验位和编码效率。式子末尾的+1表示什么？"
+  },
+  "2025-0912": {
+    "skill": "delay",
+    "path": "daily-network/2025/0912.md",
+    "status": "explained",
+    "recall": "为什么R×传播时延的单位是bit？若用R×发送时延，算出的又是什么？"
+  },
+  "2025-0913": {
+    "skill": "hamming",
+    "path": "daily-network/2025/0913.md",
+    "status": "disputed",
+    "recall": "从右往左编号，写出接收码中为1的位置，再分别求四组偶校验。结果是否真的能对应选项？"
+  },
+  "2025-0914": {
+    "skill": "mac-access",
+    "path": "daily-network/2025/0914.md",
+    "status": "explained",
+    "recall": "按“是否需要时隙同步、是否要先侦听”区分四种方案。选择最简单方案时牺牲的是什么？"
+  },
+  "2025-0915": {
+    "skill": "ppp-stuffing",
+    "path": "daily-network/2025/0915.md",
+    "status": "explained",
+    "recall": "不背选项：在原串中圈出要转义的五个字节，写出03、1B各自如何变换。为什么新插入的7D不再处理？"
+  },
+  "2025-0916": {
+    "skill": "mac-access",
+    "path": "daily-network/2025/0916.md",
+    "status": "explained",
+    "recall": "给四种协议各写一种获得发送机会的方式，再圈出不靠竞争取得机会的两种。"
+  },
+  "2025-0917": {
+    "skill": "tcp-window",
+    "path": "daily-network/2025/0917.md",
+    "status": "explained",
+    "recall": "接收端窗口恢复通知丢失后，双方各在等什么？哪种探测能解除这种停顿？"
   }
 }
