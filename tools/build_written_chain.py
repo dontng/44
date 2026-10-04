@@ -8,6 +8,7 @@ from collections import Counter
 from pathlib import Path
 
 from build_question_chain import (
+    protect_existing_pages,
     compile_chain as compile_choice_chain,
     display_widths,
     relative_link,
@@ -190,7 +191,8 @@ def refresh_choice_links():
     choice_data = read_json(REPO / "data" / "ability_lines.json")
     choice_counts = validate_choice_source(choice_data)
     choice_nodes = compile_choice_chain(choice_data)
-    INDEX.write_text(render_choice_index(choice_data, choice_nodes, choice_counts), encoding="utf-8")
+    if not INDEX.exists():
+        INDEX.write_text(render_choice_index(choice_data, choice_nodes, choice_counts), encoding="utf-8")
 
     text = CHOICE_END.read_text(encoding="utf-8")
     old = "[← 0907](0907.md) · [总索引](README.md)"
@@ -220,6 +222,7 @@ def build(check_only=False):
         path = REPO / node["file"]
         rendered[path] = render_node(node, nodes, data, widths, existing_record(path))
 
+    protect_existing_pages(rendered)
     if check_only:
         mismatches = [
             path.relative_to(REPO).as_posix()

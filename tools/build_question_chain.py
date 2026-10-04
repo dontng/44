@@ -235,7 +235,7 @@ def render_node(node, nodes, widths, result=""):
         f"> 能力线 `{node['line_id']}` · 第 {node['index']:02d}/{len(nodes):02d} 个节点 · "
         f"{len(node['questions'])} 道真题引用",
         ">",
-        f"> [打开答题卡](http://127.0.0.1:8409/?date={node['key']})",
+        f"> [完整讲解]({node['key']}-answer.md)",
         "",
         "## 故事梗概",
         "",
@@ -354,6 +354,19 @@ def roster(node):
     }
 
 
+def protect_existing_pages(rendered):
+    """Existing study prose is authoritative; never silently regenerate it."""
+    for path, generated in list(rendered.items()):
+        if path.suffix != ".md" or not path.exists():
+            continue
+        pattern = r"bank/(\d{4})/q(\d{2})\.png"
+        expected = re.findall(pattern, generated)
+        actual = re.findall(pattern, path.read_text(encoding="utf-8"))
+        if expected != actual:
+            raise ValueError(f"question order changed in {path.name}; reconcile manually before rebuilding")
+        del rendered[path]
+
+
 def build(check_only=False):
     data = read_json(SOURCE)
     counts = validate_source(data)
@@ -380,6 +393,7 @@ def build(check_only=False):
             json.dumps(roster(node), ensure_ascii=False, indent=2) + "\n"
         )
 
+    protect_existing_pages(rendered)
     if check_only:
         mismatches = [
             path.relative_to(REPO).as_posix()
