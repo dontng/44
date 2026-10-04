@@ -430,5 +430,41 @@
     "path": "daily-network/2025/1116.md",
     "status": "explained",
     "recall": "遮住解析，标出14、20、20三段边界；只从字节求源/目的IP、TTL、443、ACK和下一数据序号。"
+  },
+  "2025-1117": {
+    "skill": "ip-header",
+    "path": "daily-network/2025/1117.md",
+    "status": "explained",
+    "recall": "先列20+2+p，再让总长被4整除。IHL写的是字节数还是4字节单位数？"
+  },
+  "2025-1118": {
+    "skill": "tcp-handshake",
+    "path": "daily-network/2025/1118.md",
+    "status": "explained",
+    "recall": "画两条独立的序号线：甲方向算399→400→500，乙方向不要混入。为什么先收到第4段不把ACK推进到1400？"
+  },
+  "2025-1119": {
+    "skill": "tcp-timing",
+    "path": "daily-network/2025/1119.md",
+    "status": "explained",
+    "recall": "在你的时间线上明确写：最后数据是“已发送”还是“已确认”才能发FIN？2MSL从哪个事件开始？"
+  },
+  "2025-1121": {
+    "skill": "http-delay",
+    "path": "daily-network/2025/1121.md",
+    "status": "explained",
+    "recall": "用“首次连接／HTML／图片批次”画四行时间，不背8、4、5、3。起算点改变只删除哪一段？"
+  },
+  "2025-1122": {
+    "skill": "dns",
+    "path": "daily-network/2025/1122.md",
+    "status": "explained",
+    "recall": "example.edu.cn中顶级域是哪一段？一个域名多IP与一个IP多域名是否矛盾？"
+  },
+  "2025-1123": {
+    "skill": "checksum",
+    "path": "daily-network/2025/1123.md",
+    "status": "explained",
+    "recall": "若最终校验值为0x1234，字段填什么？若最终值为0x0000，为什么不能原样填？"
   }
 }
