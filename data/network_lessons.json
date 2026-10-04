@@ -322,5 +322,41 @@
     "path": "daily-network/2025/1029.md",
     "status": "explained",
     "recall": "给三条箭头各写通信端点，再确定协议。SMTP出现在哪两种角色之间？"
+  },
+  "2025-1030": {
+    "skill": "tcp-sequence",
+    "path": "daily-network/2025/1030.md",
+    "status": "explained",
+    "recall": "32位序号覆盖的是2³²个什么？从BDP恢复速率时用单程还是往返传播时间？"
+  },
+  "2025-1031": {
+    "skill": "network-device",
+    "path": "daily-network/2025/1031.md",
+    "status": "explained",
+    "recall": "先独立算A/B、C/D的网络号，再决定哪里必须跨子网。"
+  },
+  "2025-1101": {
+    "skill": "routing",
+    "path": "daily-network/2025/1101.md",
+    "status": "explained",
+    "recall": "下一跳是一个IP而非“直接”能推出什么、不能推出什么？"
+  },
+  "2025-1102": {
+    "skill": "routing",
+    "path": "daily-network/2025/1102.md",
+    "status": "explained",
+    "recall": "不看表，给.3与.4写二进制求公共前缀。为什么新增聚合不改变去.2.132的既有方向？"
+  },
+  "2025-1103": {
+    "skill": "routing-delay",
+    "path": "daily-network/2025/1103.md",
+    "status": "explained",
+    "recall": "先选路径，再求速率，最后数包。为什么不是走路由器最少的路线？为什么不是用1Gb/s？"
+  },
+  "2025-1104": {
+    "skill": "routing-arp",
+    "path": "daily-network/2025/1104.md",
+    "status": "explained",
+    "recall": "不看解析，给去程三段各写MAC源/目的，再写一遍IP源/目的；它们哪一层随跳改变？"
   }
 }
