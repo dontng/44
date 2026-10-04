@@ -502,5 +502,41 @@
     "path": "daily-network/2026/0910.md",
     "status": "explained",
     "recall": "两种容量哪个更紧？为什么碰撞检测要乘往返，而前一道在途量只乘单程？"
+  },
+  "2026-0911": {
+    "skill": "subnet",
+    "path": "daily-network/2026/0911.md",
+    "status": "explained",
+    "recall": "用末字节区间给Ⅲ、Ⅳ各摆一次，确认没有重叠、没有缺口。"
+  },
+  "2026-0912": {
+    "skill": "routing",
+    "path": "daily-network/2026/0912.md",
+    "status": "explained",
+    "recall": "为什么6与7可以合而5与6不可以？给出聚合后实际覆盖的末字节前缀范围。"
+  },
+  "2026-0913": {
+    "skill": "sdn",
+    "path": "daily-network/2026/0913.md",
+    "status": "explained",
+    "recall": "分别写出三次交互的两端角色，不借助箭头朝上/朝下猜名字。"
+  },
+  "2026-0914": {
+    "skill": "reliability",
+    "path": "daily-network/2026/0914.md",
+    "status": "explained",
+    "recall": "无线链路已经重传，为什么仍需TCP端到端重传？"
+  },
+  "2026-0915": {
+    "skill": "routing",
+    "path": "daily-network/2026/0915.md",
+    "status": "explained",
+    "recall": "把每项标成匹配/不匹配，再在匹配项里写前缀长度。/32为何不参加最后比较？"
+  },
+  "2026-0916": {
+    "skill": "encapsulation",
+    "path": "daily-network/2026/0916.md",
+    "status": "explained",
+    "recall": "先算36B再比较46B，填充处在哪一层？填充算不算应用有效数据？"
   }
 }
