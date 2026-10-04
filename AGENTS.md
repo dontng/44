@@ -61,3 +61,9 @@ Choice sheets end at 0908. From 0914 onward, each full written problem is indivi
 `navigator/` and `draft/` are retired from main and retained at branch `archive/pre-review-20261004`. TLDR is historical teaching evidence, not a second active protocol. Do not restore retired planning, chapter-writing, or fixed-template tasks unless the user explicitly requests it.
 
 Keep build tools from overwriting manually improved study pages. Validate data separately from page regeneration. For batches, inspect first and last questions at the same depth, verify local links and folds, commit only completed scoped work, and publish small batches to main. Maintain a truthful content progress record; files existing or scripts passing do not prove instructional correctness or user learning.
+
+## Review delivery
+
+`review/README.md` is the active review entry; `review/main.md` and `review/network.md` are generated navigation/recall aids, not duplicate solution books. Edit the 59 curated cards in `data/review_prompts.json`, then run `python tools/build_review.py`. Existing daily-network lessons are hand-authored; do not replace them with generic summaries.
+
+Use `tools/review.py` only with actual observed attempts. Ask for the missing answer evidence instead of inferring it from reading or project completion. The new queue starts empty, deduplicates original question IDs, keeps complete written problems indivisible, and credits a named earlier question only with explicit independently demonstrated transfer. Its intervals and budgets are adjustable heuristics, not validated mastery scores or promises of never forgetting. Keep future dates and test examples out of real events.
