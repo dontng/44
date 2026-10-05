@@ -1,3 +1,5 @@
+[« 0927-answer](0927-answer.md)　　[0929-answer »](0929-answer.md)
+
 # 0928 Answer｜谁在运行、谁在等待、谁进入内核
 
 > [原题 3 道](0928.md) · [0926 的 scanf/内核态](0926-answer.md) · [能力账本](answer-quality/learning-ledger.md)
@@ -23,7 +25,7 @@
 
 **（2）动态式。** 例如 **`priority=nice+cpuTime−waitTime`**（越小越优先）。运行者 cpuTime 逐渐增加，优先数值变大；就绪而未运行者 waitTime 逐渐增加，优先数值变小，久等者终会与对手竞争。`waitTime` 是**老化**项，必须用减号而非加号；题设在运行时将 waitTime 置0、在就绪时将 cpuTime 置0，防止把很久以前的历史无限叠加。
 
-<details><summary>用两个进程检验符号</summary>设 A 连续运行、B 一直就绪。过 k 拍后 A 的优先数值相对升 k，B 相对降 k；两者差每拍缩小2，有限初始 nice 差终会被克服。若把 waitTime 也加上，只会让久等者越来越不易被选中。</details>
+<details open><summary>用两个进程检验符号</summary>设 A 连续运行、B 一直就绪。过 k 拍后 A 的优先数值相对升 k，B 相对降 k；两者差每拍缩小2，有限初始 nice 差终会被克服。若把 waitTime 也加上，只会让久等者越来越不易被选中。</details>
 
 <a id="q02"></a>
 ## 02｜2023-46：字符到来不等于进程马上返回
@@ -38,7 +40,7 @@
 
 **（4）中断时。** 若输入刚到时 P 仍在等这个字符，它处于**阻塞态**；CPU 响应中断时进入**内核态**，中断处理后才使 P 就绪。把“CPU 在内核态”错说成“P 已在运行态”会混淆两个不同主体。
 
-<details><summary>三道状态门</summary>系统调用等待使运行→阻塞；中断搬数据后使阻塞→就绪；调度选中才使就绪→运行。图中①是第二道门，⑤位于第三道门之后。</details>
+<details open><summary>三道状态门</summary>系统调用等待使运行→阻塞；中断搬数据后使阻塞→就绪；调度选中才使就绪→运行。图中①是第二道门，⑤位于第三道门之后。</details>
 
 <a id="q03"></a>
 ## 03｜2025-46：指针变量和它指向的对象不在一处
@@ -51,7 +53,7 @@
 
 **（3）** 全局 `char *ptr` 这个**指针变量本身**在可读写数据区；未分配到寄存器的局部 `length` 在**用户栈**；`malloc` 返回指向的字符存储在**运行时堆**。原码只 `malloc(sizeof(char))` 分配1字节，却用 `%s` 无长度限制读字符串，连非空字符串的结尾 `\0` 都容不下，实际执行有越界风险；这些区域判断只说明程序意图，不能保证这段输入代码安全执行。
 
-<details><summary>一眼定位三种东西</summary>看声明位置决定 `ptr` 变量存放处；看 `malloc` 决定它指向的对象存放处；看 `main` 的局部声明决定 `length`。同一行 `ptr=malloc(...)` 并不会把 `ptr` 变量搬到堆里。</details>
+<details open><summary>一眼定位三种东西</summary>看声明位置决定 `ptr` 变量存放处；看 `malloc` 决定它指向的对象存放处；看 `main` 的局部声明决定 `length`。同一行 `ptr=malloc(...)` 并不会把 `ptr` 变量搬到堆里。</details>
 
 ## 复做顺序
 
