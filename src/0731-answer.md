@@ -1,3 +1,5 @@
+[0801-answer »](0801-answer.md)
+
 # 0731 Answer｜增长量级九道题完整讲解
 
 > 原题入口：[0731 题单](0731.md)｜[九题考场路线与保底](0731-route.md)｜教学上下文：[0731-context.md](answer-quality/0731-context.md)｜质量门槛：[quality-gate.md](answer-quality/quality-gate.md)
