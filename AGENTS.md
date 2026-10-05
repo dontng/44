@@ -56,7 +56,7 @@ Review starts with a question, not an exposed solution. Explanations and check a
 
 Keep real first attempts in `data/answers`, `data/results`, and `data/progress` as historical evidence. Never overwrite them or infer the user's mental process from a choice. New attempts are append-only and dated; distinguish independent work, prompted completion, uncertainty, and failure. No records means unverified, never mastered. Old due dates and box numbers do not schedule current study.
 
-Choice sheets end at 0908. From 0914 onward, each full written problem is indivisible, including its shared stem and every subquestion. Preserve `bank/` images, `data/written_markers.json` boundaries and historical crop sources. The existing 59 PDFs are question-sheet exports, not explanation exports.
+Choice sheets end at 0908. From 0914 onward, each full written problem is indivisible, including its shared stem and every subquestion. Preserve `bank/` images, `data/written_markers.json` boundaries and historical crop sources. The redundant src/pdf exports have been removed at the user's request; do not regenerate them unless requested.
 
 `navigator/` and `draft/` are retired from main and retained at branch `archive/pre-review-20261004`. TLDR is historical teaching evidence, not a second active protocol. Do not restore retired planning, chapter-writing, or fixed-template tasks unless the user explicitly requests it.
 
