@@ -7,7 +7,7 @@
 **[今天的复习与复盘](review/README.md)**：先选少量已学到期项，闭卷恢复、换条件、记一个断点，再回当前主线。
 
 - [真题能力线](src/README.md)：40条选择题线与19条大题线；每份题单旁有同名 `-answer.md` 讲解。先尝试，再看解析，最后合上核对。
-- [计网每日一题](daily-network/README.md)：96道现有题均已补解析、闭卷检查和条件变化核对。
+- [计网每日一题](daily-network/README.md)：109道题图，其中96道已补解析、闭卷检查和条件变化核对；新增13道解析待核对。
 - [数据结构代码](code/README.md)：27个可运行C程序，供真题卡住时追踪状态和补写关键操作。
 
 教学标准见 [质量门槛](src/answer-quality/quality-gate.md) 与 [学习和验收](src/answer-quality/learning-system.md)。讲解覆盖与个人掌握分开记录，不把阅读量、文件数或同题答案记忆计作得分能力。
