@@ -113,6 +113,54 @@
       "findings": [
         "No new substantive defect found after independent derivation and actual image review."
       ]
+    },
+    "0818": {
+      "questions": 14,
+      "findings": [
+        "No new substantive defect found after actual source-image reading, complete explanation review and independent derivation."
+      ]
+    },
+    "0819": {
+      "questions": 12,
+      "findings": [
+        "No new substantive defect found after actual source-image reading, complete explanation review and independent derivation."
+      ]
+    },
+    "0820": {
+      "questions": 14,
+      "findings": [
+        "No new substantive defect found after actual source-image reading, complete explanation review and independent derivation."
+      ]
+    },
+    "0821": {
+      "questions": 12,
+      "findings": [
+        "No new substantive defect found after actual source-image reading, complete explanation review and independent derivation."
+      ]
+    },
+    "0822": {
+      "questions": 18,
+      "findings": [
+        "Q13 2019-19: distinguished DDR3-1333 effective transfer rate from literal physical clock; documented source MHz/MT/s ambiguity and both 32/64GB/s interpretations, with manufacturer terminology reference."
+      ]
+    },
+    "0823": {
+      "questions": 31,
+      "findings": [
+        "Q11: replaced numerically impossible hypothetical 100ns>400ns with an explicit general condition."
+      ]
+    },
+    "0824": {
+      "questions": 25,
+      "findings": [
+        "No new substantive defect found after actual source-image reading, complete explanation review and independent derivation."
+      ]
+    },
+    "0825": {
+      "questions": 30,
+      "findings": [
+        "No new substantive defect found after actual source-image reading, complete explanation review and independent derivation."
+      ]
     }
   },
   "partially_reviewed": {
@@ -125,14 +173,6 @@
     ]
   },
   "pending_full_pairs": [
-    "0818",
-    "0819",
-    "0820",
-    "0821",
-    "0822",
-    "0823",
-    "0824",
-    "0825",
     "0826",
     "0827",
     "0828",
@@ -199,7 +239,17 @@
         "src/0810-answer.md",
         "data/md_reaudit_20261009.json"
       ]
+    },
+    {
+      "commit": "07e94d8ae3d3c9e5295ba6ae166f22fdb9eafa81",
+      "files": [
+        "src/0812-answer.md",
+        "src/0814-answer.md",
+        "src/0815-answer.md",
+        "src/0816-answer.md",
+        "data/md_reaudit_20261009.json"
+      ]
     }
   ],
-  "note": "280 references independently checked in completed pairs; continue at0818. Earlier complete flags and hashes are version evidence only."
+  "note": "436 references independently checked in completed pairs; continue at0826. Earlier complete flags and hashes are version evidence only."
 }
