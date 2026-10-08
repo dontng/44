@@ -14,6 +14,29 @@
         "Q03: c is the first data element, not a dummy head node.",
         "Q12: option II asks for rows containing nonzero entries, not the number of nonzero entries; repaired option adjudication and counterexample."
       ]
+    },
+    "0802": {
+      "questions": 20,
+      "finding": "No new substantive defect; independently replayed stack/deque witnesses, expressions and queue conventions."
+    },
+    "0803": {
+      "questions": 27,
+      "findings": [
+        "Q26 2025-03: actual D orphan is index8 value19 with absent parent index3, not index9/4; fixed summary and derivation."
+      ]
+    },
+    "0804": {
+      "questions": 11,
+      "findings": [
+        "Q01 2010-06: counterexample violated pairwise-distinct weight condition; replaced by 1,2,4,100 and completed option D proof."
+      ],
+      "source_caveat": "2025-05 source omits one of seven weights; explanation expressly uses the seven-weight variant. Existing institutional PDF link retained."
+    },
+    "0805": {
+      "questions": 23,
+      "findings": [
+        "Q05 2012-04: source asks exact total with every balance factor1, not a minimum; restored exact recurrence and signed balance-factor definition."
+      ]
     }
   },
   "partially_reviewed": {
@@ -26,10 +49,6 @@
     ]
   },
   "pending_full_pairs": [
-    "0802",
-    "0803",
-    "0804",
-    "0805",
     "0806",
     "0807",
     "0808",
@@ -90,7 +109,15 @@
       "files": [
         "src/0919-answer.md"
       ]
+    },
+    {
+      "commit": "cbb82b6f5023c78719680e199f8ca47d5f528f67",
+      "files": [
+        "src/0801-answer.md",
+        "src/0906-answer.md",
+        "data/md_reaudit_20261009.json"
+      ]
     }
   ],
-  "note": "No claim that all 825 references or 799 unique images have been independently checked in this new pass. Continue at 0802; preserve prior audit as version history."
+  "note": "100 references independently checked in completed pairs; continue at0806. Prior completion and hashes remain version evidence only."
 }
