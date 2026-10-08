@@ -197,24 +197,53 @@
       "findings": [
         "No new substantive defect after actual image inspection, complete explanation review and independent derivation."
       ]
+    },
+    "0901": {
+      "questions": 18,
+      "findings": [
+        "Corrected summary range from01-08 to01-18."
+      ]
+    },
+    "0902": {
+      "questions": 14,
+      "findings": [
+        "Q06: current shared topology is above the question and belongs to33-41; replaced obsolete and incorrect crop note."
+      ]
+    },
+    "0903": {
+      "questions": 19,
+      "findings": [
+        "Q10: current image includes shared topology; removed obsolete text-only crop claim.",
+        "Q17: positive but short propagation does not give stop-and-wait100%; corrected equality explanation with utilization formula."
+      ]
+    },
+    "0904": {
+      "questions": 21,
+      "findings": [
+        "Clarified that source numeric/option inconsistency concerns question14, not14 questions."
+      ],
+      "source_caveat": "Q14 2019-36: 10Mb/s and128B imply51.2us maximum one-way delay, absent from choices; retained explicit caveat. Q15 retains collision-domain counting scope caveat."
+    },
+    "0905": {
+      "questions": 17,
+      "findings": [
+        "No new substantive defect after actual source-image review, complete explanation review and independent derivation."
+      ]
+    },
+    "0906": {
+      "questions": 18,
+      "findings": [
+        "Q09 2015-38: explicitly documented table E3 versus option C S3 naming inconsistency; longest-prefix choice remains third row."
+      ]
     }
   },
   "partially_reviewed": {
     "0919": [
       "Q02 2017-43: corrected float return type, 4B7FFFFFH encoding and n=24 rounding.",
       "Q05 2023-44: removed stale row-width64 conclusion."
-    ],
-    "0906": [
-      "Q06: replaced obsolete crop note with layer distinction and explicit cross-reference."
     ]
   },
   "pending_full_pairs": [
-    "0901",
-    "0902",
-    "0903",
-    "0904",
-    "0905",
-    "0906",
     "0907",
     "0908",
     "0914",
@@ -287,7 +316,14 @@
         "src/0823-answer.md",
         "data/md_reaudit_20261009.json"
       ]
+    },
+    {
+      "commit": "1113a9a4ae4e444a0409c6186419c67e3343725d",
+      "files": [
+        "src/0830-answer.md",
+        "data/md_reaudit_20261009.json"
+      ]
     }
   ],
-  "note": "558 references independently checked in completed pairs; continue at0901. Earlier complete flags and hashes are version evidence only."
+  "note": "665 references independently checked in completed pairs; continue at0907. Earlier complete flags and hashes are version evidence only."
 }

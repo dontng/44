@@ -6,7 +6,7 @@
 >
 > 从设备服务边界前进到网络路径，先分清端到端与逐跳。18 题原题核准；文稿覆盖不等于独立限时通关。
 
-<details><summary><strong>考场入口（01—08）</strong></summary>
+<details><summary><strong>考场入口（01—18）</strong></summary>
 
 | 题 | 第一笔 | 答案 |
 | --- | --- | --- |
