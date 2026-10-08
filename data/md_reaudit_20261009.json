@@ -75,6 +75,44 @@
       "findings": [
         "No new substantive defect found after image reading, complete explanation review and independent derivation."
       ]
+    },
+    "0812": {
+      "questions": 29,
+      "findings": [
+        "Q13: same-sign subtraction cannot overflow; corrected the explanatory generalization."
+      ],
+      "source_caveat": "2013-13 current source prints four positive options, while C6400000H decodes to -12288. Retained explicit defect notice; no fabricated source correction."
+    },
+    "0813": {
+      "questions": 11,
+      "findings": [
+        "No new substantive defect found after independent derivation and actual image review."
+      ]
+    },
+    "0814": {
+      "questions": 16,
+      "findings": [
+        "Q09: separated distance of four issue slots from three intervening accesses."
+      ]
+    },
+    "0815": {
+      "questions": 12,
+      "findings": [
+        "Q07: source inner loop is j<i, not j<=i; corrected range and trace.",
+        "Q07: immediate repeated reads can also exhibit temporal locality; removed contrary definition."
+      ]
+    },
+    "0816": {
+      "questions": 9,
+      "findings": [
+        "Q01: corrected B/C hit-state explanation; C has TLB hit rather than miss."
+      ]
+    },
+    "0817": {
+      "questions": 13,
+      "findings": [
+        "No new substantive defect found after independent derivation and actual image review."
+      ]
     }
   },
   "partially_reviewed": {
@@ -87,12 +125,6 @@
     ]
   },
   "pending_full_pairs": [
-    "0812",
-    "0813",
-    "0814",
-    "0815",
-    "0816",
-    "0817",
     "0818",
     "0819",
     "0820",
@@ -158,7 +190,16 @@
         "src/0805-answer.md",
         "data/md_reaudit_20261009.json"
       ]
+    },
+    {
+      "commit": "710a44538aa66a063427885008790e0943dc217e",
+      "files": [
+        "src/0807-answer.md",
+        "src/0808-answer.md",
+        "src/0810-answer.md",
+        "data/md_reaudit_20261009.json"
+      ]
     }
   ],
-  "note": "190 references independently checked in completed pairs; continue at0812. Prior completion and hashes remain version evidence only."
+  "note": "280 references independently checked in completed pairs; continue at0818. Earlier complete flags and hashes are version evidence only."
 }
