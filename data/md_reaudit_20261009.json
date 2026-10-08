@@ -37,6 +37,44 @@
       "findings": [
         "Q05 2012-04: source asks exact total with every balance factor1, not a minimum; restored exact recurrence and signed balance-factor definition."
       ]
+    },
+    "0806": {
+      "questions": 15,
+      "findings": [
+        "No new substantive defect found after image reading, complete explanation review and independent derivation."
+      ]
+    },
+    "0807": {
+      "questions": 17,
+      "findings": [
+        "Q15 2021-08: reversed 2->3 weight22 in explanation; corrected post-3 distance26 and direction reasoning."
+      ]
+    },
+    "0808": {
+      "questions": 15,
+      "findings": [
+        "Q06 2017-08: C does not have a local size difference2; actual four-node subtrees require conflicting midpoint choices.",
+        "Q05 2016-09: corrected absent-key generalization and explained missing lower-bound guards in source pseudocode.",
+        "Q12: made H(k)=(k+4)%5 explicit."
+      ]
+    },
+    "0809": {
+      "questions": 3,
+      "findings": [
+        "No new substantive defect found after image reading, complete explanation review and independent derivation."
+      ]
+    },
+    "0810": {
+      "questions": 34,
+      "findings": [
+        "Q18: gap5 gives five groups in total, not five other groups."
+      ]
+    },
+    "0811": {
+      "questions": 3,
+      "findings": [
+        "No new substantive defect found after image reading, complete explanation review and independent derivation."
+      ]
     }
   },
   "partially_reviewed": {
@@ -49,12 +87,6 @@
     ]
   },
   "pending_full_pairs": [
-    "0806",
-    "0807",
-    "0808",
-    "0809",
-    "0810",
-    "0811",
     "0812",
     "0813",
     "0814",
@@ -117,7 +149,16 @@
         "src/0906-answer.md",
         "data/md_reaudit_20261009.json"
       ]
+    },
+    {
+      "commit": "2dca742b3841f1359a5ddc376d52038e00683717",
+      "files": [
+        "src/0803-answer.md",
+        "src/0804-answer.md",
+        "src/0805-answer.md",
+        "data/md_reaudit_20261009.json"
+      ]
     }
   ],
-  "note": "100 references independently checked in completed pairs; continue at0806. Prior completion and hashes remain version evidence only."
+  "note": "190 references independently checked in completed pairs; continue at0812. Prior completion and hashes remain version evidence only."
 }
