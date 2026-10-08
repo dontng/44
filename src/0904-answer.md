@@ -217,13 +217,13 @@ Hub连接其两台主机和交换机的那个端口属于同一冲突域，不�
 <a id="q16"></a>
 ## 16｜2020-37：争用前等DIFS，已获预约的响应等SIFS
 
-![2020-37 原题（裁图缺最上方IFS1，见整页原卷）](../bank/2020/q37.png)
+![2020-37 原题](../bank/2020/q37.png)
 
-[2020原卷第26页](../past_papers/2020年计算机408统考真题.pdf)的完整图显示 IFS1 在 H 发 RTS 前；新争用要等 **DIFS** 再退避，通常比 CTS/DATA/ACK 间的 **SIFS** 长，因此最长是 **IFS1，选 A**。第一笔把“开始争介质”与“预约会话内即时响应”区分。
+当前完整图显示 IFS1 在 H 发 RTS 前；新争用要等 **DIFS** 再退避，通常比 CTS/DATA/ACK 间的 **SIFS** 长，因此最长是 **IFS1，选 A**。第一笔把“开始争介质”与“预约会话内即时响应”区分。
 
 <details open><summary>图中四段</summary>
 
-IFS2 在 RTS→CTS，IFS3 在 CTS→DATA，IFS4 在 DATA→ACK，均为短响应间隔；IFS1 在最初RTS前，需给已在进行的交换优先权。原裁图缺IFS1标记，不能只靠裁图硬猜。
+IFS2 在 RTS→CTS，IFS3 在 CTS→DATA，IFS4 在 DATA→ACK，均为短响应间隔；IFS1 在最初RTS前，需给已在进行的交换优先权。图中 IFS1 标记位于最上方发 RTS 之前，按这一位置判断。
 </details>
 
 <a id="q17"></a>
