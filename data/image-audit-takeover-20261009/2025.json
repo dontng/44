@@ -1,0 +1,57 @@
+{
+  "review_date": "2026-10-09",
+  "reviewer": "Codex",
+  "base_commit": "5c5e26b6521ab380b488dcf7eed87b400f140fa8",
+  "scope": "bank/2025/q41.png—q47.png",
+  "reviewed_count": 7,
+  "new_defect_count": 0,
+  "images_modified": 0,
+  "source_pdf_indices_one_based": [
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "method": "逐张打开题图，与原卷页面目视对照；Git blob SHA核对当前main实际图片。",
+  "checks": [
+    "q41：题干及三个算法要求完整",
+    "q42：AOE图、跨页第3/4问完整",
+    "q43：程序图及四个小问完整",
+    "q44：跨页程序图、补码除法器图及两个小问完整",
+    "q45：同步互斥说明和初值要求完整",
+    "q46：地址空间图、C程序及三个小问完整",
+    "q47：跨页卫星网络拓扑及三个小问完整"
+  ],
+  "images": [
+    {
+      "path": "bank/2025/q41.png",
+      "sha": "6d4fcc891e54ae64e345389d20544ea4a9878df6"
+    },
+    {
+      "path": "bank/2025/q42.png",
+      "sha": "9db92b60bafc949903f89ac0d6c73fa069d9a5b4"
+    },
+    {
+      "path": "bank/2025/q43.png",
+      "sha": "a15c88ed9b01cb09fc764d1462ab4d9a4cb5b6af"
+    },
+    {
+      "path": "bank/2025/q44.png",
+      "sha": "d878b692587808df5958e62267c4b250d5e4ae63"
+    },
+    {
+      "path": "bank/2025/q45.png",
+      "sha": "be86c259c55b07334165e2c4fa79495ccfdc88bb"
+    },
+    {
+      "path": "bank/2025/q46.png",
+      "sha": "35276f1020a36d8d8c9f9a3cf90301733cceec96"
+    },
+    {
+      "path": "bank/2025/q47.png",
+      "sha": "9f998ba450e758a033a293f5f7d630baf1584dac"
+    }
+  ],
+  "status": "遗留边界复验通过"
+}
