@@ -1,7 +1,7 @@
 {
   "scope": "src/MMDD.md + src/MMDD-answer.md",
   "baseline_commit": "b0ad2cc64fc37097632aa82e5dc7ab5e9cf9a80a",
-  "complete": false,
+  "complete": true,
   "review_method": "Read each question image and the complete explanation; independently derive the result and adjudicate the actual options. Hashes only select the exact source version; earlier complete flags do not certify correctness.",
   "fully_reviewed_pairs": {
     "0731": {
@@ -455,14 +455,43 @@
         "src/0925-answer.md",
         "data/md_reaudit_20261009.json"
       ]
+    },
+    {
+      "commit": "372403c1b77d5af822c5c41b1c53f234083eea42",
+      "files": [
+        "src/0925.md",
+        "src/0925-answer.md",
+        "src/0927-answer.md",
+        "src/0928.md",
+        "src/0929-answer.md",
+        "data/md_reaudit_20261009.json"
+      ]
     }
   ],
-  "note": "All59 date pairs /825 references independently reviewed. Auxiliary Markdown corrections await final publication; complete flag remains false until then.",
+  "note": "59 date pairs /825 references plus8 auxiliary Markdown files reviewed. Actual images and complete solutions were inspected; hashes only identified source versions. Source conflicts remain explicitly documented.",
   "retained_source_image_defects": [
     {
       "path": "bank/2013/q45.png",
       "issue": "Unrelated2013-44 diagram retained in original PNG for provenance.",
       "src_remedy": "Replaced inline image with source-checked complete transcription in src/0925.md and src/0925-answer.md; original available by ordinary link."
     }
-  ]
+  ],
+  "auxiliary_markdown_review": {
+    "files": [
+      "src/0731-probe.md",
+      "src/0731-route.md",
+      "src/README.md",
+      "src/answer-quality/0731-context.md",
+      "src/answer-quality/README.md",
+      "src/answer-quality/learning-ledger.md",
+      "src/answer-quality/learning-system.md",
+      "src/answer-quality/quality-gate.md"
+    ],
+    "findings": [
+      "Clarified global799 distinct questions /825 references versus selection-only680 /706.",
+      "Synchronized exact AVL count, directed-matrix total degrees, DDR transfer-rate caveat, E3/S3 source mismatch, RTT approximation and persistent HTTP cwnd.",
+      "Added missing learning-system and learning-ledger links; preserved all actual user-answer evidence."
+    ]
+  },
+  "completion_semantics": "All126 src Markdown files reviewed; complete means review coverage and publication of identified src repairs, not certification that flawed original source figures/options are corrected or that user mastery is proven."
 }

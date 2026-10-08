@@ -5,8 +5,11 @@
 ## 当前文件
 
 - [0731-context.md](0731-context.md)：0731教学现场的精华上下文，记录用户处境、真实顾虑、讲解分歧及最终共识。
+- [learning-system.md](learning-system.md)：整条链的学习与验收规则。
+- [learning-ledger.md](learning-ledger.md)：文档已讲内容与尚待独立验证的能力记录。
 - [quality-gate.md](quality-gate.md)：后续互动讲解与整理 Answer 时必须执行的质量门槛。
 
 后续处理某个日期时，先读 `quality-gate.md`，再读该日期已有的 context。若尚无 context，就在教学过程中记录真正改变讲解方式的信息；一组题结束后再去重、校正并保存，不逐句复制聊天。
 
 本目录的唯一价值是减少重复纠偏：让下一次讲解从已经确认的教学认识继续前进，而不是让用户再次解释自己需要怎样被教。
+
