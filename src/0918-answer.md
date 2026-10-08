@@ -102,19 +102,20 @@ int lowerMedian(const int A[], const int B[], int n) {
 ```c
 #include <stdlib.h>
 void swap(int *a,int *b) { int t=*a;*a=*b;*b=t; }
-int partition(int A[],int l,int r) {
-    int p=l+rand()%(r-l+1), x;
-    swap(&A[p],&A[r]); x=A[r];
-    int q=l;
-    for (int i=l;i<r;++i) if (A[i]<x) swap(&A[i],&A[q++]);
-    swap(&A[q],&A[r]); return q;
-}
 long long splitMaxDiff(int A[],int n) {
     int k=n/2,l=0,r=n-1;
     while (l<=r) {
-        int p=partition(A,l,r);
-        if (p==k-1) break;
-        if (p<k-1) l=p+1; else r=p-1;
+        int x=A[l+rand()%(r-l+1)];
+        int lt=l,i=l,gt=r;
+        while (i<=gt) {
+            if (A[i]<x) swap(&A[i++],&A[lt++]);
+            else if (A[i]>x) swap(&A[i],&A[gt--]);
+            else ++i;
+        }
+        /* [l,lt) < x， [lt,gt] == x， (gt,r] > x */
+        if (k-1<lt) r=lt-1;
+        else if (k-1>gt) l=gt+1;
+        else break;
     }
     long long small=0,large=0;
     for (int i=0;i<k;++i) small+=A[i];
@@ -123,7 +124,7 @@ long long splitMaxDiff(int A[],int n) {
 }
 ```
 
-**（3）代价。** 随机枢轴平均 `O(n)` 时间、`O(1)` 额外空间，最坏 `O(n²)`；若要求最坏线性，需用更复杂的确定性选枢轴。重复值允许分布在两侧，不改变最大差值。此函数返回最大差；划分的两个集合分别保存在 `A[0..k-1]` 与剩余部分。
+**（3）代价。** 随机枢轴平均 `O(n)` 时间、`O(1)` 额外空间，最坏 `O(n²)`；若要求最坏线性，需用更复杂的确定性选枢轴。三路划分一次跳过全部等于枢轴的元素，避免重复值使普通二路划分逐个缩小；重复值允许分布在两侧，不改变最大差值。此函数返回最大差；划分的两个集合分别保存在 `A[0..k-1]` 与剩余部分。
 
 <details open><summary>为什么不能先任意平分再计算</summary>数量均衡只是第一个约束；例 `(1,2,100,101)`，把1和100放同组会让差缩小。排序法 `O(n log n)` 能做出答案，是忘记线性选择时可写出的保底路线，但不满足尽可能高效。</details>
 
