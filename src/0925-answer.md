@@ -37,8 +37,8 @@
 
 ```text
 顾客 i:
-  P(seat); P(machine); k=取唯一号码(); V(machine)
-  P(queueMutex); 入队(k); V(queueMutex); V(waiting)
+  P(seat); P(machine); k=取唯一号码()
+  P(queueMutex); 入队(k); V(queueMutex); V(machine); V(waiting)
   P(called[k]); V(arrived); P(done[k]); 离开
 
 柜员（循环）:
@@ -66,13 +66,26 @@
 离馆完成才还一个容量名额。若把 `P(gate)` 放在 `P(space)` 前，当馆满时某人握着门等空位，馆内的人也无法出门，立刻构成死锁；这里的顺序就是本题要挖出的隐含信息。
 
 <a id="q04"></a>
-## 04｜2014-47：先让指定消费者取完连续10件
+## 04｜2014-47：每个消费者一次连续取满10件
 
 ![2014-47 原题](../bank/2014/q47.png)
 
-设 `empty=1000`、`full=0`、`bufMutex=1`；另设 `others=0`，是**其它消费者的开闸许可**。多个生产者都循环 `生产; P(empty); P(bufMutex); 放1件; V(bufMutex); V(full)`。指定消费者连续执行10次 `P(full); P(bufMutex); 取1件; V(bufMutex); V(empty)`，然后 `V(others)`。其它消费者在自己的消费循环**之前**先 `P(others); V(others)`，之后每次执行同样的一件消费操作。
+“一个消费者连续取出10件后，其他消费者才可以取”约束的是**每次消费批次**，不能指定某人只在开始时取10件，随后永久放开。设 `empty=1000`、`full=0` 计空位和产品；`bufMutex=1` 保护缓冲读写；`batchMutex=1` 使一次10件的消费批次互斥。
 
-开闸前，其它消费者不得抢走产品；开闸后，`P(others);V(others)` 让所有消费者都能继续。指定消费者等待产品时不握 `bufMutex`，生产者能继续填充。若把开闸放在指定消费者第10次 P(full) 之前，就不能保证“连续取出10件”。
+```text
+每个生产者（循环）：
+  生产一件
+  P(empty); P(bufMutex); 放入一件; V(bufMutex); V(full)
+
+每个消费者（循环）：
+  P(batchMutex)
+  重复10次：
+    P(full); P(bufMutex); 取出一件; V(bufMutex); V(empty)
+    消费该件
+  V(batchMutex)
+```
+
+同一消费者取满10件之前，其余消费者只能等 `batchMutex`。生产者不需要该锁，仍可填充缓冲；消费者等待 `full` 时不持有 `bufMutex`，不会阻止生产者送来后续产品。不能连续 P(full) 十次后才 V(empty)：缓冲剩余容量与其它等待可能使这种批量预占设计更复杂，逐件释放空位即可。
 
 <a id="q05"></a>
 ## 05｜2015-45：两只邮箱各自有空位与邮件数
@@ -162,9 +175,9 @@ B→C、C→D、E→F 本来就在各自线程程序顺序内；跨线程只有 
 
 ![2025-45 原题](../bank/2025/q45.png)
 
-设 `freePit=3`（最多还可挖几个未填的坑）、`dug=0`（可放苗的坑）、`planted=0`（待浇的树）、`shovel=1`、`bucket=1`。甲 `P(freePit);P(shovel);挖坑;V(shovel);V(dug)`；乙 `P(dug);放苗;P(shovel);填土;V(shovel);V(freePit);V(planted)`；丙 `P(planted);P(bucket);浇水;V(bucket)`，三人均按各自阶段循环。
+设 **四个信号量**：`freePit=3`（剩余坑名额）、`dug=0`（可放苗的坑）、`planted=0`（待浇的树）、`shovel=1`（铁锹互斥）。甲 `P(freePit);P(shovel);挖坑;V(shovel);V(dug)`；乙 `P(dug);放苗;P(shovel);填土;V(shovel);V(freePit);V(planted)`；丙 `P(planted);浇水`，三人均按各自阶段循环。
 
-甲挖前占一个坑名额，乙**填土之后**才归还：坑数量不超过3；铁锹在挖与填两个动作间可轮换，不能由甲从挖到填始终握着。水桶只在浇水时持有；乙完成种植并填土才放出 `planted`，保证丙不会浇尚未栽好的树。<details open><summary>为什么归还坑名额不必等浇水</summary>容量条件限制的是尚未填好的坑，而浇水发生在填土之后。让甲等到丙浇完才可挖新坑会平白减少并发，且不对应题面的“坑数小于3”。</details>
+甲挖前占一个坑名额，乙**填土之后**才归还：坑数量不超过3；铁锹在挖与填两个动作间可轮换，不能由甲从挖到填始终握着。水桶只有丙使用，不与他人竞争，无需额外信号量，符合“尽可能少”的要求；乙完成种植并填土才放出 `planted`，保证丙不会浇尚未栽好的树。<details open><summary>为什么归还坑名额不必等浇水</summary>容量条件限制的是尚未填好的坑，而浇水发生在填土之后。让甲等到丙浇完才可挖新坑会平白减少并发，且不对应题面的“已有坑数小于3时才可再挖”的条件。</details>
 
 ## 复做顺序
 
