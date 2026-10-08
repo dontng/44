@@ -1,0 +1,96 @@
+{
+  "scope": "src/MMDD.md + src/MMDD-answer.md",
+  "baseline_commit": "b0ad2cc64fc37097632aa82e5dc7ab5e9cf9a80a",
+  "complete": false,
+  "review_method": "Read each question image and the complete explanation; independently derive the result and adjudicate the actual options. Hashes only select the exact source version; earlier complete flags do not certify correctness.",
+  "fully_reviewed_pairs": {
+    "0731": {
+      "questions": 9,
+      "finding": "No new substantive defect found after independent derivation and image-boundary check."
+    },
+    "0801": {
+      "questions": 13,
+      "findings": [
+        "Q03: c is the first data element, not a dummy head node.",
+        "Q12: option II asks for rows containing nonzero entries, not the number of nonzero entries; repaired option adjudication and counterexample."
+      ]
+    }
+  },
+  "partially_reviewed": {
+    "0919": [
+      "Q02 2017-43: corrected float return type, 4B7FFFFFH encoding and n=24 rounding.",
+      "Q05 2023-44: removed stale row-width64 conclusion."
+    ],
+    "0906": [
+      "Q06: replaced obsolete crop note with layer distinction and explicit cross-reference."
+    ]
+  },
+  "pending_full_pairs": [
+    "0802",
+    "0803",
+    "0804",
+    "0805",
+    "0806",
+    "0807",
+    "0808",
+    "0809",
+    "0810",
+    "0811",
+    "0812",
+    "0813",
+    "0814",
+    "0815",
+    "0816",
+    "0817",
+    "0818",
+    "0819",
+    "0820",
+    "0821",
+    "0822",
+    "0823",
+    "0824",
+    "0825",
+    "0826",
+    "0827",
+    "0828",
+    "0829",
+    "0830",
+    "0831",
+    "0901",
+    "0902",
+    "0903",
+    "0904",
+    "0905",
+    "0906",
+    "0907",
+    "0908",
+    "0914",
+    "0915",
+    "0916",
+    "0917",
+    "0918",
+    "0919",
+    "0920",
+    "0921",
+    "0922",
+    "0923",
+    "0924",
+    "0925",
+    "0926",
+    "0927",
+    "0928",
+    "0929",
+    "0930",
+    "1001",
+    "1002"
+  ],
+  "published_batches": [
+    {
+      "commit": "34536590d085f6baa1a0d8a28fe919bce8acd1f8",
+      "files": [
+        "src/0919-answer.md"
+      ]
+    }
+  ],
+  "note": "No claim that all 825 references or 799 unique images have been independently checked in this new pass. Continue at 0802; preserve prior audit as version history."
+}
