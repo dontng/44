@@ -229,7 +229,26 @@ void rearrange(Node *head) {
 
 **（2）初态与空满。** 带一个固定头结点：`front=rear=head`，`freeList=NULL`；`front->next==NULL` 表示队空。链式结构无预设容量；内存分配失败且闲置池为空才无法继续入队，这不是固定长度的“队满”。
 
+空队初态如下；`freeList=NULL` 表示尚无可复用节点。
+
+```mermaid
+flowchart LR
+    F["front"] --> H["固定头结点 head"]
+    R["rear"] --> H
+    H -->|next| N["NULL"]
+```
+
 **（3）首元素入队。** 取得节点 `p` 并写值，令 `p->next=NULL; rear->next=p; rear=p`，此时 `front=head`、`front->next==rear==p`。
+
+首元素入队后的指针关系如下；`freeList` 仍为空。
+
+```mermaid
+flowchart LR
+    F["front"] --> H["固定头结点 head"]
+    H -->|next| P["首数据结点 p"]
+    R["rear"] --> P
+    P -->|next| N["NULL"]
+```
 
 **（4）入队/出队过程。** 入队先从 `freeList` 摘结点，池空再分配；接到 `rear->next` 并更新 `rear`。出队先判空，摘 `front->next` 并保存数据；若该结点原是 `rear`，令 `rear=front`；把摘下节点挂进 `freeList`。每次只改有限指针，时间 `O(1)`；已分配节点在池中复用，空间占用不因出队而减少。
 
@@ -300,7 +319,7 @@ void calMulMax(const int A[], int res[], int n) {
 }
 ```
 
-**（3）代价。** 扫一次为 `O(n)` 时间，除题目要求的输出数组 `res` 外额外 `O(1)` 空间。题给 `int` 函数原型；若乘积可超过 `int` 范围，需与调用方约定更宽结果类型，不能靠中间转型后再写回 `int` 消除溢出。
+**（3）代价。** 扫一次为 `O(n)` 时间，除题目要求的输出数组 `res` 外额外 `O(1)` 空间。题给原型为 `void calMulMax(int A[], int res[], int n)`，输入与输出数组元素均为 `int`；若乘积可超过 `int` 范围，需与调用方约定更宽结果类型，不能靠中间转型后再写回 `int` 消除溢出。
 
 <details open><summary>为什么只留最大还不够</summary>例 `A[i]=-9`，右侧有 `-9` 与 `6`：最大乘积是 `81`，取后缀最大 6 只得 -54。样例 `[1,4,-9,6]` 从右向左更新极值得 `[6,24,81,36]`。一开始不能让后缀不含 `A[i]`，因为允许 `i=j`。</details>
 

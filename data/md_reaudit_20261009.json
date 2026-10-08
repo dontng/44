@@ -235,6 +235,42 @@
       "findings": [
         "Q09 2015-38: explicitly documented table E3 versus option C S3 naming inconsistency; longest-prefix choice remains third row."
       ]
+    },
+    "0907": {
+      "questions": 24,
+      "findings": [
+        "Removed obsolete crop notes; distinguished textbook RTT approximation from ACK-driven cwnd growth."
+      ]
+    },
+    "0908": {
+      "questions": 17,
+      "findings": [
+        "Q15: reused persistent-connection cwnd2, so image transfer rounds are2+1; completed Q13 option adjudication."
+      ]
+    },
+    "0914": {
+      "questions": 11,
+      "findings": [
+        "Added required queue state diagrams; corrected actual void prototype. Compiled C examples and compared reorder/suffix product against independent expected results."
+      ]
+    },
+    "0915": {
+      "questions": 5,
+      "findings": [
+        "No new substantive defect after image reading, full explanation and independent derivation."
+      ]
+    },
+    "0916": {
+      "questions": 5,
+      "findings": [
+        "Added required AOE diagram; clarified that multiple zero-indegree choices need DAG premise to imply multiple topological orders."
+      ]
+    },
+    "0917": {
+      "questions": 3,
+      "findings": [
+        "Corrected cut argument proving unique MST; independently recomputed all AOE subquestions."
+      ]
     }
   },
   "partially_reviewed": {
@@ -244,12 +280,6 @@
     ]
   },
   "pending_full_pairs": [
-    "0907",
-    "0908",
-    "0914",
-    "0915",
-    "0916",
-    "0917",
     "0918",
     "0919",
     "0920",
@@ -323,7 +353,18 @@
         "src/0830-answer.md",
         "data/md_reaudit_20261009.json"
       ]
+    },
+    {
+      "commit": "e65ecca68f631f6627383018fbd7365183051b22",
+      "files": [
+        "src/0901-answer.md",
+        "src/0902-answer.md",
+        "src/0903-answer.md",
+        "src/0904-answer.md",
+        "src/0906-answer.md",
+        "data/md_reaudit_20261009.json"
+      ]
     }
   ],
-  "note": "665 references independently checked in completed pairs; continue at0907. Earlier complete flags and hashes are version evidence only."
+  "note": "730 references independently checked in completed pairs; continue at0918. Earlier complete flags and hashes are version evidence only."
 }
