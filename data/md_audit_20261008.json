@@ -1,17 +1,22 @@
 {
   "scope": "src/MMDD.md + src/MMDD-answer.md",
-  "complete": false,
+  "complete": true,
   "total_pairs": 59,
-  "last_published_head": "e59625100a50a7980597ac7f29eb9e84093fa906",
+  "date_markdown_files": 118,
+  "reviewed_content_head": "5e3e436977b4ba5bbd7cdc190f68822e5903a047",
+  "reviewed_content_tree": "30c3d784f922a45be9f175081c7631140c6a8b75",
   "answer_text_read": [
     "0731",
     "0801",
     "0802",
+    "0803",
     "0804",
+    "0805",
     "0806",
     "0807",
     "0808",
     "0809",
+    "0810",
     "0811",
     "0812",
     "0813",
@@ -33,13 +38,6 @@
     "0829",
     "0830",
     "0831",
-    "0914",
-    "0915"
-  ],
-  "pending_answer_text_read": [
-    "0803",
-    "0805",
-    "0810",
     "0901",
     "0902",
     "0903",
@@ -48,6 +46,8 @@
     "0906",
     "0907",
     "0908",
+    "0914",
+    "0915",
     "0916",
     "0917",
     "0918",
@@ -66,5 +66,510 @@
     "1001",
     "1002"
   ],
-  "note": "Text-read list is not a claim that every image and explanation has passed final substantive review. Preserve actual learning history. Small leased pushes only."
+  "question_text_read": [
+    "0731",
+    "0801",
+    "0802",
+    "0803",
+    "0804",
+    "0805",
+    "0806",
+    "0807",
+    "0808",
+    "0809",
+    "0810",
+    "0811",
+    "0812",
+    "0813",
+    "0814",
+    "0815",
+    "0816",
+    "0817",
+    "0818",
+    "0819",
+    "0820",
+    "0821",
+    "0822",
+    "0823",
+    "0824",
+    "0825",
+    "0826",
+    "0827",
+    "0828",
+    "0829",
+    "0830",
+    "0831",
+    "0901",
+    "0902",
+    "0903",
+    "0904",
+    "0905",
+    "0906",
+    "0907",
+    "0908",
+    "0914",
+    "0915",
+    "0916",
+    "0917",
+    "0918",
+    "0919",
+    "0920",
+    "0921",
+    "0922",
+    "0923",
+    "0924",
+    "0925",
+    "0926",
+    "0927",
+    "0928",
+    "0929",
+    "0930",
+    "1001",
+    "1002"
+  ],
+  "pending_answer_text_read": [],
+  "question_references": 825,
+  "unique_image_sources": 799,
+  "source_manifest": "data/md_sources_20261008.json",
+  "source_recovery": "Use the repository path and pinned Git revision in the source manifest. Missing transient upload screenshots are not review inputs. If a local image is absent, recover the exact blob from that revision before viewing; never substitute an adjacent question or fabricate a source.",
+  "verification": {
+    "heading_identity_pairs": 59,
+    "numbered_question_sections": 825,
+    "question_answer_image_identity": "passed",
+    "relative_file_targets": "passed",
+    "explicit_anchor_targets_checked": 722,
+    "details_and_code_fences": "passed",
+    "remote_date_file_blob_hashes_checked": 118,
+    "algorithms": {
+      "compile": "C11 -Wall -Wextra -Werror",
+      "functions": [
+        "leftRotate",
+        "majority",
+        "firstMissing",
+        "closest3",
+        "calMulMax",
+        "lowerMedian",
+        "splitMaxDiff"
+      ],
+      "oracle_cases": 28201,
+      "duplicate_stress_size": 10000
+    }
+  },
+  "changed_date_files": [
+    "src/0802-answer.md",
+    "src/0803.md",
+    "src/0803-answer.md",
+    "src/0804.md",
+    "src/0804-answer.md",
+    "src/0805.md",
+    "src/0805-answer.md",
+    "src/0806.md",
+    "src/0806-answer.md",
+    "src/0807.md",
+    "src/0807-answer.md",
+    "src/0810.md",
+    "src/0810-answer.md",
+    "src/0811-answer.md",
+    "src/0812.md",
+    "src/0812-answer.md",
+    "src/0817-answer.md",
+    "src/0818-answer.md",
+    "src/0819-answer.md",
+    "src/0822-answer.md",
+    "src/0823-answer.md",
+    "src/0824-answer.md",
+    "src/0825-answer.md",
+    "src/0826-answer.md",
+    "src/0827-answer.md",
+    "src/0828-answer.md",
+    "src/0829-answer.md",
+    "src/0830-answer.md",
+    "src/0831-answer.md",
+    "src/0901.md",
+    "src/0901-answer.md",
+    "src/0902.md",
+    "src/0902-answer.md",
+    "src/0903-answer.md",
+    "src/0904-answer.md",
+    "src/0906.md",
+    "src/0906-answer.md",
+    "src/0908.md",
+    "src/0908-answer.md",
+    "src/0914-answer.md",
+    "src/0916.md",
+    "src/0918-answer.md",
+    "src/0919-answer.md",
+    "src/0920-answer.md",
+    "src/0925-answer.md",
+    "src/0927-answer.md",
+    "src/0928.md",
+    "src/0930-answer.md"
+  ],
+  "question_counts": [
+    {
+      "date": "0731",
+      "questions": 9
+    },
+    {
+      "date": "0801",
+      "questions": 13
+    },
+    {
+      "date": "0802",
+      "questions": 20
+    },
+    {
+      "date": "0803",
+      "questions": 27
+    },
+    {
+      "date": "0804",
+      "questions": 11
+    },
+    {
+      "date": "0805",
+      "questions": 23
+    },
+    {
+      "date": "0806",
+      "questions": 15
+    },
+    {
+      "date": "0807",
+      "questions": 17
+    },
+    {
+      "date": "0808",
+      "questions": 15
+    },
+    {
+      "date": "0809",
+      "questions": 3
+    },
+    {
+      "date": "0810",
+      "questions": 34
+    },
+    {
+      "date": "0811",
+      "questions": 3
+    },
+    {
+      "date": "0812",
+      "questions": 29
+    },
+    {
+      "date": "0813",
+      "questions": 11
+    },
+    {
+      "date": "0814",
+      "questions": 16
+    },
+    {
+      "date": "0815",
+      "questions": 12
+    },
+    {
+      "date": "0816",
+      "questions": 9
+    },
+    {
+      "date": "0817",
+      "questions": 13
+    },
+    {
+      "date": "0818",
+      "questions": 14
+    },
+    {
+      "date": "0819",
+      "questions": 12
+    },
+    {
+      "date": "0820",
+      "questions": 14
+    },
+    {
+      "date": "0821",
+      "questions": 12
+    },
+    {
+      "date": "0822",
+      "questions": 18
+    },
+    {
+      "date": "0823",
+      "questions": 31
+    },
+    {
+      "date": "0824",
+      "questions": 25
+    },
+    {
+      "date": "0825",
+      "questions": 30
+    },
+    {
+      "date": "0826",
+      "questions": 15
+    },
+    {
+      "date": "0827",
+      "questions": 13
+    },
+    {
+      "date": "0828",
+      "questions": 12
+    },
+    {
+      "date": "0829",
+      "questions": 22
+    },
+    {
+      "date": "0830",
+      "questions": 32
+    },
+    {
+      "date": "0831",
+      "questions": 28
+    },
+    {
+      "date": "0901",
+      "questions": 18
+    },
+    {
+      "date": "0902",
+      "questions": 14
+    },
+    {
+      "date": "0903",
+      "questions": 19
+    },
+    {
+      "date": "0904",
+      "questions": 21
+    },
+    {
+      "date": "0905",
+      "questions": 17
+    },
+    {
+      "date": "0906",
+      "questions": 18
+    },
+    {
+      "date": "0907",
+      "questions": 24
+    },
+    {
+      "date": "0908",
+      "questions": 17
+    },
+    {
+      "date": "0914",
+      "questions": 11
+    },
+    {
+      "date": "0915",
+      "questions": 5
+    },
+    {
+      "date": "0916",
+      "questions": 5
+    },
+    {
+      "date": "0917",
+      "questions": 3
+    },
+    {
+      "date": "0918",
+      "questions": 8
+    },
+    {
+      "date": "0919",
+      "questions": 7
+    },
+    {
+      "date": "0920",
+      "questions": 9
+    },
+    {
+      "date": "0921",
+      "questions": 5
+    },
+    {
+      "date": "0922",
+      "questions": 3
+    },
+    {
+      "date": "0923",
+      "questions": 5
+    },
+    {
+      "date": "0924",
+      "questions": 8
+    },
+    {
+      "date": "0925",
+      "questions": 13
+    },
+    {
+      "date": "0926",
+      "questions": 5
+    },
+    {
+      "date": "0927",
+      "questions": 10
+    },
+    {
+      "date": "0928",
+      "questions": 3
+    },
+    {
+      "date": "0929",
+      "questions": 6
+    },
+    {
+      "date": "0930",
+      "questions": 5
+    },
+    {
+      "date": "1001",
+      "questions": 4
+    },
+    {
+      "date": "1002",
+      "questions": 4
+    }
+  ],
+  "preserved_source_errata": [
+    "2013-13: encoded float is negative while printed choices are positive",
+    "2025-05: this source version lists six weights for seven characters; complete seven-weight version is explicitly identified",
+    "2019-36: 10 Mb/s and 128 B imply 51.2 us, absent from the printed choices",
+    "2023-43: literal a[24][24] conflicts with j<64; distinguish undefined literal code from intended row width",
+    "2025-44: idiv source register conflicts with the accompanying comment; interpretation is explicitly stated"
+  ],
+  "scope_limit": "All 118 date markdown pages were read and reviewed. Question/source mismatches and derivations were checked against the corresponding current question images. This is not a claim of independently solving every image again or proof of the learner mastering each question.",
+  "publishing": "Small batches on main, expected-head checked, never force-pushed.",
+  "reviewed_file_sha1": {
+    "src/0731.md": "5ef143780c1fe5e65efd48fcc751b22d945389b6",
+    "src/0731-answer.md": "5579adb2ae50572d65dbc9c8586748f713bc981e",
+    "src/0801.md": "7526b168982f7d73f196475afd1268564e9ad4b4",
+    "src/0801-answer.md": "649238ec843e0956c62c5398a1cd35c73f3f008f",
+    "src/0802.md": "003be9dfee14a05357c7f92c2dbaa71f41ecc6ea",
+    "src/0802-answer.md": "c4541af3d3604eed9250cc54e8a7334c924a0fb2",
+    "src/0803.md": "d459865cbdbb1c03809bad862151e55d14a4fd01",
+    "src/0803-answer.md": "6073cb4dde01a99829a7a082bb65812b164dcf37",
+    "src/0804.md": "9d870acbcb117d089565446e0bd99fa2235b76be",
+    "src/0804-answer.md": "b42277bd3442415d2b66e3247f7d38b50faab256",
+    "src/0805.md": "0a54428b622e4a961a769784b2309695c0e2dfd1",
+    "src/0805-answer.md": "79bf82aea1d94fa2dbd017c2df4eceae53428aaf",
+    "src/0806.md": "371156634bf9fef843125b25b44815c949506c4f",
+    "src/0806-answer.md": "cf352377f928c527da157b56f77d8b644eda502a",
+    "src/0807.md": "8a40b9010251dfe79f87264aa236cde8b70fe4dd",
+    "src/0807-answer.md": "0e510a5213b1165c8b87c87e3f25971575ab598a",
+    "src/0808.md": "ca8b3781538695dd3321efb13cc86fc7855a7575",
+    "src/0808-answer.md": "6761ec64b24d7178aef071c5063f7da3d7ad6c20",
+    "src/0809.md": "3f36a6e4b788992735c7d81b4c4774518b594433",
+    "src/0809-answer.md": "6576b99703833000fd580ddf149d25c307223923",
+    "src/0810.md": "d0cd354e2704f48dfa80910795c61c35fcfbba43",
+    "src/0810-answer.md": "66b782e185fe87d59e485d0aa954532d8c99dcf5",
+    "src/0811.md": "5b58345aacd65a4ad9d05eaa286806398911f84d",
+    "src/0811-answer.md": "0d0831a993500fd2351f7b77f30bcea3dd67c5f5",
+    "src/0812.md": "0940b602e3700bd3f0ada9d7640d8f077a1bb12e",
+    "src/0812-answer.md": "021b054dce0514e9667506a7f7a2386729f64513",
+    "src/0813.md": "8766bf4f1b0564aac2877926bba88b72974a799d",
+    "src/0813-answer.md": "734778092b68bf5e0fe925eea5daa70283a8afc5",
+    "src/0814.md": "1f55c80c8787e10b4bf044374c4e0029f21c18bd",
+    "src/0814-answer.md": "522d64fc87fade4cc0adfcd7b143305cb0051652",
+    "src/0815.md": "f7aa32efd7759fb8c2aacc6f71ba5a7561d84583",
+    "src/0815-answer.md": "921585a66b7faadeabf2608b3e6a31418feae751",
+    "src/0816.md": "e841109f25e70e102b45fcf2433b4d3556968397",
+    "src/0816-answer.md": "8017d596a4aa1f415f607f5349c77b2cf5266adf",
+    "src/0817.md": "969fc6d09dbf5f3488615e1bbfd99af0e4b19695",
+    "src/0817-answer.md": "88dcfcf59c0862fbe00331dda4547c4e70d8264c",
+    "src/0818.md": "e633a0a36bbfc0727757dfcbb962af35e68e5950",
+    "src/0818-answer.md": "ea7ca776c6df91df93859875c6656c801582541d",
+    "src/0819.md": "ec0513e6145471549a870e43d087dbe49bee747f",
+    "src/0819-answer.md": "d2f40ddaf544471e1c372c0af98b32bdb8b24fb5",
+    "src/0820.md": "0674dac067bea73b3f73d45b783f3cf58ed21f1b",
+    "src/0820-answer.md": "d0645ce65180603d4580290b8ce15228230e14ad",
+    "src/0821.md": "135553fa509a6bfd798dcdd5326b551781382bf3",
+    "src/0821-answer.md": "f1797fda61bd7df01c75824511f47520304ed50e",
+    "src/0822.md": "cadd7c23bcbdc58c38320348cf5a366d24da5fe4",
+    "src/0822-answer.md": "f7ea75e15c14996867109f16e65e7efac08dd5e6",
+    "src/0823.md": "7516cdb2e04c1d961a0e0f31f7e6c19186b2fae5",
+    "src/0823-answer.md": "589dcdcdd95bf60481e8f9867ffd7a8e6121c853",
+    "src/0824.md": "94a3e44f30f345590199fc542c331c6e7346199f",
+    "src/0824-answer.md": "7a96f63c5d4479dc610f020c6f73c65380c133a0",
+    "src/0825.md": "075ed6b26d2e886bc2aa1c162ac1049351ce5559",
+    "src/0825-answer.md": "0bcc6f00a472493291cd0a0e00f81ae3acfcd8a6",
+    "src/0826.md": "168024a8e6b46fbca49500e88009d68b67e7983e",
+    "src/0826-answer.md": "cdf4e5f23c32a0b693a619c172c88122a4ee83d8",
+    "src/0827.md": "ec003fa90183a4653bd85d9a9a09d1ddffadcda0",
+    "src/0827-answer.md": "746d68d9ea5f79f4cc9951aa5effecac22aa73fd",
+    "src/0828.md": "a3a42ea94bb9da0301638d3e141f9556713803ce",
+    "src/0828-answer.md": "443aa5de067869d3706c70559790eef7640f54c9",
+    "src/0829.md": "5ffe23be20ee31d2664c1ea75e46efbe9f0eff3f",
+    "src/0829-answer.md": "d26b51885f5f8817c721805095f6fc27080b09a6",
+    "src/0830.md": "fbd76490266fa7d4dad4e4d73175c436311b81b6",
+    "src/0830-answer.md": "e9b0367c9c6095dca28271567112d19eb3c832a6",
+    "src/0831.md": "408c81f61d5b5baf08ec4d356a23e73118b43243",
+    "src/0831-answer.md": "3cdb108a6e1629ca3c85837dba6f19b017e5ab5a",
+    "src/0901.md": "ad8a0470b6031581cb34940d3a6ce2fdc214d620",
+    "src/0901-answer.md": "e1e08cd74da4efe3319d8deca0163c27298dd016",
+    "src/0902.md": "6e4a6ff5e70cfe827d511bc9e4ea282973143ec2",
+    "src/0902-answer.md": "8b748e601612f1b3319f004145b0f0a5707d2dcf",
+    "src/0903.md": "ed47d82e4d06f70566687ccc75d518f3f9c7c747",
+    "src/0903-answer.md": "69b20db0b3148bb1e41ff37992f698b162aea165",
+    "src/0904.md": "605ddec909cd05969f03563ac6004e85df0b0abf",
+    "src/0904-answer.md": "2fb5e59cb55ca40492b733a723de100fa4b82dc7",
+    "src/0905.md": "39d82274b8d459ecfacb7bebce58afdf81f09e4e",
+    "src/0905-answer.md": "46e62caebb96311e7a30b48cde1388c0b559e80a",
+    "src/0906.md": "9504cc7c80d5d59e50f01fedb5972be4a8086a83",
+    "src/0906-answer.md": "1c92a955cf90cbbfa9a1050c9a71b08a7519a0f1",
+    "src/0907.md": "88599c705396d41473979e7cff428fba6723f88b",
+    "src/0907-answer.md": "04c77d336673523e19f3f395a53e339afa30f48c",
+    "src/0908.md": "a4a8938bdc5b32fc49187bee62db792e80ae3005",
+    "src/0908-answer.md": "7fd6ed5e6907bbaa82269b0a2733206054b198f8",
+    "src/0914.md": "1f25a774742cc70501bcbd6c93f15de15c31e1e5",
+    "src/0914-answer.md": "19da47b36de6083eb744648d3d1d5c2f721d1dbc",
+    "src/0915.md": "c54fa5676bd936d1cf49cdab20ba2c833dfbdb68",
+    "src/0915-answer.md": "7d0c2da95a6f9cae0c0bc2643287705f6e54bd65",
+    "src/0916.md": "0218c4e0eb80fac5ce414e1a31d9b973d723a89d",
+    "src/0916-answer.md": "2edad365dab54c142f75de4abeafe9810c563a99",
+    "src/0917.md": "c523539994a04554f35057e304b6eaf7526e9a17",
+    "src/0917-answer.md": "bd19129f15e2fc6c626ce866b4d91fae4820e812",
+    "src/0918.md": "731f8a0815ad402f1c0dde539d71cee8557f1dfc",
+    "src/0918-answer.md": "ca26dc00d86cb59b49edf0d5e0164f2162601b25",
+    "src/0919.md": "a031e419117f14a162fee77c0e7d40808ca9e4f4",
+    "src/0919-answer.md": "70e30039e4f9ccdfa5e72f4852fea040fcd84067",
+    "src/0920.md": "fe49045d9d43ca287c3c6e1f8c003dd0610b8344",
+    "src/0920-answer.md": "5805b5d0e8108cd1794b16aa2a34267d7789454d",
+    "src/0921.md": "96915c78642cfaa8af807530cbbeadbe7cfedbf5",
+    "src/0921-answer.md": "a18e80fc166aad8571cad3420e60ad9f03c7f6de",
+    "src/0922.md": "b3e9aff4b149d45ff10c6b5d119f2397ce3e77a1",
+    "src/0922-answer.md": "52f0fbc7873871eb62eb30b0023a4a2a56dce8a6",
+    "src/0923.md": "38ed851e96d57ec9308e8559b3d3efdbabfc3ee0",
+    "src/0923-answer.md": "9eeef94a4b300947abc62deda481759119c68f8d",
+    "src/0924.md": "a79528949d845cd042a19f5f97976bfbe1876c18",
+    "src/0924-answer.md": "701365b2bcaed43269134f4d8e7463bc4ac68939",
+    "src/0925.md": "057adddfcfaf4683734c23f983c80b64aa335bcf",
+    "src/0925-answer.md": "bb12869be433bc0e76610ab72b7370878a31dfbe",
+    "src/0926.md": "47339a3213094ae89da6678dcafa71942ce2ca1f",
+    "src/0926-answer.md": "49947a9fe195f23b1862b15fe632bc349c2d8447",
+    "src/0927.md": "bd666801b24665b69b350734ba0000a1fac42b9d",
+    "src/0927-answer.md": "f6836b3ee796da3e933b387913e53c01b5231d1b",
+    "src/0928.md": "d46fae40ed32a23415f12ede73d23ad5a535e97d",
+    "src/0928-answer.md": "50b6b2614405b7c6016f853314b0b4d465a51fdc",
+    "src/0929.md": "6abddfe97926b8ee6017422ac34caf328a5b4466",
+    "src/0929-answer.md": "5b13e23e480c7bf63381c4e0e7fa55d0ae2ca4bc",
+    "src/0930.md": "a57261e4d50ad91d84be8c050a4a11a2d714e2d2",
+    "src/0930-answer.md": "ef12c43765c0b14d074d3796dd487d31a6b27260",
+    "src/1001.md": "715d1580b3c78800ff459070d6fbfae0541156b0",
+    "src/1001-answer.md": "104c215dd9e9efaebaa189352fcc07af4e0b4f59",
+    "src/1002.md": "3ade8acdfd88a1b7a3f606efe58519ced5c7f5ed",
+    "src/1002-answer.md": "35a1b2e7f79ef035105618f15c95464b0a0c2afa"
+  }
 }
