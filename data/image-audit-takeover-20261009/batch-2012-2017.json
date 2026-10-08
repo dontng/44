@@ -1,0 +1,42 @@
+{
+  "status": "corrected_and_visually_reopened",
+  "scope": "2012–2017",
+  "review_method": "全部引用题图联系表目视筛查，疑点打开原尺寸并与原卷相关页比对；不等同全部798题逐题原卷比对",
+  "fixes": [
+    {
+      "path": "bank/2013/q16.png",
+      "sha": "3e680c036a320c2ec420cb34ac82c1a0507e1af0",
+      "removed_rows": [
+        60,
+        170
+      ],
+      "old_size": [
+        1315,
+        626
+      ],
+      "new_size": [
+        1315,
+        516
+      ],
+      "reason": "跨页接缝包含原卷页眉残影；仅删除无关空白带，保留所有题文及图表原像素"
+    },
+    {
+      "path": "bank/2017/q08.png",
+      "sha": "8cb56dde26e3b0ef54d39ff437bfcf13b7d5084b",
+      "removed_rows": [
+        45,
+        115
+      ],
+      "old_size": [
+        937,
+        439
+      ],
+      "new_size": [
+        937,
+        369
+      ],
+      "reason": "跨页接缝包含原卷页眉残影；仅删除无关空白带，保留所有题文及图表原像素"
+    }
+  ],
+  "preservation": "删除带外像素逐像素相同；宽度不变；修正图重新目视确认题文、选项、图表、小问完整"
+}
