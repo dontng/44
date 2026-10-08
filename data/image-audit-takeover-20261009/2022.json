@@ -1,0 +1,55 @@
+{
+  "review_date": "2026-10-09",
+  "reviewer": "Codex",
+  "base_commit": "5c5e26b6521ab380b488dcf7eed87b400f140fa8",
+  "scope": "bank/2022/q41.png—q47.png",
+  "reviewed_count": 7,
+  "new_defect_count": 0,
+  "images_modified": 0,
+  "source_pages": [
+    6,
+    7,
+    8
+  ],
+  "method": "逐张打开题图，对照原卷页面；Git blob SHA核对当前main实际图片。",
+  "checks": [
+    "q41：结构体、两棵树、两份顺序存储数组及两项要求完整",
+    "q42：两个小问完整",
+    "q43：跨页数据通路图及五个小问完整",
+    "q44：三个小问完整",
+    "q45：跨页目录图、表格及第四问末尾的间接地址项说明完整",
+    "q46：约束图、wait/signal要求及初值要求完整",
+    "q47：网络拓扑及四个小问完整，题图开头为第47题，未混入第46题末尾"
+  ],
+  "images": [
+    {
+      "path": "bank/2022/q41.png",
+      "sha": "705e8aad9af9727751b4d8195c674fae7ec41b9e"
+    },
+    {
+      "path": "bank/2022/q42.png",
+      "sha": "485950c27bc4d926b83ff607c0df430ffdc7c207"
+    },
+    {
+      "path": "bank/2022/q43.png",
+      "sha": "4c158ed1bcfe261426f98a4128c99dd46fb9194f"
+    },
+    {
+      "path": "bank/2022/q44.png",
+      "sha": "9aeded3b556f149b8a7bde853259118d1fc55aee"
+    },
+    {
+      "path": "bank/2022/q45.png",
+      "sha": "f860f62b15331a4e2cb305618a4e10b4079955ae"
+    },
+    {
+      "path": "bank/2022/q46.png",
+      "sha": "7cf83108584aeab3df9f8e070e439e6a92202eb3"
+    },
+    {
+      "path": "bank/2022/q47.png",
+      "sha": "a7c530d3aae1909de0d8ae19d996ac8bda0fff85"
+    }
+  ],
+  "status": "遗留边界复验通过"
+}
