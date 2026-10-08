@@ -1,0 +1,56 @@
+{
+  "review_date": "2026-10-09",
+  "reviewer": "Codex",
+  "base_commit": "5c5e26b6521ab380b488dcf7eed87b400f140fa8",
+  "scope": "bank/2017/q41.png—q47.png",
+  "reviewed_count": 7,
+  "new_defect_count": 0,
+  "images_modified": 0,
+  "source_pages": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "method": "逐张打开题图，与原卷页面目视对照；Git blob SHA核对当前main实际图片。",
+  "checks": [
+    "q41：两棵表达式树、结构体跨页末尾及两项算法要求完整",
+    "q42：带权图和三个小问完整",
+    "q43：公式上下标、代码及五个小问完整",
+    "q44：跨页机器代码和四个小问完整",
+    "q45：虚拟地址格式和三个小问完整",
+    "q46：三个线程代码及下一页末尾要求完整",
+    "q47：两幅时序图和四个小问完整，未混入q46末尾"
+  ],
+  "images": [
+    {
+      "path": "bank/2017/q41.png",
+      "sha": "3965e222d2bb498076b5c4dde55aa3ac756f6d08"
+    },
+    {
+      "path": "bank/2017/q42.png",
+      "sha": "56d34895e696a3fbecac7bf937c6b1fa31078273"
+    },
+    {
+      "path": "bank/2017/q43.png",
+      "sha": "b40a6f103c57b49c68ee4a289d27239a0e5a2d2d"
+    },
+    {
+      "path": "bank/2017/q44.png",
+      "sha": "7d19b0dec42218b0277502fbd17beb7c6cce28d7"
+    },
+    {
+      "path": "bank/2017/q45.png",
+      "sha": "68a0a58d6891857914e0455e6f8f2966d1d85ecd"
+    },
+    {
+      "path": "bank/2017/q46.png",
+      "sha": "084b69b668b60c6d8814187668fa4a21a17a5351"
+    },
+    {
+      "path": "bank/2017/q47.png",
+      "sha": "8f76ec1bf5346617f8a75922adfde23055f7f61b"
+    }
+  ],
+  "status": "已复验，未发现串题、页码残留或缺失题干/图示/小问；沿用已发布修复"
+}
