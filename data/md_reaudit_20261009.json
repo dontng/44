@@ -271,23 +271,57 @@
       "findings": [
         "Corrected cut argument proving unique MST; independently recomputed all AOE subquestions."
       ]
+    },
+    "0918": {
+      "questions": 8,
+      "findings": [
+        "Recomputed hashing, median selection, merge cost, partition, ranking and replacement-selection runs."
+      ]
+    },
+    "0919": {
+      "questions": 7,
+      "findings": [
+        "Rechecked all subquestions, representations, actual instruction bytes, addresses and source conflicts."
+      ]
+    },
+    "0920": {
+      "questions": 9,
+      "findings": [
+        "Q04 corrected missing connections to6->9 and7->4; MUX output feeds ALU B, not SR."
+      ]
+    },
+    "0921": {
+      "questions": 5,
+      "findings": [
+        "Recomputed interrupt/DMA fractions, memory traffic and overlapping device timing."
+      ]
+    },
+    "0922": {
+      "questions": 3,
+      "findings": [
+        "Recomputed pipeline dependencies, branch displacement and first-page retry."
+      ]
+    },
+    "0923": {
+      "questions": 5,
+      "findings": [
+        "Recomputed mappings, cache misses and page spans; retained dimension conflict caveat."
+      ]
+    },
+    "0924": {
+      "questions": 8,
+      "findings": [
+        "Q05 corrected E=physical tag and F=set index, both9bits; verified actual diagram routing."
+      ]
+    },
+    "0925": {
+      "questions": 13,
+      "findings": [
+        "Checked each semaphore protocol against source constraints. Q03 image contains unrelated2013-44 diagram; explicitly marked, source image cleanup remains pending."
+      ]
     }
   },
-  "partially_reviewed": {
-    "0919": [
-      "Q02 2017-43: corrected float return type, 4B7FFFFFH encoding and n=24 rounding.",
-      "Q05 2023-44: removed stale row-width64 conclusion."
-    ]
-  },
   "pending_full_pairs": [
-    "0918",
-    "0919",
-    "0920",
-    "0921",
-    "0922",
-    "0923",
-    "0924",
-    "0925",
     "0926",
     "0927",
     "0928",
@@ -364,7 +398,22 @@
         "src/0906-answer.md",
         "data/md_reaudit_20261009.json"
       ]
+    },
+    {
+      "commit": "26e3ff6dd4ba444cae0a94ab670edf5423ad4fdd",
+      "files": [
+        "src/0905-answer.md",
+        "src/0907-answer.md",
+        "src/0908-answer.md",
+        "src/0914-answer.md",
+        "src/0916-answer.md",
+        "src/0917-answer.md",
+        "data/md_reaudit_20261009.json"
+      ]
     }
   ],
-  "note": "730 references independently checked in completed pairs; continue at0918. Earlier complete flags and hashes are version evidence only."
+  "note": "788 references independently checked in completed pairs; continue at0926. Image cleanup issue explicitly recorded; hashes are version evidence only.",
+  "pending_image_cleanup": [
+    "bank/2013/q45.png: unrelated conditional-transfer diagram between museum statement and pseudocode"
+  ]
 }
