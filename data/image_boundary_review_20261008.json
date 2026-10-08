@@ -6270,5 +6270,8 @@
   ],
   "display_width_correction_count": 26,
   "left_margin_metric": "内容连通块至少20像素、灰度低于220时的最左内容像素位置；缩减至少20像素的图片计入。",
-  "review_complete": true
+  "review_complete": true,
+  "current_status": "superseded_by_independent_review",
+  "superseded_by": "data/image-audit-takeover-20261009/manifest.json",
+  "supersession_reason": "旧完成记录后又确认7张残留内容缺陷；新记录区分全量联系表筛查与逐题原卷比对，避免哈希通过被误当内容审核完成。"
 }
