@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-09",
+  "scope": "src/MMDD.md引用的798张bank题图；排除未引用的2009/q05",
+  "review_method": "逐题目视检查总览；疑点打开原图并回查源PDF。解码与哈希只作为传输校验。",
+  "reviewed_years": [
+    2009,
+    2010,
+    2011
+  ],
+  "reviewed_unique_count": 140,
+  "confirmed_defects": [
+    {
+      "path": "bank/2009/q47.png",
+      "problem": "顶部混入上一题末行文字碎片",
+      "fix": "仅去掉顶部7像素，不改宽度，保留题干图示和三个小问"
+    },
+    {
+      "path": "bank/2010/q06.png",
+      "problem": "底部无关扫描残影",
+      "fix": "保留D选项至末尾并去除空白下方残影"
+    },
+    {
+      "path": "bank/2011/q43.png",
+      "problem": "跨页接缝残留无关扫描残影",
+      "fix": "去掉605—653行接缝残影，保留第4问两页全部文字"
+    }
+  ],
+  "new_defect_count": 3,
+  "images_modified": 3,
+  "status": "继续审核2012—2025年选择题和其余大题；2017/2022/2025大题21张另有逐题源卷复验记录。"
+}
