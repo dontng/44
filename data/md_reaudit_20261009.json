@@ -317,19 +317,55 @@
     "0925": {
       "questions": 13,
       "findings": [
-        "Checked each semaphore protocol against source constraints. Q03 image contains unrelated2013-44 diagram; explicitly marked, source image cleanup remains pending."
+        "Q03: original image mixes unrelated2013-44 datapath; question and answer now show source-checked text transcription, with original preserved as a plain link."
+      ]
+    },
+    "0926": {
+      "questions": 5,
+      "findings": [
+        "Actual source images, full explanations and all subquestions independently checked."
+      ]
+    },
+    "0927": {
+      "questions": 10,
+      "findings": [
+        "Actual source images, full explanations and all subquestions independently checked.",
+        "Q04: clarified that moving prefix frees old29th physical block for new logical30th record; explicit DMA priority."
+      ]
+    },
+    "0928": {
+      "questions": 3,
+      "findings": [
+        "Actual source images, full explanations and all subquestions independently checked."
+      ]
+    },
+    "0929": {
+      "questions": 6,
+      "findings": [
+        "Actual source images, full explanations and all subquestions independently checked.",
+        "Q03: added required C record definitions and linked-storage diagram; Q05 clarified component connection and weighted-undirected logical structure."
+      ]
+    },
+    "0930": {
+      "questions": 5,
+      "findings": [
+        "Actual source images, full explanations and all subquestions independently checked."
+      ]
+    },
+    "1001": {
+      "questions": 4,
+      "findings": [
+        "Actual source images, full explanations and all subquestions independently checked."
+      ]
+    },
+    "1002": {
+      "questions": 4,
+      "findings": [
+        "Actual source images, full explanations and all subquestions independently checked."
       ]
     }
   },
-  "pending_full_pairs": [
-    "0926",
-    "0927",
-    "0928",
-    "0929",
-    "0930",
-    "1001",
-    "1002"
-  ],
+  "pending_full_pairs": [],
   "published_batches": [
     {
       "commit": "34536590d085f6baa1a0d8a28fe919bce8acd1f8",
@@ -410,10 +446,23 @@
         "src/0917-answer.md",
         "data/md_reaudit_20261009.json"
       ]
+    },
+    {
+      "commit": "42cf13e39cca767ec637c0f875461eb35d0f97cd",
+      "files": [
+        "src/0920-answer.md",
+        "src/0924-answer.md",
+        "src/0925-answer.md",
+        "data/md_reaudit_20261009.json"
+      ]
     }
   ],
-  "note": "788 references independently checked in completed pairs; continue at0926. Image cleanup issue explicitly recorded; hashes are version evidence only.",
-  "pending_image_cleanup": [
-    "bank/2013/q45.png: unrelated conditional-transfer diagram between museum statement and pseudocode"
+  "note": "All59 date pairs /825 references independently reviewed. Auxiliary Markdown corrections await final publication; complete flag remains false until then.",
+  "retained_source_image_defects": [
+    {
+      "path": "bank/2013/q45.png",
+      "issue": "Unrelated2013-44 diagram retained in original PNG for provenance.",
+      "src_remedy": "Replaced inline image with source-checked complete transcription in src/0925.md and src/0925-answer.md; original available by ordinary link."
+    }
   ]
 }
