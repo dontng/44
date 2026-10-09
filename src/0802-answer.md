@@ -39,9 +39,7 @@
 <a id="q01"></a>
 ## 01｜2009-01：打印顺序为什么要用队列
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q01.png" alt="2009-01 原题" width="470" style="display:block; width:29.35em; max-width:none; height:auto;">
-</div>
+![2009-01 原题](../bank/2009/q01.png)
 
 主机先把任务送入缓冲区，打印机慢慢取；两者速度不同，但**先送来的数据必须先打印**。需要保留到达次序的先进先出结构，选 **B，队列**。题干的“速度不匹配”解释为何要缓冲，“依次写入／依次取出”才决定用什么逻辑结构；不能看到“缓冲”就猜任一种能暂存数据的容器。
 
@@ -53,9 +51,7 @@
 <a id="q02"></a>
 ## 02｜2009-02：栈容量看同时压住了多少元素
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q02.png" alt="2009-02 原题" width="468" style="display:block; width:29.26em; max-width:none; height:auto;">
-</div>
+![2009-02 原题](../bank/2009/q02.png)
 
 按 `a,b,c,d,e,f,g` 入栈，出栈后立即入队；队列只把**出栈顺序原样保存**。要先得到 `b`，压 `a,b` 后弹 `b`；接着要 `d`，压 `c,d` 后弹 `d`，此时栈内 `a,c`；再弹 `c`。继续压 `e,f` 后弹 `f,e`，最后弹 `a`、压弹 `g`。栈最大同时有 `a,c,d` 或 `a,e,f` 三个元素，故容量至少 **3，选 C**。
 
@@ -69,9 +65,7 @@
 <a id="q03"></a>
 ## 03｜2010-01：多了一条“不许连续弹三次”的操作约束
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q01.png" alt="2010-01 原题" width="463" style="display:block; width:28.92em; max-width:none; height:auto;">
-</div>
+![2010-01 原题](../bank/2010/q01.png)
 
 普通栈序列可能合法，本题还须数**连续的 Pop**。D 以 `a` 开头，先压 `a` 并弹出；以后 `f` 紧接其后作为第二个输出，必须把 `b,c,d,e,f` 都压入，弹 `f,e,d` 才能按该选项继续，已经连续弹三次，违反条件。选 **D**。A、B、C 可在需要时插入新的 Push 打断连续 Pop，不能仅凭“有三个相邻输出”判断不可能。
 
@@ -85,9 +79,7 @@ A：压 `a,b,c,d`，弹 `d,c`；压 `e`，弹 `e,b`；压 `f`，弹 `f,a`。B：
 <a id="q04"></a>
 ## 04｜2010-02：两端入、一端出，不等于任意排列
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q02.png" alt="2010-02 原题" width="493" style="display:block; width:30.84em; max-width:none; height:auto;">
-</div>
+![2010-02 原题](../bank/2010/q02.png)
 
 题目让 `a,b,c,d,e` **全部入队后才出队**。每来一个新元素，只能接在当前序列的两端；从固定出队的一端读，想得到 C 的 `d,b,c,a,e`，把最后进入的 `e` 放到另一端、`d` 放到出队端后，剩下 `a,b,c` 必须排成 `b,c,a`。但 `c` 最后进入这三者时只能接两端，无法插在 `b` 与 `a` 之间。所以 C 不可能，选 **C**。
 
@@ -101,9 +93,7 @@ A：压 `a,b,c,d`，弹 `d,c`；压 `e`，弹 `e,b`；压 `f`，弹 `f,a`。B：
 <a id="q05"></a>
 ## 05｜2011-02：d 先出时，e 可以插在四个位置
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q02.png" alt="2011-02 原题" width="476" style="display:block; width:29.75em; max-width:none; height:auto;">
-</div>
+![2011-02 原题](../bank/2011/q02.png)
 
 入栈顺序 `a,b,c,d,e`，若第一个出栈是 `d`，此前栈中自底向顶是 `a,b,c,d`，`e` 还不能入栈，否则它会盖住 `d`。弹 `d` 后，剩下 `c,b,a` 必按此顺序弹出；尚未入栈的 `e` 可以在这三者的**前、两两之间或后**入栈并立即弹出，共四个插入位置，选 **B**。
 
@@ -117,9 +107,7 @@ A：压 `a,b,c,d`，弹 `d,c`；压 `e`，弹 `e,b`；压 `f`，弹 `f,a`。B：
 <a id="q06"></a>
 ## 06｜2011-03：首元素写在 0，头指针与尾指针怎样初始化
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q03.png" alt="2011-03 原题" width="476" style="display:block; width:29.77em; max-width:none; height:auto;">
-</div>
+![2011-03 原题](../bank/2011/q03.png)
 
 这里 `front` 和 `rear` 在**非空时分别指向队头元素和队尾元素**。第一个元素要写在 `A[0]`：队头 `front` 从一开始就该是 0，而队尾 `rear` 在首次入队时**先推进一格**，所以此前位于 `n−1`。初值为 `(0,n−1)`，选 **B**。空态的两个指针不必相等，题目只定义了它们在非空时各指哪里。
 
@@ -131,9 +119,7 @@ A：压 `a,b,c,d`，弹 `d,c`；压 `e`，弹 `e,b`；压 `f`，弹 `f,a`。B：
 <a id="q07"></a>
 ## 07｜2012-02：操作符栈最大深度要在扫描中截住
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q02.png" alt="2012-02 原题" width="437" style="display:block; width:27.34em; max-width:none; height:auto;">
-</div>
+![2012-02 原题](../bank/2012/q02.png)
 
 中缀转后缀时，操作数可直接输出，尚不能确定次序的运算符和左括号留在栈中。扫描到 `a+b-a*((c+d)` 内的 `+` 时，外层减号、乘号、两层左括号与内层加号同时在栈，容量达到 **5，选 A**。不能把原式中共有多少运算符当栈深；已遇到的低优先级运算和右括号会让部分符号提前弹出。
 
@@ -147,9 +133,7 @@ A：压 `a,b,c,d`，弹 `d,c`；压 `e`，弹 `e,b`；压 `f`，弹 `f,a`。B：
 <a id="q08"></a>
 ## 08｜2013-02：p₂=3，把 p₃ 的可取值分成两边
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q02.png" alt="2013-02 原题" width="470" style="display:block; width:29.40em; max-width:none; height:auto;">
-</div>
+![2013-02 原题](../bank/2013/q02.png)
 
 第二个出栈的是 3，所以此前 1、2、3 都已入栈。第一个输出可为 1 或 2；若先出 1，随后出 3，栈里留 2；若先出 2，随后出 3，栈里留 1。于是 `p3` 可取 1 或 2；也可先继续压并弹出任意 `4…n`。唯独 3 已作为 `p2` 使用，故可能值共 `2+(n−3)=n−1` 个，选 **C**。
 
@@ -161,9 +145,7 @@ A：压 `a,b,c,d`，弹 `d,c`；压 `e`，弹 `e,b`；压 `f`，弹 `f,a`。B：
 <a id="q09"></a>
 ## 09｜2014-02：扫到 f 时，只保留还没出栈的符号
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q02.png" alt="2014-02 原题" width="458" style="display:block; width:28.65em; max-width:none; height:auto;">
-</div>
+![2014-02 原题](../bank/2014/q02.png)
 
 原式 `a/b+(c*d-e*f)/g`。`a/b` 的 `/` 在遇到较低优先级 `+` 时已弹出；括号内 `c*d` 的 `*` 在遇到 `-` 时也已弹出。扫到 `f` 这个**操作数**时，尚未读到关闭括号和后面的 `/g`，栈底到顶是 `+,(,-,*`，选 **B**。
 
@@ -175,18 +157,14 @@ A：压 `a,b,c,d`，弹 `d,c`；压 `e`，弹 `e,b`；压 `f`，弹 `f,a`。B：
 <a id="q10"></a>
 ## 10｜2014-03：同一道题再出现，只检验位置约定
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q03.png" alt="2014-03 原题" width="466" style="display:block; width:29.15em; max-width:none; height:auto;">
-</div>
+![2014-03 原题](../bank/2014/q03.png)
 
 这是 [0801-02](0801-answer.md#q02) 的同一原题，不作为新的刷题配额。先遮住旧答案，读出题干中 `end1` 是**头元素**、`end2` 是**尾后空位**；于是相同位置为空、尾后空位再走一步碰头为满，取模物理长度 `M`，选 **A**。如果此时把第 06 题的 `front/rear` 约定直接套入，就说明尚未建立“先读定义再写公式”的能力，应回到两题对比，而非重复抄一遍答案。
 
 <a id="q11"></a>
 ## 11｜2015-01：调用栈底不是最先返回的函数
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q01.png" alt="2015-01 原题" width="469" style="display:block; width:29.31em; max-width:none; height:auto;">
-</div>
+![2015-01 原题](../bank/2015/q01.png)
 
 `main()` 执行 `S(1)` 时尚未结束，因此它的调用信息留在栈底；`S(1)` 为求值调用 `S(0)`，后者在最上层。栈底到栈顶是 `main()→S(1)→S(0)`，选 **A**。别把 `S(0)` 最先**返回**误当成它最先**入栈**；两个次序相反。
 
@@ -198,9 +176,7 @@ A：压 `a,b,c,d`，弹 `d,c`；压 `e`，弹 `e,b`；压 `f`，弹 `f,a`。B：
 <a id="q12"></a>
 ## 12｜2016-03：轨道数由必须分开的逆序列给下界
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q03.png" alt="2016-03 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
-</div>
+![2016-03 原题](../bank/2016/q03.png)
 
 每条轨道从左入右出，同轨道内先进入的车仍先驶出；若目标要按编号 `1…9` 离开，同一轨道上进入的编号必须递增。到达顺序中的 `8,4,2,1` 严格递减，这四辆不能放在同一条轨道的任何一对位置，因此至少 **4 条，选 C**。
 
@@ -214,9 +190,7 @@ A：压 `a,b,c,d`，弹 `d,c`；压 `e`，弹 `e,b`；压 `f`，弹 `f,a`。B：
 <a id="q13"></a>
 ## 13｜2017-02：四句话分别问“必须”“可以”“唯一”“两端”
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q02.png" alt="2017-02 原题" width="422" style="display:block; width:26.38em; max-width:none; height:auto;">
-</div>
+![2017-02 原题](../bank/2017/q02.png)
 
 I 错：递归改成非递归可用迭代等方式，不是**必须**显式用栈。II 对：函数调用需保存返回位置等必要信息，通常依赖调用栈。III 错：相同的入栈顺序可边入边出，也可先全部入栈再出，出栈序列并不唯一。IV 错：栈是受限线性表，只能在**同一端**进行入栈和出栈，不能在两端都操作。错误的是 I、III、IV，选 **C**。
 
@@ -228,9 +202,7 @@ I 错：递归改成非递归可用迭代等方式，不是**必须**显式用�
 <a id="q14"></a>
 ## 14｜2018-01：弹出顺序决定减法左右，不能只算栈顶两个数
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q01.png" alt="2018-01 原题" width="449" style="display:block; width:28.04em; max-width:none; height:auto;">
-</div>
+![2018-01 原题](../bank/2018/q01.png)
 
 每轮从 `S1` 先弹 `a`、再弹 `b`，实际计算的是 `b op a`；`S2` 从顶依次给 `+,-,*`。第一轮 `3+2=5`，整数栈由底到顶变 `5,8,5`；第二轮 `8−5=3`，变 `5,3`；第三轮 `5×3=15`，选 **B**。
 
@@ -242,9 +214,7 @@ I 错：递归改成非递归可用迭代等方式，不是**必须**显式用�
 <a id="q15"></a>
 ## 15｜2018-02：队列暂存进栈以后，1 和 2 的顺序为什么难改
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q02.png" alt="2018-02 原题" width="471" style="display:block; width:29.46em; max-width:none; height:auto;">
-</div>
+![2018-02 原题](../bank/2018/q02.png)
 
 允许队列直接输出、队列元素入栈、栈顶输出。C 想先输出 `3,4,5,6`，就得把先到的 1、2 都暂存栈中；此时 2 压在 1 上，后面却要求 `1,2`，无法先越过 2 取 1，所以 **C 不可能**。A 可先直接输出 1、2，再暂存 3、4，直接输出 5、6 后弹出 4、3；B 暂存 1 后直接输出 2—6，再弹 1；D 暂存 1—5、直接输出 6，再逆序弹栈。
 
@@ -256,9 +226,7 @@ I 错：递归改成非递归可用迭代等方式，不是**必须**显式用�
 <a id="q16"></a>
 ## 16｜2020-02：把 Push/Pop 真正执行八步
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q02.png" alt="2020-02 原题" width="527" style="display:block; width:32.93em; max-width:none; height:auto;">
-</div>
+![2020-02 原题](../bank/2020/q02.png)
 
 入栈元素按 `a,b,c,d,e` 供给，操作序列是 `Push,Push,Pop,Push,Pop,Push,Push,Pop`。两次压入 `a,b` 后弹 `b`；再压 `c` 弹 `c`；再压 `d,e` 弹 `e`。出栈序列为 `b,c,e`，选 **D**。`a,d` 仍留在栈里，题目只执行给出的八步，不要求五个元素都已弹完。
 
@@ -270,9 +238,7 @@ I 错：递归改成非递归可用迭代等方式，不是**必须**显式用�
 <a id="q17"></a>
 ## 17｜2021-02：一端只能入，另一端能入能出
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q02.png" alt="2021-02 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
-</div>
+![2021-02 原题](../bank/2021/q02.png)
 
 元素 `1…5` 依次到来，一端只进、另一端可进可出。检验 D 的前缀 `4,1,3,2`：要先出 4，且随后能从出队端取 1，输入 2、3 时须把它们接到 1 的另一侧；在 4 出队后，出队端依次面对 `1,2,3`。出 1 后 2 会挡住 3，后到的 5 也不能让 3越过 2。因此 D 不可能，选 **D**。
 
@@ -284,9 +250,7 @@ I 错：递归改成非递归可用迭代等方式，不是**必须**显式用�
 <a id="q18"></a>
 ## 18｜2022-02：固定 in，仍有不同 out
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q02.png" alt="2022-02 原题" width="467" style="display:block; width:29.20em; max-width:none; height:auto;">
-</div>
+![2022-02 原题](../bank/2022/q02.png)
 
 对于任何给定的入栈次序 `in`，都可“每入一个立刻出”得到 `out=in`，也可“全部入完再出”得到逆序 `out`。所以 C 的“一定不同”错，D 的“可能互为倒序”对，选 **D**。A 错在固定入栈序列后可以模拟检验某个候选 `out` 是否可行；B 错在固定完整出栈序列后，也可以用同一模拟判断某个 `in` 是否可行。
 
@@ -298,9 +262,7 @@ I 错：递归改成非递归可用迭代等方式，不是**必须**显式用�
 <a id="q19"></a>
 ## 19｜2024-02：后缀表达式按运算树的子块拼
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q02.png" alt="2024-02 原题" width="264" style="display:block; width:16.48em; max-width:none; height:auto;">
-</div>
+![2024-02 原题](../bank/2024/q02.png)
 
 原式 `x+y*(z−u)/v`。先把括号得 `zu−`，乘 `y` 得 `yzu−*`，除 `v` 得 `yzu−*v/`，最后与 `x` 相加得 **`xyzu−*v/+`，选 A**。每个二元运算先写左、右两个操作数的后缀块，最后写运算符；括号在后缀里不再出现。
 
@@ -312,9 +274,7 @@ I 错：递归改成非递归可用迭代等方式，不是**必须**显式用�
 <a id="q20"></a>
 ## 20｜2025-02：容量只受同时未匹配的左括号限制
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q02.png" alt="2025-02 原题" width="418" style="display:block; width:26.11em; max-width:none; height:auto;">
-</div>
+![2025-02 原题](../bank/2025/q02.png)
 
 算法的栈只存遇到而尚未配对的括号，容量 3；看的是**扫描某一瞬间的未闭合层数**，不是整串括号总数。D 扫描到 `c*(d+e)` 的内层 `(` 时，外层 `[`、中层 `(`、里面 `[` 已经在栈中，再压这个 `(` 需要第 4 格，因此算法 A 无法处理 D，选 **D**。
 
