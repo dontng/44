@@ -20,9 +20,7 @@
 <a id="q01"></a>
 ## 01｜2010-47：碰撞必须在一帧发完前被发送者发现
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q47.png" alt="2010-47 原题" width="466" style="display:block; width:29.12em; max-width:none; height:auto;">
-</div>
+![2010-47 原题](../bank/2010/q47.png)
 
 两主机相距2km，传播速度200000km/s，单程传播 **`2/200000s=10μs`**。**（1）** 同时开始发送，信号在中间相遇、又各自返回可观察冲突，两端在起发后约**10μs**检测到，这是最短情形；一端恰在第一端信号抵达之前起发，碰撞信息最迟传回第一端，起发后约**20μs=2τ**，这是最坏情形。CSMA/CD 的最短帧发送时长必须覆盖这个最坏往返传播时间。
 
@@ -33,9 +31,7 @@
 <a id="q02"></a>
 ## 02｜2011-47：目的 IP 是服务器，目的 MAC 却是网关
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q47.png" alt="2011-47 原题" width="477" style="display:block; width:29.80em; max-width:none; height:auto;">
-</div>
+![2011-47 原题](../bank/2011/q47.png)
 
 按帧的前14B切：目的 MAC 为 **00-21-27-21-51-EE**，源 MAC 为主机的 **00-15-C5-C1-5E-28**，类型0800表示 IPv4。IP 源地址是 `0A 02 80 64`=10.2.128.100，目的地址 `40 AA 62 20`=**64.170.98.32**；它不在本地私网，所以下一跳是默认网关R，前述目的 MAC 正是**网关接口的 MAC**。
 
@@ -48,9 +44,7 @@
 <a id="q03"></a>
 ## 03｜2018-47：小 MTU 下，数据块先按8B取整
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q47.png" alt="2018-47 原题" width="469" style="display:block; width:29.29em; max-width:none; height:auto;">
-</div>
+![2018-47 原题](../bank/2018/q47.png)
 
 **（1）地址。** 192.168.1.0/24均分为两个/25：销售网 `192.168.1.0/25`，广播地址 **192.168.1.127**；技术网 `192.168.1.128/25`，网络地址 **192.168.1.128**。技术网有126个可用主机IP，其中路由口 `.254` 已占1、题图主机 `.129—.208` 已占80，若每台仅一IP还能添 **45台**。
 
@@ -61,9 +55,7 @@
 <a id="q04"></a>
 ## 04｜2019-47：交换机无 VLAN，三段 IP 网由路由器相接
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q47.png" alt="2019-47 原题" width="506" style="display:block; width:31.62em; max-width:none; height:auto;">
-</div>
+![2019-47 原题](../bank/2019/q47.png)
 
 **（1）设备。** H1/H2 在 `192.168.1.0/26`，H3/H4 在 `192.168.1.64/26`；R 下联 `192.168.1.252/30`。设备1需在三段网络间转发，选**路由器**；设备2和3各在一个局域网内接两主机，选**以太网交换机**。无 VLAN 的交换机单独不能提供不同网段所需的三层网关。
 

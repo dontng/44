@@ -20,9 +20,7 @@
 <a id="q01"></a>
 ## 01｜2015-47：先得到配置，再决定这一跳给谁
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q47.png" alt="2015-47 原题" width="470" style="display:block; width:29.38em; max-width:none; height:auto;">
-</div>
+![2015-47 原题](../bank/2015/q47.png)
 
 **（1）地址池与 Discover。** `111.123.15.0/24` 可用主机地址是 `.1—.254`。路由器 `.1`、DHCP `.2`、WWW `.3`、主机1 `.4` 静态占用，故可给主机2—N的最大动态范围是 **`111.123.15.5—111.123.15.254`，共250个地址**。主机2还没有自己的地址，Discover 的 **IP源 `0.0.0.0`、IP目的 `255.255.255.255`**。
 
@@ -39,9 +37,7 @@
 <a id="q02"></a>
 ## 02｜2020-47：同一个192.168.1.2在两侧是两台不同机器
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q47.png" alt="2020-47 原题" width="488" style="display:block; width:30.47em; max-width:none; height:auto;">
-</div>
+![2020-47 原题](../bank/2020/q47.png)
 
 **（1）给左侧Web一个可访问的公网入口。** 在 **R2** 配置静态NAPT（端口映射）：**外网 `203.10.2.2:80` ↔ 内网 `192.168.1.2:80`**，协议TCP；H2/H3把访问目标写成 **`203.10.2.2:80`**，右侧主机默认网关指向 R3 的内口 `192.168.1.1`。R3负责右侧出站 NAT（必要时按源端口区分会话）；两路公网/30由R1连通，并保证回包沿对应映射返回。右侧 H2 本身也叫 `192.168.1.2`，若用私网 `192.168.1.2` 当目的，只会定位到右侧本地，根本去不了左侧Web。
 
@@ -62,9 +58,7 @@
 <a id="q03"></a>
 ## 03｜2021-47：从DNS到Web，两次ARP广播给了旁观者
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q47.png" alt="2021-47 原题" width="467" style="display:block; width:29.20em; max-width:none; height:auto;">
-</div>
+![2021-47 原题](../bank/2021/q47.png)
 
 **（1）HTTP之前的应用协议是 DNS。** H1先通过本地 DNS 把 `www.abc.com` 解析成Web服务器IP，然后才发HTTP。应用层报文逐层加 **UDP首部、IP首部、以太网帧首部与尾部**，经S送往同子网 DNS `192.168.1.126/25`。DNS通常用UDP；若题设特殊响应/传输条件可用TCP，但本题按通常查询作答。随后给异网Web发HTTP所依赖的TCP连接，通信时由TCP、IP、以太网依次封装；不要把 DNS 查询写成 HTTP 的一部分。
 
@@ -89,9 +83,7 @@ ARP找DNS → DNS问域名并收到地址 → ARP找默认网关 → 与远端We
 <a id="q04"></a>
 ## 04｜2022-47：广播、碰撞、无线地址是三个不同判断
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q47.png" alt="2022-47 原题" width="469" style="display:block; width:29.30em; max-width:none; height:auto;">
-</div>
+![2022-47 原题](../bank/2022/q47.png)
 
 **（1）设备1为100BaseT以太网交换机，设备2为100BaseT集线器Hub。** H1、H2仍在同一广播域，说明这里无需再添路由器隔开；H1/H2不在同一冲突域，设备1须隔离端口冲突；H2/H3在同一冲突域，连着它们的设备2应为共享介质Hub。设备1连接R与设备2的口也各隔离冲突域。
 
