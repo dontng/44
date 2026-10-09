@@ -25,7 +25,7 @@
 <a id="q01"></a>
 ## 01｜2010-17：TLB 命中与 Page 缺失不能同时出现
 
-<img src="../bank/2010/q17.png" alt="2010-17 原题" width="606" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2010/q17.png" alt="2010-17 原题" width="367" style="display:block; width:22.94em; max-width:100%; height:auto;">
 
 TLB 是近期**有效页表映射**的快取。若 TLB 命中，已经能取得该页当前的物理页框号，意味着页面在主存；所以“TLB 命中、Cache 命中、Page 未命中”**不可能，选 D**。Cache 可因为相应数据块不在其中而缺失，即使页已在主存；TLB 也可因对应表项没缓存而缺失，即使页在主存。
 
@@ -61,7 +61,7 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 <a id="q04"></a>
 ## 04｜2019-14：缺页后重做触发缺页的那条指令
 
-<img src="../bank/2019/q14.png" alt="2019-14 原题" width="571" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2019/q14.png" alt="2019-14 原题" width="346" style="display:block; width:21.63em; max-width:100%; height:auto;">
 
 缺页在地址翻译时被发现，处理程序从外存调入所缺的页、更新页表，然后回到**发生缺页的原指令重新执行**。若跳到下一条，原指令本该读/写的数据就从未完成，故错误的是 **D**。其他选项分别描述缺页异常、操作系统处理和按页装入。
 
@@ -73,7 +73,7 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 <a id="q05"></a>
 ## 05｜2020-15：沿用上一节点的 TLB/Cache 比较题
 
-<img src="../bank/2020/q15.png" alt="2020-15 原题" width="695" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2020/q15.png" alt="2020-15 原题" width="421" style="display:block; width:26.31em; max-width:100%; height:auto;">
 
 本题与 [0815-09](0815-answer.md#q09) 为同一道原题。立即可用的裁决是：TLB 保存地址转换、Cache 保存数据块，二者为快速访问通常不是**都由 DRAM 组成**，**选 D**。这里新增的位置感是：TLB 查询属于翻译阶段，Cache 查询属于翻译完成后的数据访问阶段。
 
@@ -121,7 +121,7 @@ Cache 的 `tag=主存地址位数−块内偏移−Cache组号`；TLB 则是 `ta
 <a id="q09"></a>
 ## 09｜2024-18：MMU 翻译阶段看权限、页表、TLB，不看数据 Cache
 
-<img src="../bank/2024/q18.png" alt="2024-18 原题" width="736" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2024/q18.png" alt="2024-18 原题" width="445" style="display:block; width:27.81em; max-width:100%; height:auto;">
 
 题目问**不是在 MMU 地址转换过程中检测**。TLB 缺失、页面缺失与访问越权都可能在翻译/权限检查时被识别；**Cache 缺失**要等取得可用物理地址后，在数据/指令缓存查询时才知道，故 **选 B**。首笔把事件各自安在访问路径哪一段，不背四个异常名称。
 
