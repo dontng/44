@@ -34,9 +34,7 @@
 <a id="q01"></a>
 ## 01｜2009-33：把“端到端”标在两台主机的进程间
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q33.png" alt="2009-33 原题" width="379" style="display:block; width:23.66em; max-width:none; height:auto;">
-</div>
+![2009-33 原题](../bank/2009/q33.png)
 
 OSI 自下而上第一个向上提供**端到端**服务的是**传输层，选 B**。数据链路层只管相邻结点的帧，传输层服务于两端进程。第一笔圈“第一个”，再排掉更高的会话与应用层。
 
@@ -48,9 +46,7 @@ OSI 自下而上第一个向上提供**端到端**服务的是**传输层，选 
 <a id="q02"></a>
 ## 02｜2010-33：协议行为是公开约定，内部代码不在体系结构里
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q33.png" alt="2010-33 原题" width="363" style="display:block; width:22.70em; max-width:none; height:auto;">
-</div>
+![2010-33 原题](../bank/2010/q33.png)
 
 体系结构描述层次、每层功能与所用协议；**协议的内部实现细节不属于它，选 C**。第一笔问对端必须知道什么才能互通：报文与交互约定要知道，厂商的数据结构/代码不必知道。
 
@@ -62,9 +58,7 @@ OSI 自下而上第一个向上提供**端到端**服务的是**传输层，选 
 <a id="q03"></a>
 ## 03｜2010-34：存储转发流水线补最后一包跨后两段的时间
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q34.png" alt="2010-34 原题" width="458" style="display:block; width:28.64em; max-width:none; height:auto;">
-</div>
+![2010-34 原题](../bank/2010/q34.png)
 
 每包载荷 `1000−20=980B`，980000B 恰好 **1000 包**；100Mbps 每发一包 `1000×8/10^8=0.08ms`。H1→左上→右上→H2 是 **3 段链路**。第一包要3时隙，后面每时隙到一包，全部收到需 `(1000+3−1)×0.08=80.16ms`，**选 C**。第一笔先数包、数最短路的段数。
 
@@ -76,9 +70,7 @@ OSI 自下而上第一个向上提供**端到端**服务的是**传输层，选 
 <a id="q04"></a>
 ## 04｜2011-33：IP 是无连接、不可靠的数据报服务
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q33.png" alt="2011-33 原题" width="373" style="display:block; width:23.30em; max-width:none; height:auto;">
-</div>
+![2011-33 原题](../bank/2011/q33.png)
 
 TCP/IP 网络层的 IP 每份数据报独立转发，不建立端到端虚电路，也不保证送达，**选 A**。第一笔把“网络层 IP”与上层 TCP 的可靠有连接服务分开。
 
@@ -90,9 +82,7 @@ TCP/IP 网络层的 IP 每份数据报独立转发，不建立端到端虚电路
 <a id="q05"></a>
 ## 05｜2012-33：ICMP 直接装在 IP 数据报里
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q33.png" alt="2012-33 原题" width="353" style="display:block; width:22.04em; max-width:none; height:auto;">
-</div>
+![2012-33 原题](../bank/2012/q33.png)
 
 ICMP 的差错报告/诊断报文由 **IP 直接承载，选 B**。UDP/TCP 属传输层，PPP 属链路层，都不是题问的直接承载者。第一笔只画相邻封装：`IP首部｜ICMP报文`。
 
@@ -104,9 +94,7 @@ ICMP 的差错报告/诊断报文由 **IP 直接承载，选 B**。UDP/TCP 属�
 <a id="q06"></a>
 ## 06｜2012-34：“事件发生顺序”是过程特性
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q34.png" alt="2012-34 原题" width="375" style="display:block; width:23.42em; max-width:none; height:auto;">
-</div>
+![2012-34 原题](../bank/2012/q34.png)
 
 物理层接口描述各功能的事件先后、时序，归**过程特性，选 C**。第一笔圈“顺序”：机械看接头引脚，电气看电压，功能看各线作用，过程看何时动作。
 
@@ -118,9 +106,7 @@ ICMP 的差错报告/诊断报文由 **IP 直接承载，选 B**。UDP/TCP 属�
 <a id="q07"></a>
 ## 07｜2012-35：MAC 的校验不构成可靠交付承诺
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q35.png" alt="2012-35 原题" width="308" style="display:block; width:19.23em; max-width:none; height:auto;">
-</div>
+![2012-35 原题](../bank/2012/q35.png)
 
 以太网 MAC 发帧前不建连接，错误帧可丢弃而无该层的确认重传保证，因此**无连接、不可靠，选 A**。第一笔锁定“MAC”层，不把 TCP 的可靠性借给它。
 
@@ -132,9 +118,7 @@ ICMP 的差错报告/诊断报文由 **IP 直接承载，选 B**。UDP/TCP 属�
 <a id="q08"></a>
 ## 08｜2013-33：应用层正下方的表示层做格式转换
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q33.png" alt="2013-33 原题" width="351" style="display:block; width:21.94em; max-width:none; height:auto;">
-</div>
+![2013-33 原题](../bank/2013/q33.png)
 
 OSI 从上到下应用→**表示**→会话→传输→网络→链路→物理。应用层相邻层实现的数据格式转换属于**表示层，选 B**。第一笔只向下走一格；会话管理、路由与可靠传输各有别层。
 
@@ -146,9 +130,7 @@ OSI 从上到下应用→**表示**→会话→传输→网络→链路→物理
 <a id="q09"></a>
 ## 09｜2013-35：整报文等全部到齐，分组可前后重叠
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q35.png" alt="2013-35 原题" width="453" style="display:block; width:28.30em; max-width:none; height:auto;">
-</div>
+![2013-35 原题](../bank/2013/q35.png)
 
 8Mb 在 10Mbps 链路发送一次需 **800ms**。报文交换的路由器先收完整报文再发下一段，合 **1600ms**；**10kb** 分组每个发送需 `1ms`，`8Mb/10kb=800` 包，两段流水需 `(800+1)×1=801ms`。依次是 **1600ms、801ms，选 D**。第一笔在原图上圈好 `10kb`，别误看成 `1kb`。
 
@@ -160,9 +142,7 @@ OSI 从上到下应用→**表示**→会话→传输→网络→链路→物理
 <a id="q10"></a>
 ## 10｜2014-33：会话层直接使用传输层服务
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q33.png" alt="2014-33 原题" width="389" style="display:block; width:24.30em; max-width:none; height:auto;">
-</div>
+![2014-33 原题](../bank/2014/q33.png)
 
 OSI 顶部是应用→表示→会话→**传输**，故直接为会话层提供服务的是**传输层，选 C**。第一笔从会话向下只挪一层，不跳到网络层。承接 08 的“应用的下邻是表示”，再向下两格即可。
 
@@ -174,9 +154,7 @@ OSI 顶部是应用→表示→会话→**传输**，故直接为会话层提供
 <a id="q11"></a>
 ## 11｜2016-33：按设备看懂的最高地址给层号
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q33.png" alt="2016-33 原题" width="384" style="display:block; width:23.97em; max-width:none; height:auto;">
-</div>
+![2016-33 原题](../bank/2016/q33.png)
 
 路由器 R1 看 IP 地址、选下一跳，最高到**网络层3**；交换机看 MAC 帧，最高到**数据链路层2**；Hub 只再生比特信号，**物理层1**。`3、2、1`，**选 C**。第一笔问设备凭哪种地址/信号决定动作。
 
@@ -188,9 +166,7 @@ OSI 顶部是应用→表示→会话→**传输**，故直接为会话层提供
 <a id="q12"></a>
 ## 12｜2017-33：七层里排除头尾，数五份开销
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q33.png" alt="2017-33 原题" width="463" style="display:block; width:28.93em; max-width:none; height:auto;">
-</div>
+![2017-33 原题](../bank/2017/q33.png)
 
 OSI 七层去掉应用与物理，还有表示、会话、传输、网络、链路 **5 层**各加 20B，总 `400+5×20=500B`；应用数据效率 `400/500=80%`，**选 A**。第一笔不要误把“其余各层”算六或七层。
 
@@ -202,9 +178,7 @@ OSI 七层去掉应用与物理，还有表示、会话、传输、网络、链�
 <a id="q13"></a>
 ## 13｜2019-33：自下数第五层是会话
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q33.png" alt="2019-33 原题" width="475" style="display:block; width:29.71em; max-width:none; height:auto;">
-</div>
+![2019-33 原题](../bank/2019/q33.png)
 
 自下依次物理1、链路2、网络3、传输4、**会话5**；会话管理，**选 C**。第一笔先写 1—5 层名，再连功能。差错控制可分层出现，路由属网络层，表示转换属表示层，不凭单一关键词“网络”乱选。
 
@@ -216,9 +190,7 @@ OSI 七层去掉应用与物理，还有表示、会话、传输、网络、链�
 <a id="q14"></a>
 ## 14｜2020-33：图上箭头的先后只说明时序
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q33.png" alt="2020-33 原题" width="424" style="display:block; width:26.51em; max-width:none; height:auto;">
-</div>
+![2020-33 原题](../bank/2020/q33.png)
 
 当前题图完整显示发送方/接收方的往返箭头；图只给两方随时间向下的三次交互方向与先后，未标报文格式或含义。因此仅 **III 时序，选 C**。第一笔问能否从图读出字段如何编码或动作表示什么；读不出就别选语法/语义。
 
@@ -230,9 +202,7 @@ OSI 七层去掉应用与物理，还有表示、会话、传输、网络、链�
 <a id="q15"></a>
 ## 15｜2021-33：TCP/IP 传输层下方的网络层选路
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q33.png" alt="2021-33 原题" width="394" style="display:block; width:24.60em; max-width:none; height:auto;">
-</div>
+![2021-33 原题](../bank/2021/q33.png)
 
 传输层相邻的下层是互联网层/IP 网络层，主要功能有**路由选择，选 B**。第一笔定位“下邻”再找职责；会话管理在上层应用相关功能，端到端报文段传输属传输层，结点到结点流控可由链路机制处理。
 
@@ -244,9 +214,7 @@ OSI 七层去掉应用与物理，还有表示、会话、传输、网络、链�
 <a id="q16"></a>
 ## 16｜2023-33：流水发送时间再加两段传播时延
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q33.png" alt="2023-33 原题" width="470" style="display:block; width:29.35em; max-width:none; height:auto;">
-</div>
+![2023-33 原题](../bank/2023/q33.png)
 
 1MB=`10^6 B`，每包1000B，共1000包；100Mbps 发送一包 `0.08ms`，两段存储转发共 `(1000+1)×0.08=80.08ms`。各段时延带宽积1000bits，传播时延 `1000/10^8s=0.01ms`；两段再加0.02ms，总 **80.10ms，选 D**。第一笔把时延带宽积除带宽，恢复每段传播时间。
 
@@ -258,9 +226,7 @@ OSI 七层去掉应用与物理，还有表示、会话、传输、网络、链�
 <a id="q17"></a>
 ## 17｜2024-33：最快内部路径也要过两端 10Mb/s
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q33.png" alt="2024-33 原题" width="456" style="display:block; width:28.50em; max-width:none; height:auto;">
-</div>
+![2024-33 原题](../bank/2024/q33.png)
 
 H1 入网链路与 H2 出网链路均 **10Mb/s**。即使中途走两条 1000Mb/s 的上方链路，整个端到端路径吞吐不超过入口/出口的 10Mb/s，且可达到，**选 B**。第一笔沿一条可行路径取最小链路速率，再从多路径中取最大。
 
@@ -272,9 +238,7 @@ H1 入网链路与 H2 出网链路均 **10Mb/s**。即使中途走两条 1000Mb/
 <a id="q18"></a>
 ## 18｜2025-33：整报文等待最长，分组流水居中
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q33.png" alt="2025-33 原题" width="424" style="display:block; width:26.51em; max-width:none; height:auto;">
-</div>
+![2025-33 原题](../bank/2025/q33.png)
 
 2MB 经首段10Mbps 序列化需 **1.6s**。报文交换在两台路由器各等完整报文，再分别经100/1000Mbps发，`1.6+0.16+0.016=1.776s`。分组交换5000个400B包，首段每包0.32ms，尾包还跨后两段各0.032/0.0032ms，约 **1.6000352s**。电路交换先建路32μs，再以首段瓶颈连续传，约 **1.600032s**（忽略其他时延）。所以 **Tms＞Tps＞Tcs，选 B**。第一笔先比三者都绕不开的首段1.6s，再比附加的整报文串行/末包流水/建路。
 
