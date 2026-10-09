@@ -20,7 +20,9 @@
 <a id="q01"></a>
 ## 01｜2015-08：前五位已经匹配，主串不倒退
 
-![2015-08 原题](../bank/2015/q08.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q08.png" alt="2015-08 原题" style="display:block; width:29.42em; max-width:none; height:auto;">
+</div>
 
 失配时 `i=j=5`，说明下标 0—4 的模式前缀 `abaab` 已与主串相同。它的最长**真前缀同时是真后缀**的是 `ab`，长度 2；这两位主串字符已经知道等于 `ab`，无需回去重比。故主串仍在 **i=5**，模式下一次从 **j=2** 比较，选 **C**。A 把主串倒回起点，B 丢掉可复用的 `ab`，D 则无端越过尚未比较的主串字符。
 
@@ -32,7 +34,9 @@
 <a id="q02"></a>
 ## 02｜2019-09：比较次数只在实际拿两个字符相对时增加
 
-![2019-09 原题](../bank/2019/q09.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q09.png" alt="2019-09 原题" style="display:block; width:31.30em; max-width:none; height:auto;">
+</div>
 
 主串 `T=abaabaabcabaabc`，模式 `S=abaabc`。开始五位 `abaab` 依次匹配，计 5；第六次拿 `T[5]=a` 与 `S[5]=c` 比较，失配。沿上题的两位前后缀回退到 `j=2`，**i 仍为 5**，第七次比较 `a` 与 `S[2]=a`，随后 `T[6]` 对 `S[3]`、`T[7]` 对 `S[4]`、`T[8]` 对 `S[5]` 三次成功，第一次完整匹配。合计 **10 次，选 B**。
 
@@ -51,7 +55,9 @@
 <a id="q03"></a>
 ## 03｜2024-06：修正 next 跳过会与失配字符相同的候选
 
-![2024-06 原题](../bank/2024/q06.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q06.png" alt="2024-06 原题" style="display:block; width:28.71em; max-width:none; height:auto;">
+</div>
 
 模式 `aabaab` 下标 0—5。失配在位置 j 时，普通 `next` 会尝试较短的相同首尾段；若候选位置的字符又与当前失配的模式字符相同，这次尝试必定仍失败，`nextval` 直接跳过。按零基、`−1` 表示模式指针越过开头的约定，普通 `next=[−1,0,1,0,1,2]`，修正后 `nextval=[−1,−1,1,−1,−1,1]`。在 **j=4**（字符 a）失配时直接退到 −1，主串 i 不回退，模式右移 **`4−(−1)=5` 格**，选 **A**。
 
