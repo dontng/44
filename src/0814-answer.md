@@ -32,7 +32,9 @@
 <a id="q01"></a>
 ## 01｜2009-15：先把芯片容量统一换成字节
 
-![2009-15 原题](../bank/2009/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q15.png" alt="2009-15 原题" style="display:block; width:28.41em; max-width:none; height:auto;">
+</div>
 
 题目给主存 **64KB，其中 ROM 4KB**，所以 RAM 还要 `64−4=60KB`。`2K×8` ROM 每片 2KB，需 `4/2=2` 片。`4K×4` RAM 每片是 `4K×4 bit=16Kbit=2KB`，需 `60/2=30` 片。**2、30，选 D**。最容易漏掉的是 RAM 芯片的“4K”是单元数，“×4”才是每单元的位数，不能把它直接叫 4KB。
 
@@ -44,7 +46,9 @@ ROM 每片深度 2K、宽度 8 位，拼成 4K×8 要两片做地址扩展；RAM
 <a id="q02"></a>
 ## 02｜2010-15：地址 B1F 落在哪个 2K 边界
 
-![2010-15 原题](../bank/2010/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q15.png" alt="2010-15 原题" style="display:block; width:28.81em; max-width:none; height:auto;">
+</div>
 
 `2K×4` 芯片每片有 2048 个地址，也就是 `800H` 个地址位置；两片并宽可组成 `2K×8`，**并宽不增加地址个数**。整机 `8K×8` 分成 `0000—07FF`、`0800—0FFF`、`1000—17FF`、`1800—1FFF` 四段。`0B1FH` 落第二段，芯片对应最小地址 **`0800H`，选 D**。
 
@@ -56,7 +60,9 @@ ROM 每片深度 2K、宽度 8 位，拼成 4K×8 要两片做地址扩展；RAM
 <a id="q03"></a>
 ## 03｜2010-16：RAM 与 ROM 的名字不决定能否作 Cache
 
-![2010-16 原题](../bank/2010/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q16.png" alt="2010-16 原题" style="display:block; width:19.63em; max-width:none; height:auto;">
+</div>
 
 I：通常 RAM 易失、ROM 非易失，正确；II：两者均可按地址随机访问，正确。III：Cache 要快速且可替换写入的数据，ROM 不适合，错。IV：只有 DRAM 需要周期刷新，SRAM 和 ROM 不需要，错。因此 **仅 I、II，选 A**。把四句各自放回“掉电”“访问方式”“用途”“电荷保持”四个问题，不要让 RAM 的名字替后两句作答。
 
@@ -68,7 +74,9 @@ I：通常 RAM 易失、ROM 非易失，正确；II：两者均可按地址随�
 <a id="q04"></a>
 ## 04｜2011-14：光盘与芯片的访问路径不同
 
-![2011-14 原题](../bank/2011/q14.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q14.png" alt="2011-14 原题" style="display:block; width:27.25em; max-width:none; height:auto;">
+</div>
 
 EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要让光头到相应轨道、等待扇区转来，访问时间与位置有关，所以在本题分类中**不采用随机存取方式，选 B**。不是说光盘永远不能跳到任意文件位置，而是跳转并不具备半导体主存那种近似等时的直接选址。
 
@@ -80,7 +88,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q05"></a>
 ## 05｜2011-15：MAR 要覆盖地址空间，而不是只覆盖已装的 RAM
 
-![2011-15 原题](../bank/2011/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q15.png" alt="2011-15 原题" style="display:block; width:29.73em; max-width:none; height:auto;">
+</div>
 
 题干两数分别是 **主存地址空间 64MB** 与**实际组装主存 32MB**。MAR 存一个可发往主存的地址，为覆盖给出的整个地址空间，按字节编址需要 `log₂(64×2²⁰)=26` 位，**选 D**。32MB 已装容量对应 25 位，但它没有把 MAR 的地址能力缩到只能表示当前安装的芯片范围。
 
@@ -92,7 +102,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q06"></a>
 ## 06｜2012-16：Flash 的读写都可行，但耗时不对称
 
-![2012-16 原题](../bank/2012/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q16.png" alt="2012-16 原题" style="display:block; width:19.02em; max-width:none; height:auto;">
+</div>
 
 题目问**错误**。Flash 由半导体 MOS 存储单元构成，掉电后仍保留数据，也能按地址访问并用于外部存储；B、C、D 是本题所指特性。A 把“可读可写”进一步推成“读、写速度一样快”，多加了一个不成立的条件，**选 A**。先标出这个新增断言，就无需把闪存每种电路都学完才能排除。
 
@@ -108,7 +120,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q07"></a>
 ## 07｜2014-15：DRAM 地址引脚复用行、列两次
 
-![2014-15 原题](../bank/2014/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q15.png" alt="2014-15 原题" style="display:block; width:28.03em; max-width:none; height:auto;">
+</div>
 
 `4M×8` 芯片有 `2²²` 个地址、8 根数据引脚。若像普通地址线一次给全地址，需要 22 根；**DRAM 把行、列地址分时送到同一组引脚**，按均分的 `2¹¹×2¹¹` 阵列只需 11 根地址引脚。两类合计 `11+8=19`，**选 A**。题目提到 256MB 是整机容量，不是单片地址引脚增加的理由。
 
@@ -120,7 +134,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q08"></a>
 ## 08｜2015-17：SDRAM 仍是要刷新的 DRAM
 
-![2015-17 原题](../bank/2015/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q17.png" alt="2015-17 原题" style="display:block; width:27.66em; max-width:none; height:auto;">
+</div>
 
 要周期刷新的是用电容保存电荷的动态存储器。SDRAM 的 S 是“同步”工作方式，核心仍是 **DRAM，选 B**。SRAM 用双稳态电路保持位，ROM 与 Flash 非易失，不需运行期间按 DRAM 方式周期刷新。承接 03 的 IV：不能把“RAM”整体判作都要刷新。
 
@@ -132,7 +148,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q09"></a>
 ## 09｜2015-18：同一存储体且访问相邻才构成这条序列的冲突
 
-![2015-18 原题](../bank/2015/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q18.png" alt="2015-18 原题" style="display:block; width:29.49em; max-width:none; height:auto;">
+</div>
 
 4 体交叉编址时，低两位选体，体号为**地址 mod 4**。序列各项对应 `1,2,3,0,1,2,3,0,0`；最后的 `8004` 和 `8000` 都落体 0，且相邻发出，前次访问尚占用该体时会冲突，**选 D**。`8008` 与 `8004` 也同属体 0，但它们的发出位置相距四个时隙，中间隔着另外三次访问，不是选项要找的紧邻冲突。
 
@@ -144,7 +162,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q10"></a>
 ## 10｜2016-16：ROM 地址区间先算长度，再算剩余 RAM
 
-![2016-16 原题](../bank/2016/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q16.png" alt="2016-16 原题" style="display:block; width:29.29em; max-width:none; height:auto;">
+</div>
 
 `4000H—5FFFH` 包含 `0x2000=8K` 个字节（末址减首址再加一）；64KB 主存中 RAM 占 `64−8=56KB`。`8K×4` SRAM 每片是 `8K×4 bit=4KB`，所以需 `56/4=14` 片，**选 C**。芯片“8K”不是字节容量，这与 01 的宽度换算同一笔。
 
@@ -156,7 +176,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q11"></a>
 ## 11｜2017-13：非对齐 double 跨了三个 32 位总线字
 
-![2017-13 原题](../bank/2017/q13.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q13.png" alt="2017-13 原题" style="display:block; width:29.18em; max-width:none; height:auto;">
+</div>
 
 总线一次最多传 32 位，即 **4 字节**；double 占 8 字节。首地址 `804001AH` 的低两位是 `10₂`，在一个 4 字节对齐单元的偏移 2。它占当前单元剩余 2 字节、下一单元 4 字节、再下一单元 2 字节，需 **3 个存储周期，选 C**。4 片 `64M×8` 提供 32 位总线宽度，不让一次读变成 8 字节。
 
@@ -168,7 +190,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q12"></a>
 ## 12｜2017-18：控制存储器按微地址取微指令
 
-![2017-18 原题](../bank/2017/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q18.png" alt="2017-18 原题" style="display:block; width:28.36em; max-width:none; height:auto;">
+</div>
 
 主存 MM 通常在 CPU 外，按地址取指令与数据，可由 RAM 和 ROM 区域构成。控制存储器 CS 在控制器内存放微指令，执行时由**微地址**指向下一条微指令，而不是“按内容查询”；所以错误的是 **B**。先问“内容是什么”与“凭什么定位”两件事，能挡住“控制存储器是按内容访问”的字面联想。
 
@@ -180,7 +204,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q13"></a>
 ## 13｜2018-17：先压地址引脚，再压需刷新的行数
 
-![2018-17 原题](../bank/2018/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q17.png" alt="2018-17 原题" style="display:block; width:28.19em; max-width:none; height:auto;">
+</div>
 
 `2K×1` 共有 `2048=2¹¹` 个位单元，行数 `r` 与列数 `c` 的乘积是 2048。行、列地址复用同一组引脚，要先让 `max(log₂r,log₂c)` 最小，最平衡为 `32×64` 或 `64×32`，都只需 6 根地址引脚。再按题意**尽量减少刷新行开销**，选行数 32、列数 64，**选 C**。
 
@@ -192,7 +218,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q14"></a>
 ## 14｜2021-15：地址区间容量独立于数据总线宽度
 
-![2021-15 原题](../bank/2021/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q15.png" alt="2021-15 原题" style="display:block; width:32.65em; max-width:none; height:auto;">
+</div>
 
 按字节编址，`000000H—3FFFFFH` 是 `0x400000=4MB` 空间。`512K×8` 芯片每片 512KB，因此容量需 `4MB/512KB=8` 片，**选 A**。32 位数据总线可让四片每次各供 8 位，并用两组覆盖全部地址；它不意味着每个地址都要用四片再乘以八。
 
@@ -204,7 +232,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q15"></a>
 ## 15｜2022-17：行列复用让 26 位内部地址只用 13 根外部地址引脚
 
-![2022-17 原题](../bank/2022/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q17.png" alt="2022-17 原题" style="display:block; width:29.15em; max-width:none; height:auto;">
+</div>
 
 每片有 `8192×8192=2²⁶` 个 8 位单元，确实需要 26 位**内部单元地址信息**；但 DRAM 的 8192 行和 8192 列各需 13 位，同一组引脚分时接收两次，所以**芯片地址引脚为 13 根**。C 说 26 位引脚，**错误，选 C**。8 片每片 64MB，总 512MB；一行缓冲 `8192×8 bit`。
 
@@ -216,7 +246,9 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q16"></a>
 ## 16｜2023-15：30 位地址空间的最高四分之一归 ROM
 
-![2023-15 原题](../bank/2023/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q15.png" alt="2023-15 原题" style="display:block; width:29.28em; max-width:none; height:auto;">
+</div>
 
 30 根地址线、按字节编址，共 `2³⁰=1GB`，地址从 `00000000H` 到 `3FFFFFFFH`。RAM:ROM 为 3:1，ROM 占最高的 `2²⁸=256MB=10000000H` 字节，连续高地址区从 `30000000H` 到 **`3FFFFFFFH`，选 C**。首址用“总空间末端减 ROM 容量再加一”也得 `0x30000000`。
 
