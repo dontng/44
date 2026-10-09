@@ -4,6 +4,18 @@
   "complete": true,
   "review_method": "Read each question image and the complete explanation; independently derive the result and adjudicate the actual options. Hashes only select the exact source version; earlier complete flags do not certify correctness.",
   "fully_reviewed_pairs": {
+    "1001": {
+      "questions": 4,
+      "findings": [
+        "Actual source images, full explanations and all subquestions independently checked."
+      ]
+    },
+    "1002": {
+      "questions": 4,
+      "findings": [
+        "Actual source images, full explanations and all subquestions independently checked."
+      ]
+    },
     "0731": {
       "questions": 9,
       "finding": "No new substantive defect found after independent derivation and image-boundary check."
@@ -281,7 +293,8 @@
     "0919": {
       "questions": 7,
       "findings": [
-        "Rechecked all subquestions, representations, actual instruction bytes, addresses and source conflicts."
+        "Rechecked all subquestions, representations, actual instruction bytes, addresses and source conflicts.",
+        "Q02: verified f2 returns float, n=23 encodes as 4B7FFFFFH rather than integer 00FFFFFFH; n=24 rounds to33554432.0. Q05: loop bound j<64 does not prove the array row width."
       ]
     },
     "0920": {
@@ -348,18 +361,6 @@
     },
     "0930": {
       "questions": 5,
-      "findings": [
-        "Actual source images, full explanations and all subquestions independently checked."
-      ]
-    },
-    "1001": {
-      "questions": 4,
-      "findings": [
-        "Actual source images, full explanations and all subquestions independently checked."
-      ]
-    },
-    "1002": {
-      "questions": 4,
       "findings": [
         "Actual source images, full explanations and all subquestions independently checked."
       ]
@@ -493,5 +494,35 @@
       "Added missing learning-system and learning-ledger links; preserved all actual user-answer evidence."
     ]
   },
-  "completion_semantics": "All126 src Markdown files reviewed; complete means review coverage and publication of identified src repairs, not certification that flawed original source figures/options are corrected or that user mastery is proven."
+  "completion_semantics": "All126 src Markdown files reviewed; complete means review coverage and publication of identified src repairs, not certification that flawed original source figures/options are corrected or that user mastery is proven.",
+  "independent_closeout_20261009": {
+    "reviewed_commit": "df09f16bec1d52b69c2a6c8a5626464962bdd439",
+    "scope": "Verify prior completion and inspect selected repaired source questions; not a new full substantive review of all825 references.",
+    "coverage": {
+      "src_markdown_files": 126,
+      "date_pairs": 59,
+      "question_headings": 825,
+      "recorded_references": 825,
+      "pending_date_pairs": 0
+    },
+    "checks": {
+      "local_link_destinations": "All126 src Markdown files: no missing local destination.",
+      "details_nesting": "All126 src Markdown files: balanced nesting.",
+      "image_versions": "All798 image manifest entries match current Git blob hashes; identifies versions only.",
+      "source_image_spot_checks": [
+        "bank/2017/q43.png: f2 return type, IEEE754 encoding and all five subquestions retained.",
+        "bank/2015/q43.png: confirmed6->9 and7->4 endpoints.",
+        "bank/2013/q45.png: confirmed unrelated diagram; both src transcriptions retain actual stem, pseudocode and question."
+      ],
+      "numeric_recalculation": "Python struct confirms4B7FFFFFH and33554432.0.",
+      "repository_tests": "python -m unittest discover -s tests -v:14 tests pass."
+    },
+    "separate_existing_check_failure": {
+      "command": "python tools/check_review.py",
+      "reason": "network_lessons.json indexes96 lessons, while daily-network contains109 date pages.",
+      "unindexed_pages": "daily-network/2026/0923.md through1005.md (13 pages).",
+      "scope": "Outside current src date-pair audit. No claim that the global review checker passes; no unrelated pages regenerated."
+    },
+    "conclusion": "Prior src Markdown review is closed with published repairs. Original-source defects and limits on exhaustive image/PDF comparison remain explicit; no additional substantive src defect found in these selected checks."
+  }
 }
