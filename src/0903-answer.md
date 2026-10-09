@@ -35,7 +35,9 @@
 <a id="q01"></a>
 ## 01｜2009-35：GBN 的 ACK3 一次覆盖 0—3
 
-![2009-35 原题](../bank/2009/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q35.png" alt="2009-35 原题" width="454" style="display:block; width:28.38em; max-width:none; height:auto;">
+</div>
 
 发送0—7后，即使单独的 ACK1 丢了，**GBN 的累计确认 ACK3**已表明0、1、2、3都被正确收下；超时从最早未确认4回退重发至7，共**4帧，选 C**。第一笔把“收到哪些 ACK”翻成“最早未确认序号”。
 
@@ -47,7 +49,9 @@ GBN 接收窗口通常为1，丢帧后的后续帧不会被缓存为独立已确
 <a id="q02"></a>
 ## 02｜2011-35：SR 已确认1，不陪0、2重发
 
-![2011-35 原题](../bank/2011/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q35.png" alt="2011-35 原题" width="475" style="display:block; width:29.70em; max-width:none; height:auto;">
+</div>
 
 SR 对每帧分别计时与确认；0、2 超时就只重发**0、2**，1 已获确认不重发，3 尚未被说成超时也不重发。共**2帧，选 B**。第一笔列四格：0超时、1确认、2超时、3未超时。
 
@@ -59,7 +63,9 @@ GBN 的累计确认推进一个左边界；SR 的 ACK1 只说明帧1本身已收
 <a id="q03"></a>
 ## 03｜2012-36：窗口应覆盖允许范围内最短帧的确认周期
 
-![2012-36 原题](../bank/2012/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q36.png" alt="2012-36 原题" width="437" style="display:block; width:27.34em; max-width:none; height:auto;">
+</div>
 
 数据帧长度可在 128—512B 之间，要求信道利用率达到最高，不能只挑最长帧计算。128B 帧在 16kbps 上发送 `64ms`，同长 ACK 也需 `64ms`，往返传播 `540ms`。首帧从开始发送到收到确认为 `64+540+64=668ms`，要持续发送需窗口至少 `⌈668/64⌉=11` 帧。GBN 要求 `2^k−1≥11`，因此 **k 至少 4，选 B**。
 
@@ -71,7 +77,9 @@ GBN 的累计确认推进一个左边界；SR 的 ACK1 只说明帧1本身已收
 <a id="q04"></a>
 ## 04｜2012-37：IP首部校验不承诺不丢包
 
-![2012-37 原题](../bank/2012/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q37.png" alt="2012-37 原题" width="331" style="display:block; width:20.66em; max-width:none; height:auto;">
+</div>
 
 路由器可运行路由协议维护路由表 **I**，拥塞时可合理丢弃分组 **II**，按目的IP和路由表选输出线路 **IV**。IP 首部差错校验只能发现部分首部错误，**不能确保分组不丢 III**。仅 I、II、IV，**选 C**。第一笔把“检查过”与“保证送达”拆开。
 
@@ -83,7 +91,9 @@ GBN 的累计确认推进一个左边界；SR 的 ACK1 只说明帧1本身已收
 <a id="q05"></a>
 ## 05｜2013-15：海明码纠一位需区分所有出错位置
 
-![2013-15 原题](../bank/2013/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q15.png" alt="2013-15 原题" width="453" style="display:block; width:28.30em; max-width:none; height:auto;">
+</div>
 
 8位数据加 r 个校验位，一位错可发生在 `8+r` 个位置，另有“无错”，需 `2^r≥8+r+1`。r=3 时 `8<12` 不够；r=4 时 `16≥13`，至少**4位，选 C**。第一笔把校验位自身出错的位置也计入。
 
@@ -95,7 +105,9 @@ GBN 的累计确认推进一个左边界；SR 的 ACK1 只说明帧1本身已收
 <a id="q06"></a>
 ## 06｜2013-37：HDLC 每遇五个连续1就插一个0
 
-![2013-37 原题](../bank/2013/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q37.png" alt="2013-37 原题" width="382" style="display:block; width:23.89em; max-width:none; height:auto;">
+</div>
 
 对数据串 `01111100 01111110` 连续扫描，发送方每遇连续五个1插0，得到 `011111000011111010`，按选项分组显示为 **`01111100 00111110 10`，选 A**。第一笔去掉题中空格，当一条连续比特流处理。
 
@@ -107,7 +119,9 @@ GBN 的累计确认推进一个左边界；SR 的 ACK1 只说明帧1本身已收
 <a id="q07"></a>
 ## 07｜2014-36：窗口1000装不满100ms往返传播
 
-![2014-36 原题](../bank/2014/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q36.png" alt="2014-36 原题" width="466" style="display:block; width:29.15em; max-width:none; height:auto;">
+</div>
 
 一帧1000B/100Mbps 发送 `0.08ms`，窗口1000帧连续发送需 **80ms**；短ACK可忽略传输时延，首ACK最早在首帧发完加双向传播100ms，即约 **100.08ms** 返回。窗口会停一段，平均吞吐约 `1000×8000bit/0.10008s≈80Mbps`，**选 C**。第一笔比较“窗口能持续发送多久”与“ACK回来多久”。
 
@@ -119,7 +133,9 @@ GBN 的累计确认推进一个左边界；SR 的 ACK1 只说明帧1本身已收
 <a id="q08"></a>
 ## 08｜2014-37：CDMA 解码用目标码片点积
 
-![2014-37 原题](../bank/2014/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q37.png" alt="2014-37 原题" width="525" style="display:block; width:32.83em; max-width:none; height:auto;">
+</div>
 
 A 的码片 `(1,1,1,1)`。C 听到的12个数每4个一组，与A逐项乘后除4，三组得到 `+1、−1、+1`，对应 **101，选 B**。第一笔先按码片长度4分组，再做与目标站码的相关运算。
 
@@ -131,7 +147,9 @@ B、C 的码片与 A 正交，点积为0；叠加信号与A做内积时只留下
 <a id="q09"></a>
 ## 09｜2015-35：目标利用率先求窗口，再求序号位数
 
-![2015-35 原题](../bank/2015/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q35.png" alt="2015-35 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
+</div>
 
 每帧1000B/128kbps 发送 **62.5ms**；往返传播 **500ms**，短ACK忽略，单帧周期 `562.5ms=9` 个发送时隙。要 ≥80%，窗口至少 `⌈0.8×9⌉=8` 帧。GBN 的发送窗口上限 `2^k−1`，3bit最多7，不够；**4bit，选 B**。第一笔把利用率条件写成 `W/9≥0.8`。
 
@@ -143,7 +161,9 @@ B、C 的码片与 A 正交，点积为0；叠加信号与A做内积时只留下
 <a id="q10"></a>
 ## 10｜2016-35：集线器复制信号，交换机只转目标端口
 
-![2016-35 原题（含33—41题共用拓扑）](../bank/2016/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q35.png" alt="2016-35 原题（含33—41题共用拓扑）" width="470" style="display:block; width:29.38em; max-width:none; height:auto;">
+</div>
 
 H4 发送给 H2 的确认帧先经过与 H3 共用的 Hub：物理层会复制到 H3；再到交换机，交换机按 H2 的 MAC 所在端口转发给 H2，H1 不收该信号。因此除 H4 外，**H2、H3，选 D**。第一笔画 H4→Hub→Switch→H2，并给 Hub 的另一端 H3 画一条复制支路。
 
@@ -155,7 +175,9 @@ H4 发送给 H2 的确认帧先经过与 H3 共用的 Hub：物理层会复制�
 <a id="q11"></a>
 ## 11｜2017-35：无线帧的接收点与最终目标可能不同
 
-![2017-35 原题](../bank/2017/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q35.png" alt="2017-35 原题" width="466" style="display:block; width:29.10em; max-width:none; height:auto;">
+</div>
 
 H 向 Internet 经 AP 发 IEEE 802.11 数据帧；当前无线链路的**接收者地址1是 AP 的 b**，**发送者地址2是 H 的 a**，**原始目的地址3是下一跳路由器 R 的 c**，**选 B**。第一笔画 H→AP→R，分别圈“这一跳谁收”和“跨过AP后给谁”。
 
@@ -167,7 +189,9 @@ AP 是桥接点，帧还得知道转出无线网后目的MAC。不能因为图�
 <a id="q12"></a>
 ## 12｜2018-35：CSMA/CA 的可选预约是 RTS/CTS
 
-![2018-35 原题](../bank/2018/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q35.png" alt="2018-35 原题" width="412" style="display:block; width:25.78em; max-width:none; height:auto;">
+</div>
 
 无线站点先发 **RTS 请求发送**，目标回复 **CTS 允许发送**，邻站可据持续时间暂避，因而用于信道预约，**选 D**。第一笔找请求/许可的成对控制帧，不把数据之后的ACK当预约。
 
@@ -179,7 +203,9 @@ ACK 是成功接收后的确认；二进制指数退避用于竞争失败后的�
 <a id="q13"></a>
 ## 13｜2018-36：停等40%反推数据帧发送时间
 
-![2018-36 原题](../bank/2018/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q36.png" alt="2018-36 原题" width="469" style="display:block; width:29.29em; max-width:none; height:auto;">
+</div>
 
 单向传播200ms，往返400ms，忽略ACK发送。停等利用率 `U=T/(T+400ms)=0.4`，解得 `T=266.67ms`。3kbps×0.26667s≈**800比特，选 D**。第一笔把有用发送时间放分子，把等ACK往返传播放分母。
 
@@ -191,7 +217,9 @@ ACK 是成功接收后的确认；二进制指数退避用于竞争失败后的�
 <a id="q14"></a>
 ## 14｜2019-35：发送窗口5侵占8个序号，SR接收窗口最多3
 
-![2019-35 原题](../bank/2019/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q35.png" alt="2019-35 原题" width="500" style="display:block; width:31.27em; max-width:none; height:auto;">
+</div>
 
 3bit序号只有 `2³=8` 个值。选择重传若发送窗口5，为免旧帧重传与下一轮新帧混淆，`W_s+W_r≤8`，故接收窗口至多 **3，选 B**。第一笔先写序号模8，再从总空间中扣发送窗口。
 
@@ -203,7 +231,9 @@ ACK 是成功接收后的确认；二进制指数退避用于竞争失败后的�
 <a id="q15"></a>
 ## 15｜2020-36：停等长ACK不能当作瞬时确认
 
-![2020-36 原题](../bank/2020/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q36.png" alt="2020-36 原题" width="468" style="display:block; width:29.23em; max-width:none; height:auto;">
+</div>
 
 1000B、10kbps，数据帧发送 `8000/10000=0.8s`；确认帧也 **0.8s**；单向传播0.2s，两程0.4s。一轮总 `0.8+0.4+0.8=2.0s`，有用发送0.8s，利用率 **40%，选 D**。第一笔按题干读确认帧长度，不能沿用13的“忽略ACK”。
 
@@ -215,7 +245,9 @@ ACK 是成功接收后的确认；二进制指数退避用于竞争失败后的�
 <a id="q16"></a>
 ## 16｜2022-33：相邻结点流控在链路层
 
-![2022-33 原题](../bank/2022/q33.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q33.png" alt="2022-33 原题" width="391" style="display:block; width:24.45em; max-width:none; height:auto;">
+</div>
 
 ISO/OSI 中两个**相邻结点**之间的流量控制属**数据链路层，选 B**；传输层处理端系统之间的端到端流控。第一笔标“相邻”还是“端到端”，与0901-01同一端点定位动作。
 
@@ -227,7 +259,9 @@ ISO/OSI 中两个**相邻结点**之间的流量控制属**数据链路层，选
 <a id="q17"></a>
 ## 17｜2023-35：同样3bit序号，GBN可比等窗SR放更多未确认帧
 
-![2023-35 原题](../bank/2023/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q35.png" alt="2023-35 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
+</div>
 
 停等发送窗1，GBN最多 `2³−1=7`；SR题设收发窗口相等，`W_s+W_r≤8`，故双方最多各4。忽略ACK长度且同样数据帧，窗口越大，上限利用率不降，于是 **U1≤U3≤U2，选 B**。第一笔先求三个允许窗口 `1、7、4`，再排效率。
 
@@ -239,7 +273,9 @@ ISO/OSI 中两个**相邻结点**之间的流量控制属**数据链路层，选
 <a id="q18"></a>
 ## 18｜2023-37：CRC只判余数为零，不能证明绝对无错
 
-![2023-37 原题](../bank/2023/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q37.png" alt="2023-37 原题" width="469" style="display:block; width:29.30em; max-width:none; height:auto;">
+</div>
 
 生成多项式 `G=10011`（5位，4阶），对四个候选完整比特串分别做模2除法，余数依次是 `1100、1000、0100、0000`，因此可判**未检出错误**的是 **D：101111100，选 D**。第一笔只做异或长除法，余0才是合法码字形式。
 
@@ -251,7 +287,9 @@ ISO/OSI 中两个**相邻结点**之间的流量控制属**数据链路层，选
 <a id="q19"></a>
 ## 19｜2024-37：SR 的独立确认腾一格，超时只补一帧
 
-![2024-37 原题](../bank/2024/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q37.png" alt="2024-37 原题" width="460" style="display:block; width:28.75em; max-width:none; height:auto;">
+</div>
 
 3bit 序号，SR 收发等窗最大各4；起初发F0—F3。t1 收到 **ACK0**，发送窗口空出一格，可发 **F4**，尽管F1丢失；t2 明示**F1超时**，SR仅重发 **F1**。组合 **F4、F1，选 D**。第一笔在窗口四格上划掉独立已确认的0，另给F1保留计时器。
 

@@ -37,7 +37,9 @@
 <a id="q01"></a>
 ## 01｜2009-36：交换机用目的物理地址决定出口
 
-![2009-36 原题](../bank/2009/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q36.png" alt="2009-36 原题" width="408" style="display:block; width:25.51em; max-width:none; height:auto;">
+</div>
 
 以太网交换机查帧的**目的MAC/物理地址，选 A**，结合MAC转发表确定输出端口。源MAC用于学习“这台设备在哪个入端口”，不是此帧的出口查询键；IP目的地用于路由层。第一笔在帧上分目的与源。
 
@@ -49,7 +51,9 @@
 <a id="q02"></a>
 ## 02｜2009-37：最小帧缩短，最远站距也要缩短
 
-![2009-37 原题](../bank/2009/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q37.png" alt="2009-37 原题" width="453" style="display:block; width:28.34em; max-width:none; height:auto;">
+</div>
 
 CSMA/CD 要保证发送最短帧期间仍能听见最远端冲突，即 `T_min≥2d/v`。最小帧少800bit、速率1Gbps，发送时间少 **0.8μs**；单向允许传播少0.4μs，传播速率 `2×10⁸m/s`，距离少 **80m，选 D**。第一笔写双向传播，避免把0.8μs全用在单向距离。
 
@@ -61,7 +65,9 @@ CSMA/CD 要保证发送最短帧期间仍能听见最远端冲突，即 `T_min�
 <a id="q03"></a>
 ## 03｜2010-38：要抑制广播风暴，须隔开广播域
 
-![2010-38 原题](../bank/2010/q38.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q38.png" alt="2010-38 原题" width="382" style="display:block; width:23.90em; max-width:none; height:auto;">
+</div>
 
 中继器、集线器只复制信号；普通网桥/交换机也会在同一广播域泛洪广播帧。**路由器 IV 隔开广播域，选 D**。第一笔问广播帧是否会跨过这个设备到另一个网络。
 
@@ -73,7 +79,9 @@ CSMA/CD 要保证发送最短帧期间仍能听见最远端冲突，即 `T_min�
 <a id="q04"></a>
 ## 04｜2011-36：无线CSMA/CA用接收确认
 
-![2011-36 原题](../bank/2011/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q36.png" alt="2011-36 原题" width="413" style="display:block; width:25.82em; max-width:none; height:auto;">
+</div>
 
 无线环境难以边发边可靠侦测冲突，CSMA/CA 采用避免竞争并由接收方对正确数据帧回**ACK，选 D**。CSMA/CD 的CD是冲突检测，不是正确接收确认；CDMA是码分多址。第一笔找“收到正确帧后谁回话”。
 
@@ -85,7 +93,9 @@ RTS/CTS可选地在数据前预约，ACK在数据后确认；两者不能互换�
 <a id="q05"></a>
 ## 05｜2012-38：ARP把下一跳IP翻成链路目的MAC
 
-![2012-38 原题](../bank/2012/q38.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q38.png" alt="2012-38 原题" width="361" style="display:block; width:22.56em; max-width:none; height:auto;">
+</div>
 
 ARP 查询**给定IP地址对应的MAC地址，选 A**。同网段目的地就查目的主机IP；跨网目的地则查下一跳网关IP对应MAC，帧才能在当前链路上发出。第一笔区别“IP分组最终去谁”与“这一跳帧交给谁”。
 
@@ -97,7 +107,9 @@ DNS域名→IP，ARP IP→MAC；反向映射与域名解析不是此题ARP的基
 <a id="q06"></a>
 ## 06｜2013-36：先监听不保证同时开始者互不冲突
 
-![2013-36 原题](../bank/2013/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q36.png" alt="2013-36 原题" width="387" style="display:block; width:24.16em; max-width:none; height:auto;">
+</div>
 
 CSMA 是载波侦听多路访问，两站可能都在对方信号尚未传播到时认为介质空闲并发出帧，因此**可能发生冲突，选 B**。TDMA/FDMA预分时隙/频带，CDMA用不同码分离。第一笔画两端传播延迟，而不是把“侦听”当全局同步。
 
@@ -109,7 +121,9 @@ CSMA 是载波侦听多路访问，两站可能都在对方信号尚未传播到
 <a id="q07"></a>
 ## 07｜2013-38：直通交换至少看完目的MAC六字节
 
-![2013-38 原题](../bank/2013/q38.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q38.png" alt="2013-38 原题" width="469" style="display:block; width:29.29em; max-width:none; height:auto;">
+</div>
 
 不包括前导码的以太网帧一开头就是 **6B目的MAC地址**；直通转发要先知道出口，至少接收48bit。在100Mbps 上耗 `48/10⁸s=0.48μs`，**选 B**。第一笔在帧格式上找作转发表查询的最早字段。
 
@@ -121,7 +135,9 @@ CSMA 是载波侦听多路访问，两站可能都在对方信号尚未传播到
 <a id="q08"></a>
 ## 08｜2014-34：先学习源a，再对未知目标c泛洪
 
-![2014-34 原题](../bank/2014/q34.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q34.png" alt="2014-34 原题" width="466" style="display:block; width:29.15em; max-width:none; height:auto;">
+</div>
 
 表里只知b→端口2。a从端口1发往c，交换机学 **a→1**；c目的未知，就从除入端口1外的 **{2,3}** 泛洪。c从端口3回ACK给a，已知a→1，只送 **{1}**。组合 **选 B**。第一笔按每帧“入端口学源→查目的→发出口”顺序走。
 
@@ -133,7 +149,9 @@ CSMA 是载波侦听多路访问，两站可能都在对方信号尚未传播到
 <a id="q09"></a>
 ## 09｜2015-36：无线适用CA，难以使用CD
 
-![2015-36 原题](../bank/2015/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q36.png" alt="2015-36 原题" width="294" style="display:block; width:18.37em; max-width:none; height:auto;">
+</div>
 
 题问**错误**项：CSMA/CD 一边发一边检测冲突，主要用于共享式有线以太网；无线发送功率和接收信号强弱差异使此检测不可靠，无线通常采用CSMA/CA，因此 **B 错，选 B**。第一笔把CD与CA的末尾词读全。
 
@@ -145,7 +163,9 @@ A 描述CD；C 是最小帧与往返传播限制；D 在传播延迟趋0的理�
 <a id="q10"></a>
 ## 10｜2015-37：交换机是多端口网桥
 
-![2015-37 原题](../bank/2015/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q37.png" alt="2015-37 原题" width="286" style="display:block; width:17.90em; max-width:none; height:auto;">
+</div>
 
 普通以太网交换机本质是**多端口网桥，选 A**。每端口可成为独立冲突域，同一VLAN/默认配置仍可能共享广播域；不同网络层协议互联靠路由等三层设备。第一笔分冲突域和广播域。
 
@@ -157,7 +177,9 @@ B“所有端口一个冲突域”错，因为交换端口分隔共享介质；C
 <a id="q11"></a>
 ## 11｜2016-36：64B最短帧，扣去Hub转发耗时
 
-![2016-36 原题（结合2016-34公用图）](../bank/2016/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q36.png" alt="2016-36 原题（结合2016-34公用图）" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
+</div>
 
 100Base-T 速率100Mbps，最短帧64B（不计前导码）发送需 `512/100M=5.12μs`，最大单程总延迟 **2.56μs**。Hub再生延迟 **1.535μs**，留给H3到H4之间信号传播 `1.025μs`；乘 `200m/μs` 得 **205m，选 B**。第一笔画碰撞往返并取半，再扣中继延迟。
 
@@ -169,7 +191,9 @@ H3和H4均接同一Hub，信号单向从一端到另一端只经Hub一次；往�
 <a id="q12"></a>
 ## 12｜2018-37：IP跨路由器保持目标，MAC逐跳重写
 
-![2018-37 原题](../bank/2018/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q37.png" alt="2018-37 原题" width="469" style="display:block; width:29.29em; max-width:none; height:auto;">
+</div>
 
 H1 `192.168.3.2` 到H2 `192.168.4.2` 跨子网：H1 首帧交默认网关左接口 MAC **…51**；路由器重新封装后，从右接口 MAC **…61** 发给 H2，因此 H2 所收帧的源MAC为…61，组合 **选 D**。第一笔在路由器两侧各画一张帧，不把最终H2的…62当首帧目的。
 
@@ -181,7 +205,9 @@ IP目的地址仍是H2的192.168.4.2，路由器按它选路径；链路帧只�
 <a id="q13"></a>
 ## 13｜2019-34：100BaseT 名称中的 T 指双绞线
 
-![2019-34 原题](../bank/2019/q34.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q34.png" alt="2019-34 原题" width="454" style="display:block; width:28.37em; max-width:none; height:auto;">
+</div>
 
 100BaseT 快速以太网的传输介质是**双绞线，选 A**。第一笔拆名称：100为100Mb/s，Base为基带，T为Twisted pair。光纤/同轴为其他介质规范。
 
@@ -193,7 +219,9 @@ IP目的地址仍是H2的192.168.4.2，路由器按它选路径；链路帧只�
 <a id="q14"></a>
 ## 14｜2019-36：先用最小帧的发送时长约束往返传播
 
-![2019-36 原题](../bank/2019/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q36.png" alt="2019-36 原题" width="500" style="display:block; width:31.25em; max-width:none; height:auto;">
+</div>
 
 原题及[2019原卷第5页](../past_papers/2019年计算机408统考真题.pdf)均写 **10Mb/s、最小帧128B**。按 CSMA/CD 碰撞检测条件 `2Tp≤Tframe`，`Tframe=128×8/10⁷s=102.4μs`，所以单程 `Tp≤51.2μs`。然而选项是 **2.56、5.12、10.24、20.48μs**，**没有51.2μs**。第一笔依字节→比特→发送时间→除2计算；此题不能把不匹配的选项当已核准答案。
 
@@ -205,7 +233,9 @@ IP目的地址仍是H2的192.168.4.2，路由器按它选路径；链路帧只�
 <a id="q15"></a>
 ## 15｜2020-35：每个Hub一冲突域，路由器两侧两广播域
 
-![2020-35 原题](../bank/2020/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q35.png" alt="2020-35 原题" width="409" style="display:block; width:25.57em; max-width:none; height:auto;">
+</div>
 
 图中左右各两个集线器，每个Hub下两台主机共享介质，合 **4个冲突域**；交换机分隔它们，路由器把左右网络隔成 **2个广播域**，**选 C（4，2）**。第一笔先数Hub共享段，再在路由器处切开广播路径。
 
@@ -217,7 +247,9 @@ Hub连接其两台主机和交换机的那个端口属于同一冲突域，不�
 <a id="q16"></a>
 ## 16｜2020-37：争用前等DIFS，已获预约的响应等SIFS
 
-![2020-37 原题](../bank/2020/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q37.png" alt="2020-37 原题" width="487" style="display:block; width:30.42em; max-width:none; height:auto;">
+</div>
 
 当前完整图显示 IFS1 在 H 发 RTS 前；新争用要等 **DIFS** 再退避，通常比 CTS/DATA/ACK 间的 **SIFS** 长，因此最长是 **IFS1，选 A**。第一笔把“开始争介质”与“预约会话内即时响应”区分。
 
@@ -229,7 +261,9 @@ IFS2 在 RTS→CTS，IFS3 在 CTS→DATA，IFS4 在 DATA→ACK，均为短响应
 <a id="q17"></a>
 ## 17｜2022-37：SDN 控制器下发流表走南向接口
 
-![2022-37 原题](../bank/2022/q37.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q37.png" alt="2022-37 原题" width="467" style="display:block; width:29.19em; max-width:none; height:auto;">
+</div>
 
 控制器在控制平面，交换机在数据平面；控制器向交换机下发流表用**南向接口，选 B**。第一笔在上下层画控制器→交换机的箭头。北向接口连接控制器与上层应用。
 
@@ -241,7 +275,9 @@ IFS2 在 RTS→CTS，IFS3 在 CTS→DATA，IFS4 在 DATA→ACK，均为短响应
 <a id="q18"></a>
 ## 18｜2023-36：第4次冲突退避最多15个争用槽
 
-![2023-36 原题](../bank/2023/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q36.png" alt="2023-36 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
+</div>
 
 连续4次冲突，二进制指数退避在第4次从 `0…2⁴−1=15` 个槽中选；10BaseT 槽时51.2μs，最大等待 `15×51.2=768μs`，**选 C**。第一笔指数的 k 来自当前冲突次数，再减1得到最大随机整数。
 
@@ -253,7 +289,9 @@ IFS2 在 RTS→CTS，IFS3 在 CTS→DATA，IFS4 在 DATA→ACK，均为短响应
 <a id="q19"></a>
 ## 19｜2024-35：VLAN先按端口分组，IP同前三段也不跨广播域
 
-![2024-35 原题（含公用拓扑）](../bank/2024/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q35.png" alt="2024-35 原题（含公用拓扑）" width="460" style="display:block; width:28.73em; max-width:none; height:auto;">
+</div>
 
 H4 接 VLAN1 端口5；H1、H2、H3 也在 VLAN1，H5 在 VLAN2，H6/H7 在 VLAN3。H4 的 ARP 表可出现同VLAN主机的IP/MAC，但**H6 `192.168.3.129` 的条目不会由VLAN1的ARP广播学到，选 D**。第一笔看端口所属VLAN，不被所有主机同为 `192.168.3.*` 的外观误导。
 
@@ -265,7 +303,9 @@ H2/H1/H3的ARP响应能到H4所在广播域，缓存条目还取决于曾否通�
 <a id="q20"></a>
 ## 20｜2024-36：听见CTS后预约的是剩余交换时间
 
-![2024-36 原题](../bank/2024/q36.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q36.png" alt="2024-36 原题" width="461" style="display:block; width:28.79em; max-width:none; height:auto;">
+</div>
 
 B 收到 AP 的 CTS 时，RTS与CTS自身已发完，不再计入剩余NAV。还要 `SIFS 28μs + DATA(1998×8/54Mb/s)=296μs + SIFS 28μs + ACK 2μs`，总 **354μs，选 B**。第一笔从“收到CTS这一刻”画右侧时间轴，DIFS发生在之前。
 
@@ -277,7 +317,9 @@ B 收到 AP 的 CTS 时，RTS与CTS自身已发完，不再计入剩余NAV。还
 <a id="q21"></a>
 ## 21｜2025-35：碰撞次数过10后指数不再增大
 
-![2025-35 原题](../bank/2025/q35.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q35.png" alt="2025-35 原题" width="423" style="display:block; width:26.45em; max-width:none; height:auto;">
+</div>
 
 二进制指数退避取 `k=min(碰撞次数,10)`；连续11次冲突时 k仍是10，最大随机数 `2¹⁰−1=1023` 个槽。10BaseT 一个槽51.2μs，最大间隔 `1023×51.2μs=52.3776ms`，**选 C**。第一笔先封顶指数，再乘槽时。
 
