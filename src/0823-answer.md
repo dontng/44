@@ -47,9 +47,7 @@
 <a id="q01"></a>
 ## 01｜2009-22：外部中断先找 CPU 之外的事件源
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q22.png" alt="2009-22 原题" width="287" style="display:block; width:17.93em; max-width:none; height:auto;">
-</div>
+![2009-22 原题](../bank/2009/q22.png)
 
 键盘输入由外设到达，能请求 CPU 在适当指令边界响应**外部中断，选 A**。除数为零、浮点下溢、访存缺页都是当前指令执行过程中发现的内部异常或陷入，不因外设主动发信号而来。第一笔先问事件从哪发生，比只背“中断”“异常”名称更稳。
 
@@ -61,9 +59,7 @@
 <a id="q02"></a>
 ## 02｜2010-21：题目限定服务程序内，别把硬件入口当成软件步骤
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q21.png" alt="2010-21 原题" width="392" style="display:block; width:24.50em; max-width:none; height:auto;">
-</div>
+![2010-21 原题](../bank/2010/q21.png)
 
 题目明确问“**中断服务程序内**”的执行顺序。硬件中断响应已经完成关中断 III、保存断点 IV；进入软件服务程序后，先**保护现场 I**，再**处理中断事件 V**，然后**恢复现场 VI**，最后**开中断 II、中断返回 VII**。顺序 **I→V→VI→II→VII，选 A**。单级中断不能在处理主体开始前开中断，因此 B 错；C、D 把硬件响应的入口动作混进服务程序。
 
@@ -75,9 +71,7 @@
 <a id="q03"></a>
 ## 03｜2011-21：屏蔽字按处理优先级，不按 L 编号
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q21.png" alt="2011-21 原题" width="477" style="display:block; width:29.80em; max-width:none; height:auto;">
-</div>
+![2011-21 原题](../bank/2011/q21.png)
 
 题给响应优先级从高到低 `L4→L0→L2→L1→L3`。正在处理 L1 时，允许前三个更高优先级打断，故对应屏蔽位 `M4=0,M0=0,M2=0`；屏蔽自身 L1 与低级 L3，`M1=1,M3=1`。按题目要求的 `M4M3M2M1M0` 顺序写成 **`01010`，选 D**。不要把下标顺序错当优先级顺序。
 
@@ -94,9 +88,7 @@
 <a id="q04"></a>
 ## 04｜2011-22：轮询花的周期要除以每秒总周期
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q22.png" alt="2011-22 原题" width="476" style="display:block; width:29.75em; max-width:none; height:auto;">
-</div>
+![2011-22 原题](../bank/2011/q22.png)
 
 每次查询至少用 500 周期，每秒至少查 200 次，设备 A 至少占 `500×200=100000` CPU 周期/秒。50MHz 每秒有 50,000,000 周期，占比 `100000/50000000=0.002=0.20%`，**选 C**。先写“周期/次 × 次/秒”，再除“周期/秒”，单位自动约掉。
 
@@ -108,9 +100,7 @@
 <a id="q05"></a>
 ## 05｜2011-26：发起磁盘请求与完成通知是两次方向相反的交接
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q26.png" alt="2011-26 原题" width="335" style="display:block; width:20.93em; max-width:none; height:auto;">
-</div>
+![2011-26 原题](../bank/2011/q26.png)
 
 用户程序提出磁盘 I/O，先进入**系统调用处理程序**，再由**设备驱动程序**设置控制器、发起具体设备操作；磁盘完成后以中断通知 CPU，进入**中断处理程序**，顺序 **用户→系统调用→驱动→中断，选 B**。不能让用户代码直接先执行内核驱动，也不能在设备启动前先处理“完成中断”。
 
@@ -122,9 +112,7 @@
 <a id="q06"></a>
 ## 06｜2012-21：命令字、状态字、类型号都是总线数据载荷
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q21.png" alt="2012-21 原题" width="375" style="display:block; width:23.42em; max-width:none; height:auto;">
-</div>
+![2012-21 原题](../bank/2012/q21.png)
 
 I/O 总线的数据线可以传接口命令字、读回的状态字以及中断类型号这些**数值**，故 I、II、III 都成立，**选 D**。承接 0822-04：握手/应答**信号**是控制线上的时序信息，不能因“命令字”也叫命令就把编码后的数值误当同一种控制线电平。
 
@@ -136,9 +124,7 @@ CPU 要写一个具体的 I/O 命令码，数据线承载码值，控制线同�
 <a id="q07"></a>
 ## 07｜2012-22：隐指令做必需入口，不替服务程序保存所有寄存器
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q22.png" alt="2012-22 原题" width="404" style="display:block; width:25.27em; max-width:none; height:auto;">
-</div>
+![2012-22 原题](../bank/2012/q22.png)
 
 中断响应硬件的隐指令在入口要关中断 I、保存断点，并取中断服务程序入口地址送入 PC III。**保存通用寄存器内容 II**属于服务程序按需保护现场的工作，不由该隐指令一概完成。所以 **仅 I、III，选 B**。与 02 的顺序题合在一起看：先有可靠入口，再由软件处理详细现场。
 
@@ -150,9 +136,7 @@ CPU 要写一个具体的 I/O 命令码，数据线承载码值，控制线同�
 <a id="q08"></a>
 ## 08｜2013-19：外设与控制器的接口，选 USB
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q19.png" alt="2013-19 原题" width="420" style="display:block; width:26.28em; max-width:none; height:auto;">
-</div>
+![2013-19 原题](../bank/2013/q19.png)
 
 题目问“设备和设备控制器（I/O 接口）之间”互连。USB 可连接外设与主机侧控制器，**选 B**。PCI、AGP、PCI Express 在这组比较中更多处于主机内部部件/控制器与系统互连的一侧；先画“CPU/内存—控制器—外设”三段，再看题指定的是哪一段。
 
@@ -164,9 +148,7 @@ CPU 要写一个具体的 I/O 命令码，数据线承载码值，控制线同�
 <a id="q09"></a>
 ## 09｜2013-22：中断要 CPU 时间，DMA 主要要总线使用权
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q22.png" alt="2013-22 原题" width="390" style="display:block; width:24.40em; max-width:none; height:auto;">
-</div>
+![2013-22 原题](../bank/2013/q22.png)
 
 中断 I/O 请求 CPU 执行服务程序；DMA 搬运数据时请求总线使用权，A 对。中断在指令边界响应，DMA 在当前总线事务完成后争用总线；数据通过中断服务程序/硬件 DMA 控制器搬运，B、C 为本题常用模型。D 用“中断适用于**所有**外设、DMA **仅**适用于快速外设”做绝对限制，未由机制推出，故 **错误选 D**。
 
@@ -178,9 +160,7 @@ DMA 设置有启动成本，连续大块、高速设备通常更能摊薄成本�
 <a id="q10"></a>
 ## 10｜2014-21：统一编址的 I/O 端口可以用访存指令
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q21.png" alt="2014-21 原题" width="306" style="display:block; width:19.15em; max-width:none; height:auto;">
-</div>
+![2014-21 原题](../bank/2014/q21.png)
 
 状态端口和控制端口可以共用寄存器；CPU 可访问的接口寄存器称 I/O 端口。独立编址时，I/O 端口和主存可有相同数字地址，由不同地址空间区分；**统一编址**则把 I/O 端口映进主存地址空间，CPU 可用访存指令读写它，D 的“不能”错误，**选 D**。
 
@@ -196,9 +176,7 @@ DMA 设置有启动成本，连续大块、高速设备通常更能摊薄成本�
 <a id="q11"></a>
 ## 11｜2014-22：每 400ns 一次请求，占用 100ns
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q22.png" alt="2014-22 原题" width="466" style="display:block; width:29.15em; max-width:none; height:auto;">
-</div>
+![2014-22 原题](../bank/2014/q22.png)
 
 每 400ns 来一个中断请求，每次 CPU 响应并处理用 100ns；持续工作时占比最少 `100/400=25%`，**选 B**。允许最大响应延迟 50ns 是必须及时开始响应的约束，不是每次处理要额外再加 50ns，也不能以它替代实际 100ns 处理成本。
 
@@ -210,9 +188,7 @@ DMA 设置有启动成本，连续大块、高速设备通常更能摊薄成本�
 <a id="q12"></a>
 ## 12｜2015-21：打印控制器端口不必接收主存地址
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q21.png" alt="2015-21 原题" width="452" style="display:block; width:28.23em; max-width:none; height:auto;">
-</div>
+![2015-21 原题](../bank/2015/q21.png)
 
 中断 I/O 打印时，CPU 可把打印字符写到接口数据端口、读设备状态、下控制命令；这三类都与端口交换。**主存地址**不需要作为打印端口的交换内容，**选 B**。DMA 控制器才要知道从/往哪一片主存搬数据，别把它的地址参数挪到逐字中断打印流程。
 
@@ -224,9 +200,7 @@ DMA 设置有启动成本，连续大块、高速设备通常更能摊薄成本�
 <a id="q13"></a>
 ## 13｜2015-22：不是每种内部异常都返回原指令续做
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q22.png" alt="2015-22 原题" width="452" style="display:block; width:28.25em; max-width:none; height:auto;">
-</div>
+![2015-22 原题](../bank/2015/q22.png)
 
 内部异常与当前指令相关、由内部逻辑检测，可在指令执行过程中响应，A/B/C 正确。D 断言**处理后都回到发生异常的指令继续**错误：故障 fault 如缺页可重试原指令，陷阱 trap 如系统调用通常从下一条继续，终止 abort 可能无法恢复，**选 D**。第一笔看题干列出的三种类别，本身就提示返回位置不能统一。
 
@@ -238,9 +212,7 @@ DMA 设置有启动成本，连续大块、高速设备通常更能摊薄成本�
 <a id="q14"></a>
 ## 14｜2016-22：缺页是内部异常，DMA 完成是外部中断
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q22.png" alt="2016-22 原题" width="446" style="display:block; width:27.88em; max-width:none; height:auto;">
-</div>
+![2016-22 原题](../bank/2016/q22.png)
 
 题目已把执行中内部特殊事件叫异常，把外部请求叫中断。访存缺页由当前指令地址翻译发现，是**异常**；除零、存储保护错也是异常；DMA 传送结束由设备/控制器通知 CPU，是外部**中断**。A 说“缺页属于中断”错误，**选 A**。承接 01，发生后用磁盘处理不改变最初检测来源。
 
@@ -252,9 +224,7 @@ DMA 设置有启动成本，连续大块、高速设备通常更能摊薄成本�
 <a id="q15"></a>
 ## 15｜2017-21：I/O 指令在寄存器与接口端口间传数据
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q21.png" alt="2017-21 原题" width="381" style="display:block; width:23.82em; max-width:none; height:auto;">
-</div>
+![2017-21 原题](../bank/2017/q21.png)
 
 CPU 执行 I/O 指令时，典型数据路径是**通用寄存器 ↔ I/O 接口内的端口**，**选 D**。外设与端口之间的传输发生在接口的设备侧；CPU 指令并不直接穿过接口去操作设备物理引脚。两个 I/O 端口之间也不是普通 I/O 指令的默认数据传输路径。
 
@@ -266,9 +236,7 @@ CPU 执行 I/O 指令时，典型数据路径是**通用寄存器 ↔ I/O 接口
 <a id="q16"></a>
 ## 16｜2017-22：多重中断允许高优先级打断处理中断
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q22.png" alt="2017-22 原题" width="281" style="display:block; width:17.57em; max-width:none; height:auto;">
-</div>
+![2017-22 原题](../bank/2017/q22.png)
 
 外部中断在指令结束边界响应，与正在执行的那条指令通常无关，CPU 采样请求线发现它。B 说“**中断处理期间 CPU 处于关中断状态**”一概而论，和**多重中断系统**不符：保存好必要现场后可重新开中断，让更高优先级请求嵌套，故 **错误选 B**。初入中断短暂关中断与整个处理期间永远关中断不是同一句话。
 
@@ -280,9 +248,7 @@ CPU 执行 I/O 指令时，典型数据路径是**通用寄存器 ↔ I/O 接口
 <a id="q17"></a>
 ## 17｜2018-22：只有允许响应，CPU 才能接外设请求
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q22.png" alt="2018-22 原题" width="352" style="display:block; width:22.00em; max-width:none; height:auto;">
-</div>
+![2018-22 原题](../bank/2018/q22.png)
 
 中断控制器按优先级仲裁，不按请求到达先后简单 FIFO；隐指令保存断点等控制状态，GPR 由服务程序按需保护；外部中断通常待当前指令结束再响应。CPU 必须处于**中断允许状态**才能响应外设中断，**选 C**。这不是说请求在关中断时物理上不出现，而是 CPU 暂不转入服务。
 
@@ -294,9 +260,7 @@ CPU 执行 I/O 指令时，典型数据路径是**通用寄存器 ↔ I/O 接口
 <a id="q18"></a>
 ## 18｜2019-21：中断 CPU 占用按每秒缓冲次数算
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q21.png" alt="2019-21 原题" width="500" style="display:block; width:31.25em; max-width:none; height:auto;">
-</div>
+![2019-21 原题](../bank/2019/q21.png)
 
 接口数据缓冲 32 位=4B，每秒 50kB 数据需要最多 `50,000/4=12,500` 次中断；一次含响应、处理用 1000 周期，合计 `12.5×10⁶` 周期/秒。1GHz 每秒 `10⁹` 周期，占比 `12.5M/1000M=1.25%`，**选 A**。题问“最多”，按每份缓冲都触发一次中断估算。
 
@@ -308,9 +272,7 @@ CPU 执行 I/O 指令时，典型数据路径是**通用寄存器 ↔ I/O 接口
 <a id="q19"></a>
 ## 19｜2019-22：DMA 四步各有不同执行者
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q22.png" alt="2019-22 原题" width="354" style="display:block; width:22.14em; max-width:none; height:auto;">
-</div>
+![2019-22 原题](../bank/2019/q22.png)
 
 驱动程序先给 DMA 控制器设置主存地址、方向、数量等参数（I）；传送前 DMA 控制器请求总线使用权（II）；搬运中它直接控制总线读写（III）；结束后发中断，CPU 的中断服务程序做收尾（IV）。四项均正确，**选 D**。DMA 的“CPU 不逐字搬”不等于 CPU 从头到尾完全不参与。
 
@@ -322,9 +284,7 @@ CPU 执行 I/O 指令时，典型数据路径是**通用寄存器 ↔ I/O 接口
 <a id="q20"></a>
 ## 20｜2020-20：定时器与网包到达是外部请求
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q20.png" alt="2020-20 原题" width="383" style="display:block; width:23.93em; max-width:none; height:auto;">
-</div>
+![2020-20 原题](../bank/2020/q20.png)
 
 I 访存缺页由当前执行指令触发内部异常；II 定时器到时和 III 网络数据包到达均由处理器外的设备/控制器请求服务，是**外部中断**。故仅 II、III，**选 C**。这一题把 01 的键盘、14 的 DMA 完成再扩成时钟和网络两种设备来源。
 
@@ -340,9 +300,7 @@ I 访存缺页由当前执行指令触发内部异常；II 定时器到时和 II
 <a id="q21"></a>
 ## 21｜2020-21：可屏蔽请求出现，不等于 CPU 立刻响应
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q21.png" alt="2020-21 原题" width="524" style="display:block; width:32.73em; max-width:none; height:auto;">
-</div>
+![2020-21 原题](../bank/2020/q21.png)
 
 NMI 不受一般中断允许位屏蔽，优先级高于可屏蔽中断；可屏蔽请求还能受屏蔽字影响。B 却说一旦可屏蔽请求信号有效，CPU“**立即响应**”，漏掉中断允许、优先级以及当前指令结束边界，故 **错误选 B**。抓“请求”与“响应”之间仍有条件和时刻。
 
@@ -354,9 +312,7 @@ NMI 不受一般中断允许位屏蔽，优先级高于可屏蔽中断；可屏�
 <a id="q22"></a>
 ## 22｜2020-22：周期挪用只在某个总线周期让 CPU
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q22.png" alt="2020-22 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
-</div>
+![2020-22 原题](../bank/2020/q22.png)
 
 512B 数据块，接口缓冲一次 32 位=4B，DMA 每准备好 4B 就争取一次总线；在 DMA 获得总线的**那一周期**，CPU 不能同时用它访问主存。C 扩成“**整个数据块传送过程中 CPU 都不能访问主存**”错误，周期挪用让 CPU 在其他空闲总线周期继续工作，**选 C**。结束仍发 DMA 完成中断。
 
@@ -368,9 +324,7 @@ NMI 不受一般中断允许位屏蔽，优先级高于可屏蔽中断；可屏�
 <a id="q23"></a>
 ## 23｜2021-20：可编程中断控制器管理请求，不是设备 I/O 端口
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q20.png" alt="2021-20 原题" width="467" style="display:block; width:29.20em; max-width:none; height:auto;">
-</div>
+![2021-20 原题](../bank/2021/q20.png)
 
 磁盘驱动器、打印机适配器、网络控制器都在设备与主机之间完成数据/控制转换，可作 I/O 接口。可编程中断控制器主要负责**汇集、屏蔽与仲裁中断请求**，并非某个 I/O 设备的数据接口，故 **选 D**。不要因为它也连接 CPU、可能有可编程寄存器，就把所有控制器都归入设备接口。
 
@@ -382,9 +336,7 @@ NMI 不受一般中断允许位屏蔽，优先级高于可屏蔽中断；可屏�
 <a id="q24"></a>
 ## 24｜2021-21：修好缺页后，原访存指令还没有完成
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q21.png" alt="2021-21 原题" width="523" style="display:block; width:32.67em; max-width:none; height:auto;">
-</div>
+![2021-21 原题](../bank/2021/q21.png)
 
 题先给异常在当前指令执行中检测、外部中断在执行后检测。缺页在访存指令完成前发生，处理程序把缺页调入主存后，**必须重启这条访存指令，选 B**。系统调用 trap 一般按返回约定走下一条，DMA 完成与缺纸是外部通知，不要求把当前指令倒回重做。
 
@@ -396,9 +348,7 @@ NMI 不受一般中断允许位屏蔽，优先级高于可屏蔽中断；可屏�
 <a id="q25"></a>
 ## 25｜2021-22：中断响应不要求先退出内核态
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q22.png" alt="2021-22 原题" width="392" style="display:block; width:24.48em; max-width:none; height:auto;">
-</div>
+![2021-22 原题](../bank/2021/q22.png)
 
 A 说“**仅在用户态**，CPU 才能检测和响应中断”，错误：内核态执行期间若中断允许、达到边界且优先级符合条件，同样可响应外设请求，**选 A**。用户态/内核态是程序权限，开/关中断与屏蔽是另一个维度；不能把“内核代码”自动等于“永不受中断打断”。
 
@@ -410,9 +360,7 @@ A 说“**仅在用户态**，CPU 才能检测和响应中断”，错误：内�
 <a id="q26"></a>
 ## 26｜2022-21：中断处理要赶在下一份数据覆盖缓冲前
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q21.png" alt="2022-21 原题" width="284" style="display:block; width:17.77em; max-width:none; height:auto;">
-</div>
+![2022-21 原题](../bank/2022/q21.png)
 
 字符型键盘、针式打印机常适合中断 I/O；数据由 CPU 执行中断服务程序搬运；设备工作时 CPU 可调度其他进程。C 声称“外设准备数据的时间应**小于**中断处理时间”是倒置的：若外设比 CPU 处理还快，新数据可能不断到来并覆盖/挤满缓冲，故 **错误选 C**。
 
@@ -424,9 +372,7 @@ A 说“**仅在用户态**，CPU 才能检测和响应中断”，错误：内�
 <a id="q27"></a>
 ## 27｜2023-22：DMA 数据阶段不跑“CPU 的 DMA 传送程序”
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q22.png" alt="2023-22 原题" width="349" style="display:block; width:21.80em; max-width:none; height:auto;">
-</div>
+![2023-22 原题](../bank/2023/q22.png)
 
 查询由 CPU 跑查询程序，普通中断 I/O 由 CPU 跑服务程序，高速 SSD/网络适合 DMA。C 说 DMA 方式由 CPU 执行“DMA 传送程序”来逐份完成 I/O，违背 DMA 的关键：**驱动设好参数后，控制器硬件搬运数据**，故 **错误选 C**。CPU 可在传送完成时再处理一个中断。
 
@@ -438,9 +384,7 @@ A 说“**仅在用户态**，CPU 才能检测和响应中断”，错误：内�
 <a id="q28"></a>
 ## 28｜2024-21：屏蔽字改嵌套优先级，不改硬件响应优先级
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q21.png" alt="2024-21 原题" width="280" style="display:block; width:17.50em; max-width:none; height:auto;">
-</div>
+![2024-21 原题](../bank/2024/q21.png)
 
 题问错误。响应阶段的优先级由中断控制器/硬件仲裁决定；处理期间，软件可保存 GPR、设置新的屏蔽字，决定哪些级别允许**嵌套打断当前服务**；单重方式处理时保持关中断。A 把屏蔽字说成“确定**中断响应的优先级**”，混淆响应优先级与处理时的屏蔽/嵌套优先级，**选 A**。
 
@@ -452,9 +396,7 @@ L1 处理程序设置 `01010` 让 L4、L0、L2 可嵌套，屏蔽 L1、L3；这�
 <a id="q29"></a>
 ## 29｜2024-22：DMA 控制的数据通路跨设备接口与主存
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q22.png" alt="2024-22 原题" width="460" style="display:block; width:28.77em; max-width:none; height:auto;">
-</div>
+![2024-22 原题](../bank/2024/q22.png)
 
 题指定 DMA 控制器负责 I/O，数据并不先进入 CPU 通用寄存器。实际搬运路径在**设备接口和主存之间，选 C**。DMA 控制器提供地址、计数、方向及总线控制，数据可经总线在两端交换；“控制器在场”不意味着它把数据停在 CPU 与 DMA 控制器之间。
 
@@ -466,9 +408,7 @@ L1 处理程序设置 `01010` 让 L4、L0、L2 可嵌套，屏蔽 L1、L3；这�
 <a id="q30"></a>
 ## 30｜2025-21：批量高速设备更能摊薄 DMA 启动成本
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q21.png" alt="2025-21 原题" width="408" style="display:block; width:25.52em; max-width:none; height:auto;">
-</div>
+![2025-21 原题](../bank/2025/q21.png)
 
 网卡与固态硬盘可连续传较大量数据，适合 DMA 批量搬运，**II、III，选 B**。键盘与针式打印机通常逐字符、低速，可由中断 I/O 满足；为了几个字节就配置 DMA，启动/结束成本不划算。这里问“适合”，不是断言慢设备物理上绝不能接 DMA，与 09 的“仅适用于”错误不矛盾。
 
@@ -480,9 +420,7 @@ L1 处理程序设置 `01010` 让 L4、L0、L2 可嵌套，屏蔽 L1、L3；这�
 <a id="q31"></a>
 ## 31｜2025-22：DMA 完成通知是外部中断请求
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q22.png" alt="2025-22 原题" width="317" style="display:block; width:19.80em; max-width:none; height:auto;">
-</div>
+![2025-22 原题](../bank/2025/q22.png)
 
 DMA 传输完成由控制器主动向 CPU 报告，属于**外部中断请求，选 A**。总线事务结束只是数据传输阶段的一个时序边界，不必每次都让 CPU 进中断；页故障处理结束是内部异常的恢复过程；断点指令执行会引起内部陷阱。按**谁发起给 CPU 的请求**裁决，别只见“结束”二字就归一类。
 
