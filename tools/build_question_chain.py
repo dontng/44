@@ -96,6 +96,24 @@ def glyph_height(path):
 
 def display_widths():
     """Compute a per-question width that gives each year the same text size."""
+    # Explicit per-image calibration takes precedence over the old six-sample
+    # year estimate. Never rebuild hand-authored pages to apply these widths.
+    calibrated = REPO / "data" / "image_display_widths.json"
+    if calibrated.exists():
+        import hashlib
+        settings = read_json(calibrated)
+        widths = {}
+        for qid, item in settings["images"].items():
+            image = REPO / item["path"]
+            if hashlib.sha256(image.read_bytes()).hexdigest() != item["sha256"]:
+                raise ValueError(f"image display calibration is stale: {qid}")
+            widths[qid] = item["width_em"] * DISPLAY_BASE_FONT_PX
+        if set(widths) != {
+            f"{p.parent.name}-{int(p.stem[1:]):02d}"
+            for p in (REPO / "bank").glob("[0-9][0-9][0-9][0-9]/q[0-9][0-9].png")
+        }:
+            raise ValueError("image display calibration does not cover current bank")
+        return widths
     widths = {}
     for year_dir in sorted((REPO / "bank").glob("*")):
         if not year_dir.is_dir() or not year_dir.name.isdigit():
