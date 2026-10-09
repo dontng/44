@@ -21,7 +21,7 @@
 <a id="q01"></a>
 ## 01｜2014-41：WPL 累加的是叶子的深度
 
-![2014-41 原题](../bank/2014/q41.png)
+<img src="../bank/2014/q41.png" alt="2014-41 原题" width="525" style="display:block; width:32.81em; max-width:100%; height:auto;">
 
 **（1）思路。** 根到根的边数为 0；沿边下探时深度加 1；只有左右孩子均空的叶子贡献 `weight×depth`，非叶结点的权值虽存在但不计 WPL。
 
@@ -53,7 +53,7 @@ long long wpl(const Node *p, int depth) {
 <a id="q02"></a>
 ## 02｜2016-42：正则 k 叉树的叶子和高度边界
 
-![2016-42 原题](../bank/2016/q42.png)
+<img src="../bank/2016/q42.png" alt="2016-42 原题" width="548" style="display:block; width:34.25em; max-width:100%; height:auto;">
 
 **（1）已知 m 个非叶结点。** 每个非叶结点发出 k 条边，共 `km`；树总边数是 `N−1`。所以 `N=km+1`，叶数 `N−m=(k−1)m+1`。不必预先假设每一层都填满。
 
@@ -64,7 +64,7 @@ long long wpl(const Node *p, int depth) {
 <a id="q03"></a>
 ## 03｜2017-41：树的中序遍历必须保护运算顺序
 
-![2017-41 原题](../bank/2017/q41.png)
+<img src="../bank/2017/q41.png" alt="2017-41 原题" width="524" style="display:block; width:32.75em; max-width:100%; height:auto;">
 
 **（1）思路。** 普通中序只输出符号会把 `a+b` 接着 `*` 误读为 `a+b*c`。每个运算符子树先输出左括号，递归左子树、运算符、右子树，再输出右括号；叶子直接打印操作数。一元减仅有右孩子时，括号内先打印 `-` 再打印孩子。
 
@@ -94,7 +94,7 @@ void printExpr(const BTree *p) {
 <a id="q04"></a>
 ## 04｜2020-42：前缀码作为一棵带终点的二叉树
 
-![2020-42 原题](../bank/2020/q42.png)
+<img src="../bank/2020/q42.png" alt="2020-42 原题" width="519" style="display:block; width:32.44em; max-width:100%; height:auto;">
 
 **（1）结构。** 用二叉字典树（Trie）：每位 0 走左边、1 走右边；字符保存在码字路径终点。最长码长 L，则根到终点的深度不超过 L。至少两个字符的前缀码不应把某字符放在根。
 
@@ -107,7 +107,7 @@ void printExpr(const BTree *p) {
 <a id="q05"></a>
 ## 05｜2022-41：顺序存储树验证 BST
 
-![2022-41 原题](../bank/2022/q41.png)
+<img src="../bank/2022/q41.png" alt="2022-41 原题" width="472" style="display:block; width:29.50em; max-width:100%; height:auto;">
 
 **（1）思路。** 数组下标 i 的左右孩子分别为 `2i+1`、`2i+2`；`-1` 表示**没有结点**，即使其下标小于 `ElemNum` 也要跳过。二叉搜索树中序遍历真实结点应严格递增（题给结点值均为正整数，本解采用无重复键的 BST 约定）。只保留前一真结点值即可。
 

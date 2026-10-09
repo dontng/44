@@ -27,7 +27,7 @@
 <a id="q01"></a>
 ## 01｜2009-42：只给头指针，怎样找倒数第 k 个
 
-![2009-42 原题](../bank/2009/q42.png)
+<img src="../bank/2009/q42.png" alt="2009-42 原题" width="504" style="display:block; width:31.50em; max-width:100%; height:auto;">
 
 **（1）思路。** 倒数位置要等走到尾才知道；先让快指针比慢指针领先 **k 个数据结点**。随后同速前进，快指针到 `NULL` 时慢指针指向目标。头结点不计入位置。
 
@@ -55,7 +55,7 @@ int kthFromEnd(const Node *list, int k) {
 <a id="q02"></a>
 ## 02｜2010-42：原地循环左移 p 位
 
-![2010-42 原题](../bank/2010/q42.png)
+<img src="../bank/2010/q42.png" alt="2010-42 原题" width="494" style="display:block; width:30.88em; max-width:100%; height:auto;">
 
 **（1）思路。** 目标由 `R[0..p-1]` 接 `R[p..n-1]` 变为后段接前段。分别反转前段、后段，再反转整个数组：两段内部方向各被翻转两次，位置却对调。
 
@@ -79,7 +79,7 @@ void leftRotate(int R[], int n, int p) {
 <a id="q03"></a>
 ## 03｜2012-42：共享后缀的第一个相同节点
 
-![2012-42 原题](../bank/2012/q42.png)
+<img src="../bank/2012/q42.png" alt="2012-42 原题" width="441" style="display:block; width:27.56em; max-width:100%; height:auto;">
 
 **（1）思路。** 真正“共享存储”意味着两个指针最终指向**同一个结点地址**，不只是字符相同。先量两条表从头结点之后到 `NULL` 的长度；长的一条先走差值，再同步走，首次指针相等就是共同后缀起点。
 
@@ -105,7 +105,7 @@ const Node *commonStart(const Node *str1, const Node *str2) {
 <a id="q04"></a>
 ## 04｜2013-41：超过半数的元素
 
-![2013-41 原题](../bank/2013/q41.png)
+<img src="../bank/2013/q41.png" alt="2013-41 原题" width="537" style="display:block; width:33.56em; max-width:100%; height:auto;">
 
 **（1）思路。** 把不同值成对抵消；若某值超过一半，抵消后它必能留下作为候选。但“候选”不是存在性证明，必须再扫一次计数。
 
@@ -132,7 +132,7 @@ int majority(const int A[], int n) {
 <a id="q05"></a>
 ## 05｜2015-41：按绝对值去重，保留第一次
 
-![2015-41 原题](../bank/2015/q41.png)
+<img src="../bank/2015/q41.png" alt="2015-41 原题" width="524" style="display:block; width:32.75em; max-width:100%; height:auto;">
 
 **（1）思路。** `|data|≤n` 是直接标记值域的证据。顺着原链走时第一次看到 `v` 就标记，后续同绝对值结点由前驱跨过并释放。先改链接再释放，不能继续读被释放结点。
 
@@ -164,7 +164,7 @@ void dedupAbs(Node *head, int n) {
 <a id="q06"></a>
 ## 06｜2018-41：未出现的最小正整数
 
-![2018-41 原题](../bank/2018/q41.png)
+<img src="../bank/2018/q41.png" alt="2018-41 原题" width="525" style="display:block; width:32.81em; max-width:100%; height:auto;">
 
 **（1）思路。** n 个数组元素最多占据 n 个不同的正整数，所以 `1..n+1` 必有缺口。负数、0、大于 n 的数均不能阻挡最小缺口。只标记 `[1,n]`，由 1 起找第一个没被标的数。
 
@@ -190,7 +190,7 @@ int firstMissing(const int A[], int n) {
 <a id="q07"></a>
 ## 07｜2019-41：首尾交错重排单链表
 
-![2019-41 原题](../bank/2019/q41.png)
+<img src="../bank/2019/q41.png" alt="2019-41 原题" width="500" style="display:block; width:31.25em; max-width:100%; height:auto;">
 
 **（1）思路。** 目标 `a1,an,a2,a(n-1),...`：先用快慢指针把前半和后半分开，反转后半，再两链交替摘结点插接。地址变化而数据不搬运。
 
@@ -223,7 +223,7 @@ void rearrange(Node *head) {
 <a id="q08"></a>
 ## 08｜2019-42：空间只增不减的常数时间队列
 
-![2019-42 原题](../bank/2019/q42.png)
+<img src="../bank/2019/q42.png" alt="2019-42 原题" width="500" style="display:block; width:31.25em; max-width:100%; height:auto;">
 
 **（1）选择。** 选**链式存储**。动态数组扩容要搬运已有元素，会令某次入队 `O(n)`，违背“始终 O(1)”；链式队列可逐结点增长，再把出队节点放入可复用的闲置链，所占空间不缩。
 
@@ -257,7 +257,7 @@ flowchart LR
 <a id="q09"></a>
 ## 09｜2020-41：三个升序数组找最接近三元组
 
-![2020-41 原题](../bank/2020/q41.png)
+<img src="../bank/2020/q41.png" alt="2020-41 原题" width="527" style="display:block; width:32.94em; max-width:100%; height:auto;">
 
 **（1）思路。** 将三个数排序后，中间数到两端的差之和等于两端之差，所以 `D=2(max−min)`。三个指针分别从数组首部起步；记录当前三元组的距离和值；每次只推进**当前最小元素所在数组**，直到某数组穷尽。
 
@@ -291,7 +291,7 @@ Best closest3(const int A[],int n,const int B[],int m,const int C[],int k) {
 <a id="q10"></a>
 ## 10｜2022-42：十个最小数，不必排序十万个数
 
-![2022-42 原题](../bank/2022/q42.png)
+<img src="../bank/2022/q42.png" alt="2022-42 原题" width="468" style="display:block; width:29.25em; max-width:100%; height:auto;">
 
 **（1）算法。** 扫描前十个元素，建一个大小 10 的**大根堆**。堆顶是当前保留的十个数里最大的。对后续元素 `x`，若 `x>=堆顶`，它不可能进当前最小十个；若 `x<堆顶`，用 `x` 替换堆顶并向下调整。扫完堆内就是十个最小值，重复值按出现次数计。
 
@@ -302,7 +302,7 @@ Best closest3(const int A[],int n,const int B[],int m,const int C[],int k) {
 <a id="q11"></a>
 ## 11｜2025-41：固定左端，右端乘积最大
 
-![2025-41 原题](../bank/2025/q41.png)
+<img src="../bank/2025/q41.png" alt="2025-41 原题" width="495" style="display:block; width:30.94em; max-width:100%; height:auto;">
 
 **（1）思路。** 对固定 `A[i]`，若为正，选择后缀 `A[i..n-1]` 的最大值；若为负，选择后缀最小值；若为零，答案为零。从右向左扫描，先把 `A[i]` 纳入后缀最大/最小，再算 `res[i]`，因此 j=i 合法且不会漏。
 
