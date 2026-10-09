@@ -41,9 +41,7 @@
 <a id="q01"></a>
 ## 01｜2010-23：接口先问应用怎样请求 OS 服务
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q23.png" alt="2010-23 原题" width="368" style="display:block; width:22.97em; max-width:none; height:auto;">
-</div>
+![2010-23 原题](../bank/2010/q23.png)
 
 题目问“操作系统**提供给应用程序**的接口”。应用要读文件等受保护服务，可以发出**系统调用，选 A**。中断是外部或内部事件引出的控制转移，不是应用主动请求服务的接口；库函数是应用层可调用代码，其中有些会进一步发系统调用，但库函数整体不能等同 OS 的接口。第一笔圈出“提供给应用程序”，不要只看“程序可能调用什么”。
 
@@ -55,9 +53,7 @@
 <a id="q02"></a>
 ## 02｜2012-23：事件在哪个态发生，不等于后续在哪个态处理
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q23.png" alt="2012-23 原题" width="354" style="display:block; width:22.14em; max-width:none; height:auto;">
-</div>
+![2012-23 原题](../bank/2012/q23.png)
 
 图中四项是系统调用、外部中断、进程切换、缺页。系统调用指令可以从用户态发出；用户程序运行时可遇到外部中断，也可在访问地址时触发缺页。**进程切换**需要内核保存/恢复进程上下文并调度，不能作为用户态执行的动作，**选 C**。第一笔把“触发/发起”和“处理/切换”分开。
 
@@ -69,9 +65,7 @@
 <a id="q03"></a>
 ## 03｜2013-25：先把逻辑地址翻成设备能操作的位置
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q25.png" alt="2013-25 原题" width="470" style="display:block; width:29.38em; max-width:none; height:auto;">
-</div>
+![2013-25 原题](../bank/2013/q25.png)
 
 题已经给出 `用户程序→系统调用处理程序→设备驱动程序→中断处理程序`。问的是**计算磁盘柱面、磁头、扇区号**，这是把较高层请求变成设备具体定位参数，属于**设备驱动程序，选 C**。用户提出逻辑读写；系统调用负责进入内核、核验和分派；中断处理程序在设备完成后收尾，时机已晚。第一笔在题目的流程中定位“发命令之前须知道的位置”。
 
@@ -83,9 +77,7 @@
 <a id="q04"></a>
 ## 04｜2013-28：看是否需要陷入，而不是看函数名
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q28.png" alt="2013-28 原题" width="397" style="display:block; width:24.83em; max-width:none; height:auto;">
-</div>
+![2013-28 原题](../bank/2013/q28.png)
 
 逐项在“用户程序正在执行”处画边界：整数除零触发同步异常，必须转入内核异常处理；`read` 是系统调用，主动陷入内核；普通 `sin()` 数学库调用可在用户态完成，不因“函数调用”三字自动切态。所以 **仅 I、III，选 B**。第一笔先问“谁有权处理这个事件”，再看是否跨越用户/内核边界。
 
@@ -97,9 +89,7 @@
 <a id="q05"></a>
 ## 05｜2014-25：用户态能执行普通指令，关中断必须受保护
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q25.png" alt="2014-25 原题" width="395" style="display:block; width:24.71em; max-width:none; height:auto;">
-</div>
+![2014-25 原题](../bank/2014/q25.png)
 
 跳转、压栈只是当前程序的控制与栈操作；`trap` 是用户程序主动陷入内核的指令，可以在用户态发起。**关中断**会改变 CPU 对外部事件的响应，若任意用户程序都能执行，就能长期阻止系统接管，所以它是特权指令，**选 D**。第一笔问该动作是否改变整个机器的受保护控制状态。
 
@@ -115,9 +105,7 @@
 <a id="q06"></a>
 ## 06｜2015-23：处理中断前，谁保存哪一种现场
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q23.png" alt="2015-23 原题" width="329" style="display:block; width:20.58em; max-width:none; height:auto;">
-</div>
+![2015-23 原题](../bank/2015/q23.png)
 
 题问“**由操作系统保存**”。中断入口的 PC/断点是控制转移所必需，通常由硬件中断响应保存；中断处理程序要使用原进程的**通用寄存器**，需由 OS 软件保存并在结束时恢复，**选 B**。TLB 与 Cache 不是每次外部中断都整份保存的通用寄存器现场。第一笔圈出“由 OS”，避免把“需要保存的状态”全交给一个执行者。
 
@@ -129,9 +117,7 @@
 <a id="q07"></a>
 ## 07｜2015-24：判断“不能切态”要逐条找陷入可能
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q24.png" alt="2015-24 原题" width="452" style="display:block; width:28.25em; max-width:none; height:auto;">
-</div>
+![2015-24 原题](../bank/2015/q24.png)
 
 `DIV` 若除数为零会有异常；`INT n` 明确产生软中断；从内存地址 `addr` 取数的 `MOV` 可能触发缺页或访存异常。`NOT R0` 仅把已在寄存器中的位取反，在题目通常执行条件下没有系统服务或可能访存故障，**选 C**。第一笔把选项分成“算术异常、显式陷入、访存异常、纯寄存器运算”，不必推测每条指令必然切态。
 
@@ -143,9 +129,7 @@
 <a id="q08"></a>
 ## 08｜2016-23：批处理的多道，与人机交互分开
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q23.png" alt="2016-23 原题" width="383" style="display:block; width:23.94em; max-width:none; height:auto;">
-</div>
+![2016-23 原题](../bank/2016/q23.png)
 
 批处理作业提交后成批处理，不意味着多个用户与计算机**直接交互**，故 I 错。既有单道也有多道批处理，II 对；多道时一个作业等待 I/O，中断通知完成，CPU 可运行另一作业，使设备与 CPU 并行，III 对。**仅 II、III，选 A**。第一笔区分“同时装入多个作业”和“用户在线交互”两个维度。
 
@@ -157,9 +141,7 @@
 <a id="q09"></a>
 ## 09｜2017-24：系统调用的四步按因果排序
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q24.png" alt="2017-24 原题" width="416" style="display:block; width:26.03em; max-width:none; height:auto;">
-</div>
+![2017-24 原题](../bank/2017/q24.png)
 
 服务程序得先拿到参数，用户程序先传递 **③**；随后执行 `trap` **②** 跨入内核；内核执行服务 **④**；最后返回用户态 **①**。顺序 **③→②→④→①，选 C**。第一笔抓“服务程序需要参数”与“返回必须在服务后”两条约束，就能直接排除其他排列。
 
@@ -171,9 +153,7 @@
 <a id="q10"></a>
 ## 10｜2018-29：一次时钟中断可以更新三个不同计时量
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q29.png" alt="2018-29 原题" width="405" style="display:block; width:25.32em; max-width:none; height:auto;">
-</div>
+![2018-29 原题](../bank/2018/q29.png)
 
 定时器发时钟中断，内核可累计系统时钟变量 **I**；把这一滴答计入当前进程已用 CPU 时间 **II**；若实行时间片调度，还要扣当前进程剩余时间片 **III**，到零再调度。三项都可能由时钟中断服务程序更新，**选 D**。第一笔问三个量各自是“系统累计、进程累计、进程倒计时”中的哪一个，不要因为方向有增有减就排掉一项。
 
@@ -189,9 +169,7 @@
 <a id="q11"></a>
 ## 11｜2019-25：系统调用同时有执行态、保护目的和接口范围
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q25.png" alt="2019-25 原题" width="474" style="display:block; width:29.61em; max-width:none; height:auto;">
-</div>
+![2019-25 原题](../bank/2019/q25.png)
 
 服务程序在内核态执行，I 对；应用经受控入口取得 OS 服务，避免直接访问外设，II 对；不同 OS 的系统调用编号、参数与接口未必统一，III 错；它正是内核向应用提供服务的接口，IV 对。**仅 I、II、IV，选 C**。第一笔把四句分别归到“执行位置、保护边界、跨系统一致性、接口定义”，别让“统一接口”听起来好就默认成立。
 
@@ -203,9 +181,7 @@
 <a id="q12"></a>
 ## 12｜2020-18：trap 的“软”不能误读成外部中断
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q18.png" alt="2020-18 原题" width="523" style="display:block; width:32.70em; max-width:none; height:auto;">
-</div>
+![2020-18 原题](../bank/2020/q18.png)
 
 题问**错误**。trap 由正在执行的程序中陷阱指令主动触发，是同步的内部异常机制；A 称其“一类外部中断事件”，**选 A**。断点、单步可借它转入调试处理，随后进入内核对应程序；这种陷阱正常返回到陷阱指令后续位置。第一笔问事件源来自本条指令，还是独立外设。
 
@@ -217,9 +193,7 @@
 <a id="q13"></a>
 ## 13｜2020-25：中断响应与内核管理分工
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q25.png" alt="2020-25 原题" width="423" style="display:block; width:26.45em; max-width:none; height:auto;">
-</div>
+![2020-25 原题](../bank/2020/q25.png)
 
 题问**由操作系统完成**。被打断程序的断点需要硬件在响应入口保存，否则服务程序还没运行就无处返回，I 不算。OS 提供中断服务例程 II，初始化中断向量表 III，管理需要保存/恢复的中断屏蔽状态 IV。**仅 II、III、IV，选 D**。第一笔按时间切：服务程序开始前的硬件必需动作，和 OS 已装载的处理逻辑。
 
@@ -231,9 +205,7 @@
 <a id="q14"></a>
 ## 14｜2021-23：区分“用户发请求”与“用户直接做 I/O”
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q23.png" alt="2021-23 原题" width="446" style="display:block; width:27.90em; max-width:none; height:auto;">
-</div>
+![2021-23 原题](../bank/2021/q23.png)
 
 I/O 指令访问设备寄存器和控制接口，是受保护硬件操作，只能在内核态执行，**选 B**。用户可以执行 `trap` 主动请求内核服务，可以做普通数据传送，也可以按调试机制设置断点；这些不等于用户可以直接下达 I/O 指令。第一笔找“是否直接控制设备”。
 
@@ -245,9 +217,7 @@ I/O 指令访问设备寄存器和控制接口，是受保护硬件操作，只�
 <a id="q15"></a>
 ## 15｜2021-32：用户能够请求的服务与内核内部动作
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q32.png" alt="2021-32 原题" width="424" style="display:block; width:26.48em; max-width:none; height:auto;">
-</div>
+![2021-32 原题](../bank/2021/q32.png)
 
 题问“**通过系统调用完成**”：应用需要启动新程序或并发任务时，可请求 OS **创建新进程，选 C**。页置换由缺页/内存管理内部决定，进程调度由内核选择下一个运行者；生成随机整数通常在库或用户程序计算（实现可另有差别），不是此题典型 OS 进程管理服务。第一笔问“是否由应用主动提出受保护资源操作”。
 
@@ -259,9 +229,7 @@ I/O 指令访问设备寄存器和控制接口，是受保护硬件操作，只�
 <a id="q16"></a>
 ## 16｜2022-24：系统启动时须先有中断入口映射
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q24.png" alt="2022-24 原题" width="365" style="display:block; width:22.79em; max-width:none; height:auto;">
-</div>
+![2022-24 原题](../bank/2022/q24.png)
 
 OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到来时能找到处理程序入口。文件系统根目录、索引结点表、硬盘分区表关乎存储布局，可在磁盘文件系统创建或已有分区信息中存在，不能一概说由这次 OS 初始化过程创建。第一笔问“系统运行期间一有中断就必须能查到什么”。
 
@@ -273,9 +241,7 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 <a id="q17"></a>
 ## 17｜2022-27：特权是指令属性，不是内核态只能用特权指令
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q27.png" alt="2022-27 原题" width="259" style="display:block; width:16.17em; max-width:none; height:auto;">
-</div>
+![2022-27 原题](../bank/2022/q27.png)
 
 用户态不允许特权指令，但可以执行非特权指令，**选 C**。内核态既能执行特权指令，也能执行普通算术、数据传送等非特权指令，因此 B、D 的“只能”错误；A 方向相反。第一笔写两格：用户态允许普通；内核态允许普通和特权。
 
@@ -287,9 +253,7 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 <a id="q18"></a>
 ## 18｜2022-31：一次系统调用分出硬件入口和软件服务
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q31.png" alt="2022-31 原题" width="424" style="display:block; width:26.48em; max-width:none; height:auto;">
-</div>
+![2022-31 原题](../bank/2022/q31.png)
 
 发出陷入指令后，硬件自动保存断点及程序状态字 I，并把 CPU 切换至内核态 IV；内核的软件入口保存其需要的通用寄存器 II，再执行系统调用服务例程 III。因此“由操作系统完成”是 **II、III，选 B**。第一笔在步骤前标 `硬件自动` 或 `内核程序`，无需背死四项的文字顺序。
 
@@ -301,9 +265,7 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 <a id="q19"></a>
 ## 19｜2023-21：区分外设的中断请求与中断结束信号
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q21.png" alt="2023-21 原题" width="290" style="display:block; width:18.15em; max-width:none; height:auto;">
-</div>
+![2023-21 原题](../bank/2023/q21.png)
 
 题问**错误**。外设完成操作等事件后向中断控制器发送的是**中断请求信号**，并非“中断结束信号”，因此 **D 错，选 D**。异常可在指令执行期间检测，外部中断请求通常在指令结束边界检测；按题中开中断并已检测到可响应请求的正常流程，C 描述响应，不能凭另加的条件把 C 判错。
 
@@ -315,9 +277,7 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 <a id="q20"></a>
 ## 20｜2023-23：微内核把部分服务放在可隔离的进程
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q23.png" alt="2023-23 原题" width="439" style="display:block; width:27.45em; max-width:none; height:auto;">
-</div>
+![2023-23 原题](../bank/2023/q23.png)
 
 相较宏内核，微内核把核心机制保留在小内核中，其他服务可分离，通常提高故障隔离与可靠性 II、安全性 III、扩展或替换服务的便利 IV；跨边界通信增多，通常不能把**更好性能 I** 当一般优势。**仅 II、III、IV，选 D**。第一笔把“隔离的好处”和“消息通信的成本”各写一边，避免四个好处全选。
 
@@ -333,9 +293,7 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 <a id="q21"></a>
 ## 21｜2023-24：中断号已知时，需要按号立即定位入口
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q24.png" alt="2023-24 原题" width="403" style="display:block; width:25.16em; max-width:none; height:auto;">
-</div>
+![2023-24 原题](../bank/2023/q24.png)
 
 中断向量表以中断类型号为索引，表项保存处理程序入口或指向它的信息，适合**数组，选 A**。队列重在先进先出，链表适合按链接遍历，无法像数组按编号直接取第 `n` 项。第一笔把需求改写成“已拿到编号，查对应入口”，再选结构。
 
@@ -347,9 +305,7 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 <a id="q22"></a>
 ## 22｜2023-26：系统调用完成时从内核返回用户态
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q26.png" alt="2023-26 原题" width="439" style="display:block; width:27.43em; max-width:none; height:auto;">
-</div>
+![2023-26 原题](../bank/2023/q26.png)
 
 题限定**操作完成时**。用户发起系统调用会先陷入内核，内核完成服务后返回用户程序，故 **D（执行系统调用）**符合内核态→用户态。阻塞、唤醒与 CPU 调度都是内核管理动作，动作完成本身不必直接切到用户态；调度也可能选择内核线程。第一笔把一次系统调用画成“用户→内核服务→用户”，看最后一段而非入口。
 
@@ -361,9 +317,7 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 <a id="q23"></a>
 ## 23｜2024-23：事件到来时的原状态与处理程序开始状态
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q23.png" alt="2024-23 原题" width="311" style="display:block; width:19.42em; max-width:none; height:auto;">
-</div>
+![2024-23 原题](../bank/2024/q23.png)
 
 题问**错误**。中断、缺页等异常可能打断正在用户态执行的程序，此时 CPU 未必已在内核态，A 错，**选 A**。切换入口后中断处理程序开始执行时才处于内核态，C 对；系统调用有相应内核服务例程 B 对；加入新类型设备须配置/注册服务例程与向量等映射 D 对。第一笔在“发生时”和“处理程序开始时”之间画一道切态边界。
 
@@ -375,9 +329,7 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 <a id="q24"></a>
 ## 24｜2025-23：换进程要换私有现场，不换系统统一入口
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q23.png" alt="2025-23 原题" width="426" style="display:block; width:26.61em; max-width:none; height:auto;">
-</div>
+![2025-23 原题](../bank/2025/q23.png)
 
 进程上下文切换要恢复新进程的通用寄存器、程序计数器、页表基址（地址空间），A/B/C 都可能更新。**内核中断向量表基址**指当前系统统一的中断入口映射，不随普通进程切换改变，**选 D**。第一笔把寄存器指向的是“某进程状态”还是“系统级共用控制结构”。
 
@@ -389,9 +341,7 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 <a id="q25"></a>
 ## 25｜2025-24：虚拟机再增加一层受控权限
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q24.png" alt="2025-24 原题" width="291" style="display:block; width:18.19em; max-width:none; height:auto;">
-</div>
+![2025-24 原题](../bank/2025/q24.png)
 
 题问**错误**。一台主机可运行多个虚拟机，来宾 OS 在虚拟机上运行；虚拟机管理程序 VMM 要控制来宾对真实资源的访问，权限层级不能简单说“与操作系统特权级相同”，**选 C**。虚拟化还可在支持的条件下呈现不同 ISA，D 的“可以”并未要求所有虚拟化都如此。第一笔画 `真实硬件 ← VMM ← 来宾 OS ← 应用` 的控制关系。
 
