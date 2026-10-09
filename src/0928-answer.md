@@ -19,9 +19,7 @@
 <a id="q01"></a>
 ## 01｜2016-46：等待时间要让优先级数值下降
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q46.png" alt="2016-46 原题" width="471" style="display:block; width:29.44em; max-width:none; height:auto;">
-</div>
+![2016-46 原题](../bank/2016/q46.png)
 
 **（1）静态优先级。** 若 `priority=nice`，一直有更小 nice 的就绪进程，新来的/低优先级者始终得不到 CPU，便可能**饥饿**；可抢占调度也不能自动保证它执行。
 
@@ -32,9 +30,7 @@
 <a id="q02"></a>
 ## 02｜2023-46：字符到来不等于进程马上返回
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q46.png" alt="2023-46 原题" width="488" style="display:block; width:30.52em; max-width:none; height:auto;">
-</div>
+![2023-46 原题](../bank/2023/q46.png)
 
 **（1）事件序列。** P 发出读字符系统调用，暂无输入而被插入**阻塞队列②**；用户随后按键**⑥**；键盘中断启动处理**④**；驱动把字符从控制器读入系统缓冲**③**；等待条件满足，P 移入**就绪队列①**；被调度继续执行读操作并由系统调用返回**⑤**。所以①的前一项是**③**、后一项是**⑤**；⑥之后是**④**。编号只是标签，不能按1到6排序。
 
@@ -49,9 +45,7 @@
 <a id="q03"></a>
 ## 03｜2025-46：指针变量和它指向的对象不在一处
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q46.png" alt="2025-46 原题" width="438" style="display:block; width:27.38em; max-width:none; height:auto;">
-</div>
+![2025-46 原题](../bank/2025/q46.png)
 
 **（1）** 进程控制块 PCB 是操作系统管理的对象，在**内核区**；`scanf` 等键盘输入等待时进程是**阻塞态**。
 

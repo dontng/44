@@ -21,9 +21,7 @@
 <a id="q01"></a>
 ## 01｜2009-47：地址够120台，要把 /24 平分为两个 /25
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q47.png" alt="2009-47 原题" width="470" style="display:block; width:29.40em; max-width:none; height:auto;">
-</div>
+![2009-47 原题](../bank/2009/q47.png)
 
 **（1）子网。** 主机位至少7位，`2⁷−2=126≥120`，掩码 **255.255.255.128 (/25)**。局域网1得 **202.118.1.0/25**，可用 .1—.126；局域网2得 **202.118.1.128/25**，可用 .129—.254。具体哪片给哪网可对调；两片不能继续拆到/26（仅62台）。
 
@@ -43,9 +41,7 @@
 <a id="q02"></a>
 ## 02｜2013-47：聚合远端网，也要保留本地更长前缀
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q47.png" alt="2013-47 原题" width="472" style="display:block; width:29.51em; max-width:none; height:auto;">
-</div>
+![2013-47 原题](../bank/2013/q47.png)
 
 **（1）R2 的最少关键条目。** AS1 的两个 `153.14.5.0/25` 和 `.128/25` 合成 **153.14.5.0/24→R1(153.14.3.2), S0**。AS2 的远端 `194.17.20.0/25` 与 `194.17.21.0/24` 可用 **194.17.20.0/23→R3(194.17.24.2), S1** 作概括，但此/23也覆盖 R2 自己直连的 **194.17.20.128/25→直连,E0**；保留本地更具体的/25，最长前缀会正确接管其地址。到 R1/R3 的两段点对点直连网还需相应直连路由，图未给掩码时可写“R1—R2 链路直连S0”“R2—R3链路直连S1”，不凭两端IP臆定前缀长度。
 
@@ -54,9 +50,7 @@
 <a id="q03"></a>
 ## 03｜2014-42：从 R1 跑最短路，再加到网络的末端费用
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q42.png" alt="2014-42 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
-</div>
+![2014-42 原题](../bank/2014/q42.png)
 
 **（1）结构。** 四个路由器与其链路构成带权**图**，链路状态表的 Link1/Link2 是相邻顶点及费用，直连 Net1 是挂在顶点上的网络信息。
 
@@ -101,9 +95,7 @@ flowchart TD
 <a id="q04"></a>
 ## 04｜2014-43：最短路化为接口，TTL 按每跳递减
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q43.png" alt="2014-43 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
-</div>
+![2014-43 原题](../bank/2014/q43.png)
 
 沿上一题的最短路，R1 到四网的路由为：
 
@@ -119,9 +111,7 @@ flowchart TD
 <a id="q05"></a>
 ## 05｜2018-42：费用相同的两棵树，TTL 结论可以不同
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q42.png" alt="2018-42 原题" width="468" style="display:block; width:29.22em; max-width:none; height:auto;">
-</div>
+![2018-42 原题](../bank/2018/q42.png)
 
 **（1）所有最小方案。** 用 Kruskal 先收不成环的费用2边：XA—BJ、XA—WH、TL—JN、JN—QD、QD—NJ；余下要连接这两个已形成的连通分量，并接入孤立顶点 CS。CS 必用 QD—CS(3)，BJ 可用 BJ—TL(3) 或 WH—QD(3) 来连起两大连通分量。故仅有两棵，费用都为 `5×2+2×3=16`：
 
@@ -137,9 +127,7 @@ flowchart TD
 <a id="q06"></a>
 ## 06｜2024-47：RIP 传播轮次、BGP 路径选择逐层判断
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q47.png" alt="2024-47 原题" width="480" style="display:block; width:30.00em; max-width:none; height:auto;">
-</div>
+![2024-47 原题](../bank/2024/q47.png)
 
 **（1）—（2）规模与 TTL。** AS4 内可能超过20跳，RIP 将16跳视为不可达，选**OSPF**；AS3 最多经过15台路由器，要确保最后一台还能转发给目的主机，初始 TTL 至少 **16**。
 
