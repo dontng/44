@@ -38,7 +38,9 @@
 <a id="q01"></a>
 ## 01｜2010-29：先算一页页表能容纳多少项，再算目录覆盖几页
 
-![2010-29 原题](../bank/2010/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q29.png" alt="2010-29 原题" style="display:block; width:28.75em; max-width:none; height:auto;">
+</div>
 
 页大小 `2^10B`，表项 2B，一页二级页表可放 `2^10/2=2^9=512` 项，覆盖 512 个虚拟页。总逻辑空间 `2^16` 页，页目录需至少 `2^16/2^9=2^7=128` 项，**选 B**。第一笔不要被“二级”误导成直接把虚拟页数除 2；除的是每张二级页表的容量。
 
@@ -50,7 +52,9 @@
 <a id="q02"></a>
 ## 02｜2011-28：缺页处理是一段可改变多个层次的流程
 
-![2011-28 原题](../bank/2011/q28.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q28.png" alt="2011-28 原题" style="display:block; width:25.38em; max-width:none; height:auto;">
+</div>
 
 缺页后 OS 可能找空闲页框或选择牺牲页（分配页框 III），按需从磁盘读页甚至写回脏页（磁盘 I/O II），再改页表的页框号、存在位等（修改页表 I）。三项均可能，**选 D**。第一笔写“从哪里找空框→页从哪来→映射怎样更新”，而非把缺页等同一条磁盘读命令。
 
@@ -62,7 +66,9 @@
 <a id="q03"></a>
 ## 03｜2011-29：抖动是太多进程争太少驻留页
 
-![2011-29 原题](../bank/2011/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q29.png" alt="2011-29 原题" style="display:block; width:24.50em; max-width:none; height:auto;">
+</div>
 
 系统频繁换入换出，CPU 时间被缺页处理吃掉；撤销/挂起部分进程，减少同时在内存竞争的进程数，使留下者得到足够页框，**仅 I 有效，选 A**。加大 swap 容量 II 让外存能装更多页，却不增加当前内存驻留集；提高用户进程优先级 III 也不补足物理页框。第一笔问措施有没有改善“运行进程的工作集能否驻留”。
 
@@ -74,7 +80,9 @@
 <a id="q04"></a>
 ## 04｜2012-24：中断要恢复被打断指令的机器状态
 
-![2012-24 原题](../bank/2012/q24.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q24.png" alt="2012-24 原题" style="display:block; width:27.31em; max-width:none; height:auto;">
+</div>
 
 中断可能在被打断程序无预期的位置发生；恢复时必须保留原 CPU 状态与条件标志等**程序状态字 PSW，选 B**。普通子程序调用按调用约定保存返回地址与需用寄存器，不一定保存整个 PSW。第一笔问这段控制转移是“调用方主动按协议调用”，还是“随时被外部事件打断”。
 
@@ -86,7 +94,9 @@
 <a id="q05"></a>
 ## 05｜2013-30：缺页处理不等于越界异常处理
 
-![2013-30 原题](../bank/2013/q30.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q30.png" alt="2013-30 原题" style="display:block; width:26.94em; max-width:none; height:auto;">
+</div>
 
 本题已给出访问发生**缺页异常**：目标虚拟页合法，但不驻留内存。处理时可能进行页面置换 II，并为目标页分配页框 III；越界错误属于访问不合法的另一类异常，不能据此加入 I。故 **仅 II、III，选 B**。有空闲页框时无需置换，所以这里说“可能”，并非每次缺页都要换出旧页。
 
@@ -98,7 +108,9 @@
 <a id="q06"></a>
 ## 06｜2014-30：Belady 异常看页框增加时驻留集是否仍包含旧集
 
-![2014-30 原题](../bank/2014/q30.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q30.png" alt="2014-30 原题" style="display:block; width:29.20em; max-width:none; height:auto;">
+</div>
 
 FIFO 按进入内存先后淘汰，给更多页框时替换顺序可能变化，出现“页框增多反而缺页更多”的 Belady 异常，**仅 II，选 A**。LRU 与 OPT 对同一访问前缀具有栈性质：多页框驻留集合包含少页框集合，因此不会出现这种反常。第一笔别只背名称，先问算法是否以当前访问局部性/未来最优保持嵌套。
 
@@ -110,7 +122,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q07"></a>
 ## 07｜2014-32：多级页表节省的是页表所需的连续空间
 
-![2014-32 原题](../bank/2014/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q32.png" alt="2014-32 原题" style="display:block; width:24.65em; max-width:none; height:auto;">
+</div>
 
 把大页表拆成按需分配的多个小页表，页目录只指向现有页表页，不必为整张页表找到一块巨大的**连续内存空间，选 D**。多一级查找通常不会直接加快转换 A；缺页次数主要由数据/指令页驻留和访问模式决定 B；表项的基本字段并不因分级必然缩小 C。第一笔问“结构改变了哪个分配约束”。
 
@@ -122,7 +136,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q08"></a>
 ## 08｜2015-29：文件偏移先除块大小，再走该块的索引层级
 
-![2015-29 原题](../bank/2015/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q29.png" alt="2015-29 原题" style="display:block; width:28.32em; max-width:none; height:auto;">
+</div>
 
 索引结点已在内存，10 个直接指针各对应 1KB 文件块；每索引块可放 `1024/4=256` 个指针。偏移 1234 在**第 1 号块**（从 0 起），落直接指针，需读目标数据块 **1 次**。偏移 307400 的块号 `⌊307400/1024⌋=300`；直接覆盖块 0—9，一级覆盖 10—265，块 300 落二级间接，需读一级索引块、二级索引块、数据块 **3 次**，**选 B（1、3）**。第一笔先算块号，再标覆盖区间。
 
@@ -138,7 +154,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q09"></a>
 ## 09｜2016-26：改进 CLOCK 的四类优先级
 
-![2016-26 原题](../bank/2016/q26.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q26.png" alt="2016-26 原题" style="display:block; width:28.28em; max-width:none; height:auto;">
+</div>
 
 `A=0` 表示最近未访问，`M=0` 表示未修改。四类淘汰优先级为 **`(0,0)→(0,1)→(1,0)→(1,1)`，选 A**：先考虑最近未访问的两类，同等访问状态下再优先无需写回的干净页。不能把所有干净页一律排在脏页之前。
 
@@ -150,7 +168,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q10"></a>
 ## 10｜2016-29：工作集只看 t 前的固定窗口，重复页算一次
 
-![2016-29 原题](../bank/2016/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q29.png" alt="2016-29 原题" style="display:block; width:19.48em; max-width:none; height:auto;">
+</div>
 
 箭头 t 前紧邻的六次访问是 `6,0,3,2,3,2`；取不同页得到 **`{6,0,3,2}`，选 A**。第一笔先从 t 往左数**六次访问**，再去重；不能往右偷看未来的 0、4 等，也不能先去重再向左补够六个不同页。
 
@@ -162,7 +182,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q11"></a>
 ## 11｜2019-29：先填四框，满后才数“置换”
 
-![2019-29 原题](../bank/2019/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q29.png" alt="2019-29 原题" style="display:block; width:31.30em; max-width:none; height:auto;">
+</div>
 
 前四次 `0,1,2,7` 填满四个空框，**缺页但不置换**。后续 `0` 命中；`5` 淘汰 1，`3` 淘汰 2，`5、0` 命中；`2` 淘汰 7，`7` 淘汰 3，`6` 淘汰 5，共 **5 次置换，选 C**。第一笔写四框中当前最近使用顺序，遇已驻留页也要更新它的位置。
 
@@ -178,7 +200,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q12"></a>
 ## 12｜2020-28：有效访问时间是各条路径耗时乘各自概率
 
-![2020-28 原题](../bank/2020/q28.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q28.png" alt="2020-28 原题" style="display:block; width:27.94em; max-width:none; height:auto;">
+</div>
 
 缺页率 I 决定慢路径多常发生；该路径可能要磁盘读写 II 与 CPU 执行缺页处理 IV；正常路径和故障处理还包含内存访问 III。四者都能影响平均访存时间，**选 D**。第一笔写 `E=(1−p)×正常访问时间+p×缺页路径时间`，再问每个因素进了哪一项。
 
@@ -190,7 +214,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q13"></a>
 ## 13｜2021-28：先拆页号和偏移，缺页后找替换框
 
-![2021-28 原题](../bank/2021/q28.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q28.png" alt="2021-28 原题" style="display:block; width:28.82em; max-width:none; height:auto;">
+</div>
 
 4KB 页即偏移 12 位；虚拟地址 `02A01H` 是**页 2 + 页内 A01H**。页 2 不在内存；两个已驻留页中页 3 `(A,M)=(1,0)` 干净，页 4 `(1,1)` 脏，按改进 CLOCK 的类别优先淘汰页 3，复用其页框 **60H**。物理地址 `60H × 1000H + A01H = 60A01H`，**选 C**。第一笔先把低三位十六进制数保留为偏移。
 
@@ -202,7 +228,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q14"></a>
 ## 14｜2021-29：页表基址寄存器保存的是 CPU 要访问的物理入口
 
-![2021-29 原题](../bank/2021/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q29.png" alt="2021-29 原题" style="display:block; width:24.00em; max-width:none; height:auto;">
+</div>
 
 二级页表翻译先找当前进程的**一级页表**，CPU 的页表基址寄存器必须给出该表在内存中的**物理起始地址，选 B**。二级页表可能有多张，由一级表项再定位，不能在基址寄存器里放某一张二级页表地址。第一笔画 `寄存器→一级表物理地址→二级表→页框`。
 
@@ -214,7 +242,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q15"></a>
 ## 15｜2022-29：缺页要调入目标页，未必需要牺牲旧页
 
-![2022-29 原题](../bank/2022/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q29.png" alt="2022-29 原题" style="display:block; width:29.17em; max-width:none; height:auto;">
+</div>
 
 题问**不一定包含**。若进程仍有空闲页框，缺页处理可直接装入 b，建立页号到页框的对应关系 B、从外存读入 b C、修改存在位 D，而无需淘汰已在内存的页，**选 A**。第一笔看“已分配页框是否全部占满”，不能把缺页与置换画等号。
 
@@ -226,7 +256,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q16"></a>
 ## 16｜2022-30：缺页率看驻留与访问，缓冲队列长短主要看代价
 
-![2022-30 原题](../bank/2022/q30.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q30.png" alt="2022-30 原题" style="display:block; width:21.46em; max-width:none; height:auto;">
+</div>
 
 置换算法、工作集大小、并发进程数都能改变访问时目标页是否驻留，A/B/C 会影响缺页率。页缓冲队列长短主要改变被换出页的写回/再利用等**缺页处理效率**，不直接决定给定驻留集上的页面访问是否命中，**选 D**。第一笔问这个因素改变“会不会缺页”的概率，还是“缺页后花多久”。
 
@@ -242,7 +274,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q17"></a>
 ## 17｜2023-25：位图按物理页框个数数位，不按字节直接数
 
-![2023-25 原题](../bank/2023/q25.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q25.png" alt="2023-25 原题" style="display:block; width:29.28em; max-width:none; height:auto;">
+</div>
 
 16GB=`2^34B`，页大小 4KB=`2^12B`，物理页框数 `2^34/2^12=2^22`。位图每框一位，需 `2^22` 位，即 `2^19B=512KB`，**选 C**。第一笔写“总字节÷每框字节→框数→除 8 得位图字节”，别跳过最后的 bit 到 byte。
 
@@ -254,7 +288,9 @@ FIFO 不更新最近使用次序：常用页只因入得早也会被淘汰。改
 <a id="q18"></a>
 ## 18｜2023-28：虚拟地址空间上限先看地址编码位数
 
-![2023-28 原题](../bank/2023/q28.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q28.png" alt="2023-28 原题" style="display:block; width:27.88em; max-width:none; height:auto;">
+</div>
 
 A 进程有独立虚拟空间，B `malloc` 给程序的是可在该空间使用的虚拟指针，C 代码段与数据段可设置不同权限，均对。D 说虚拟地址空间大小由**内存和硬盘的大小决定**，却忽略 CPU/系统虚拟地址位数所规定的可编码范围，**选 D**。第一笔分“地址能表示多大”和“实际可驻留/可后备多少”。
 
@@ -266,7 +302,9 @@ A 进程有独立虚拟空间，B `malloc` 给程序的是可在该空间使用�
 <a id="q19"></a>
 ## 19｜2024-25：换进程须同时恢复执行位置、栈和映射根
 
-![2024-25 原题](../bank/2024/q25.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q25.png" alt="2024-25 原题" style="display:block; width:24.96em; max-width:none; height:auto;">
+</div>
 
 新进程接管 CPU，要有它下一条指令 PC I、自己的调用栈顶 SP II、把虚拟地址翻译到**该进程**物理页的页表基址 III。三者都要更新，**选 D**。第一笔问若某寄存器仍留旧进程的值会怎样：错指令、错栈或错地址空间。
 
@@ -278,7 +316,9 @@ A 进程有独立虚拟空间，B `malloc` 给程序的是可在该空间使用�
 <a id="q20"></a>
 ## 20｜2025-26：已装入 0、1、2，后续只数新缺页
 
-![2025-26 原题](../bank/2025/q26.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q26.png" alt="2025-26 原题" style="display:block; width:26.63em; max-width:none; height:auto;">
+</div>
 
 3 框起初已有 0、1、2。前四访问 `0,1,2,0` 均命中；随后按 LRU：5 换 1、1 换 2、4 换 0、3 换 5、0 换 1、2 换 4；末尾 `3,2,0` 命中。共有 **6 次缺页，选 B**。第一笔写初始驻留集和已知最近顺序，再逐访更新；不要把起始三页再计一次缺页。
 
@@ -294,7 +334,9 @@ A 进程有独立虚拟空间，B `malloc` 给程序的是可在该空间使用�
 <a id="q21"></a>
 ## 21｜2025-27：最低页框门槛由一条指令的访存方式决定
 
-![2025-27 原题](../bank/2025/q27.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q27.png" alt="2025-27 原题" style="display:block; width:23.18em; max-width:none; height:auto;">
+</div>
 
 这题在 [0826-15](0826-answer.md#q15) 已建立动作：进程最少须有足够页框，让最复杂的合法指令取指并取其寻址所需操作数页面时能推进；题问决定这一**最低可运行页框数**的指标，**指令系统支持的寻址方式，选 D**。第一笔数一条指令可能同时涉及哪些页。代码长、虚拟/物理地址空间大小不直接回答这个门槛。
 
@@ -306,7 +348,9 @@ A 进程有独立虚拟空间，B `malloc` 给程序的是可在该空间使用�
 <a id="q22"></a>
 ## 22｜2025-30：内存映射文件把文件内容接入进程虚拟空间
 
-![2025-30 原题](../bank/2025/q30.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q30.png" alt="2025-30 原题" style="display:block; width:25.22em; max-width:none; height:auto;">
+</div>
 
 内存映射文件让文件的部分内容映射到进程**虚拟地址空间**，进程可像访问内存那样访问；多个进程映射同一共享文件区域也可实现通信，I、III 对。II 也对：映射区域的虚拟页面与文件中的磁盘块建立后备对应，缺页时才能按文件位置取回内容。IV 说直接把文件映射到系统物理地址空间则错；物理页框由内核按需管理。**I、II、III，选 D**。第一笔画“进程虚拟页↔文件块”的后备关系，再问物理页是否必须预先驻留。
 
