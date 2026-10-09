@@ -35,7 +35,7 @@
 ## 01｜2009-20：先算一次传输究竟占几个时钟
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q20.png" alt="2009-20 原题" style="display:block; width:28.34em; max-width:none; height:auto;">
+<img src="../bank/2009/q20.png" alt="2009-20 原题" width="453" style="display:block; width:28.34em; max-width:none; height:auto;">
 </div>
 
 一个总线周期传 **4B**，这个总线周期又占 **2 个时钟周期**。10MHz 每秒有 10M 个时钟，但只能完成 5M 个总线周期，因此带宽 `5M×4B=20MB/s`，**选 B**。直接算 `10M×4B=40MB/s` 会漏掉“两拍才传一次”。
@@ -49,7 +49,7 @@
 ## 02｜2010-20：先排除非总线缩写
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q20.png" alt="2010-20 原题" style="display:block; width:24.35em; max-width:none; height:auto;">
+<img src="../bank/2010/q20.png" alt="2010-20 原题" width="390" style="display:block; width:24.35em; max-width:none; height:auto;">
 </div>
 
 题问四个都属于总线标准的一组。ISA、EISA、PCI、PCI Express 都是总线/互连标准，**选 D**。其他组混入 CRT（显示器技术）、RAM（存储器）、MIPS（处理性能指标），即使其中某些缩写也是总线也不满足“均为”。第一笔找组里最明显的非总线项，不必逐个背完四组。
@@ -63,7 +63,7 @@
 ## 03｜2010-22：屏幕每秒位数只占总带宽一半
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q22.png" alt="2010-22 原题" style="display:block; width:28.97em; max-width:none; height:auto;">
+<img src="../bank/2010/q22.png" alt="2010-22 原题" width="464" style="display:block; width:28.97em; max-width:none; height:auto;">
 </div>
 
 一帧有 `1600×1200` 像素，每像素 24 位，每秒 85 帧，刷新消耗 `1600×1200×24×85=3,916,800,000bit/s≈3917Mbps`。这只允许用显存总带宽的 **50%**，故总带宽至少约 `3917/0.5=7834Mbps`，**选 D**。题要 Mbps，别把 24 位先误当 24 字节。
@@ -77,7 +77,7 @@
 ## 04｜2011-20：握手属于控制线，不是数据线
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q20.png" alt="2011-20 原题" style="display:block; width:18.41em; max-width:none; height:auto;">
+<img src="../bank/2011/q20.png" alt="2011-20 原题" width="295" style="display:block; width:18.41em; max-width:none; height:auto;">
 </div>
 
 数据线传指令、操作数及可作为数据值的中断类型号；握手/应答信号表示“准备好了、已收到”等**控制状态**，应走控制线，故在数据线上**不可能传的是 C**。不要把“总线传过该信号”和“在数据线传”混成一件事。
@@ -91,7 +91,7 @@
 ## 05｜2012-19：突发减少重复地址，不让数据拍消失
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q19.png" alt="2012-19 原题" style="display:block; width:27.32em; max-width:none; height:auto;">
+<img src="../bank/2012/q19.png" alt="2012-19 原题" width="437" style="display:block; width:27.32em; max-width:none; height:auto;">
 </div>
 
 100MHz 的时钟每拍 10ns；地址/数据线复用，首地址占 **1 拍**。总线每数据拍宽 32 位，写 128 位需 **4 拍**；突发模式让后续连续数据无需再逐字送地址，总计 `1+4=5` 拍，即 **50ns，选 C**。
@@ -105,7 +105,7 @@
 ## 06｜2012-20：USB 的串行不表示慢，也不表示同时两位并行
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q20.png" alt="2012-20 原题" style="display:block; width:16.77em; max-width:none; height:auto;">
+<img src="../bank/2012/q20.png" alt="2012-20 原题" width="268" style="display:block; width:16.77em; max-width:none; height:auto;">
 </div>
 
 USB 支持热插拔、即插即用，可级联多台设备，是通用串行总线。D 声称它“**同时传输 2 位数据**”作为并行宽度是错误的，**选 D**。名称里的 Serial 先裁决传输方式；速度高低不能从“串行”二字直接推出。
@@ -119,7 +119,7 @@ USB 支持热插拔、即插即用，可级联多台设备，是通用串行总�
 ## 07｜2014-19：双沿各传一次，最大每拍两份数据
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q19.png" alt="2014-19 原题" style="display:block; width:29.18em; max-width:none; height:auto;">
+<img src="../bank/2014/q19.png" alt="2014-19 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
 </div>
 
 32 根地址/数据复用线在传数据时一次给 **32 位=4B**，每个 66MHz 时钟周期的上升沿、下降沿各传一次，即每拍 8B。最大速率 `66M×8B=528MB/s`，**选 C**。题问最大数据传输率，按连续数据阶段算峰值；若问完整事务有效率，需另计地址/等待。
@@ -133,7 +133,7 @@ USB 支持热插拔、即插即用，可级联多台设备，是通用串行总�
 ## 08｜2014-20：给一次首地址、连续多份数据叫突发
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q20.png" alt="2014-20 原题" style="display:block; width:28.05em; max-width:none; height:auto;">
+<img src="../bank/2014/q20.png" alt="2014-20 原题" width="449" style="display:block; width:28.05em; max-width:none; height:auto;">
 </div>
 
 主设备只送一个首地址，从设备从此地址连续读写多个单元，描述的是**突发传输，选 C**。并行/串行回答“数据位如何在导线上排列”，同步回答“时钟/握手如何配合”，都不直接回答“一次事务送几个相邻数据”。
@@ -147,7 +147,7 @@ USB 支持热插拔、即插即用，可级联多台设备，是通用串行总�
 ## 09｜2015-19：同步总线需要共同基准时钟
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q19.png" alt="2015-19 原题" style="display:block; width:17.88em; max-width:none; height:auto;">
+<img src="../bank/2015/q19.png" alt="2015-19 原题" width="286" style="display:block; width:17.88em; max-width:none; height:auto;">
 </div>
 
 异步全互锁要等待双方握手完成，通常较慢；非互锁省去确认，可靠性较弱；半同步的握手信号可按同步时钟采样。C 说同步通信的**同步时钟信号可由各设备分别提供**，会失去共同时间基准，故 **错误选 C**。抓“同步”需要共享时序这一个不可缺条件。
@@ -161,7 +161,7 @@ USB 支持热插拔、即插即用，可级联多台设备，是通用串行总�
 ## 10｜2016-21：并行线多，不等于必定更快
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q21.png" alt="2016-21 原题" style="display:block; width:16.27em; max-width:none; height:auto;">
+<img src="../bank/2016/q21.png" alt="2016-21 原题" width="260" style="display:block; width:16.27em; max-width:none; height:auto;">
 </div>
 
 题问错误。线复用可少用线，突发可提高有效数据率，分离事务可让等待期间总线被别的事务利用。A 宣称**并行总线传输一定比串行快**不成立：高速串行可用更高频、差分信号和多条独立通道，实际带宽看宽度、每秒传输次数、编码与开销，**选 A**。
@@ -175,7 +175,7 @@ USB 支持热插拔、即插即用，可级联多台设备，是通用串行总�
 ## 11｜2017-20：PCIe×16 是多条串行 lane
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q20.png" alt="2017-20 原题" style="display:block; width:26.00em; max-width:none; height:auto;">
+<img src="../bank/2017/q20.png" alt="2017-20 原题" width="416" style="display:block; width:26.00em; max-width:none; height:auto;">
 </div>
 
 多总线靠近 CPU 的通常更快，存储器总线可支持突发，总线间可通过桥接器连接。D 说 PCI Express ×16 “采用并行传输方式”错误：它由 **16 条串行 lane 聚合**，**选 D**。多 lane 同时工作可带来高总吞吐，却不把每条 lane 改成传统多位并行总线。
@@ -189,7 +189,7 @@ USB 支持热插拔、即插即用，可级联多台设备，是通用串行总�
 ## 12｜2018-21：宽、快、突发改善数据率，复用线主省引脚
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q21.png" alt="2018-21 原题" style="display:block; width:26.96em; max-width:none; height:auto;">
+<img src="../bank/2018/q21.png" alt="2018-21 原题" width="431" style="display:block; width:26.96em; max-width:none; height:auto;">
 </div>
 
 总线宽度增大，一次可传更多位；频率提高，每秒机会更多；突发把地址开销摊给连续数据，均能提高同步总线的数据传输率。地址/数据线复用主要减少引脚/导线，反而可能占用数据时段发地址，不是提升传输率的手段。故 **I、II、III，选 B**。
@@ -203,7 +203,7 @@ USB 支持热插拔、即插即用，可级联多台设备，是通用串行总�
 ## 13｜2019-19：三通道把单通道字节率乘三
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q19.png" alt="2019-19 原题" style="display:block; width:31.30em; max-width:none; height:auto;">
+<img src="../bank/2019/q19.png" alt="2019-19 原题" width="501" style="display:block; width:31.30em; max-width:none; height:auto;">
 </div>
 
 型号 `DDR3-1333` 的 1333 表示约 **1333 MT/s 的有效传输率**。按这一口径，每通道宽 64 位=8B，三通道带宽为 `1333×10⁶×8×3=31.992×10⁹B/s≈32GB/s`，**选 B**。题图把这个有效传输率称作“工作频率 1333MHz”，单位与术语不严谨；不能据此教成 DDR 的物理时钟和传输率总是相同。
@@ -217,7 +217,7 @@ DDR 每个物理时钟周期传两次数据。若 1333MHz 真指物理时钟，�
 ## 14｜2020-19：全双工加的是两个方向的有效吞吐
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q19.png" alt="2020-19 原题" style="display:block; width:32.70em; max-width:none; height:auto;">
+<img src="../bank/2020/q19.png" alt="2020-19 原题" width="523" style="display:block; width:32.70em; max-width:none; height:auto;">
 </div>
 
 每个方向同时传 20 位，其中 **16 位有效数据+4 位校验**，因此有效载荷每次是 `2B`，不是 20/8B。2.4GHz、每拍传 2 次、双向同时工作，合计 `2.4G×2B×2×2=19.2GB/s`，**选 C**。先扣校验，再乘每拍次数，最后因题要总带宽而乘双向。
@@ -231,7 +231,7 @@ DDR 每个物理时钟周期传两次数据。若 1333MHz 真指物理时钟，�
 ## 15｜2021-19：握手一次不等于只换一位
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q19.png" alt="2021-19 原题" style="display:block; width:32.65em; max-width:none; height:auto;">
+<img src="../bank/2021/q19.png" alt="2021-19 原题" width="522" style="display:block; width:32.65em; max-width:none; height:auto;">
 </div>
 
 总线在部件间交换信息；同步总线的时钟频率与有效工作频率不一定相等；突发一次事务可连续传多个数据。C 却说异步总线“一次握手过程完成**一位**数据交换”，握手针对**一次数据传输单元/事务**，该单元可有多位，故 **错误选 C**。与 09 的时序对照，不把握手个数直接当位数。
@@ -245,7 +245,7 @@ DDR 每个物理时钟周期传两次数据。若 1333MHz 真指物理时钟，�
 ## 16｜2023-20：无突发，四个 64 位单元各有完整事务
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q20.png" alt="2023-20 原题" style="display:block; width:29.30em; max-width:none; height:auto;">
+<img src="../bank/2023/q20.png" alt="2023-20 原题" width="469" style="display:block; width:29.30em; max-width:none; height:auto;">
 </div>
 
 总线 1GHz，每拍 1ns；一个 64 位数据单元的独立读取需要地址传输 1ns、主存准备 6ns、数据传输 1ns，共 **8ns**。主存块 32B 包含 4 个 64 位单元，**不支持突发**，四次都付这三段成本，`4×8=32ns`，**选 D**。若只发一次地址会得 29ns，既违背“无突发”，也不在选项。
@@ -259,7 +259,7 @@ DDR 每个物理时钟周期传两次数据。若 1333MHz 真指物理时钟，�
 ## 17｜2024-20：最大带宽用数据阶段的峰值
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q20.png" alt="2024-20 原题" style="display:block; width:28.77em; max-width:none; height:auto;">
+<img src="../bank/2024/q20.png" alt="2024-20 原题" width="460" style="display:block; width:28.77em; max-width:none; height:auto;">
 </div>
 
 题问“总线带宽（最大数据传输率）”。总线宽 64 位，即每次 8B；时钟 420MHz，上、下沿各传一次，因此 **`420×10⁶×2×8=6.72×10⁹B/s=6.72GB/s`，选 B**。地址、等待拍会降低一笔完整事务的平均有效率，但不改变这里问的最大传输率。
@@ -273,7 +273,7 @@ DDR 每个物理时钟周期传两次数据。若 1333MHz 真指物理时钟，�
 ## 18｜2025-20：1333 MT/s 已经包含 quadpumped 四次传输
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q20.png" alt="2025-20 原题" style="display:block; width:26.51em; max-width:none; height:auto;">
+<img src="../bank/2025/q20.png" alt="2025-20 原题" width="424" style="display:block; width:26.51em; max-width:none; height:auto;">
 </div>
 
 题特意说明“工作频率 1333MHz（**实际单位 MT/s，表示每秒 1333M 次传送**）”。这已经是传输次数，不要再乘四。一次 64 位=8B，带宽 `1333M次/s×8B/次≈10.66GB/s`，**选 A**。quadpumped 解释这个传输率怎样由较低基准时钟形成，并不是额外乘因子。
