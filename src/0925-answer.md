@@ -22,7 +22,9 @@
 <a id="q01"></a>
 ## 01｜2009-45：同一个缓冲区，两类成品计数
 
-![2009-45 原题](../bank/2009/q45.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q45.png" alt="2009-45 原题" width="454" style="display:block; width:28.36em; max-width:none; height:auto;">
+</div>
 
 设 `empty=N`（空格），`odd=0`、`even=0`（已放入对应奇偶数的件数），`mutex=1`（缓冲区结构互斥）。生产者先生成 `v`，`P(empty); P(mutex); put(v); V(mutex);` 再按 `v` 的奇偶 `V(odd)` 或 `V(even)`。P₂ 循环 `P(odd); P(mutex); v=getodd(); V(mutex); V(empty); countodd(v);`；P₃ 将 `odd/getodd/countodd` 换成偶数版本。`getodd/geteven` 必须从缓冲区选出该类产品，不能简单拿队首后再判奇偶。
 
@@ -31,7 +33,9 @@
 <a id="q02"></a>
 ## 02｜2011-45：排号不是服务完成
 
-![2011-45 原题](../bank/2011/q45.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q45.png" alt="2011-45 原题" width="476" style="display:block; width:29.75em; max-width:none; height:auto;">
+</div>
 
 定义 `seat=10`、`machine=1`、`queueMutex=1`、`waiting=0`、`arrived=0`，并为每张唯一号码 `k` 提供初值0的 `called[k]`、`done[k]`。共享 FIFO 队列存号码。
 
@@ -89,7 +93,9 @@ coend
 <a id="q04"></a>
 ## 04｜2014-47：每个消费者一次连续取满10件
 
-![2014-47 原题](../bank/2014/q47.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q47.png" alt="2014-47 原题" width="448" style="display:block; width:28.03em; max-width:none; height:auto;">
+</div>
 
 “一个消费者连续取出10件后，其他消费者才可以取”约束的是**每次消费批次**，不能指定某人只在开始时取10件，随后永久放开。设 `empty=1000`、`full=0` 计空位和产品；`bufMutex=1` 保护缓冲读写；`batchMutex=1` 使一次10件的消费批次互斥。
 
@@ -111,7 +117,9 @@ coend
 <a id="q05"></a>
 ## 05｜2015-45：两只邮箱各自有空位与邮件数
 
-![2015-45 原题](../bank/2015/q45.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q45.png" alt="2015-45 原题" width="470" style="display:block; width:29.35em; max-width:none; height:auto;">
+</div>
 
 分别设 A 的 `fullA=x, emptyA=M−x, mutexA=1`，B 的 `fullB=y, emptyB=N−y, mutexB=1`。A 循环：`P(fullA); P(mutexA); 取A邮件; V(mutexA); V(emptyA); 回答并提出新问题; P(emptyB); P(mutexB); 放入B邮箱; V(mutexB); V(fullB)`；B 对称地 `P(fullB)` 取信，处理后 `P(emptyA)` 投递。
 
@@ -120,7 +128,9 @@ coend
 <a id="q06"></a>
 ## 06｜2017-46：只保护真正冲突的共享变量
 
-![2017-46 原题](../bank/2017/q46.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q46.png" alt="2017-46 原题" width="466" style="display:block; width:29.12em; max-width:none; height:auto;">
+</div>
 
 `x,y,z` 是线程间共享的复数对象；每个线程的局部 `w` 与 `add` 的局部 `s` 独立。令 `my=1,mz=1` 分别保护对全局 y、z 的访问；x 只读，无须锁。线程1 `P(my); w=add(x,y); V(my)`；线程2 `P(my);P(mz); w=add(y,z); V(mz);V(my)`；线程3 先本地构造 `w=(1,1)`，随后 `P(mz); z=add(z,w); V(mz); P(my); y=add(y,w); V(my)`。
 
@@ -129,7 +139,9 @@ coend
 <a id="q07"></a>
 ## 07｜2019-43：碗不消除环形拿筷子死锁
 
-![2019-43 原题](../bank/2019/q43.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q43.png" alt="2019-43 原题" width="501" style="display:block; width:31.31em; max-width:none; height:auto;">
+</div>
 
 设 `bowls=m`、每根筷子 `stick[i]=1`、`admit=n−1`。哲学家 i 循环：思考；`P(admit); P(bowls); P(stick[i]); P(stick[(i+1)%n]); 吃饭; V(stick[(i+1)%n]); V(stick[i]); V(bowls); V(admit)`。
 
@@ -138,7 +150,9 @@ coend
 <a id="q08"></a>
 ## 08｜2020-45：两处“都完成”各用一个计数门
 
-![2020-45 原题](../bank/2020/q45.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q45.png" alt="2020-45 原题" width="502" style="display:block; width:31.35em; max-width:none; height:auto;">
+</div>
 
 令 `ab=0, cd=0`。A 后 `V(ab)`，B 后 `V(ab)`；C 之前连续 `P(ab);P(ab)`，然后执行 C 并 `V(cd)`；D 后 `V(cd)`；E 之前连续 `P(cd);P(cd)` 再执行 E。
 
@@ -147,7 +161,9 @@ coend
 <a id="q09"></a>
 ## 09｜2021-45：关中断范围内不能等待别人唤醒
 
-![2021-45 原题](../bank/2021/q45.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q45.png" alt="2021-45 原题" width="468" style="display:block; width:29.25em; max-width:none; height:auto;">
+</div>
 
 **（1）互斥原因。** `while(S<=0)` 的检查与 `S=S−1` 必须作为一个不可分的获得许可动作；两个线程都看见 S=1 后各减1，会让同一许可被消费两次。`signal` 的加1也必须与 `wait` 对 S 的读改写保持一致。
 
@@ -158,7 +174,9 @@ coend
 <a id="q10"></a>
 ## 10｜2022-46：同一线程内的先后不用重复发信号
 
-![2022-46 原题](../bank/2022/q46.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q46.png" alt="2022-46 原题" width="468" style="display:block; width:29.25em; max-width:none; height:auto;">
+</div>
 
 图给 A、B→C→D、E→F；T1 负责 A、E、F，T2 负责 B、C、D。设 `aDone=0,cDone=0`：
 
@@ -172,7 +190,9 @@ B→C、C→D、E→F 本来就在各自线程程序顺序内；跨线程只有 
 <a id="q11"></a>
 ## 11｜2023-45：原子 swap 与三个赋值不同
 
-![2023-45 原题](../bank/2023/q45.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q45.png" alt="2023-45 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
+</div>
 
 **（1）修正。** 共享 `lock=FALSE` 表示可进入；每个线程令局部 `key=TRUE`，必须 **`while(key==TRUE) swap key,lock;`**，直到从锁交换出 FALSE 才进入临界区；离开时应 **`lock=FALSE`**。图中的 `if(key==TRUE)` 只试一次就可能带着 TRUE 闯入，`lock=TRUE` 则离开后仍锁住。自旋期间 key 的 TRUE 交换回 lock，使锁保持占用。
 
@@ -183,7 +203,9 @@ B→C、C→D、E→F 本来就在各自线程程序顺序内；跨线程只有 
 <a id="q12"></a>
 ## 12｜2024-46：一格缓冲读写与原地修改是两种约束
 
-![2024-46 原题](../bank/2024/q46.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q46.png" alt="2024-46 原题" width="461" style="display:block; width:28.79em; max-width:none; height:auto;">
+</div>
 
 **（1）** 若 P1/P2 同时对同一缓冲 B 执行 C1，写入会互相覆盖或产生不确定结果，C1 的代码段访问共享资源 B，属于**临界区**。
 
@@ -194,7 +216,9 @@ B→C、C→D、E→F 本来就在各自线程程序顺序内；跨线程只有 
 <a id="q13"></a>
 ## 13｜2025-45：坑容量、铁锹、树苗、水桶分开计数
 
-![2025-45 原题](../bank/2025/q45.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q45.png" alt="2025-45 原题" width="425" style="display:block; width:26.55em; max-width:none; height:auto;">
+</div>
 
 设 **四个信号量**：`freePit=3`（剩余坑名额）、`dug=0`（可放苗的坑）、`planted=0`（待浇的树）、`shovel=1`（铁锹互斥）。甲 `P(freePit);P(shovel);挖坑;V(shovel);V(dug)`；乙 `P(dug);放苗;P(shovel);填土;V(shovel);V(freePit);V(planted)`；丙 `P(planted);浇水`，三人均按各自阶段循环。
 
