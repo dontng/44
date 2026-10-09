@@ -29,7 +29,7 @@
 ## 01｜2009-26：分区保护首先阻止地址越过本分区
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q26.png" alt="2009-26 原题" style="display:block; width:23.66em; max-width:none; height:auto;">
+<img src="../bank/2009/q26.png" alt="2009-26 原题" width="379" style="display:block; width:23.66em; max-width:none; height:auto;">
 </div>
 
 分区分配为进程给出可访问的起点与范围；CPU 用基址/界限等机制检查访问是否落在自己的分区，主要保护是**界地址保护，选 A**。代码、数据和栈当然都应受保护，但题问分区方式的**主要措施**，应先找分区边界。第一笔把某逻辑位移与分区长度比较，而非先讨论内容类型。
@@ -43,7 +43,7 @@
 ## 02｜2009-27：段号与段内位移平分的是地址位数，不是段长
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q27.png" alt="2009-27 原题" style="display:block; width:26.92em; max-width:none; height:auto;">
+<img src="../bank/2009/q27.png" alt="2009-27 原题" width="431" style="display:block; width:26.92em; max-width:none; height:auto;">
 </div>
 
 逻辑地址总 32 位，段号占 8 位，剩余 **24 位**表示段内位移，最大可表示 `2^24` 个字节位置，最大段长 **`2^24 B`，选 C**。第一笔写 `段内位数=总位数−段号位数=24`。8 位段号决定最多有多少编号，不是每段长度。
@@ -57,7 +57,7 @@
 ## 03｜2010-28：最佳适应先选最小够用孔，再看最终最大孔
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q28.png" alt="2010-28 原题" style="display:block; width:30.62em; max-width:none; height:auto;">
+<img src="../bank/2010/q28.png" alt="2010-28 原题" width="490" style="display:block; width:30.62em; max-width:none; height:auto;">
 </div>
 
 55MB 空闲先分 15，再分 30，布局为 `[占15][占30][空10]`。释放前 15 后，空闲孔大小为 **15、10**，中间 30 仍隔开两孔。最佳适应分 8 时选 10，剩 2；再分 6 时选 15，剩 **9**。最终空闲孔为 2 与 9，最大 **9MB，选 B**。第一笔按物理相邻画孔，不可把释放 15 与尾部 10 合并。
@@ -71,7 +71,7 @@
 ## 04｜2014-28：地址转换瓶颈问页表项去哪找
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q28.png" alt="2014-28 原题" style="display:block; width:26.30em; max-width:none; height:auto;">
+<img src="../bank/2014/q28.png" alt="2014-28 原题" width="421" style="display:block; width:26.30em; max-width:none; height:auto;">
 </div>
 
 TLB 命中可快速拿到页表映射，增大其容量 I 可能提高命中率；页表常驻内存 II 避免页表自身再从外存取回，均可加快虚实地址转换。增大 swap 空间 III 只扩展换出位置，并不让每次翻译更快。**仅 I、II，选 C**。第一笔把路径写为 `查 TLB → 未中查内存页表`，看措施缩短哪一段。
@@ -85,7 +85,7 @@ TLB 容量增大也可能伴随硬件命中时间取舍，但此题问能加快�
 ## 05｜2016-28：段表先验范围，合法后才加基址
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q28.png" alt="2016-28 原题" style="display:block; width:25.16em; max-width:none; height:auto;">
+<img src="../bank/2016/q28.png" alt="2016-28 原题" width="403" style="display:block; width:25.16em; max-width:none; height:auto;">
 </div>
 
 段 2 在内存、基址 4000、段长 300；请求段内位移 **400**，已不满足 `0≤位移<300`，立即报**越界异常，选 D**。不可先算 `4000+400=4400` 再选 B；本段不是不在内存，也没给出写只读段的操作。第一笔按“段号有效→段存在→权限→位移在段长内→基址加位移”逐关检查。
@@ -99,7 +99,7 @@ TLB 容量增大也可能伴随硬件命中时间取舍，但此题问能加快�
 ## 06｜2017-25：释放时只合并地址相接的空闲孔
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q25.png" alt="2017-25 原题" style="display:block; width:29.10em; max-width:none; height:auto;">
+<img src="../bank/2017/q25.png" alt="2017-25 原题" width="466" style="display:block; width:29.10em; max-width:none; height:auto;">
 </div>
 
 按起始地址与大小标区间：空闲 `[20K,60K)` 大小 40KB、`[200K,400K)` 大小 200KB，另有 `[500K,580K)` 80KB、`[1000K,1100K)` 100KB。释放 `[60K,200K)` 大小 140KB，恰好连接前两块，合成 **`[20K,400K)`、380KB**；另两块不邻接，合并后共 **3 个**空闲分区。重新按最佳适应的大小递增排序，80KB 的 `(500K,80KB)` 最先，故 **3 个、链首 500K/80KB，选 B**。第一笔先按物理地址合并，再按容量重排，不可把最大孔当链首。
@@ -117,7 +117,7 @@ TLB 容量增大也可能伴随硬件命中时间取舍，但此题问能加快�
 ## 07｜2017-30：每类用户独立记录五种权限
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q30.png" alt="2017-30 原题" style="display:block; width:28.03em; max-width:none; height:auto;">
+<img src="../bank/2017/q30.png" alt="2017-30 原题" width="448" style="display:block; width:28.03em; max-width:none; height:auto;">
 </div>
 
 四类用户，各要表达完全控制、执行、修改、读取、写入这五种权限的有/无。每类至少 **5 位**，四类合计 `4×5=20` 位，**选 D**。第一笔写“用户类别 × 每类独立权限项”；不要只数五种操作，也不要把五项误当互斥的五选一。
@@ -131,7 +131,7 @@ TLB 容量增大也可能伴随硬件命中时间取舍，但此题问能加快�
 ## 08｜2019-28：共享的是物理段，进程内段号可各自编排
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q28.png" alt="2019-28 原题" style="display:block; width:31.06em; max-width:none; height:auto;">
+<img src="../bank/2019/q28.png" alt="2019-28 原题" width="497" style="display:block; width:31.06em; max-width:none; height:auto;">
 </div>
 
 共享段 S 在物理内存保留一份内容，两个进程的共享段表项可指向它，直到双方都不再使用才回收，A/C/D 对。B 说 S 在 P1 与 P2 **应该有相同段号**，但段号是每个进程自己逻辑地址空间中的索引；一个进程编号 2，另一个编号 5，也可指向同一物理段，**选 B**。第一笔分开“本进程逻辑索引”与“共享物理对象”。
@@ -145,7 +145,7 @@ TLB 容量增大也可能伴随硬件命中时间取舍，但此题问能加快�
 ## 09｜2019-32：最佳适应的局部节省可能制造最多小孔
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q32.png" alt="2019-32 原题" style="display:block; width:23.57em; max-width:none; height:auto;">
+<img src="../bank/2019/q32.png" alt="2019-32 原题" width="377" style="display:block; width:23.57em; max-width:none; height:auto;">
 </div>
 
 题问动态分区中**最容易产生碎片**的策略。最佳适应每次选刚够的最小孔，若仍有剩余便留下很小的尾部孔，后续请求难以利用，**选 C**。首次适应和循环首次适应按链表位置找首个够用孔；最坏适应切最大孔，通常保留较大剩余。第一笔看每次切完剩余孔大小，不只看眼前是否“最省”。
@@ -159,7 +159,7 @@ TLB 容量增大也可能伴随硬件命中时间取舍，但此题问能加快�
 ## 10｜2020-24：随机访问要能直接定位第 k 块
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q24.png" alt="2020-24 原题" style="display:block; width:25.95em; max-width:none; height:auto;">
+<img src="../bank/2020/q24.png" alt="2020-24 原题" width="415" style="display:block; width:25.95em; max-width:none; height:auto;">
 </div>
 
 索引分配用索引表把文件逻辑块号直接映射到磁盘块，文件增长时可增加数据块与适当索引项，且能随机访问第 k 块，**选 A**。链式分配可增长，但通常要沿链走到第 k 块；连续分配可随机访问，但增长容易受后继连续空间限制。D 动态分区是内存分配术语，不是这里的磁盘文件分配。第一笔同时检验“可增长”和“能随机定位”。
@@ -173,7 +173,7 @@ TLB 容量增大也可能伴随硬件命中时间取舍，但此题问能加快�
 ## 11｜2023-30：共享物理页不要求两进程虚拟页号一致
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q30.png" alt="2023-30 原题" style="display:block; width:29.28em; max-width:none; height:auto;">
+<img src="../bank/2023/q30.png" alt="2023-30 原题" width="468" style="display:block; width:29.28em; max-width:none; height:auto;">
 </div>
 
 R、S 共享数据，两个虚拟地址空间可把这份数据安排在不同虚拟页号 `p1、p2`，故 **p1 不一定相等**；既然共享的是同一份物理页，两份页表映射到同一页框，**f1=f2，选 C**。第一笔画 `R:p1→f` 与 `S:p2→f`，不把虚拟地址相等当作共享的必要条件。
@@ -187,7 +187,7 @@ R、S 共享数据，两个虚拟地址空间可把这份数据安排在不同�
 ## 12｜2024-27：伙伴算法只把同阶、配对的两块合并
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q27.png" alt="2024-27 原题" style="display:block; width:22.95em; max-width:none; height:auto;">
+<img src="../bank/2024/q27.png" alt="2024-27 原题" width="367" style="display:block; width:22.95em; max-width:none; height:auto;">
 </div>
 
 伙伴系统把空闲内存分成 2 的幂大小块；一块释放时，只有它的**同阶伙伴**也空闲，才合并成上一阶，逐层重复。因此每次回收时仅合并**大小相等**且互为伙伴的空闲分区，**选 A**。第一笔检验“大小相等 + 是同一次二分形成的一对”，不是看到两块任意相邻就合并。
