@@ -30,9 +30,7 @@
 <a id="q01"></a>
 ## 01｜2009-34：QAM 状态数先乘，再取对数
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q34.png" alt="2009-34 原题" width="455" style="display:block; width:28.41em; max-width:none; height:auto;">
-</div>
+![2009-34 原题](../bank/2009/q34.png)
 
 4 个相位、每相位 4 种幅度，共 **16 种可区分状态**，每码元 `log₂16=4bit`；无噪声 3kHz 信道奈奎斯特上限为 `2×3k=6k` 码元/s，因此 `6k×4=24kbps`，**选 B**。第一笔写“相位×幅度”，不要把4+4当8。
 
@@ -44,9 +42,7 @@
 <a id="q02"></a>
 ## 02｜2011-34：已知比特率，反求码元率
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q34.png" alt="2011-34 原题" width="434" style="display:block; width:27.14em; max-width:none; height:auto;">
-</div>
+![2011-34 原题](../bank/2011/q34.png)
 
 四相位提供 `log₂4=2bit/码元`，2400bps 对应 `2400/2=1200` 波特，**选 B**。第一笔确认 bps 数的是比特，波特数的是码元，二者只在每码元1bit时相等。
 
@@ -58,9 +54,7 @@
 <a id="q03"></a>
 ## 03｜2013-34：曼彻斯特每位中间必有跳变
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q34.png" alt="2013-34 原题" width="416" style="display:block; width:26.01em; max-width:none; height:auto;">
-</div>
+![2013-34 原题](../bank/2013/q34.png)
 
 虚线之间一格是一个比特；看**每格正中**电平跃迁方向，按题用10BaseT 的约定，低→高记0、高→低记1，依次为 `0011 0110`，**选 A**。第一笔只标八个格子的中点，不把格子边界处额外跳变多算一位。
 
@@ -72,9 +66,7 @@
 <a id="q04"></a>
 ## 04｜2014-35：传播速度影响延迟，不决定数据率
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q35.png" alt="2014-35 原题" width="422" style="display:block; width:26.35em; max-width:none; height:auto;">
-</div>
+![2014-35 原题](../bank/2014/q35.png)
 
 题问**不会影响信道数据传输速率**：信噪比限制可辨信息，频率带宽限制码元快慢，调制速率是信号状态变化快慢；**传播速度 D**决定信号在一段距离上要走多久，不直接改变每秒能注入多少比特。第一笔分“链路上同时在途多久”和“发送端每秒发送多少”。
 
@@ -86,9 +78,7 @@
 <a id="q05"></a>
 ## 05｜2015-34：第一条按电平，第二条每位中间跳变
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q34.png" alt="2015-34 原题" width="453" style="display:block; width:28.32em; max-width:none; height:auto;">
-</div>
+![2015-34 原题](../bank/2015/q34.png)
 
 编码1 对 `01100111` 呈低、高、高、低、低、高、高、高，直接用电平代表位，是 **NRZ**；编码2 每个比特格子中间都有跃迁，是**曼彻斯特编码**。组合 **选 A**。第一笔用连续两个1：编码1中间不跳，故不是“逢1翻转”的 NRZI。
 
@@ -100,9 +90,7 @@
 <a id="q06"></a>
 ## 06｜2016-34：给30dB就先用香农上限
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q34.png" alt="2016-34 原题（含33—41题共用拓扑）" width="469" style="display:block; width:29.29em; max-width:none; height:auto;">
-</div>
+![2016-34 原题（含33—41题共用拓扑）](../bank/2016/q34.png)
 
 `30dB=10log₁₀(S/N)`，所以信噪比约1000。香农容量 `8kHz×log₂(1+1000)≈8k×10=80kbps`；实际为50%，约 **40kbps，选 C**。第一笔把 dB 换成线性 S/N，不能直接把30放进对数。
 
@@ -114,9 +102,7 @@
 <a id="q07"></a>
 ## 07｜2017-34：令奈奎斯特上限追上香农上限
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q34.png" alt="2017-34 原题" width="466" style="display:block; width:29.15em; max-width:none; height:auto;">
-</div>
+![2017-34 原题](../bank/2017/q34.png)
 
 同带宽 W 下，无噪声极限 `2Wlog₂M`，30dB 时噪声极限约 `Wlog₂(1001)≈10W`。要求前者不小于后者：`2log₂M≥10`，所以 `M≥2⁵=32`，**选 D**。第一笔看 W 两侧会抵消，题不用给具体带宽。
 
@@ -128,9 +114,7 @@
 <a id="q08"></a>
 ## 08｜2018-34：物理接口规定形状、引脚、电平和时序
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q34.png" alt="2018-34 原题" width="399" style="display:block; width:24.91em; max-width:none; height:auto;">
-</div>
+![2018-34 原题](../bank/2018/q34.png)
 
 接口形状是机械特性，引脚功能是功能特性，信号电平是电气特性；**物理地址 C**是链路层标识，不是物理层接口规范范畴。第一笔把“物理”二字从“地址”前拿走，问它用来识别谁：网卡 MAC 地址而非插头电平。
 
@@ -142,9 +126,7 @@
 <a id="q09"></a>
 ## 09｜2020-34：虚电路要建状态，不必逐条预留带宽
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q34.png" alt="2020-34 原题" width="272" style="display:block; width:16.98em; max-width:none; height:auto;">
-</div>
+![2020-34 原题](../bank/2020/q34.png)
 
 题问**错误**：虚电路建立时选路，传送时按 VCID 转发，同一连接的分组沿既定路线可保序；**并非每条虚电路都必须预分配带宽，选 B**。第一笔区分“预先建立转发状态”和“预先独占容量”。
 
@@ -156,9 +138,7 @@
 <a id="q10"></a>
 ## 10｜2021-34：差分曼彻斯特看边界，位中只做时钟
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q34.png" alt="2021-34 原题" width="410" style="display:block; width:25.62em; max-width:none; height:auto;">
-</div>
+![2021-34 原题](../bank/2021/q34.png)
 
 图的每一位中间都有跳变。按差分曼彻斯特常用约定，**位开始有跳变记0，无跳变记1**；依次读得 `1011 1001`，**选 A**。第一笔在各虚线处标“跳/不跳”，不拿位中高低电平套普通曼彻斯特。
 
@@ -170,9 +150,7 @@
 <a id="q11"></a>
 ## 11｜2022-34：四幅度 ASK 每码元 2bit
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q34.png" alt="2022-34 原题" width="467" style="display:block; width:29.21em; max-width:none; height:auto;">
-</div>
+![2022-34 原题](../bank/2022/q34.png)
 
 无噪声 200kHz 信道，最多 `2W=400k` 码元/s；四种幅度每码元 `log₂4=2bit`，数据率 `400k×2=800kbps`，**选 C**。第一笔只数幅度状态，别把 ASK 的4幅度当4bit。
 
@@ -184,9 +162,7 @@
 <a id="q12"></a>
 ## 12｜2023-34：由目标数据率反推 QAM 阶数
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q34.png" alt="2023-34 原题" width="469" style="display:block; width:29.30em; max-width:none; height:auto;">
-</div>
+![2023-34 原题](../bank/2023/q34.png)
 
 4MHz 无噪声信道奈奎斯特码元率最多8M波特。要48Mbps，每码元须 `48/8=6bit`，即 `2⁶=64` 种状态，**QAM-64，选 C**。第一笔先求每码元几bit，再把它指数化为调制状态数。
 
@@ -198,9 +174,7 @@ QAM-64 是64种星座点，每点携带6bit；若误把“64”当64bit/码元�
 <a id="q13"></a>
 ## 13｜2024-34：两个频率承载0/1是频移键控
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q34.png" alt="2024-34 原题" width="382" style="display:block; width:23.85em; max-width:none; height:auto;">
-</div>
+![2024-34 原题](../bank/2024/q34.png)
 
 用两个不同**频率**的载波分别表示二进制状态，是 **FSK，选 C**。ASK 变幅度，PSK 变相位，DPSK 看相位差。第一笔圈题目明确变化的物理量，不从英文缩写反猜。
 
@@ -212,9 +186,7 @@ QAM-64 是64种星座点，每点携带6bit；若误把“64”当64bit/码元�
 <a id="q14"></a>
 ## 14｜2025-34：最小码距决定保底检错和纠错
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q34.png" alt="2025-34 原题" width="424" style="display:block; width:26.47em; max-width:none; height:auto;">
-</div>
+![2025-34 原题](../bank/2025/q34.png)
 
 四个8位码字两两比较，不同位置数分别为 `4、4、4、4、4、8`，故最小汉明距离 **d=4**。可保证检出至多 `d−1=3` 位错误，唯一纠正至多 `⌊(d−1)/2⌋=1` 位错误，**选 C**。第一笔先找最接近的一对码字，不用把所有错误模式逐一枚举。
 
