@@ -24,9 +24,7 @@
 <a id="q01"></a>
 ## 01｜2010-41：散列地址与探测范围是两个数
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q41.png" alt="2010-41 原题" width="464" style="display:block; width:28.97em; max-width:none; height:auto;">
-</div>
+![2010-41 原题](../bank/2010/q41.png)
 
 **（1）构表。** 7 个关键字、装填因子0.7，所以表长 **10**；初址 `H(key)=3key mod 7` 只落在 `0..6`，发生碰撞后线性探测遍历**10格**，不能在7处折返。顺序插入的探测次数：7→0(1), 8→3(1), 30→6(1), 11→5(1), 18→5→6→7(3), 9→6→7→8(3), 14→0→1(2)。
 
@@ -41,9 +39,7 @@
 <a id="q02"></a>
 ## 02｜2011-42：两个等长有序数组的下中位数
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q42.png" alt="2011-42 原题" width="477" style="display:block; width:29.80em; max-width:none; height:auto;">
-</div>
+![2011-42 原题](../bank/2011/q42.png)
 
 **（1）思路。** 两列各长 L，合并后共 2L 个，题定义的中位数是**第 L 个**（从1数），不是两中央数的均值。取两个当前等长候选区间的中点，比较 `A[m1]`、`B[m2]`：较小中点所在数组的左半段不可能是最终第 L 个，较大中点所在数组的右半段也不可能是；等长成对舍弃。偶数长度时舍弃的两侧需包含恰好相同数量。
 
@@ -73,9 +69,7 @@ int lowerMedian(const int A[], const int B[], int n) {
 <a id="q03"></a>
 ## 03｜2012-41：多路合并总比较次数按树权算
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q41.png" alt="2012-41 原题" width="438" style="display:block; width:27.35em; max-width:none; height:auto;">
-</div>
+![2012-41 原题](../bank/2012/q41.png)
 
 **（1）五次合并。** 两个有序表最坏需要 `m+n−1` 次关键字比较；每次取当前两个最短表：`10+35→45` 用44次，`40+45→85` 用84次，`50+60→110` 用109次，`85+110→195` 用194次，`195+200→395` 用394次。总 **44+84+109+194+394=825 次**。若只把中间表长度相加是830，再减去五次合并各1，得到825。
 
@@ -86,9 +80,7 @@ int lowerMedian(const int A[], const int B[], int n) {
 <a id="q04"></a>
 ## 04｜2013-42：提高成功查找的期望，先让高概率位置便宜
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q42.png" alt="2013-42 原题" width="454" style="display:block; width:28.36em; max-width:none; height:auto;">
-</div>
+![2013-42 原题](../bank/2013/q42.png)
 
 给定四个概率 `do=.35, for=.15, repeat=.15, while=.35`。原按字典序的折半查找成功 ASL 为题给的 **2.2**，它是基线。
 
@@ -101,9 +93,7 @@ int lowerMedian(const int A[], const int B[], int n) {
 <a id="q05"></a>
 ## 05｜2016-43：按中位值划分比完整排序便宜
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q43.png" alt="2016-43 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
-</div>
+![2016-43 原题](../bank/2016/q43.png)
 
 **（1）思路。** `|n1−n2|` 最小要求两组数量分别为 `floor(n/2)` 和 `ceil(n/2)`。元素均为正数，为使 `|S1−S2|` 最大，把最小的 `k=floor(n/2)` 个放在小组，余下大的放大组。若把小值与大值交换到反边，差值只会减小。无需把各组内部排好序，只要把第 k 小元素划到边界。
 
@@ -141,9 +131,7 @@ long long splitMaxDiff(int A[],int n) {
 <a id="q06"></a>
 ## 06｜2021-42：比较计数排序的相等分支
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q42.png" alt="2021-42 原题" width="466" style="display:block; width:29.10em; max-width:none; height:auto;">
-</div>
+![2021-42 原题](../bank/2021/q42.png)
 
 **（1）输出。** 对每对 `(i,j)`，较大元素的计数加1；相等时原代码走 `else`，令**较早**元素的计数加1，所以两个25的原次序倒转。`b=[-10,10,11,19,25,25]`，仅看数值无法看出这次交换。**（2）比较次数**恰是所有无序元素对数 `n(n−1)/2`，本例15次。
 
@@ -154,9 +142,7 @@ long long splitMaxDiff(int A[],int n) {
 <a id="q07"></a>
 ## 07｜2023-42：置换选择的冻结边界
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q42.png" alt="2023-42 原题" width="470" style="display:block; width:29.35em; max-width:none; height:auto;">
-</div>
+![2023-42 原题](../bank/2023/q42.png)
 
 **（1）m=4。** 工作区先装前四数，当前活跃数里反复输出最小；读入的新数若不小于刚输出的数，可继续参加本段，否则冻结到下一段。按题给19个数生成三个初始归并段：
 
@@ -175,9 +161,7 @@ R3: 8, 17, 43, 100
 <a id="q08"></a>
 ## 08｜2024-42：平方探测会重复访问某些格
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q42.png" alt="2024-42 原题" width="476" style="display:block; width:29.76em; max-width:none; height:auto;">
-</div>
+![2024-42 原题](../bank/2024/q42.png)
 
 **（1）依次插入。** 表长11，`H0=3key mod 11`，冲突后依 `Hk=(H0+k²) mod 11`。20→5，3→9，11→0，18→10，9 初址5碰撞、`k=1`到6，14 初址9碰撞、`k=1`到10再到`k=2`的2，7 初址10碰撞、到0再到3。
 
