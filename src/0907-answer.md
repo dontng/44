@@ -124,7 +124,7 @@ rwnd2000以新的确认点为基准；已发的第二段仍占其中1000B，即�
 <a id="q08"></a>
 ## 08｜2014-39：UDP用端口复用，校验不保证可靠
 
-<img src="../bank/2014/q39.png" alt="2014-39 原题" width="741" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2014/q39.png" alt="2014-39 原题" width="449" style="display:block; width:28.06em; max-width:100%; height:auto;">
 
 UDP提供**无连接服务 I**，端口可供应用复用/分用 **II**；差错校验能发现错误却不提供确认重传、可靠交付，**III错**，仅 I、II，**选 B**。第一笔把“检测错误”与“可靠恢复”分开，接回0903-18的CRC边界。
 
@@ -160,7 +160,7 @@ TCP的窗口、重传是端到端可靠状态；对比UDP可看出这些不是�
 <a id="q11"></a>
 ## 11｜2018-39：UDP分用看目的端口
 
-<img src="../bank/2018/q39.png" alt="2018-39 原题" width="716" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2018/q39.png" alt="2018-39 原题" width="433" style="display:block; width:27.06em; max-width:100%; height:auto;">
 
 收到UDP报文后，主机按**目的端口号**把负载交给本机相应套接字/应用，**选 B**。源端口指回信目标，长度与校验和各有别的职责。第一笔站在接收主机上问“送给我哪个程序”。
 
