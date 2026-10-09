@@ -130,7 +130,7 @@ t² ≈ n  →  t ≈ √n
 <a id="q06"></a>
 ## 06｜2019-01：条件中的平方是在限制轮数
 
-<img src="../bank/2019/q01.png" alt="2019-01" style="display:block; width:31.34em; max-width:none; height:auto;">
+<img src="../bank/2019/q01.png" alt="2019-01" width="433" style="display:block; width:27.06em; max-width:100%; height:auto;">
 
 `x` 每轮只增加 1，但它不需要增加到 `n`。循环条件要求：
 
