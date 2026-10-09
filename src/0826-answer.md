@@ -31,7 +31,9 @@
 <a id="q01"></a>
 ## 01｜2010-25：先看信号量符号，别把初值与当前值相减当等待数
 
-![2010-25 原题](../bank/2010/q25.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q25.png" alt="2010-25 原题" style="display:block; width:28.94em; max-width:none; height:auto;">
+</div>
 
 资源信号量初值 3，当前值 **1>0**，表示现在还可用 1 个资源，**M=1**；此时没有进程因该资源等待，**N=0，选 B**。第一笔写 `S>0 → 可用 S、等待 0`，若 `S<0` 才用 `−S` 解释等待个数。
 
@@ -43,7 +45,9 @@
 <a id="q02"></a>
 ## 02｜2010-27：Peterson 代码要看同时申请时最后谁把 turn 写给谁
 
-![2010-27 原题](../bank/2010/q27.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q27.png" alt="2010-27 原题" style="display:block; width:28.30em; max-width:none; height:auto;">
+</div>
 
 两个进程先各置 `flag[i]=TRUE` 表示想进，再把 `turn` 写成对方编号。若都想进，最终 `turn` 只能是 0 或 1：一方在 `while(flag[other] && turn==other)` 等，另一方可进入；退出后清自己的 flag，让等待者继续。因此既能**互斥进入**也不会因这段竞争发生饥饿，**选 D**。第一笔把“两个 flag 都真”代入两个 while，看 turn 的最终值。
 
@@ -55,7 +59,9 @@
 <a id="q03"></a>
 ## 03｜2011-32：加一减一不是原子动作，列最后写回者读过什么
 
-![2011-32 原题](../bank/2011/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q32.png" alt="2011-32 原题" style="display:block; width:29.70em; max-width:none; height:auto;">
+</div>
 
 `x` 初值 1；每个操作均拆成 `load→inc/dec→store`。先完整加后完整减或反过来得 **1**。若两者都先读到 1，再分别写 2 和 0，最后写者决定结果 **2 或 0**。**可能 0、1、2，选 C**。第一笔抓共享内存上的两次 load 与两次 store；寄存器计算不直接改变 x。
 
@@ -67,7 +73,9 @@
 <a id="q04"></a>
 ## 04｜2012-30：临界区保护共享数据，不自动禁止调度
 
-![2012-30 原题](../bank/2012/q30.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q30.png" alt="2012-30 原题" style="display:block; width:27.29em; max-width:none; height:auto;">
+</div>
 
 进程结束、新进程建立后或系统调用返回前都可能出现调度机会，A/B/D 可成立。进程正在临界区时也可能因时间片到、抢占等原因离开 CPU；互斥约束的是**另一进程不能同时进入同一资源的临界区**，并非 OS 不能调度，C 错，**选 C**。第一笔分开“谁持有锁/进入临界区”与“谁在 CPU 上运行”。
 
@@ -79,7 +87,9 @@
 <a id="q05"></a>
 ## 05｜2014-24：构造所有人都差最后一台的最坏占用
 
-![2014-24 原题](../bank/2014/q24.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q24.png" alt="2014-24 原题" style="display:block; width:29.15em; max-width:none; height:auto;">
+</div>
 
 三个进程最大需求分别 3、4、5。要全卡住，可让它们各已占到还**差 1 台**：分别占 2、3、4，共 **9 台**，却谁也完不成、归还设备。若有 **10 台**，该最坏占用后至少还剩 1，能给某一进程凑够最大需求，它完成后归还全部设备，后面也能推进。所以保证不死锁的最小 **n=10，选 B**。第一笔用 `Σ(最大需求−1)+1`。
 
@@ -95,7 +105,9 @@
 <a id="q06"></a>
 ## 06｜2016-27：TSL 能互斥，但等待者会反复占 CPU 查锁
 
-![2016-27 原题](../bank/2016/q27.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q27.png" alt="2016-27 原题" style="display:block; width:22.68em; max-width:none; height:auto;">
+</div>
 
 `TSL(&lock)` 原子地读旧锁值并置锁；旧值为真，`while` 就继续循环检查，不会主动睡眠或让出 CPU，**B 对，选 B**。退出者只把 `lock=FALSE`，没有唤醒队列中的阻塞进程，A 错；忙等不满足让权等待，C 错；TSL 本身的读改写须原子，不要求整个 while 都关中断，D 错。第一笔观察等待循环里有没有阻塞调用。
 
@@ -107,7 +119,9 @@
 <a id="q07"></a>
 ## 07｜2016-30：先划进程地址空间，再找同一个共享变量的写写冲突
 
-![2016-30 原题](../bank/2016/q30.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q30.png" alt="2016-30 原题" style="display:block; width:23.06em; max-width:none; height:auto;">
+</div>
 
 P1 内 Thread1、Thread2 共享 **P1 的 x**，各做 `x+=1` 与 `x+=2`，非原子读改写交错会丢失更新，需要互斥，**选 C**。P2 自己另有一个 `x`，名字相同不等于与 P1 共享；`x+=1` 与 P2 的 `x+=3` 不构成同一地址的冲突。各线程局部 `a` 也独立。第一笔在变量旁标 `P1.x` 或 `P2.x`。
 
@@ -119,7 +133,9 @@ P1 内 Thread1、Thread2 共享 **P1 的 x**，各做 `x+=1` 与 `x+=2`，非原
 <a id="q08"></a>
 ## 08｜2016-32：管程把互斥入口与条件等待放在一处
 
-![2016-32 原题](../bank/2016/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q32.png" alt="2016-32 原题" style="display:block; width:15.04em; max-width:none; height:auto;">
+</div>
 
 题问**错误**。管程的受控入口可保证同一时刻只有一个进程在其中执行 C，对内部变量限制外部直接访问 D，语言/运行时可支持这一同步结构 B。A 说“**只能**用于互斥”，却漏了管程内条件变量的等待/通知可表达条件同步，**选 A**。第一笔寻找这个“只能”能否被条件等待反驳。
 
@@ -131,7 +147,9 @@ P1 内 Thread1、Thread2 共享 **P1 的 x**，各做 `x+=1` 与 `x+=2`，非原
 <a id="q09"></a>
 ## 09｜2018-28：condition.wait 阻塞当前者，而 signal 才唤醒他者
 
-![2018-28 原题](../bank/2018/q28.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q28.png" alt="2018-28 原题" style="display:block; width:24.04em; max-width:none; height:auto;">
+</div>
 
 进程执行 `x.wait()`，表示当前条件尚未满足：它释放管程占有、**阻塞自己并加入条件变量 x 的等待队列，选 D**。B 的“唤醒一个”等待者是 `signal()` 的方向；A 不是单纯互斥；C 不是读一个普通数值来判断。第一笔在 wait 旁写“谁调用谁睡”，在 signal 旁写“唤醒别人”。
 
@@ -143,7 +161,9 @@ P1 内 Thread1、Thread2 共享 **P1 的 x**，各做 `x+=1` 与 `x+=2`，非原
 <a id="q10"></a>
 ## 10｜2018-32：让权等待问“等不到时是否睡眠”
 
-![2018-32 原题](../bank/2018/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q32.png" alt="2018-32 原题" style="display:block; width:27.79em; max-width:none; height:auto;">
+</div>
 
 Peterson、swap 与 TestAndSet 都可在等待条件未满足时自旋检查，继续消耗 CPU；信号量的 P 操作在资源不足时可把进程置阻塞、让出处理器，满足**让权等待，选 C**。第一笔查看等待分支执行的是“反复读条件”还是“入队阻塞”。
 
@@ -159,7 +179,9 @@ Peterson、swap 与 TestAndSet 都可在等待条件未满足时自旋检查，�
 <a id="q11"></a>
 ## 11｜2019-24：唤醒是“阻塞→就绪”，时间片用完不在这条边上
 
-![2019-24 原题](../bank/2019/q24.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q24.png" alt="2019-24 原题" style="display:block; width:28.43em; max-width:none; height:auto;">
+</div>
 
 I/O 结束可让等 I/O 的进程就绪 I；持有临界资源者退出临界区可通知等锁者 II。当前进程时间片用尽 III 只把**它自己从执行送回就绪**，不是唤醒一个原本阻塞的进程。因此 **I、II，选 C**。第一笔给“被唤醒者”画出原状态：它先前必须在等某个条件。
 
@@ -171,7 +193,9 @@ I/O 结束可让等 I/O 的进程就绪 I；持有临界资源者退出临界区
 <a id="q12"></a>
 ## 12｜2020-32：互斥机制的三项必须条件，不强制让权等待
 
-![2020-32 原题](../bank/2020/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q32.png" alt="2020-32 原题" style="display:block; width:28.05em; max-width:none; height:auto;">
+</div>
 
 I 同时最多一进程进临界区（互斥），II 临界区空闲时允许申请者进入（空闲让进），III 等待进入的时间有界（有限等待），都是临界区互斥机制要求。IV “进不去立即放弃 CPU”是**让权等待**，可用阻塞实现，但自旋互斥也能在适当条件下保证前面性质，不属此题必须遵循项。**I、II、III，选 C**。第一笔将安全（不能同进）和推进（空闲要进、不能无限等）分开。
 
@@ -183,7 +207,9 @@ Peterson 以自旋等待，可互斥且有界等待；06 的 TSL 会忙等，说
 <a id="q13"></a>
 ## 13｜2024-28：同进程共享 fd，但不能拿别的线程栈顶接着运行
 
-![2024-28 原题](../bank/2024/q28.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q28.png" alt="2024-28 原题" style="display:block; width:28.73em; max-width:none; height:auto;">
+</div>
 
 Ta、Tb 均由进程 P 创建，共享 P 的地址空间 I，也可访问 P 已打开文件的描述符 fd III；线程 T 的栈 II 是 T 自己的调用与局部执行现场，不能当两新线程的同一栈来共享。**仅 I、III，选 B**。第一笔沿 0825-07 的“进程资源/线程现场”分类，不被“T 先打开文件”误导为 fd 仅属 T。
 
@@ -195,7 +221,9 @@ Ta、Tb 均由进程 P 创建，共享 P 的地址空间 I，也可访问 P 已�
 <a id="q14"></a>
 ## 14｜2024-30：最短的 P 也须轮到第五轮才用满 25ms
 
-![2024-30 原题](../bank/2024/q30.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q30.png" alt="2024-30 原题" style="display:block; width:28.77em; max-width:none; height:auto;">
+</div>
 
 十个进程起初全就绪，P 在队尾，每片 5ms；P 需 25ms，即 **5 片**。P 是需 CPU 时间最短者，所以别的九个进程在 P 完成前至少也要运行五片，不会提前退出队列。每轮 10 人各用 5ms，P 分别在 `50、100、150、200、250ms` 处用完第 1 至 5 片，周转 **250ms，选 C**。第一笔先问“在 P 第五次上 CPU 前，前面九人会不会消失”。
 
@@ -207,7 +235,9 @@ Ta、Tb 均由进程 P 创建，共享 P 的地址空间 I，也可访问 P 已�
 <a id="q15"></a>
 ## 15｜2025-27：最小页框数从一条指令最多同时需要哪些页推
 
-![2025-27 原题](../bank/2025/q27.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q27.png" alt="2025-27 原题" style="display:block; width:23.18em; max-width:none; height:auto;">
+</div>
 
 题问让进程能运行所需的**最少页框数**。某条指令本身和它的操作数可能位于不同页，间接寻址等寻址方式还可能在访存中要求额外页面同时可用；决定最低需求的是**指令系统支持的寻址方式，选 D**。代码段长、虚拟地址空间大与物理地址空间大都不直接说明“一条指令执行时最多得同时留住几页”。第一笔数执行本条指令不能互相替换掉的页面。
 
