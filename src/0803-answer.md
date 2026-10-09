@@ -44,7 +44,9 @@
 <a id="q01"></a>
 ## 01｜2009-03：从目标序列首项反推遍历方向
 
-![2009-03 原题](../bank/2009/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q03.png" alt="2009-03 原题" style="display:block; width:29.38em; max-width:none; height:auto;">
+</div>
 
 图中根为 1，右子树只有 3。目标序列第一项却是 3，因此必须先访问右子树；随后出现根 1，再访问左子树。左子树若仍按“右、根、左”走，依次是 `7,5,6,2,4`，合起来恰是 `3,1,7,5,6,2,4`。遍历顺序是 **RNL，选 D**。先圈首项、根位置与右子树边界，避免把三个字母当无意义排列硬试。
 
@@ -56,7 +58,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q02"></a>
 ## 02｜2009-05：八个第六层叶子，不等于第六层只有八个结点
 
-![2009-05 原题](../bank/2009/q05.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q05.png" alt="2009-05 原题" style="display:block; width:26.49em; max-width:none; height:auto;">
+</div>
 
 完全二叉树上方各层要尽量填满，前五层共有 `1+2+4+8+16=31` 个结点。要让**第六层有八个叶子且总数最大**，第六层先有满额 32 个，其中前 24 个继续各生两个第七层孩子，最后八个没有孩子；第七层于是有 48 个。总数 `31+32+48=111`，选 **C**。
 
@@ -68,7 +72,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q03"></a>
 ## 03｜2009-06：转换后二叉树的两步关系，先翻回孩子与兄弟
 
-![2009-06 原题](../bank/2009/q06.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q06.png" alt="2009-06 原题" style="display:block; width:29.29em; max-width:none; height:auto;">
+</div>
 
 森林转二叉树时，一个结点的**左指针指第一个孩子，右指针指下一个兄弟**。二叉树中 `u` 是 `v` 的父结点的父结点，只有“两条边”这个确定信息，不能把这两条边都擅自译为原森林中的父子。若路径为“左→右”，`u` 是 `v` 的父结点；若是“右→右”，`u` 与 `v` 是兄弟；因此 I、II 都可能，选 **B**。III 要求两者的父结点在原森林里是兄弟，四种两步路径均推不出。
 
@@ -80,7 +86,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q04"></a>
 ## 04｜2010-03：后序线索只填原来的空链
 
-![2010-03 原题](../bank/2010/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q03.png" alt="2010-03 原题" style="display:block; width:25.32em; max-width:none; height:auto;">
+</div>
 
 实线树是 `a` 的左孩子 `b`、右孩子 `c`，`b` 的右孩子 `d`，后序是 **`d,b,c,a`**。线索化时只把原来空着的左指针改指遍历前驱、空着的右指针改指后继：`d` 无前驱，右线索指 `b`；`b` 的空左链指 `d`；`c` 的空左链指 `b`、空右链指 `a`。与图相符的是 **D**。
 
@@ -92,7 +100,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q05"></a>
 ## 05｜2010-05：用边的两种数法求未知叶子
 
-![2010-05 原题](../bank/2010/q05.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q05.png" alt="2010-05 原题" style="display:block; width:26.13em; max-width:none; height:auto;">
+</div>
 
 树中每个非根结点恰有一条来自父结点的边，所以**边数＝结点数−1**。另一边按每个结点发出的孩子边数，得 `4×20+3×10+2×1+1×10=122` 条；总结点 123 个。已知非叶结点 `20+10+1+10=41` 个，叶子 `123−41=82`，选 **B**。这不要求把整棵度为 4 的树画出来；题干的四类度数已经给齐出边。
 
@@ -104,7 +114,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q06"></a>
 ## 06｜2011-04：完全二叉树的最后一片叶子从编号处找
 
-![2011-04 原题](../bank/2011/q04.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q04.png" alt="2011-04 原题" style="display:block; width:23.27em; max-width:none; height:auto;">
+</div>
 
 完全二叉树从根按层编号 `1…768`。编号 `i` 的左、右孩子若存在，编号分别为 `2i`、`2i+1`；因此 `i≤384` 至少有左孩子，`i≥385` 两个孩子都不可能存在。叶子是 `385…768`，共 `768−385+1=384` 个，选 **C**。尤其 384 虽位于靠后的位置，却还有编号 768 的左孩子。
 
@@ -116,7 +128,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q07"></a>
 ## 07｜2011-05：前序与后序互为倒序时，每层只能延续一条链
 
-![2011-05 原题](../bank/2011/q05.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q05.png" alt="2011-05 原题" style="display:block; width:29.68em; max-width:none; height:auto;">
+</div>
 
 前序 `1,2,3,4`，后序 `4,3,2,1`。根 1 之后立刻是 2，后序在根 1 之前也紧邻 2，这迫使根 1 只有一棵非空子树且其根是 2；往里重复，得到 `1→2→3→4` 的单链，但每一条边仍可向左或向右。若一个结点只有一个孩子，它在中序遍历的当前子序列中只能排**第一或最后**。选项 C 的 `3,2,4,1` 虽把 1 放在末尾，剩下 `3,2,4` 却使单链子根 2 处于中间，不可能，选 **C**。
 
@@ -128,7 +142,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q08"></a>
 ## 08｜2011-06：原树叶子与转换树的“无右孩子”不是同一组
 
-![2011-06 原题](../bank/2011/q06.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q06.png" alt="2011-06 原题" style="display:block; width:29.73em; max-width:none; height:auto;">
+</div>
 
 这是一棵树，有 2011 个结点、116 个叶子。转为左孩子右兄弟二叉树后，“无右孩子”表示**原树中这个结点没有下一个兄弟**，也就是每组兄弟的最后一个。原树非叶结点有 `2011−116=1895` 个，每个非叶父结点恰有一组非空孩子，产生一个“最后的孩子”；原根本身也没有兄弟，故共有 `1895+1=1896` 个，选 **D**。
 
@@ -140,7 +156,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q09"></a>
 ## 09｜2012-03：前后序同时把 e 指成根的唯一孩子
 
-![2012-03 原题](../bank/2012/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q03.png" alt="2012-03 原题" style="display:block; width:27.29em; max-width:none; height:auto;">
+</div>
 
 先序的根是首项 `a`，后序的根是末项 `a`。余下先序以 `e` 开始、后序以 `e` 结束；如果 `a` 有两棵非空子树，先序第二项是左子树根 `e`，后序倒数第二项则是**右子树根**，不可能也叫 `e`。所以 `a` 恰有一个孩子 `e`，选 **A**。这个孩子居左居右无法从两种序列判定，但题目只问孩子结点是谁。
 
@@ -152,7 +170,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q10"></a>
 ## 10｜2013-05：后序的右线索要看 X 后面访问谁
 
-![2013-05 原题](../bank/2013/q05.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q05.png" alt="2013-05 原题" style="display:block; width:29.35em; max-width:none; height:auto;">
+</div>
 
 题目说叶子 `X` 有一个**左兄弟 `Y`**，因此 `X` 在右侧。后序先完整访问 `Y` 所在左子树，再访问右侧叶子 `X`，之后回到两者共同的父结点；`X` 是叶子，原右指针为空，可用作指向后序后继的右线索。后继是 **`X` 的父结点，选 A**。
 
@@ -164,7 +184,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q11"></a>
 ## 11｜2014-04：中序的前驱和后继是两个空指针各自的内容
 
-![2014-04 原题](../bank/2014/q04.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q04.png" alt="2014-04 原题" style="display:block; width:27.65em; max-width:none; height:auto;">
+</div>
 
 先别选图上的近邻：从左子树到根再到右子树执行一次中序，得 `d,e,b,x,a,c`。结点 `x` 是叶子，左、右指针都空，线索化后分别存它的中序前驱 `b` 与后继 `a`，选 **D**。`d` 虽在图上离 `x` 不远，却在 `e,b` 之前；`c` 在 `a` 之后，都不是序列上紧挨着 `x` 的结点。
 
@@ -176,7 +198,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q12"></a>
 ## 12｜2014-05：森林原叶子在二叉树中表现为没有左孩子
 
-![2014-05 原题](../bank/2014/q05.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q05.png" alt="2014-05 原题" style="display:block; width:25.30em; max-width:none; height:auto;">
+</div>
 
 森林转二叉树仍按第 03 题的“左首子、右下兄”。原森林的叶子**没有任何孩子**，所以转换树中左孩子指针为空；有没有右兄弟并不影响它是不是原叶子。选 **C**。别把第 08 题的“无右孩子”套进来：那数的是兄弟组末位，原树叶子可能排在组中间。
 
@@ -188,7 +212,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q13"></a>
 ## 13｜2015-02：固定先序字母，不等于固定左右子树大小
 
-![2015-02 原题](../bank/2015/q02.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q02.png" alt="2015-02 原题" style="display:block; width:23.08em; max-width:none; height:auto;">
+</div>
 
 先序固定 `a,b,c,d`，根只能是 a；后面的三个结点可以把**前 k 个分给左子树，其余给右子树**，其中 k 可为 0、1、2、3。三个结点本身有 5 种左右形状，两个结点有 2 种，一个结点有 1 种，空树有 1 种。因此四种划分贡献 `1×5、1×2、2×1、5×1`，合计 **14，选 B**。题目没有给中序，也没规定它是二叉排序树，不能用大小关系锁定子树。
 
@@ -200,7 +226,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q14"></a>
 ## 14｜2016-05：森林每棵树少一条父边
 
-![2016-05 原题](../bank/2016/q05.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q05.png" alt="2016-05 原题" style="display:block; width:22.95em; max-width:none; height:auto;">
+</div>
 
 一棵有 n 个结点的树有 `n−1` 条边；森林若由 k 棵树组成，逐树相加得 `边数＝总结点数−k`。已知 15 条边、25 个结点，`k=25−15=10`，选 **C**。第 05 题从一棵树的度数求边，本题反过来由总边数求森林中的树数，少的每一条边对应一棵树的根。
 
@@ -212,7 +240,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q15"></a>
 ## 15｜2017-04：先序与中序每一段都同序，不能有左子树
 
-![2017-04 原题](../bank/2017/q04.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q04.png" alt="2017-04 原题" style="display:block; width:29.10em; max-width:none; height:auto;">
+</div>
 
 先序进入任意非空子树时**先访问根**，中序则要先访问左子树。若两条序列对整棵树完全相同，任一结点有左子树就会在那个子树的局部出现“根先／左先”的冲突。因此所有非叶结点都**只有右子树**，选 **B**。这不是说结点只要度为 1 就够了；只要有一次“唯一的孩子在左”，两种次序便不同。
 
@@ -224,7 +254,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q16"></a>
 ## 16｜2017-05：图先定层，后序给没写出的结点命名
 
-![2017-05 原题](../bank/2017/q05.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q05.png" alt="2017-05 原题" style="display:block; width:29.05em; max-width:none; height:auto;">
+</div>
 
 题图已经包含完整树形。先从树形上看与 `a` 同层的位置，再用后序 `e,a,c,b,d,g,f` 从叶到根逐个填名：`f` 是根，左支从叶往上为 `e→a→c`，右支从叶往上为 `b→d→g`；`a` 和 **d 都在从根向下的第三层，选 B**。这里“同层”只数从根走过几条真实孩子边，不按后序序列中两个字母相隔几位判断。
 
@@ -236,7 +268,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q17"></a>
 ## 17｜2018-04：每个分支分出两条边，叶子总比它多一个
 
-![2018-04 原题](../bank/2018/q04.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q04.png" alt="2018-04 原题" style="display:block; width:29.42em; max-width:none; height:auto;">
+</div>
 
 设分支结点数为 i，叶子数为 k；每个非叶结点都有两个孩子，边数是 `2i`，但整棵树的边数也是 `(i+k)−1`。相等得 `i=k−1`，总结点数 `i+k=2k−1`，选 **A**。题目补充“所有叶子同层”限制具体形状，却不改变这条计数关系；别把 k 个叶子误当成树高 k，再代入 `2^k−1`。
 
@@ -248,7 +282,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q18"></a>
 ## 18｜2019-02：森林后根与转换树中序逐层同顺
 
-![2019-02 原题](../bank/2019/q02.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q02.png" alt="2019-02 原题" style="display:block; width:31.25em; max-width:none; height:auto;">
+</div>
 
 转换树的左孩子是原树的首个孩子，右孩子是原森林的下一棵兄弟树。二叉树**中序**先遍历左子树，才访问当前根，最后沿右兄弟去下一棵树；这恰好是森林里“先处理当前树的各个孩子，后访问根，再处理下一棵树”的**后根遍历**。所以选 **B**。第 03、08、12 题只用转换来辨关系或缺失指针，本题把转换和遍历次序接起来。
 
@@ -260,7 +296,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q19"></a>
 ## 19｜2020-03：顺序存储最小容量看最远位置，不看十个结点
 
-![2020-03 原题](../bank/2020/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q03.png" alt="2020-03 原题" style="display:block; width:29.18em; max-width:none; height:auto;">
+</div>
 
 题目说**任意**高度为 5、共 10 个结点的二叉树都要能存。顺序存储按完全二叉树位置编号，根 1、右孩子 `2i+1`；若沿右边走到第 5 层，位置为 `1→3→7→15→31`，即使中间很多格为空，也必须容得下编号 31。高度 5 的任何位置又不会超过 31，所以容量至少且足够 **31，选 A**。
 
@@ -272,7 +310,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q20"></a>
 ## 20｜2020-04：由先序与中序还原二叉树，才求二叉树后序
 
-![2020-04 原题](../bank/2020/q04.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q04.png" alt="2020-04 原题" style="display:block; width:29.23em; max-width:none; height:auto;">
+</div>
 
 题给森林 F 的先根序列 `a,b,c,d,e,f`，对应二叉树 T 的中序 `b,a,d,f,e,c`。森林的先根等于转换后二叉树的**先序**，所以 T 先序同为 `a,b,c,d,e,f`。根 a 把中序分成左侧 `b` 和右侧 `d,f,e,c`；右子树根 c 又在该段末尾，它的左子树根 d，`d` 的右边还有 `e`，`e` 的左孩子是 f。按二叉树后序得 `b,f,e,d,c,a`，选 **C**。
 
@@ -284,7 +324,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q21"></a>
 ## 21｜2021-04：森林有几棵树，看转换树根的右兄弟链
 
-![2021-04 原题](../bank/2021/q04.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q04.png" alt="2021-04 原题" style="display:block; width:29.25em; max-width:none; height:auto;">
+</div>
 
 森林的每棵树根在转换二叉树中沿**右孩子**接成兄弟链。T 的先序 `a,b,d,c,e,g,f`、中序 `b,d,a,e,g,c,f`：根 a 左边 `b,d` 是其左子树，右边 `e,g,c,f` 是右子树；右子树根 c，且 c 在中序的左侧有 `e,g`、右侧有 `f`。因此根的右链为 **`a→c→f`**，森林有 **3 棵树，选 C**。
 
@@ -296,7 +338,9 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q22"></a>
 ## 22｜2022-03：中序相邻时，父结点会隔开左右兄弟
 
-![2022-03 原题](../bank/2022/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q03.png" alt="2022-03 原题" style="display:block; width:28.69em; max-width:none; height:auto;">
+</div>
 
 中序中 p 紧挨着 q 且 p 在前：I **q 可为 p 的双亲**，如 p 是 q 的左孩子且 p 没有右子树；II **q 可为 p 的右孩子**，如 q 无左子树；IV **q 可为 p 的祖父**，让 p 处于祖父左子树的最右端即可。III **q 不可能是 p 的右兄弟**：两者同父，p 属左子树、q 属右子树，中序必在两者之间访问父结点。只有 III 不可能，选 **B**。
 
@@ -308,7 +352,9 @@ I 画根 q、左叶 p，读 `p,q`。II 画根 p、右叶 q，读 `p,q`。IV 画�
 <a id="q23"></a>
 ## 23｜2022-04：这次一层长三倍，不能沿用二叉树容量
 
-![2022-04 原题](../bank/2022/q04.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q04.png" alt="2022-04 原题" style="display:block; width:24.91em; max-width:none; height:auto;">
+</div>
 
 原题是**三叉树**，每个结点最多有三个孩子，且叶子高度记为 1。高度最多为 5 时，最多容纳 `1+3+9+27+81=121` 个结点，不够 244；高度为 6 时最多 `121+243=364`，可以装下 244。因此所需最小高度是 **6，选 C**。第 02、06 题使用二叉树每层乘 2，这里第一步要先把分支上限改成 3。
 
@@ -320,7 +366,9 @@ I 画根 q、左叶 p，读 `p,q`。II 画根 p、右叶 q，读 `p,q`。IV 画�
 <a id="q24"></a>
 ## 24｜2023-05：树形决定分段，后序决定名字
 
-![2023-05 原题](../bank/2023/q05.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q05.png" alt="2023-05 原题" style="display:block; width:29.25em; max-width:none; height:auto;">
+</div>
 
 先看完整题图的形状，不从后序字母串凭空猜左右子树长度。整树根是后序末尾 `a`；按图，左子树占四个结点 `f,d,b,e`，右子树只占 `c`，所以左根为 `e`。`e` 的左子树占 `f,d`，根为 `d`、其孩子为 `f`；右孩子为 `b`。根先访问得 `a,e,d,f,b,c`，选 **A**。
 
@@ -332,7 +380,9 @@ I 画根 q、左叶 p，读 `p,q`。II 画根 p、右叶 q，读 `p,q`。IV 画�
 <a id="q25"></a>
 ## 25｜2024-03：前驱在左子树最右端，后继在右子树最左端
 
-![2024-03 原题](../bank/2024/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q03.png" alt="2024-03 原题" style="display:block; width:29.66em; max-width:none; height:auto;">
+</div>
 
 中序序列有 `…,p,v,q,…`，且 v **有两个孩子**。进入 v 前的最后一个结点 p，必是 v 左子树中序的最末位，因此 p 不可能还有右孩子；离开 v 后的第一个结点 q，必是 v 右子树中序的最前位，因此 q 不可能还有左孩子。两者合起来是 **A**。题目没有排除 p 的左孩子或 q 的右孩子；其他选项多给出的那条边并无依据。
 
@@ -344,7 +394,9 @@ I 画根 q、左叶 p，读 `p,q`。II 画根 p、右叶 q，读 `p,q`。IV 画�
 <a id="q26"></a>
 ## 26｜2025-03：数组有值的孩子不能挂在空父位置下
 
-![2025-03 原题](../bank/2025/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q03.png" alt="2025-03 原题" style="display:block; width:26.07em; max-width:none; height:auto;">
+</div>
 
 顺序存储从数组下标 0 起，位置 i 的父位置是 `⌊(i−1)/2⌋`；`−1` 表示该位置无结点。原图 D 为 `{17,20,35,−1,18,45,−1,−1,19,2}`：下标 **3** 是 `−1`，下标 **8** 却是正数19，且 `⌊(8−1)/2⌋=3`，于是出现**孩子有结点、父位置为空**，不可能是一棵二叉树，选 **D**。检查候选时不必把四棵树全部画完，先找第一处非空结点的祖先空洞。
 
@@ -356,7 +408,9 @@ A 的末位 35 在下标 5，父位置 2 是 40；B 的末位 12 在下标 7，�
 <a id="q27"></a>
 ## 27｜2025-04：把四个绝对说法分别放回树的定义
 
-![2025-04 原题](../bank/2025/q04.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q04.png" alt="2025-04 原题" style="display:block; width:15.06em; max-width:none; height:auto;">
+</div>
 
 B 对：任意森林都能用**左孩子、右兄弟**关系转换为一棵二叉树，包括只有一棵树的森林。A 错：完全二叉树的最后一个分支可以仅有左孩子，如两个结点；C 错：二叉树分支结点未必比叶子少，右单链有多个分支却只一个叶子；D 错：表达式树的根运算符在子表达式结果都准备好后才计算，通常是最后完成的运算，不是最先。故选 **B**。
 
