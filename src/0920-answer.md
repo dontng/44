@@ -25,9 +25,7 @@
 <a id="q01"></a>
 ## 01｜2009-44：微操作表中谁在驱动总线
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q44.png" alt="2009-44 原题" width="470" style="display:block; width:29.40em; max-width:none; height:auto;">
-</div>
+![2009-44 原题](../bank/2009/q44.png)
 
 题给的 C1—C4 完成取指：`PCout,MARin`；`MemR,MDRinE,PC+1`；`MDRout,IRin`；译码。题表 C2 把存储器访问写作 `M(MDR)`，与地址由 MAR 输出的图不合，按数据通路应读 **M(MAR)**。
 
@@ -48,9 +46,7 @@ C6 的内总线 R0→A 与主存数据总线→MDR 是不同路径，可并行�
 <a id="q02"></a>
 ## 02｜2010-43：位段、相对寻址与自增目的操作数
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q43.png" alt="2010-43 原题" width="464" style="display:block; width:28.97em; max-width:none; height:auto;">
-</div>
+![2010-43 原题](../bank/2010/q43.png)
 
 **（1）格式。** 16位分成 `OP(4)|Ms(3)|Rs(3)|Md(3)|Rd(3)`，最多 **16 条操作码**、**8 个通用寄存器**。128KB **按16位字编址**，有 `128KB/2B=65536` 个字地址，**MAR 至少16位**；一次访存16位，**MDR 至少16位**。地址计数单位是字，不能直接把字节容量当地址个数。
 
@@ -63,9 +59,7 @@ C6 的内总线 R0→A 与主存数据总线→MDR 是不同路径，可并行�
 <a id="q03"></a>
 ## 03｜2013-44：分支检测位与相对位移
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q44.png" alt="2013-44 原题" width="454" style="display:block; width:28.36em; max-width:none; height:auto;">
-</div>
+![2013-44 原题](../bank/2013/q44.png)
 
 **（1）编址与距离。** 单条指令16位，顺序 PC 加2，说明**按字节编址**。8位有符号 OFFSET 范围 −128..127，以指令为单位再乘2：向后最多128条，向前最多127条（分别256B与254B）。
 
@@ -80,9 +74,7 @@ C6 的内总线 R0→A 与主存数据总线→MDR 是不同路径，可并行�
 <a id="q04"></a>
 ## 04｜2015-43：单总线数据通路的九个端点
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q43.png" alt="2015-43 原题" width="454" style="display:block; width:28.38em; max-width:none; height:auto;">
-</div>
+![2015-43 原题](../bank/2015/q43.png)
 
 **（1）可见寄存器与 T。** 程序员可显式使用 **R0—R3、PC**（IR、MAR、MDR、T、SR 等为执行部件）；T 锁存单总线上的一个操作数，下一拍另一操作数才可上总线与 T 同送 ALU，避免同拍双驱动。
 
@@ -95,9 +87,7 @@ C6 的内总线 R0→A 与主存数据总线→MDR 是不同路径，可并行�
 <a id="q05"></a>
 ## 05｜2015-44：在上一题的数据通路上读微指令
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q44.png" alt="2015-44 原题" width="470" style="display:block; width:29.35em; max-width:none; height:auto;">
-</div>
+![2015-44 原题](../bank/2015/q44.png)
 
 **（1）最大指令数。** 16位指令有三个寻址位 `Md,Ms1,Ms2` 及三个2位寄存器号 `Rd,Rs1,Rs2`，剩余 **7位 OP**，最多 **128种操作码**。短操作数指令的空位不另算一套独立 OP。
 
@@ -112,9 +102,7 @@ C6 的内总线 R0→A 与主存数据总线→MDR 是不同路径，可并行�
 <a id="q06"></a>
 ## 06｜2017-44：机器码长度、CF 与浮点乘法
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q44.png" alt="2017-44 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
-</div>
+![2017-44 原题](../bank/2017/q44.png)
 
 **（1）CISC。** 有 `push ebp`、内存参与比较的 `cmp dword ptr [ebp−0Ch],ecx` 等复杂/变长指令，是 **CISC** 的典型 x86 风格。**（2）代码长度。** 第一条从 `00401020H` 开始，末条 `ret` 在 `0040107FH` 占1字节，函数机器码区间到下一地址 `00401080H`，共 **60H=96字节**。
 
@@ -127,9 +115,7 @@ C6 的内总线 R0→A 与主存数据总线→MDR 是不同路径，可并行�
 <a id="q07"></a>
 ## 07｜2020-43：乘法全宽结果相同，溢出解释不同
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q43.png" alt="2020-43 原题" width="480" style="display:block; width:30.00em; max-width:none; height:auto;">
-</div>
+![2020-43 原题](../bank/2020/q43.png)
 
 **（1）无乘法指令也能算。** 用加法和移位逐位做移位累加乘法，或重复加法；补码 signed 可先处理符号/取绝对值再施符号。**（2）有乘法指令时**控制逻辑控制部分积寄存器、位移次数、ALU 加减与状态计数，反复执行到乘积完成，不能把“ALU只会加减”误判为CPU不能乘。
 
@@ -142,9 +128,7 @@ C6 的内总线 R0→A 与主存数据总线→MDR 是不同路径，可并行�
 <a id="q08"></a>
 ## 08｜2022-43：控制信号与 OF 的布尔判据
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q43.png" alt="2022-43 原题" width="468" style="display:block; width:29.25em; max-width:none; height:auto;">
-</div>
+![2022-43 原题](../bank/2022/q43.png)
 
 **（1）标志。** `SF=F15`。加法 `OF=¬(A15⊕B15)∧(A15⊕F15)`；减法 `OF=(A15⊕B15)∧(A15⊕F15)`。前者同号相加变号，后者异号相减变成与被减数异号。
 
@@ -159,9 +143,7 @@ C6 的内总线 R0→A 与主存数据总线→MDR 是不同路径，可并行�
 <a id="q09"></a>
 ## 09｜2024-43：图给的自定义编码，不猜现成 ISA
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q43.png" alt="2024-43 原题" width="461" style="display:block; width:28.79em; max-width:none; height:auto;">
-</div>
+![2024-43 原题](../bank/2024/q43.png)
 
 **（1）寄存器和移位。** 各寄存器号字段5位，可寻址最多 **32** 个；32位字逻辑左移可取位数0..31，需 **5位 shamt**。
 
