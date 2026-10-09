@@ -40,9 +40,7 @@
 <a id="q01"></a>
 ## 01｜2009-38：TCP ACK 指向下一期待的字节
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q38.png" alt="2009-38 原题" width="455" style="display:block; width:28.43em; max-width:none; height:auto;">
-</div>
+![2009-38 原题](../bank/2009/q38.png)
 
 第1段从字节序号200起有300B，占200—499；第2段连续500B占500—999。乙均正确接收后下一期待序号是 **1000，选 D**。第一笔画字节区间，不按TCP段个数加1。
 
@@ -54,9 +52,7 @@
 <a id="q02"></a>
 ## 02｜2009-39：超时后阈值减半，再从1慢启动
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q39.png" alt="2009-39 原题" width="455" style="display:block; width:28.41em; max-width:none; height:auto;">
-</div>
+![2009-39 原题](../bank/2009/q39.png)
 
 超时前cwnd16KB，设ssthresh为8KB，cwnd重置1KB。每RTT成功确认后：**2、4、8、9KB**，第4个RTT之后为**9KB，选 C**。第一笔写阈值8；达到阈值后拥塞避免每RTT加一个MSS，而不是再翻倍到16。
 
@@ -68,9 +64,7 @@
 <a id="q03"></a>
 ## 03｜2010-39：接收窗口给的是未确认数据的剩余容量
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q39.png" alt="2010-39 原题" width="464" style="display:block; width:28.97em; max-width:none; height:auto;">
-</div>
+![2010-39 原题](../bank/2010/q39.png)
 
 甲cwnd4000B，先发两个1000B段；仅第一个获ACK，因此仍有第二段 **1000B在途**。乙通告rwnd2000B，可再放 `2000−1000=1000B`；拥塞窗侧还够，不构成更小限制。最多**1000B，选 A**。第一笔分“总可在途窗口”和“已经占据但尚未确认”。
 
@@ -82,9 +76,7 @@ rwnd2000以新的确认点为基准；已发的第二段仍占其中1000B，即�
 <a id="q04"></a>
 ## 04｜2011-39：SYN消耗一个序号，乙回SYN+ACK
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q39.png" alt="2011-39 原题" width="494" style="display:block; width:30.89em; max-width:none; height:auto;">
-</div>
+![2011-39 原题](../bank/2011/q39.png)
 
 甲发 `SYN=1, seq=11220`，乙接受时回`SYN=1, ACK=1`，确认号应为下一期待 **11221**；乙自己的初始序号由乙选择，选项中**`seq=11221, ack=11221`可成立，选 C**。第一笔只从甲SYN推ACK，别误以为双方初始序号必须一样。
 
@@ -96,9 +88,7 @@ rwnd2000以新的确认点为基准；已发的第二段仍占其中1000B，即�
 <a id="q05"></a>
 ## 05｜2011-40：收到第三段也不能跨缺口累计确认
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q40.png" alt="2011-40 原题" width="476" style="display:block; width:29.75em; max-width:none; height:auto;">
-</div>
+![2011-40 原题](../bank/2011/q40.png)
 
 第三段序号900且长度500，所以第二段400B从 **500** 开始，第一段300B从 **200** 开始。乙收到第一段和第三段，缺少500—899，下一连续期待序号仍为 **500，选 B**。第一笔从已知第三段向前倒推第二段起点。
 
@@ -110,9 +100,7 @@ rwnd2000以新的确认点为基准；已发的第二段仍占其中1000B，即�
 <a id="q06"></a>
 ## 06｜2013-39：seq用对方ACK，ack用对方seq加长度
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q39.png" alt="2013-39 原题" width="453" style="display:block; width:28.30em; max-width:none; height:auto;">
-</div>
+![2013-39 原题](../bank/2013/q39.png)
 
 甲收到乙段 `seq=1913, ack=2046, payload=100B`，乙已经期待甲下一字节 **2046**，甲立即发段用 `seq=2046`；甲对乙数据的下一期待是 `1913+100=2013`，用 `ack=2013`，**选 B**。第一笔左右分栏：自己的seq取对方ACK，自己的ACK按对方数据长度推进。
 
@@ -124,9 +112,7 @@ rwnd2000以新的确认点为基准；已发的第二段仍占其中1000B，即�
 <a id="q07"></a>
 ## 07｜2014-38：到阈值4KB后每RTT只加1KB
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q38.png" alt="2014-38 原题" width="466" style="display:block; width:29.12em; max-width:none; height:auto;">
-</div>
+![2014-38 原题](../bank/2014/q38.png)
 
 超时cwnd8KB，阈值改为4KB，cwnd置1KB。按教材“拥塞避免每RTT增1MSS”的轮次近似，十个RTT后cwnd依次为 `2、4、5、6、7、8、9、10、11、12KB`；乙每次通告rwnd10KB，**发送窗口=min(12,10)=10KB，选 A**。第一笔把“拥塞窗口成长结果”与“最终发送窗口”写成两个变量。
 
@@ -138,9 +124,7 @@ rwnd2000以新的确认点为基准；已发的第二段仍占其中1000B，即�
 <a id="q08"></a>
 ## 08｜2014-39：UDP用端口复用，校验不保证可靠
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q39.png" alt="2014-39 原题" width="401" style="display:block; width:25.05em; max-width:none; height:auto;">
-</div>
+![2014-39 原题](../bank/2014/q39.png)
 
 UDP提供**无连接服务 I**，端口可供应用复用/分用 **II**；差错校验能发现错误却不提供确认重传、可靠交付，**III错**，仅 I、II，**选 B**。第一笔把“检测错误”与“可靠恢复”分开，接回0903-18的CRC边界。
 
@@ -152,9 +136,7 @@ TCP的窗口、重传是端到端可靠状态；对比UDP可看出这些不是�
 <a id="q09"></a>
 ## 09｜2015-39：cwnd增长不等于接收方能继续缓存
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q39.png" alt="2015-39 原题" width="469" style="display:block; width:29.31em; max-width:none; height:auto;">
-</div>
+![2015-39 原题](../bank/2015/q39.png)
 
 新连接慢启动，MSS1KB，四个RTT发送并确认的数据量依次 **1、2、4、8KB**，总15KB。乙16KB缓存“不被取走”，余1KB接收窗口；虽然cwnd此时到16KB，有效发送窗口 `min(16,1)=1KB`，**选 A**。第一笔同时记“网络敢发多少”和“接收方还装得下多少”。
 
@@ -166,9 +148,7 @@ TCP的窗口、重传是端到端可靠状态；对比UDP可看出这些不是�
 <a id="q10"></a>
 ## 10｜2017-39：初始1MSS每RTT翻倍五次到32
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q39.png" alt="2017-39 原题" width="466" style="display:block; width:29.12em; max-width:none; height:auto;">
-</div>
+![2017-39 原题](../bank/2017/q39.png)
 
 连接建立后从cwnd=1KB慢启动，按每RTT全收确认：`1→2→4→8→16→32KB`，需 **5RTT×5ms=25ms，选 A**。乙接收缓存64KB不先构成瓶颈。第一笔写指数阶梯，再数箭头而不是数写出的六个状态。
 
@@ -180,9 +160,7 @@ TCP的窗口、重传是端到端可靠状态；对比UDP可看出这些不是�
 <a id="q11"></a>
 ## 11｜2018-39：UDP分用看目的端口
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q39.png" alt="2018-39 原题" width="387" style="display:block; width:24.17em; max-width:none; height:auto;">
-</div>
+![2018-39 原题](../bank/2018/q39.png)
 
 收到UDP报文后，主机按**目的端口号**把负载交给本机相应套接字/应用，**选 B**。源端口指回信目标，长度与校验和各有别的职责。第一笔站在接收主机上问“送给我哪个程序”。
 
@@ -194,9 +172,7 @@ TCP的窗口、重传是端到端可靠状态；对比UDP可看出这些不是�
 <a id="q12"></a>
 ## 12｜2019-38：三个重复ACK到了t3，先于t4超时
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q38.png" alt="2019-38 原题" width="500" style="display:block; width:31.27em; max-width:none; height:auto;">
-</div>
+![2019-38 原题](../bank/2019/q38.png)
 
 seq100段丢失，后续200、300、400到达服务端，分别让服务端重复回复 **ACK100**；客户端原先在t0收到的ACK100是基准确认，后续重复的第1、2、3次分别在 **t1、t2、t3** 到。支持快速重传，**t3重发seq100，选 C**，无需等t4计时器。
 
@@ -208,9 +184,7 @@ seq100段丢失，后续200、300、400到达服务端，分别让服务端重�
 <a id="q13"></a>
 ## 13｜2019-39：第三握手确认乙SYN占的一个序号
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q39.png" alt="2019-39 原题" width="501" style="display:block; width:31.30em; max-width:none; height:auto;">
-</div>
+![2019-39 原题](../bank/2019/q39.png)
 
 甲ISN2018，乙ISN2046；第三次握手由甲确认乙的SYN，SYN占一个序号，所以甲发的ACK确认号为 **2046+1=2047，选 D**。第一笔只找被确认方乙的初始序号，不用甲的2018求此确认号。
 
@@ -222,9 +196,7 @@ seq100段丢失，后续200、300、400到达服务端，分别让服务端重�
 <a id="q14"></a>
 ## 14｜2020-38：问最长增长时间，按拥塞避免每RTT加一
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q38.png" alt="2020-38 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
-</div>
+![2020-38 原题](../bank/2020/q38.png)
 
 从cwnd8KB到32KB共需增加24个MSS。未给慢启动阈值，且问**不拥塞前提下的最长时间**，最慢可在拥塞避免阶段每RTT只增1KB，需 `24RTT×2ms=48ms`，**选 D**。第一笔圈“最长”，别只用8→16→32两次倍增得到最短4ms。
 
@@ -236,9 +208,7 @@ seq100段丢失，后续200、300、400到达服务端，分别让服务端重�
 <a id="q15"></a>
 ## 15｜2020-39：FIN的序号是全部数据之后的下一个
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q39.png" alt="2020-39 原题" width="467" style="display:block; width:29.20em; max-width:none; height:auto;">
-</div>
+![2020-39 原题](../bank/2020/q39.png)
 
 甲SYN的seq1000占一个位置，首个应用数据字节从**1001**开始；FIN的seq5001，表示之前数据已占至**5000**。数据长度 `5001−1001=4000B`，**选 C**。第一笔画 `SYN1000｜数据1001…5000｜FIN5001`。
 
@@ -250,9 +220,7 @@ FIN本身也会占一个序号，但题问FIN发送**之前**甲已发送的应�
 <a id="q16"></a>
 ## 16｜2021-38：主动关闭者收到对方FIN，发ACK后进TIME_WAIT
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q38.png" alt="2021-38 原题" width="527" style="display:block; width:32.93em; max-width:none; height:auto;">
-</div>
+![2021-38 原题](../bank/2021/q38.png)
 
 客户端先发FIN，是主动关闭者；收到服务器FIN并回ACK后进入 **TIME_WAIT，选 B**，等待2MSL再CLOSED。第一笔找“谁先发FIN”，主动方与被动方的状态迁移不同。
 
@@ -264,9 +232,7 @@ FIN本身也会占一个序号，但题问FIN发送**之前**甲已发送的应�
 <a id="q17"></a>
 ## 17｜2021-39：有效载荷效率只数该传输层头部
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q39.png" alt="2021-39 原题" width="467" style="display:block; width:29.20em; max-width:none; height:auto;">
-</div>
+![2021-39 原题](../bank/2021/q39.png)
 
 应用数据12B，UDP最小首部8B，效率 `12/(12+8)=60%`；TCP最小首部20B，`12/(12+20)=37.5%`，**选 D**。第一笔定义分母为“应用数据+本层首部”，题未要求把IP/链路头一起计入。
 
@@ -278,9 +244,7 @@ TCP可以有选项字段使首部更长，最小20B给最大效率；UDP首部�
 <a id="q18"></a>
 ## 18｜2021-40：ACK未推进左边界，窗口右边界仍是1000
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q40.png" alt="2021-40 原题" width="468" style="display:block; width:29.27em; max-width:none; height:auto;">
-</div>
+![2021-40 原题](../bank/2021/q40.png)
 
 甲先发 `seq501`的200B，覆盖501—700。乙回`ack501,rcvwnd500`，说明**仍期待501**，窗口覆盖501—1000；甲已发至700，若未收到新ACK，仍可继续发 **701—1000，选 C**。第一笔算窗口右边界 `ACK+rwnd−1`，再扣已发范围。
 
@@ -292,9 +256,7 @@ TCP可以有选项字段使首部更长，最小20B给最大效率；UDP首部�
 <a id="q19"></a>
 ## 19｜2022-38：超时16后到阈值8，再走8轮线性
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q38.png" alt="2022-38 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
-</div>
+![2022-38 原题](../bank/2022/q38.png)
 
 超时前cwnd16KB，ssthresh降至8KB，cwnd置1KB。成功三轮到 `2、4、8KB`，之后每RTT增1KB，8→16还要8轮，共 **11RTT，选 C**。第一笔把指数段和线性段分开计数。
 
@@ -306,9 +268,7 @@ TCP可以有选项字段使首部更长，最小20B给最大效率；UDP首部�
 <a id="q20"></a>
 ## 20｜2022-39：主动方关连接仍等2MSL，被动方等末ACK
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q39.png" alt="2022-39 原题" width="467" style="display:block; width:29.21em; max-width:none; height:auto;">
-</div>
+![2022-39 原题](../bank/2022/q39.png)
 
 客户端C在t0发FIN，RTT50ms、单程25ms。最快服务器S在t25收到FIN，立即回ACK并发FIN；C在t50收到FIN并回最终ACK，进入TIME_WAIT，`2MSL=1600ms`后 **t1650ms** CLOSED；S在t75收到最终ACK即 CLOSED。组合 **1650ms、75ms，选 D**。
 
@@ -320,9 +280,7 @@ TCP可以有选项字段使首部更长，最小20B给最大效率；UDP首部�
 <a id="q21"></a>
 ## 21｜2024-38：从发SYN开始计，发完数据再进2MSL
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q38.png" alt="2024-38 原题" width="460" style="display:block; width:28.75em; max-width:none; height:auto;">
-</div>
+![2024-38 原题](../bank/2024/q38.png)
 
 RTT10ms，H发SYN后 **t10ms** 建连；慢启动MSS1000B，先发1段，t20收到确认，再发2段，到**t30ms**确认3000B发完；H发FIN，最快对端FIN返回在**t40ms**，H回ACK并进入TIME_WAIT。`2MSL=60s`，总 **60.04s，选 D**。第一笔分建立1RTT、传数据2RTT、挥手到TIME_WAIT1RTT、等待60s。
 
@@ -334,9 +292,7 @@ RTT10ms，H发SYN后 **t10ms** 建连；慢启动MSS1000B，先发1段，t20收�
 <a id="q22"></a>
 ## 22｜2024-39：UDP校验和先回卷加，再按位取反
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q39.png" alt="2024-39 原题" width="460" style="display:block; width:28.75em; max-width:none; height:auto;">
-</div>
+![2024-39 原题](../bank/2024/q39.png)
 
 中间和 `1011 1001 1011 0110`=`B9B6H`，最后一字 `0110 0101 1100 0101`=`65C5H`。相加 `11F7BH`，最高进位回卷到低16位得到 `1F7CH`；取反为 **`E083H=1110 0000 1000 0011`，选 C**。第一笔做16位反码加法，不能截断最高进位。
 
@@ -348,9 +304,7 @@ RTT10ms，H发SYN后 **t10ms** 建连；慢启动MSS1000B，先发1段，t20收�
 <a id="q23"></a>
 ## 23｜2025-38：新ACK只确认第一段，第二段仍占窗口
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q38.png" alt="2025-38 原题" width="423" style="display:block; width:26.43em; max-width:none; height:auto;">
-</div>
+![2025-38 原题](../bank/2025/q38.png)
 
 t0 cwnd与有效发送窗均2000B，甲发seq2001、3001两段。t1乙回 `ack3001,rcvwnd4000`，只确认第一段，第二段仍1000B在途；一段获确认使cwnd从2000增至**3000B**，有效窗=min(3000,4000)=3000B，扣未确认1000B，还可发 **2个1000B段，选 A**。第一笔分别更新拥塞窗、接收窗和在途量。
 
@@ -362,9 +316,7 @@ t0 cwnd与有效发送窗均2000B，甲发seq2001、3001两段。t1乙回 `ack30
 <a id="q24"></a>
 ## 24｜2025-39：一次查询UDP一往返，TCP先建连接
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q39.png" alt="2025-39 原题" width="424" style="display:block; width:26.51em; max-width:none; height:auto;">
-</div>
+![2025-39 原题](../bank/2025/q39.png)
 
 一次请求与回复在UDP上最少 **1RTT=8ms**；TCP在未建连接时先三次握手需1RTT，再请求/回复1RTT，最少 **16ms，选 B**。第一笔确认题目问“请求服务”且TCP连接尚未建立，别把建连往返漏掉。
 

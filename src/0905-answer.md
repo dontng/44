@@ -33,9 +33,7 @@
 <a id="q01"></a>
 ## 01｜2010-37：子网数看借位，可用主机数再减两端
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q37.png" alt="2010-37 原题" width="461" style="display:block; width:28.84em; max-width:none; height:auto;">
-</div>
+![2010-37 原题](../bank/2010/q37.png)
 
 255.255.255.248 是 /29。原 /24 到 /29 **借5位**，`2⁵=32` 个等长子网；留下3位主机，`2³−2=6` 个可分配地址，**选 B（32，6）**。第一笔分别在斜杠前后写“借位5、主机3”。
 
@@ -47,9 +45,7 @@
 <a id="q02"></a>
 ## 02｜2011-37：把兄弟/25汇总成/24，下一跳填邻居接口
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q37.png" alt="2011-37 原题" width="476" style="display:block; width:29.73em; max-width:none; height:auto;">
-</div>
+![2011-37 原题](../bank/2011/q37.png)
 
 R2 后面是 `192.168.2.0/25` 与 `192.168.2.128/25`，共同前缀 `192.168.2.0/24`，掩码255.255.255.0；R1要把它们交给**R2在共享1.0/24网的接口192.168.1.2**，**选 D**。第一笔合并目标区间，再找与R1直接相邻的R2地址。
 
@@ -61,9 +57,7 @@ R2 后面是 `192.168.2.0/25` 与 `192.168.2.128/25`，共同前缀 `192.168.2.0
 <a id="q03"></a>
 ## 03｜2011-38：/30四个地址里.3是广播
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q38.png" alt="2011-38 原题" width="452" style="display:block; width:28.23em; max-width:none; height:auto;">
-</div>
+![2011-38 原题](../bank/2011/q38.png)
 
 `192.168.4.0/30` 包含 `.0`网络、`.1/.2`可用主机、`.3`广播。发给目的`.3`不是向某单个主机发，题问“能接收该目的地址的IP分组的最大主机数”，在子网广播语境下应是 **2（.1、.2），选 C**。
 
@@ -75,9 +69,7 @@ R2 后面是 `192.168.2.0/25` 与 `192.168.2.128/25`，共同前缀 `192.168.2.0
 <a id="q04"></a>
 ## 04｜2012-38：复用0904-05的IP到MAC
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q38.png" alt="2012-38 原题" width="361" style="display:block; width:22.56em; max-width:none; height:auto;">
-</div>
+![2012-38 原题](../bank/2012/q38.png)
 
 ARP依据**IP地址查询MAC地址，选 A**，已在[0904-05](0904-answer.md#q05)详解。本次只加一层：目标IP跨网时，ARP查的是**下一跳网关的IP**，不是远端最终主机MAC。第一笔把路由表输出与当前链路MAC接起来。
 
@@ -89,9 +81,7 @@ MAC→IP不属于这里的ARP基本功能；域名→IP由DNS解析；IP→域�
 <a id="q05"></a>
 ## 05｜2012-39：掩码252意味着第三字节四格一组
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q39.png" alt="2012-39 原题" width="437" style="display:block; width:27.29em; max-width:none; height:auto;">
-</div>
+![2012-39 原题](../bank/2012/q39.png)
 
 255.255.252.0 为 /22，第三字节块宽 `256−252=4`；77 落在 **76—79**，网络 `180.80.76.0`，定向广播 **`180.80.79.255`，选 D**。第一笔用77向下取4的整数倍到76，再上走至79。
 
@@ -103,9 +93,7 @@ MAC→IP不属于这里的ARP基本功能；域名→IP由DNS解析；IP→域�
 <a id="q06"></a>
 ## 06｜2016-39：同物理LAN不等于同IP子网
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q39.png" alt="2016-39 原题（公用拓扑见2016-34）" width="471" style="display:block; width:29.44em; max-width:none; height:auto;">
-</div>
+![2016-39 原题（公用拓扑见2016-34）](../bank/2016/q39.png)
 
 H1/H2在 `192.168.3.0/25`，H3/H4在 `192.168.3.128/25`。H1给H3的IP分组必须走网关 **192.168.3.1**，而公用拓扑中路由器该侧地址是 **192.168.3.254**，没有.1网关，故**H1不能与H3正常IP通信，选 C**。第一笔分别用掩码判子网，再核网关是否真有对应接口。
 
@@ -117,9 +105,7 @@ H1↔H2同在前/25可直接ARP通信；H3↔H4同在后/25亦可直接通信，
 <a id="q07"></a>
 ## 07｜2017-36：尚未获址时0.0.0.0可作源
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q36.png" alt="2017-36 原题" width="486" style="display:block; width:30.38em; max-width:none; height:auto;">
-</div>
+![2017-36 原题](../bank/2017/q36.png)
 
 `0.0.0.0` 表示本主机尚未获具体地址，可用于启动时发出的IP分组的**源地址**，不能作为指定远端主机的目的地址，**选 A**。第一笔分“谁发出”与“交给谁”；全1广播地址则相反常用作目的。
 
@@ -131,9 +117,7 @@ H1↔H2同在前/25可直接ARP通信；H3↔H4同在后/25亦可直接通信，
 <a id="q08"></a>
 ## 08｜2017-38：128个子网借7位，剩9位主机
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q38.png" alt="2017-38 原题" width="466" style="display:block; width:29.15em; max-width:none; height:auto;">
-</div>
+![2017-38 原题](../bank/2017/q38.png)
 
 `21.3.0.0/16` 分128个等长子网，借 `log₂128=7` 位，变 `/23`；余 `32−23=9` 位主机，最多 `2⁹−2=510` 可分配IP，**选 C**。第一笔由子网个数反推前缀长度，别把128直接当主机地址数。
 
@@ -145,9 +129,7 @@ H1↔H2同在前/25可直接ARP通信；H3↔H4同在后/25亦可直接通信，
 <a id="q09"></a>
 ## 09｜2019-37：五个子网可不等长，求可能最小的一块
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q37.png" alt="2019-37 原题" width="475" style="display:block; width:29.66em; max-width:none; height:auto;">
-</div>
+![2019-37 原题](../bank/2019/q37.png)
 
 `101.200.16.0/20` **划成恰好5个子网**。从一个/20完整二分，每次二分只让子网数加1，四次二分可得到5块；若四次都沿同一块继续切，最小的一块到 `/24`，可分配 `2⁸−2=254`，**选 B**。第一笔圈“可能的最小子网”，不要擅自加“等长”。
 
@@ -159,9 +141,7 @@ H1↔H2同在前/25可直接ARP通信；H3↔H4同在后/25亦可直接通信，
 <a id="q10"></a>
 ## 10｜2021-35：能否把原网完整划成三个不重叠前缀
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q35.png" alt="2021-35 原题" width="518" style="display:block; width:32.38em; max-width:none; height:auto;">
-</div>
+![2021-35 原题](../bank/2021/q35.png)
 
 已知一块 `192.168.9.128/26` 占128—191。A `0/25`与C `192/26`可与它把/24分成三块；D `192/27`也可取**原网络128/25**，另两块为128/26、192/27、224/27。若取B `0/26`，要覆盖包含这两块的最小原网/24，还剩64—127和192—255两段，**无法由仅一块连续前缀补齐，选 B**。第一笔找两个已知子网的最小公共父前缀，再问剩余是不是一块。
 
@@ -173,9 +153,7 @@ B确实不重叠，但“划分为3个子网”要求原网完整分割；两块
 <a id="q11"></a>
 ## 11｜2022-35：/18第三字节每64为一段
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q35.png" alt="2022-35 原题" width="468" style="display:block; width:29.27em; max-width:none; height:auto;">
-</div>
+![2022-35 原题](../bank/2022/q35.png)
 
 255.255.192.0 为/18，第三字节块宽64，72 落在64—127，所以网络地址 **183.80.64.0，选 B**。第一笔取72所在的64整数段，清零主机位；不能只改最后一字节。
 
@@ -187,9 +165,7 @@ B确实不重叠，但“划分为3个子网”要求原网完整分割；两块
 <a id="q12"></a>
 ## 12｜2022-36：主机H60的网关须在同一个/27
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q36.png" alt="2022-36 原题" width="392" style="display:block; width:24.49em; max-width:none; height:auto;">
-</div>
+![2022-36 原题](../bank/2022/q36.png)
 
 图中右路由器下方接口 `192.168.1.62/27`，/27块宽32，60、62同在 **192.168.1.32—63**；H应配掩码 **255.255.255.224**，默认网关 **192.168.1.62**，**选 D**。第一笔看与H直接共享交换机的路由器接口，不能用路由器到上游的`.1/30`。
 
@@ -201,9 +177,7 @@ H要ARP到本地网关的MAC，网关IP必须落在H的本地前缀；上方点�
 <a id="q13"></a>
 ## 13｜2023-38：NAT后IP源换为R2外侧接口
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q38.png" alt="2023-38 原题" width="460" style="display:block; width:28.77em; max-width:none; height:auto;">
-</div>
+![2023-38 原题](../bank/2023/q38.png)
 
 H私网源 `192.168.0.3` 经R2的NAT向Internet出站，R2改写分组源为其公网链路接口 **195.123.0.33，选 A**。公用/30链路中`.34`标在对端R1，`.35`是该/30广播；`.1`是R2内侧接口。第一笔在NAT设备前后各写一次源IP。
 
@@ -215,9 +189,7 @@ H私网源 `192.168.0.3` 经R2的NAT向Internet出站，R2改写分组源为其�
 <a id="q14"></a>
 ## 14｜2023-39：/20第三字节从80到95
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q39.png" alt="2023-39 原题" width="424" style="display:block; width:26.47em; max-width:none; height:auto;">
-</div>
+![2023-39 原题](../bank/2023/q39.png)
 
 `168.16.84.24/20`，第三字节掩码240，块宽16，84落在 **80—95**；网络 `168.16.80.0`，广播`168.16.95.255`，最小/最大可分配分别 **`168.16.80.1`、`168.16.95.254`，选 B**。第一笔找84向下的16整倍数80。
 
@@ -229,9 +201,7 @@ H私网源 `192.168.0.3` 经R2的NAT向Internet出站，R2改写分组源为其�
 <a id="q15"></a>
 ## 15｜2023-40：IPv6是多96位，不是“96倍”
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q40.png" alt="2023-40 原题" width="422" style="display:block; width:26.39em; max-width:none; height:auto;">
-</div>
+![2023-40 原题](../bank/2023/q40.png)
 
 IPv4 32位，IPv6 128位，地址空间大小之比是 **`2⁹⁶`**，不是96倍，I错。IPv4首部可因选项变长，IPv6**基本首部固定40B**，II错；过渡可用双栈/隧道 III对，IPv6 Hop Limit与IPv4 TTL的逐跳限制作用对应 IV对。**仅III、IV，选 D**。第一笔先区分“长度差96位”与“地址数量之比”。
 
@@ -243,9 +213,7 @@ IPv6扩展首部可增加整个头部链的长度，但基本首部固定，不�
 <a id="q16"></a>
 ## 16｜2024-35：同IP前缀外观仍先按VLAN看ARP可达
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q35.png" alt="2024-35 原题" width="460" style="display:block; width:28.73em; max-width:none; height:auto;">
-</div>
+![2024-35 原题](../bank/2024/q35.png)
 
 此题在[0904-19](0904-answer.md#q19)已讲：H4与H1/H2/H3同VLAN1，H6的 `192.168.3.129` 在VLAN3，H4不能直接ARP学它，**选 D**。本次只加地址题视角：相同`192.168.3.*`字面并不能越过VLAN边界，ARP广播域先于“看起来同网段”。
 
@@ -257,9 +225,7 @@ IPv6扩展首部可增加整个头部链的长度，但基本首部固定，不�
 <a id="q17"></a>
 ## 17｜2025-36：DHCP REQUEST时提议地址尚未成为源IP
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q36.png" alt="2025-36 原题" width="423" style="display:block; width:26.45em; max-width:none; height:auto;">
-</div>
+![2025-36 原题](../bank/2025/q36.png)
 
 服务器先提供 `yiaddr=192.168.5.9`，H再REQUEST请求该地址；正式获得配置前，H的IP报文仍用**源0.0.0.0**、**目的255.255.255.255** 广播，**选 C**。第一笔把DHCP报文里的“请求地址”与承载它的IP首部源地址分开。
 
