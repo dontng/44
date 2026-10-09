@@ -33,7 +33,7 @@
 ## 01｜2009-07：度数总和一定为偶数，其余“必然”找反例
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q07.png" alt="2009-07 原题" style="display:block; width:24.40em; max-width:none; height:auto;">
+<img src="../bank/2009/q07.png" alt="2009-07 原题" width="390" style="display:block; width:24.40em; max-width:none; height:auto;">
 </div>
 
 无向图每条边连着两个端点，对度数总和贡献 2，所以 I 一定真。II 声称边数严格大于顶点数减一，但一棵连通树恰有 `e=n−1`；III 声称至少有一位度数为 1，三角形每位度数都是 2。只有 I，选 **A**。题干的“连通”保证顶点之间可达，不保证有环，也不保证有叶。
@@ -47,7 +47,7 @@
 ## 02｜2010-07：保证连通，先把不连通的边数推到极限
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q07.png" alt="2010-07 原题" style="display:block; width:29.30em; max-width:none; height:auto;">
+<img src="../bank/2010/q07.png" alt="2010-07 原题" width="469" style="display:block; width:29.30em; max-width:none; height:auto;">
 </div>
 
 七点图想尽量多边却仍不连通，把六点聚成完全图、留一点孤立，最多 `C(6,2)=15` 条边；只要再多一条，便不可能保持这种不连通。故 **16 条一定连通，选 C**。与 01 的 `n−1` 不矛盾：前者是“存在某个连通图所需的最少边”，这里是“无论边如何分配都保证连通”的门槛。
@@ -61,7 +61,7 @@
 ## 03｜2011-08：同一组选项里的三个术语各有自己的检验对象
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q08.png" alt="2011-08 原题" style="display:block; width:24.75em; max-width:none; height:auto;">
+<img src="../bank/2011/q08.png" alt="2011-08 原题" width="396" style="display:block; width:24.75em; max-width:none; height:auto;">
 </div>
 
 I 把回路说成简单路径，不成立：回路首尾相接，简单路径通常不重复顶点。II 说稀疏图用邻接矩阵比邻接表节省空间，也不成立：矩阵要留 `n²` 格，邻接表只跟顶点和实际边数有关。III 成立：若有向图能排出拓扑序列，每条边都从序列较前顶点指向较后顶点；沿有向环绕一圈便会要求第一个点排在自己之前。故只 III，选 **C**。
@@ -75,7 +75,7 @@ I 把回路说成简单路径，不成立：回路首尾相接，简单路径通
 ## 04｜2012-05：邻接表 BFS，顶点与边表项各被处理有限次
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q05.png" alt="2012-05 原题" style="display:block; width:27.31em; max-width:none; height:auto;">
+<img src="../bank/2012/q05.png" alt="2012-05 原题" width="437" style="display:block; width:27.31em; max-width:none; height:auto;">
 </div>
 
 从指定顶点进行广度优先搜索，队列中每个可达顶点只入队、出队一次，扫描其邻接表时每条有向边表项也至多检查一次。若实现按全部 `n` 个顶点准备访问标记，或遍历整图所有分量，成本上界为 **`O(n+e)`，选 C**。题目用邻接表，不需为每个出队顶点逐格扫描整个矩阵行。
@@ -89,7 +89,7 @@ I 把回路说成简单路径，不成立：回路首尾相接，简单路径通
 ## 05｜2013-07：矩阵的一行数出去、一列数进来
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q07.png" alt="2013-07 原题：含完整邻接矩阵" style="display:block; width:24.89em; max-width:none; height:auto;">
+<img src="../bank/2013/q07.png" alt="2013-07 原题：含完整邻接矩阵" width="398" style="display:block; width:24.89em; max-width:none; height:auto;">
 </div>
 
 图中 `A=((0,1,0,1),(0,0,1,1),(0,1,0,0),(1,0,0,0))` 是有向图的邻接矩阵。逐行数 1 得出度 `(2,2,1,1)`，逐列数 1 得入度 `(1,2,1,2)`，逐项相加为 **`(3,4,2,3)`，选 C**。先确认题目问的是总度，再决定是否需要把行与列的计数相加。
@@ -103,7 +103,7 @@ I 把回路说成简单路径，不成立：回路首尾相接，简单路径通
 ## 06｜2013-08：BFS 可以换同层顺序，不可跨层抢先
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q08.png" alt="2013-08 原题" style="display:block; width:25.53em; max-width:none; height:auto;">
+<img src="../bank/2013/q08.png" alt="2013-08 原题" width="408" style="display:block; width:25.53em; max-width:none; height:auto;">
 </div>
 
 先看**每个选项自己的起点**。D 从 a 开始，a 的直接邻居是 b、e、h；BFS 扫 a 后这三位都已入队，必须先于距离 a 为 2 的 c、d、f、g 被访问。D `a,b,c,d,h,e,f,g` 中 c、d 跑到了 e、h 前面，越过层界，故 **D 不可能**。A 从 h 开始、B 从 e 开始、C 从 d 开始，不能把 a 的层次强加给这三项。
@@ -117,7 +117,7 @@ I 把回路说成简单路径，不成立：回路首尾相接，简单路径通
 ## 07｜2015-05：数 DFS 序列时，先按第一条出边分叉
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q05.png" alt="2015-05 原题" style="display:block; width:29.35em; max-width:none; height:auto;">
+<img src="../bank/2015/q05.png" alt="2015-05 原题" width="470" style="display:block; width:29.35em; max-width:none; height:auto;">
 </div>
 
 从 `v₀` 有三条出边去 `v₁,v₂,v₃`，但 `v₁→v₃` 会强制“若先访问 v₁，下一位立刻是 v₃”。以 v₁ 为首只有 `0,1,3,2` 一种；先 v₂ 后，余下 v₁、v₃ 可两种；先 v₃ 后，余下 v₁、v₂ 可两种。合计 `1+2+2=5`，选 **D**。不是直接算三邻居的 `3!`，因为深入时不能随意返回根切换分支。
@@ -131,7 +131,7 @@ I 把回路说成简单路径，不成立：回路首尾相接，简单路径通
 ## 08｜2016-06：用尚未访问的出边，检验 DFS 是否过早回退
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q06.png" alt="2016-06 原题" style="display:block; width:20.42em; max-width:none; height:auto;">
+<img src="../bank/2016/q06.png" alt="2016-06 原题" width="327" style="display:block; width:20.42em; max-width:none; height:auto;">
 </div>
 
 图中 `v₂→v₅`。若按 D 先 `v₁,v₂`，到 v₂ 时 v₅ 尚未访问，DFS 必须先深入 v₅，不能立即退回 v₁ 转去 v₃。因此 `v₁,v₂,v₃,v₄,v₅` **不可能，选 D**。上一题是数所有合法分叉；这题只须找到一个“明明有未访问邻居却换支”的瞬间。
@@ -145,7 +145,7 @@ I 把回路说成简单路径，不成立：回路首尾相接，简单路径通
 ## 09｜2017-07：总度数剩余 8，每个未知点最多分担 2
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q07.png" alt="2017-07 原题" style="display:block; width:29.12em; max-width:none; height:auto;">
+<img src="../bank/2017/q07.png" alt="2017-07 原题" width="466" style="display:block; width:29.12em; max-width:none; height:auto;">
 </div>
 
 16 条无向边使度数之和为 `32`；已知三个度 4、四个度 3，一共 `3×4+4×3=24`。余下顶点的度数合计须为 8，又都小于 3，单个至多 2，所以至少需要 `ceil(8/2)=4` 位，加上已有 7 位，最少 **11，选 B**。题干的“其他顶点”是未知个数的容量限制，不是说再补一个点就够。
@@ -159,7 +159,7 @@ I 把回路说成简单路径，不成立：回路首尾相接，简单路径通
 ## 10｜2019-06：DAG 可复用相同子表达式
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q06.png" alt="2019-06 原题" style="display:block; width:26.42em; max-width:none; height:auto;">
+<img src="../bank/2019/q06.png" alt="2019-06 原题" width="423" style="display:block; width:26.42em; max-width:none; height:auto;">
 </div>
 
 题设的有向无环图用于表达式 `(x+y)((x+y)/x)`。先圈出重复的 `(x+y)`，建一个加法结点，其两个输入是 x、y；除法结点引用这一个加法结果和 x；最外层乘法结点引用加法结果与除法结果。不同结点仅 `x,y,+,/,×`，共 **5，选 A**。若画成普通表达式树，重复出现的子式会重复建结点，数法不同。
@@ -173,7 +173,7 @@ DAG 允许一个结点连到多个上层运算，所以原子 x 同时进入加�
 ## 11｜2020-06：DFS 退出时打印给出逆拓扑序
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q06.png" alt="2020-06 原题" style="display:block; width:29.02em; max-width:none; height:auto;">
+<img src="../bank/2020/q06.png" alt="2020-06 原题" width="464" style="display:block; width:29.02em; max-width:none; height:auto;">
 </div>
 
 图是有向无环图，修改后的 DFS 在顶点退出递归前打印。若有边 `u→v`，从 u 追到未访问的 v，则 v 的整段递归先结束；若 v 之前已访问，在 DAG 中也不可能仍处于 u 的递归祖先位置而形成回边，所以 v 仍先打印。每条边都要求终点 v 先于起点 u，故全部顶点的输出是 **逆拓扑有序序列，选 B**。
@@ -187,7 +187,7 @@ DAG 允许一个结点连到多个上层运算，所以原子 x 同时进入加�
 ## 12｜2022-06：边少于 `n−1`，无论怎样放都不能连通
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q06.png" alt="2022-06 原题" style="display:block; width:18.16em; max-width:none; height:auto;">
+<img src="../bank/2022/q06.png" alt="2022-06 原题" width="291" style="display:block; width:18.16em; max-width:none; height:auto;">
 </div>
 
 任意 n 点连通无向图都能抽出一棵覆盖所有顶点的树，树已有 `n−1` 条边。因此若 `|V|>|E|+1`，即 `e<n−1`，一定不连通，选 **D**。A 在 `e<n` 时误判：一棵树 `e=n−1` 可连通；B 在边多时误以为必连通：把一位孤立、其余顶点密连仍可能不连通；C 的 `e=n+1` 也可以连通，在一棵树上多加边即可。
@@ -201,7 +201,7 @@ DAG 允许一个结点连到多个上层运算，所以原子 x 同时进入加�
 ## 13｜2023-06：所有权重为 1，最短路就是最少经过几条边
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q06.png" alt="2023-06 原题" style="display:block; width:29.30em; max-width:none; height:auto;">
+<img src="../bank/2023/q06.png" alt="2023-06 原题" width="469" style="display:block; width:29.30em; max-width:none; height:auto;">
 </div>
 
 BFS 从起点逐层推进，第一次发现的顶点先经过 1 条边、再 2 条边，以此类推，因此在每条边权都为 1 时，首次到达已是最短路。Prim 和 Kruskal 求的是让**全部顶点连成树的边权总和**最小，并不保证某个起点到每个终点各自最短。只有 III，选 **B**。辨识题目问“从一点到其余各点”，便不要把“最小生成树”里的“最小”搬过来。
@@ -215,7 +215,7 @@ BFS 从起点逐层推进，第一次发现的顶点先经过 1 条边、再 2 �
 ## 14｜2024-04：邻接多重表的记录代表边，不要数指针线
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q04.png" alt="2024-04 原题" style="display:block; width:27.23em; max-width:none; height:auto;">
+<img src="../bank/2024/q04.png" alt="2024-04 原题" width="436" style="display:block; width:27.23em; max-width:none; height:auto;">
 </div>
 
 先读顶点编号 `a=0,b=1,c=2,d=3,e=4`，再看每个边结点保存的两个端点编号；一条边结点只算一条边，它的多个指针只是把同一记录挂到两个端点的链上。包含 1 的结点是 `(0,1),(1,3)`，所以 b 的度是 2；包含 3 的结点是 `(0,3),(1,3),(2,3),(4,3)`，所以 d 的度是 4。选 **B**。图里折来折去的箭头只是存储链接，不额外增加图的边。
@@ -229,7 +229,7 @@ BFS 从起点逐层推进，第一次发现的顶点先经过 1 条边、再 2 �
 ## 15｜2025-06：每点至少两条边，有限无向图必然有环
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q06.png" alt="2025-06 原题" style="display:block; width:18.67em; max-width:none; height:auto;">
+<img src="../bank/2025/q06.png" alt="2025-06 原题" width="299" style="display:block; width:18.67em; max-width:none; height:auto;">
 </div>
 
 C 的条件是无向图所有顶点度数至少 2。从任一点沿尚未回走的边不断前进：进入一个顶点后，总能选择不同于刚来那条边的另一边；有限个顶点不可能永远只到新顶点，最终重复某点，出现回路。因此 **C 正确**。A 被有向环反驳，环上每点入度均为 1；B 被有两个独立起点可交换的 DAG 反驳；D 的普通 BFS 只按边数分层，权重不同就不能保证最小权值路径。

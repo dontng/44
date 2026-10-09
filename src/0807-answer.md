@@ -35,7 +35,7 @@
 ## 01｜2010-08：拓扑排序的分叉来自同时可选的零入度点
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q08.png" alt="2010-08 原题" style="display:block; width:29.38em; max-width:none; height:auto;">
+<img src="../bank/2010/q08.png" alt="2010-08 原题" width="470" style="display:block; width:29.38em; max-width:none; height:auto;">
 </div>
 
 图中只有 a 可以开头；删去 a 的出边后 b、e 均可选。若先 e，再 b、c、d，只得 `a,e,b,c,d`；若先 b，c 与 e 可换位，但 d 要等 c 和 e 均已处理，得到 `a,b,c,e,d`、`a,b,e,c,d`。共 **3 种，选 B**。计数时每选一个点就删掉它的出边，不能把已出现的边约束忘掉。
@@ -49,7 +49,7 @@
 ## 02｜2012-06：矩阵下三角为零只保住一个方向
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q06.png" alt="2012-06 原题" style="display:block; width:27.25em; max-width:none; height:auto;">
+<img src="../bank/2012/q06.png" alt="2012-06 原题" width="436" style="display:block; width:27.25em; max-width:none; height:auto;">
 </div>
 
 按邻接矩阵通常约定 `A[i][j]` 表示 `i→j`。主对角线以下全零，说明不存在大编号指向小编号的边；按编号从小到大排，必有一个拓扑序。若上三角也缺一些边，互不依赖的点可以交换，可能不唯一；若每对编号之间都被边约束，也可能唯一。故 **存在，可能不唯一，选 C**。题干没有给上三角实际内容，不能选“肯定不唯一”。
@@ -63,7 +63,7 @@
 ## 03｜2012-07：Dijkstra 每轮只确定当前最小的暂定距离
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q07.png" alt="2012-07 原题" style="display:block; width:27.41em; max-width:none; height:auto;">
+<img src="../bank/2012/q07.png" alt="2012-07 原题" width="439" style="display:block; width:27.41em; max-width:none; height:auto;">
 </div>
 
 从 a 出发先确定 b 的距离 2；由 `b→c` 权 1，将 c 从直接边权 5 改成 3，第二个确定 c。由 c 松弛得 `f=3+1=4`、`d` 至少 6、`e=7`，于是先定 f；d 可由 `a→b→d` 得 5，接着定 d，并由 `d→e` 权 1 把 e 改到 6。后续次序 **f、d、e，选 C**。第一笔要写暂定距离，别把图上的边权本身当从 a 的路径长度。
@@ -77,7 +77,7 @@
 ## 04｜2012-08：最小生成树的“总价唯一”不等于“树唯一”
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q08.png" alt="2012-08 原题" style="display:block; width:23.45em; max-width:none; height:auto;">
+<img src="../bank/2012/q08.png" alt="2012-08 原题" width="375" style="display:block; width:23.45em; max-width:none; height:auto;">
 </div>
 
 同一张带权无向图的所有最小生成树都达到同一个最小**总代价**，所以 I 真。若等权边可替换，具体树可能不同，Prim 从不同起点也不保证选出同一棵，III 假；三角形三条边都权 1 时每棵树只用两条，“所有最小权边都出现在所有树”II 假；Prim 与 Kruskal 也可能得到同一树，IV 的“总不同”假。只有 I，选 **A**。
@@ -91,7 +91,7 @@
 ## 05｜2013-09：要缩短工期，必须照顾每一条并列关键路径
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q09.png" alt="2013-09 原题：含完整活动权值" style="display:block; width:28.32em; max-width:none; height:auto;">
+<img src="../bank/2013/q09.png" alt="2013-09 原题：含完整活动权值" width="453" style="display:block; width:28.32em; max-width:none; height:auto;">
 </div>
 
 先读图中活动权值，尤其 `d=4,e=6`。原工期为 27，有三条并列最长路：`b,d,c,g` 权和 `8+4+9+6=27`；`b,d,e,h` 为 `8+4+6+9=27`；`b,f,h` 为 `8+10+9=27`。同时加快 **d 与 f**，前两条都含 d，第三条含 f，才使三条最长路都变短，选 **C**。只加快某一条路径上的活动，另一条并列关键路径仍会卡住工期。
@@ -105,7 +105,7 @@ A 的 c、e 都不在 `b,f,h` 上；B 的 d、c 也碰不到 `b,f,h`；D 的 f�
 ## 06｜2014-07：拓扑候选先查每一条强制箭头
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q07.png" alt="2014-07 原题" style="display:block; width:29.26em; max-width:none; height:auto;">
+<img src="../bank/2014/q07.png" alt="2014-07 原题" width="468" style="display:block; width:29.26em; max-width:none; height:auto;">
 </div>
 
 图中 `3→1→4→2→5`，还有 `4→6→5`。因此 3、1、4 必须依次靠前；2 和 6 谁先都可以，但两者必须在 5 前。D `3,1,4,2,6,5` 合法，选 **D**。A、B 将 2 放在前驱 4 前；C 把 5 放在其前驱 6 前。无需逐项完整模拟删边，抓住一条违反的箭头就能排除。
@@ -119,7 +119,7 @@ A 的 c、e 都不在 `b,f,h` 上；B 的 d、c 也碰不到 `b,f,h`；D 的 f�
 ## 07｜2015-06：Kruskal 的候选是全图，Prim 的候选要跨已选集合
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q06.png" alt="2015-06 原题" style="display:block; width:29.31em; max-width:none; height:auto;">
+<img src="../bank/2015/q06.png" alt="2015-06 原题" width="469" style="display:block; width:29.31em; max-width:none; height:auto;">
 </div>
 
 全图最小边 `(v₁,v₄)` 权 5，两法第一步都可选它。Kruskal 第二步可在权 8 的并列边里选 `(v₂,v₃)`，它不成环；Prim 从 v₄ 出发第一步已选顶点集合 `{v₄,v₁}`，第二步只能选一端在集合内、另一端在外的边，`(v₂,v₃)` 两端都在外，不合格。故 **C** 是可能由 Kruskal 第二次选中却不是 Prim 第二次选中的边。
@@ -133,7 +133,7 @@ A 的 c、e 都不在 `b,f,h` 上；B 的 d、c 也碰不到 `b,f,h`；D 的 f�
 ## 08｜2016-07：邻接表拓扑排序的成本是顶点加边
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q07.png" alt="2016-07 原题" style="display:block; width:27.77em; max-width:none; height:auto;">
+<img src="../bank/2016/q07.png" alt="2016-07 原题" width="444" style="display:block; width:27.77em; max-width:none; height:auto;">
 </div>
 
 先沿邻接表统计 n 个顶点的入度，再把零入度点逐个取出；每取出一位，就扫描它的出边，把相邻顶点入度减一。每个顶点进入处理队列有限次、每条边在统计与删除时各经过常数次，所以 **`O(n+e)`，选 B**。即使有环导致不能输出全部顶点，仍不需反复扫描一个 `n×n` 的矩阵。
@@ -147,7 +147,7 @@ A 的 c、e 都不在 `b,f,h` 上；B 的 d、c 也碰不到 `b,f,h`；D 的 f�
 ## 09｜2016-08：每次确认一个点后，只更新能沿出边到达的点
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q08.png" alt="2016-08 原题" style="display:block; width:29.31em; max-width:none; height:auto;">
+<img src="../bank/2016/q08.png" alt="2016-08 原题" width="469" style="display:block; width:29.31em; max-width:none; height:auto;">
 </div>
 
 由 1 出发暂定 `5=4,2=5`，先确定 5；5 的出边给 `6=9,4=11`，到 2 的路为 10，不优于 5。再确定 2，从 `2→3` 权 2 得 `3=7`，到 4 的路为 `5+9=14`，仍不优于 11；随后确定 3，再比较 6 的 9 与 4 的 11。目标依次 **5、2、3、6、4，选 B**。
@@ -161,7 +161,7 @@ A 的 c、e 都不在 `b,f,h` 上；B 的 d、c 也碰不到 `b,f,h`；D 的 f�
 ## 10｜2018-07：不合法拓扑序只须找一条逆向排列的边
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q07.png" alt="2018-07 原题" style="display:block; width:27.32em; max-width:none; height:auto;">
+<img src="../bank/2018/q07.png" alt="2018-07 原题" width="437" style="display:block; width:27.32em; max-width:none; height:auto;">
 </div>
 
 图有 `1→2`，而 D 把 2 放在 1 之前，立即不合法，选 **D**。A、B、C 都让 1、5 先于各自到达的 2，让 2 在 3、6 前，再把 4 放在其全部前驱之后；3、6 相互没有先后强制，可以换位。比起从头做四遍拓扑排序，这类“不是”题先扫描选项里最早出现的前驱倒置。
@@ -175,7 +175,7 @@ A 的 c、e 都不在 `b,f,h` 上；B 的 d、c 也碰不到 `b,f,h`；D 的 f�
 ## 11｜2019-05：活动的最早、最迟开始要从两个方向算
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q05.png" alt="2019-05 原题" style="display:block; width:31.25em; max-width:none; height:auto;">
+<img src="../bank/2019/q05.png" alt="2019-05 原题" width="500" style="display:block; width:31.25em; max-width:none; height:auto;">
 </div>
 
 活动 d 是 `2→4`、耗时 7。事件 2 必须等 `1→3` 权 8 和 `3→2` 权 4 完成，最早时刻 `max(3,8+4)=12`，所以 d 最早开始 **12**。工程终点 6 的最早完成是 `1→3→5→6`，权和 `8+10+9=27`；事件 4 到 6 还需 g 的 6，故事件 4 最迟时刻 21，d 最迟开始 `21−7=14`。选 **C，12 和 14**。
@@ -189,7 +189,7 @@ A 的 c、e 都不在 `b,f,h` 上；B 的 d、c 也碰不到 `b,f,h`；D 的 f�
 ## 12｜2020-07：Kruskal 顺着权重走，遇环跳过
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q07.png" alt="2020-07 原题" style="display:block; width:29.23em; max-width:none; height:auto;">
+<img src="../bank/2020/q07.png" alt="2020-07 原题" width="468" style="display:block; width:29.23em; max-width:none; height:auto;">
 </div>
 
 依次选 `(b,f)=5`、`(b,d)=6`；权 7 的 `(d,f)` 会在 b、d、f 间成环，跳过。接着选 `(a,e)=9`、`(c,e)=10`、`(b,e)=11`，六点以五条边接成一棵树。因此边次序是 **A**。选项把权较大的边提前、或者把本该跳过的成环边算进去，都违反这一过程。
@@ -203,7 +203,7 @@ A 的 c、e 都不在 `b,f,h` 上；B 的 d、c 也碰不到 `b,f,h`；D 的 f�
 ## 13｜2020-08：AOE 的关键路径按活动持续时间求最长
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q08.png" alt="2020-08 原题" style="display:block; width:21.22em; max-width:none; height:auto;">
+<img src="../bank/2020/q08.png" alt="2020-08 原题" width="340" style="display:block; width:21.22em; max-width:none; height:auto;">
 </div>
 
 AOE 工程可并行做活动，但后续事件必须等所有前置活动完成，所以总工期由源点到汇点**权值和最大**的路径决定，选 **B**。A 数边条数而不管耗时；C 说延长关键活动不影响工期，与其零余量矛盾；D 说缩短任一关键活动必缩短工程，若存在多条并列关键路径，另一条仍卡住工期。
@@ -217,7 +217,7 @@ AOE 工程可并行做活动，但后续事件必须等所有前置活动完成�
 ## 14｜2021-07：每轮只有一个零入度点，拓扑序才被迫唯一
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q07.png" alt="2021-07 原题" style="display:block; width:21.20em; max-width:none; height:auto;">
+<img src="../bank/2021/q07.png" alt="2021-07 原题" width="339" style="display:block; width:21.20em; max-width:none; height:auto;">
 </div>
 
 先只有 A 零入度；删 A 后必须取 B（F 还有 B、D、E 等前驱），接着只有 C，再 D，再 E，最后 F。合法序列只有 **`A,B,C,D,E,F` 一条，选 A**。图上看着 A 还直连 F、B 也直连 F，并不会让 F 提前；零入度要等所有指向它的边都删除。
@@ -231,7 +231,7 @@ AOE 工程可并行做活动，但后续事件必须等所有前置活动完成�
 ## 15｜2021-08：第二条最短路径确定后，四个 dist 都要更新
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q08.png" alt="2021-08 原题：含完整带权有向图" style="display:block; width:29.23em; max-width:none; height:auto;">
+<img src="../bank/2021/q08.png" alt="2021-08 原题：含完整带权有向图" width="468" style="display:block; width:29.23em; max-width:none; height:auto;">
 </div>
 
 从图中的起点 1 初始化：直接到 `2=26,3=3,5=6`，4 暂不可达。先确定 3（距离 3）；图中权 22 的箭头是 `2→3`，不是 `3→2`，因此不能由 3 把 2 更新为 25，2 的暂定值仍是 26。再确定 5（距离 6），`5→2` 权 15 使 2 更新到 21，`5→4` 权 8 使 4 更新到 14。此时按 2、3、4、5 顺序，**`dist=(21,3,14,6)`，选 C**。不能只把第二个确定的点写进数组，其他暂定值也会随之松弛。
@@ -245,7 +245,7 @@ AOE 工程可并行做活动，但后续事件必须等所有前置活动完成�
 ## 16｜2022-07：时间余量不是活动耗时，要前推再后推
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q07.png" alt="2022-07 原题：含完整 AOE 图" style="display:block; width:29.20em; max-width:none; height:auto;">
+<img src="../bank/2022/q07.png" alt="2022-07 原题：含完整 AOE 图" width="467" style="display:block; width:29.20em; max-width:none; height:auto;">
 </div>
 
 先从图中读取各活动耗时。前推事件最早时刻为 `ve(1..6)=(0,2,5,8,9,12)`；从工程工期 12 后推，得 `vl(1..6)=(0,4,5,8,11,12)`。活动的余量是“终点事件最迟时刻－起点事件最早时刻－本活动耗时”：c（`2→3`，1）余 2；g（`3→6`，1）余 **6**；h（`4→5`，1）余 2；j（`5→6`，1）余 2。故 **g 最大，选 B**。
@@ -259,7 +259,7 @@ AOE 工程可并行做活动，但后续事件必须等所有前置活动完成�
 ## 17｜2023-06：重复题检验单位权最短路能否直接取回
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q06.png" alt="2023-06 原题" style="display:block; width:29.30em; max-width:none; height:auto;">
+<img src="../bank/2023/q06.png" alt="2023-06 原题" width="469" style="display:block; width:29.30em; max-width:none; height:auto;">
 </div>
 
 本题与 [0806-13](0806-answer.md#q13) 同一原题。每条边权都为 1，从指定顶点到其余各点的权值最短等于经过边数最少；BFS 按层首次发现便达到这个边数。Prim、Kruskal 求整图连通的总权，不保证指定起点到每个点的最短距离，所以只有 III，选 **B**。重复出现时考的是能否在新能力线中迅速辨目标，而非再次从零讲 BFS。
