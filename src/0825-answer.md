@@ -47,7 +47,7 @@
 ## 01｜2009-23：并发的对象不一定都争同一处理器
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q23.png" alt="2009-23 原题" style="display:block; width:23.32em; max-width:none; height:auto;">
+<img src="../bank/2009/q23.png" alt="2009-23 原题" width="373" style="display:block; width:23.32em; max-width:none; height:auto;">
 </div>
 
 题限定**单处理机**。两个进程不能在同一时刻都占这个 CPU，I 的进程与进程只能交替并发，不能物理并行。CPU 执行指令时设备可自主工作 II；通道可控制 I/O 与 CPU 并行 III；不同设备也可相互并行 IV。**II、III、IV，选 D**。第一笔写出每对对象是否都必须占唯一 CPU。
@@ -61,7 +61,7 @@
 ## 02｜2009-24：响应比同时计等待和服务
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q24.png" alt="2009-24 原题" style="display:block; width:22.54em; max-width:none; height:auto;">
+<img src="../bank/2009/q24.png" alt="2009-24 原题" width="361" style="display:block; width:22.54em; max-width:none; height:auto;">
 </div>
 
 题问综合考虑等待时间与执行时间。高响应比优先按 `响应比=(等待时间+要求服务时间)/要求服务时间=1+等待/服务` 排序，**选 D**。服务短者在等待相同情况下比值高；长作业等久后比值也升高。第一笔看候选算法的比较量里是否**同时**出现两个时间。
@@ -75,7 +75,7 @@
 ## 03｜2010-24：新进程从“新的执行主体”识别
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q24.png" alt="2010-24 原题" style="display:block; width:25.11em; max-width:none; height:auto;">
+<img src="../bank/2010/q24.png" alt="2010-24 原题" width="402" style="display:block; width:25.11em; max-width:none; height:auto;">
 </div>
 
 登录成功使系统为用户建立执行环境，启动一个程序也要创建相应进程，I、III 对。设备分配把已有进程所需资源交给它，**并不必然**创建新进程，II 不选。**仅 I、III，选 C**。第一笔问结果是“多了一个可被调度的主体”，还是“已有主体多了一份资源”。
@@ -89,7 +89,7 @@
 ## 04｜2010-26：用尽时间片意味着已经得到过机会
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q26.png" alt="2010-26 原题" style="display:block; width:25.96em; max-width:none; height:auto;">
+<img src="../bank/2010/q26.png" alt="2010-26 原题" width="415" style="display:block; width:25.96em; max-width:none; height:auto;">
 </div>
 
 在多级反馈队列的常见规则中，进程用完整个时间片仍未结束，说明它已连续占用本级给的 CPU 份额，可降至较低优先级队列，**选 A**。刚完成 I/O 的进程进入就绪队列常希望较快响应；长期在就绪队列等待则不宜再降；被选中运行也不是惩罚条件。第一笔找“它是否**消耗了 CPU 配额**”。
@@ -103,7 +103,7 @@
 ## 05｜2011-23：短任务优先也要给长期等候者上涨机会
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q23.png" alt="2011-23 原题" style="display:block; width:23.85em; max-width:none; height:auto;">
+<img src="../bank/2011/q23.png" alt="2011-23 原题" width="382" style="display:block; width:23.85em; max-width:none; height:auto;">
 </div>
 
 沿用 02 的响应比 `1+等待/服务`：服务时间短者起初容易领先，但等待时间不断增加会提高长期未执行任务的比值，避免它永久排不到，**高响应比优先，选 B**。先来先服务和时间片轮转不会按短任务先选；非抢占短任务优先只看短，不随等待产生这项补偿。第一笔要求同时满足“短任务偏好”和“等待越久优先级越升”。
@@ -117,7 +117,7 @@
 ## 06｜2011-24：用户态也能运行提供交互的普通程序
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q24.png" alt="2011-24 原题" style="display:block; width:20.41em; max-width:none; height:auto;">
+<img src="../bank/2011/q24.png" alt="2011-24 原题" width="327" style="display:block; width:20.41em; max-width:none; height:auto;">
 </div>
 
 命令解释程序读取并解析用户输入，可作为普通用户进程执行，**选 A**。缺页处理、进程调度、时钟中断处理都需要内核管理异常、上下文和计时，B/C/D 在内核态。第一笔问代码有没有直接处理受保护的 CPU 状态，而非名字里是否含“系统”。
@@ -131,7 +131,7 @@
 ## 07｜2011-25：共享进程资源，独立保存线程运行位置
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q25.png" alt="2011-25 原题" style="display:block; width:23.35em; max-width:none; height:auto;">
+<img src="../bank/2011/q25.png" alt="2011-25 原题" width="374" style="display:block; width:23.35em; max-width:none; height:auto;">
 </div>
 
 同一进程的线程共享代码段、打开文件和全局变量；每个线程有自己的执行栈与栈指针，才能暂停 A、运行 B、再恢复 A，**选 D**。第一笔问这个量是“进程共同拥有的资源”还是“恢复某一线程独立执行点所必需”。
@@ -145,7 +145,7 @@
 ## 08｜2012-25：虚拟存储要让逻辑连续与物理分散脱钩
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q25.png" alt="2012-25 原题" style="display:block; width:15.85em; max-width:none; height:auto;">
+<img src="../bank/2012/q25.png" alt="2012-25 原题" width="254" style="display:block; width:15.85em; max-width:none; height:auto;">
 </div>
 
 虚拟存储按需调入、换出页面或段，让程序的逻辑空间不必连续占满物理内存；它要依靠**非连续分配**的页式/段式等机制，**选 B**。A 的“只能连续”反向；虚拟容量还受虚拟地址位数和可用外存等限制，C 的“只受外存”与 D 的“只受内存”都太绝对。第一笔分别审“实现结构”和“容量上限”，不要被相似措辞带走。
@@ -159,7 +159,7 @@
 ## 09｜2013-27：画两条可重叠的时间线，不把耗时全相加
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q27.png" alt="2013-27 原题" style="display:block; width:28.43em; max-width:none; height:auto;">
+<img src="../bank/2013/q27.png" alt="2013-27 原题" width="455" style="display:block; width:28.43em; max-width:none; height:auto;">
 </div>
 
 两块输入各从外设到系统缓冲需 100，缓冲到用户工作区需 5，分析需 90。题设系统缓冲区和用户工作区**均为单缓冲**：第一块读至 `t=100`，复制到 `105` 后才释放系统缓冲；分析在 `105—195` 进行。第二块只能从 `t=105` 开始读，至 `205` 完成，再于 `205—210` 复制、`210—300` 分析。最短时间 **300，选 C**。第一笔写每项动作占用哪个缓冲，尤其不能让第二次读入覆盖还在复制的第一块。
@@ -173,7 +173,7 @@
 ## 10｜2014-23：饥饿问的是“永远轮不到”，不是平均等多久
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q23.png" alt="2014-23 原题" style="display:block; width:20.68em; max-width:none; height:auto;">
+<img src="../bank/2014/q23.png" alt="2014-23 原题" width="331" style="display:block; width:20.68em; max-width:none; height:auto;">
 </div>
 
 时间片轮转让就绪队列中的每个进程轮流取得有限 CPU 片，只要每次服务和队列推进，进程不会被**永久**跳过，**选 A**。静态优先级可让低优先级长期被新高优先级压住；短作业优先无论抢占与否都可能不断偏向新来的短任务。第一笔问调度规则会不会给已排队者一个确定的轮到机会。
@@ -191,7 +191,7 @@
 ## 11｜2015-25：运行变就绪，与运行变阻塞只差一个等待原因
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q25.png" alt="2015-25 原题" style="display:block; width:21.25em; max-width:none; height:auto;">
+<img src="../bank/2015/q25.png" alt="2015-25 原题" width="340" style="display:block; width:21.25em; max-width:none; height:auto;">
 </div>
 
 P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进程可能因等待条件转**阻塞**。高优先级进程到来抢占当前运行者，当前者仍可运行，只是暂时拿不到 CPU，转**就绪**，**选 D**。第一笔问进程接下来缺的是“可运行条件”还是“CPU 使用权”。
@@ -205,7 +205,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 12｜2017-23：先在调度时刻划掉尚未到达者
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q23.png" alt="2017-23 原题" style="display:block; width:29.10em; max-width:none; height:auto;">
+<img src="../bank/2017/q23.png" alt="2017-23 原题" width="466" style="display:block; width:29.10em; max-width:none; height:auto;">
 </div>
 
 `t=2` 已到达的是 J1(到 0、运行 3)、J2(到 1、运行 3)、J3(到 1、运行 2)；J4 要到 `t=3`，不能抢先进入候选集合。FCFS 按到达最早选 **J1**，短作业优先按运行时间最短选 **J3**，**选 D**。第一笔先圈“当前就绪集合”，再套算法。
@@ -219,7 +219,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 13｜2017-27：时间片用完还可运行，不能写成阻塞
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2017/q27.png" alt="2017-27 原题" style="display:block; width:21.98em; max-width:none; height:auto;">
+<img src="../bank/2017/q27.png" alt="2017-27 原题" width="352" style="display:block; width:21.98em; max-width:none; height:auto;">
 </div>
 
 题问**错误**。时间片越短，切换通常越频繁，A 对；时钟中断更新剩余片长 C 对；选择片长要考虑响应、开销、进程数量等 D 对。B 把片用完后的状态写成**阻塞**，其实进程仍具备运行条件，应从执行态转**就绪态**，**选 B**。第一笔只看它是否在等外部条件；没有就不能叫阻塞。
@@ -233,7 +233,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 14｜2018-23：多任务不等于多 CPU
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q23.png" alt="2018-23 原题" style="display:block; width:26.12em; max-width:none; height:auto;">
+<img src="../bank/2018/q23.png" alt="2018-23 原题" width="418" style="display:block; width:26.12em; max-width:none; height:auto;">
 </div>
 
 多任务系统中各任务可交替并发；CPU 和设备还可并行，I 对。任务共享文件、内存、设备时需互斥与保护，II 对。单 CPU 也可通过切换运行多任务，III“需要多 CPU”错，**仅 I、II，选 C**。第一笔沿 01 的资源图分开“多任务轮换”和“多核同刻执行”。
@@ -247,7 +247,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 15｜2018-24：周转时间含本题开始前已经等过的时间
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q24.png" alt="2018-24 原题" style="display:block; width:29.31em; max-width:none; height:auto;">
+<img src="../bank/2018/q24.png" alt="2018-24 原题" width="469" style="display:block; width:29.31em; max-width:none; height:auto;">
 </div>
 
 优先权值越大越先运行，顺序 **P2(30)→P3(20)→P1(10)**。每次调度/切换耗 1 μs，从 T 算：P2 完成 `1+24=25`，P3 完成 `25+1+36=62`，P1 完成 `62+1+12=75`。但表中已等待 15、18、30 μs，所以三个周转时间为 `15+25=40`、`18+62=80`、`30+75=105`，平均 **75 μs，选 D**。第一笔把表头“等待时间”抄到周转式里。
@@ -261,7 +261,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 16｜2018-25：把一次加一拆成读、改、写，再数可行序列
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q25.png" alt="2018-25 原题" style="display:block; width:28.88em; max-width:none; height:auto;">
+<img src="../bank/2018/q25.png" alt="2018-25 原题" width="462" style="display:block; width:28.88em; max-width:none; height:auto;">
 </div>
 
 每线程必须保持内部 `读 x→寄存器加 1→写回 x` 顺序。最终 `x=2` 的关键：第二个线程读取到第一个线程**已经写回的 1**，才能写出 2；这要求某线程三条先完整执行，再执行另一线程的三条。只有 `111222` 与 `222111` 两种，**选 B（2）**。第一笔盯“第二次读到的 x 是 0 还是 1”，不用一口气枚举全部交错。
@@ -275,7 +275,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 17｜2019-23：用户级线程的控制信息由谁维护
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q23.png" alt="2019-23 原题" style="display:block; width:19.84em; max-width:none; height:auto;">
+<img src="../bank/2019/q23.png" alt="2019-23 原题" width="317" style="display:block; width:19.84em; max-width:none; height:auto;">
 </div>
 
 内核级线程由 OS 调度 A 对；用户级线程切换不必每次陷入内核，通常效率较高 C 对；即使 OS 不提供内核线程，用户线程库仍可实现用户级线程 D 对。B 称 **OS 为每个用户级线程建立线程控制块**，这些线程的控制与调度通常由用户空间线程库管理，内核未必逐一认识，**选 B**。第一笔问“操作系统是否看得见这个线程”。
@@ -289,7 +289,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 18｜2019-27：先遵守高队列优先，再算低队列等待
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q27.png" alt="2019-27 原题" style="display:block; width:31.27em; max-width:none; height:auto;">
+<img src="../bank/2019/q27.png" alt="2019-27 原题" width="500" style="display:block; width:31.27em; max-width:none; height:auto;">
 </div>
 
 两进程初入 Q1，片长 10 ms。P1 先跑 `0—10` 后剩 20 转 Q2；P2 在 Q1 跑 `10—20` 后剩 10 转 Q2。Q1 空，Q2 按短进程优先：P2 跑 `20—30` 完成，P1 跑 `30—50` 完成。P1 等待 `50−30=20`，P2 等待 `30−20=10`，平均 **15 ms，选 C**。第一笔先写 Q1 的两个片，而非一看到 P2 短就让它先跑。
@@ -303,7 +303,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 19｜2020-26：设计多级反馈必须定义四类规则
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q26.png" alt="2020-26 原题" style="display:block; width:29.22em; max-width:none; height:auto;">
+<img src="../bank/2020/q26.png" alt="2020-26 原题" width="468" style="display:block; width:29.22em; max-width:none; height:auto;">
 </div>
 
 队列**数量 I** 决定有几级，级间**优先级 II** 决定先服务谁，队列内部**算法 III** 决定同级轮到谁，**迁移条件 IV** 决定何时降级或调整。四项都是设计参数，**选 D**。第一笔把它们对应 18 的具体 Q1/Q2：几队、谁优先、各队怎么排、用完一片去哪里。
@@ -317,7 +317,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 20｜2020-29：父子进程不同于同进程的两个线程
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q29.png" alt="2020-29 原题" style="display:block; width:19.06em; max-width:none; height:auto;">
+<img src="../bank/2020/q29.png" alt="2020-29 原题" width="305" style="display:block; width:19.06em; max-width:none; height:auto;">
 </div>
 
 题问**错误**。父子进程可并发/在多核上并行，有各自 PCB；进程间对同一临界资源必须遵守互斥。B 却说父子进程**共享虚拟地址空间**，创建子进程可复制或写时复制映射，但逻辑上各有自己的虚拟地址空间，**选 B**。第一笔把 07 的“同进程线程共享地址空间”与“父子是两个进程”对照。
@@ -335,7 +335,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 ## 21｜2021-24：创建进程先有记录，再有可运行状态
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q24.png" alt="2021-24 原题" style="display:block; width:27.98em; max-width:none; height:auto;">
+<img src="../bank/2021/q24.png" alt="2021-24 原题" width="448" style="display:block; width:27.98em; max-width:none; height:auto;">
 </div>
 
 OS 创建新进程必须申请空白**PCB（进程控制块）**并初始化其中的标识、状态、资源等信息，I、II 对。刚创建后通常先进入就绪等候，并不必须立刻成为**执行态**，III 错，**选 B**。第一笔区分“创建一个可被调度的主体”与“马上取得 CPU”。
@@ -349,7 +349,7 @@ OS 创建新进程必须申请空白**PCB（进程控制块）**并初始化其�
 ## 22｜2021-25：时间片轮转需能记、能计时、能排队
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q25.png" alt="2021-25 原题" style="display:block; width:28.10em; max-width:none; height:auto;">
+<img src="../bank/2021/q25.png" alt="2021-25 原题" width="450" style="display:block; width:28.10em; max-width:none; height:auto;">
 </div>
 
 实现时间片轮转要用 PCB I 记进程及其状态，用时钟中断处理程序 II 在片到时接管，用进程就绪队列 III 安排下一位，**仅 I、II、III，选 C**。阻塞队列 IV 对等待 I/O 的进程有用，但不是**分时系统实现轮转调度本身**的必需结构。第一笔把 13 的“片尽→就绪”逐步落实为数据结构与触发器。
@@ -363,7 +363,7 @@ OS 创建新进程必须申请空白**PCB（进程控制块）**并初始化其�
 ## 23｜2021-27：四种不同原因都可能重新选进程
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q27.png" alt="2021-27 原题" style="display:block; width:28.30em; max-width:none; height:auto;">
+<img src="../bank/2021/q27.png" alt="2021-27 原题" width="453" style="display:block; width:28.30em; max-width:none; height:auto;">
 </div>
 
 中断处理结束可能发现有更合适的就绪者 I；当前进程阻塞 II 或执行结束 III 后不能继续占 CPU；时间片用完 IV 也要轮换。四者都**可能**引起进程调度，**选 D**。第一笔问“现在是否要决定接下来由谁运行”，而不是四项是否一律属于相同状态转换。
@@ -377,7 +377,7 @@ OS 创建新进程必须申请空白**PCB（进程控制块）**并初始化其�
 ## 24｜2022-23：多道程序的收益不是无限单调上升
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q23.png" alt="2022-23 原题" style="display:block; width:24.46em; max-width:none; height:auto;">
+<img src="../bank/2022/q23.png" alt="2022-23 原题" width="391" style="display:block; width:24.46em; max-width:none; height:auto;">
 </div>
 
 多道程序让不同进程在等待与计算之间交替并发，需要管理共享资源；这些是 A、C 的合理叙述。它不**必须**有虚拟存储，可在更早/简单的存储管理上运行，B 也对。D 说“进程数越多，CPU 利用率越高”是无上限单调判断；内存与调度成本增加、频繁换页可降低有效运行，**选 D**。第一笔对“越多越高”试一个资源不足反例。
@@ -391,7 +391,7 @@ OS 创建新进程必须申请空白**PCB（进程控制块）**并初始化其�
 ## 25｜2022-25：抢占式优先级数“上 CPU 的段数”
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q25.png" alt="2022-25 原题" style="display:block; width:29.20em; max-width:none; height:auto;">
+<img src="../bank/2022/q25.png" alt="2022-25 原题" width="467" style="display:block; width:29.20em; max-width:none; height:auto;">
 </div>
 
 优先值小者更高。`t=0` P0 开始；`t=10` P2(10) 到达，抢占 P0(15)；`t=15` P3(6) 抢占 P2；P3 到 `25` 结束，P2 到 `40` 结束；P0 再运行，结束后 P1(20) 最后执行。CPU 段依次 **P0→P2→P3→P2→P0→P1**，共 **6 次进程调度，选 C**。第一笔在 0、10、15 三个到达时刻先找“新者是否更优先”。
@@ -405,7 +405,7 @@ P1 的优先值 20 比当时 P0 的 15 更低，且比同时到达的 P2 的 10 
 ## 26｜2022-28：读文件和请求设备可能等，片尽不等资源
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q28.png" alt="2022-28 原题" style="display:block; width:26.29em; max-width:none; height:auto;">
+<img src="../bank/2022/q28.png" alt="2022-28 原题" width="421" style="display:block; width:26.29em; max-width:none; height:auto;">
 </div>
 
 读文件 I 若需磁盘完成可阻塞；申请外设 III 若设备不可用可等待；执行 `wait()` IV 若信号量资源不足可阻塞。时间片用尽 II 仍具备运行条件，仅从执行态转就绪。**I、III、IV，选 D**。第一笔用 11、13 的判据：当前还缺什么外部条件？
@@ -419,7 +419,7 @@ P1 的优先值 20 比当时 P0 的 15 更低，且比同时到达的 P2 的 10 
 ## 27｜2023-27：主动让 CPU 但不等条件，状态仍就绪
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q27.png" alt="2023-27 原题" style="display:block; width:27.48em; max-width:none; height:auto;">
+<img src="../bank/2023/q27.png" alt="2023-27 原题" width="440" style="display:block; width:27.48em; max-width:none; height:auto;">
 </div>
 
 键盘输入、缺页异常和资源不足的 `wait()` 都可能需要等输入、调页或信号量条件，导致阻塞。**主动让出 CPU** 没有产生资源等待，该线程仍可运行，转就绪，**选 C**。第一笔问“让出后立刻重新选中它，是否还有外部障碍？”没有就属于就绪。
@@ -433,7 +433,7 @@ P1 的优先值 20 比当时 P0 的 15 更低，且比同时到达的 P2 的 10 
 ## 28｜2023-29：抢占时间线算完成，再减各自到达
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q29.png" alt="2023-29 原题" style="display:block; width:30.48em; max-width:none; height:auto;">
+<img src="../bank/2023/q29.png" alt="2023-29 原题" width="488" style="display:block; width:30.48em; max-width:none; height:auto;">
 </div>
 
 优先值大者更高：P1 在 `0—20` 跑 20；P2 到达抢占，在 `20—30` 跑 10；P3 到达再抢占，`30—43` 完成；P2 `43—75` 完成剩余 32；P1 `75—115` 完成剩余 40。周转分别 `115−0=115`、`75−20=55`、`43−30=13`，平均 `(115+55+13)/3=61 ms`，**选 B**。第一笔画到达时刻与已用 CPU，而不是拿服务时间直接排序。
@@ -447,7 +447,7 @@ P1 原需 60，在 20 时剩 40；P2 原需 42，在 30 时剩 32。P3 完成后
 ## 29｜2024-24：终止本进程不等于必然杀掉子进程
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q24.png" alt="2024-24 原题" style="display:block; width:20.31em; max-width:none; height:auto;">
+<img src="../bank/2024/q24.png" alt="2024-24 原题" width="325" style="display:block; width:20.31em; max-width:none; height:auto;">
 </div>
 
 OS 终止进程要回收其设备、内存及 PCB 等本进程资源，B/C/D 是一般收尾。子进程是另一个执行主体，可能由系统接管或按 OS 规则处理，**不一定必须终止子进程，选 A**。第一笔划出“这个进程拥有的资源”与“另一个进程是否也终止”两类结果。
@@ -461,7 +461,7 @@ OS 终止进程要回收其设备、内存及 PCB 等本进程资源，B/C/D 是
 ## 30｜2025-25：单链表的队首快，按优先级插入要找位置
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q25.png" alt="2025-25 原题" style="display:block; width:26.63em; max-width:none; height:auto;">
+<img src="../bank/2025/q25.png" alt="2025-25 原题" width="426" style="display:block; width:26.63em; max-width:none; height:auto;">
 </div>
 
 单链表按优先级有序，高优先级在头。取队首进程直接读头指针并更新为下一结点，`O(1)`；新进程要维持顺序，最坏需从头比较至插入位置，`O(n)`，**选 C（插入 O(n)，选出 O(1)）**。第一笔把一次插入拆为“找位置 + 改指针”，不能只数改指针的常数次。
