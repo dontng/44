@@ -9,7 +9,7 @@
 <a id="q01"></a>
 ## 01｜2011-01：固定倍增为什么是对数
 
-<img src="../bank/2011/q01.png" alt="2011-01" width="704" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2011/q01.png" alt="2011-01" width="426" style="display:block; width:26.63em; max-width:100%; height:auto;">
 
 代码中真正反复发生的动作是 `x=2*x`。先不要急着认 `while` 或背结论，只写出 `x` 的变化：
 
@@ -28,7 +28,7 @@
 <a id="q02"></a>
 ## 02｜2012-01：递归不等于指数增长
 
-<img src="../bank/2012/q01.png" alt="2012-01" width="704" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2012/q01.png" alt="2012-01" width="426" style="display:block; width:26.63em; max-width:100%; height:auto;">
 
 阶乘函数返回的结果是 `n!`，但题目问的不是结果有多大，而是程序做了多少工作。把调用过程展开：
 
@@ -78,7 +78,7 @@ max(m,n) ≤ m + n ≤ 2 × max(m,n)
 <a id="q04"></a>
 ## 04｜2014-01：什么时候两层循环可以相乘
 
-<img src="../bank/2014/q01.png" alt="2014-01" width="704" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2014/q01.png" alt="2014-01" width="426" style="display:block; width:26.63em; max-width:100%; height:auto;">
 
 先确认题目在算谁：算的是整段程序随输入规模 `n` 增长的运行时间。`count++` 是循环体中的基本动作，它执行多少次，就代表这段循环做了多少份工作；不是研究 `count` 这个变量增长得快不快。
 
@@ -99,7 +99,7 @@ n + n + … + n（共 log n 项）= n log n
 <a id="q05"></a>
 ## 05｜2017-01：累计到 n，需要反推进行了多少轮
 
-<img src="../bank/2017/q01.png" alt="2017-01" width="733" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2017/q01.png" alt="2017-01" width="444" style="display:block; width:27.75em; max-width:100%; height:auto;">
 
 这类题没有思路时，先执行前三轮，不需要一上来记公式。`++i` 是先把 `i` 加一，再把它加入 `sum`：
 
@@ -203,7 +203,7 @@ x + 1 ≤ √n
 <a id="q09"></a>
 ## 09｜2025-01：根号 n 轮，每轮做 i 次，为什么是 n
 
-<img src="../bank/2025/q01.png" alt="2025-01" width="696" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2025/q01.png" alt="2025-01" width="422" style="display:block; width:26.38em; max-width:100%; height:auto;">
 
 先看外层条件 `i*i<=n`。它意味着 `i` 最大走到约 `√n`，所以外层有 `O(√n)` 轮。再看内层：第 `i` 轮执行 `i` 次，因此不能把两层都笼统写成某个固定复杂度，而要相加：
 
