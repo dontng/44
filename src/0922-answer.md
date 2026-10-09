@@ -19,9 +19,7 @@
 <a id="q01"></a>
 ## 01｜2012-44：没有转发时，ID 必须等到 WB 的下一拍
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q44.png" alt="2012-44 原题" width="437" style="display:block; width:27.33em; max-width:none; height:auto;">
-</div>
+![2012-44 原题](../bank/2012/q44.png)
 
 **（1）位模式。** 16位补码 −513 为 `FDFFH`，算术右移保留最高位1，得到 −257，即 **`FEFFH`**。负奇数的算术右移向负无穷方向取整，不能将 −513/2 的绝对值截断成 −256。
 
@@ -46,9 +44,7 @@
 <a id="q02"></a>
 ## 02｜2014-44：循环的三个刻度是字节、指令、流水拍
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q44.png" alt="2014-44 原题" width="468" style="display:block; width:29.23em; max-width:none; height:auto;">
-</div>
+![2014-44 原题](../bank/2014/q44.png)
 
 **（1）编址。** 相邻指令地址 `08048100H → 08048104H` 差4，所以机器按**字节编址**、每条32位指令占4字节。
 
@@ -63,9 +59,7 @@
 <a id="q03"></a>
 ## 03｜2014-45：第一次缺页的那次访问还要重试
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q45.png" alt="2014-45 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
-</div>
+![2014-45 原题](../bank/2014/q45.png)
 
 **（1）终值。** R2 是 i，从0递增，执行 i=999 的循环后变为 **1000**，与 R6 相等，bne 不再回跳。不是999：那是最后一次被读取的下标。
 
