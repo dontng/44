@@ -25,7 +25,9 @@
 <a id="q01"></a>
 ## 01｜2010-17：TLB 命中与 Page 缺失不能同时出现
 
-![2010-17 原题](../bank/2010/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q17.png" alt="2010-17 原题" style="display:block; width:20.47em; max-width:none; height:auto;">
+</div>
 
 TLB 是近期**有效页表映射**的快取。若 TLB 命中，已经能取得该页当前的物理页框号，意味着页面在主存；所以“TLB 命中、Cache 命中、Page 未命中”**不可能，选 D**。Cache 可因为相应数据块不在其中而缺失，即使页已在主存；TLB 也可因对应表项没缓存而缺失，即使页在主存。
 
@@ -37,7 +39,9 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 <a id="q02"></a>
 ## 02｜2013-16：TLB 有效位、虚页标记、页内偏移依次核
 
-![2013-16 原题](../bank/2013/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q16.png" alt="2013-16 原题" style="display:block; width:29.35em; max-width:none; height:auto;">
+</div>
 
 页大小 4KB，虚拟地址 `03FFF180H` 的低 12 位是 `180H`，虚页号为 `03FFFH`。TLB 表中标记 `03FFFH` 的一行**有效位为 1**、页框号 `0153H`，所以翻译成功，拼回页内偏移得 **`0153180H`，选 A**。不要看到表中某行无效就宣布这次 TLB 缺失：必须比中**该虚页号**并检查同一行的有效位。
 
@@ -49,7 +53,9 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 <a id="q03"></a>
 ## 03｜2015-16：问“至少访问几次主存”，直写给出保底一次
 
-![2015-16 原题](../bank/2015/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q16.png" alt="2015-16 原题" style="display:block; width:28.47em; max-width:none; height:auto;">
+</div>
 
 `x=x+3` 至少要先取得旧 x、再写回新 x。若 TLB 与 Cache 均命中，地址翻译不必读主存页表，读 x 可由 Cache 完成；但题设 Cache **直写 Write Through**，写新 x 时还要同步写主存，故最少 **1 次，选 B**。关键是“至少”让我们选最有利的命中路径，再看哪一步无论如何无法省去。
 
@@ -61,7 +67,9 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 <a id="q04"></a>
 ## 04｜2019-14：缺页后重做触发缺页的那条指令
 
-![2019-14 原题](../bank/2019/q14.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q14.png" alt="2019-14 原题" style="display:block; width:19.84em; max-width:none; height:auto;">
+</div>
 
 缺页在地址翻译时被发现，处理程序从外存调入所缺的页、更新页表，然后回到**发生缺页的原指令重新执行**。若跳到下一条，原指令本该读/写的数据就从未完成，故错误的是 **D**。其他选项分别描述缺页异常、操作系统处理和按页装入。
 
@@ -73,7 +81,9 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 <a id="q05"></a>
 ## 05｜2020-15：沿用上一节点的 TLB/Cache 比较题
 
-![2020-15 原题](../bank/2020/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q15.png" alt="2020-15 原题" style="display:block; width:23.49em; max-width:none; height:auto;">
+</div>
 
 本题与 [0815-09](0815-answer.md#q09) 为同一道原题。立即可用的裁决是：TLB 保存地址转换、Cache 保存数据块，二者为快速访问通常不是**都由 DRAM 组成**，**选 D**。这里新增的位置感是：TLB 查询属于翻译阶段，Cache 查询属于翻译完成后的数据访问阶段。
 
@@ -85,7 +95,9 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 <a id="q06"></a>
 ## 06｜2022-15：页表存在位决定能否拼物理地址
 
-![2022-15 原题](../bank/2022/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q15.png" alt="2022-15 原题" style="display:block; width:29.13em; max-width:none; height:auto;">
+</div>
 
 4KB 页大小取虚拟地址 `00082840H` 的末 12 位 `840H` 为页内偏移，剩下 `0x82=130` 为虚页号。页表中虚页 130 的存在位为 1、页框号 `018H`；拼接成物理地址 **`018840H`，选 C**。虚页 82 的存在位为 0 是干扰项，它是**十进制 82**，不能把十六进制 `0x82` 当它。
 
@@ -97,7 +109,9 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 <a id="q07"></a>
 ## 07｜2024-16：页式存储题已在 0815 建立
 
-![2024-16 原题](../bank/2024/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q16.png" alt="2024-16 原题" style="display:block; width:26.46em; max-width:none; height:auto;">
+</div>
 
 这与 [0815-12](0815-answer.md#q12) 是同一道题：Cache 与主存可用直接映射，但虚拟页号经页表定位物理页框，通常可放入不同页框，故“主存—外存通常直接映射”的说法错误，**选 D**。在本节点给它加一层用途：页表查询是 TLB 缺失后的翻译路径之一。
 
@@ -109,7 +123,9 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 <a id="q08"></a>
 ## 08｜2024-17：TLB 的 tag 来自虚页号减组索引位
 
-![2024-17 原题](../bank/2024/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q17.png" alt="2024-17 原题" style="display:block; width:28.75em; max-width:none; height:auto;">
+</div>
 
 虚拟地址 32 位，页 1KB=`2¹⁰`，低 **10 位页内偏移**，虚页号剩 22 位。TLB 32 个表项、4 路组相联，有 **8 组**，用虚页号低 3 位选组，tag 剩 `22−3=19` 位，**选 C**。主存地址只有 30 位影响物理页框号宽度，不改变虚拟页 tag 的位数。
 
@@ -121,7 +137,9 @@ Cache 的 `tag=主存地址位数−块内偏移−Cache组号`；TLB 则是 `ta
 <a id="q09"></a>
 ## 09｜2024-18：MMU 翻译阶段看权限、页表、TLB，不看数据 Cache
 
-![2024-18 原题](../bank/2024/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q18.png" alt="2024-18 原题" style="display:block; width:24.85em; max-width:none; height:auto;">
+</div>
 
 题目问**不是在 MMU 地址转换过程中检测**。TLB 缺失、页面缺失与访问越权都可能在翻译/权限检查时被识别；**Cache 缺失**要等取得可用物理地址后，在数据/指令缓存查询时才知道，故 **选 B**。首笔把事件各自安在访问路径哪一段，不背四个异常名称。
 

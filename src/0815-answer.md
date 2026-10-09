@@ -28,7 +28,9 @@
 <a id="q01"></a>
 ## 01｜2009-14：字节地址先除块大小，再模组数
 
-![2009-14 原题](../bank/2009/q14.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q14.png" alt="2009-14 原题" style="display:block; width:28.38em; max-width:none; height:auto;">
+</div>
 
 16 个 Cache 块，每组 2 块，因此 **8 组**。主存块 32B、按字节编址，主存地址 129 属于块 `⌊129/32⌋=4`（128—159）；组号 `4 mod 8=4`，**选 C**。别把 129 直接模 8：低五位是块内字节偏移，不参与选组。
 
@@ -40,7 +42,9 @@
 <a id="q02"></a>
 ## 02｜2009-21：命中率分母是总访问次数
 
-![2009-21 原题](../bank/2009/q21.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q21.png" alt="2009-21 原题" style="display:block; width:28.34em; max-width:none; height:auto;">
+</div>
 
 1000 次访问有 50 次缺失，命中 `1000−50=950` 次，命中率 `950/1000=95%`，**选 D**。先把“缺失次数”从总数里减掉，别把 50 当作命中数，也别用主存访问次数另设分母。
 
@@ -52,7 +56,9 @@
 <a id="q03"></a>
 ## 03｜2012-17：全偶地址同组，LRU 只模拟两路
 
-![2012-17 原题](../bank/2012/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q17.png" alt="2012-17 原题" style="display:block; width:27.31em; max-width:none; height:auto;">
+</div>
 
 块大小 1 字，四行分两组、每组两路。访问序列 `0,4,8,2,0,6,8,6,4,8` 全为偶数，块号模 2 都是组 0；组 1 从未使用。只在组 0 记“最近→最久”两项：访问 8 后 `[8,4]`，访问 2 后 `[2,8]`，依此推进。10 次中仅第二次访问 6 时命中，**1 次，选 A**。
 
@@ -69,7 +75,9 @@
 <a id="q04"></a>
 ## 04｜2014-16：分离指令与数据，消除同时访存的资源争用
 
-![2014-16 原题](../bank/2014/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q16.png" alt="2014-16 原题" style="display:block; width:23.32em; max-width:none; height:auto;">
+</div>
 
 指令流水线可能同周期要取下一条指令，同时访存级要读写数据；若共用一处 Cache 端口，两次需求争同一资源。分开的指令 Cache 与数据 Cache 能并行满足这两类请求，主要目的是**减少指令流水线资源冲突，选 D**。平均访问时间和命中率可能受到影响，但题目问“分离的主要目的”，抓同时需求更直接。
 
@@ -81,7 +89,9 @@
 <a id="q05"></a>
 ## 05｜2015-15：Cache 总位数包含数据、标记、有效、脏位
 
-![2015-15 原题](../bank/2015/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q15.png" alt="2015-15 原题" style="display:block; width:28.45em; max-width:none; height:auto;">
+</div>
 
 数据区能放 4K 个 32 位字，共 **128K 位**。每行 4 字=16B，所以有 1K 行；直接映射的 32 位地址分为 4 位块内偏移、10 位行号，剩余 **18 位 tag**。回写还需脏位，另有有效位，每行控制信息 `18+1+1=20` 位，1K 行合计 20K 位。总位数至少 **148K，选 C**。
 
@@ -93,7 +103,9 @@
 <a id="q06"></a>
 ## 06｜2016-15：顺序扫数组，先数块数再数访问次数
 
-![2016-15 原题](../bank/2016/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q15.png" alt="2016-15 原题" style="display:block; width:28.32em; max-width:none; height:auto;">
+</div>
 
 每个 int 4B，块 16B 容 **4 个相邻数组元素**。对 `a[0]` 到 `a[999]` 顺序读改写，需读取 250 个新块；每次迭代对同一个 a[k] 至少有读与写两次访问，约 2000 次，所以缺失率 `250/2000=12.5%`，**选 C**。已装入的块内随后三个元素不再缺失。
 
@@ -105,7 +117,9 @@
 <a id="q07"></a>
 ## 07｜2017-14：a[j] 相邻，a[0..i] 被反复重访
 
-![2017-14 原题](../bank/2017/q14.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q14.png" alt="2017-14 原题" style="display:block; width:26.12em; max-width:none; height:auto;">
+</div>
 
 内层 `j=0..i−1` 顺序访问相邻的数组项，呈**空间局部性**；外层 i 逐步增加，前面的小下标在随后多轮再次访问，呈**时间局部性**。两者都有，**选 A**。观察实际下标序列：`i=0 时不访问 a；i=1 时访问 0；i=2 时访问 0,1；…`，比只看双重循环字数更能说明原因。
 
@@ -117,7 +131,9 @@
 <a id="q08"></a>
 ## 08｜2018-17：DRAM 行列题是上一节点的原题复用
 
-![2018-17 原题](../bank/2018/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q17.png" alt="2018-17 原题" style="display:block; width:28.19em; max-width:none; height:auto;">
+</div>
 
 这幅图与 [0814-13](0814-answer.md#q13) 是同一道 `2K×1` DRAM 原题：先令 `r×c=2048`，行列复用使地址引脚最少的搭配为 `32×64` 或 `64×32`；再以刷新行数少选 **`r=32,c=64`，C**。本节点不重复展开行列公式，检验你是否能把上一节点的“两层筛选”直接带过来。
 
@@ -129,7 +145,9 @@
 <a id="q09"></a>
 ## 09｜2020-15：TLB 与 Cache 都靠局部性，通常用 SRAM
 
-![2020-15 原题](../bank/2020/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q15.png" alt="2020-15 原题" style="display:block; width:23.49em; max-width:none; height:auto;">
+</div>
 
 题问**错误**：程序局部性影响 TLB 和 Cache 的命中；缺失时要取得页表项或主存数据；两类缺失处理可由硬件参与。断言两者**都由 DRAM 构成**是错的，实际高速 TLB 与 Cache 常用 SRAM 等高速电路，**选 D**。先抓住“都”这个绝对词和速度目标，不必在这题模拟地址转换。
 
@@ -141,7 +159,9 @@ TLB 保存近期虚拟页到物理页的转换，缺失后查页表；Cache 保�
 <a id="q10"></a>
 ## 10｜2021-16：先算每行数据，再补标签与回写状态
 
-![2021-16 原题](../bank/2021/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q16.png" alt="2021-16 原题" style="display:block; width:32.65em; max-width:none; height:auto;">
+</div>
 
 32KB 数据区、32B 块，得 `32KB/32B=1024` 行，直接映射需 **10 位行号**；块内偏移 5 位，32 位地址的 tag 为 `32−10−5=17` 位。每行数据 `32B×8=256` 位，另有有效位和回写脏位 2 位，合计 **`256+17+2=275` 位，选 A**。与 05 同一账式，变化的是块大小与每行数据位数。
 
@@ -153,7 +173,9 @@ TLB 保存近期虚拟页到物理页的转换，缺失后查页表；Cache 保�
 <a id="q11"></a>
 ## 11｜2022-16：八路意味着一组内八个 tag 并行比较
 
-![2022-16 原题](../bank/2022/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q16.png" alt="2022-16 原题" style="display:block; width:29.15em; max-width:none; height:auto;">
+</div>
 
 数据区 32KB、块 64B，先算 **512 行**；8 路组相联，每组 8 行，所以 **64 组=6 位组号**。块内偏移 6 位，32 位主存地址剩 tag `32−6−6=20` 位。一次查所选组的 8 路，需要 **8 个 20 位比较器，选 A**。不要把总行数 512 当成要同时比较的路数。
 
@@ -165,7 +187,9 @@ TLB 保存近期虚拟页到物理页的转换，缺失后查页表；Cache 保�
 <a id="q12"></a>
 ## 12｜2024-16：页表映射不是 Cache 的直接映射
 
-![2024-16 原题](../bank/2024/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q16.png" alt="2024-16 原题" style="display:block; width:26.46em; max-width:none; height:auto;">
+</div>
 
 主存与外存的交换单位为页，页式存储的缺页、页面替换通常由软件与硬件配合，写回的脏页需要落到外存；Cache 与主存可以选择直接映射。**虚拟页到物理页由页表映射，可放到可用的页框，并非通常采用固定的直接映射**，所以错误的是 **D**。这里把“Cache 组号确定”与“虚拟页号查询页表”分开。
 

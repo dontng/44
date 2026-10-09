@@ -29,7 +29,9 @@
 <a id="q01"></a>
 ## 01｜2009-16：相对转移的基准是取完本条后的 PC
 
-![2009-16 原题](../bank/2009/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q16.png" alt="2009-16 原题" style="display:block; width:28.41em; max-width:none; height:auto;">
+</div>
 
 指令起始地址 `2000H`，由操作码和位移量两个字节组成。每取一个字节 PC 加一，所以取完整条后 PC 已到 **`2002H`**；相对位移 `06H` 加在这个基准上，目标 **`2008H`，选 C**。第一笔是写取指过程的 PC：`2000→2001→2002`，别从指令首址直接加 6。
 
@@ -41,7 +43,9 @@ A 的 `2006` 忘了整条指令占 2 字节；B 的 `2007` 只计入其中 1 字
 <a id="q02"></a>
 ## 02｜2011-16：寄存器加形式地址，与访存取指针分开
 
-![2011-16 原题](../bank/2011/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q16.png" alt="2011-16 原题" style="display:block; width:29.62em; max-width:none; height:auto;">
+</div>
 
 题干定义偏移寻址为“某寄存器内容 + 形式地址”。基址、相对（PC 为寄存器）与变址都可写成 `EA=寄存器值+D`；**间接寻址**则要先按形式地址访问存储器，让那里的**内容**给出有效地址，故不属于，**选 A**。先把各方式翻译成“相加”还是“取内容”，不背四个名称。
 
@@ -53,7 +57,9 @@ A 的 `2006` 忘了整条指令占 2 字节；B 的 `2007` 只计入其中 1 字
 <a id="q03"></a>
 ## 03｜2011-17：重复的无符号条件转移题
 
-![2011-17 原题](../bank/2011/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q17.png" alt="2011-17 原题" style="display:block; width:29.70em; max-width:none; height:auto;">
+</div>
 
 这与 [0813-02](0813-answer.md#q02) 是同一道原题。无符号“大于”需要减法**无借位 CF=0**，且**不相等 ZF=0**；选项 C 的横线覆盖整个 `CF+ZF`，即 `¬(CF∨ZF)=1`，**选 C**。本节点只增加用途：条件转移的目标地址在判定跳转条件成立后才会被选用。
 
@@ -65,7 +71,9 @@ CF、ZF 是执行前一比较/减法留下的状态；相对位移或目标地�
 <a id="q04"></a>
 ## 04｜2013-17：变址先求地址，再从该地址取数
 
-![2013-17 原题](../bank/2013/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q17.png" alt="2013-17 原题" style="display:block; width:33.62em; max-width:none; height:auto;">
+</div>
 
 变址寄存器 `R=1000H`，形式地址 `D=2000H`，所以**有效地址 `EA=3000H`**；题问“访问到的操作数”，还要读 `M[3000H]=4000H`，**选 D**。`1000H` 和 `2000H` 处的内容虽然给出，根本没沿这条路径访问，属于干扰。
 
@@ -77,7 +85,9 @@ CF、ZF 是执行前一比较/减法留下的状态；相对位移或目标地�
 <a id="q05"></a>
 ## 05｜2014-17：固定指令先扣字段，再看位移的补码范围
 
-![2014-17 原题](../bank/2014/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q17.png" alt="2014-17 原题" style="display:block; width:29.15em; max-width:none; height:auto;">
+</div>
 
 32 位 Store 指令已有 8 位操作码（含方式位）。16 个通用寄存器需各 4 位，源操作数寄存器一份，基址寄存器再一份，剩 `32−8−4−4=16` 位给位移。16 位补码范围 **`−32768…+32767`，选 A**。这问的是位移字段的可编码范围，不是完整有效地址可能覆盖的范围。
 
@@ -89,7 +99,9 @@ CF、ZF 是执行前一比较/减法留下的状态；相对位移或目标地�
 <a id="q06"></a>
 ## 06｜2016-17：“先变址后间址”按顺序加括号
 
-![2016-17 原题](../bank/2016/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q17.png" alt="2016-17 原题" style="display:block; width:27.87em; max-width:none; height:auto;">
+</div>
 
 I 是寄存器**编号**，`(I)` 表示该寄存器里的变址值。先变址得 `R[I]+D`；后间接再访问这个地址处的内存，得到有效地址 **`M[R[I]+D]`，即图中 `((I)+D)`，选 C**。A 把寄存器编号本身与 D 相加；B 到变址结果就停了；D 先把寄存器当内存地址做了错误的间接。
 
@@ -101,7 +113,9 @@ I 是寄存器**编号**，`(I)` 表示该寄存器里的变址值。先变址�
 <a id="q07"></a>
 ## 07｜2017-15：下标顺序走数组，让寄存器持有变化量
 
-![2017-15 原题](../bank/2017/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q15.png" alt="2017-15 原题" style="display:block; width:25.00em; max-width:none; height:auto;">
+</div>
 
 一维数组基址固定，循环下标逐步变化。令指令中的 D 保留数组起点、变址寄存器保存随循环改变的偏移，地址可按 `EA=D+Rindex` 逐项生成，所以**变址寻址，选 D**。直接寻址要为不同元素改变指令内地址；寄存器寻址取寄存器本身的值，不说明从数组内存取数。
 
@@ -113,7 +127,9 @@ I 是寄存器**编号**，`(I)` 表示该寄存器里的变址值。先变址�
 <a id="q08"></a>
 ## 08｜2017-16：少一个地址字段，可让操作码继续扩展
 
-![2017-16 原题](../bank/2017/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q16.png" alt="2017-16 原题" style="display:block; width:28.65em; max-width:none; height:auto;">
+</div>
 
 三地址每个地址字段 6 位，先占 `3×6=18` 位；29 条三地址指令至少要 5 位操作码，合计 **23 位**。5 位前缀共 32 种，留 3 个前缀作二地址扩展；借空出的一个 6 位字段，每个前缀可区分 64 条，足够 107 条二地址。指令按字节定长，23 位向上取整为 **24 位，选 A**。
 
@@ -125,7 +141,9 @@ I 是寄存器**编号**，`(I)` 表示该寄存器里的变址值。先变址�
 <a id="q09"></a>
 ## 09｜2018-18：自动加一发生在“取完元素”之后
 
-![2018-18 原题](../bank/2018/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q18.png" alt="2018-18 原题" style="display:block; width:29.33em; max-width:none; height:auto;">
+</div>
 
 double 每项 8B，首址 `2000H`；本轮读到的地址 `2100H` 与首址差 `100H=256B`，所以**取这个元素时**变址寄存器内容是 `256/8=32`，**选 B**。题说“取完后自动加 1”，故下一轮才是 33，不能提前给本轮加一。
 
@@ -137,7 +155,9 @@ double 每项 8B，首址 `2000H`；本轮读到的地址 `2100H` 与首址差 `
 <a id="q10"></a>
 ## 10｜2019-15：同一基址、大端原题沿用 0812
 
-![2019-15 原题](../bank/2019/q15.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q15.png" alt="2019-15 原题" style="display:block; width:31.30em; max-width:none; height:auto;">
+</div>
 
 这是 [0812-17](0812-answer.md#q17) 的重复引用：形式地址 `FF12H` 用 16 位补码表示，为 −238，符号扩展后加基址 `F0000000H`，操作数首址为 `EFFFFF12H`；大端四字节 `12 34 FF 00` 的最低有效字节在首址+3，即 **`EFFFFF15H`，选 D**。原图 C、D 的高位为 `EFFF`；零扩展位移会落入 A/B 的干扰地址。
 
@@ -149,7 +169,9 @@ double 每项 8B，首址 `2000H`；本轮读到的地址 `2100H` 与首址差 `
 <a id="q11"></a>
 ## 11｜2020-16：单地址格式扣固定字段后，直接地址无符号
 
-![2020-16 原题](../bank/2020/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q16.png" alt="2020-16 原题" style="display:block; width:32.70em; max-width:none; height:auto;">
+</div>
 
 48 条指令至少用 6 位操作码；4 种寻址方式需 2 位方式码。16 位固定指令剩 `16−6−2=8` 位地址字段。**直接寻址**把字段当无符号地址，范围 `0…2⁸−1=0…255`，**选 A**。相对方式可能把同一字段当有符号位移，但题专问直接可寻址范围，别拿补码 -128…127 来答。
 
@@ -161,7 +183,9 @@ double 每项 8B，首址 `2000H`；本轮读到的地址 `2100H` 与首址差 `
 <a id="q12"></a>
 ## 12｜2022-19：扩展操作码逐层扣掉占用的前缀
 
-![2022-19 原题](../bank/2022/q19.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q19.png" alt="2022-19 原题" style="display:block; width:29.95em; max-width:none; height:auto;">
+</div>
 
 16 位指令、每个地址 6 位。二地址格式操作码先有 `16−12=4` 位，共 16 个前缀；其中 12 个给二地址指令，余 **4 个前缀**留给一地址扩展。一地址只用 6 位地址，空出的 6 位每个前缀可再细分 64 种，可形成 `4×64=256` 种一地址编码；已用 254 种，还剩 **2 个可继续扩展的前缀**。零地址不再需要那 6 位地址字段，每个前缀又能分 64 种，故最多 **`2×64=128` 条零地址指令，选 D**。
 
@@ -173,7 +197,9 @@ double 每项 8B，首址 `2000H`；本轮读到的地址 `2100H` 与首址差 `
 <a id="q13"></a>
 ## 13｜2023-17：寄存器内容是值还是地址，由寻址方式决定
 
-![2023-17 原题](../bank/2023/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q17.png" alt="2023-17 原题" style="display:block; width:29.25em; max-width:none; height:auto;">
+</div>
 
 同一个通用寄存器可以直接放**操作数**，也可以放**操作数所在内存地址**。CPU 如何解释，取决于指令规定的**操作数寻址方式，选 A**：寄存器直接取 R 内值，寄存器间接把 R 内值作为地址再访存。寄存器编号只定位哪个寄存器，编号本身不决定取值后是否再访存。
 
