@@ -1,0 +1,411 @@
+{
+  "scope": "src/MMDD.md and src/MMDD-answer.md question-image display size",
+  "baseline_commit": "6c5d6db12efe680e9b1495caf92d62bdfc57d336",
+  "verified_content_commit": "22e8b56b9555d0aba10ddd5def1cc1ff332db52d",
+  "complete": true,
+  "counts": {
+    "date_pairs": 59,
+    "updated_markdown_files": 118,
+    "displayed_distinct_images": 798,
+    "shrunk_distinct_question_images": 618,
+    "question_images_kept_at_previous_scale": 180,
+    "converted_unconstrained_markdown_instances": 815,
+    "calibrated_inline_instances": 1648,
+    "calibration_entries": 799
+  },
+  "root_causes": [
+    "815 answer-page images had unconstrained Markdown rendering rather than the widths used by question pages.",
+    "0731-answer retained larger legacy display widths.",
+    "Six sample images per year did not account for individual scan glyph heights."
+  ],
+  "repair": "Use one per-image width in both pages; shrink oversized images toward10px visible Chinese ink at16px base, preserve already smaller question widths. Add HTML width alongside em CSS. Generators consume calibration and reject changed source bytes. Preserve all original PNGs.",
+  "verification": {
+    "numeric_screening": "798 source images measured;137 measurements use same-year fallback for fragmented or insufficient full-character components.",
+    "visual_review": "8 before/after header comparisons plus34 resulting-scale examples across2009–2025; sampled visual verification, not a claim that all798 were individually read at full resolution.",
+    "prose": "All126 src Markdown files compared after removing image markup and wrapper whitespace; no prose differences.",
+    "local_structure": "No new unbalanced details or missing HTML image destinations.",
+    "tests": "14 existing repository tests pass; python tools/normalize_image_display.py --check reports0 inconsistent pages.",
+    "remote": {
+      "head": "22e8b56b9555d0aba10ddd5def1cc1ff332db52d",
+      "files_checked": 122,
+      "mismatches": []
+    },
+    "github_rendered_html": "Fetched GitHub0731-answer page (HTTP200); rendered tags retain widths380,356,470 for2011-01,2012-01,2013-01. GitHub applies max-width100%, so narrow windows may further shrink wider images.",
+    "source_bytes": "No changes to bank PNGs."
+  },
+  "limits": "Visible ink-height estimates cannot equalize original mixed fonts, subscripts or diagram labels. Same source image now has the same declared size. Narrow-window scaling and host sanitization still affect actual screen appearance.",
+  "published_batches": [
+    {
+      "commit": "ef24dd22262d0da2b474b870f4987ea5a3220319",
+      "files": 3,
+      "kind": "calibration"
+    },
+    {
+      "commit": "6677a84f32b11a93cb43f31292490143e2e6432c",
+      "files": [
+        "src/0731-answer.md",
+        "src/0731.md",
+        "src/0801-answer.md",
+        "src/0801.md",
+        "src/0802-answer.md",
+        "src/0802.md"
+      ],
+      "batch": 1
+    },
+    {
+      "commit": "e2e6b5b2dba888c9321e3bd57c95668f0ec6f39a",
+      "files": [
+        "src/0803-answer.md",
+        "src/0803.md",
+        "src/0804-answer.md",
+        "src/0804.md",
+        "src/0805-answer.md",
+        "src/0805.md"
+      ],
+      "batch": 2
+    },
+    {
+      "commit": "e247cdd6776fddd3f6ecd790da3d1ba1258ff142",
+      "files": [
+        "src/0806-answer.md",
+        "src/0806.md",
+        "src/0807-answer.md",
+        "src/0807.md",
+        "src/0808-answer.md",
+        "src/0808.md"
+      ],
+      "batch": 3
+    },
+    {
+      "commit": "5f410555bce26178028e8f988d6f551a3f408cfc",
+      "files": [
+        "src/0809-answer.md",
+        "src/0809.md",
+        "src/0810-answer.md",
+        "src/0810.md",
+        "src/0811-answer.md",
+        "src/0811.md"
+      ],
+      "batch": 4
+    },
+    {
+      "commit": "31880e94a214c80e772859ed4bb8941f17280fa8",
+      "files": [
+        "src/0812-answer.md",
+        "src/0812.md",
+        "src/0813-answer.md",
+        "src/0813.md",
+        "src/0814-answer.md",
+        "src/0814.md"
+      ],
+      "batch": 5
+    },
+    {
+      "commit": "3c4884243bef20e6ab26fbbcd95d9cb6e9ad2a20",
+      "files": [
+        "src/0815-answer.md",
+        "src/0815.md",
+        "src/0816-answer.md",
+        "src/0816.md",
+        "src/0817-answer.md",
+        "src/0817.md"
+      ],
+      "batch": 6
+    },
+    {
+      "commit": "1d9f36ae3b90761d96421bb650a117fb2fedf516",
+      "files": [
+        "src/0818-answer.md",
+        "src/0818.md",
+        "src/0819-answer.md",
+        "src/0819.md",
+        "src/0820-answer.md",
+        "src/0820.md"
+      ],
+      "batch": 7
+    },
+    {
+      "commit": "a5d515fcbd555bd7b5e0cfd8078f28ee95ad208f",
+      "files": [
+        "src/0821-answer.md",
+        "src/0821.md",
+        "src/0822-answer.md",
+        "src/0822.md",
+        "src/0823-answer.md",
+        "src/0823.md"
+      ],
+      "batch": 8
+    },
+    {
+      "commit": "a3c05abc65336c286bf9cd91c2eebc9241fe4e6a",
+      "files": [
+        "src/0824-answer.md",
+        "src/0824.md",
+        "src/0825-answer.md",
+        "src/0825.md",
+        "src/0826-answer.md",
+        "src/0826.md"
+      ],
+      "batch": 9
+    },
+    {
+      "commit": "8e9ccfe6301b634d20b999ab965aad4344a94f15",
+      "files": [
+        "src/0827-answer.md",
+        "src/0827.md",
+        "src/0828-answer.md",
+        "src/0828.md",
+        "src/0829-answer.md",
+        "src/0829.md"
+      ],
+      "batch": 10
+    },
+    {
+      "commit": "5e792c0f68e2fe025fc3a5e1e5a3d2da27824edb",
+      "kind": "html-width",
+      "files": 3
+    },
+    {
+      "commit": "ea7d737a9f4d78a97661057b7d49207974cd7098",
+      "files": [
+        "src/0731-answer.md",
+        "src/0731.md",
+        "src/0801-answer.md",
+        "src/0801.md",
+        "src/0802-answer.md",
+        "src/0802.md"
+      ],
+      "html_batch": 1
+    },
+    {
+      "commit": "a56631e33819bbc2dca152babaded3a2b15aeb5e",
+      "files": [
+        "src/0803-answer.md",
+        "src/0803.md",
+        "src/0804-answer.md",
+        "src/0804.md",
+        "src/0805-answer.md",
+        "src/0805.md"
+      ],
+      "html_batch": 2
+    },
+    {
+      "commit": "c3164ab80d32e14549f5eaed38317ae260f308bc",
+      "files": [
+        "src/0806-answer.md",
+        "src/0806.md",
+        "src/0807-answer.md",
+        "src/0807.md",
+        "src/0808-answer.md",
+        "src/0808.md"
+      ],
+      "html_batch": 3
+    },
+    {
+      "commit": "ec4035a26a93a66d88cdafe57cde2f71b145a876",
+      "files": [
+        "src/0809-answer.md",
+        "src/0809.md",
+        "src/0810-answer.md",
+        "src/0810.md",
+        "src/0811-answer.md",
+        "src/0811.md"
+      ],
+      "html_batch": 4
+    },
+    {
+      "commit": "b8ecdd8a7a21ea4d0e32e8e062d7eeebaf8adc56",
+      "files": [
+        "src/0812-answer.md",
+        "src/0812.md",
+        "src/0813-answer.md",
+        "src/0813.md",
+        "src/0814-answer.md",
+        "src/0814.md"
+      ],
+      "html_batch": 5
+    },
+    {
+      "commit": "591fedaedb2f0897930ef259ee1268b32273c90f",
+      "files": [
+        "src/0815-answer.md",
+        "src/0815.md",
+        "src/0816-answer.md",
+        "src/0816.md",
+        "src/0817-answer.md",
+        "src/0817.md"
+      ],
+      "html_batch": 6
+    },
+    {
+      "commit": "70d25f852672f12483a9ddd4c28ea2fd201a768f",
+      "files": [
+        "src/0818-answer.md",
+        "src/0818.md",
+        "src/0819-answer.md",
+        "src/0819.md",
+        "src/0820-answer.md",
+        "src/0820.md"
+      ],
+      "html_batch": 7
+    },
+    {
+      "commit": "29f7023e51b7f8926d14ed7f3247806a5cf32e05",
+      "files": [
+        "src/0821-answer.md",
+        "src/0821.md",
+        "src/0822-answer.md",
+        "src/0822.md",
+        "src/0823-answer.md",
+        "src/0823.md"
+      ],
+      "html_batch": 8
+    },
+    {
+      "commit": "6332b4f20f8d1d6fbeb31276f3f6a1d1be9b743c",
+      "files": [
+        "src/0824-answer.md",
+        "src/0824.md",
+        "src/0825-answer.md",
+        "src/0825.md",
+        "src/0826-answer.md",
+        "src/0826.md"
+      ],
+      "html_batch": 9
+    },
+    {
+      "commit": "565a9382e4b9cb73361db298f11c22f41c06fc46",
+      "files": [
+        "src/0827-answer.md",
+        "src/0827.md",
+        "src/0828-answer.md",
+        "src/0828.md",
+        "src/0829-answer.md",
+        "src/0829.md"
+      ],
+      "html_batch": 10
+    },
+    {
+      "commit": "6e0276b5b408e6839a3183f93de772a5aff64ed3",
+      "files": [
+        "src/0830-answer.md",
+        "src/0830.md",
+        "src/0831-answer.md",
+        "src/0831.md",
+        "src/0901-answer.md",
+        "src/0901.md"
+      ],
+      "html_batch": 11
+    },
+    {
+      "commit": "a633c66a34f072d8813d900dd42c399e1cb6cd52",
+      "files": [
+        "src/0902-answer.md",
+        "src/0902.md",
+        "src/0903-answer.md",
+        "src/0903.md",
+        "src/0904-answer.md",
+        "src/0904.md"
+      ],
+      "html_batch": 12
+    },
+    {
+      "commit": "05d66132041dde571ff009ec16ee6a591636787a",
+      "files": [
+        "src/0905-answer.md",
+        "src/0905.md",
+        "src/0906-answer.md",
+        "src/0906.md",
+        "src/0907-answer.md",
+        "src/0907.md"
+      ],
+      "html_batch": 13
+    },
+    {
+      "commit": "cf0159316dd65611dd89312bf4020848f0dcfb83",
+      "files": [
+        "src/0908-answer.md",
+        "src/0908.md",
+        "src/0914-answer.md",
+        "src/0914.md",
+        "src/0915-answer.md",
+        "src/0915.md"
+      ],
+      "html_batch": 14
+    },
+    {
+      "commit": "00c206718604d0def81cb985b8d1ac2245e084bf",
+      "files": [
+        "src/0916-answer.md",
+        "src/0916.md",
+        "src/0917-answer.md",
+        "src/0917.md",
+        "src/0918-answer.md",
+        "src/0918.md"
+      ],
+      "html_batch": 15
+    },
+    {
+      "commit": "14c83c65fad8c0322a21137117355c09b3f54a92",
+      "files": [
+        "src/0919-answer.md",
+        "src/0919.md",
+        "src/0920-answer.md",
+        "src/0920.md",
+        "src/0921-answer.md",
+        "src/0921.md"
+      ],
+      "html_batch": 16
+    },
+    {
+      "commit": "84f7064cfbf361bd7576cf01ba6c589bc4175469",
+      "files": [
+        "src/0922-answer.md",
+        "src/0922.md",
+        "src/0923-answer.md",
+        "src/0923.md",
+        "src/0924-answer.md",
+        "src/0924.md"
+      ],
+      "html_batch": 17
+    },
+    {
+      "commit": "0ddaae45e2502028e466c4ab260b3f1ed4f15ad0",
+      "files": [
+        "src/0925-answer.md",
+        "src/0925.md",
+        "src/0926-answer.md",
+        "src/0926.md",
+        "src/0927-answer.md",
+        "src/0927.md"
+      ],
+      "html_batch": 18
+    },
+    {
+      "commit": "6c8a3c7301ae99ea7fbf623699864f0302be5a48",
+      "files": [
+        "src/0928-answer.md",
+        "src/0928.md",
+        "src/0929-answer.md",
+        "src/0929.md",
+        "src/0930-answer.md",
+        "src/0930.md"
+      ],
+      "html_batch": 19
+    },
+    {
+      "commit": "22e8b56b9555d0aba10ddd5def1cc1ff332db52d",
+      "files": [
+        "src/1001-answer.md",
+        "src/1001.md",
+        "src/1002-answer.md",
+        "src/1002.md"
+      ],
+      "html_batch": 20
+    }
+  ],
+  "recheck_commands": [
+    "python tools/normalize_image_display.py --check",
+    "python -m unittest discover -s tests -v"
+  ]
+}
