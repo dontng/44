@@ -29,7 +29,7 @@
 ## 01｜2010-13：先读补码值，再查八位乘积范围
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q13.png" alt="2010-13 原题" style="display:block; width:28.84em; max-width:none; height:auto;">
+<img src="../bank/2010/q13.png" alt="2010-13 原题" width="461" style="display:block; width:28.84em; max-width:none; height:auto;">
 </div>
 
 8 位补码给出 `FE=-2`、`F2=-14`、`90=-112`、`F8=-8`。有符号结果要装在 `[-128,127]`。四项依次得 28、**1568**、16、112；只有 `r2×r3` 的 1568 越过 127，**选 B**。计算前若把 `F2` 当 242，所有乘积都会被误判。
@@ -43,7 +43,7 @@
 ## 02｜2011-17：无符号大于只看 CF 与 ZF
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q17.png" alt="2011-17 原题" style="display:block; width:29.70em; max-width:none; height:auto;">
+<img src="../bank/2011/q17.png" alt="2011-17 原题" width="475" style="display:block; width:29.70em; max-width:none; height:auto;">
 </div>
 
 比较指令可视为做一次减法但不保存差值。无符号 `a>b` 需要 `a−b` **没有借位**（`CF=0`），并且 **不相等**（`ZF=0`）。选项 C 在原图中是**整个 `CF+ZF` 上方有横线**，即 `¬(CF∨ZF)=1`，等价于 `CF=0` 且 `ZF=0`，**选 C**。横线覆盖整体和只覆盖其中一个标志会改变逻辑，读题时要把它划清。
@@ -57,7 +57,7 @@
 ## 03｜2013-14：带符号除以二先还原数值
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q14.png" alt="2013-14 原题" style="display:block; width:28.98em; max-width:none; height:auto;">
+<img src="../bank/2013/q14.png" alt="2013-14 原题" width="464" style="display:block; width:28.98em; max-width:none; height:auto;">
 </div>
 
 `x=11110100₂` 是 -12，`y=10110000₂` 是 -80。数学式 `2x+y/2=−24−40=−64`，落在八位补码范围内；`−64` 的位图是 **`11000000₂`，选 A**。两数都是偶数，除二不涉及负数舍入方向，避免在此题引入无关细节。
@@ -71,7 +71,7 @@
 ## 04｜2014-13：边界 -128 与 +127 不是对称的
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q13.png" alt="2014-13 原题" style="display:block; width:27.65em; max-width:none; height:auto;">
+<img src="../bank/2014/q13.png" alt="2014-13 原题" width="442" style="display:block; width:27.65em; max-width:none; height:auto;">
 </div>
 
 八位定点补码界限 `[-128,127]`。四项算值：`x+y=78`；`−x+y=−128`，**刚好可表示**；`x−y=128`，越过正上界；`−x−y=−78`。故只有 **C** 溢出。它承接 0812-21 的负端多一个可表示值。
@@ -85,7 +85,7 @@
 ## 05｜2016-13：负 signed short 赋给同宽 unsigned short
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q13.png" alt="2016-13 原题" style="display:block; width:24.11em; max-width:none; height:auto;">
+<img src="../bank/2016/q13.png" alt="2016-13 原题" width="386" style="display:block; width:24.11em; max-width:none; height:auto;">
 </div>
 
 `si=−32767` 赋给 16 位 `unsigned short`，结果按 `2¹⁶` 取模：`65536−32767=32769`，**选 D**。保底笔是先写目标类型范围 `0..65535`，再把负值加 65536；这个转换的数值由无符号模运算明确给出。
@@ -99,7 +99,7 @@
 ## 06｜2018-16：同一右移方向，空出的最高位由规则决定
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q16.png" alt="2018-16 原题" style="display:block; width:30.35em; max-width:none; height:auto;">
+<img src="../bank/2018/q16.png" alt="2018-16 原题" width="486" style="display:block; width:30.35em; max-width:none; height:auto;">
 </div>
 
 `x=11011000₂`。逻辑右移一位，最高位补 0，得 **`01101100₂`**；算术右移复制原符号位 1，得 **`11101100₂`**。两者配对 **选 B**。先看题目要的两种移位，不必先算 x 的十进制值。
@@ -113,7 +113,7 @@
 ## 07｜2018-19：CF 问无符号借位，OF 问有符号范围
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q19.png" alt="2018-19 原题" style="display:block; width:29.38em; max-width:none; height:auto;">
+<img src="../bank/2018/q19.png" alt="2018-19 原题" width="470" style="display:block; width:29.38em; max-width:none; height:auto;">
 </div>
 
 `FFFFFFFFH−FFFFFFF0H=0000000FH`。按无符号解释是 `2³²−1` 减 `2³²−16`，没有借位，**CF=0**；按有符号解释是 `−1−(−16)=15`，不越界，**OF=0**。故 **A**。同一运算允许两套解读，两个标志各自回答不同的问题。
@@ -127,7 +127,7 @@
 ## 08｜2021-13：同一组位在两种排序规则下都先解码
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q13.png" alt="2021-13 原题" style="display:block; width:32.62em; max-width:none; height:auto;">
+<img src="../bank/2021/q13.png" alt="2021-13 原题" width="522" style="display:block; width:32.62em; max-width:none; height:auto;">
 </div>
 
 `FFFDH`、`FFDFH`、`7FFCH` 当作 16 位**有符号**补码分别为 `−3`、`−33`、`32764`，所以 **`y<x<z`，选 D**。若当无符号数，`7FFC` 最小，`FFDF` 小于 `FFFD`，顺序 `z<y<x`，并非 A、B。别用十六进制字母顺序直接推有符号大小。
@@ -141,7 +141,7 @@
 ## 09｜2023-16：OF=0 与 CF=1 可以同时成立
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q16.png" alt="2023-16 原题" style="display:block; width:29.25em; max-width:none; height:auto;">
+<img src="../bank/2023/q16.png" alt="2023-16 原题" width="468" style="display:block; width:29.25em; max-width:none; height:auto;">
 </div>
 
 题目用 `100−200` 得 **OF=0、CF=1** 告诉你 CF 采用“减法借位”约定。新输入 `10−(−20)=30` 在 int 有符号范围内，**OF=0**；若把 `−20` 的同一位图按无符号数看，是接近 `2³²` 的大数，从 10 中减它要借位，**CF=1，选 B**。
@@ -155,7 +155,7 @@ OF 看 signed 的数学运算，10 减 -20 得 30；CF 看 unsigned 的位图关
 ## 10｜2024-15：变量乘法仍能用加法与移位循环
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q15.png" alt="2024-15 原题" style="display:block; width:22.15em; max-width:none; height:auto;">
+<img src="../bank/2024/q15.png" alt="2024-15 原题" width="354" style="display:block; width:22.15em; max-width:none; height:auto;">
 </div>
 
 题目问“**错误**”。阵列乘法器可把部分积并行组织在一个时钟周期内完成，是一种可行设计；ALU 与移位器的迭代乘法通常分多轮；乘常数可拆成移位、加减；**两个变量也能**逐位读乘数，在循环中移位并按位加部分积。因此 D 声称“无法”是错的，**选 D**。
@@ -169,7 +169,7 @@ OF 看 signed 的数学运算，10 减 -20 得 30；CF 看 unsigned 的位图关
 ## 11｜2025-14：真实差 -210 装不进八位，位图回绕成 46
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q14.png" alt="2025-14 原题" style="display:block; width:30.91em; max-width:none; height:auto;">
+<img src="../bank/2025/q14.png" alt="2025-14 原题" width="495" style="display:block; width:30.91em; max-width:none; height:auto;">
 </div>
 
 `A3H` 作 8 位补码为 `163−256=−93`；`75H=117`。真实 `x−y=−210` 小于 -128，**OF=1**。运算器只保留低 8 位：`−210 mod 256=46=2EH`，若题问的是运算器得到的 x−y 数值，选 **`46，1`，D**。这题必须同时报告真实值与被截断后的机器结果，不能把 46 当真实数学差。
