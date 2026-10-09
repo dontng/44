@@ -28,7 +28,9 @@
 <a id="q01"></a>
 ## 01｜2010-12：三种优化改方程的不同位置
 
-![2010-12 原题](../bank/2010/q12.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q12.png" alt="2010-12 原题" style="display:block; width:24.59em; max-width:none; height:auto;">
+</div>
 
 程序 CPU 时间可写为 `指令数×CPI×时钟周期`。提高时钟频率使周期变短；优化数据通路结构可能降低每条指令所需周期或缩短关键路径；编译优化可减少执行的指令数或改变指令组合。三者**都可能**缩短程序时间，**选 D**。这里说“能”，不承诺每次改进都无副作用、必定加速。
 
@@ -40,7 +42,9 @@
 <a id="q02"></a>
 ## 02｜2011-12：MFLOPS 数浮点操作，不数全部指令
 
-![2011-12 原题](../bank/2011/q12.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q12.png" alt="2011-12 原题" style="display:block; width:28.07em; max-width:none; height:auto;">
+</div>
 
 题干指定**浮点操作速度**，用 FLOPS（floating-point operations per second），M 表示百万，故 **MFLOPS，选 D**。MIPS 数每秒百万条指令，CPI 数每条平均周期，IPC 数每周期平均指令；三者都不是专门的浮点运算次数。
 
@@ -52,7 +56,9 @@ MIPS=`指令/秒÷10⁶`；CPI=`周期/指令`；IPC=`指令/周期`；MFLOPS=`�
 <a id="q03"></a>
 ## 03｜2012-12：只加速 CPU 的 90 秒，I/O 仍为 10 秒
 
-![2012-12 原题](../bank/2012/q12.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q12.png" alt="2012-12 原题" style="display:block; width:27.29em; max-width:none; height:auto;">
+</div>
 
 原总时间 100s 中，CPU 90s、I/O 10s。CPU **速度提高 50%**，同样的 CPU 工作耗时变为 `90/1.5=60s`，I/O 不变，合计 **70s，选 D**。第一笔先把两段时间写开，不能拿总时间 100s 除 1.5，也不能把“速度加 50%”当“时间减 50%”。
 
@@ -63,7 +69,9 @@ MIPS=`指令/秒÷10⁶`；CPI=`周期/指令`；IPC=`指令/周期`；MFLOPS=`�
 <a id="q04"></a>
 ## 04｜2013-12：先按指令比例求加权 CPI，再换 MIPS
 
-![2013-12 原题](../bank/2013/q12.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q12.png" alt="2013-12 原题" style="display:block; width:28.32em; max-width:none; height:auto;">
+</div>
 
 四类占比和 CPI 分别给为 `50%×2`、`20%×3`、`10%×4`、`20%×5`，平均 CPI=`1+0.6+0.4+1=3`。频率 1.2GHz=1200MHz，每秒指令数为 `1200/3=400` 百万条，即 **400 MIPS，选 C**。不是四个 CPI 的简单算术平均。
 
@@ -75,7 +83,9 @@ MIPS=`指令/秒÷10⁶`；CPI=`周期/指令`；IPC=`指令/周期`；MFLOPS=`�
 <a id="q05"></a>
 ## 05｜2014-12：指令数减少、CPI 增加，同时乘到时间上
 
-![2014-12 原题](../bank/2014/q12.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q12.png" alt="2014-12 原题" style="display:block; width:29.12em; max-width:none; height:auto;">
+</div>
 
 同一台机器主频不变，时间随指令数与 CPI 的**乘积**变化。新指令数是原来的 70%，新 CPI 是 1.2 倍，所以新时间 `20×0.7×1.2=16.8s`，**选 D**。不能只拿“指令少 30%”直接把 20 秒变 14 秒，忽略新指令更费周期。
 
@@ -86,7 +96,9 @@ MIPS=`指令/秒÷10⁶`；CPI=`周期/指令`；IPC=`指令/周期`；MFLOPS=`�
 <a id="q06"></a>
 ## 06｜2017-12：相同 ISA、同一程序，指令数可约去
 
-![2017-12 原题](../bank/2017/q12.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q12.png" alt="2017-12 原题" style="display:block; width:32.75em; max-width:none; height:auto;">
+</div>
 
 M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N。`T1=N×2/1.5GHz`，`T2=N×1/1.2GHz`，比值 `T1/T2=(2/1.5)/(1/1.2)=2×1.2/1.5=1.6`，**选 C**。M1 频率更高却 CPI 翻倍，整体反而更慢。
 
@@ -98,7 +110,9 @@ M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N�
 <a id="q07"></a>
 ## 07｜2019-16：有停顿就不可能每个脉冲都启动新指令
 
-![2019-16 原题](../bank/2019/q16.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q16.png" alt="2019-16 原题" style="display:block; width:22.81em; max-width:none; height:auto;">
+</div>
 
 整形与分频得到时钟脉冲，周期倒数为主频；周期选择受相邻状态单元之间组合路径的最大延迟限制。D 说处理器**总是**每来一个时钟脉冲就开始一条新指令，忽略流水停顿、分支等待以及多周期指令，故 **错误选 D**。0820 的 CPI 与冒险直接给出反例。
 
@@ -110,7 +124,9 @@ M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N�
 <a id="q08"></a>
 ## 08｜2020-17：理想 CPI=1 原题回链
 
-![2020-17 原题](../bank/2020/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q17.png" alt="2020-17 原题" style="display:block; width:36.79em; max-width:none; height:auto;">
+</div>
 
 同 [0820-10](0820-answer.md#q10)：单周期 CPU 每条一拍，基本单发射流水在稳态无阻塞时每拍完成一条，**仅 I、III，选 B**。在性能节点新增：实际程序 CPI 还会受流水填充、Cache、相关与分支等待影响，不能把理想值代入所有实际执行时间。
 
@@ -122,7 +138,9 @@ M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N�
 <a id="q09"></a>
 ## 09｜2021-12：P 是 10¹⁵，不是 10¹⁶
 
-![2021-12 原题](../bank/2021/q12.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q12.png" alt="2021-12 原题" style="display:block; width:29.15em; max-width:none; height:auto;">
+</div>
 
 题给 `93.0146 PFLOPS`，P 表示 `10¹⁵`，即约 `93×10¹⁵=9.3×10¹⁶` 次浮点运算/秒。中文“亿亿”=`10⁸×10⁸=10¹⁶`，故约 **9.3 亿亿次，选 D**。题目问单位换算，不要因机器名或排行日期去另查当前性能。
 
@@ -134,7 +152,9 @@ M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N�
 <a id="q10"></a>
 ## 10｜2022-12：按类型算平均 CPI，最后把 ns 换成 μs
 
-![2022-12 原题](../bank/2022/q12.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q12.png" alt="2022-12 原题" style="display:block; width:29.19em; max-width:none; height:auto;">
+</div>
 
 80% 指令需 1 周期、20% 需 10 周期，平均 CPI=`0.8×1+0.2×10=2.8`。总 10000 条需 28000 周期；1GHz 每周期 1ns，总时间 `28000ns=28μs`，**选 A**。先算周期数再换单位，别把 28μs 错写 28ms。
 
@@ -145,7 +165,9 @@ M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N�
 <a id="q11"></a>
 ## 11｜2023-12：GIPS 是每秒十亿条指令
 
-![2023-12 原题](../bank/2023/q12.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q12.png" alt="2023-12 原题" style="display:block; width:29.25em; max-width:none; height:auto;">
+</div>
 
 频率 1.5GHz，平均 CPI=1.2，指令执行速度 `1.5/1.2=1.25 GIPS`。程序 5×10⁵ 条，CPU 时间 `5×10⁵/(1.25×10⁹)=4×10⁻⁴s=0.4ms`，**选 C**。先求速度再除工作量，或直接 `N×CPI/f`，两条路径应互相校验。
 
@@ -157,7 +179,9 @@ M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N�
 <a id="q12"></a>
 ## 12｜2025-18：Cache 缺失与 CPI 原题回链
 
-![2025-18 原题](../bank/2025/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q18.png" alt="2025-18 原题" style="display:block; width:19.09em; max-width:none; height:auto;">
+</div>
 
 同 [0820-13](0820-answer.md#q13)：Cache 缺失让流水线等待，平均 CPI 会受缺失率影响，B 的“无关”错误，**选 B**。放到性能方程里可看出，频率即使不变，等待多了会提高 CPI、延长总时间。
 
