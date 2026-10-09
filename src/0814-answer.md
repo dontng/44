@@ -56,7 +56,7 @@ ROM 每片深度 2K、宽度 8 位，拼成 4K×8 要两片做地址扩展；RAM
 <a id="q03"></a>
 ## 03｜2010-16：RAM 与 ROM 的名字不决定能否作 Cache
 
-<img src="../bank/2010/q16.png" alt="2010-16 原题" width="581" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2010/q16.png" alt="2010-16 原题" width="352" style="display:block; width:22.00em; max-width:100%; height:auto;">
 
 I：通常 RAM 易失、ROM 非易失，正确；II：两者均可按地址随机访问，正确。III：Cache 要快速且可替换写入的数据，ROM 不适合，错。IV：只有 DRAM 需要周期刷新，SRAM 和 ROM 不需要，错。因此 **仅 I、II，选 A**。把四句各自放回“掉电”“访问方式”“用途”“电荷保持”四个问题，不要让 RAM 的名字替后两句作答。
 
@@ -92,7 +92,7 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 <a id="q06"></a>
 ## 06｜2012-16：Flash 的读写都可行，但耗时不对称
 
-<img src="../bank/2012/q16.png" alt="2012-16 原题" width="600" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2012/q16.png" alt="2012-16 原题" width="363" style="display:block; width:22.69em; max-width:100%; height:auto;">
 
 题目问**错误**。Flash 由半导体 MOS 存储单元构成，掉电后仍保留数据，也能按地址访问并用于外部存储；B、C、D 是本题所指特性。A 把“可读可写”进一步推成“读、写速度一样快”，多加了一个不成立的条件，**选 A**。先标出这个新增断言，就无需把闪存每种电路都学完才能排除。
 
