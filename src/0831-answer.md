@@ -44,7 +44,9 @@
 <a id="q01"></a>
 ## 01｜2009-29：SCAN 的第一条件是磁头现在向哪边走
 
-![2009-29 原题](../bank/2009/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q29.png" alt="2009-29 原题" width="455" style="display:block; width:28.41em; max-width:none; height:auto;">
+</div>
 
 105 道正向增号，先服务 `110→170→180→195`，再折返 `68→45→35→12`，**选 A**。第一笔把大于/小于 105 的请求分两列，当前方向决定先取哪列。原图这次也完整显示其他选项，可直接验证。
 
@@ -56,7 +58,9 @@
 <a id="q02"></a>
 ## 02｜2009-32：设备独立先由逻辑名隔开应用与硬件
 
-![2009-32 原题](../bank/2009/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q32.png" alt="2009-32 原题" width="359" style="display:block; width:22.41em; max-width:none; height:auto;">
+</div>
 
 程序员用系统调用打开 I/O 设备，通常给出**逻辑设备名，选 A**；OS 再依据设备映射表找到具体物理设备。主/从设备号及物理名字是实现层的标识，不应成为普通应用在请求时的唯一硬编码依赖。第一笔问应用要的是“哪类功能/逻辑设备”，还是“哪台硬件的编号”。
 
@@ -68,7 +72,9 @@
 <a id="q03"></a>
 ## 03｜2010-32：键盘输入先到中断入口，再交登录流程
 
-![2010-32 原题](../bank/2010/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q32.png" alt="2010-32 原题" width="392" style="display:block; width:24.52em; max-width:none; height:auto;">
+</div>
 
 本地用户敲键盘时，控制器先发外部中断，CPU 进入**中断处理程序，选 B**，取得输入/状态；之后数据才会传给登录程序、命令解释程序或相应服务。第一笔按物理事件到软件消费的顺序走，不从“最终谁需要用户名”倒推最先运行者。
 
@@ -80,7 +86,9 @@
 <a id="q04"></a>
 ## 04｜2012-26：四层从应用侧到硬件完成侧排顺序
 
-![2012-26 原题](../bank/2012/q26.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q26.png" alt="2012-26 原题" width="409" style="display:block; width:25.55em; max-width:none; height:auto;">
+</div>
 
 由上至下：**用户级 I/O 软件→设备无关软件→设备驱动程序→中断处理程序，选 A**。设备无关层统一命名、缓冲和设备分配等共性；驱动把请求译成具体控制器命令；中断处理在设备完成时接收通知。第一笔先分“向设备发起”与“设备完成后回来”，再把驱动放发起末端、中断放完成端。
 
@@ -92,7 +100,9 @@
 <a id="q05"></a>
 ## 05｜2012-28：read 用已打开的描述符，不再传文件名
 
-![2012-28 原题](../bank/2012/q28.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q28.png" alt="2012-28 原题" width="437" style="display:block; width:27.29em; max-width:none; height:auto;">
+</div>
 
 用户进程发 `read` 系统调用，CPU 从用户态进入内核，II 对；若所需数据尚未在内存，启动磁盘 I/O 后该进程可睡眠等待，I 对。文件已由 `open` 找名并返回描述符，`read` 参数包含 fd、缓冲地址、长度等，**不要求文件名 III**。**仅 I、II，选 A**。第一笔把 `open(path)` 与 `read(fd,...)` 分到前后两次调用。
 
@@ -104,7 +114,9 @@
 <a id="q06"></a>
 ## 06｜2012-29：两个作业的 CPU 与 I/O 画成两条资源线
 
-![2012-29 原题](../bank/2012/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q29.png" alt="2012-29 原题" width="437" style="display:block; width:27.32em; max-width:none; height:auto;">
+</div>
 
 P1 `0—60` 用 CPU，随后磁盘 I/O `60—140`；P2 在 5 到达，CPU 可在 `60—180` 跑它的首段 120。到 `180`，P1 已就绪，CPU `180—200` 处理其末段 20；P2 的 I/O `180—220`，之后 CPU `220—260` 跑末段 40。两作业到 **260ms** 完成，**选 B**。第一笔列 CPU、I/O 两种资源，写每作业内部先后约束，再叠可并行部分。
 
@@ -116,7 +128,9 @@ CPU 总计算量 `60+20+120+40=240ms`，但开头 P1 必须先算 60 才有 I/O�
 <a id="q07"></a>
 ## 07｜2013-20：可靠性靠冗余，条带化与缓存主要谈速度
 
-![2013-20 原题](../bank/2013/q20.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q20.png" alt="2013-20 原题" width="416" style="display:block; width:25.99em; max-width:none; height:auto;">
+</div>
 
 RAID **镜像 I** 保留副本，单盘故障可读另一份；**奇偶校验 III** 用冗余校验信息重构失效数据，二者提高可靠性。条带化 II 把数据分散到盘提升并行吞吐，单独使用未提供恢复冗余；增加 Cache IV 主要改善性能。**仅 I、III，选 B**。第一笔问设备坏了还能否从额外信息恢复。
 
@@ -128,7 +142,9 @@ RAID **镜像 I** 保留副本，单盘故障可读另一份；**奇偶校验 II
 <a id="q08"></a>
 ## 08｜2013-21：一次盘读分寻道、等半圈、传输、控制
 
-![2013-21 原题](../bank/2013/q21.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q21.png" alt="2013-21 原题" width="453" style="display:block; width:28.34em; max-width:none; height:auto;">
+</div>
 
 10000 rpm 即每转 `60/10000 s=6ms`，随机到达平均等半圈 **3ms**；寻道 **6ms**；传输 4KB/20MB/s 约 **0.2ms**；控制器 **0.2ms**。总约 `6+3+0.2+0.2=9.4ms`，**选 B**。第一笔把 rpm 换一整圈毫秒，再取平均半圈，不能把 6ms 寻道又当转一圈。
 
@@ -140,7 +156,9 @@ RAID **镜像 I** 保留副本，单盘故障可读另一份；**奇偶校验 II
 <a id="q09"></a>
 ## 09｜2013-29：启动完成后，操作系统运行在 RAM
 
-![2013-29 原题](../bank/2013/q29.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q29.png" alt="2013-29 原题" width="381" style="display:block; width:23.83em; max-width:none; height:auto;">
+</div>
 
 问“最终被加载到”而非“固件最初存放处”：开机固件可位于 BIOS/ROM，加载器把操作系统内核装入**RAM，选 D**，CPU 才能在运行中读写其数据结构。第一笔圈出“开机后”“最终”，排除把启动入口当运行位置。
 
@@ -152,7 +170,9 @@ RAID **镜像 I** 保留副本，单盘故障可读另一份；**奇偶校验 II
 <a id="q10"></a>
 ## 10｜2013-31：I/O 密集型先启动设备，CPU 留给计算型
 
-![2013-31 原题](../bank/2013/q31.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q31.png" alt="2013-31 原题" width="454" style="display:block; width:28.36em; max-width:none; height:auto;">
+</div>
 
 P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU 与设备尽早重叠，优先级应 **P3＞P2＞P1，选 B**。第一笔找谁很快会放下 CPU 去发 I/O：P3 最快，P1 最晚；先让它们提交请求，设备忙时 CPU 可继续跑其他进程。
 
@@ -164,7 +184,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q11"></a>
 ## 11｜2014-26：读磁盘完成只表示等待条件解除
 
-![2014-26 原题](../bank/2014/q26.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q26.png" alt="2014-26 原题" width="370" style="display:block; width:23.15em; max-width:none; height:auto;">
+</div>
 
 进程因读盘而阻塞；完成中断到达后，等待事件成立，内核把它移入**就绪态，选 A**。还须经过 CPU 调度才可运行，故不能直接从阻塞跳成运行。第一笔把“完成 I/O”译成“可参加 CPU 竞争”，不是“已经拿到 CPU”。
 
@@ -176,7 +198,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q12"></a>
 ## 12｜2014-27：位图题连走“块数→位数→字节→存储簇数”
 
-![2014-27 原题](../bank/2014/q27.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q27.png" alt="2014-27 原题" width="466" style="display:block; width:29.15em; max-width:none; height:auto;">
+</div>
 
 分区 10GB，每簇 4KB，约有 `10×2^30/(4×2^10)=2.5×2^20` 簇；一簇一位，位图占 `(2.5×2^20)/8=320×2^10` 字节，即 **320KB**。位图自身也以 4KB 簇存放，还要 `320/4=80` **个簇，选 A（80）**。第一笔明确题末单位是“簇的个数”，不能停在 320KB。
 
@@ -188,7 +212,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q13"></a>
 ## 13｜2014-31：管道有容量，读空与写满都能阻塞
 
-![2014-31 原题](../bank/2014/q31.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q31.png" alt="2014-31 原题" width="301" style="display:block; width:18.80em; max-width:none; height:auto;">
+</div>
 
 **选 C**。读端遇到空管道，且写端尚可继续供数据时等待；写端遇到满管道，且读端尚可消费时等待。第一笔画有界内核缓冲区，分别问读有无数据、写有无空位。
 
@@ -200,7 +226,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q14"></a>
 ## 14｜2015-20：7200 转先换一圈，再取平均半圈
 
-![2015-20 原题](../bank/2015/q20.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q20.png" alt="2015-20 原题" width="469" style="display:block; width:29.31em; max-width:none; height:auto;">
+</div>
 
 一圈 `60/7200 s≈8.33ms`，平均旋转等待 `≈4.17ms`；每道 1000 扇区，传一个扇区 `≈8.33/1000=0.0083ms`。加平均寻道 8ms，得 `≈12.18ms`，最接近 **12.2ms，选 B**。第一笔列寻道、旋转、传输三项，先确认“平均”只让旋转等半圈。
 
@@ -212,7 +240,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q15"></a>
 ## 15｜2015-28：缓存命中与延迟写都指向减少实际盘访问
 
-![2015-28 原题](../bank/2015/q28.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q28.png" alt="2015-28 原题" width="341" style="display:block; width:21.29em; max-width:none; height:auto;">
+</div>
 
 内存中设磁盘缓冲区，重复读可从缓冲中取，写入可暂存并合并，主要减少**磁盘 I/O 次数，选 A**。第一笔问一次逻辑读写是否必须真的驱动盘片；若命中或可合并，就少一次物理 I/O。
 
@@ -224,7 +254,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q16"></a>
 ## 16｜2015-32：先把“外→内”译成“磁道号增大”
 
-![2015-32 原题](../bank/2015/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q32.png" alt="2015-32 原题" width="453" style="display:block; width:28.30em; max-width:none; height:auto;">
+</div>
 
 题给**最外侧为 0**，当前 58 从外向内，即号数增大。SCAN 先扫到 199，服务 130、180、199，再反向服务 42、15；经过磁道数 `(199-58)+(199-15)=141+184=325`，**选 C**。第一笔写 `0外→199内`，避免凭生活直觉把“向内”当减号。
 
@@ -236,7 +268,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q17"></a>
 ## 17｜2016-24：三作业在三种独占资源上流水
 
-![2016-24 原题](../bank/2016/q24.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q24.png" alt="2016-24 原题" width="452" style="display:block; width:28.23em; max-width:none; height:auto;">
+</div>
 
 每作业输入 2、CPU 3、输出 4ms。第一笔画三条资源线：输入作业 1/2/3 为 `0—2、2—4、4—6`；CPU 为 `2—5、5—8、8—11`；输出为 `5—9、9—13、13—17`。最后在 **17ms，选 B**。同一作业仍须输入→计算→输出，三个作业不同阶段可并发。
 
@@ -248,7 +282,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q18"></a>
 ## 18｜2016-31：SPOOLing 把独占设备前接队列
 
-![2016-31 原题](../bank/2016/q31.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q31.png" alt="2016-31 原题" width="293" style="display:block; width:18.30em; max-width:none; height:auto;">
+</div>
 
 题问**错误**项。SPOOLing 由系统的输入/输出管理进程、磁盘上的输入井/输出井等安排缓冲与真正设备操作；**不是用户作业直接控制设备与传输，选 D**。第一笔圈“由用户作业控制”，问谁有权实际驱动打印机等独占设备。
 
@@ -260,7 +296,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q19"></a>
 ## 19｜2017-28：多道程序填补 CPU 与 I/O 的等待空隙
 
-![2017-28 原题](../bank/2017/q28.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q28.png" alt="2017-28 原题" width="419" style="display:block; width:26.20em; max-width:none; height:auto;">
+</div>
 
 一个作业等待 I/O 时另一作业可用 CPU，反过来设备也可工作，所以 **CPU 利用率 I、系统吞吐量 III、I/O 设备利用率 IV**可提高；驻留多个作业还要调度与内存管理，**系统开销小 II**不是优势。**选 D**。第一笔画 CPU/设备两线找空闲被谁填满。
 
@@ -272,7 +310,9 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q20"></a>
 ## 20｜2017-32：DMA 的完成中断发生在整块传输之后
 
-![2017-32 原题](../bank/2017/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q32.png" alt="2017-32 原题" width="417" style="display:block; width:26.08em; max-width:none; height:auto;">
+</div>
 
 CPU 先**② 初始化 DMA 控制器并启动磁盘**，设备/DMA 再**③ 将一块数据传入内存缓冲区**；块完成后**① DMA 控制器请求中断**，CPU 最后**④ 执行结束中断服务**。顺序 `②→③→①→④`，**选 B**。第一笔把“中断请求”放到“块传完”之后，别和启动请求混同。
 
@@ -284,7 +324,9 @@ CPU 设置地址、长度、方向等参数并启动；DMA 控制器承担成块
 <a id="q21"></a>
 ## 21｜2018-27：阻塞要等事件，CPU 被抢占只回就绪
 
-![2018-27 原题](../bank/2018/q27.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q27.png" alt="2018-27 原题" width="420" style="display:block; width:26.23em; max-width:none; height:auto;">
+</div>
 
 申请临界资源若资源被占，可等待，**I**；从磁盘读数据等待完成，**II**；高优先级进程抢占 CPU，原进程还能运行，只是排队待调度，**III 不导致阻塞**。**仅 I、II，选 C**。第一笔区分“没有 CPU”与“所需条件尚未满足”。
 
@@ -296,7 +338,9 @@ CPU 设置地址、长度、方向等参数并启动；DMA 控制器承担成块
 <a id="q22"></a>
 ## 22｜2018-30：磁臂黏着需要一味偏爱“附近”
 
-![2018-30 原题](../bank/2018/q30.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q30.png" alt="2018-30 原题" width="469" style="display:block; width:29.29em; max-width:none; height:auto;">
+</div>
 
 若附近请求不断到来，**SSTF**可能总选近处；SCAN/C-SCAN 在连续到达的负载下也有等待策略差异，但题问**不会导致**的算法是按到达顺序服务的 **FCFS，选 A**。第一笔问新来的近处请求能否插队，FCFS 不能。
 
@@ -308,7 +352,9 @@ FCFS 会走很长磁头路程，却保证一个已排队请求前面只有有限
 <a id="q23"></a>
 ## 23｜2019-20：盘上的最小物理读写单位不是字节
 
-![2019-20 原题](../bank/2019/q20.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q20.png" alt="2019-20 原题" width="294" style="display:block; width:18.36em; max-width:none; height:auto;">
+</div>
 
 题问**错误**项：磁盘一般按**扇区/物理块**传输，不按单个字节独立完成一次物理读写，故 **C**。第一笔把 CPU 对内存按字节寻址与磁盘控制器按扇区 I/O 分开。
 
@@ -320,7 +366,9 @@ FCFS 会走很长磁头路程，却保证一个已排队请求前面只有有限
 <a id="q24"></a>
 ## 24｜2021-26：SSTF 每一步重新比较当前位置
 
-![2021-26 原题](../bank/2021/q26.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q26.png" alt="2021-26 原题" width="468" style="display:block; width:29.23em; max-width:none; height:auto;">
+</div>
 
 当前 184，请求含 184，先服务它移动 **0**。余下距当前位置最近 182（2），随后 187（5），再 176（11），最后 199（23）。累计 `0+2+5+11+23=41`，**选 C**。第一笔先消掉与当前位置重合的请求，然后每移动一次重新算距离。
 
@@ -332,7 +380,9 @@ SSTF 的比较基准会随磁头改变，不是把所有请求按原点距离排
 <a id="q25"></a>
 ## 25｜2022-32：驱动必须知道设备怎么控制
 
-![2022-32 原题](../bank/2022/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q32.png" alt="2022-32 原题" width="265" style="display:block; width:16.56em; max-width:none; height:auto;">
+</div>
 
 题问**不正确**：驱动把通用读写请求变成具体设备的控制命令、寄存器操作及中断处理，与 I/O 控制方式密切相关，故 **A 错，选 A**。第一笔对比“设备无关层提供统一接口”与“驱动适配具体硬件”。
 
@@ -344,7 +394,9 @@ SSTF 的比较基准会随磁头改变，不是把所有请求按原点距离排
 <a id="q26"></a>
 ## 26｜2023-32：分配设备先检查能否用、可否用、该给谁
 
-![2023-32 原题](../bank/2023/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q32.png" alt="2023-32 原题" width="440" style="display:block; width:27.52em; max-width:none; height:auto;">
+</div>
 
 **设备类型 I**决定请求所需功能，**访问权限 II**决定进程能否使用，**占用状态 III**决定现在能否分配，**逻辑与物理映射 IV**决定逻辑请求对应哪台实物；四项都需要考虑，**选 D**。第一笔沿 0831-02 的逻辑设备名追到具体设备，再检查所有权和当前状态。
 
@@ -356,7 +408,9 @@ SSTF 的比较基准会随磁头改变，不是把所有请求按原点距离排
 <a id="q27"></a>
 ## 27｜2024-31：中断程序结束时，数据先留在内核缓冲区
 
-![2024-31 原题](../bank/2024/q31.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q31.png" alt="2024-31 原题" width="332" style="display:block; width:20.77em; max-width:none; height:auto;">
+</div>
 
 键盘控制器报告按键，中断服务程序取走输入并放入**内核缓冲区，选 C**；之后内核输入处理/系统调用再把字符交到用户缓冲区。第一笔按时间切开“中断处理完”与“用户 read 最终拿到”。
 
@@ -368,7 +422,9 @@ SSTF 的比较基准会随磁头改变，不是把所有请求按原点距离排
 <a id="q28"></a>
 ## 28｜2024-32：C-SCAN 向小号走到 0，再跳到 399
 
-![2024-32 原题](../bank/2024/q32.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q32.png" alt="2024-32 原题" width="476" style="display:block; width:29.74em; max-width:none; height:auto;">
+</div>
 
 从 200 向减号：依次服务 `160、120、110、0`，走 **200** 道；循环扫描从 **0 到 399** 的回程也算磁头移动 **399** 道；再沿减号服务 `399、300、210`，由 399 到 210 走 **189** 道。总 `200+399+189=788`，**选 C**。第一笔把请求按方向分两组，别漏无服务回程。
 
