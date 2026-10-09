@@ -30,7 +30,9 @@
 <a id="q01"></a>
 ## 01｜2009-18：最慢段卡住整条流水的节拍
 
-![2009-18 原题](../bank/2009/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q18.png" alt="2009-18 原题" style="display:block; width:28.38em; max-width:none; height:auto;">
+</div>
 
 四段分别为 90、80、70、60ns。流水线各段同一个时钟节拍，必须让**最慢的 90ns 阶段**完成，忽略段间寄存器时间时周期至少 **90ns，选 A**。总和 300ns 接近单条指令穿越全部段的工作量，不是相邻指令能进入流水的节拍。
 
@@ -42,7 +44,9 @@
 <a id="q02"></a>
 ## 02｜2010-19：转发是处理数据相关的技术，不是阻塞来源
 
-![2010-19 原题](../bank/2010/q19.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q19.png" alt="2010-19 原题" style="display:block; width:17.95em; max-width:none; height:auto;">
+</div>
 
 数据相关、条件转移、共享资源冲突都可能让后续指令等待。**数据旁路/转发**把已产生的结果送到后续所需输入，是减少阻塞的办法，所以题问“不会引起阻塞”应 **选 A**。关键分清“问题”与“针对问题安装的通路”。
 
@@ -54,7 +58,9 @@
 <a id="q03"></a>
 ## 03｜2011-18：重复的规整指令、对齐与 Load/Store 题
 
-![2011-18 原题](../bank/2011/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q18.png" alt="2011-18 原题" style="display:block; width:25.02em; max-width:none; height:auto;">
+</div>
 
 与 [0818-03](0818-answer.md#q03) 相同：指令格式规整、指令/数据对齐和仅 Load/Store 访存都利于划分稳定的流水阶段，**I、II、III 全部成立，选 D**。本节点只新增：这些条件降低阶段时间与资源的不确定性，却仍需具体处理相关与分支。
 
@@ -66,7 +72,9 @@ Load/Store 的规则路径让执行更容易分段，但 load 后立刻消费结
 <a id="q04"></a>
 ## 04｜2013-18：有限条数的吞吐率先计装满、排空
 
-![2013-18 原题](../bank/2013/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q18.png" alt="2013-18 原题" style="display:block; width:28.82em; max-width:none; height:auto;">
+</div>
 
 四级流水，无阻塞时 100 条指令共需 `4+(100−1)=103` 个时钟周期，而不是 100 或 400。频率 1.03GHz，耗时 `103/(1.03×10⁹)=10⁻⁷s`；吞吐率 `100/10⁻⁷=1.0×10⁹` 条/秒，**选 C**。稳态极限接近 1.03G，但有限的 100 条还付了最初装入流水的 3 拍。
 
@@ -78,7 +86,9 @@ Load/Store 的规则路径让执行更容易分段，但 load 后立刻消费结
 <a id="q05"></a>
 ## 05｜2016-19：读写寄存器列表找真正的 RAW
 
-![2016-19 原题](../bank/2016/q19.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q19.png" alt="2016-19 原题" style="display:block; width:29.06em; max-width:none; height:auto;">
+</div>
 
 I2 `add R5,R2,R4` 写 R5；紧接 I3 `add R4,R5,R3` 读 R5，是**先写后读 RAW**，无转发的五段流水中 I3 可能在寄存器写回前读到旧值，**选 B**。I1/I2 都读 R2 不构成依赖；I2/I4 都写 R5 是同一目的地，但顺序五段流水不会因此产生本题所问的数据冒险。
 
@@ -97,7 +107,9 @@ I2 `add R5,R2,R4` 写 R5；紧接 I3 `add R4,R5,R3` 读 R5，是**先写后读 R
 <a id="q06"></a>
 ## 06｜2017-17：超标量是多发射，非缩短单段时间
 
-![2017-17 原题](../bank/2017/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q17.png" alt="2017-17 原题" style="display:block; width:25.35em; max-width:none; height:auto;">
+</div>
 
 超标量处理器可在同一时钟周期发射多条指令（II），可结合动态调度增加可并行执行的指令（III）；它不自动**缩短各功能段本身的处理时间**（I）。故 **仅 II、III，选 C**。把“每周期能同时处理几条”与“每条在一段需多少时间”分开，便可排除 I。
 
@@ -109,7 +121,9 @@ I2 `add R5,R2,R4` 写 R5；紧接 I3 `add R4,R5,R3` 读 R5，是**先写后读 R
 <a id="q07"></a>
 ## 07｜2017-19：控制器给信号，数据通路按信号流动
 
-![2017-19 原题](../bank/2017/q19.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q19.png" alt="2017-19 原题" style="display:block; width:27.70em; max-width:none; height:auto;">
+</div>
 
 数据通路包括 ALU、通用寄存器组、取指部件等组合与时序逻辑；其数据流方向由控制信号指定。A 却把**生成控制信号的控制部件**也说成数据通路包含的部件，混了职责，故 **错误选 A**。上一节点已区分“让哪条路径打开”的控制来源与“实际搬运数据”的元件。
 
@@ -121,7 +135,9 @@ I2 `add R5,R2,R4` 写 R5；紧接 I3 `add R4,R5,R3` 读 R5，是**先写后读 R
 <a id="q08"></a>
 ## 08｜2018-20：阶段最慢时间还要加流水寄存器延迟
 
-![2018-20 原题](../bank/2018/q20.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q20.png" alt="2018-20 原题" style="display:block; width:28.32em; max-width:none; height:auto;">
+</div>
 
 五个功能部件需时 `80,50,50,70,50ps`，最慢是 80ps；每段之间的流水寄存器延时 20ps，时钟周期至少 **`80+20=100ps`，选 D**。与 01 的差别恰是 01 明说忽略段间寄存器，不能机械地只取最大阶段时间。
 
@@ -133,7 +149,9 @@ I2 `add R5,R2,R4` 写 R5；紧接 I3 `add R4,R5,R3` 读 R5，是**先写后读 R
 <a id="q09"></a>
 ## 09｜2019-18：只找真正的生产者与消费者
 
-![2019-18 原题](../bank/2019/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q18.png" alt="2019-18 原题" style="display:block; width:31.26em; max-width:none; height:auto;">
+</div>
 
 I1 写 s2，I3 读 s2；I2 `load` 写 s3，I3 读 s3；I3 写 s2，I4 `store` 读 s2。I2 和 I4 虽都使用基址寄存器 t2，I2 写的是 s3、I4 读的是 s2，没有彼此的生产/消费依赖，**不存在数据冒险，选 C**。不能见两个指令共享寄存器名字就算相关，读读共享是安全的。
 
@@ -152,7 +170,9 @@ I1 写 s2，I3 读 s2；I2 `load` 写 s3，I3 读 s3；I3 写 s2，I4 `store` �
 <a id="q10"></a>
 ## 10｜2020-17：CPI=1 的理想对象是单周期与单发射稳态流水
 
-![2020-17 原题](../bank/2020/q17.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q17.png" alt="2020-17 原题" style="display:block; width:36.79em; max-width:none; height:auto;">
+</div>
 
 单周期 CPU 每条指令一个周期，理想 CPI=1（I）；基本单发射流水在稳定流动且无阻塞时每周期完成一条，理想 CPI 也为 1（III）。多周期 CPU 一条需多个周期（II 否）；超标量可一周期完成多条，理想 CPI 可小于 1（IV 不按 1 归类），故 **仅 I、III，选 B**。
 
@@ -164,7 +184,9 @@ I1 写 s2，I3 读 s2；I2 `load` 写 s3，I3 读 s3；I3 写 s2，I4 `store` �
 <a id="q11"></a>
 ## 11｜2023-19：load-use 与分支控制分别造成阻塞
 
-![2023-19 原题](../bank/2023/q19.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q19.png" alt="2023-19 原题" style="display:block; width:29.30em; max-width:none; height:auto;">
+</div>
 
 I1 的 ALU 结果 s2 可旁路给 I2 的 load 地址计算，I2 不必等它写回。I2 的 load 结果 s3 要到访存段末才出现，紧接 I3 `beq` 要用 s3 比较，**即使转发仍需等**，I3 有数据阻塞；分支由硬件阻塞处理控制冒险，下一条 I4 的取/执行需等目标确定，I4 也受阻塞。**I3、I4，选 C**。
 
@@ -176,7 +198,9 @@ I1 的 ALU 结果 s2 可旁路给 I2 的 load 地址计算，I2 不必等它写�
 <a id="q12"></a>
 ## 12｜2024-19：所有冒险都能加气泡解决，旁路不能解决所有冒险
 
-![2024-19 原题](../bank/2024/q19.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q19.png" alt="2024-19 原题" style="display:block; width:28.73em; max-width:none; height:auto;">
+</div>
 
 相邻指令的操作数相关可能形成 RAW；加气泡可让消费者推迟到生产者写完，调整无依赖指令或插 NOP 也可隔开。C 声称**所有**数据冒险都可仅靠旁路解决，反例就是 load-use：载入值在访存结束前不存在，紧随其后的执行阶段即便接旁路线也没有值可取，所以 **错误选 C**。
 
@@ -188,7 +212,9 @@ I1 的 ALU 结果 s2 可旁路给 I2 的 load 地址计算，I2 不必等它写�
 <a id="q13"></a>
 ## 13｜2025-18：Cache 缺失会让平均 CPI 变大
 
-![2025-18 原题](../bank/2025/q18.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q18.png" alt="2025-18 原题" style="display:block; width:19.09em; max-width:none; height:auto;">
+</div>
 
 题问**错误**。不同指令可有不同 CPI；单周期时钟要覆盖最慢指令路径；流水时钟要覆盖最长阶段路径。B 说程序 CPI 与 Cache 缺失率无关不成立：取指或访存缺失可使流水等待更多周期，平均周期数随缺失频率和代价变化，**选 B**。
 
@@ -200,7 +226,9 @@ I1 的 ALU 结果 s2 可旁路给 I2 的 load 地址计算，I2 不必等它写�
 <a id="q14"></a>
 ## 14｜2025-19：PC 不在 GPR 组，原题回链
 
-![2025-19 原题](../bank/2025/q19.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q19.png" alt="2025-19 原题" style="display:block; width:19.29em; max-width:none; height:auto;">
+</div>
 
 这与 [0819-12](0819-answer.md#q12) 是同一题：PC 是专用的取指位置状态，A 说通用寄存器组**应该包含 PC**错误，**选 A**。放在流水节点的新增视角是：不同流水阶段持有/更新 PC 相关状态，也不把 PC 变成一般 GPR。
 
