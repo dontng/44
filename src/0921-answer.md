@@ -21,7 +21,7 @@
 <a id="q01"></a>
 ## 01｜2009-43：中断按字，DMA 按块
 
-![2009-43 原题](../bank/2009/q43.png)
+<img src="../bank/2009/q43.png" alt="2009-43 原题" width="504" style="display:block; width:31.50em; max-width:100%; height:auto;">
 
 **（1）中断。** 32位=4B，每秒 `0.5×10^6/4=125000` 次。每次中断服务18条指令加其它开销相当2条，共20条，CPI5，需100 CPU时钟；500MHz可提供5亿拍/s，I/O占 `125000×100/(5×10^8)=2.5%`。
 
@@ -32,7 +32,7 @@
 <a id="q02"></a>
 ## 02｜2012-43：从指令数走到缺页 DMA 请求
 
-![2012-43 原题](../bank/2012/q43.png)
+<img src="../bank/2012/q43.png" alt="2012-43 原题" width="438" style="display:block; width:27.38em; max-width:100%; height:auto;">
 
 **（1）吞吐。** `80MHz/CPI4=20 MIPS`；平均1.5次访存/指令，主存访问要求来自 Cache 的1%未命中：`20×10^6×1.5×0.01=300000` 次块读/s。每块16B，所以最低带宽 **4.8MB/s**（不计其他流量）。
 
@@ -45,7 +45,7 @@
 <a id="q03"></a>
 ## 03｜2013-43：突发传送地址、准备、数据三段
 
-![2013-43 原题](../bank/2013/q43.png)
+<img src="../bank/2013/q43.png" alt="2013-43 原题" width="539" style="display:block; width:33.69em; max-width:100%; height:auto;">
 
 **（1）周期/带宽。** CPU周期 `1/800MHz=1.25ns`；总线周期 `1/200MHz=5ns`；宽32位=4B、每拍一字，理想总线带宽 `4B/5ns=800MB/s`。
 
@@ -60,7 +60,7 @@
 <a id="q04"></a>
 ## 04｜2016-44：串行字节与中断周期同时计时
 
-![2016-44 原题](../bank/2016/q44.png)
+<img src="../bank/2016/q44.png" alt="2016-44 原题" width="550" style="display:block; width:34.38em; max-width:100%; height:auto;">
 
 **（1）一字符。** 异步串行帧有起始1位、ASCII7位、奇校验1位、停止1位，共 **10位**。设备从启动到字符进入 I/O 端口需0.5ms，持续工作最高每秒 **2000字符**，不能用7/0.5ms把传输位数当独立字符。
 
@@ -73,7 +73,7 @@
 <a id="q05"></a>
 ## 05｜2018-43：轮询、中断和 DMA 的可持续边界
 
-![2018-43 原题](../bank/2018/q43.png)
+<img src="../bank/2018/q43.png" alt="2018-43 原题" width="524" style="display:block; width:32.75em; max-width:100%; height:auto;">
 
 CPU每秒 `500MHz/CPI4=125M` 条指令。32位缓冲一字4B。
 
