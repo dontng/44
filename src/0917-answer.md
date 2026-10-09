@@ -19,7 +19,9 @@
 <a id="q01"></a>
 ## 01｜2009-41：最近邻贪心为什么会误入歧途
 
-![2009-41 原题](../bank/2009/q41.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q41.png" alt="2009-41 原题" width="455" style="display:block; width:28.43em; max-width:none; height:auto;">
+</div>
 
 题中算法每次只看**当前顶点 u 到未进入路径的顶点的单条边权**，然后立刻把该顶点定入路径。反例：起点 S 连 A 权1、连 B 权2，A 到终点 T 权100，B 到 T 权2；其他边不存在、各权非负。从 S 它选 A，因为 `1<2`，接着只能去 T，总长101；实际路径 S→B→T 只长4。因此**不可行**。
 
@@ -28,7 +30,9 @@
 <a id="q02"></a>
 ## 02｜2017-42：Prim 选择的是跨割边
 
-![2017-42 原题](../bank/2017/q42.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q42.png" alt="2017-42 原题" width="466" style="display:block; width:29.12em; max-width:none; height:auto;">
+</div>
 
 **（1）从 A 开始。** 取 `A—D(4)`；已选 `{A,D}` 的出边里取 `D—E(4)`；已选 `{A,D,E}` 到 C 的最轻边是 `E—C(5)`，到 B 最轻 A—B(6)，故取 `E—C(5)`；最后取 `C—B(4)`。生成树总权 **17**。
 
@@ -41,7 +45,9 @@
 <a id="q03"></a>
 ## 03｜2025-42：AOE 活动的时间余量
 
-![2025-42 原题](../bank/2025/q42.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q42.png" alt="2025-42 原题" width="425" style="display:block; width:26.57em; max-width:none; height:auto;">
+</div>
 
 原图活动边按起点→终点记为：`a:1→3(2), b:1→2(5), d:1→4(3), e:3→4(3), c:3→6(2), f:4→2(4), g:4→6(1), h:6→7(1), j:4→5(1), m:4→7(4), k:2→5(2), n:7→5(3)`。先读清方向；背景叙事不参与算工期。
 

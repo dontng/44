@@ -21,7 +21,9 @@
 <a id="q01"></a>
 ## 01｜2011-41：上三角还原有向图与关键路径
 
-![2011-41 原题](../bank/2011/q41.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2011/q41.png" alt="2011-41 原题" width="475" style="display:block; width:29.70em; max-width:none; height:auto;">
+</div>
 
 **（1）矩阵。** 六顶点上三角按行优先依次是 0 行的五格、1 行四格、2 行三格、3 行两格、4 行一格。对角线取 0，反向不存在的有向边取 `∞`：
 
@@ -55,7 +57,9 @@ flowchart TD
 <a id="q02"></a>
 ## 02｜2015-42：邻接矩阵平方数的是两步走法
 
-![2015-42 原题](../bank/2015/q42.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q42.png" alt="2015-42 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
+</div>
 
 **（1）矩阵。** 无向图的七条边为 `01,02,04,13,14,23,34`，故 A 对称、对角为 0：
 
@@ -86,7 +90,9 @@ flowchart TD
 <a id="q03"></a>
 ## 03｜2021-41：EL 路径由奇度顶点决定
 
-![2021-41 原题](../bank/2021/q41.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q41.png" alt="2021-41 原题" width="468" style="display:block; width:29.25em; max-width:none; height:auto;">
+</div>
 
 **（1）思路。** 题已保证无向图连通且至少一条边，不需重新证明连通。每经过中间顶点，进入、离开的边配成对；只有路线起终点可留一个奇数。奇度点数为 **0** 时有欧拉回路，为 **2** 时有欧拉通路；其余不能一笔走完所有边。
 
@@ -117,7 +123,9 @@ int IsExistEL(MGraph G) {
 <a id="q04"></a>
 ## 04｜2023-41：K 顶点是行和大于列和
 
-![2023-41 原题](../bank/2023/q41.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q41.png" alt="2023-41 原题" width="470" style="display:block; width:29.38em; max-width:none; height:auto;">
+</div>
 
 **（1）思路。** 有向邻接矩阵 `Edge[i][j]` 表示 `i→j`，行求和得到 i 的出度，列求和得到 i 的入度。两个数直接比，不要把“谁指向谁”的方向倒过来。
 
@@ -150,7 +158,9 @@ int printVertices(MGraph G) {
 <a id="q05"></a>
 ## 05｜2024-41：拓扑序唯一需要每一轮只有一个入口
 
-![2024-41 原题](../bank/2024/q41.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q41.png" alt="2024-41 原题" width="476" style="display:block; width:29.76em; max-width:none; height:auto;">
+</div>
 
 **（1）思路。** 用 Kahn 算法剥去入度为0的顶点。某轮出现 **两个及以上** 入度0顶点，则这两者互无先后约束：若图有拓扑序，先后互换便给出不同拓扑序；若剩余部分有环，则根本没有拓扑序，同样不符合“存在唯一序列”；若没有，则有环、无拓扑序。只有连续 n 轮都**恰有一个**可选顶点，才存在唯一拓扑序。
 
