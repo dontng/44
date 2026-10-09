@@ -17,7 +17,9 @@ def normalize(path, text, images):
         key = f'{image.parent.name}-{int(image.stem[1:]):02d}'
         width = images[key]['width_em']
         alt = match['alt'] if match['md'] else re.search(r'alt="([^"]*)"', match[0]).group(1)
-        tag = f'<img src="{rel}" alt="{alt}" style="display:block; width:{width:.2f}em; max-width:none; height:auto;">'
+        # GitHub sanitizes inline CSS but retains the numeric HTML width.
+        # CSS-aware previews keep em sizing coupled to their text zoom.
+        tag = f'<img src="{rel}" alt="{alt}" width="{round(width * 16)}" style="display:block; width:{width:.2f}em; max-width:none; height:auto;">'
         if match['html']:
             return tag
         return '<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">\n' + tag + '\n</div>'

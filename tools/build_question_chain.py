@@ -276,7 +276,7 @@ def render_node(node, nodes, widths, result=""):
                 f"### {index:02d} · {qid}",
                 "",
                 '<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">',
-                f'<img src="{relative_link(path, image)}" alt="{qid}" '
+                f'<img src="{relative_link(path, image)}" alt="{qid}" width="{round(widths[qid])}" '
                 f'style="display:block; width:{width_em:.4g}em; '
                 'max-width:none; height:auto;">',
                 "</div>",
