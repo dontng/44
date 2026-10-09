@@ -45,9 +45,7 @@
 <a id="q01"></a>
 ## 01｜2009-12：混合位宽，先算数值再写 32 位
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q12.png" alt="2009-12 原题" width="454" style="display:block; width:28.38em; max-width:none; height:auto;">
-</div>
+![2009-12 原题](../bank/2009/q12.png)
 
 `x=127`、`y=-9` 是数值条件；`int=32`、`short=16` 决定赋值与运算时的位宽。草稿先写 `127+(-9)=118=0x76`，结果变量 `z` 为 32 位，机器数 **`00000076H`，选 D**。这一步比把两段十六进制串直接拼起来省事。
 
@@ -59,9 +57,7 @@
 <a id="q02"></a>
 ## 02｜2009-13：规格化之后还要检查双符号位阶码
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q13.png" alt="2009-13 原题" width="454" style="display:block; width:28.38em; max-width:none; height:auto;">
-</div>
+![2009-13 原题](../bank/2009/q13.png)
 
 `X=2⁷×29/32=116`，`Y=2⁵×5/8=20`，和为 `136=2⁸×17/32`。但题给的 **5 位阶码包含两位符号位**，只有 3 个数值位，最大正阶码为 7。规格化后阶码变为 `01000`，双符号位 `01` 表示正溢出，因此 **选 D（溢出）**，不能把它当作合法指数 8 并选 C。
 
@@ -73,9 +69,7 @@
 <a id="q03"></a>
 ## 03｜2010-14：四个等号各有不同的精度损失点
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q14.png" alt="2010-14 原题" width="461" style="display:block; width:28.84em; max-width:none; height:auto;">
-</div>
+![2010-14 原题](../bank/2010/q14.png)
 
 先圈每个往返的中间类型，不必逐个展开浮点位。整数 785 能被 float 精确表示，I 真；`f=1567.8…` 转 int 会去掉小数部分，II 假；float 扩到 double 再回 float 保留原值，III 真；`d=1.5×10¹⁰⁰` 远大于 f，在其附近加 f 被舍去，`(d+f)-d` 得 0，IV 假。**仅 I、III，选 B**。
 
@@ -87,9 +81,7 @@
 <a id="q04"></a>
 ## 04｜2011-13：从 -8.25 亲手填 32 位字段
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q13.png" alt="2011-13 原题" width="535" style="display:block; width:33.45em; max-width:none; height:auto;">
-</div>
+![2011-13 原题](../bank/2011/q13.png)
 
 第一笔把小数部分化为二进制：`8.25=1000.01₂=1.00001₂×2³`。符号位 1；单精度指数存 `3+127=130=10000010₂`；尾数字段去掉隐含的首个 1，留下 `00001` 后补零。合起来 `1 | 10000010 | 000010000…`，即 **`C1040000H`，选 A**。
 
@@ -101,9 +93,7 @@
 <a id="q05"></a>
 ## 05｜2012-13：无符号短整数扩宽，左边补零
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q13.png" alt="2012-13 原题" width="411" style="display:block; width:25.70em; max-width:none; height:auto;">
-</div>
+![2012-13 原题](../bank/2012/q13.png)
 
 `unsigned short x=65530` 是 `2¹⁶−6=FFFAH`。赋给 32 位 `unsigned int y` 时值仍为 65530，因此机器数在左边补 16 个零，**`0000FFFAH`，选 B**。和 01 的负 short 符号扩展对照：同样从 16 到 32 位，先看原类型是否无符号。
 
@@ -115,9 +105,7 @@
 <a id="q06"></a>
 ## 06｜2012-14：最大正整数是最大有限 float 的整数值
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q14.png" alt="2012-14 原题" width="373" style="display:block; width:23.31em; max-width:none; height:auto;">
-</div>
+![2012-14 原题](../bank/2012/q14.png)
 
 单精度把指数 `11111111₂` 留给特殊值，所以最大有限正数用指数域 254，实际指数 127；尾数位全 1，二进制有效数是 `2−2⁻²³`。相乘为 **`2¹²⁸−2¹⁰⁴`，选 D**。这里问“能表示的最大正整数”，这个最大有限值本身就是整数，因为最低有效位处在 `2¹⁰⁴` 位。
 
@@ -129,9 +117,7 @@
 <a id="q07"></a>
 ## 07｜2012-15：小端处理内容，对齐处理地址
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q15.png" alt="2012-15 原题截图" width="437" style="display:block; width:27.32em; max-width:none; height:auto;">
-</div>
+![2012-15 原题截图](../bank/2012/q15.png)
 
 图中结构体成员依次为 `int a; char b; short c;`。`record` 从 `C008H` 起，`a=273=00000111H`，小端的第一个字节是 **`11H`**。`a` 占 `C008`—`C00B`，`b` 在 `C00C`，短整数 `c` 要按 2 字节边界对齐，跳过 `C00D`，从 **`C00E`** 开始，故 **D**。
 
@@ -143,9 +129,7 @@
 <a id="q08"></a>
 ## 08｜2013-13：题面选项符号待原卷核对
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2013/q13.png" alt="2013-13 原题截图" width="431" style="display:block; width:26.92em; max-width:none; height:auto;">
-</div>
+![2013-13 原题截图](../bank/2013/q13.png)
 
 第一笔拆 `C6400000H` 的最高位：它是 1，故数值**必为负**。指数域为 140，实际指数 `140−127=13`；尾数对应 `1.5`，完整数是 **`−1.5×2¹³=−12288`**。当前完整题图的 A 项印为 `1.5×2¹³`，四个选项均未印负号，与符号位矛盾。请按上述可复算数值判断，并标记为选项排印疑点，不能把某个正数当作负值。
 
@@ -157,9 +141,7 @@ IEEE 754 的最高位是符号位。这一笔不需要算阶码和尾数，便�
 <a id="q09"></a>
 ## 09｜2014-14：同为负数，指数大的反而数值小
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q14.png" alt="2014-14 原题" width="466" style="display:block; width:29.15em; max-width:none; height:auto;">
-</div>
+![2014-14 原题](../bank/2014/q14.png)
 
 `CC90…` 与 `B0C0…` 的最高位都是 1，先判 **同号**。前者的指数域大于后者，绝对值远大于后者；负数绝对值越大，实际值越小，所以 **`x<y` 且符号相同，选 A**。不必把两个大数写成十进制。
 
@@ -171,9 +153,7 @@ IEEE 编码不能不看符号就按无符号整数排序。可拆 `CC90` 的指�
 <a id="q10"></a>
 ## 10｜2015-13：指定 1 的个数，造最负的 8 位补码
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q13.png" alt="2015-13 原题" width="419" style="display:block; width:26.18em; max-width:none; height:auto;">
-</div>
+![2015-13 原题](../bank/2015/q13.png)
 
 8 位补码要表示负数，最高位的 1 权重为 `−128`。其余两个 1 为了让总值尽量小，就放在权重最小的末两位：`10000011₂=−128+2+1=−125`，**选 B**。这比在四个负数之间靠接近 -128 的感觉猜更可检验。
 
@@ -189,9 +169,7 @@ IEEE 编码不能不看符号就按无符号整数排序。可拆 `CC90` 的指�
 <a id="q11"></a>
 ## 11｜2015-14：分清阶码越界与尾数溢出
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q14.png" alt="2015-14 原题" width="428" style="display:block; width:26.74em; max-width:none; height:auto;">
-</div>
+![2015-14 原题](../bank/2015/q14.png)
 
 先问四句各说的是**阶码**还是**尾数**。对阶只把较小指数调到已经存在的较大指数，不能凭空造出比两者更大的指数或更小的指数，I 真。右规是尾数太大时右移一位、阶码加一，可能使阶码上溢；舍入也可能让尾数进位，再右规而使阶码上溢，II 真。左规是尾数偏小时左移、阶码减一，可能下溢，III 真。尾数溢出时右规后可能仍有合法阶码，所以**结果不一定溢出**，IV 真。**四项均真，选 D**。
 
@@ -203,9 +181,7 @@ IEEE 编码不能不看符号就按无符号整数排序。可拆 `CC90` 的指�
 <a id="q12"></a>
 ## 12｜2016-14：地址 8046 对应第几个小端字节
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q14.png" alt="2016-14 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
-</div>
+![2016-14 原题](../bank/2016/q14.png)
 
 从 `8040H` 起按字节摆 `1122334455667788H`。小端让最低有效字节 `88` 在最低地址，依次是 `8040:88`、`8041:77`、`8042:66`、`8043:55`、`8044:44`、`8045:33`、**`8046:22`**、`8047:11`，故 **A**。双精度类型此处仅说明它占 8 字节，已给机器表示，无需重新解析浮点值。
 
@@ -217,9 +193,7 @@ IEEE 编码不能不看符号就按无符号整数排序。可拆 `CC90` 的指�
 <a id="q13"></a>
 ## 13｜2018-13：先还原补码值，再检查溢出
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q13.png" alt="2018-13 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
-</div>
+![2018-13 原题](../bank/2018/q13.png)
 
 `FFFFFFDFH` 作为 32 位补码，等于 `−33`；`00000041H=65`。先按数学值算 `x−y=−98`，显然处在 32 位有符号范围内，补码是 `FFFFFF9EH`，**选 C**。看见很多 `F` 时别把它当成巨大正数；题干已经指定有符号补码。
 
@@ -231,9 +205,7 @@ IEEE 编码不能不看符号就按无符号整数排序。可拆 `CC90` 的指�
 <a id="q14"></a>
 ## 14｜2018-14：最小规格化值与最小非零值分开
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q14.png" alt="2018-14 原题" width="417" style="display:block; width:26.05em; max-width:none; height:auto;">
-</div>
+![2018-14 原题](../bank/2018/q14.png)
 
 “规格化正数”要求指数域至少为 1，隐含的有效数首位是 1。指数域 1 对应实际指数 `1−127=−126`，尾数全零，故最小规格化正数 **`1.0×2⁻¹²⁶`，选 A**。`2⁻¹⁴⁹` 更小，却属于非规格化数，不满足题目限定。
 
@@ -245,9 +217,7 @@ IEEE 编码不能不看符号就按无符号整数排序。可拆 `CC90` 的指�
 <a id="q15"></a>
 ## 15｜2018-15：指令前三字节不动，只替换立即数
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q15.png" alt="2018-15 原题" width="469" style="display:block; width:29.33em; max-width:none; height:auto;">
-</div>
+![2018-15 原题](../bank/2018/q15.png)
 
 两句赋值只有常数从 0 变为 -64。题目给 `int i=0` 对应 `C7 45 FC 00 00 00 00`，因此先保留前 3 个指令字节，只改后 4 个立即数字节。-64 的 32 位补码 `FFFFFFC0H`，小端依次存 `C0 FF FF FF`，整个机器码 **`C7 45 FC C0 FF FF FF`，选 A**。
 
@@ -259,9 +229,7 @@ IEEE 编码不能不看符号就按无符号整数排序。可拆 `CC90` 的指�
 <a id="q16"></a>
 ## 16｜2019-13：同样的 FFFF，换成 signed short 就读作 -1
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q13.png" alt="2019-13 原题" width="442" style="display:block; width:27.64em; max-width:none; height:auto;">
-</div>
+![2019-13 原题](../bank/2019/q13.png)
 
 `unsigned short usi=65535` 的 16 位图是 `FFFFH`。赋给同宽 `short si`，按这道题采用的补码机器解释，相同 16 位全 1 表示 **-1，选 A**。承接 05：那题目标类型是更宽的 unsigned int，数值 65530 可以无损保留；这里目标 short 容不下正的 65535。
 
@@ -273,9 +241,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q17"></a>
 ## 17｜2019-15：基址求首地址，大端再找末字节
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q15.png" alt="2019-15 原题" width="501" style="display:block; width:31.30em; max-width:none; height:auto;">
-</div>
+![2019-15 原题](../bank/2019/q15.png)
 
 操作数 `1234FF00H` 的最低有效字节是 `00H`。题设大端，四字节从低地址到高地址依次为 `12,34,FF,00`，因此 LSB 在首地址加 3。形式地址明确“用补码表示”：16 位 `FF12H` 表示 `−238`，符号扩展为 `FFFFFF12H` 后加基址 `F0000000H`，得到首地址 **`EFFFFF12H`**。LSB 地址为 **`EFFFFF15H`，选 D**。
 
@@ -287,9 +253,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q18"></a>
 ## 18｜2020-13：先看 x 的类型是 int 还是 float
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q13.png" alt="2020-13 原题" width="467" style="display:block; width:29.20em; max-width:none; height:auto;">
-</div>
+![2020-13 原题](../bank/2020/q13.png)
 
 机器数 `C8000000H` 若按有符号 32 位 int 解释，值为 `0xC8000000−2³²=−0x38000000=−7×2²⁷`，与 **A** 相符。若按 float，符号位 1、指数域 144（实际 17）、尾数 0，值为 `−2¹⁷`，不对应其余选项。题干说 x **只可能**属于两种类型，意味着必须对每种解释各算一次，而不能凭 `C8` 开头猜一个类型。
 
@@ -301,9 +265,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q19"></a>
 ## 19｜2020-14：结构体偏移和小端字节偏移分别加
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q14.png" alt="2020-14 原题" width="501" style="display:block; width:31.32em; max-width:none; height:auto;">
-</div>
+![2020-14 原题](../bank/2020/q14.png)
 
 `short x1` 从 `2020FE00H` 占两个字节；为了让 `int x2` 按 4 字节边界对齐，跳过两个填充字节，`x2` 首地址在 **`2020FE04H`**。它的机器数 `12340000H` 按小端从低到高写成 `00 00 34 12`；`34H` 在 x2 偏移 2，即 **`2020FE06H`，选 D**。
 
@@ -315,9 +277,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q20"></a>
 ## 20｜2021-14：十进制小数何时能以二进制有限表示
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q14.png" alt="2021-14 原题" width="522" style="display:block; width:32.65em; max-width:none; height:auto;">
-</div>
+![2021-14 原题](../bank/2021/q14.png)
 
 先把选项的小数写成最简分数。`1.2=6/5` 的分母含 5，不可能写成有限个二进制位；`1.25=5/4`、`2.0=2`、`2.5=5/2` 都能有限表示，而且所需位数很少，故**不能精确表示的是 A**。这一题不必展开 IEEE 的 32 个字段。
 
@@ -333,9 +293,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q21"></a>
 ## 21｜2022-13：32 位补码的两端不对称
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q13.png" alt="2022-13 原题" width="411" style="display:block; width:25.69em; max-width:none; height:auto;">
-</div>
+![2022-13 原题](../bank/2022/q13.png)
 
 先把最高位的负权 `−2³¹` 单独放在左边。其余 31 位全零时取最小值 `−2³¹`；其余 31 位全一且最高位为零时取最大值 `2³¹−1`。范围 **`[−2³¹, 2³¹−1]`，选 B**。负端比正端多一个，因为零占了一个非负编码。
 
@@ -347,9 +305,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q22"></a>
 ## 22｜2022-14：小数化二进制后再编码浮点
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q14.png" alt="2022-14 原题" width="415" style="display:block; width:25.95em; max-width:none; height:auto;">
-</div>
+![2022-14 原题](../bank/2022/q14.png)
 
 `0.4375=7/16=0.0111₂=1.11₂×2⁻²`。负号位 1，偏置指数 `−2+127=125=01111101₂`，尾数字段 `1100…0`。拼成 `1 | 01111101 | 11000000000000000000000`，即 **`BEE00000H`，选 A**。
 
@@ -361,9 +317,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q23"></a>
 ## 23｜2023-13：负数补码用 2¹⁶ 减绝对值
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q13.png" alt="2023-13 原题" width="407" style="display:block; width:25.41em; max-width:none; height:auto;">
-</div>
+![2023-13 原题](../bank/2023/q13.png)
 
 题目问 short 的机器数，按 16 位算：`2¹⁶−8190=65536−8190=57346=E002H`，**选 A**。便捷草稿是 `8190=0x1FFE`，逐位取反加一得到 `E002`。别用 32 位补码 `FFFFE002` 去匹配 16 位选项。
 
@@ -375,9 +329,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q24"></a>
 ## 24｜2023-14：指数全零要切到非规格化规则
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q14.png" alt="2023-14 原题" width="468" style="display:block; width:29.28em; max-width:none; height:auto;">
-</div>
+![2023-14 原题](../bank/2023/q14.png)
 
 `80200000H` 的符号位为 1，指数域全零，尾数非零，所以是**非规格化负数**，不是 NaN。此时有效数写作 `0.01₂=1/4`，实际指数固定为 `−126`，故数值 **`−(1/4)×2⁻¹²⁶=−2⁻¹²⁸`，选 A**。
 
@@ -389,9 +341,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q25"></a>
 ## 25｜2024-12：先越过 short 上界，再符号扩展回 int
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q12.png" alt="2024-12 原题" width="250" style="display:block; width:15.60em; max-width:none; height:auto;">
-</div>
+![2024-12 原题](../bank/2024/q12.png)
 
 `32777` 比 16 位 signed short 最大值 `32767` 大 10。按题目采用的 16 位补码转换，短整数的同一低 16 位表示 `32777−65536=−32759`；再赋给 `int j` 是符号扩展，数值仍 **`−32759`，选 B**。承接 16，明确第一次窄化已经改变了可表示数值，第二次扩宽不会把丢失的范围找回来。
 
@@ -403,9 +353,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q26"></a>
 ## 26｜2024-14：大范围整数参数先问是否每个值都精确
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q14.png" alt="2024-14 原题" width="460" style="display:block; width:28.73em; max-width:none; height:auto;">
-</div>
+![2024-14 原题](../bank/2024/q14.png)
 
 α 取到 `±2²⁰`，32 位有符号整数完整覆盖；β 取到 `±2⁴⁰`，32 位整数放不下，而单精度 float 只有 24 位有效二进制精度，无法保证这个区间**每个整数**精确。double 有 53 位有效二进制精度，能精确覆盖 `±2⁴⁰` 内的整数。故 **α 用 32 位整数、β 用双精度浮点数，选 C**。
 
@@ -417,9 +365,7 @@ C 语言标准对超出 signed short 范围的无符号值转换，允许实现�
 <a id="q27"></a>
 ## 27｜2025-12：负 short 赋给 unsigned int 先扩宽后取模
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q12.png" alt="2025-12 原题" width="403" style="display:block; width:25.20em; max-width:none; height:auto;">
-</div>
+![2025-12 原题](../bank/2025/q12.png)
 
 `si=−32767=−(2¹⁵−1)`。赋给 32 位 `unsigned int` 时，最终值按 `2³²` 取模：**`2³²−32767=2³²−2¹⁵+1`，选 D**。先记住负数并没有突然变为 32769；它变成很大的无符号 32 位值。
 
@@ -431,9 +377,7 @@ short 的 16 位补码为 `8001H`；整数提升先保留符号扩为 32 位 `FF
 <a id="q28"></a>
 ## 28｜2025-13：47300000 拆出 1.375 与 2¹⁵
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q13.png" alt="2025-13 原题" width="425" style="display:block; width:26.57em; max-width:none; height:auto;">
-</div>
+![2025-13 原题](../bank/2025/q13.png)
 
 最高位 0，数为正；`4730…` 的指数域为 142，真实指数 `142−127=15`；尾数字段对应 `0.011₂=0.375`，隐藏位补成 `1.011₂=1.375`。所以 **`1.375×2¹⁵`，选 D**。A、C 都忘了隐藏的 1，B 把指数少算一位。
 
@@ -445,9 +389,7 @@ short 的 16 位补码为 `8001H`；整数提升先保留符号扩为 32 位 `FF
 <a id="q29"></a>
 ## 29｜2025-15：结构体数组再多一层“步长”
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q15.png" alt="2025-15 原题" width="423" style="display:block; width:26.43em; max-width:none; height:auto;">
-</div>
+![2025-15 原题](../bank/2025/q15.png)
 
 先算每个记录的大小：`id` 4 字节，`name[10]` 10 字节，接着填 2 字节使 `salary` 从偏移 16 开始，再占 4 字节，**每条记录 20 字节（14H）**。数组首址 `A0B0H`，`employee[1].id` 在 `A0C4H`。`12345678H` 小端字节顺序是 `78 56 34 12`，`56H` 位于 id 的第 1 个偏移，地址 **`0000A0C5H`，选 C**。
 
