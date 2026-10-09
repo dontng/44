@@ -70,7 +70,7 @@
 <a id="q04"></a>
 ## 04｜2012-08：最小生成树的“总价唯一”不等于“树唯一”
 
-<img src="../bank/2012/q08.png" alt="2012-08 原题" width="740" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2012/q08.png" alt="2012-08 原题" width="448" style="display:block; width:28.00em; max-width:100%; height:auto;">
 
 同一张带权无向图的所有最小生成树都达到同一个最小**总代价**，所以 I 真。若等权边可替换，具体树可能不同，Prim 从不同起点也不保证选出同一棵，III 假；三角形三条边都权 1 时每棵树只用两条，“所有最小权边都出现在所有树”II 假；Prim 与 Kruskal 也可能得到同一树，IV 的“总不同”假。只有 I，选 **A**。
 
@@ -178,7 +178,7 @@ A 的 c、e 都不在 `b,f,h` 上；B 的 d、c 也碰不到 `b,f,h`；D 的 f�
 <a id="q13"></a>
 ## 13｜2020-08：AOE 的关键路径按活动持续时间求最长
 
-<img src="../bank/2020/q08.png" alt="2020-08 原题" width="628" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2020/q08.png" alt="2020-08 原题" width="380" style="display:block; width:23.75em; max-width:100%; height:auto;">
 
 AOE 工程可并行做活动，但后续事件必须等所有前置活动完成，所以总工期由源点到汇点**权值和最大**的路径决定，选 **B**。A 数边条数而不管耗时；C 说延长关键活动不影响工期，与其零余量矛盾；D 说缩短任一关键活动必缩短工程，若存在多条并列关键路径，另一条仍卡住工期。
 
@@ -190,7 +190,7 @@ AOE 工程可并行做活动，但后续事件必须等所有前置活动完成�
 <a id="q14"></a>
 ## 14｜2021-07：每轮只有一个零入度点，拓扑序才被迫唯一
 
-<img src="../bank/2021/q07.png" alt="2021-07 原题" width="628" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2021/q07.png" alt="2021-07 原题" width="380" style="display:block; width:23.75em; max-width:100%; height:auto;">
 
 先只有 A 零入度；删 A 后必须取 B（F 还有 B、D、E 等前驱），接着只有 C，再 D，再 E，最后 F。合法序列只有 **`A,B,C,D,E,F` 一条，选 A**。图上看着 A 还直连 F、B 也直连 F，并不会让 F 提前；零入度要等所有指向它的边都删除。
 
