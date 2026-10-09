@@ -34,7 +34,7 @@
 <a id="q01"></a>
 ## 01｜2009-33：把“端到端”标在两台主机的进程间
 
-<img src="../bank/2009/q33.png" alt="2009-33 原题" width="700" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2009/q33.png" alt="2009-33 原题" width="424" style="display:block; width:26.50em; max-width:100%; height:auto;">
 
 OSI 自下而上第一个向上提供**端到端**服务的是**传输层，选 B**。数据链路层只管相邻结点的帧，传输层服务于两端进程。第一笔圈“第一个”，再排掉更高的会话与应用层。
 
@@ -46,7 +46,7 @@ OSI 自下而上第一个向上提供**端到端**服务的是**传输层，选 
 <a id="q02"></a>
 ## 02｜2010-33：协议行为是公开约定，内部代码不在体系结构里
 
-<img src="../bank/2010/q33.png" alt="2010-33 原题" width="653" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2010/q33.png" alt="2010-33 原题" width="396" style="display:block; width:24.75em; max-width:100%; height:auto;">
 
 体系结构描述层次、每层功能与所用协议；**协议的内部实现细节不属于它，选 C**。第一笔问对端必须知道什么才能互通：报文与交互约定要知道，厂商的数据结构/代码不必知道。
 
@@ -70,7 +70,7 @@ OSI 自下而上第一个向上提供**端到端**服务的是**传输层，选 
 <a id="q04"></a>
 ## 04｜2011-33：IP 是无连接、不可靠的数据报服务
 
-<img src="../bank/2011/q33.png" alt="2011-33 原题" width="690" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2011/q33.png" alt="2011-33 原题" width="418" style="display:block; width:26.13em; max-width:100%; height:auto;">
 
 TCP/IP 网络层的 IP 每份数据报独立转发，不建立端到端虚电路，也不保证送达，**选 A**。第一笔把“网络层 IP”与上层 TCP 的可靠有连接服务分开。
 
@@ -82,7 +82,7 @@ TCP/IP 网络层的 IP 每份数据报独立转发，不建立端到端虚电路
 <a id="q05"></a>
 ## 05｜2012-33：ICMP 直接装在 IP 数据报里
 
-<img src="../bank/2012/q33.png" alt="2012-33 原题" width="696" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2012/q33.png" alt="2012-33 原题" width="421" style="display:block; width:26.31em; max-width:100%; height:auto;">
 
 ICMP 的差错报告/诊断报文由 **IP 直接承载，选 B**。UDP/TCP 属传输层，PPP 属链路层，都不是题问的直接承载者。第一笔只画相邻封装：`IP首部｜ICMP报文`。
 
@@ -94,7 +94,7 @@ ICMP 的差错报告/诊断报文由 **IP 直接承载，选 B**。UDP/TCP 属�
 <a id="q06"></a>
 ## 06｜2012-34：“事件发生顺序”是过程特性
 
-<img src="../bank/2012/q34.png" alt="2012-34 原题" width="712" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2012/q34.png" alt="2012-34 原题" width="431" style="display:block; width:26.94em; max-width:100%; height:auto;">
 
 物理层接口描述各功能的事件先后、时序，归**过程特性，选 C**。第一笔圈“顺序”：机械看接头引脚，电气看电压，功能看各线作用，过程看何时动作。
 
@@ -106,7 +106,7 @@ ICMP 的差错报告/诊断报文由 **IP 直接承载，选 B**。UDP/TCP 属�
 <a id="q07"></a>
 ## 07｜2012-35：MAC 的校验不构成可靠交付承诺
 
-<img src="../bank/2012/q35.png" alt="2012-35 原题" width="608" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2012/q35.png" alt="2012-35 原题" width="368" style="display:block; width:23.00em; max-width:100%; height:auto;">
 
 以太网 MAC 发帧前不建连接，错误帧可丢弃而无该层的确认重传保证，因此**无连接、不可靠，选 A**。第一笔锁定“MAC”层，不把 TCP 的可靠性借给它。
 
@@ -118,7 +118,7 @@ ICMP 的差错报告/诊断报文由 **IP 直接承载，选 B**。UDP/TCP 属�
 <a id="q08"></a>
 ## 08｜2013-33：应用层正下方的表示层做格式转换
 
-<img src="../bank/2013/q33.png" alt="2013-33 原题" width="649" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2013/q33.png" alt="2013-33 原题" width="393" style="display:block; width:24.56em; max-width:100%; height:auto;">
 
 OSI 从上到下应用→**表示**→会话→传输→网络→链路→物理。应用层相邻层实现的数据格式转换属于**表示层，选 B**。第一笔只向下走一格；会话管理、路由与可靠传输各有别层。
 
@@ -142,7 +142,7 @@ OSI 从上到下应用→**表示**→会话→传输→网络→链路→物理
 <a id="q10"></a>
 ## 10｜2014-33：会话层直接使用传输层服务
 
-<img src="../bank/2014/q33.png" alt="2014-33 原题" width="719" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2014/q33.png" alt="2014-33 原题" width="435" style="display:block; width:27.19em; max-width:100%; height:auto;">
 
 OSI 顶部是应用→表示→会话→**传输**，故直接为会话层提供服务的是**传输层，选 C**。第一笔从会话向下只挪一层，不跳到网络层。承接 08 的“应用的下邻是表示”，再向下两格即可。
 
@@ -202,7 +202,7 @@ OSI 七层去掉应用与物理，还有表示、会话、传输、网络、链�
 <a id="q15"></a>
 ## 15｜2021-33：TCP/IP 传输层下方的网络层选路
 
-<img src="../bank/2021/q33.png" alt="2021-33 原题" width="728" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2021/q33.png" alt="2021-33 原题" width="441" style="display:block; width:27.56em; max-width:100%; height:auto;">
 
 传输层相邻的下层是互联网层/IP 网络层，主要功能有**路由选择，选 B**。第一笔定位“下邻”再找职责；会话管理在上层应用相关功能，端到端报文段传输属传输层，结点到结点流控可由链路机制处理。
 

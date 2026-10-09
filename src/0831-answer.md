@@ -56,7 +56,7 @@
 <a id="q02"></a>
 ## 02｜2009-32：设备独立先由逻辑名隔开应用与硬件
 
-<img src="../bank/2009/q32.png" alt="2009-32 原题" width="663" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2009/q32.png" alt="2009-32 原题" width="402" style="display:block; width:25.13em; max-width:100%; height:auto;">
 
 程序员用系统调用打开 I/O 设备，通常给出**逻辑设备名，选 A**；OS 再依据设备映射表找到具体物理设备。主/从设备号及物理名字是实现层的标识，不应成为普通应用在请求时的唯一硬编码依赖。第一笔问应用要的是“哪类功能/逻辑设备”，还是“哪台硬件的编号”。
 
@@ -68,7 +68,7 @@
 <a id="q03"></a>
 ## 03｜2010-32：键盘输入先到中断入口，再交登录流程
 
-<img src="../bank/2010/q32.png" alt="2010-32 原题" width="706" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2010/q32.png" alt="2010-32 原题" width="428" style="display:block; width:26.75em; max-width:100%; height:auto;">
 
 本地用户敲键盘时，控制器先发外部中断，CPU 进入**中断处理程序，选 B**，取得输入/状态；之后数据才会传给登录程序、命令解释程序或相应服务。第一笔按物理事件到软件消费的顺序走，不从“最终谁需要用户名”倒推最先运行者。
 
@@ -140,7 +140,7 @@ RAID **镜像 I** 保留副本，单盘故障可读另一份；**奇偶校验 II
 <a id="q09"></a>
 ## 09｜2013-29：启动完成后，操作系统运行在 RAM
 
-<img src="../bank/2013/q29.png" alt="2013-29 原题" width="705" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2013/q29.png" alt="2013-29 原题" width="427" style="display:block; width:26.69em; max-width:100%; height:auto;">
 
 问“最终被加载到”而非“固件最初存放处”：开机固件可位于 BIOS/ROM，加载器把操作系统内核装入**RAM，选 D**，CPU 才能在运行中读写其数据结构。第一笔圈出“开机后”“最终”，排除把启动入口当运行位置。
 
@@ -164,7 +164,7 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q11"></a>
 ## 11｜2014-26：读磁盘完成只表示等待条件解除
 
-<img src="../bank/2014/q26.png" alt="2014-26 原题" width="685" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2014/q26.png" alt="2014-26 原题" width="415" style="display:block; width:25.94em; max-width:100%; height:auto;">
 
 进程因读盘而阻塞；完成中断到达后，等待事件成立，内核把它移入**就绪态，选 A**。还须经过 CPU 调度才可运行，故不能直接从阻塞跳成运行。第一笔把“完成 I/O”译成“可参加 CPU 竞争”，不是“已经拿到 CPU”。
 
@@ -188,7 +188,7 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q13"></a>
 ## 13｜2014-31：管道有容量，读空与写满都能阻塞
 
-<img src="../bank/2014/q31.png" alt="2014-31 原题" width="556" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2014/q31.png" alt="2014-31 原题" width="337" style="display:block; width:21.06em; max-width:100%; height:auto;">
 
 **选 C**。读端遇到空管道，且写端尚可继续供数据时等待；写端遇到满管道，且读端尚可消费时等待。第一笔画有界内核缓冲区，分别问读有无数据、写有无空位。
 
@@ -212,7 +212,7 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q15"></a>
 ## 15｜2015-28：缓存命中与延迟写都指向减少实际盘访问
 
-<img src="../bank/2015/q28.png" alt="2015-28 原题" width="630" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2015/q28.png" alt="2015-28 原题" width="382" style="display:block; width:23.88em; max-width:100%; height:auto;">
 
 内存中设磁盘缓冲区，重复读可从缓冲中取，写入可暂存并合并，主要减少**磁盘 I/O 次数，选 A**。第一笔问一次逻辑读写是否必须真的驱动盘片；若命中或可合并，就少一次物理 I/O。
 
@@ -248,7 +248,7 @@ P1 计算 90%、I/O 10%；P2 各 50%；P3 计算 15%、I/O 85%。为了让 CPU �
 <a id="q18"></a>
 ## 18｜2016-31：SPOOLing 把独占设备前接队列
 
-<img src="../bank/2016/q31.png" alt="2016-31 原题" width="542" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2016/q31.png" alt="2016-31 原题" width="328" style="display:block; width:20.50em; max-width:100%; height:auto;">
 
 题问**错误**项。SPOOLing 由系统的输入/输出管理进程、磁盘上的输入井/输出井等安排缓冲与真正设备操作；**不是用户作业直接控制设备与传输，选 D**。第一笔圈“由用户作业控制”，问谁有权实际驱动打印机等独占设备。
 
@@ -308,7 +308,7 @@ FCFS 会走很长磁头路程，却保证一个已排队请求前面只有有限
 <a id="q23"></a>
 ## 23｜2019-20：盘上的最小物理读写单位不是字节
 
-<img src="../bank/2019/q20.png" alt="2019-20 原题" width="551" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2019/q20.png" alt="2019-20 原题" width="334" style="display:block; width:20.88em; max-width:100%; height:auto;">
 
 题问**错误**项：磁盘一般按**扇区/物理块**传输，不按单个字节独立完成一次物理读写，故 **C**。第一笔把 CPU 对内存按字节寻址与磁盘控制器按扇区 I/O 分开。
 
@@ -332,7 +332,7 @@ SSTF 的比较基准会随磁头改变，不是把所有请求按原点距离排
 <a id="q25"></a>
 ## 25｜2022-32：驱动必须知道设备怎么控制
 
-<img src="../bank/2022/q32.png" alt="2022-32 原题" width="482" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2022/q32.png" alt="2022-32 原题" width="292" style="display:block; width:18.25em; max-width:100%; height:auto;">
 
 题问**不正确**：驱动把通用读写请求变成具体设备的控制命令、寄存器操作及中断处理，与 I/O 控制方式密切相关，故 **A 错，选 A**。第一笔对比“设备无关层提供统一接口”与“驱动适配具体硬件”。
 
@@ -356,7 +356,7 @@ SSTF 的比较基准会随磁头改变，不是把所有请求按原点距离排
 <a id="q27"></a>
 ## 27｜2024-31：中断程序结束时，数据先留在内核缓冲区
 
-<img src="../bank/2024/q31.png" alt="2024-31 原题" width="615" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2024/q31.png" alt="2024-31 原题" width="372" style="display:block; width:23.25em; max-width:100%; height:auto;">
 
 键盘控制器报告按键，中断服务程序取走输入并放入**内核缓冲区，选 C**；之后内核输入处理/系统调用再把字符交到用户缓冲区。第一笔按时间切开“中断处理完”与“用户 read 最终拿到”。
 
