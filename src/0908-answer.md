@@ -33,7 +33,9 @@
 <a id="q01"></a>
 ## 01｜2009-40：FTP 命令占哪条连接
 
-![2009-40 原题](../bank/2009/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2009/q40.png" alt="2009-40 原题" width="380" style="display:block; width:23.73em; max-width:none; height:auto;">
+</div>
 
 先把会话画成“登录、命令”和“文件内容”两条流。命令由始终保持的 **TCP 控制连接**传，选 **A**；数据连接只为具体文件或目录内容建立。记忆端口前先认流的职责。
 
@@ -42,7 +44,9 @@
 <a id="q02"></a>
 ## 02｜2010-40：全递归时每一级只向上请求一次
 
-![2010-40 原题](../bank/2010/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2010/q40.png" alt="2010-40 原题" width="459" style="display:block; width:28.69em; max-width:none; height:auto;">
+</div>
 
 题明确采用**递归方法**解析。本地主机向本地 DNS 发一条请求；本地 DNS 向上一级服务器也发一条递归请求，由上一级继续代查并返回最终答案。因此用户主机、本地 DNS 的请求数分别 **一条、一条，选 A**。不能把现实中常见的“主机递归、本地向其他服务器迭代”替换进本题。
 
@@ -54,7 +58,9 @@
 <a id="q03"></a>
 ## 03｜2012-40：邮件沿边选协议
 
-![2012-40 原题](../bank/2012/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2012/q40.png" alt="2012-40 原题" width="437" style="display:block; width:27.32em; max-width:none; height:auto;">
+</div>
 
 沿图逐边读：用户代理把邮件提交给服务器1用 **SMTP**；服务器1转交服务器2仍用 **SMTP**；用户2从邮箱取邮件用 **POP3**，依次对应 **D**。第一笔是画箭头方向，“发送到邮箱”和“从邮箱读取”不同。
 
@@ -63,7 +69,9 @@
 <a id="q04"></a>
 ## 04｜2013-40：SMTP 能做哪些动作
 
-![2013-40 原题](../bank/2013/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q40.png" alt="2013-40 原题" width="313" style="display:block; width:19.59em; max-width:none; height:auto;">
+</div>
 
 逐条判断：经典 SMTP 报文传输要求 7 位 ASCII（I）；用户代理向邮件服务器提交、邮件服务器间转发（II、III）都属于发送（题中组合 **A**）。服务器给用户代理“取信”不是 SMTP 的常规职责。
 
@@ -72,7 +80,9 @@
 <a id="q05"></a>
 ## 05｜2014-40：Web 浏览会触碰的层
 
-![2014-40 原题](../bank/2014/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q40.png" alt="2014-40 原题" width="433" style="display:block; width:27.08em; max-width:none; height:auto;">
+</div>
 
 把动作限定为浏览器访问 Web：局域网可能先 ARP，链路可能 PPP，DNS 查询可能 UDP；**SMTP**处理邮件发送，访问网页不需要它，选 **D**。遇到“不会使用”，先排过程里必经或可能经的协议，不把协议都当成浏览器直接调用。
 
@@ -81,14 +91,18 @@
 <a id="q06"></a>
 ## 06｜2015-33：POP3 选运输协议
 
-![2015-33 原题](../bank/2015/q33.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q33.png" alt="2015-33 原题" width="484" style="display:block; width:30.24em; max-width:none; height:auto;">
+</div>
 
 问的是 POP3 **采用的运输层协议**，取邮件会话用可靠的 TCP，选 **D**。承接03：POP3 是应用层“收信”协议，TCP 是其下方承载连接，两层不要互相替代。
 
 <a id="q07"></a>
 ## 07｜2015-40：从实际请求头读会话意图
 
-![2015-40 原题](../bank/2015/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2015/q40.png" alt="2015-40 原题" width="285" style="display:block; width:17.81em; max-width:none; height:auto;">
+</div>
 
 先读原报文而不是回忆 HTTP/1.1 的默认值：`GET /index.html` 给出资源路径，`Host` 给出主机名，`Cookie` 是客户端带给服务器的状态标识；`Connection: Close` 明说响应后关闭，所以“使用持续连接”错误，选 **C**。
 
@@ -97,7 +111,9 @@
 <a id="q08"></a>
 ## 08｜2016-38：NAT 出口只改哪一端
 
-![2016-38 原题](../bank/2016/q38.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q38.png" alt="2016-38 原题" width="471" style="display:block; width:29.44em; max-width:none; height:auto;">
+</div>
 
 沿[2016-34 的拓扑](../bank/2016/q34.png)追 H3→Web：经过 R2 的 NAT 出公网时，**源**从私网地址换成 R2 的 `201.1.3.10`；**目的**仍是 Web `130.18.10.1`，选 **D**。第一笔圈住报文流向，别把返回包或下一跳当目的 IP。
 
@@ -106,7 +122,9 @@
 <a id="q09"></a>
 ## 09｜2016-40：DNS 次数取决于缓存与询问边数
 
-![2016-40 原题](../bank/2016/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q40.png" alt="2016-40 原题" width="471" style="display:block; width:29.46em; max-width:none; height:auto;">
+</div>
 
 本地 DNS 已有结果时，不向其他 DNS 发问，最少 **0** 次。全未命中时依次问根、`com`、`xyz.com`、`abc.xyz.com` 的服务器，最多 **4** 次，选 **C**。别把主机向本地 DNS 的一次算到“本地向其他”里。
 
@@ -115,7 +133,9 @@
 <a id="q10"></a>
 ## 10｜2017-40：FTP 的 20 端口属于谁
 
-![2017-40 原题](../bank/2017/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q40.png" alt="2017-40 原题" width="262" style="display:block; width:16.40em; max-width:none; height:auto;">
+</div>
 
 核对主语：客户端连接服务器的 TCP 21 端口建立控制连接，控制连接维持；一轮文件传送的数据连接可关闭。题中 C 把数据连接说成与**客户端的 TCP 20 端口**建立，是错误说法，选 **C**。主动 FTP 的 20 是服务器侧数据端口，客户端端口并非固定 20；被动方式服务器数据端口也不固定为 20。
 
@@ -124,7 +144,9 @@
 <a id="q11"></a>
 ## 11｜2018-33：谁能走无连接的运输服务
 
-![2018-33 原题](../bank/2018/q33.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q33.png" alt="2018-33 原题" width="379" style="display:block; width:23.71em; max-width:none; height:auto;">
+</div>
 
 将候选应用映射到运输层：DNS 查询常用 UDP，可使用无连接服务，选 **B**。承接06：应用协议与运输方式要逐层对齐，不能因应用有请求响应就认定必须建 TCP 连接。
 
@@ -133,21 +155,27 @@
 <a id="q12"></a>
 ## 12｜2018-40：哪种邮件内容可直接送 SMTP
 
-![2018-40 原题](../bank/2018/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q40.png" alt="2018-40 原题" width="405" style="display:block; width:25.29em; max-width:none; height:auto;">
+</div>
 
 承接04的 7 位 ASCII：ASCII 文本已符合原生 SMTP 可传的字符形式，**无需转换**，选 **D**。图片、音视频或非 ASCII 文本若要放进邮件正文/附件需编码等处理。
 
 <a id="q13"></a>
 ## 13｜2019-40：C/S 中谁直接与谁通信
 
-![2019-40 原题](../bank/2019/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2019/q40.png" alt="2019-40 原题" width="387" style="display:block; width:24.19em; max-width:none; height:auto;">
+</div>
 
 把 C/S 画成客户端↔服务器；服务端长期运行、客户端主动发请求，服务提供可集中管理。选项 **B**称客户端之间可直接通信，不能由 C/S 模型支持。用户之间可以借服务器间接交流，但那不是两个客户端的直接 C/S 通信。A 的 P2P 结点对等、C 的客户端主动/服务器被动是两种模型的基本关系；D 说P2P分发通常更快，是利用接收者继续上传、增加分发容量的典型优势，并非任意负载下无条件更快。
 
 <a id="q14"></a>
 ## 14｜2020-40：把 DNS 与 Web 两段 RTT 分账
 
-![2020-40 原题](../bank/2020/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q40.png" alt="2020-40 原题" width="468" style="display:block; width:29.25em; max-width:none; height:auto;">
+</div>
 
 题给每次往返 10ms，忽略其他时延。主机先问本地 DNS；缓存命中，解析对外往返可为 **0 RTT**，随后 TCP 建连 **1 RTT**、发 HTTP 请求收到页面 **1 RTT**，最短 **20ms**。全未命中，本地按迭代问根、`com`、`abc.com`，另 **3 RTT**，总 **50ms**，选 **D**。
 
@@ -156,7 +184,9 @@
 <a id="q15"></a>
 ## 15｜2022-40：跨页条件决定图像传几轮
 
-![2022-40 完整原题](../bank/2022/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2022/q40.png" alt="2022-40 完整原题" width="467" style="display:block; width:29.21em; max-width:none; height:auto;">
+</div>
 
 题面完整条件：HTML 引一幅同目录图像；HTML 大小 1 MSS、图像 3 MSS；RTT 10ms，忽略首部与传输时延，DNS 已解析。先 TCP 建连 1 RTT，取 HTML 1 RTT；服务器初始拥塞窗口按题目的教材模型取1 MSS；发送HTML的1 MSS并获确认后，窗口已增至2 MSS。随后请求图像，先发2 MSS，确认后再发余下1 MSS，共2 RTT。合计 **4 RTT=40ms，选 B**。
 
@@ -165,7 +195,9 @@
 <a id="q16"></a>
 ## 16｜2024-40：HTTP/1.0 非持续且不能并行
 
-![2024-40 原题](../bank/2024/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q40.png" alt="2024-40 原题" width="460" style="display:block; width:28.75em; max-width:none; height:auto;">
+</div>
 
 先数对象：HTML 1 个，加同站图像 7 个，共 **8**。每个对象需新 TCP 建连 1 RTT、请求响应 1 RTT；浏览器不能并行，8 组串行，最少 **16 RTT，选 D**。已从“建立 TCP 连接开始”计时，无需额外 DNS。
 
@@ -174,7 +206,9 @@
 <a id="q17"></a>
 ## 17｜2025-40：POP3 的收取与连接复用
 
-![2025-40 原题](../bank/2025/q40.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2025/q40.png" alt="2025-40 原题" width="404" style="display:block; width:25.26em; max-width:none; height:auto;">
+</div>
 
 逐条套“用户代理从服务器读取”：I 正确；从服务器发信与服务器间传信由 SMTP 等负责，II、III 错；一条 TCP 会话可读取多封邮件，IV 正确。因此 **I、IV，选 B**。即使忘记 IV，先用收发方向排除其他组合。
 
