@@ -95,7 +95,7 @@
 <a id="q06"></a>
 ## 06｜2016-27：TSL 能互斥，但等待者会反复占 CPU 查锁
 
-<img src="../bank/2016/q27.png" alt="2016-27 原题" width="671" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2016/q27.png" alt="2016-27 原题" width="406" style="display:block; width:25.38em; max-width:100%; height:auto;">
 
 `TSL(&lock)` 原子地读旧锁值并置锁；旧值为真，`while` 就继续循环检查，不会主动睡眠或让出 CPU，**B 对，选 B**。退出者只把 `lock=FALSE`，没有唤醒队列中的阻塞进程，A 错；忙等不满足让权等待，C 错；TSL 本身的读改写须原子，不要求整个 while 都关中断，D 错。第一笔观察等待循环里有没有阻塞调用。
 
@@ -107,7 +107,7 @@
 <a id="q07"></a>
 ## 07｜2016-30：先划进程地址空间，再找同一个共享变量的写写冲突
 
-<img src="../bank/2016/q30.png" alt="2016-30 原题" width="683" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2016/q30.png" alt="2016-30 原题" width="413" style="display:block; width:25.81em; max-width:100%; height:auto;">
 
 P1 内 Thread1、Thread2 共享 **P1 的 x**，各做 `x+=1` 与 `x+=2`，非原子读改写交错会丢失更新，需要互斥，**选 C**。P2 自己另有一个 `x`，名字相同不等于与 P1 共享；`x+=1` 与 P2 的 `x+=3` 不构成同一地址的冲突。各线程局部 `a` 也独立。第一笔在变量旁标 `P1.x` 或 `P2.x`。
 
@@ -119,7 +119,7 @@ P1 内 Thread1、Thread2 共享 **P1 的 x**，各做 `x+=1` 与 `x+=2`，非原
 <a id="q08"></a>
 ## 08｜2016-32：管程把互斥入口与条件等待放在一处
 
-<img src="../bank/2016/q32.png" alt="2016-32 原题" width="445" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2016/q32.png" alt="2016-32 原题" width="270" style="display:block; width:16.88em; max-width:100%; height:auto;">
 
 题问**错误**。管程的受控入口可保证同一时刻只有一个进程在其中执行 C，对内部变量限制外部直接访问 D，语言/运行时可支持这一同步结构 B。A 说“**只能**用于互斥”，却漏了管程内条件变量的等待/通知可表达条件同步，**选 A**。第一笔寻找这个“只能”能否被条件等待反驳。
 
@@ -131,7 +131,7 @@ P1 内 Thread1、Thread2 共享 **P1 的 x**，各做 `x+=1` 与 `x+=2`，非原
 <a id="q09"></a>
 ## 09｜2018-28：condition.wait 阻塞当前者，而 signal 才唤醒他者
 
-<img src="../bank/2018/q28.png" alt="2018-28 原题" width="712" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2018/q28.png" alt="2018-28 原题" width="431" style="display:block; width:26.94em; max-width:100%; height:auto;">
 
 进程执行 `x.wait()`，表示当前条件尚未满足：它释放管程占有、**阻塞自己并加入条件变量 x 的等待队列，选 D**。B 的“唤醒一个”等待者是 `signal()` 的方向；A 不是单纯互斥；C 不是读一个普通数值来判断。第一笔在 wait 旁写“谁调用谁睡”，在 signal 旁写“唤醒别人”。
 
@@ -207,7 +207,7 @@ Ta、Tb 均由进程 P 创建，共享 P 的地址空间 I，也可访问 P 已�
 <a id="q15"></a>
 ## 15｜2025-27：最小页框数从一条指令最多同时需要哪些页推
 
-<img src="../bank/2025/q27.png" alt="2025-27 原题" width="686" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2025/q27.png" alt="2025-27 原题" width="415" style="display:block; width:25.94em; max-width:100%; height:auto;">
 
 题问让进程能运行所需的**最少页框数**。某条指令本身和它的操作数可能位于不同页，间接寻址等寻址方式还可能在访存中要求额外页面同时可用；决定最低需求的是**指令系统支持的寻址方式，选 D**。代码段长、虚拟地址空间大与物理地址空间大都不直接说明“一条指令执行时最多得同时留住几页”。第一笔数执行本条指令不能互相替换掉的页面。
 

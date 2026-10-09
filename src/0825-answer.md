@@ -46,7 +46,7 @@
 <a id="q01"></a>
 ## 01｜2009-23：并发的对象不一定都争同一处理器
 
-<img src="../bank/2009/q23.png" alt="2009-23 原题" width="690" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2009/q23.png" alt="2009-23 原题" width="418" style="display:block; width:26.13em; max-width:100%; height:auto;">
 
 题限定**单处理机**。两个进程不能在同一时刻都占这个 CPU，I 的进程与进程只能交替并发，不能物理并行。CPU 执行指令时设备可自主工作 II；通道可控制 I/O 与 CPU 并行 III；不同设备也可相互并行 IV。**II、III、IV，选 D**。第一笔写出每对对象是否都必须占唯一 CPU。
 
@@ -58,7 +58,7 @@
 <a id="q02"></a>
 ## 02｜2009-24：响应比同时计等待和服务
 
-<img src="../bank/2009/q24.png" alt="2009-24 原题" width="667" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2009/q24.png" alt="2009-24 原题" width="404" style="display:block; width:25.25em; max-width:100%; height:auto;">
 
 题问综合考虑等待时间与执行时间。高响应比优先按 `响应比=(等待时间+要求服务时间)/要求服务时间=1+等待/服务` 排序，**选 D**。服务短者在等待相同情况下比值高；长作业等久后比值也升高。第一笔看候选算法的比较量里是否**同时**出现两个时间。
 
@@ -70,7 +70,7 @@
 <a id="q03"></a>
 ## 03｜2010-24：新进程从“新的执行主体”识别
 
-<img src="../bank/2010/q24.png" alt="2010-24 原题" width="743" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2010/q24.png" alt="2010-24 原题" width="450" style="display:block; width:28.13em; max-width:100%; height:auto;">
 
 登录成功使系统为用户建立执行环境，启动一个程序也要创建相应进程，I、III 对。设备分配把已有进程所需资源交给它，**并不必然**创建新进程，II 不选。**仅 I、III，选 C**。第一笔问结果是“多了一个可被调度的主体”，还是“已有主体多了一份资源”。
 
@@ -82,7 +82,7 @@
 <a id="q04"></a>
 ## 04｜2010-26：用尽时间片意味着已经得到过机会
 
-<img src="../bank/2010/q26.png" alt="2010-26 原题" width="747" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2010/q26.png" alt="2010-26 原题" width="452" style="display:block; width:28.25em; max-width:100%; height:auto;">
 
 在多级反馈队列的常见规则中，进程用完整个时间片仍未结束，说明它已连续占用本级给的 CPU 份额，可降至较低优先级队列，**选 A**。刚完成 I/O 的进程进入就绪队列常希望较快响应；长期在就绪队列等待则不宜再降；被选中运行也不是惩罚条件。第一笔找“它是否**消耗了 CPU 配额**”。
 
@@ -94,7 +94,7 @@
 <a id="q05"></a>
 ## 05｜2011-23：短任务优先也要给长期等候者上涨机会
 
-<img src="../bank/2011/q23.png" alt="2011-23 原题" width="706" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2011/q23.png" alt="2011-23 原题" width="427" style="display:block; width:26.69em; max-width:100%; height:auto;">
 
 沿用 02 的响应比 `1+等待/服务`：服务时间短者起初容易领先，但等待时间不断增加会提高长期未执行任务的比值，避免它永久排不到，**高响应比优先，选 B**。先来先服务和时间片轮转不会按短任务先选；非抢占短任务优先只看短，不随等待产生这项补偿。第一笔要求同时满足“短任务偏好”和“等待越久优先级越升”。
 
@@ -106,7 +106,7 @@
 <a id="q06"></a>
 ## 06｜2011-24：用户态也能运行提供交互的普通程序
 
-<img src="../bank/2011/q24.png" alt="2011-24 原题" width="604" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2011/q24.png" alt="2011-24 原题" width="366" style="display:block; width:22.88em; max-width:100%; height:auto;">
 
 命令解释程序读取并解析用户输入，可作为普通用户进程执行，**选 A**。缺页处理、进程调度、时钟中断处理都需要内核管理异常、上下文和计时，B/C/D 在内核态。第一笔问代码有没有直接处理受保护的 CPU 状态，而非名字里是否含“系统”。
 
@@ -118,7 +118,7 @@
 <a id="q07"></a>
 ## 07｜2011-25：共享进程资源，独立保存线程运行位置
 
-<img src="../bank/2011/q25.png" alt="2011-25 原题" width="691" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2011/q25.png" alt="2011-25 原题" width="418" style="display:block; width:26.13em; max-width:100%; height:auto;">
 
 同一进程的线程共享代码段、打开文件和全局变量；每个线程有自己的执行栈与栈指针，才能暂停 A、运行 B、再恢复 A，**选 D**。第一笔问这个量是“进程共同拥有的资源”还是“恢复某一线程独立执行点所必需”。
 
@@ -130,7 +130,7 @@
 <a id="q08"></a>
 ## 08｜2012-25：虚拟存储要让逻辑连续与物理分散脱钩
 
-<img src="../bank/2012/q25.png" alt="2012-25 原题" width="500" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2012/q25.png" alt="2012-25 原题" width="303" style="display:block; width:18.94em; max-width:100%; height:auto;">
 
 虚拟存储按需调入、换出页面或段，让程序的逻辑空间不必连续占满物理内存；它要依靠**非连续分配**的页式/段式等机制，**选 B**。A 的“只能连续”反向；虚拟容量还受虚拟地址位数和可用外存等限制，C 的“只受外存”与 D 的“只受内存”都太绝对。第一笔分别审“实现结构”和“容量上限”，不要被相似措辞带走。
 
@@ -154,7 +154,7 @@
 <a id="q10"></a>
 ## 10｜2014-23：饥饿问的是“永远轮不到”，不是平均等多久
 
-<img src="../bank/2014/q23.png" alt="2014-23 原题" width="612" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2014/q23.png" alt="2014-23 原题" width="370" style="display:block; width:23.13em; max-width:100%; height:auto;">
 
 时间片轮转让就绪队列中的每个进程轮流取得有限 CPU 片，只要每次服务和队列推进，进程不会被**永久**跳过，**选 A**。静态优先级可让低优先级长期被新高优先级压住；短作业优先无论抢占与否都可能不断偏向新来的短任务。第一笔问调度规则会不会给已排队者一个确定的轮到机会。
 
@@ -170,7 +170,7 @@
 <a id="q11"></a>
 ## 11｜2015-25：运行变就绪，与运行变阻塞只差一个等待原因
 
-<img src="../bank/2015/q25.png" alt="2015-25 原题" width="629" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2015/q25.png" alt="2015-25 原题" width="381" style="display:block; width:23.81em; max-width:100%; height:auto;">
 
 P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进程可能因等待条件转**阻塞**。高优先级进程到来抢占当前运行者，当前者仍可运行，只是暂时拿不到 CPU，转**就绪**，**选 D**。第一笔问进程接下来缺的是“可运行条件”还是“CPU 使用权”。
 
@@ -194,7 +194,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 <a id="q13"></a>
 ## 13｜2017-27：时间片用完还可运行，不能写成阻塞
 
-<img src="../bank/2017/q27.png" alt="2017-27 原题" width="650" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2017/q27.png" alt="2017-27 原题" width="394" style="display:block; width:24.63em; max-width:100%; height:auto;">
 
 题问**错误**。时间片越短，切换通常越频繁，A 对；时钟中断更新剩余片长 C 对；选择片长要考虑响应、开销、进程数量等 D 对。B 把片用完后的状态写成**阻塞**，其实进程仍具备运行条件，应从执行态转**就绪态**，**选 B**。第一笔只看它是否在等外部条件；没有就不能叫阻塞。
 
@@ -242,7 +242,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 <a id="q17"></a>
 ## 17｜2019-23：用户级线程的控制信息由谁维护
 
-<img src="../bank/2019/q23.png" alt="2019-23 原题" width="571" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2019/q23.png" alt="2019-23 原题" width="346" style="display:block; width:21.63em; max-width:100%; height:auto;">
 
 内核级线程由 OS 调度 A 对；用户级线程切换不必每次陷入内核，通常效率较高 C 对；即使 OS 不提供内核线程，用户线程库仍可实现用户级线程 D 对。B 称 **OS 为每个用户级线程建立线程控制块**，这些线程的控制与调度通常由用户空间线程库管理，内核未必逐一认识，**选 B**。第一笔问“操作系统是否看得见这个线程”。
 
@@ -278,7 +278,7 @@ P(wait) 若资源不足、内存申请失败或启动 I/O 后需等设备，进�
 <a id="q20"></a>
 ## 20｜2020-29：父子进程不同于同进程的两个线程
 
-<img src="../bank/2020/q29.png" alt="2020-29 原题" width="564" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2020/q29.png" alt="2020-29 原题" width="342" style="display:block; width:21.38em; max-width:100%; height:auto;">
 
 题问**错误**。父子进程可并发/在多核上并行，有各自 PCB；进程间对同一临界资源必须遵守互斥。B 却说父子进程**共享虚拟地址空间**，创建子进程可复制或写时复制映射，但逻辑上各有自己的虚拟地址空间，**选 B**。第一笔把 07 的“同进程线程共享地址空间”与“父子是两个进程”对照。
 
@@ -330,7 +330,7 @@ OS 创建新进程必须申请空白**PCB（进程控制块）**并初始化其�
 <a id="q24"></a>
 ## 24｜2022-23：多道程序的收益不是无限单调上升
 
-<img src="../bank/2022/q23.png" alt="2022-23 原题" width="740" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2022/q23.png" alt="2022-23 原题" width="448" style="display:block; width:28.00em; max-width:100%; height:auto;">
 
 多道程序让不同进程在等待与计算之间交替并发，需要管理共享资源；这些是 A、C 的合理叙述。它不**必须**有虚拟存储，可在更早/简单的存储管理上运行，B 也对。D 说“进程数越多，CPU 利用率越高”是无上限单调判断；内存与调度成本增加、频繁换页可降低有效运行，**选 D**。第一笔对“越多越高”试一个资源不足反例。
 
@@ -390,7 +390,7 @@ P1 原需 60，在 20 时剩 40；P2 原需 42，在 30 时剩 32。P3 完成后
 <a id="q29"></a>
 ## 29｜2024-24：终止本进程不等于必然杀掉子进程
 
-<img src="../bank/2024/q24.png" alt="2024-24 原题" width="601" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2024/q24.png" alt="2024-24 原题" width="364" style="display:block; width:22.75em; max-width:100%; height:auto;">
 
 OS 终止进程要回收其设备、内存及 PCB 等本进程资源，B/C/D 是一般收尾。子进程是另一个执行主体，可能由系统接管或按 OS 规则处理，**不一定必须终止子进程，选 A**。第一笔划出“这个进程拥有的资源”与“另一个进程是否也终止”两类结果。
 
