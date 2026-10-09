@@ -23,9 +23,7 @@
 <a id="q01"></a>
 ## 01｜2010-45：位图是分配状态，C-SCAN 是寻道顺序
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q45.png" alt="2010-45 原题" width="464" style="display:block; width:29.01em; max-width:none; height:auto;">
-</div>
+![2010-45 原题](../bank/2010/q45.png)
 
 **（1）空闲块。** 16384块各对应位图一位，`16384/8=2048B=2KB`。位图中的一位表示某块空闲/已分配，申请时找空闲位、改为已分配，释放时复位；题给的2KB刚好容纳整张位图。
 
@@ -36,9 +34,7 @@
 <a id="q02"></a>
 ## 02｜2011-46：一次写入且不可改，适合连续分配
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q46.png" alt="2011-46 原题" width="476" style="display:block; width:29.75em; max-width:none; height:auto;">
-</div>
+![2011-46 原题](../bank/2011/q46.png)
 
 **（1）组织与元数据。** 数据**一次性写入**，写完不修改，新建时可按该文件长度分配完整区域，之后无需动态增长。三种方式里**连续分配**适合：顺序读与随机定位都快，FCB 至少记录**起始盘块号、所占盘块数/文件长度**，逻辑块 k 直接映到 `起始块+k`。代价是要找足够长的连续空区，会有外部碎片；若实际应用不能在创建时确定长度，索引分配才是更灵活的替代。
 
@@ -47,9 +43,7 @@
 <a id="q03"></a>
 ## 03｜2012-46：地址字段能表示多少，不等于盘上真有多少
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q46.png" alt="2012-46 原题" width="438" style="display:block; width:27.37em; max-width:none; height:auto;">
-</div>
+![2012-46 原题](../bank/2012/q46.png)
 
 磁盘块1KB，文件系统最大4TB=`2^42B`，最多 `2^32` 个块，块号最少 **4B**。
 
@@ -64,9 +58,7 @@
 <a id="q04"></a>
 ## 04｜2014-46：插入第30条，移动较短的前缀
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q46.png" alt="2014-46 原题" width="467" style="display:block; width:29.18em; max-width:none; height:auto;">
-</div>
+![2014-46 原题](../bank/2014/q46.png)
 
 **（1）连续分配。** 200条各占一块；向文件前方空区移动原第1—29条共29条，使其各左移1块，腾出原第29条所在的块给新记录；文件起址提前后，新记录是逻辑第30条，原第30条留在原块并成为逻辑第31条。数据块需29次读、29次写和1次写新记录，最少 **59次块访问**（若题目把 FCB 落盘另计，再加其元数据写入）。FCB 的文件**起始块号与长度**改变：起始提前1块，总长201块；不能只从后端挪原30—200条，那会移动171条。
 
@@ -77,9 +69,7 @@
 <a id="q05"></a>
 ## 05｜2016-47：FAT 表项的下标就是“当前簇号”
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q47.png" alt="2016-47 原题" width="455" style="display:block; width:28.43em; max-width:none; height:auto;">
-</div>
+![2016-47 原题](../bank/2016/q47.png)
 
 **（1）目录内容。** `dir` 首簇1，其目录项含子目录 `dir1→48`；`dir1` 首簇48，其目录项含 `file1→100`、`file2→200`。用户文件的完整簇链由 FAT 追踪：file1 `100→106→108→结束`，file2 `200→201→202→结束`。目录项只存第一个簇号，不必重复存整条链。
 
@@ -90,9 +80,7 @@
 <a id="q06"></a>
 ## 06｜2018-46：先算索引扇出，再选直接/间接层
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q46.png" alt="2018-46 原题" width="468" style="display:block; width:29.26em; max-width:none; height:auto;">
-</div>
+![2018-46 原题](../bank/2018/q46.png)
 
 簇4KB、地址项4B，所以每个间接索引簇容 `4096/4=1024` 项。
 
@@ -105,9 +93,7 @@
 <a id="q07"></a>
 ## 07｜2019-44：簇号先转柱面，SSTF 才能比较距离
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q44.png" alt="2019-44 原题" width="507" style="display:block; width:31.66em; max-width:none; height:auto;">
-</div>
+![2019-44 原题](../bank/2019/q44.png)
 
 题面明确给出300个柱面、每柱面10个磁道、每磁道200个扇区；按这些数据完成换算。**（1）容量** `300柱面×10磁道/柱面×200扇区/磁道×512B=307,200,000B`；每簇2扇区，故每柱面 **`10×200/2=1000`簇**。
 
@@ -118,9 +104,7 @@
 <a id="q08"></a>
 ## 08｜2021-46：启动执行顺序与安装准备顺序
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q46.png" alt="2021-46 原题" width="467" style="display:block; width:29.20em; max-width:none; height:auto;">
-</div>
+![2021-46 原题](../bank/2021/q46.png)
 
 **（1）启动。** 先执行 **ROM 引导程序**，读取硬盘主引导记录并执行**磁盘引导程序**；它查分区表选择启动分区，再执行该分区首扇区的**分区引导程序**，最后装入并执行**操作系统初始化程序**。
 
@@ -131,9 +115,7 @@
 <a id="q09"></a>
 ## 09｜2022-44：寻道、旋转、传送各算一笔
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q44.png" alt="2022-44 原题" width="467" style="display:block; width:29.19em; max-width:none; height:auto;">
-</div>
+![2022-44 原题](../bank/2022/q44.png)
 
 **（1）地址位。** 4双面盘片=8盘面，磁头号至少3位；每盘面20000磁道→柱面号至少15位；每磁道500扇区→扇区号至少9位。注意这里**没有另给每柱面10磁道**，与2019-44分别取各自题面。
 
@@ -144,9 +126,7 @@
 <a id="q10"></a>
 ## 10｜2022-45：目录给名字，inode 给数据块
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q45.png" alt="2022-45 原题" width="457" style="display:block; width:28.57em; max-width:none; height:auto;">
-</div>
+![2022-45 原题](../bank/2022/q45.png)
 
 **（1）`stu` 目录内容。** 两个目录项分别是 `course→inode 2`、`doc→inode 10`；目录项存名字和 inode 号，数据盘块号在 inode 里。
 
