@@ -32,7 +32,9 @@
 <a id="q01"></a>
 ## 01｜2013-01：升序输入怎样接出降序
 
-![2013-01 原题](../bank/2013/q01.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2013/q01.png" alt="2013-01 原题" style="display:block; width:29.40em; max-width:none; height:auto;">
+</div>
 
 这题曾在 0731-03 出现。上次建立了“每个结点只处理一次”的复杂度判断；这次要补的是**具体怎么接**：两条升序链表各看当前结点，取较小者，从原链摘下并接到结果表最前面。取出顺序是从小到大，头部接入后的结果从大到小。两个游标各自只向前，故 `m+n=Θ(max(m,n))`，选 **D**。
 
@@ -46,7 +48,9 @@
 <a id="q02"></a>
 ## 02｜2014-03：空位指针使空、满只差一步
 
-![2014-03 原题](../bank/2014/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2014/q03.png" alt="2014-03 原题" style="display:block; width:29.15em; max-width:none; height:auto;">
+</div>
 
 题目没有把 `end1`、`end2` 都定义成“队头和队尾元素”：`end1` 指队头元素，`end2` 指队尾**后一个空位**。空队列两者重合；留一个槽不存元素，队满时从 `end2` 再向前绕一步就碰到 `end1`。所以 `end1==end2` 判空，`end1==(end2+1)%M` 判满，选 **A**。
 
@@ -60,7 +64,9 @@
 <a id="q03"></a>
 ## 03｜2016-01：表格的行是存储地址，箭头靠链接地址决定
 
-![2016-01 原题](../bank/2016/q01.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q01.png" alt="2016-01 原题" style="display:block; width:29.35em; max-width:none; height:auto;">
+</div>
 
 先不要按表格从上到下读成 `a,b,c,d,e`。题面说“表头元素为 c”，即逻辑上的第一个数据元素是 `c`，不是另加一个不存数据的头结点。以 `c` 的地址 `1008H` 为起点，读它的链接地址 `1000H`，才到 `a`；再沿链接得到 `e→b→d`。逻辑链是 `c→a→e→b→d`，与内存表格的排列不同。把新结点 `f` 放在地址 `1014H` 并插在 `a`、`e` 中间，必须让 `a` 指向 `f`、`f` 指向 `e`；`e` 原来指向 `b`，无需改变。因此 `a,e,f` 的链接地址依次为 `1014H,1004H,1010H`，选 **D**。
 
@@ -74,7 +80,9 @@
 <a id="q04"></a>
 ## 04｜2016-02：删除 p，是让左右邻居彼此认对方
 
-![2016-02 原题](../bank/2016/q02.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q02.png" alt="2016-02 原题" style="display:block; width:29.38em; max-width:none; height:auto;">
+</div>
 
 设左邻居为 `L=p->prev`，右邻居为 `R=p->next`。删除后要得到 `L.next=R` 和 `R.prev=L`；翻回原表达式便是 `p->prev->next=p->next`、`p->next->prev=p->prev`，最后才 `free(p)`。选 **D**。这道题真正新增的是双向的两条链接都要改；只改一边，会留下经过已释放结点的反向路线。
 
@@ -90,7 +98,9 @@
 <a id="q05"></a>
 ## 05｜2016-04：三对角矩阵实际写进数组的是什么
 
-![2016-04 原题](../bank/2016/q04.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2016/q04.png" alt="2016-04 原题" style="display:block; width:27.86em; max-width:none; height:auto;">
+</div>
 
 原矩阵的行列编号是 `1…100`，压缩数组 `N` 的下标是 `0…`。三对角只存 `j=i−1,i,i+1` 范围内的元素，其余零元**没有**数组格子。按行写：第 1 行 2 个元素，第 2 到第 29 行各 3 个；第 30 行的 `m30,29` 先写，`m30,30` 后写。前 29 行共 `2+28×3=86` 个，故这两个格子分别是 `N[86]`、`N[87]`，选 **B**。
 
@@ -104,7 +114,9 @@
 <a id="q06"></a>
 ## 06｜2017-03：稀疏，不等于把所有二维结构都算进去
 
-![2017-03 原题](../bank/2017/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2017/q03.png" alt="2017-03 原题" style="display:block; width:21.88em; max-width:none; height:auto;">
+</div>
 
 稀疏矩阵的大量位置是零，压缩时要保存非零元的**行、列、值**，以便恢复它原来的位置；三元组表直接列出这三项，十字链表还能按行和列串起非零元。所以选 **A**。邻接矩阵仍按行列位置留格，不能因为零很多就把它当作此题问的两种压缩结构；二叉链表是树结点的两条孩子链接，不表达矩阵的行列交叉关系。
 
@@ -118,7 +130,9 @@
 <a id="q07"></a>
 ## 07｜2018-03：对称矩阵上三角，行优先数整行
 
-![2018-03 原题](../bank/2018/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2018/q03.png" alt="2018-03 原题" style="display:block; width:28.43em; max-width:none; height:auto;">
+</div>
 
 题目只把 `i≤j` 的上三角存到 C 数组。前五行依次存 `12,11,10,9,8` 个，共 50 个；第 6 行从 `m6,6` 开始，所以它正落在下标 **50，选 A**。第 05 题教过“先数前面的实际格子，再数本行偏移”；这次新东西是每行长度从 12 逐行减 1，而不是三对角的多数行固定 3 格。
 
@@ -130,7 +144,9 @@
 <a id="q08"></a>
 ## 08｜2020-01：下三角的 m7,2，先映射再按列数
 
-![2020-01 原题](../bank/2020/q01.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2020/q01.png" alt="2020-01 原题" style="display:block; width:29.23em; max-width:none; height:auto;">
+</div>
 
 只存对称矩阵的上三角，题目却问 `m7,2`。由对称性先换成真正存储的 `m2,7`。这次是**列优先**：前六列的上三角分别有 `1,2,3,4,5,6` 个，共 21 个；第 7 列从 `m1,7` 的下标 21 开始，`m2,7` 是下标 **22，选 C**。沿用第 07 题“先数前面完整单位、再加内部偏移”，但单位由行换成列。
 
@@ -144,7 +160,9 @@
 <a id="q09"></a>
 ## 09｜2021-01：删除首元时，尾指针可能也要改
 
-![2021-01 原题](../bank/2021/q01.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q01.png" alt="2021-01 原题" style="display:block; width:29.20em; max-width:none; height:auto;">
+</div>
 
 `h` 指表头，`h->next` 是第一个数据结点；先用 `q=h->next` 保存它，再令 `h->next=q->next` 跳过它。若原表只有一个数据结点，`p` 尾指针也指向这个 `q`，释放前须把 `p` 改指向表头 `h`。故条件应是 `if(p==q) p=h`，选 **D**。
 
@@ -158,7 +176,9 @@ A 先改 `h->next`，再用 `q=h->next`，拿到的已是第二个结点，随�
 <a id="q10"></a>
 ## 10｜2021-03：由两个地址反推出每行多长
 
-![2021-03 原题](../bank/2021/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2021/q03.png" alt="2021-03 原题" style="display:block; width:29.25em; max-width:none; height:auto;">
+</div>
 
 题面写 `A[0][0]`，所以行列下标从 0 开始；每元素占 1 存储单位，首地址 100。设每行有 `c` 列，按行优先存储时 `A[3][3]` 前面有 `3c+3` 个元素。地址差 `220−100=120`，故 `3c+3=120`、`c=39`。`A[5][5]` 的地址是 `100+5×39+5=300`，选 **B**。
 
@@ -172,7 +192,9 @@ A 先改 `h->next`，再用 `q=h->next`，拿到的已是第二个结点，随�
 <a id="q11"></a>
 ## 11｜2023-02：两句前置赋值后，p->next 已经是 s
 
-![2023-02 原题](../bank/2023/q02.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q02.png" alt="2023-02 原题" style="display:block; width:29.35em; max-width:none; height:auto;">
+</div>
 
 已执行 `s->next=p->next; p->next=s`。此时 `s->next` 仍指原来的右邻居，但 `p->next` **已经指向 `s`**。还缺 `s.prev=p`、原右邻居的 `prev=s`。C 的第一句 `s->prev=s->next->prev` 从右邻居保存的旧前驱取回 `p`，第二句 `s->next->prev=s` 才让右邻居反指 `s`，故选 **C**。
 
@@ -188,7 +210,9 @@ A 先改 `h->next`，再用 `q=h->next`，拿到的已是第二个结点，随�
 <a id="q12"></a>
 ## 12｜2023-03：三元组告诉你坐标，却不能告诉你矩阵边界
 
-![2023-03 原题](../bank/2023/q03.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2023/q03.png" alt="2023-03 原题" style="display:block; width:29.06em; max-width:none; height:auto;">
+</div>
 
 先逐项读清：I、III 是矩阵的总行数、总列数，II、IV 是**含非零元的行数、列数**，II 不是非零元素的个数。一条三元组 `(行号,列号,值)` 可以恢复一个非零元，却无法从出现过的最大行列号推出总维度，因为末尾几行、几列可能全为零。因此必须另外保存 **I、III，选 A**；II 可将所有三元组的行号去重后计数，IV 可将列号去重后计数，都能从已有记录推出。
 
@@ -202,7 +226,9 @@ A 先改 `h->next`，再用 `q=h->next`，拿到的已是第二个结点，随�
 <a id="q13"></a>
 ## 13｜2024-01：q 被重新赋值，随后搬的是 p 的后继
 
-![2024-01 原题](../bank/2024/q01.png)
+<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
+<img src="../bank/2024/q01.png" alt="2024-01 原题" style="display:block; width:28.73em; max-width:none; height:auto;">
+</div>
 
 不要从“现有指针 p 和 q”猜操作目标；第一句 `q=p->next` 已让 `q` 指向 `p` 的后继。第二句 `p->next=q->next` 把这个后继从原处摘下；随后 `q->next=h->next; h->next=q` 把它接在表头后。故移动到首元位置的是 **q 此刻所指结点，选 D**。
 
