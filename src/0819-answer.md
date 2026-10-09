@@ -29,7 +29,7 @@
 ## 01｜2009-19：硬连线快，改控制逻辑难
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q19.png" alt="2009-19 原题" style="display:block; width:17.80em; max-width:none; height:auto;">
+<img src="../bank/2009/q19.png" alt="2009-19 原题" width="285" style="display:block; width:17.80em; max-width:none; height:auto;">
 </div>
 
 硬连线控制把指令译码、时序状态等连成电路直接产生控制信号，通常比按微指令序列读取控制存储器快；但要修改/扩展指令功能，可能需改硬件逻辑，灵活性较低。因此 **快、难，选 D**。题问“相对微程序”的典型取舍，别把微程序易于调整误赠给硬连线。
@@ -43,7 +43,7 @@
 ## 02｜2010-18：PC 可见原题回链
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q18.png" alt="2010-18 原题" style="display:block; width:20.37em; max-width:none; height:auto;">
+<img src="../bank/2010/q18.png" alt="2010-18 原题" width="326" style="display:block; width:20.37em; max-width:none; height:auto;">
 </div>
 
 与 [0818-02](0818-answer.md#q02) 同题：汇编程序能通过转移和相对寻址感知/影响 PC，**选 B**；MAR/MDR/IR 属硬件内部路径。本节点只增加：PC 虽是数据通路里的**状态元件**，并不等于它在通用寄存器组中，12 将专门裁决这点。
@@ -57,7 +57,7 @@ PC 是专用的程序控制状态，决定下一条取指地址；通用寄存�
 ## 03｜2011-19：NOP 不改普通操作数，仍会推动 PC
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q19.png" alt="2011-19 原题" style="display:block; width:29.73em; max-width:none; height:auto;">
+<img src="../bank/2011/q19.png" alt="2011-19 原题" width="476" style="display:block; width:29.73em; max-width:none; height:auto;">
 </div>
 
 题设无 Cache/预取且处于开中断状态。每条指令要取指访问内存，指令周期至少一个时钟周期；每条执行结束可能响应外部中断。C 声称空操作指令周期里“任何寄存器内容都不会改变”是错的：**取完 NOP，PC 已指向下一条**，IR 也可载入这条 NOP，**选 C**。
@@ -71,7 +71,7 @@ NOP 不执行额外的显式算术或数据写回，但 CPU 仍要取、译这�
 ## 04｜2012-18：互斥组内编码，组与组同时给控制
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2012/q18.png" alt="2012-18 原题" style="display:block; width:27.35em; max-width:none; height:auto;">
+<img src="../bank/2012/q18.png" alt="2012-18 原题" width="438" style="display:block; width:27.35em; max-width:none; height:auto;">
 </div>
 
 33 个微命令分成大小 `7,3,12,5,6` 的 **5 个互斥组**。每组一次只选其中一个命令，需位数分别为 `⌈log₂7⌉=3`、`⌈log₂3⌉=2`、`⌈log₂12⌉=4`、`⌈log₂5⌉=3`、`⌈log₂6⌉=3`，共 **15 位，选 C**。不要对总共 33 个命令只取 `⌈log₂33⌉=6`：那只许所有组总共发一条，而组间可以并行发令。
@@ -85,7 +85,7 @@ NOP 不执行额外的显式算术或数据写回，但 CPU 仍要取、译这�
 ## 05｜2014-18：断定法微地址字段能指出全部微指令
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2014/q18.png" alt="2014-18 原题" style="display:block; width:29.15em; max-width:none; height:auto;">
+<img src="../bank/2014/q18.png" alt="2014-18 原题" width="466" style="display:block; width:29.15em; max-width:none; height:auto;">
 </div>
 
 32 条机器指令各自微程序平均 4 条，另有共用取指微程序 2 条，按题给平均数计算微指令总量 `32×4+2=130`。下地址字段要能编号至少 130 个位置：`2⁷=128` 不够，`2⁸=256` 足够，故 **8 位，选 C**。先算需要编号的微指令位置，再取对数；不是只用 32 条机器指令取 5 位。
@@ -99,7 +99,7 @@ NOP 不执行额外的显式算术或数据写回，但 CPU 仍要取、译这�
 ## 06｜2016-18：对齐让 PC 可省两位，IR 仍须放整条指令
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q18.png" alt="2016-18 原题" style="display:block; width:28.23em; max-width:none; height:auto;">
+<img src="../bank/2016/q18.png" alt="2016-18 原题" width="452" style="display:block; width:28.23em; max-width:none; height:auto;">
 </div>
 
 4GB 按字节编址共有 `2³²` 个字节地址，指令 32 位=4 字节且按字边界对齐，指令首地址只可能为 `0,4,8,…`，共有 `2³²/4=2³⁰` 个位置。因此若 PC 存**指令位置编号**，至少 **30 位**即可；IR 要容纳完整 32 位指令，至少 **32 位，选 B**。
@@ -113,7 +113,7 @@ NOP 不执行额外的显式算术或数据写回，但 CPU 仍要取、译这�
 ## 07｜2016-20：单周期不能用一条总线分时搬完全部数据
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q20.png" alt="2016-20 原题" style="display:block; width:29.26em; max-width:none; height:auto;">
+<img src="../bank/2016/q20.png" alt="2016-20 原题" width="468" style="display:block; width:29.26em; max-width:none; height:auto;">
 </div>
 
 单周期处理器要求一条指令的取指、取数、执行及写回在一个时钟周期内完成。单总线结构让多次数据传送共用同一条总线，需要分时安排多个微操作，不能满足这种单周期数据通路，所以 **A 错，选 A**。B 正确：周期必须覆盖最慢指令的完整路径，时钟频率通常较低；C 正确：对同一条指令，组合控制信号在该周期内保持相应设置，不能把“不同指令需要不同信号”当成“本条指令内要分阶段切换”；D 正确：每条指令恰用一拍，CPI=1。
@@ -127,7 +127,7 @@ NOP 不执行额外的显式算术或数据写回，但 CPU 仍要取、译这�
 ## 08｜2019-17：取数与执行需要寄存器、ALU、存储器
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q17.png" alt="2019-17 原题" style="display:block; width:31.30em; max-width:none; height:auto;">
+<img src="../bank/2019/q17.png" alt="2019-17 原题" width="501" style="display:block; width:31.30em; max-width:none; height:auto;">
 </div>
 
 指令 `R[r2]←R[r1]+M[R[r0]]`：先从通用寄存器取 `r0` 的间接地址和 `r1` 的操作数，再从存储器读该地址的数据，ALU 相加，结果写回通用寄存器 `r2`。因此取数及执行用 **I、II、III，选 B**。题问这两个阶段的功能部件，不把前面**译码阶段**的指令译码器 IV 强行计入。
@@ -141,7 +141,7 @@ NOP 不执行额外的显式算术或数据写回，但 CPU 仍要取、译这�
 ## 09｜2021-18：数据通路也参与异常检测与响应
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q18.png" alt="2021-18 原题" style="display:block; width:32.67em; max-width:none; height:auto;">
+<img src="../bank/2021/q18.png" alt="2021-18 原题" width="523" style="display:block; width:32.67em; max-width:none; height:auto;">
 </div>
 
 ALU、MUX 等组合元件与寄存器等时序元件共同构成数据通路；数据如何流由控制信号决定。C 宣称数据通路**不包含**异常事件检测与响应相关电路过于绝对，例如算术溢出检测、地址错误相关状态也沿数据路径产生并参与响应，故 **错误选 C**。别把“控制器决定动作”误推为“所有异常检测都只能在控制器里”。
@@ -155,7 +155,7 @@ ALU 的计算同时可产生溢出/零等状态，地址形成也可触发检查
 ## 10｜2022-22：硬件多线程不限于多核
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q22.png" alt="2022-22 原题" style="display:block; width:24.12em; max-width:none; height:auto;">
+<img src="../bank/2022/q22.png" alt="2022-22 原题" width="386" style="display:block; width:24.12em; max-width:none; height:auto;">
 </div>
 
 多核各核可执行不同指令流，属 MIMD；向量处理器同一指令操作多数据，属 SIMD；SMP 处理器共享统一物理地址空间。C 说硬件多线程**只可用于多核处理器**错误：单核也可在硬件里保存多个线程状态，并在不同周期或执行资源间切换/交错，**选 C**。
@@ -169,7 +169,7 @@ ALU 的计算同时可产生溢出/零等状态，地址形成也可触发检查
 ## 11｜2023-18：ALU/MUX 是操作元件，PC/GPR 是状态元件
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2023/q18.png" alt="2023-18 原题" style="display:block; width:29.30em; max-width:none; height:auto;">
+<img src="../bank/2023/q18.png" alt="2023-18 原题" width="469" style="display:block; width:29.30em; max-width:none; height:auto;">
 </div>
 
 ALU 用输入组合出算术/逻辑结果，多路选择器 MUX 根据选择信号把一路输入送到输出，属于**组合逻辑操作元件 I、IV，选 B**。PC 与通用寄存器组在时钟边沿前后保存数值，属于时序逻辑状态元件。判断第一笔是“输入变了输出随即组合变化，还是能在时钟间保存旧值”。
@@ -183,7 +183,7 @@ ALU 用输入组合出算术/逻辑结果，多路选择器 MUX 根据选择信�
 ## 12｜2025-19：PC 是专用状态，不在 GPR 组中
 
 <div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q19.png" alt="2025-19 原题" style="display:block; width:19.29em; max-width:none; height:auto;">
+<img src="../bank/2025/q19.png" alt="2025-19 原题" width="309" style="display:block; width:19.29em; max-width:none; height:auto;">
 </div>
 
 题问**错误**。控制器需译码指令操作码，单周期控制常比多周期控制简单，流水 CPU 要解决数据与控制相关。A 称“通用寄存器组中应该包含程序计数器”错误：PC 是专门保存取指位置的**专用寄存器**，可接入数据通路却不因此属于 GPR 组，**选 A**。与 02 的“PC 程序员可见”并不冲突。
