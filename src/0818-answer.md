@@ -30,9 +30,7 @@
 <a id="q01"></a>
 ## 01｜2009-17：RISC 简化译码，控制器多用硬连线
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2009/q17.png" alt="2009-17 原题" width="300" style="display:block; width:18.77em; max-width:none; height:auto;">
-</div>
+![2009-17 原题](../bank/2009/q17.png)
 
 题问**错误**。RISC 通常指令种类和寻址方式较少、格式规整，寄存器较多，多数简单指令便于在流水线中较快执行；B、C、D 描述这些倾向。A 说它“普遍采用微程序控制器”与典型 RISC 设计不符；**硬连线控制更常见，选 A**。先确认它问的是控制器实现，不把 RISC/CISC 当绝对禁止某技术的标签。
 
@@ -44,9 +42,7 @@
 <a id="q02"></a>
 ## 02｜2010-18：汇编员可见的是程序执行状态的一部分
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2010/q18.png" alt="2010-18 原题" width="326" style="display:block; width:20.37em; max-width:none; height:auto;">
-</div>
+![2010-18 原题](../bank/2010/q18.png)
 
 四项里 **PC 程序计数器，选 B**。它保存下一条（或当前取指阶段有关的）机器指令地址，汇编程序可通过跳转、调用等指令改变控制流。MAR/MDR 是主存接口传地址/数据的内部寄存器，IR 保持当前指令供译码，通常不是汇编程序直接可访问的寄存器。
 
@@ -58,9 +54,7 @@
 <a id="q03"></a>
 ## 03｜2011-18：流水线要各阶段工作尽量规整
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2011/q18.png" alt="2011-18 原题" width="400" style="display:block; width:25.02em; max-width:none; height:auto;">
-</div>
+![2011-18 原题](../bank/2011/q18.png)
 
 I 指令格式规整且长度一致，使取指/译码边界容易预测；II 指令和数据按边界对齐，减少跨界访存；III 仅 Load/Store 访存，使其他运算指令多在寄存器间完成、流水级职责清楚。三项都利于流水实现，**选 D**。别把“利于”误读为“没有这些条件就绝不能流水”。
 
@@ -72,9 +66,7 @@ I 指令格式规整且长度一致，使取指/译码边界容易预测；II �
 <a id="q04"></a>
 ## 04｜2015-12：能直接交给 CPU 的是机器指令序列
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2015/q12.png" alt="2015-12 原题" width="345" style="display:block; width:21.59em; max-width:none; height:auto;">
-</div>
+![2015-12 原题](../bank/2015/q12.png)
 
 机器语言程序由 CPU 规定的机器指令编码组成，可直接取指、译码、执行，故 **仅 I，选 A**。汇编源程序要先由汇编器翻成机器码；硬件描述语言程序描述电路结构，需综合/实现，不是作为该 CPU 的程序逐条执行。先问“交给取指单元的字节是什么”，就能排除名称里也有“程序”的干扰。
 
@@ -86,9 +78,7 @@ I 指令格式规整且长度一致，使取指/译码边界容易预测；II �
 <a id="q05"></a>
 ## 05｜2016-12：源程序到目标代码，先认输入输出
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2016/q12.png" alt="2016-12 原题" width="402" style="display:block; width:25.13em; max-width:none; height:auto;">
-</div>
+![2016-12 原题](../bank/2016/q12.png)
 
 输入是**高级语言源程序**，输出是**机器级目标代码文件**；承担这一步的是**编译程序，选 C**。汇编器的输入通常是汇编语言；链接程序把目标模块和库结合、处理符号/重定位；解释程序通常逐步解释执行，不以产生该目标文件为本题定义的产物。
 
@@ -100,9 +90,7 @@ I 指令格式规整且长度一致，使取指/译码边界容易预测；II �
 <a id="q06"></a>
 ## 06｜2018-12：二进制为何适合物理电路
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2018/q12.png" alt="2018-12 原题" width="409" style="display:block; width:25.56em; max-width:none; height:auto;">
-</div>
+![2018-12 原题](../bank/2018/q12.png)
 
 题给三点各指一个层面：二进制运算规则简单；两个稳定状态的器件较易区分 0/1；逻辑门便于实现二值逻辑与算术组合。因此 **I、II、III 均是主要原因，选 D**。不必把“规则简单”理解成二进制让所有程序算法都更简单，它说的是硬件基本运算与状态识别。
 
@@ -114,9 +102,7 @@ I 指令格式规整且长度一致，使取指/译码边界容易预测；II �
 <a id="q07"></a>
 ## 07｜2019-12：指令字段给地址，数据不必全嵌在指令中
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2019/q12.png" alt="2019-12 原题" width="398" style="display:block; width:24.85em; max-width:none; height:auto;">
-</div>
+![2019-12 原题](../bank/2019/q12.png)
 
 冯·诺依曼体系里，程序通过 CPU 执行指令实现功能，指令与数据都以二进制形式存放，执行前通常装入存储器。C 声称“数据都在指令中直接给出”错误：0817 已见形式地址指向寄存器或主存里的操作数，因此 **选 C**。抓“都”并拿一条 Load/Store 反例就能排除。
 
@@ -128,9 +114,7 @@ I 指令格式规整且长度一致，使取指/译码边界容易预测；II �
 <a id="q08"></a>
 ## 08｜2020-12：机器字长与运算器、通用寄存器相连
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2020/q12.png" alt="2020-12 原题" width="424" style="display:block; width:26.51em; max-width:none; height:auto;">
-</div>
+![2020-12 原题](../bank/2020/q12.png)
 
 “**一定**与机器字长相同”按题目定义指 **ALU 的基本运算宽度和通用寄存器宽度，I、III，选 B**。IR 的宽度跟指令编码长度有关，可能与字长不同；浮点寄存器跟浮点格式有关，也可能更宽。先问每个部件一次处理的是普通数据、机器指令，还是浮点数据。
 
@@ -142,9 +126,7 @@ I 指令格式规整且长度一致，使取指/译码边界容易预测；II �
 <a id="q09"></a>
 ## 09｜2021-17：程序员看见基址与状态，不操纵微指令寄存器
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2021/q17.png" alt="2021-17 原题" width="523" style="display:block; width:32.67em; max-width:none; height:auto;">
-</div>
+![2021-17 原题](../bank/2021/q17.png)
 
 I 指令寄存器 IR、II 微指令寄存器属于取指与控制器内部实现；III 基址寄存器参与寻址，IV 标志/状态寄存器的条件位用于分支等程序语义。因此汇编语言程序员可见 **III、IV，选 D**。承接 02 的“可见”判断，不能因为寄存器都在 CPU 里就都列入 ISA 界面。
 
@@ -156,9 +138,7 @@ I 指令寄存器 IR、II 微指令寄存器属于取指与控制器内部实现
 <a id="q10"></a>
 ## 10｜2022-18：ISA 规定可见接口，不规定加法器内部进位电路
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q18.png" alt="2022-18 原题" width="419" style="display:block; width:26.21em; max-width:none; height:auto;">
-</div>
+![2022-18 原题](../bank/2022/q18.png)
 
 I 指令格式和类型、III 通用寄存器的数量和位数，直接影响机器码与程序可用资源，属于 ISA；II CPU 时钟周期与 IV **加法器的进位方式**属于硬件实现选择，分别可因工艺/时序和行波/超前进位电路而变。故 **仅 I、III，选 B**。题目的“进位方式”不是进位标志 CF 的程序可见语义，不能偷换成“加法是否产生进位”。
 
@@ -170,9 +150,7 @@ I 指令格式和类型、III 通用寄存器的数量和位数，直接影响�
 <a id="q11"></a>
 ## 11｜2022-20：从源文件到可执行文件依次处理四种对象
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2022/q20.png" alt="2022-20 原题" width="386" style="display:block; width:24.10em; max-width:none; height:auto;">
-</div>
+![2022-20 原题](../bank/2022/q20.png)
 
 先展开头文件、宏和条件编译，得到预处理后的源程序；编译器把它转成汇编代码；汇编器把汇编代码转成机器级目标文件；链接器合并目标模块和库，处理符号与重定位，得到可执行目标文件。因此顺序是 **预处理→编译→汇编→链接，选 A**。这题是构建流程，不是上一节点 2022-19 的扩展操作码题，不能照搬 128 条零地址指令的结论。
 
@@ -184,9 +162,7 @@ I 指令格式和类型、III 通用寄存器的数量和位数，直接影响�
 <a id="q12"></a>
 ## 12｜2024-13：伪指令归汇编器，微指令归控制器
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2024/q13.png" alt="2024-13 原题" width="389" style="display:block; width:24.31em; max-width:none; height:auto;">
-</div>
+![2024-13 原题](../bank/2024/q13.png)
 
 CPU 可直接执行 ISA 的**机器指令 III**；在微程序控制器中，控制存储器的**微指令 II**也由相应硬件解释执行，故 **II、III，选 B**。伪指令 I 是汇编器识别并展开/处理的写法，汇编指令文本 IV 需先汇编编码，不能把这些文本直接交给 CPU 取指。
 
@@ -198,9 +174,7 @@ CPU 可直接执行 ISA 的**机器指令 III**；在微程序控制器中，控
 <a id="q13"></a>
 ## 13｜2025-16：定长指令字是 ISA 格式约定
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q16.png" alt="2025-16 原题" width="380" style="display:block; width:23.75em; max-width:none; height:auto;">
-</div>
+![2025-16 原题](../bank/2025/q16.png)
 
 ISA 规定指令有哪些格式以及编码长度，所以“是否采用定长指令字格式”属于 ISA 内容，**选 B**。阵列乘法器、微程序控制器、单总线数据通路都是实现这套可见指令的微结构选择，可以在保持相同 ISA 的前提下改变。第一笔找“程序/编译器能否从机器码中辨认这个约定”。
 
@@ -212,9 +186,7 @@ ISA 规定指令有哪些格式以及编码长度，所以“是否采用定长�
 <a id="q14"></a>
 ## 14｜2025-17：RISC 的规整路径有利于流水
 
-<div style="max-width:100%; max-height:min(90vh, 72em); overflow:auto;">
-<img src="../bank/2025/q17.png" alt="2025-17 原题" width="224" style="display:block; width:13.97em; max-width:none; height:auto;">
-</div>
+![2025-17 原题](../bank/2025/q17.png)
 
 题问**错误**。RISC 多用硬连线控制与 Load/Store 风格，参数常经寄存器传递；这些使取指、译码和执行阶段更规整。C 说“难以采用流水线数据通路实现微架构”反向描述了常见优势，**选 C**。与 01、03 对照：不是靠记两道 RISC 题的字母，而是看指令格式与每级操作是否可预测。
 
