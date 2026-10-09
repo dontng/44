@@ -1,0 +1,654 @@
+[
+  {
+    "source": "src/0731-answer.md",
+    "source_sha256": "9b016595569d36bfaa46a74e89bc8cccde7f6a67bf1f1549d0e07282a2ffcbd0",
+    "pdf": "src/pdf/0731-answer.pdf",
+    "pages": 5,
+    "images": [
+      {
+        "path": "bank/2011/q01.png",
+        "sha256": "3eee644901a7ee7fb996cfc3df7628f04a2fe48ffcd7e851cbcd9e9ef607c282"
+      },
+      {
+        "path": "bank/2012/q01.png",
+        "sha256": "d8fc30f6271fec52c31bfd44b6f7861ba5daa04e370d6d49517703caf4bdcd75"
+      },
+      {
+        "path": "bank/2013/q01.png",
+        "sha256": "5fda44c3ed1905874d64e150fa86b367a6c2600249684a4ad6ea3a603c5df7ef"
+      },
+      {
+        "path": "bank/2014/q01.png",
+        "sha256": "bb5c20ad3143c364cf2442f6d7674914eb2642a46d38f810912eadd40c5bd808"
+      },
+      {
+        "path": "bank/2017/q01.png",
+        "sha256": "9962cef9ff08df968d37dcc9d0e50877a4851c201a48a34f6953590fb656c2c9"
+      },
+      {
+        "path": "bank/2019/q01.png",
+        "sha256": "0026dcfc89e806d908713848a54699d270da8fa2cb669a6e92310f214d618b76"
+      },
+      {
+        "path": "bank/2022/q01.png",
+        "sha256": "326ab7281718df9fd92e410ec38c844d7684ed69c6d4e358973f998f671bc931"
+      },
+      {
+        "path": "bank/2023/q01.png",
+        "sha256": "e14dd75690e4a0f854a35a47b9b764a2227854573f1d8549cd3fb3d4c08149d4"
+      },
+      {
+        "path": "bank/2025/q01.png",
+        "sha256": "c132baa8922d2c2ceec5a0cf2b85421748f589929c0976eaf33242e600e429ed"
+      }
+    ],
+    "text_blocks_checked": 89,
+    "errors": [],
+    "pdf_sha256": "a1b2782434f9966f9fc3aa09b3c8b8bc665e46c097f99b4230b263ff4a15af5f",
+    "name": "0731",
+    "old_pages": 5,
+    "text_equal_to_verified_export": true,
+    "image_pixels_order_equal_to_verified_export": true,
+    "raster_equal_to_verified_export": true,
+    "visual_status": "passed",
+    "issues": [],
+    "fixes": [],
+    "visual_review": {
+      "all_pages_contact_sheet": true,
+      "contact_sheets": [
+        "contact-01.png",
+        "contact-02.png",
+        "contact-03.png",
+        "contact-04.png",
+        "contact-05.png",
+        "contact-06.png",
+        "contact-07.png",
+        "contact-08.png"
+      ],
+      "findings": "首页独立；后文连续；全页未见正文、表格、图片、代码重叠、裁切、乱码或溢出。高分辨率检查0731p2、0806p6、0812p9。"
+    },
+    "automated_checks": [
+      "all AST rendered text fragments present",
+      "embedded images decoded pixels and order match source",
+      "glyph coverage verified for all source characters",
+      "no blank content/replacement glyph/overflow",
+      "current PDF text/image order/all-page raster equal verified temporary export"
+    ]
+  },
+  {
+    "source": "src/0801-answer.md",
+    "source_sha256": "2601d5258a295a742c850f3fe5af36a12ac6df2cf4bf2357c9e085bbe2281f5a",
+    "pdf": "src/pdf/0801-answer.pdf",
+    "pages": 7,
+    "images": [
+      {
+        "path": "bank/2013/q01.png",
+        "sha256": "5fda44c3ed1905874d64e150fa86b367a6c2600249684a4ad6ea3a603c5df7ef"
+      },
+      {
+        "path": "bank/2014/q03.png",
+        "sha256": "fb3758e34d0b6720600d662a02fd4547723e145301ee456a97086612e6b49b53"
+      },
+      {
+        "path": "bank/2016/q01.png",
+        "sha256": "692dc7f1240c9bdcef18a5174a73cb9add3681f17c36f4fec6bbdf2c58bee663"
+      },
+      {
+        "path": "bank/2016/q02.png",
+        "sha256": "56d2ae16a3006690b7c4cf7fdbc764d6078841bb80b52e2ac094309143553007"
+      },
+      {
+        "path": "bank/2016/q04.png",
+        "sha256": "80db7f8d188c518a66afa79be668ffbf5c2c35783969b9e10e9aec62282c234f"
+      },
+      {
+        "path": "bank/2017/q03.png",
+        "sha256": "68e93f8cdbf4082059e9418600c7ac0a15b70a91bfb08dafbf22831dd80a2fc2"
+      },
+      {
+        "path": "bank/2018/q03.png",
+        "sha256": "efa9e637ac023f100441d98181bb680ff653aa1e80c5d0d9a2e27b29dc466d40"
+      },
+      {
+        "path": "bank/2020/q01.png",
+        "sha256": "6173551208744b2e392db956d9876eb18f0c136d6b4cf212be3dc974a8a73167"
+      },
+      {
+        "path": "bank/2021/q01.png",
+        "sha256": "503ab472c9f3e4eb757c42d8676c437041471ffb502d0a471db9a3e1a8896c28"
+      },
+      {
+        "path": "bank/2021/q03.png",
+        "sha256": "d36e39180f0517ed122e78dcf4629dd618eac8c842b1efbdf0013f09b241f566"
+      },
+      {
+        "path": "bank/2023/q02.png",
+        "sha256": "6840fd4fe2f01752b9f91dcf7ee2d3a2045859e247bcdd9870eb3f59d9293416"
+      },
+      {
+        "path": "bank/2023/q03.png",
+        "sha256": "0e23211a95af6e4bab8aa1363c62c8528652100c806e91f2216d69af60093083"
+      },
+      {
+        "path": "bank/2024/q01.png",
+        "sha256": "ad44c8c90be983f0f5d95bffdc1d815cb39679a604b86383c423f115cbefc8e3"
+      }
+    ],
+    "text_blocks_checked": 116,
+    "errors": [],
+    "pdf_sha256": "6fa6697ad30041acb6d7c9574eb06d3a9e88b7dcc72e64e328327fe1f36cd992",
+    "name": "0801",
+    "old_pages": 7,
+    "text_equal_to_verified_export": true,
+    "image_pixels_order_equal_to_verified_export": true,
+    "raster_equal_to_verified_export": true,
+    "visual_status": "passed",
+    "issues": [],
+    "fixes": [],
+    "visual_review": {
+      "all_pages_contact_sheet": true,
+      "contact_sheets": [
+        "contact-01.png",
+        "contact-02.png",
+        "contact-03.png",
+        "contact-04.png",
+        "contact-05.png",
+        "contact-06.png",
+        "contact-07.png",
+        "contact-08.png"
+      ],
+      "findings": "首页独立；后文连续；全页未见正文、表格、图片、代码重叠、裁切、乱码或溢出。高分辨率检查0731p2、0806p6、0812p9。"
+    },
+    "automated_checks": [
+      "all AST rendered text fragments present",
+      "embedded images decoded pixels and order match source",
+      "glyph coverage verified for all source characters",
+      "no blank content/replacement glyph/overflow",
+      "current PDF text/image order/all-page raster equal verified temporary export"
+    ]
+  },
+  {
+    "source": "src/0802-answer.md",
+    "source_sha256": "f758e8c755af34a9c5f2128bd7c0a785abeaa64f5166b50ad06df3b36a54fe37",
+    "pdf": "src/pdf/0802-answer.pdf",
+    "pages": 7,
+    "images": [
+      {
+        "path": "bank/2009/q01.png",
+        "sha256": "4012f1ee9d85b73d5accdd61d1ebcc9c2e61c93905b12aab226ef5de83447c4e"
+      },
+      {
+        "path": "bank/2009/q02.png",
+        "sha256": "a0d9137054f14a5d5ec0e6f452163e8dad83e8967aee29d91579fcc0830a3a3f"
+      },
+      {
+        "path": "bank/2010/q01.png",
+        "sha256": "a072392b03e64680329bfdca076e0b48e4994e8830a008bd131dd74ea6b7ef35"
+      },
+      {
+        "path": "bank/2010/q02.png",
+        "sha256": "557fc2dd9bbf57a40eb9413085bbdd1d4689f4f06a4862af2677abee9a514ff7"
+      },
+      {
+        "path": "bank/2011/q02.png",
+        "sha256": "d813980c30171454680226a607931b285afaebef9e288646c8625eda40b72139"
+      },
+      {
+        "path": "bank/2011/q03.png",
+        "sha256": "a94512d67c96cfa698c51dbd9f4bcfb4e7f112739d42c2ad7d6c3d9e3c8b6a48"
+      },
+      {
+        "path": "bank/2012/q02.png",
+        "sha256": "743ed7a20881b809a54f9d38c6bc0acd6e6e9daca87947559b7d643733ed8247"
+      },
+      {
+        "path": "bank/2013/q02.png",
+        "sha256": "d6e03d9f7163b6140cdbeecd76a6f689b33f6391e58bcfef9c4b7446bb814b81"
+      },
+      {
+        "path": "bank/2014/q02.png",
+        "sha256": "f1ac259213f1b91fafbd10b0dd100fd90f77b82eca89538ffc29d8750e245781"
+      },
+      {
+        "path": "bank/2014/q03.png",
+        "sha256": "fb3758e34d0b6720600d662a02fd4547723e145301ee456a97086612e6b49b53"
+      },
+      {
+        "path": "bank/2015/q01.png",
+        "sha256": "5422484a4cb24484e6147e391b2cdd6fce6a042956e4e0afd796508d598ab096"
+      },
+      {
+        "path": "bank/2016/q03.png",
+        "sha256": "3626cda417d4d6209b300048c7a14a5d49d17d010507ffc7220781ebefadde16"
+      },
+      {
+        "path": "bank/2017/q02.png",
+        "sha256": "069bdee8b2a152ef10a2d1e2d88e1b3c42b966b2185f60bf4dcf257ebcf4926d"
+      },
+      {
+        "path": "bank/2018/q01.png",
+        "sha256": "02f5e5a3c6ecbffb6869b10507e06b523effff7ee2c6bbbee61b0b191b95a7b0"
+      },
+      {
+        "path": "bank/2018/q02.png",
+        "sha256": "838355a840fddb0b25361461181a3cf8c7b58db6787764219cf3314ade56af20"
+      },
+      {
+        "path": "bank/2020/q02.png",
+        "sha256": "b193b6ebbca81dfab8369e55363368466e2518764ff5ab70465c65c0eaa9ca3f"
+      },
+      {
+        "path": "bank/2021/q02.png",
+        "sha256": "7c826325db2f8e7c80e0b437d534de1757aa16e98d33b04e0b74ebf5ec8e8b03"
+      },
+      {
+        "path": "bank/2022/q02.png",
+        "sha256": "84641cfbbdc4e3ee389032f891c77d263bbdf8f368d0a107a65e8743b35d256c"
+      },
+      {
+        "path": "bank/2024/q02.png",
+        "sha256": "2a8bfd90d28d3867dedf97dcaa0b65e0342906b68c46f243f0c679487e14cca9"
+      },
+      {
+        "path": "bank/2025/q02.png",
+        "sha256": "e90cf4cebe0ca6b3a7b0ab0b051ead22c41568fee3e0d0a63c20f6311e3834ac"
+      }
+    ],
+    "text_blocks_checked": 155,
+    "errors": [],
+    "pdf_sha256": "aae2e65e2b2a6c8662c3b6d626aa9dcb590642c5849e9e9e1d6cef2ce9e55f73",
+    "name": "0802",
+    "old_pages": 7,
+    "text_equal_to_verified_export": true,
+    "image_pixels_order_equal_to_verified_export": true,
+    "raster_equal_to_verified_export": true,
+    "visual_status": "passed",
+    "issues": [],
+    "fixes": [],
+    "visual_review": {
+      "all_pages_contact_sheet": true,
+      "contact_sheets": [
+        "contact-01.png",
+        "contact-02.png",
+        "contact-03.png",
+        "contact-04.png",
+        "contact-05.png",
+        "contact-06.png",
+        "contact-07.png",
+        "contact-08.png"
+      ],
+      "findings": "首页独立；后文连续；全页未见正文、表格、图片、代码重叠、裁切、乱码或溢出。高分辨率检查0731p2、0806p6、0812p9。"
+    },
+    "automated_checks": [
+      "all AST rendered text fragments present",
+      "embedded images decoded pixels and order match source",
+      "glyph coverage verified for all source characters",
+      "no blank content/replacement glyph/overflow",
+      "current PDF text/image order/all-page raster equal verified temporary export"
+    ]
+  },
+  {
+    "source": "src/0803-answer.md",
+    "source_sha256": "8ae7dc1d2cffb4340aac549f0914b1a374f30644c867dc99367194a8b841b492",
+    "pdf": "src/pdf/0803-answer.pdf",
+    "pages": 10,
+    "images": [
+      {
+        "path": "bank/2009/q03.png",
+        "sha256": "bbd584c090ad0c6750d4217f72c8f427fc170edb0ce3af74a09d40f12a743d0c"
+      },
+      {
+        "path": "bank/2009/q05.png",
+        "sha256": "c0522033faba96ffe2ade4af0b7b50787202e1d83b10df1a3f2319150172aa04"
+      },
+      {
+        "path": "bank/2009/q06.png",
+        "sha256": "ec7b97a61bce231aced9287eff42d78decfe32a9517b3f268d9fea83ca0da095"
+      },
+      {
+        "path": "bank/2010/q03.png",
+        "sha256": "7f80dfa9b8cea49bafcf0080b76cbb8cc751f998f9f4c126438ecda34c4fcb07"
+      },
+      {
+        "path": "bank/2010/q05.png",
+        "sha256": "507fdf5c3656fcc0e0fb8c74ebe7b464d881cfce211bad1bb3a0804dc4a0c19e"
+      },
+      {
+        "path": "bank/2011/q04.png",
+        "sha256": "2297ba556c9df69f960edd92dc957c5c142272054167edac42e9d85c59e5a04d"
+      },
+      {
+        "path": "bank/2011/q05.png",
+        "sha256": "3607150ab86ee2724d65941cbd547a4dd29b80ca43307cee0dbff0983f7fada7"
+      },
+      {
+        "path": "bank/2011/q06.png",
+        "sha256": "0694df08d93c5083c556507b4e174890dc3c797e54a4008bca8f482f81802300"
+      },
+      {
+        "path": "bank/2012/q03.png",
+        "sha256": "ee7bf3cf42e783efccf57172320f2df9ed79d22b6d21a7325bb3c2f65bae0f1f"
+      },
+      {
+        "path": "bank/2013/q05.png",
+        "sha256": "1bf55a5e78376127b1b4a7893019f2eeca19305c14bac673117f66d6bcf98220"
+      },
+      {
+        "path": "bank/2014/q04.png",
+        "sha256": "106acb626f133f317e8247f04b35977392e1a6096e23e0b9a693ff871520c242"
+      },
+      {
+        "path": "bank/2014/q05.png",
+        "sha256": "cdea7ecbd7a70afba39cb524e5e4327d419cd5141615621a49ccd729a47a14df"
+      },
+      {
+        "path": "bank/2015/q02.png",
+        "sha256": "3e85cdd425357914d065db4895808b6b2773838ec76507bf3b1289849e09397f"
+      },
+      {
+        "path": "bank/2016/q05.png",
+        "sha256": "836e2487f1af38dcb58f4105078e2e420c446f6720f7a6b5683c95936ab4c121"
+      },
+      {
+        "path": "bank/2017/q04.png",
+        "sha256": "7e0b2ec7b8dde2348e4589c0a801db681916f713c2e25edf721ad12de89ba541"
+      },
+      {
+        "path": "bank/2017/q05.png",
+        "sha256": "8106c19f882402d3adadccd237657a947566596e90da33f42cec3c083c4910d3"
+      },
+      {
+        "path": "bank/2018/q04.png",
+        "sha256": "9454e58097aca30a4d993aec53fe23e6cb04bc23666bf516fa52d606231af622"
+      },
+      {
+        "path": "bank/2019/q02.png",
+        "sha256": "78c297543b5e33c230e30fb3a246f4e5c6e0d603106bd69599649b68012f3d28"
+      },
+      {
+        "path": "bank/2020/q03.png",
+        "sha256": "23757dbd297a4c023f4cbd487ad19ab3e90b1c1201bd2f4d7099b048b2f51130"
+      },
+      {
+        "path": "bank/2020/q04.png",
+        "sha256": "c5272b4dc2122a5206eaa042f234ad017eba899a4c8b50fe6e31dba88a660e8f"
+      },
+      {
+        "path": "bank/2021/q04.png",
+        "sha256": "8dfa7ac94cfb9d1e9962108fb64543ddcec2bb044474f6e30ef79b8169f42082"
+      },
+      {
+        "path": "bank/2022/q03.png",
+        "sha256": "b4e0a6be2ff60f965e3f9f1fc988e0f5ff36661bedbf50c5ba53e6919cf0c17b"
+      },
+      {
+        "path": "bank/2022/q04.png",
+        "sha256": "b6bf1fb3e4ceb5f8adab3ad72f324cc4881a4f400baeb8aef2d3aee8693f3e5d"
+      },
+      {
+        "path": "bank/2023/q05.png",
+        "sha256": "d8be8240e8339b9d5c317d69d0f1fbe8f8ac57a6885d671a220c707a3ffe429c"
+      },
+      {
+        "path": "bank/2024/q03.png",
+        "sha256": "84f5c2111daa797dbe0b2764ce36397c5195962994511a443d27e1e6234f01e1"
+      },
+      {
+        "path": "bank/2025/q03.png",
+        "sha256": "6de54f322a25c0d6f0ef48cd61b84dcb8646edef8eda20f7412fefe30a6b7bb9"
+      },
+      {
+        "path": "bank/2025/q04.png",
+        "sha256": "411a6a269058d59fd03dd48339756489cc82f902fb0ce300704f1d9e614e2594"
+      }
+    ],
+    "text_blocks_checked": 199,
+    "errors": [],
+    "pdf_sha256": "27db244aa18c22ac758e2067ef7693e71e3fa5e3973c159b946b09805189ab5e",
+    "name": "0803",
+    "old_pages": 10,
+    "text_equal_to_verified_export": true,
+    "image_pixels_order_equal_to_verified_export": true,
+    "raster_equal_to_verified_export": true,
+    "visual_status": "passed",
+    "issues": [],
+    "fixes": [],
+    "visual_review": {
+      "all_pages_contact_sheet": true,
+      "contact_sheets": [
+        "contact-01.png",
+        "contact-02.png",
+        "contact-03.png",
+        "contact-04.png",
+        "contact-05.png",
+        "contact-06.png",
+        "contact-07.png",
+        "contact-08.png"
+      ],
+      "findings": "首页独立；后文连续；全页未见正文、表格、图片、代码重叠、裁切、乱码或溢出。高分辨率检查0731p2、0806p6、0812p9。"
+    },
+    "automated_checks": [
+      "all AST rendered text fragments present",
+      "embedded images decoded pixels and order match source",
+      "glyph coverage verified for all source characters",
+      "no blank content/replacement glyph/overflow",
+      "current PDF text/image order/all-page raster equal verified temporary export"
+    ]
+  },
+  {
+    "source": "src/0804-answer.md",
+    "source_sha256": "af8209c26a5639fe86ff1c174c480962a87821e88f41c61fe4fa64d67c8dc3b4",
+    "pdf": "src/pdf/0804-answer.pdf",
+    "pages": 5,
+    "images": [
+      {
+        "path": "bank/2010/q06.png",
+        "sha256": "8cb340bbf1530b947d2590a40d64fd6175c1c8b473826ece2f902b01edf8822c"
+      },
+      {
+        "path": "bank/2013/q04.png",
+        "sha256": "d40006790d24c2b814d982d9482d6b35f675a77bfc3a8f60fa1c0afb7e0b1cb2"
+      },
+      {
+        "path": "bank/2014/q06.png",
+        "sha256": "35f2d3fd376dfcbbce682b53213ebc1c43d92117441e11c452e749c5bd327d0e"
+      },
+      {
+        "path": "bank/2015/q03.png",
+        "sha256": "25702c4314c534b3220e43b11b91a0dd438dc7c9529ecb4a4e75ec8563056562"
+      },
+      {
+        "path": "bank/2017/q06.png",
+        "sha256": "dc04632b36c4da58fc7378364e0ed672d56f1631ddb795b10d9f88a238d3a2b8"
+      },
+      {
+        "path": "bank/2018/q05.png",
+        "sha256": "33960a62867dbbc4c2364e9e3654b9cfde44553ad0ec7cf0e193c4d928445699"
+      },
+      {
+        "path": "bank/2019/q03.png",
+        "sha256": "b71d090380b11649254bde02a9f73d8d15e67b1efed9876854344de716bd7dac"
+      },
+      {
+        "path": "bank/2021/q05.png",
+        "sha256": "3014de1f65dc0f4b0230033eae54e713238be3ab6e140a470ba4f89173d93b76"
+      },
+      {
+        "path": "bank/2022/q05.png",
+        "sha256": "013ef43671561a2b9396b26c8cbf48c24a6db08950f9bf5561608a53733b07d5"
+      },
+      {
+        "path": "bank/2023/q04.png",
+        "sha256": "14d59c7eb8355b1a7688f7cb5eada8850af900f2a2edb3c375836b7ecc5099c4"
+      },
+      {
+        "path": "bank/2025/q05.png",
+        "sha256": "425e85e85783a08406979e5eab112d0c99f9491c4faa62378a2ee3659f4554ff"
+      }
+    ],
+    "text_blocks_checked": 87,
+    "errors": [],
+    "pdf_sha256": "8242c810da41b088c5d19824a3d9f29db61484218f6306129f88ddb5c46533d7",
+    "name": "0804",
+    "old_pages": 5,
+    "text_equal_to_verified_export": true,
+    "image_pixels_order_equal_to_verified_export": true,
+    "raster_equal_to_verified_export": true,
+    "visual_status": "passed",
+    "issues": [],
+    "fixes": [],
+    "visual_review": {
+      "all_pages_contact_sheet": true,
+      "contact_sheets": [
+        "contact-01.png",
+        "contact-02.png",
+        "contact-03.png",
+        "contact-04.png",
+        "contact-05.png",
+        "contact-06.png",
+        "contact-07.png",
+        "contact-08.png"
+      ],
+      "findings": "首页独立；后文连续；全页未见正文、表格、图片、代码重叠、裁切、乱码或溢出。高分辨率检查0731p2、0806p6、0812p9。"
+    },
+    "automated_checks": [
+      "all AST rendered text fragments present",
+      "embedded images decoded pixels and order match source",
+      "glyph coverage verified for all source characters",
+      "no blank content/replacement glyph/overflow",
+      "current PDF text/image order/all-page raster equal verified temporary export"
+    ]
+  },
+  {
+    "source": "src/0805-answer.md",
+    "source_sha256": "2bed1cb2ee6a0f11c9dda45bcdfe423cc664ae911ba687eea84c9b2d9bebde92",
+    "pdf": "src/pdf/0805-answer.pdf",
+    "pages": 9,
+    "images": [
+      {
+        "path": "bank/2009/q04.png",
+        "sha256": "5a288b475943f500b27a15eb3b7666d36fd3f43ecc67b1589b8771f810961fcb"
+      },
+      {
+        "path": "bank/2009/q08.png",
+        "sha256": "23553ddc90479666b379a3ce4b2bd9012d43ec6877951aa01f1e784dbdaec6de"
+      },
+      {
+        "path": "bank/2010/q04.png",
+        "sha256": "2f46bf281c31a6be94301428144a4e20d73837b844e02ad2ffb14ded1fda5ba6"
+      },
+      {
+        "path": "bank/2011/q07.png",
+        "sha256": "34f69a54d4f599dce6187505afe2653ad30bd4a6f4c6541c9e1e68db03eefc19"
+      },
+      {
+        "path": "bank/2012/q04.png",
+        "sha256": "ee51f2c919851eca972c2c78f9d4b5a92098f25c5d469fac6827c9d3ee84ebd6"
+      },
+      {
+        "path": "bank/2012/q09.png",
+        "sha256": "efe114f853dba2108e0ee7f178a683659f7be610efcc6b59fe2b55620815a60e"
+      },
+      {
+        "path": "bank/2013/q03.png",
+        "sha256": "8d162acead570821096a3ca0541d8ab8164a04686d05fd1ddba33ea44b6e392b"
+      },
+      {
+        "path": "bank/2013/q06.png",
+        "sha256": "191348f4e375b41912fbecef49333746f18bef8070664715c63ee92e97686b33"
+      },
+      {
+        "path": "bank/2013/q10.png",
+        "sha256": "edcab87063314433da6a09de87fab6209e73d5b327418da6e0e5df021cca74d8"
+      },
+      {
+        "path": "bank/2014/q09.png",
+        "sha256": "a6eac8d2ff2c01e084a373dde8b46504102060eec513c9f341814d45d9be80f6"
+      },
+      {
+        "path": "bank/2015/q04.png",
+        "sha256": "feaa159287360ea6d117f17a0da365265fe43cf89785f163ed5ed318e58d4603"
+      },
+      {
+        "path": "bank/2016/q10.png",
+        "sha256": "1db16cb4a4e4cf36971f2dc4d3cd76fc3d53e04ac3a7f5f03607925024b5a19b"
+      },
+      {
+        "path": "bank/2018/q06.png",
+        "sha256": "4b4a7ec3944c5e049af8b5320e76eda9ad1283bbdcbe53fac9cd1d265240c153"
+      },
+      {
+        "path": "bank/2018/q08.png",
+        "sha256": "b5106046c352dcaafbea7df00d7bbd04591faa0099ea0273cf5db60074a82e54"
+      },
+      {
+        "path": "bank/2019/q04.png",
+        "sha256": "a77f96d5c86f1a4f5d657c8da63d086e6f58badebf9adf873f4c17710ec2dd52"
+      },
+      {
+        "path": "bank/2020/q05.png",
+        "sha256": "b447f9fde90193fce0207d34751d9832d9c7e8ca9cd180c84d4e7f7d2513a133"
+      },
+      {
+        "path": "bank/2020/q10.png",
+        "sha256": "409946957b8146e4292b99dede981bbc14121c4019d103d28d9c965463b6a405"
+      },
+      {
+        "path": "bank/2021/q06.png",
+        "sha256": "ece52346f5244b228eaafbdae8d3f065fa03fc5bfef149cbb1b4151cb760caee"
+      },
+      {
+        "path": "bank/2021/q09.png",
+        "sha256": "e16f0b878f208352503c8f27d86e3a0ec3c99434f363c05fb5e2855783aa4c86"
+      },
+      {
+        "path": "bank/2022/q08.png",
+        "sha256": "35249e3723f0f7b9e6b40690388fba6f0d5848c02ddb0b22260cfbb168140c60"
+      },
+      {
+        "path": "bank/2023/q07.png",
+        "sha256": "e2cbe3259e090fbbd498f14036d0991d367ff402ee5af5c2afd516459c394101"
+      },
+      {
+        "path": "bank/2024/q07.png",
+        "sha256": "fb30b05285ef45fa20a0fd1b9e6789c8d263b6b5e65b3367afa535c7d19299ee"
+      },
+      {
+        "path": "bank/2025/q08.png",
+        "sha256": "e99de6e0dc0707d4d8da6600e71d10275f7c9087670f685108405ba9c9aab994"
+      }
+    ],
+    "text_blocks_checked": 171,
+    "errors": [],
+    "pdf_sha256": "c34e2ca46cf6385f9bcdff4fef1fb55a61fafea8819a15a0448daeaf4718decc",
+    "name": "0805",
+    "old_pages": 9,
+    "text_equal_to_verified_export": true,
+    "image_pixels_order_equal_to_verified_export": true,
+    "raster_equal_to_verified_export": true,
+    "visual_status": "passed",
+    "issues": [],
+    "fixes": [],
+    "visual_review": {
+      "all_pages_contact_sheet": true,
+      "contact_sheets": [
+        "contact-01.png",
+        "contact-02.png",
+        "contact-03.png",
+        "contact-04.png",
+        "contact-05.png",
+        "contact-06.png",
+        "contact-07.png",
+        "contact-08.png"
+      ],
+      "findings": "首页独立；后文连续；全页未见正文、表格、图片、代码重叠、裁切、乱码或溢出。高分辨率检查0731p2、0806p6、0812p9。"
+    },
+    "automated_checks": [
+      "all AST rendered text fragments present",
+      "embedded images decoded pixels and order match source",
+      "glyph coverage verified for all source characters",
+      "no blank content/replacement glyph/overflow",
+      "current PDF text/image order/all-page raster equal verified temporary export"
+    ]
+  }
+]
