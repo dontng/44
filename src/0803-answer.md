@@ -104,7 +104,7 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q06"></a>
 ## 06｜2011-04：完全二叉树的最后一片叶子从编号处找
 
-<img src="../bank/2011/q04.png" alt="2011-04 原题" width="689" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2011/q04.png" alt="2011-04 原题" width="417" style="display:block; width:26.06em; max-width:100%; height:auto;">
 
 完全二叉树从根按层编号 `1…768`。编号 `i` 的左、右孩子若存在，编号分别为 `2i`、`2i+1`；因此 `i≤384` 至少有左孩子，`i≥385` 两个孩子都不可能存在。叶子是 `385…768`，共 `768−385+1=384` 个，选 **C**。尤其 384 虽位于靠后的位置，却还有编号 768 的左孩子。
 
@@ -176,7 +176,7 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q12"></a>
 ## 12｜2014-05：森林原叶子在二叉树中表现为没有左孩子
 
-<img src="../bank/2014/q05.png" alt="2014-05 原题" width="749" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2014/q05.png" alt="2014-05 原题" width="453" style="display:block; width:28.31em; max-width:100%; height:auto;">
 
 森林转二叉树仍按第 03 题的“左首子、右下兄”。原森林的叶子**没有任何孩子**，所以转换树中左孩子指针为空；有没有右兄弟并不影响它是不是原叶子。选 **C**。别把第 08 题的“无右孩子”套进来：那数的是兄弟组末位，原树叶子可能排在组中间。
 
@@ -188,7 +188,7 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q13"></a>
 ## 13｜2015-02：固定先序字母，不等于固定左右子树大小
 
-<img src="../bank/2015/q02.png" alt="2015-02 原题" width="683" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2015/q02.png" alt="2015-02 原题" width="414" style="display:block; width:25.88em; max-width:100%; height:auto;">
 
 先序固定 `a,b,c,d`，根只能是 a；后面的三个结点可以把**前 k 个分给左子树，其余给右子树**，其中 k 可为 0、1、2、3。三个结点本身有 5 种左右形状，两个结点有 2 种，一个结点有 1 种，空树有 1 种。因此四种划分贡献 `1×5、1×2、2×1、5×1`，合计 **14，选 B**。题目没有给中序，也没规定它是二叉排序树，不能用大小关系锁定子树。
 
@@ -200,7 +200,7 @@ NRL 从根 1 开始，排除 B；LRN 和 RLN 都最后访问根，排除 A、C�
 <a id="q14"></a>
 ## 14｜2016-05：森林每棵树少一条父边
 
-<img src="../bank/2016/q05.png" alt="2016-05 原题" width="679" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2016/q05.png" alt="2016-05 原题" width="411" style="display:block; width:25.69em; max-width:100%; height:auto;">
 
 一棵有 n 个结点的树有 `n−1` 条边；森林若由 k 棵树组成，逐树相加得 `边数＝总结点数−k`。已知 15 条边、25 个结点，`k=25−15=10`，选 **C**。第 05 题从一棵树的度数求边，本题反过来由总边数求森林中的树数，少的每一条边对应一棵树的根。
 
@@ -356,7 +356,7 @@ A 的末位 35 在下标 5，父位置 2 是 40；B 的末位 12 在下标 7，�
 <a id="q27"></a>
 ## 27｜2025-04：把四个绝对说法分别放回树的定义
 
-<img src="../bank/2025/q04.png" alt="2025-04 原题" width="446" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2025/q04.png" alt="2025-04 原题" width="270" style="display:block; width:16.88em; max-width:100%; height:auto;">
 
 B 对：任意森林都能用**左孩子、右兄弟**关系转换为一棵二叉树，包括只有一棵树的森林。A 错：完全二叉树的最后一个分支可以仅有左孩子，如两个结点；C 错：二叉树分支结点未必比叶子少，右单链有多个分支却只一个叶子；D 错：表达式树的根运算符在子表达式结果都准备好后才计算，通常是最后完成的运算，不是最先。故选 **B**。
 

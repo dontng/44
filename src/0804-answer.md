@@ -52,7 +52,7 @@
 <a id="q03"></a>
 ## 03｜2014-06：前缀冲突只需找一对码字
 
-<img src="../bank/2014/q06.png" alt="2014-06 原题" width="657" style="display:block; max-width:100%; height:auto;">
+<img src="../bank/2014/q06.png" alt="2014-06 原题" width="398" style="display:block; width:24.88em; max-width:100%; height:auto;">
 
 前缀码的可检验条件是：任意一个完整码字不能恰好是另一个码字的**开头**。D 中 `110` 是 `1100` 的前缀，读到 `110` 时无法确定该停还是继续读成 `1100`，故 **D 不是前缀码，选 D**。码长不等无需判错：A、B 有长短码但彼此不构成前缀；C 全为三位，自然不会有不同码字互为前缀。
 
