@@ -8,6 +8,7 @@
 - [learning-system.md](learning-system.md)：整条链的学习与验收规则。
 - [learning-ledger.md](learning-ledger.md)：文档已讲内容与尚待独立验证的能力记录。
 - [quality-gate.md](quality-gate.md)：后续互动讲解与整理 Answer 时必须执行的质量门槛。
+- [rewrite-protocol.md](rewrite-protocol.md)：重写旧 answer 的流程、易错点与交付前自检；一次一篇、独立执行。
 - [answer-writing-rules.md](answer-writing-rules.md)：写作与审核 `MMDD-answer.md` 的可执行规则；审核产出是改好的文件，不是评语。
 
 后续处理某个日期时，先读 `quality-gate.md`，再读该日期已有的 context。若尚无 context，就在教学过程中记录真正改变讲解方式的信息；一组题结束后再去重、校正并保存，不逐句复制聊天。
