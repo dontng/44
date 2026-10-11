@@ -1,8 +1,8 @@
-[« 0826-answer](0826-answer-sonnet.md)　　[0828-answer »](0828-answer-sonnet.md)
+[« 0826-answer-sonnet](0826-answer-sonnet.md)　　[0828-answer-sonnet »](0828-answer-sonnet.md)
 
 # 0827 Answer｜资源闭环：死锁、避免与检测
 
-> [原题 13 题](0827.md) · [0826 并发约束](0826-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 13 题](0827.md) · [0826 并发约束 · 0826-answer-sonnet](0826-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：各占最大需求−1 的卡死态与 Σ(max−1)+1（0826-05）；进程共享地址空间、线程私有栈（0825-07、0826-13）；缺页与页框（0825-08、0826-15）。安全序列、死锁分类本篇从零开始。
 **读完新增**：01 把“可能死锁”落成卡死态 · 02 安全序列的一轮：Need≤Work，Work+=Allocation · 03 可用＝总量−已分配，Need＝Max−Allocation · 04 资源分配单位与用户级线程切换 · 05 安全⇒无死锁，不安全⇏死锁 · 06 避免（分配前）/检测（分配后） · 07 LRU：看最后一次使用 · 08 死锁要成环，找最小环 · 09 完成者归还的是已持有量 · 10 预防/剥夺恢复/死锁最少阻塞进程 · 11 复用 02、03 · 12 把 01 的论证符号化 · 13 数安全序列条数
@@ -247,4 +247,4 @@ P0 后 Work=(3,3,3): P1 ✓ P2 ✓
 ```
 共 P0,P1,P2 和 P0,P2,P1 两条。选项 A（1）漏了 P1、P2 的两种顺序；C、D 要求首步有多于一个选择，但首步只有 P0。
 
-[« 0826-answer](0826-answer-sonnet.md)　　[0828-answer »](0828-answer-sonnet.md)
+[« 0826-answer-sonnet](0826-answer-sonnet.md)　　[0828-answer-sonnet »](0828-answer-sonnet.md)

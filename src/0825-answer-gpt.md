@@ -1,8 +1,8 @@
-[« 0824-answer](0824-answer-gpt.md)　　[0826-answer »](0826-answer-gpt.md)
+[« 0824-answer-gpt](0824-answer-gpt.md)　　[0826-answer-gpt »](0826-answer-gpt.md)
 
 # 0825 Answer｜执行生命线：进程、线程、状态与调度
 
-> [原题 30 题](0825.md) · [0824 系统边界](0824-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 30 题](0825.md) · [0824 系统边界 · 0824-answer-gpt](0824-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 上一节点会区分用户程序、内核入口和设备完成；现在追问等待时谁能运行、一次调度改变哪个实体。30 题均已核准，沿用这些时刻和对象逐题增加判断。
 
@@ -417,4 +417,4 @@ OS 终止进程要回收其设备、内存及 PCB 等本进程资源，B/C/D 是
 
 加速时只保留决定顺序的事件点，略过其间不改变候选集的空白时刻。30 题文稿已经覆盖；是否达到 1—2 分钟独立正确，仍需盖住讲解限时重做，不能由我写完来代替你的通关成绩。
 
-[« 0824-answer](0824-answer-gpt.md)　　[0826-answer »](0826-answer-gpt.md)
+[« 0824-answer-gpt](0824-answer-gpt.md)　　[0826-answer-gpt »](0826-answer-gpt.md)
