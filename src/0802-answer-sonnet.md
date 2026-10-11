@@ -1,8 +1,8 @@
-[« 0801-answer](0801-answer-sonnet.md)　　[0803-answer »](0803-answer-sonnet.md)
+[« 0801-answer-sonnet](0801-answer-sonnet.md)　　[0803-answer-sonnet »](0803-answer-sonnet.md)
 
 # 0802 Answer｜栈与队列：先定谁能进、谁能出
 
-> [20 道原题](0802.md) · [0731 的调用链与轨迹](0731-answer-sonnet.md#q02) · [0801 的指针约定](0801-answer-sonnet.md#q02) · [能力账本](answer-quality/learning-ledger.md)
+> [20 道原题](0802.md) · [0731 的调用链与轨迹 · 0731-answer-sonnet](0731-answer-sonnet.md#q02) · [0801 的指针约定 · 0801-answer-sonnet](0801-answer-sonnet.md#q02) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：每执行一步就更新草图（0801-01/04/11）；改之前先保存（0801-01）；环形数组里 `end1` 指队头元素、`end2` 指尾后空位（0801-02）；单分支递归是一条调用链（0731-02）。
 **读完新增**：栈与队列只差“取出哪一个” · 栈高度与最小容量 · 判一个出栈序列行不行 · 两端入队的形状 · 固定首弹后数缝隙 · 中缀转后缀的扫描规则 · 调用栈 · 同轨先进先出 · 弹出先后决定运算左右。
@@ -308,7 +308,7 @@ f         读到 f：停
 
 <img src="../bank/2014/q03.png" alt="2014-03 原题" width="524" style="display:block; width:32.75em; max-width:100%; height:auto;">
 
-> **沿用**：与 [0801-02](0801-answer-sonnet.md#q02) 是同一道原题；06 的“先读指针指向”
+> **沿用**：与 [0801-02 · 0801-answer-sonnet](0801-answer-sonnet.md#q02) 是同一道原题；06 的“先读指针指向”
 > **起手**：遮住旧答案，写 `end1`、`end2` 各指什么　→　**答案 A**
 
 先写题干约定：`end1` 指**队头元素**，`end2` 指**队尾后一个空位**，最多容纳 `M−1` 个。再推公式：
@@ -576,4 +576,4 @@ C  (a*[b−(c−d)*e/(f+g))…   ( [ ( 高 3；) 后 2；( 又 3；) 后 2；再
 
 ---
 
-[« 0801-answer](0801-answer-sonnet.md)　　[0803-answer »](0803-answer-sonnet.md)
+[« 0801-answer-sonnet](0801-answer-sonnet.md)　　[0803-answer-sonnet »](0803-answer-sonnet.md)
