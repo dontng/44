@@ -1,8 +1,8 @@
-[« 0928-answer](0928-answer-gpt.md)　　[0930-answer »](0930-answer-gpt.md)
+[« 0928-answer-gpt](0928-answer-gpt.md)　　[0930-answer-gpt »](0930-answer-gpt.md)
 
 # 0929 Answer｜目的地址匹配哪一行，信息又怎样传到这一行
 
-> [原题 6 道](0929.md) · [图算法的前置台阶](0806-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 6 道](0929.md) · [图算法的前置台阶 · 0806-answer-gpt](0806-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 先把地址范围画清，再决定下一跳；图论题分清最短路径与最小生成树；协议题再数信息交换的轮次。读懂尚需限时复做。
 
@@ -141,4 +141,4 @@ flowchart TD
 
 遮住答案，先逐地址验证01、02最长前缀；用03算最短路，再把结果写成04的接口；最后分别证明05为什么恰好两棵树、06的60/90秒从哪条最远路径来。限时独立表现仍待记录。
 
-[« 0928-answer](0928-answer-gpt.md)　　[0930-answer »](0930-answer-gpt.md)
+[« 0928-answer-gpt](0928-answer-gpt.md)　　[0930-answer-gpt »](0930-answer-gpt.md)

@@ -1,8 +1,8 @@
-[« 0925-answer](0925-answer-gpt.md)　　[0927-answer »](0927-answer-gpt.md)
+[« 0925-answer-gpt](0925-answer-gpt.md)　　[0927-answer-gpt »](0927-answer-gpt.md)
 
 # 0926 Answer｜页框被回收后，内容未必立刻消失
 
-> [原题 5 道](0926.md) · [0924 的地址翻译](0924-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 5 道](0926.md) · [0924 的地址翻译 · 0924-answer-gpt](0924-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 先区分虚拟页、页框、驻留集与空闲链；随后沿时间或地址逐步更新。读懂本稿还须限时独立复做。
 
@@ -81,4 +81,4 @@
 
 先用01画两次扫描后的“驻留/空闲链”两列；再用02、05写 `索引×4` 的表项地址；最后口述03、04何时改变进程状态或页目录基址。独立限时表现仍待记录。
 
-[« 0925-answer](0925-answer-gpt.md)　　[0927-answer »](0927-answer-gpt.md)
+[« 0925-answer-gpt](0925-answer-gpt.md)　　[0927-answer-gpt »](0927-answer-gpt.md)

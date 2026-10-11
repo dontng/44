@@ -1,8 +1,8 @@
-[« 0929-answer](0929-answer-gpt.md)　　[1001-answer »](1001-answer-gpt.md)
+[« 0929-answer-gpt](0929-answer-gpt.md)　　[1001-answer-gpt »](1001-answer-gpt.md)
 
 # 0930 Answer｜确认的是“下一份想要的数据”
 
-> [原题 5 道](0930.md) · [0929 的转发跳数](0929-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 5 道](0930.md) · [0929 的转发跳数 · 0929-answer-gpt](0929-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 TCP 数字是字节序号，GBN 数字是帧序号；TCP 的 ACK 是下一期待字节；本组2017-47题给的 GBN 确认号也采用下一期待帧的约定，其他题须先读清 ACK 定义。随后才用窗口、往返时延算还能发多少。读懂尚非限时独立。
 
@@ -95,4 +95,4 @@ TCP 数字是字节序号，GBN 数字是帧序号；TCP 的 ACK 是下一期待
 
 遮住答案，先数01的 IP/TCP 各字段，再写02/04字节区间，03的环形帧窗口，最后05用同一个 `发送时长+RTT` 检验窗口利用率。需要独立限时复做才可记录熟练通关。
 
-[« 0929-answer](0929-answer-gpt.md)　　[1001-answer »](1001-answer-gpt.md)
+[« 0929-answer-gpt](0929-answer-gpt.md)　　[1001-answer-gpt »](1001-answer-gpt.md)

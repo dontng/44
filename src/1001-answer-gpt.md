@@ -1,8 +1,8 @@
-[« 0930-answer](0930-answer-gpt.md)　　[1002-answer »](1002-answer-gpt.md)
+[« 0930-answer-gpt](0930-answer-gpt.md)　　[1002-answer-gpt »](1002-answer-gpt.md)
 
 # 1001 Answer｜帧只走这一跳，IP 分组再决定下一跳
 
-> [原题 4 道](1001.md) · [0930 的发送时延](0930-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 4 道](1001.md) · [0930 的发送时延 · 0930-answer-gpt](0930-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 从介质传播、以太网封装、IP 分片到跨子网转发，层层问“这一跳究竟承载什么”。读懂尚非限时独立。
 
@@ -67,4 +67,4 @@
 
 遮住答案，先重新算01的τ和停等周期、02抓包前14B/后20B、03非末片对齐，再独立指出04三处网关。限时独立仍待验证。
 
-[« 0930-answer](0930-answer-gpt.md)　　[1002-answer »](1002-answer-gpt.md)
+[« 0930-answer-gpt](0930-answer-gpt.md)　　[1002-answer-gpt »](1002-answer-gpt.md)
