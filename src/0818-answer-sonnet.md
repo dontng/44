@@ -1,8 +1,8 @@
-[« 0817-answer](0817-answer-sonnet.md)　　[0819-answer »](0819-answer-sonnet.md)
+[« 0817-answer-sonnet](0817-answer-sonnet.md)　　[0819-answer-sonnet »](0819-answer-sonnet.md)
 
 # 0818 Answer｜程序层级：从源程序到 CPU 真正执行的对象
 
-> [原题 14 题](0818.md) · [0817 指令取数](0817-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 14 题](0818.md) · [0817 指令取数 · 0817-answer-sonnet](0817-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：取完指令后的 PC 是相对转移基准（0817-01）；EA 与操作数分两步（0817-04）；字段逐项扣位，寄存器字段位数由寄存器个数决定（0817-05）；条件转移读 CF/ZF（0813-02、0817-03）。
 **读完新增**：01 RISC 取向与硬连线/微程序两种控制器 · 02 “汇编可见”＝指令能指名它，或指令语义依赖它 · 03 流水线要求每条指令分段一致 · 04 硬件直接执行的是 ISA 位串 · 05 翻译工具按输入输出区分 · 06 无新台阶 · 07 存储程序四条 · 08 机器字长＝一次处理的数据宽度 · 09 无新台阶 · 10 ISA 与实现的判据 · 11 预处理在编译之前 · 12 四种“指令”各由谁处理 · 13、14 无新台阶
@@ -266,4 +266,4 @@ A、B、C 都含 I 或 II，而 I、II 没有指令可指名，与题问“汇�
 | D 寄存器传参 | 寄存器多（01 的 C），传参少访存 |
 | C 难以流水线 | 03：规整格式、分段一致正是便于流水，方向反 |
 
-[« 0817-answer](0817-answer-sonnet.md)　　[0819-answer »](0819-answer-sonnet.md)
+[« 0817-answer-sonnet](0817-answer-sonnet.md)　　[0819-answer-sonnet »](0819-answer-sonnet.md)

@@ -1,8 +1,8 @@
-[« 0814-answer](0814-answer-sonnet.md)　　[0816-answer »](0816-answer-sonnet.md)
+[« 0814-answer-sonnet](0814-answer-sonnet.md)　　[0816-answer-sonnet »](0816-answer-sonnet.md)
 
 # 0815 Answer｜Cache访问：地址切分、局部性与替换
 
-> [原题 12 题](0815.md) · [0814 存储器](0814-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 12 题](0815.md) · [0814 存储器 · 0814-answer-sonnet](0814-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：位宽与 2ⁿ 个取值（0812-21）；容量＝单元数×位数、按字节/按字编址（0814-01、14）；按低位选单元（0814-02、09）；DRAM 电容存位需刷新、行列复用（0814-07、08、13）。
 **读完新增**：01 块号＝地址÷块大小，组号＝块号 mod 组数 · 02 命中率＝命中数÷总访问数 · 03 组内按 LRU 逐笔模拟 · 04 分离 Cache 解决的是同拍取指与访存的冲突 · 05 直接映射地址＝tag｜行号｜偏移，每行另有有效位、脏位 · 06 一次缺失装入整块，顺序访问按块计缺失 · 07 时间/空间局部性要在真实访问序列里认 · 08 无新台阶（回用 0814-13） · 09 Cache 位于 CPU 与 DRAM 之间，器件必须比 DRAM 快 · 10 题问“行的位数”＝单行全部位（回用 05，无新台阶） · 11 组相联：组号位＝log₂(行数÷路数)，比较器＝路数，位数＝tag 位 · 12 页式主存—外存可放入任意页框，不是直接映射。
@@ -140,7 +140,7 @@ B、D（无时间）与 a0 被访问 10 次矛盾；C、D（无空间）与 a[j]
 
 <img src="../bank/2018/q17.png" alt="2018-17 原题" width="523" style="display:block; width:32.69em; max-width:100%; height:auto;">
 
-题面“2K×1 位 DRAM、地址引脚最少、刷新开销少”与 [0814-13](0814-answer-sonnet.md#q13) 的行列选择同构。**起手**：r×c＝2048，引脚＝max(log₂r, log₂c)（行列复用）：32×64 与 64×32 都是 6 根，是最少。刷新按行，选行数少的 `r＝32, c＝64` → **C**。A、D 引脚 11；B 引脚 6 但行数 64。
+题面“2K×1 位 DRAM、地址引脚最少、刷新开销少”与 [0814-13 · 0814-answer-sonnet](0814-answer-sonnet.md#q13) 的行列选择同构。**起手**：r×c＝2048，引脚＝max(log₂r, log₂c)（行列复用）：32×64 与 64×32 都是 6 根，是最少。刷新按行，选行数少的 `r＝32, c＝64` → **C**。A、D 引脚 11；B 引脚 6 但行数 64。
 
 “刷新开销＝行数”是题面“尽量减少刷新开销”的读法，沿用 0814-13，未另加约定。
 
@@ -194,4 +194,4 @@ B 274＝256+17+1 少一个状态位；C 258＝256+2 缺 tag；D 257＝256+1 缺 
 A（块/页）、B（硬件/软件替换）、C（Cache 可回写，如 05；主存—外存通常也回写）按教材常规读法成立；D 与“框号在表里存”矛盾，故错。
 
 
-[« 0814-answer](0814-answer-sonnet.md)　　[0816-answer »](0816-answer-sonnet.md)
+[« 0814-answer-sonnet](0814-answer-sonnet.md)　　[0816-answer-sonnet »](0816-answer-sonnet.md)

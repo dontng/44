@@ -1,8 +1,8 @@
-[« 0818-answer](0818-answer-gpt.md)　　[0820-answer »](0820-answer-gpt.md)
+[« 0818-answer-gpt](0818-answer-gpt.md)　　[0820-answer-gpt »](0820-answer-gpt.md)
 
 # 0819 Answer｜数据通路：状态元件、操作元件与控制信号
 
-> [原题 12 题](0819.md) · [0818 ISA 与控制](0818-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 12 题](0819.md) · [0818 ISA 与控制 · 0818-answer-gpt](0818-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 上一节点区分 ISA 可见接口与内部实现；本节点走进内部：**寄存器保存状态，ALU/MUX 组合产生结果，控制器让路径在合适时刻工作**。微程序和硬连线是产生控制信号的不同方法。重复 PC 可见题直接回链。
 
@@ -42,7 +42,7 @@
 
 <img src="../bank/2010/q18.png" alt="2010-18 原题" width="365" style="display:block; width:22.81em; max-width:100%; height:auto;">
 
-与 [0818-02](0818-answer-gpt.md#q02) 同题：汇编程序能通过转移和相对寻址感知/影响 PC，**选 B**；MAR/MDR/IR 属硬件内部路径。本节点只增加：PC 虽是数据通路里的**状态元件**，并不等于它在通用寄存器组中，12 将专门裁决这点。
+与 [0818-02 · 0818-answer-gpt](0818-answer-gpt.md#q02) 同题：汇编程序能通过转移和相对寻址感知/影响 PC，**选 B**；MAR/MDR/IR 属硬件内部路径。本节点只增加：PC 虽是数据通路里的**状态元件**，并不等于它在通用寄存器组中，12 将专门裁决这点。
 
 <details open><summary>程序员可见与存储位置分开</summary>
 
@@ -173,4 +173,4 @@ ALU 用输入组合出算术/逻辑结果，多路选择器 MUX 根据选择信�
 
 寄存器提供和保存状态，ALU/MUX 计算或选路，控制器给出写使能、源选择等信号；微地址或硬连线决定这些信号如何产生。解题时先问对象是状态、组合操作，还是控制来源；遇到“总是、不包含、只可”则用一个真实路径反例检查。下一节点再把一条指令拆成连续微操作，不从 CPU 全章重讲。
 
-[« 0818-answer](0818-answer-gpt.md)　　[0820-answer »](0820-answer-gpt.md)
+[« 0818-answer-gpt](0818-answer-gpt.md)　　[0820-answer-gpt »](0820-answer-gpt.md)

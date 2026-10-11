@@ -1,8 +1,8 @@
-[« 0815-answer](0815-answer-sonnet.md)　　[0817-answer »](0817-answer-sonnet.md)
+[« 0815-answer-sonnet](0815-answer-sonnet.md)　　[0817-answer-sonnet »](0817-answer-sonnet.md)
 
 # 0816 Answer｜地址翻译链：虚拟地址怎样到达数据
 
-> [原题 9 题](0816.md) · [0815 Cache](0815-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 9 题](0816.md) · [0815 Cache · 0815-answer-sonnet](0815-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：位宽与 2ⁿ（0812-21）；块号、组号、tag 字段（0815-01、05、11）；Cache 器件快于 DRAM（0815-09）；页框可任意放（0815-12）。
 **读完新增**：01 TLB 命中 ⇒ 页在主存 · 02 虚页号｜偏移，整页号比标记 · 03 直写的写命中也写主存 · 04 缺页后重执行原指令 · 05 无新台阶 · 06 存在位与页号进制 · 07 无新台阶 · 08 组相联标记＝虚页号−组索引 · 09 越权在翻译时查，Cache 在翻译后。
@@ -95,7 +95,7 @@
 
 <img src="../bank/2020/q15.png" alt="2020-15 原题" width="421" style="display:block; width:26.31em; max-width:100%; height:auto;">
 
-与 [0815-09](0815-answer-sonnet.md#q09) 同一道原题，无新台阶，把 TLB 加进来逐项核对 → **D**。
+与 [0815-09 · 0815-answer-sonnet](0815-answer-sonnet.md#q09) 同一道原题，无新台阶，把 TLB 加进来逐项核对 → **D**。
 
 | 选项 | 依据 |
 |---|---|
@@ -130,7 +130,7 @@
 
 <img src="../bank/2024/q16.png" alt="2024-16 原题" width="497" style="display:block; width:31.06em; max-width:100%; height:auto;">
 
-与 [0815-12](0815-answer-sonnet.md#q12) 是同一道原题 → **D**。
+与 [0815-12 · 0815-answer-sonnet](0815-answer-sonnet.md#q12) 是同一道原题 → **D**。
 
 | 选项 | 依据 |
 |---|---|
@@ -181,4 +181,4 @@
 | D TLB 缺失 | 查 TLB 未比中，是翻译第一步（01） |
 | B Cache 缺失 | Cache 按物理地址查（01 路径），在翻译完成后才知。**不是** MMU 翻译过程中检测的 |
 
-[« 0815-answer](0815-answer-sonnet.md)　　[0817-answer »](0817-answer-sonnet.md)
+[« 0815-answer-sonnet](0815-answer-sonnet.md)　　[0817-answer-sonnet »](0817-answer-sonnet.md)

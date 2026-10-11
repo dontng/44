@@ -1,8 +1,8 @@
-[« 0818-answer](0818-answer-sonnet.md)　　[0820-answer »](0820-answer-sonnet.md)
+[« 0818-answer-sonnet](0818-answer-sonnet.md)　　[0820-answer-sonnet »](0820-answer-sonnet.md)
 
 # 0819 Answer｜数据通路：状态元件、操作元件与控制信号
 
-> [原题 12 题](0819.md) · [0818 程序层级](0818-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 12 题](0819.md) · [0818 程序层级 · 0818-answer-sonnet](0818-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：硬连线与微程序是两种控制器（0818-01）；“可见”＝有指令能指名它或语义依赖它（0818-02）；ISA 与实现的判据（0818-10）；字段位数由取值个数定（0817-05）；EA 与操作数分两步（0817-04）。
 **读完新增**：01 控制信号的两条产生路径 · 02 无新台阶 · 03 指令周期必含取指 · 04 字段直接编码按互斥类分字段 · 05 下地址字段要编遍控存全部微指令 · 06 PC 位数由指令位置数定 · 07 单周期一拍内总线只载一个值 · 08 把一条指令的数据流映射到部件 · 09 数据通路＝操作元件＋状态元件（最小形式） · 10 硬件多线程＝一核多套线程状态 · 11 MUX 也是操作元件 · 12 通用寄存器组由指令字段选
@@ -53,7 +53,7 @@
 
 <img src="../bank/2010/q18.png" alt="2010-18 原题" width="365" style="display:block; width:22.81em; max-width:100%; height:auto;">
 
-与 [0818-02](0818-answer-sonnet.md#q02) 同题，只调用旧判据。**起手**：每项问“哪条汇编指令能指名它或依赖它”。**答案：B**
+与 [0818-02 · 0818-answer-sonnet](0818-answer-sonnet.md#q02) 同题，只调用旧判据。**起手**：每项问“哪条汇编指令能指名它或依赖它”。**答案：B**
 
 - PC：转移指令改写它，相对寻址以它为基准。可见。
 - MAR、MDR、IR：只在取指、访存的内部通路上暂存，没有指令能指名。不可见。
@@ -241,4 +241,4 @@ A、D 把 PC 当操作元件；C 两项都是状态元件。
 
 A 的读法：题面用“应该”，按教材通用寄存器组处理。个别 ISA（如 ARM）把 PC 编为 R15，属特例，题面不支持。
 
-[« 0818-answer](0818-answer-sonnet.md)　　[0820-answer »](0820-answer-sonnet.md)
+[« 0818-answer-sonnet](0818-answer-sonnet.md)　　[0820-answer-sonnet »](0820-answer-sonnet.md)

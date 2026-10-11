@@ -1,8 +1,8 @@
-[« 0814-answer](0814-answer-gpt.md)　　[0816-answer »](0816-answer-gpt.md)
+[« 0814-answer-gpt](0814-answer-gpt.md)　　[0816-answer-gpt »](0816-answer-gpt.md)
 
 # 0815 Answer｜Cache访问：地址切分、局部性与替换
 
-> [原题 12 题](0815.md) · [0814 存储器](0814-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 12 题](0815.md) · [0814 存储器 · 0814-answer-gpt](0814-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 先前已会把容量拆成深度与宽度；现在把访问地址逐层拆为**块内偏移、组号、标记**，再用访问序列更新命中与替换。重复引用的 DRAM 原题直接回到 0814 的讲解，不重复教学。以下只代表教学稿，独立限时复做仍待验证。
 
@@ -119,7 +119,7 @@
 
 <img src="../bank/2018/q17.png" alt="2018-17 原题" width="523" style="display:block; width:32.69em; max-width:100%; height:auto;">
 
-这幅图与 [0814-13](0814-answer-gpt.md#q13) 是同一道 `2K×1` DRAM 原题：先令 `r×c=2048`，行列复用使地址引脚最少的搭配为 `32×64` 或 `64×32`；再以刷新行数少选 **`r=32,c=64`，C**。本节点不重复展开行列公式，检验你是否能把上一节点的“两层筛选”直接带过来。
+这幅图与 [0814-13 · 0814-answer-gpt](0814-answer-gpt.md#q13) 是同一道 `2K×1` DRAM 原题：先令 `r×c=2048`，行列复用使地址引脚最少的搭配为 `32×64` 或 `64×32`；再以刷新行数少选 **`r=32,c=64`，C**。本节点不重复展开行列公式，检验你是否能把上一节点的“两层筛选”直接带过来。
 
 <details open><summary>什么时候需重开上一题机制</summary>
 
@@ -178,4 +178,4 @@ TLB 保存近期虚拟页到物理页的转换，缺失后查页表；Cache 保�
 
 先算主存块号，再算组号，组内比较 tag；命中更新使用次序，缺失装块并按替换策略处理旧行。容量题则把数据位、tag、有效/脏位分开计数。需要一两分钟内解题时先写最短字段式；03 的 LRU 与 06 的数组访问则画最小访问序列，不背最后的命中次数。
 
-[« 0814-answer](0814-answer-gpt.md)　　[0816-answer »](0816-answer-gpt.md)
+[« 0814-answer-gpt](0814-answer-gpt.md)　　[0816-answer-gpt »](0816-answer-gpt.md)
