@@ -1,8 +1,8 @@
-[« 0831-answer](0831-answer.md)　　[0902-answer »](0902-answer.md)
+[« 0831-answer](0831-answer-gpt.md)　　[0902-answer »](0902-answer-gpt.md)
 
 # 0901 Answer｜分层路径：从端系统到逐跳转发
 
-> [原题 18 题](0901.md) · [0831 设备服务](0831-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 18 题](0901.md) · [0831 设备服务](0831-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 从设备服务边界前进到网络路径，先分清端到端与逐跳。18 题原题核准；文稿覆盖不等于独立限时通关。
 
@@ -251,4 +251,4 @@ H1 入网链路与 H2 出网链路均 **10Mb/s**。即使中途走两条 1000Mb/
 
 端到端与逐跳先标端点；协议规定互通行为，内部实现可替换。存储转发先数包与链路段，再加题目明确给的传播、建路或首部成本；路径吞吐受沿路最小带宽限制。18/18 已讲，限时熟练度待测。
 
-[« 0831-answer](0831-answer.md)　　[0902-answer »](0902-answer.md)
+[« 0831-answer](0831-answer-gpt.md)　　[0902-answer »](0902-answer-gpt.md)

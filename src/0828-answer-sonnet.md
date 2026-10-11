@@ -1,4 +1,4 @@
-[« 0827-answer](0827-answer-sonnet.md)　　[0829-answer »](0829-answer.md)
+[« 0827-answer](0827-answer-sonnet.md)　　[0829-answer »](0829-answer-gpt.md)
 
 # 0828 Answer｜内存边界：分配、回收与保护
 
@@ -193,4 +193,4 @@ D 动态分区分配是 03 的内存分配方式；题面问的是磁盘存储�
 
 B、C、D 是 03、06 的动态分区策略；06 里相接的孔不要求大小相等就可以合并（40、140、200 并成 380），与题面“仅合并大小相等”不符。
 
-[« 0827-answer](0827-answer-sonnet.md)　　[0829-answer »](0829-answer.md)
+[« 0827-answer](0827-answer-sonnet.md)　　[0829-answer »](0829-answer-gpt.md)

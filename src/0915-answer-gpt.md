@@ -1,8 +1,8 @@
-[« 0914-answer](0914-answer.md)　　[0916-answer »](0916-answer.md)
+[« 0914-answer](0914-answer-gpt.md)　　[0916-answer »](0916-answer-gpt.md)
 
 # 0915 Answer｜树上的递归究竟传什么
 
-> [5 道完整原题](0915.md) · [0914 的扫描状态](0914-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [5 道完整原题](0915.md) · [0914 的扫描状态](0914-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 树形只是外壳：每道题分别要传深度、分支数量、括号边界、终止标记或中序前驱。讲解已核原题，限时独立作答未验。
 
@@ -136,4 +136,4 @@ T1 的中序为 `25,27,30,40,60,80`，返回 true；T2 左子树含 50，根为 
 
 遮住解答给这五题各写一句“递归/遍历必须带着什么”：深度、边数、括号、终点、前驱。随后独立完成代码和边界例，按实际用时记熟练度；讲解完成不等于通关。
 
-[« 0914-answer](0914-answer.md)　　[0916-answer »](0916-answer.md)
+[« 0914-answer](0914-answer-gpt.md)　　[0916-answer »](0916-answer-gpt.md)

@@ -1,8 +1,8 @@
-[« 0927-answer](0927-answer.md)　　[0929-answer »](0929-answer.md)
+[« 0927-answer](0927-answer-gpt.md)　　[0929-answer »](0929-answer-gpt.md)
 
 # 0928 Answer｜谁在运行、谁在等待、谁进入内核
 
-> [原题 3 道](0928.md) · [0926 的 scanf/内核态](0926-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 3 道](0928.md) · [0926 的 scanf/内核态](0926-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 先沿事件发生顺序标注进程状态；再区分数据所在的地址区与处理该事件的执行主体。读懂尚非限时独立。
 
@@ -59,4 +59,4 @@
 
 先遮住答案，仅写01式子的正负号并用两进程验算；再默写02事件序列和三个状态门；最后在03逐个指出“变量/对象/代码”所在区域。尚需限时复做才可验证熟练度。
 
-[« 0927-answer](0927-answer.md)　　[0929-answer »](0929-answer.md)
+[« 0927-answer](0927-answer-gpt.md)　　[0929-answer »](0929-answer-gpt.md)

@@ -247,7 +247,7 @@ def render_node(node, nodes, widths, result=""):
     links = nav(node, nodes, path)
     answer = f"{node['key']}-answer-sonnet.md"
     if not (REPO / "src" / answer).exists():
-        answer = f"{node['key']}-answer.md"
+        answer = f"{node['key']}-answer-gpt.md"
     lines = [
         links,
         "",

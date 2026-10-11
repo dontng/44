@@ -1,8 +1,8 @@
-[« 0922-answer](0922-answer.md)　　[0924-answer »](0924-answer.md)
+[« 0922-answer](0922-answer-gpt.md)　　[0924-answer »](0924-answer-gpt.md)
 
 # 0923 Answer｜先求块号，再判断重用会不会被挤掉
 
-> [原题 5 道](0923.md) · [0922 的首次装入](0922-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 5 道](0923.md) · [0922 的首次装入](0922-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 贯穿动作：`字节地址 → 主存块号 → Cache 组号 → 这一拍命中/缺失`。原题 2023-43 的数组声明和循环边界彼此矛盾，讲解分别标明题面字面与常见修正；读懂尚非限时独立。
 
@@ -85,4 +85,4 @@
 
 遮住答案，先独立算01两条地址映射，再列03的64块和05的129块；最后在04先指出题面冲突、分别说出“按字面”与“按修正”能得出的内容。限时目标需要以后实测，不能从本稿的文字长度推定已熟练。
 
-[« 0922-answer](0922-answer.md)　　[0924-answer »](0924-answer.md)
+[« 0922-answer](0922-answer-gpt.md)　　[0924-answer »](0924-answer-gpt.md)

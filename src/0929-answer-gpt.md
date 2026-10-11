@@ -1,4 +1,4 @@
-[« 0928-answer](0928-answer.md)　　[0930-answer »](0930-answer.md)
+[« 0928-answer](0928-answer-gpt.md)　　[0930-answer »](0930-answer-gpt.md)
 
 # 0929 Answer｜目的地址匹配哪一行，信息又怎样传到这一行
 
@@ -141,4 +141,4 @@ flowchart TD
 
 遮住答案，先逐地址验证01、02最长前缀；用03算最短路，再把结果写成04的接口；最后分别证明05为什么恰好两棵树、06的60/90秒从哪条最远路径来。限时独立表现仍待记录。
 
-[« 0928-answer](0928-answer.md)　　[0930-answer »](0930-answer.md)
+[« 0928-answer](0928-answer-gpt.md)　　[0930-answer »](0930-answer-gpt.md)

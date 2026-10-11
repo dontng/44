@@ -1,8 +1,8 @@
-[« 0901-answer](0901-answer.md)　　[0903-answer »](0903-answer.md)
+[« 0901-answer](0901-answer-gpt.md)　　[0903-answer »](0903-answer-gpt.md)
 
 # 0902 Answer｜信号与速率：码元、带宽与纠错距离
 
-> [原题 14 题](0902.md) · [0901 分层路径](0901-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 14 题](0902.md) · [0901 分层路径](0901-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 已会按路径求传输时间；本组回到一条物理信道，先判断一次码元承载多少比特、再判断限制来自无噪声带宽还是噪声。14/14 原题核准；限时独立作答待测。
 
@@ -199,4 +199,4 @@ QAM-64 是64种星座点，每点携带6bit；若误把“64”当64bit/码元�
 
 先辨比特/码元/秒与信号状态数，再选奈奎斯特或香农；波形图看位中还是边界，别让熟悉的电平形状替代编码定义。码距题找最近码字并分开检错、纠错。文稿已覆盖14题，考场一两分钟的反应仍需遮住解释计时验证。
 
-[« 0901-answer](0901-answer.md)　　[0903-answer »](0903-answer.md)
+[« 0901-answer](0901-answer-gpt.md)　　[0903-answer »](0903-answer-gpt.md)

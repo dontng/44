@@ -1,8 +1,8 @@
-[« 0921-answer](0921-answer.md)　　[0923-answer »](0923-answer.md)
+[« 0921-answer](0921-answer-gpt.md)　　[0923-answer »](0923-answer-gpt.md)
 
 # 0922 Answer｜数据何时可用，页又何时到位
 
-> [原题 3 道](0922.md) · [0921 的事务计数](0921-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 3 道](0922.md) · [0921 的事务计数](0921-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 这组题先跟踪一条指令读、写寄存器的具体周期，再跟踪一次数组访问经过 Cache、TLB、主存、磁盘的状态。读懂推演只是第一阶段；限时独立尚未验证。
 
@@ -73,4 +73,4 @@
 
 先遮住答案：画出01的 WB→ID 依赖并算末条拍数；再用02的三个刻度推回跳地址；最后独立说清03首次 TLB 查询、缺页、重启查询的次序。能复述推导不等于能在考场1—2分钟完成，需另做限时复现。
 
-[« 0921-answer](0921-answer.md)　　[0923-answer »](0923-answer.md)
+[« 0921-answer](0921-answer-gpt.md)　　[0923-answer »](0923-answer-gpt.md)

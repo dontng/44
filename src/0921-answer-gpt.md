@@ -1,8 +1,8 @@
-[« 0920-answer](0920-answer.md)　　[0922-answer »](0922-answer.md)
+[« 0920-answer](0920-answer-gpt.md)　　[0922-answer »](0922-answer-gpt.md)
 
 # 0921 Answer｜一秒钟究竟发生多少次传送
 
-> [原题 5 道](0921.md) · [0920 的数据通路](0920-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 5 道](0921.md) · [0920 的数据通路](0920-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 先把设备速率换成“每秒多少个4B字/多少次块传输”，再乘 CPU 服务成本；读懂只是第一阶段，限时独立尚未验证。
 
@@ -89,4 +89,4 @@ CPU每秒 `500MHz/CPI4=125M` 条指令。32位缓冲一字4B。
 
 遮住答案，先各自写“每秒事务数、每事务 CPU 工作、主频给的总预算”；再核查 03 的一次事务为何仍需八拍、04 的设备工作怎样与 CPU 收尾重叠。读过的推导尚不能代替限时计算。
 
-[« 0920-answer](0920-answer.md)　　[0922-answer »](0922-answer.md)
+[« 0920-answer](0920-answer-gpt.md)　　[0922-answer »](0922-answer-gpt.md)

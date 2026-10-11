@@ -1,4 +1,4 @@
-[« 0924-answer](0924-answer.md)　　[0926-answer »](0926-answer.md)
+[« 0924-answer](0924-answer-gpt.md)　　[0926-answer »](0926-answer-gpt.md)
 
 # 0925 Answer｜把“可以做”写成可兑现的许可
 
@@ -204,4 +204,4 @@ B→C、C→D、E→F 本来就在各自线程程序顺序内；跨线程只有 
 
 先不看代码，为01、03、04、07、13写出“计数/初值/谁 V 后谁能 P”；再给02、06、11各构造一次会出错的交错。最终才把空位、产品、互斥和先后放进代码。能理解这种推导还需要再做独立、限时的正确性检查。
 
-[« 0924-answer](0924-answer.md)　　[0926-answer »](0926-answer.md)
+[« 0924-answer](0924-answer-gpt.md)　　[0926-answer »](0926-answer-gpt.md)

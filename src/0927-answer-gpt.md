@@ -1,8 +1,8 @@
-[« 0926-answer](0926-answer.md)　　[0928-answer »](0928-answer.md)
+[« 0926-answer](0926-answer-gpt.md)　　[0928-answer »](0928-answer-gpt.md)
 
 # 0927 Answer｜文件名最后要落到哪一个块
 
-> [原题 10 道](0927.md) · [0926 的页与块区别](0926-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 10 道](0927.md) · [0926 的页与块区别](0926-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 本组把“目录项→FCB/inode/FAT→数据簇→磁盘位置”逐层串起来。先辨清逻辑块、物理扇区与索引块，再计访问次数；读懂不等于限时熟练。
 
@@ -140,4 +140,4 @@
 
 遮住答案，先把05和10的名字→首簇/inode→数据簇链画出来；再用03、06、10的索引项容量选层；最后计01、07、09的机械时间和地理位置。准确率与限时速度仍需要独立复做验证。
 
-[« 0926-answer](0926-answer.md)　　[0928-answer »](0928-answer.md)
+[« 0926-answer](0926-answer-gpt.md)　　[0928-answer »](0928-answer-gpt.md)

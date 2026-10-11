@@ -1,8 +1,8 @@
-[« 0906-answer](0906-answer.md)　　[0908-answer »](0908-answer.md)
+[« 0906-answer](0906-answer-gpt.md)　　[0908-answer »](0908-answer-gpt.md)
 
 # 0907 Answer｜端到端状态：TCP字节序号与双窗口
 
-> [原题 24 题](0907.md) · [0906 路由路径](0906-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 24 题](0907.md) · [0906 路由路径](0906-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 分组抵达终端之后，TCP按字节累计确认；可发多少同时受拥塞窗口与接收窗口约束。24/24原题核准，独立限时待验。
 
@@ -329,4 +329,4 @@ t0 cwnd与有效发送窗均2000B，甲发seq2001、3001两段。t1乙回 `ack30
 
 字节流ACK指下一期待，SYN/FIN各占1；超时重置拥塞窗口，三重复ACK提前重传；实际发送窗口取拥塞与接收窗口较小者，再扣未确认在途。24/24已讲，限时熟练度待验。
 
-[« 0906-answer](0906-answer.md)　　[0908-answer »](0908-answer.md)
+[« 0906-answer](0906-answer-gpt.md)　　[0908-answer »](0908-answer-gpt.md)

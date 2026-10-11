@@ -1,8 +1,8 @@
-[« 0903-answer](0903-answer.md)　　[0905-answer »](0905-answer.md)
+[« 0903-answer](0903-answer-gpt.md)　　[0905-answer »](0905-answer-gpt.md)
 
 # 0904 Answer｜局域网转发：一帧经过介质、Hub与交换机
 
-> [原题 21 题](0904.md) · [0903 链路可靠性](0903-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 21 题](0904.md) · [0903 链路可靠性](0903-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 已会按链路层地址与确认状态追踪帧；本组再问共享介质中谁能看到信号、交换机何时学习与跨网何时换帧。21题逐项讲解；第14题原卷题面与选项不一致，独立限时待测。
 
@@ -290,4 +290,4 @@ B 收到 AP 的 CTS 时，RTS与CTS自身已发完，不再计入剩余NAV。还
 
 共享介质画往返传播时间，交换机按“入端口学源→查目的→未知泛洪”，路由器跨网重新封装链路帧；VLAN改变广播可达范围，无线预约按收到CTS之后的剩余时间计。21题已讲，其中第14题原题数字与选项不相容，未给伪答案。独立限时表现待验。
 
-[« 0903-answer](0903-answer.md)　　[0905-answer »](0905-answer.md)
+[« 0903-answer](0903-answer-gpt.md)　　[0905-answer »](0905-answer-gpt.md)
