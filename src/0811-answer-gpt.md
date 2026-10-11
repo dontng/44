@@ -1,8 +1,8 @@
-[« 0810-answer](0810-answer-gpt.md)　　[0812-answer »](0812-answer-gpt.md)
+[« 0810-answer-gpt](0810-answer-gpt.md)　　[0812-answer-gpt »](0812-answer-gpt.md)
 
 # 0811 Answer｜外存归并：数据放不进内存时
 
-> [原题 3 题](0811.md) · [0810 的两路归并](0810-answer-gpt.md#q26) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 3 题](0811.md) · [0810 的两路归并 · 0810-answer-gpt](0810-answer-gpt.md#q26) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 0810 的归并操作假定每个输入段已有序；这里换成 10TB 文件或许多外存段，第一笔要把“内存里能排多少”和“磁盘上还要合并几趟”分开。三题分别考方法选择、多路归并的树形补齐、以及下一条记录来自哪个输入段。
 
@@ -57,4 +57,4 @@
 
 先分段、再多路归并，补虚段解决树形，败者树的冠军段号决定下一次从哪一路取数。这三步解释了大文件为什么能在有限内存中逐批完成排序。真正能否限时做对，仍由遮住讲解后的独立题与相邻变式验证。
 
-[« 0810-answer](0810-answer-gpt.md)　　[0812-answer »](0812-answer-gpt.md)
+[« 0810-answer-gpt](0810-answer-gpt.md)　　[0812-answer-gpt »](0812-answer-gpt.md)

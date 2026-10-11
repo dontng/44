@@ -1,8 +1,8 @@
-[« 0812-answer](0812-answer-gpt.md)　　[0814-answer »](0814-answer-gpt.md)
+[« 0812-answer-gpt](0812-answer-gpt.md)　　[0814-answer-gpt »](0814-answer-gpt.md)
 
 # 0813 Answer｜有限位运算：溢出、标志与乘除
 
-> [原题 11 题](0813.md) · [0812 位模式](0812-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 11 题](0813.md) · [0812 位模式 · 0812-answer-gpt](0812-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 0812 已经能把一串位按有符号或无符号类型读成数。本节点多问一步：**算出的数学结果能否装回指定宽度；标志位对谁说话？** 每题机制折叠，先遮答案限时做，再按真正卡住的一步展开。
 
@@ -161,4 +161,4 @@ OF 看 signed 的数学运算，10 减 -20 得 30；CF 看 unsigned 的位图关
 
 先算数学值，检查能否装进目的位宽；再按模 `2^w` 找实际留下的位图；最后分别按 signed 或 unsigned 决定 OF、CF。能完成这三份账，01、04、07、09、11 的速度就来自同一动作，不需要逐题背答案。02 的原图横线覆盖 `CF+ZF` 整体，等价于两个标志均为零。
 
-[« 0812-answer](0812-answer-gpt.md)　　[0814-answer »](0814-answer-gpt.md)
+[« 0812-answer-gpt](0812-answer-gpt.md)　　[0814-answer-gpt »](0814-answer-gpt.md)

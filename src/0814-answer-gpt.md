@@ -1,8 +1,8 @@
-[« 0813-answer](0813-answer-gpt.md)　　[0815-answer »](0815-answer-gpt.md)
+[« 0813-answer-gpt](0813-answer-gpt.md)　　[0815-answer-gpt »](0815-answer-gpt.md)
 
 # 0814 Answer｜存储器拼装：容量、长宽与片选
 
-> [原题 16 题](0814.md) · [0813 有限位运算](0813-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 16 题](0814.md) · [0813 有限位运算 · 0813-answer-gpt](0813-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 位宽从运算结果换成存储器一次读写的数据宽度；地址位决定能选多少个单元。先把容量化成“单元数 × 每单元位数”，再判断题目到底问芯片数、地址段、MAR，还是介质特性。讲解已写的题仍需遮答案限时复做。
 
@@ -229,4 +229,4 @@ EPROM、DRAM、SRAM 都能通过地址电路选到存储单元。CDROM 读取要
 
 “总容量”用单元数乘位宽换成字节；“地址范围”用字节编址与对齐/分段决定；“引脚”还需看 DRAM 是否复用行列地址。09 与 11 再给这些静态账加时间：同体连续访问会冲突，非对齐对象跨几个总线字就要几个周期。复做时先说出题目要哪张账，然后动笔；会做与能一两分钟内稳做仍是不同的验收阶段。
 
-[« 0813-answer](0813-answer-gpt.md)　　[0815-answer »](0815-answer-gpt.md)
+[« 0813-answer-gpt](0813-answer-gpt.md)　　[0815-answer-gpt »](0815-answer-gpt.md)

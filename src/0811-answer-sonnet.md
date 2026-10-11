@@ -1,4 +1,4 @@
-[« 0810-answer](0810-answer-sonnet.md)　　[0812-answer »](0812-answer-sonnet.md)
+[« 0810-answer-sonnet](0810-answer-sonnet.md)　　[0812-answer-sonnet »](0812-answer-sonnet.md)
 
 # 0811 Answer｜外存归并：数据放不进内存时
 
@@ -30,8 +30,8 @@
 
 | 选项 | 题面/机制依据 | 裁决 |
 | --- | --- | --- |
-| A 希尔、B 堆、C 快排 | 都靠下标随机访问整组数据（跳 d 格、找 2i、两端相向，见 [0810-17](0810-answer-sonnet.md#q17)）；文件不在内存时每次访问是一次磁盘读 | 只能排“装得下的一批” |
-| D 归并 | 只看各有序段当前首项（[0810-26](0810-answer-sonnet.md#q26)），段可顺序读写 | 能直接并外存段 |
+| A 希尔、B 堆、C 快排 | 都靠下标随机访问整组数据（跳 d 格、找 2i、两端相向，见 [0810-17 · 0810-answer-sonnet](0810-answer-sonnet.md#q17)）；文件不在内存时每次访问是一次磁盘读 | 只能排“装得下的一批” |
+| D 归并 | 只看各有序段当前首项（[0810-26 · 0810-answer-sonnet](0810-answer-sonnet.md#q26)），段可顺序读写 | 能直接并外存段 |
 
 > 信号是“要排整个文件”，不是“这些算法不能用”：造每一批的段完全可以用快排。
 
@@ -90,4 +90,4 @@ ls[1]: 3 vs 4 → 败段3，胜段0        ls[0]=段0，输出 3
 
 读法：按教材 `ls[0]` 存段号作答；题面未写是否缓存值，不替出题人补条件。
 
-[« 0810-answer](0810-answer-sonnet.md)　　[0812-answer »](0812-answer-sonnet.md)
+[« 0810-answer-sonnet](0810-answer-sonnet.md)　　[0812-answer-sonnet »](0812-answer-sonnet.md)
