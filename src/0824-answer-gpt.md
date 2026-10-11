@@ -1,8 +1,8 @@
-[« 0823-answer](0823-answer-gpt.md)　　[0825-answer »](0825-answer-gpt.md)
+[« 0823-answer-gpt](0823-answer-gpt.md)　　[0825-answer-gpt »](0825-answer-gpt.md)
 
 # 0824 Answer｜系统边界：应用如何进入内核
 
-> [原题 25 题](0824.md) · [0823 I/O 路径](0823-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 25 题](0824.md) · [0823 I/O 路径 · 0823-answer-gpt](0823-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 已会区分 I/O 发起与完成；现在沿着一条执行时间线问：**谁触发、触发时在哪个态、谁来处理**。25 题均已核准；从触发、入口到返回逐题承接，不重复从零讲。
 
@@ -356,4 +356,4 @@ OS 初始化阶段需要建立**中断向量表，选 A**，使中断/异常到�
 
 保底目标是盖住答案后说出每题第一笔和最有诱惑力的错项为何错；加速目标是在 1—2 分钟内从题干恢复时间线。这里标记的是**教学文稿完成 25/25**，独立限时正确率和熟练度仍需实际作答验证。
 
-[« 0823-answer](0823-answer-gpt.md)　　[0825-answer »](0825-answer-gpt.md)
+[« 0823-answer-gpt](0823-answer-gpt.md)　　[0825-answer-gpt »](0825-answer-gpt.md)

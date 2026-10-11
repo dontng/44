@@ -1,8 +1,8 @@
-[« 0819-answer](0819-answer-sonnet.md)　　[0821-answer »](0821-answer-sonnet.md)
+[« 0819-answer-sonnet](0819-answer-sonnet.md)　　[0821-answer-sonnet »](0821-answer-sonnet.md)
 
 # 0820 Answer｜流水线：结果何时产生，下一条何时需要
 
-> [原题 14 题](0820.md) · [0819 数据通路](0819-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 14 题](0820.md) · [0819 数据通路 · 0819-answer-sonnet](0819-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：流水线分段、周期由最慢段定（0818-03）；数据流映射到 GPR/存储器/ALU（0819-08）；操作元件＋状态元件＋控制信号选路（0819-09）；GPR 由指令字段选、PC 不在其中（0819-12）。
 **读完新增**：01 周期＝最慢段，不是各段之和 · 02 三类冒险与转发的角色 · 03 无新台阶 · 04 n 条 k 段需 k+n−1 拍 · 05 无转发时相邻 RAW 的时间表 · 06 超标量＝同拍发射多条 · 07 无新台阶 · 08 周期＝最慢段＋段寄存器延迟 · 09 间隔 2 条仍冒险 · 10 CPI 按“拍/条”分类型 · 11 转发只搬已产出的值：load-use 与分支 · 12 无新台阶 · 13 Cache 缺失拉高 CPI · 14 无新台阶
@@ -66,7 +66,7 @@
 
 <img src="../bank/2011/q18.png" alt="2011-18 原题" width="448" style="display:block; width:28.00em; max-width:100%; height:auto;">
 
-0818-03 的原题，三项均有利于各指令分段一致，见 [0818-03](0818-answer-sonnet.md#q03)。**答案：D**
+0818-03 的原题，三项均有利于各指令分段一致，见 [0818-03 · 0818-answer-sonnet](0818-answer-sonnet.md#q03)。**答案：D**
 
 <a id="q04"></a>
 ## 04｜2013-18：有限条数要付装满流水线的拍数
@@ -143,7 +143,7 @@ I2 读 R4、I3 写 R4 方向相反，I3 的写在 I2 读之后，不是先写后
 
 <img src="../bank/2017/q19.png" alt="2017-19 原题" width="498" style="display:block; width:31.13em; max-width:100%; height:auto;">
 
-调用 [0819-09](0819-answer-sonnet.md#q09)（数据通路＝操作元件＋状态元件，路径由控制信号选）。题问**错误**项。**答案：A**
+调用 [0819-09 · 0819-answer-sonnet](0819-answer-sonnet.md#q09)（数据通路＝操作元件＋状态元件，路径由控制信号选）。题问**错误**项。**答案：A**
 
 | 选项 | 依据 | 判断 |
 |---|---|---|
@@ -265,8 +265,8 @@ I4 只写 t2 而 I3 读 t2，无数据冒险，它的阻塞来自控制。B、D 
 
 <img src="../bank/2025/q19.png" alt="2025-19 原题" width="346" style="display:block; width:21.63em; max-width:100%; height:auto;">
 
-原题已在 [0819-12](0819-answer-sonnet.md#q12) 逐项裁决：PC 不在寄存器字段选出的 GPR 组里，故 A 错。**答案：A**
+原题已在 [0819-12 · 0819-answer-sonnet](0819-answer-sonnet.md#q12) 逐项裁决：PC 不在寄存器字段选出的 GPR 组里，故 A 错。**答案：A**
 
 本篇补一个对照：D“流水线要解决数据、控制冒险”现在由 02 直接支持。
 
-[« 0819-answer](0819-answer-sonnet.md)　　[0821-answer »](0821-answer-sonnet.md)
+[« 0819-answer-sonnet](0819-answer-sonnet.md)　　[0821-answer-sonnet »](0821-answer-sonnet.md)

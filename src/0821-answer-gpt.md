@@ -1,8 +1,8 @@
-[« 0820-answer](0820-answer-gpt.md)　　[0822-answer »](0822-answer-gpt.md)
+[« 0820-answer-gpt](0820-answer-gpt.md)　　[0822-answer-gpt »](0822-answer-gpt.md)
 
 # 0821 Answer｜性能方程：时间由多少工作和每步多慢共同决定
 
-> [原题 12 题](0821.md) · [0820 流水线](0820-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 12 题](0821.md) · [0820 流水线 · 0820-answer-gpt](0820-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 上一节点已分清 CPI 与时钟周期。现在所有计算题先写 **`CPU 时间 = 指令条数 × 平均 CPI ÷ 主频`**；若有 I/O，就把 CPU 时间和 I/O 时间分开。题目改变哪一项，只改哪一项，最后用单位检查数量级。
 
@@ -112,7 +112,7 @@ M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N�
 
 <img src="../bank/2020/q17.png" alt="2020-17 原题" width="589" style="display:block; width:36.81em; max-width:100%; height:auto;">
 
-同 [0820-10](0820-answer-gpt.md#q10)：单周期 CPU 每条一拍，基本单发射流水在稳态无阻塞时每拍完成一条，**仅 I、III，选 B**。在性能节点新增：实际程序 CPI 还会受流水填充、Cache、相关与分支等待影响，不能把理想值代入所有实际执行时间。
+同 [0820-10 · 0820-answer-gpt](0820-answer-gpt.md#q10)：单周期 CPU 每条一拍，基本单发射流水在稳态无阻塞时每拍完成一条，**仅 I、III，选 B**。在性能节点新增：实际程序 CPI 还会受流水填充、Cache、相关与分支等待影响，不能把理想值代入所有实际执行时间。
 
 <details open><summary>从 CPI 转到时间</summary>
 
@@ -159,7 +159,7 @@ M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N�
 
 <img src="../bank/2025/q18.png" alt="2025-18 原题" width="342" style="display:block; width:21.38em; max-width:100%; height:auto;">
 
-同 [0820-13](0820-answer-gpt.md#q13)：Cache 缺失让流水线等待，平均 CPI 会受缺失率影响，B 的“无关”错误，**选 B**。放到性能方程里可看出，频率即使不变，等待多了会提高 CPI、延长总时间。
+同 [0820-13 · 0820-answer-gpt](0820-answer-gpt.md#q13)：Cache 缺失让流水线等待，平均 CPI 会受缺失率影响，B 的“无关”错误，**选 B**。放到性能方程里可看出，频率即使不变，等待多了会提高 CPI、延长总时间。
 
 <details open><summary>只说“Cache 比主存快”还不够</summary>
 
@@ -170,4 +170,4 @@ M1 与 M2 同 ISA 运行同一基准程序 P，按题意可取相同指令数 N�
 
 比较两台机器、两种编译结果或局部加速时，把每一项放回 `指令数×CPI÷频率`；总程序另有 I/O 就单列不能加速的部分。吞吐指标先写“数什么/每秒”再换 MIPS、FLOPS 或 GIPS。考场速度来自先列一个正确分母，再做一两步乘除；展开层用于卡在“比例、单位、局部加速”的时候复原理由。
 
-[« 0820-answer](0820-answer-gpt.md)　　[0822-answer »](0822-answer-gpt.md)
+[« 0820-answer-gpt](0820-answer-gpt.md)　　[0822-answer-gpt »](0822-answer-gpt.md)

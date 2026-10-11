@@ -1,8 +1,8 @@
-[« 0819-answer](0819-answer-gpt.md)　　[0821-answer »](0821-answer-gpt.md)
+[« 0819-answer-gpt](0819-answer-gpt.md)　　[0821-answer-gpt »](0821-answer-gpt.md)
 
 # 0820 Answer｜流水线：结果何时产生，下一条何时需要
 
-> [原题 14 题](0820.md) · [0819 数据通路](0819-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 14 题](0820.md) · [0819 数据通路 · 0819-answer-gpt](0819-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 0819 已知道 ALU、存储器、寄存器和控制部件各做什么。本节点给它们加**时间轴**：最慢流水段决定周期，数据产生时刻与下一条需要时刻决定能否旁路，分支结果决定后续取指能否保留。重复的原题回链，不重复整章。
 
@@ -56,7 +56,7 @@
 
 <img src="../bank/2011/q18.png" alt="2011-18 原题" width="448" style="display:block; width:28.00em; max-width:100%; height:auto;">
 
-与 [0818-03](0818-answer-gpt.md#q03) 相同：指令格式规整、指令/数据对齐和仅 Load/Store 访存都利于划分稳定的流水阶段，**I、II、III 全部成立，选 D**。本节点只新增：这些条件降低阶段时间与资源的不确定性，却仍需具体处理相关与分支。
+与 [0818-03 · 0818-answer-gpt](0818-answer-gpt.md#q03) 相同：指令格式规整、指令/数据对齐和仅 Load/Store 访存都利于划分稳定的流水阶段，**I、II、III 全部成立，选 D**。本节点只新增：这些条件降低阶段时间与资源的不确定性，却仍需具体处理相关与分支。
 
 <details open><summary>利于流水不是保证无停顿</summary>
 
@@ -202,7 +202,7 @@ I1 的 ALU 结果 s2 可旁路给 I2 的 load 地址计算，I2 不必等它写�
 
 <img src="../bank/2025/q19.png" alt="2025-19 原题" width="346" style="display:block; width:21.63em; max-width:100%; height:auto;">
 
-这与 [0819-12](0819-answer-gpt.md#q12) 是同一题：PC 是专用的取指位置状态，A 说通用寄存器组**应该包含 PC**错误，**选 A**。放在流水节点的新增视角是：不同流水阶段持有/更新 PC 相关状态，也不把 PC 变成一般 GPR。
+这与 [0819-12 · 0819-answer-gpt](0819-answer-gpt.md#q12) 是同一题：PC 是专用的取指位置状态，A 说通用寄存器组**应该包含 PC**错误，**选 A**。放在流水节点的新增视角是：不同流水阶段持有/更新 PC 相关状态，也不把 PC 变成一般 GPR。
 
 <details open><summary>不要把流水寄存器也叫通用寄存器</summary>
 
@@ -213,4 +213,4 @@ I1 的 ALU 结果 s2 可旁路给 I2 的 load 地址计算，I2 不必等它写�
 
 流水时钟看最长阶段加段间开销；相关题看哪条写了什么、哪条何时要读，随后问值在那时是否已产生。若未产生，旁路无从转发，只能等待或用独立指令填空。控制冒险则问分支目标何时确定。把长推理压成这几笔，才有机会在考场一两分钟内稳做；独立限时复做仍需实际验收。
 
-[« 0819-answer](0819-answer-gpt.md)　　[0821-answer »](0821-answer-gpt.md)
+[« 0819-answer-gpt](0819-answer-gpt.md)　　[0821-answer-gpt »](0821-answer-gpt.md)
