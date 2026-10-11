@@ -1,8 +1,8 @@
-[« 0915-answer](0915-answer-gpt.md)　　[0917-answer »](0917-answer-gpt.md)
+[« 0915-answer-gpt](0915-answer-gpt.md)　　[0917-answer-gpt »](0917-answer-gpt.md)
 
 # 0916 Answer｜邻接矩阵怎样提供全局结论
 
-> [原题 5 道](0916.md) · [0915 树的递归](0915-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 5 道](0916.md) · [0915 树的递归 · 0915-answer-gpt](0915-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 先说明矩阵元素代表什么，再把局部计数接成路径、度数或拓扑序；讲解完成，限时独立作答未验。
 
@@ -188,4 +188,4 @@ int uniquely(MGraph G) {
 
 把五题混合计时：先遮住答案，只写“矩阵元素/行/列/当前入度为0”这类实际可读的证据，再完成推导。特别复做 01 的 15 个上三角格与 02 的 `A²[0][3]`，这两处一个漏位会把后续正确方法建立在错误输入上。
 
-[« 0915-answer](0915-answer-gpt.md)　　[0917-answer »](0917-answer-gpt.md)
+[« 0915-answer-gpt](0915-answer-gpt.md)　　[0917-answer-gpt »](0917-answer-gpt.md)

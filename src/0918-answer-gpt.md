@@ -1,8 +1,8 @@
-[« 0917-answer](0917-answer-gpt.md)　　[0919-answer »](0919-answer-gpt.md)
+[« 0917-answer-gpt](0917-answer-gpt.md)　　[0919-answer-gpt »](0919-answer-gpt.md)
 
 # 0918 Answer｜查找与排序要先确定在数什么
 
-> [原题 8 道](0918.md) · [0914 扫描状态](0914-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 8 道](0918.md) · [0914 扫描状态 · 0914-answer-gpt](0914-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 同是查找与排序，散列表数探测格，顺序查找数元素比较，外排序数归并段，快速选择数划分。题解已核原题；限时独立未验。
 
@@ -177,4 +177,4 @@ R3: 8, 17, 43, 100
 
 第一次复做只打开原图：在每题旁写清楚“比较/探测/搬运/分组”的单位；第二次限时混排 01 与 08，检验能否分辨 `mod7` 与 `mod11` 的初址范围，以及各题自己的探测方式。大题部分分可从步骤和边界拿到，不把阅读量记为实际得分。
 
-[« 0917-answer](0917-answer-gpt.md)　　[0919-answer »](0919-answer-gpt.md)
+[« 0917-answer-gpt](0917-answer-gpt.md)　　[0919-answer-gpt »](0919-answer-gpt.md)

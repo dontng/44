@@ -1,8 +1,8 @@
-[« 0923-answer](0923-answer-gpt.md)　　[0925-answer »](0925-answer-gpt.md)
+[« 0923-answer-gpt](0923-answer-gpt.md)　　[0925-answer-gpt »](0925-answer-gpt.md)
 
 # 0924 Answer｜虚址要先找到页，再谈 Cache 行
 
-> [原题 8 道](0924.md) · [0923 的块与组](0923-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 8 道](0924.md) · [0923 的块与组 · 0923-answer-gpt](0923-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 通用入口是 `虚页号/页内偏移 → TLB 或页表 → 页框号/原偏移 → Cache 组和标记`。遇缺页先处理并重新执行该访问；读懂尚不等于限时独立。
 
@@ -135,4 +135,4 @@
 
 遮住答案，先独立推01缺页重试的时间账，02的两种受害页，03的“在主存但不在 Cache”，然后只拿位数字段做05—08。每题会解与限时熟练是两道门槛，账本目前只记录前者的讲解覆盖。
 
-[« 0923-answer](0923-answer-gpt.md)　　[0925-answer »](0925-answer-gpt.md)
+[« 0923-answer-gpt](0923-answer-gpt.md)　　[0925-answer-gpt »](0925-answer-gpt.md)

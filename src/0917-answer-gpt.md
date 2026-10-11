@@ -1,8 +1,8 @@
-[« 0916-answer](0916-answer-gpt.md)　　[0918-answer »](0918-answer-gpt.md)
+[« 0916-answer-gpt](0916-answer-gpt.md)　　[0918-answer-gpt »](0918-answer-gpt.md)
 
 # 0917 Answer｜局部选择何时能保证全局最优
 
-> [原题 3 道](0917.md) · [0916 图的结构](0916-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 3 道](0917.md) · [0916 图的结构 · 0916-answer-gpt](0916-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 三道题的“选最小/最长”不能互相借用：最短路要维护所有未定终点距离，生成树只跨已选集合的割，关键路径看整个工程工期。讲解完成，独立限时未验。
 
@@ -59,4 +59,4 @@
 
 遮住表重新写出三个动作：01 的两条完整路径总长、02 每一步的已选集合、03 事件4为何取 max 而不是简单相加。只有独立写出并在时间内完成，才登记熟练，不由讲解完成自动推断考试分数。
 
-[« 0916-answer](0916-answer-gpt.md)　　[0918-answer »](0918-answer-gpt.md)
+[« 0916-answer-gpt](0916-answer-gpt.md)　　[0918-answer-gpt »](0918-answer-gpt.md)
