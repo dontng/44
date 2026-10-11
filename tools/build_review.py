@@ -14,7 +14,7 @@ def outputs():
  out={};s=['# 真题闭卷复盘：59条线\n','[复习入口](README.md) · [原题总索引](../src/README.md)\n','每次只进入当前学过的一条线。下面的检查卡用于暴露机制缺口，不代替全题验收；原题和解析仍各保留一份。先回答再展开，变式也先独立完成。选题时用该线第一道尚未做过或已到期的题；大题必须连同全部小问完整作答。\n','| 节点 | 复盘方向 |\n| --- | --- |']
  for n in nodes:s.append(f"| [{n['key']}](#r{n['key']}) | {n['title']} |")
  for n in nodes:
-  k=n['key'];p=prompts[k];s+=['',f'<a id="r{k}"></a>',f"## {k} · {n['title']}",'',f"[原题](../{n['file']}) · [完整解析](../src/{k}-answer.md)",'',p['prompt'],'','<details>','<summary>回答后核对机制</summary>','',p['check'],'','</details>','','**改一个条件：** '+p['variation'],'','<details>','<summary>变式完成后核对</summary>','',p['answer'],'','</details>','','回到原题，指出哪条已知条件让这条机制能用；不会时只展开对应断点。卡片通过不代表本线所有题通过。']
+  k=n['key'];answer=f'{k}-answer-sonnet.md' if (ROOT/'src'/f'{k}-answer-sonnet.md').exists() else f'{k}-answer.md';p=prompts[k];s+=['',f'<a id="r{k}"></a>',f"## {k} · {n['title']}",'',f"[原题](../{n['file']}) · [完整解析](../src/{answer})",'',p['prompt'],'','<details>','<summary>回答后核对机制</summary>','',p['check'],'','</details>','','**改一个条件：** '+p['variation'],'','<details>','<summary>变式完成后核对</summary>','',p['answer'],'','</details>','','回到原题，指出哪条已知条件让这条机制能用；不会时只展开对应断点。卡片通过不代表本线所有题通过。']
  out['review/main.md']='\n'.join(s)+'\n'
  groups=defaultdict(list)
  for key,v in network.items():groups[v['skill']].append((key,v))

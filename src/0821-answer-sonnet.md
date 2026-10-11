@@ -1,8 +1,8 @@
-[« 0820-answer](0820-answer.md)　　[0822-answer »](0822-answer.md)
+[« 0820-answer](0820-answer-sonnet.md)　　[0822-answer »](0822-answer-sonnet.md)
 
 # 0821 Answer｜性能方程：时间由多少工作和每步多慢共同决定
 
-> [原题 12 题](0821.md) · [0820 流水线](0820-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 12 题](0821.md) · [0820 流水线](0820-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：CPI＝拍/条，按指令类型分（0820-10）；周期由最慢段定（0820-01、0818-03）；停顿使一条指令多占拍（0820-11）；Cache 缺失拉高 CPI（0820-13）。
 **读完新增**：01 时间＝指令数×CPI×周期，三个因子各有一类措施 · 02 指标的分子分母：MIPS／FLOPS／CPI／IPC · 03 只有被加速的那段缩短，其余段原样相加 · 04 平均 CPI 按条数加权，MIPS＝MHz÷CPI · 05 多个因子同时变，倍数相乘 · 06 比较两机：共同的指令数约去 · 07 时钟脉冲≠每拍发射一条 · 08 无新台阶 · 09 P＝10¹⁵，与“亿亿”换算 · 10 周期数÷主频＝时间，单位换算 · 11 无新台阶 · 12 无新台阶
@@ -166,7 +166,7 @@ D 的反例：多周期 CPU 一条指令占多个脉冲（CPI>1）；流水线�
 
 <img src="../bank/2020/q17.png" alt="2020-17 原题" width="589" style="display:block; width:36.81em; max-width:100%; height:auto;">
 
-**无新台阶**：与 [0820-10](0820-answer.md#q10) 是同一道题，裁决沿用：**B（仅 I、III）**。
+**无新台阶**：与 [0820-10](0820-answer-sonnet.md#q10) 是同一道题，裁决沿用：**B（仅 I、III）**。
 
 | 类型 | 理想情况每条占几拍 | CPI |
 | --- | --- | --- |
@@ -237,7 +237,7 @@ CPI = 0.8×1 + 0.2×10 = 2.8
 
 <img src="../bank/2025/q18.png" alt="2025-18 原题" width="342" style="display:block; width:21.38em; max-width:100%; height:auto;">
 
-**无新台阶**：与 [0820-13](0820-answer.md#q13) 是同一道题，题问“错误”，裁决沿用：**B**。
+**无新台阶**：与 [0820-13](0820-answer-sonnet.md#q13) 是同一道题，题问“错误”，裁决沿用：**B**。
 
 | 选项 | 判断 |
 | --- | --- |
@@ -246,4 +246,4 @@ CPI = 0.8×1 + 0.2×10 = 2.8
 | C 单周期周期以最耗时指令为准 | 正确 |
 | D 流水线周期以最长段为准 | 正确（0820-01） |
 
-[« 0820-answer](0820-answer.md)　　[0822-answer »](0822-answer.md)
+[« 0820-answer](0820-answer-sonnet.md)　　[0822-answer »](0822-answer-sonnet.md)

@@ -2,7 +2,7 @@
 
 # 0929 Answer｜目的地址匹配哪一行，信息又怎样传到这一行
 
-> [原题 6 道](0929.md) · [图算法的前置台阶](0806-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 6 道](0929.md) · [图算法的前置台阶](0806-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 先把地址范围画清，再决定下一跳；图论题分清最短路径与最小生成树；协议题再数信息交换的轮次。读懂尚需限时复做。
 

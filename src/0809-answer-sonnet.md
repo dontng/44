@@ -1,8 +1,8 @@
-[« 0808-answer](0808-answer.md)　　[0810-answer »](0810-answer.md)
+[« 0808-answer](0808-answer-sonnet.md)　　[0810-answer »](0810-answer-sonnet.md)
 
 # 0809 Answer｜失配之后：KMP 保留什么
 
-> [原题 3 题](0809.md) · [0808 的比较次数](0808-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 3 题](0809.md) · [0808 的比较次数](0808-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：逐步执行并把状态写在纸上（0802-16）；比较次数按实际比较逐次数（0808-08、09）；最小反例否定“一定”（0802-13）。
 **读完新增**：失配后主串 i 不动，j 退到已匹配前缀的最长真首尾相同段（01）· 数比较次数时失配字符会被再比一次（02）· 修正 `nextval`：候选字符与失配字符相同则再退（03）。
@@ -103,4 +103,4 @@ abaab   首尾长 1：a vs b  ✗
 教材若用一基 `nextval`，数组整体加 1，右移距离不变。j=0 失配时按 −1 约定移 1 格；它不影响最大值。
 </details>
 
-[« 0808-answer](0808-answer.md)　　[0810-answer »](0810-answer.md)
+[« 0808-answer](0808-answer-sonnet.md)　　[0810-answer »](0810-answer-sonnet.md)

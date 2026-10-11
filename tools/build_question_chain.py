@@ -245,6 +245,9 @@ def existing_result(path):
 def render_node(node, nodes, widths, result=""):
     path = REPO / node["file"]
     links = nav(node, nodes, path)
+    answer = f"{node['key']}-answer-sonnet.md"
+    if not (REPO / "src" / answer).exists():
+        answer = f"{node['key']}-answer.md"
     lines = [
         links,
         "",
@@ -253,7 +256,7 @@ def render_node(node, nodes, widths, result=""):
         f"> 能力线 `{node['line_id']}` · 第 {node['index']:02d}/{len(nodes):02d} 个节点 · "
         f"{len(node['questions'])} 道真题引用",
         ">",
-        f"> [完整讲解]({node['key']}-answer.md)",
+        f"> [完整讲解]({answer})",
         "",
         "## 故事梗概",
         "",

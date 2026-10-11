@@ -1,4 +1,4 @@
-[« 0731-answer](0731-answer.md)　　[0802-answer »](0802-answer.md)
+[« 0731-answer](0731-answer-sonnet.md)　　[0802-answer »](0802-answer-sonnet.md)
 
 # 0801 Answer｜位置关系：从结点地址到压缩数组
 
@@ -441,4 +441,4 @@ h->next = q;          h → b → a → p → c
 
 ---
 
-[« 0731-answer](0731-answer.md)　　[0802-answer »](0802-answer.md)
+[« 0731-answer](0731-answer-sonnet.md)　　[0802-answer »](0802-answer-sonnet.md)

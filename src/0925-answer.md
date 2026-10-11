@@ -2,7 +2,7 @@
 
 # 0925 Answer｜把“可以做”写成可兑现的许可
 
-> [原题 13 道](0925.md) · [前置的线程交错](0825-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 13 道](0925.md) · [前置的线程交错](0825-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 先说清一个信号量代表多少个空位、多少份成品或哪一道先后门，再写 P/V。下面各段代码里的 P 是等待、V 是释放；读懂解法尚非独立限时验证。
 

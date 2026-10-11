@@ -2,7 +2,7 @@
 
 # 0914 Answer｜线性结构：扫描时保留什么状态
 
-> [11 道完整原题](0914.md) · [选择题前置](0731-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [11 道完整原题](0914.md) · [选择题前置](0731-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 每题先找不可回头的证据：长度差、值域、已有顺序、当前最优状态。这里的“完成”只表示讲解已核原题，不代表已限时独立完成。
 

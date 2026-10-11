@@ -1,4 +1,4 @@
-[0801-answer »](0801-answer.md)
+[0801-answer »](0801-answer-sonnet.md)
 
 # 0731 Answer｜增长量级
 
@@ -357,4 +357,4 @@ i    : 1  2  3  …  m
 
 ---
 
-[0801-answer »](0801-answer.md)
+[0801-answer »](0801-answer-sonnet.md)

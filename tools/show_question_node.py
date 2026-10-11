@@ -46,7 +46,10 @@ def main():
     print(f"{node['key']} · {node['title']}")
     print(node["file"])
     print(" ".join(node["questions"]))
-    print(f"讲解：src/{key}-answer.md")
+    answer = f"{key}-answer-sonnet.md"
+    if not (REPO / "src" / answer).exists():
+        answer = f"{key}-answer.md"
+    print(f"讲解：src/{answer}")
     print("先独立作答；复做记录写新事件，不覆盖历史首次作答。")
 
 

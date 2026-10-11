@@ -1,8 +1,8 @@
-[« 0815-answer](0815-answer.md)　　[0817-answer »](0817-answer.md)
+[« 0815-answer](0815-answer-gpt.md)　　[0817-answer »](0817-answer-gpt.md)
 
 # 0816 Answer｜地址翻译链：虚拟地址怎样到达数据
 
-> [原题 9 题](0816.md) · [0815 Cache](0815-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 9 题](0816.md) · [0815 Cache](0815-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 一次虚拟地址访存，先将虚拟页号翻译成物理页框号，保留页内偏移；拿到物理地址后再访问 Cache。TLB、页表、Cache 各答一个问题。重复原题引用直接回链，避免每次从零讲。教学稿不是独立限时成绩。
 
@@ -75,7 +75,7 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 
 <img src="../bank/2020/q15.png" alt="2020-15 原题" width="421" style="display:block; width:26.31em; max-width:100%; height:auto;">
 
-本题与 [0815-09](0815-answer.md#q09) 为同一道原题。立即可用的裁决是：TLB 保存地址转换、Cache 保存数据块，二者为快速访问通常不是**都由 DRAM 组成**，**选 D**。这里新增的位置感是：TLB 查询属于翻译阶段，Cache 查询属于翻译完成后的数据访问阶段。
+本题与 [0815-09](0815-answer-gpt.md#q09) 为同一道原题。立即可用的裁决是：TLB 保存地址转换、Cache 保存数据块，二者为快速访问通常不是**都由 DRAM 组成**，**选 D**。这里新增的位置感是：TLB 查询属于翻译阶段，Cache 查询属于翻译完成后的数据访问阶段。
 
 <details open><summary>只需多画这条责任线</summary>
 
@@ -99,7 +99,7 @@ TLB 命中问“翻译记录在快表里吗”；Page 命中问“目标虚拟�
 
 <img src="../bank/2024/q16.png" alt="2024-16 原题" width="497" style="display:block; width:31.06em; max-width:100%; height:auto;">
 
-这与 [0815-12](0815-answer.md#q12) 是同一道题：Cache 与主存可用直接映射，但虚拟页号经页表定位物理页框，通常可放入不同页框，故“主存—外存通常直接映射”的说法错误，**选 D**。在本节点给它加一层用途：页表查询是 TLB 缺失后的翻译路径之一。
+这与 [0815-12](0815-answer-gpt.md#q12) 是同一道题：Cache 与主存可用直接映射，但虚拟页号经页表定位物理页框，通常可放入不同页框，故“主存—外存通常直接映射”的说法错误，**选 D**。在本节点给它加一层用途：页表查询是 TLB 缺失后的翻译路径之一。
 
 <details><summary>会答 D 还不够的迁移检查</summary>
 
@@ -134,4 +134,4 @@ TLB 缺失：快表无翻译记录；页面缺失：页表表明页不在主存�
 
 虚拟页号先查 TLB，必要时查页表；若页不在主存，处理缺页并重试原指令；得到物理页框号后，和原页内偏移拼出物理地址，才去查 Cache。熟练阶段要能看到题干中的“TLB 命中”“页表存在位”“直写”“Cache 缺失”就立刻定位它们各自改变哪一步，而不是把所有未命中混成一次访存失败。
 
-[« 0815-answer](0815-answer.md)　　[0817-answer »](0817-answer.md)
+[« 0815-answer](0815-answer-gpt.md)　　[0817-answer »](0817-answer-gpt.md)

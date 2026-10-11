@@ -1,8 +1,8 @@
-[« 0822-answer](0822-answer.md)　　[0824-answer »](0824-answer.md)
+[« 0822-answer](0822-answer-gpt.md)　　[0824-answer »](0824-answer-gpt.md)
 
 # 0823 Answer｜I/O 路径：轮询、中断与 DMA 怎样交接控制权
 
-> [原题 31 题](0823.md) · [0822 总线事务](0822-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 31 题](0823.md) · [0822 总线事务](0822-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 上一节点已讲总线拍数；现在追问谁发起 I/O、谁在等待、谁搬数据。轮询由 CPU 反复读状态，中断让 CPU 暂停转入处理程序，DMA 在数据搬运阶段争用总线。本页覆盖 31 题，后题沿用前面建立的动作，不从零重复。
 
@@ -433,4 +433,4 @@ DMA 传输完成由控制器主动向 CPU 报告，属于**外部中断请求，
 
 轮询：CPU 按计划查状态、逐份搬；中断 I/O：设备就绪通知，CPU 执行服务程序搬；DMA：CPU 设参，DMA 控制器占用若干总线周期搬数据，完成后通知 CPU。异常则由当前指令执行发现，需按 fault/trap/abort 判断返回位置。考场只需先写“请求者、搬运者、完成通知”三项，再选最短计算或排错路径；教学完成不等于限时独立熟练。
 
-[« 0822-answer](0822-answer.md)　　[0824-answer »](0824-answer.md)
+[« 0822-answer](0822-answer-gpt.md)　　[0824-answer »](0824-answer-gpt.md)

@@ -1,8 +1,8 @@
-[« 0826-answer](0826-answer.md)　　[0828-answer »](0828-answer.md)
+[« 0826-answer](0826-answer-gpt.md)　　[0828-answer »](0828-answer-gpt.md)
 
 # 0827 Answer｜资源闭环：死锁、避免与检测
 
-> [原题 13 题](0827.md) · [0826 并发约束](0826-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 13 题](0827.md) · [0826 并发约束](0826-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 上一节点已用“人人差一份”求保证不死锁的资源数。本节点反过来问：当前能否找到一个完成者、释放资源后能否继续。13 题均已核准。
 
@@ -192,4 +192,4 @@ n 份的分配构成反例说明不够；n+1 份说明在全部人都不能完�
 
 本节点 13/13 是讲解文稿覆盖，独立计时正确和熟练度待本人重做检验。
 
-[« 0826-answer](0826-answer.md)　　[0828-answer »](0828-answer.md)
+[« 0826-answer](0826-answer-gpt.md)　　[0828-answer »](0828-answer-gpt.md)

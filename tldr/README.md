@@ -4,6 +4,6 @@
 
 - [0711](sessions/2026-07/0711-tldr.md)
 - [0712](sessions/2026-07/0712-tldr.md)
-- [0731](sessions/2026-07/0731-tldr.md)：当前版本见[0731完整讲解](../src/0731-answer.md)。
+- [0731](sessions/2026-07/0731-tldr.md)：当前版本见[0731完整讲解](../src/0731-answer-sonnet.md)。
 
 旧文保留原样以便追溯，不表示其中的归因和学习状态已通过当前复核。历史模板仅用于理解旧文。原协议见[整理前版本](https://github.com/dontng/44/blob/archive/pre-review-20261004/tldr/README.md)。

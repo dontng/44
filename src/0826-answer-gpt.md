@@ -1,8 +1,8 @@
-[« 0825-answer](0825-answer.md)　　[0827-answer »](0827-answer.md)
+[« 0825-answer](0825-answer-gpt.md)　　[0827-answer »](0827-answer-gpt.md)
 
 # 0826 Answer｜并发约束：把交错执行压成可证明的顺序
 
-> [原题 15 题](0826.md) · [0825 进程与调度](0825-answer.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 15 题](0826.md) · [0825 进程与调度](0825-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 已会辨认线程共享变量与进程就绪/阻塞；本节点从“谁先读、谁后写、等待什么条件”出发限制交错。15 题均已核准。
 
@@ -222,4 +222,4 @@ Ta、Tb 均由进程 P 创建，共享 P 的地址空间 I，也可访问 P 已�
 
 熟练目标是看到条件就能在 1—2 分钟写出反例或最小可推进状态；这里仅完成 15/15 教学文稿，用户独立计时通关仍待检验。
 
-[« 0825-answer](0825-answer.md)　　[0827-answer »](0827-answer.md)
+[« 0825-answer](0825-answer-gpt.md)　　[0827-answer »](0827-answer-gpt.md)
