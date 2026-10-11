@@ -1,8 +1,8 @@
-[« 0808-answer](0808-answer-gpt.md)　　[0810-answer »](0810-answer-gpt.md)
+[« 0808-answer-gpt](0808-answer-gpt.md)　　[0810-answer-gpt »](0810-answer-gpt.md)
 
 # 0809 Answer｜失配之后：KMP 保留什么
 
-> [原题 3 题](0809.md) · [0808 的比较次数](0808-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 3 题](0809.md) · [0808 的比较次数 · 0808-answer-gpt](0808-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 上一节点的查找沿着已知的下标区间或散列槽推进；字符串匹配遇到失配时，也不应把已经比较出的信息清空。KMP 的关键是固定主串当前位置 `i`，把模式串里**已匹配前缀的后缀**与模式开头对齐。先看实际字符，再用 `next`／修正的 `nextval` 压缩重复尝试。
 
@@ -66,4 +66,4 @@
 
 三题已讲，尚无独立遮挡讲解复做或限时稳定记录；此处不替用户宣布掌握。
 
-[« 0808-answer](0808-answer-gpt.md)　　[0810-answer »](0810-answer-gpt.md)
+[« 0808-answer-gpt](0808-answer-gpt.md)　　[0810-answer-gpt »](0810-answer-gpt.md)

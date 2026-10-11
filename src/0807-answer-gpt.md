@@ -1,8 +1,8 @@
-[« 0806-answer](0806-answer-gpt.md)　　[0808-answer »](0808-answer-gpt.md)
+[« 0806-answer-gpt](0806-answer-gpt.md)　　[0808-answer-gpt »](0808-answer-gpt.md)
 
 # 0807 Answer｜图上的推进：拓扑、最短路与关键路径
 
-> [原题 17 题](0807.md) · [0806 的图与遍历](0806-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 17 题](0807.md) · [0806 的图与遍历 · 0806-answer-gpt](0806-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 0806 已讲图的方向、BFS 层次和 DFS 退出。本组在此基础上给边加上“先后”或“代价”：拓扑问依赖能否先做，最短路问从指定起点到各点的最小代价，生成树问连通全图的总边权，AOE 问并行工程完成的最晚时刻。先认清目标，再动手更新数值。
 
@@ -228,7 +228,7 @@ AOE 工程可并行做活动，但后续事件必须等所有前置活动完成�
 
 <img src="../bank/2023/q06.png" alt="2023-06 原题" width="549" style="display:block; width:34.31em; max-width:100%; height:auto;">
 
-本题与 [0806-13](0806-answer-gpt.md#q13) 同一原题。每条边权都为 1，从指定顶点到其余各点的权值最短等于经过边数最少；BFS 按层首次发现便达到这个边数。Prim、Kruskal 求整图连通的总权，不保证指定起点到每个点的最短距离，所以只有 III，选 **B**。重复出现时考的是能否在新能力线中迅速辨目标，而非再次从零讲 BFS。
+本题与 [0806-13 · 0806-answer-gpt](0806-answer-gpt.md#q13) 同一原题。每条边权都为 1，从指定顶点到其余各点的权值最短等于经过边数最少；BFS 按层首次发现便达到这个边数。Prim、Kruskal 求整图连通的总权，不保证指定起点到每个点的最短距离，所以只有 III，选 **B**。重复出现时考的是能否在新能力线中迅速辨目标，而非再次从零讲 BFS。
 
 <details open><summary>读题后十五秒的取回动作</summary>
 
@@ -241,4 +241,4 @@ AOE 工程可并行做活动，但后续事件必须等所有前置活动完成�
 
 17 题已形成可复习的讲解，尚无你独立限时复做的结果。看懂推演、遮住推演会做、打乱题序在限时内稳定做对，是三个不同的状态；只有真实复做记录能把后两者写成已经达到。
 
-[« 0806-answer](0806-answer-gpt.md)　　[0808-answer »](0808-answer-gpt.md)
+[« 0806-answer-gpt](0806-answer-gpt.md)　　[0808-answer-gpt »](0808-answer-gpt.md)

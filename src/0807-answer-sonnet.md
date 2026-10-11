@@ -1,8 +1,8 @@
-[« 0806-answer](0806-answer-sonnet.md)　　[0808-answer »](0808-answer-sonnet.md)
+[« 0806-answer-sonnet](0806-answer-sonnet.md)　　[0808-answer-sonnet »](0808-answer-sonnet.md)
 
 # 0807 Answer｜图上的推进：拓扑、最短路与关键路径
 
-> [原题 17 题](0807.md) · [0806 的图与遍历](0806-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 17 题](0807.md) · [0806 的图与遍历 · 0806-answer-sonnet](0806-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
 
 **进入本篇时已有**：拓扑序＝每条边起点在前、有向环无拓扑序（0806-03）；邻接表 BFS 数“顶点＋表项”（0806-04）；BFS 层号（0806-06）；连通图必有生成树（0806-12）；单位权下 BFS 层号＝最短路（0806-13）；用最小反例否定“一定”（0802-13）。
 **读完新增**：按零入度逐轮计数（01）· 邻接矩阵下三角为零＝边只往大编号走（02）· Dijkstra 取最小暂定值再松弛（03）· 最小生成树：总权唯一、树不唯一（04）· 并列最长路须全部覆盖（05）· 逐边查位置（06，复用）· Prim 跨界与 Kruskal 不成环（07）· 拓扑的 `O(n+e)`（08）· 无新台阶（09、10，复用）· 活动最早/最迟（11）· 连通块判环（12）· 延长必延长、缩短未必缩短（13）· 链状依赖使序唯一（14）· dist 是暂定值快照（15）· 活动余量（16）· 无新台阶（17）。
@@ -338,9 +338,9 @@ vl  6:12 5:11 4:min(12-4, 11-1)=8 3:min(8-3, 11-4, 12-1)=5 2:min(8-3, 5-1)=4 1:0
 
 <img src="../bank/2023/q06.png" alt="2023-06 原题" width="549" style="display:block; width:34.31em; max-width:100%; height:auto;">
 
-**新增**：无新台阶，原题即 [0806-13](0806-answer-sonnet.md#q13)。**起手**：圈“某顶点到各顶点”“权均为 1”。→ **仅 III，选 B**
+**新增**：无新台阶，原题即 [0806-13 · 0806-answer-sonnet](0806-answer-sonnet.md#q13)。**起手**：圈“某顶点到各顶点”“权均为 1”。→ **仅 III，选 B**
 
 - III：权均 1，最短路＝最少边，BFS 层号即距离。
 - I、II：只产生生成树。反例：三点两两连边、权均 1，树取 x–y–z，x 到 z 在树中是 2，而真实最短路是直接边 1。
 
-[« 0806-answer](0806-answer-sonnet.md)　　[0808-answer »](0808-answer-sonnet.md)
+[« 0806-answer-sonnet](0806-answer-sonnet.md)　　[0808-answer-sonnet »](0808-answer-sonnet.md)
