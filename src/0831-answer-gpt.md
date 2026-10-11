@@ -1,8 +1,8 @@
-[« 0830-answer](0830-answer-gpt.md)　　[0901-answer »](0901-answer-gpt.md)
+[« 0830-answer-gpt](0830-answer-gpt.md)　　[0901-answer-gpt »](0901-answer-gpt.md)
 
 # 0831 Answer｜设备服务：缓冲、磁盘与请求调度
 
-> [原题 28 题](0831.md) · [0830 文件路径](0830-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 28 题](0831.md) · [0830 文件路径 · 0830-answer-gpt](0830-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 已能从文件偏移找到磁盘块；现在沿 `用户请求→设备无关层→驱动→控制器/中断` 问谁发起、谁等待及机械时间花在哪里。28 题原题逐项核准；独立计时尚未验证。
 
@@ -381,4 +381,4 @@ SCAN 到端点后反向扫描，C-SCAN 到端点后回另一端，继续同一�
 
 设备入口按“应用逻辑名→设备无关层→驱动→完成中断”，文件读按 `open(path)` 后 `read(fd)`；时间题画 CPU 与设备两条线。磁盘算时先识别平均半圈，位图题确认答案单位；SCAN/C-SCAN 先换算方向与端点，SSTF 每步更新距离。28/28 题已讲，接下来要以遮住解释的独立作答与限时练习检验；文稿完成不等于考场稳定得分。
 
-[« 0830-answer](0830-answer-gpt.md)　　[0901-answer »](0901-answer-gpt.md)
+[« 0830-answer-gpt](0830-answer-gpt.md)　　[0901-answer-gpt »](0901-answer-gpt.md)

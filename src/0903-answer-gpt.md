@@ -1,8 +1,8 @@
-[« 0902-answer](0902-answer-gpt.md)　　[0904-answer »](0904-answer-gpt.md)
+[« 0902-answer-gpt](0902-answer-gpt.md)　　[0904-answer-gpt »](0904-answer-gpt.md)
 
 # 0903 Answer｜链路可靠性：帧与重传状态
 
-> [原题 19 题](0903.md) · [0902 信号与速率](0902-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 19 题](0903.md) · [0902 信号与速率 · 0902-answer-gpt](0902-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 物理层能检错不等于保证交付；这里把帧编号、确认、计时器与窗口画成发送/接收双方状态。19/19 原题核准；限时独立作答待测。
 
@@ -264,4 +264,4 @@ ACK2 证明F2到达，但不替代ACK1；ACK3 在返程丢失，发送方仍认�
 
 确认语义决定重传范围；窗口数先由发送时间与往返时间算，再由序号空间限制。MAC地址要分当前无线接收点与跨AP目的；CRC余零只表示校验通过。19/19 已讲，独立限时表现待验。
 
-[« 0902-answer](0902-answer-gpt.md)　　[0904-answer »](0904-answer-gpt.md)
+[« 0902-answer-gpt](0902-answer-gpt.md)　　[0904-answer-gpt »](0904-answer-gpt.md)

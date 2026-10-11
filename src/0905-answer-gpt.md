@@ -1,8 +1,8 @@
-[« 0904-answer](0904-answer-gpt.md)　　[0906-answer »](0906-answer-gpt.md)
+[« 0904-answer-gpt](0904-answer-gpt.md)　　[0906-answer-gpt »](0906-answer-gpt.md)
 
 # 0905 Answer｜网络地址：前缀、广播与下一跳
 
-> [原题 17 题](0905.md) · [0904 局域网转发](0904-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 17 题](0905.md) · [0904 局域网转发 · 0904-answer-gpt](0904-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 从一帧的MAC出口走到IP前缀：先按掩码定区间，再问该分组在当前链路交给谁。17/17 题讲解已核准；限时独立表现待测。
 
@@ -71,7 +71,7 @@ R2 后面是 `192.168.2.0/25` 与 `192.168.2.128/25`，共同前缀 `192.168.2.0
 
 <img src="../bank/2012/q38.png" alt="2012-38 原题" width="431" style="display:block; width:26.94em; max-width:100%; height:auto;">
 
-ARP依据**IP地址查询MAC地址，选 A**，已在[0904-05](0904-answer-gpt.md#q05)详解。本次只加一层：目标IP跨网时，ARP查的是**下一跳网关的IP**，不是远端最终主机MAC。第一笔把路由表输出与当前链路MAC接起来。
+ARP依据**IP地址查询MAC地址，选 A**，已在[0904-05 · 0904-answer-gpt](0904-answer-gpt.md#q05)详解。本次只加一层：目标IP跨网时，ARP查的是**下一跳网关的IP**，不是远端最终主机MAC。第一笔把路由表输出与当前链路MAC接起来。
 
 <details open><summary>另外三种映射</summary>
 
@@ -215,7 +215,7 @@ IPv6扩展首部可增加整个头部链的长度，但基本首部固定，不�
 
 <img src="../bank/2024/q35.png" alt="2024-35 原题" width="540" style="display:block; width:33.75em; max-width:100%; height:auto;">
 
-此题在[0904-19](0904-answer-gpt.md#q19)已讲：H4与H1/H2/H3同VLAN1，H6的 `192.168.3.129` 在VLAN3，H4不能直接ARP学它，**选 D**。本次只加地址题视角：相同`192.168.3.*`字面并不能越过VLAN边界，ARP广播域先于“看起来同网段”。
+此题在[0904-19 · 0904-answer-gpt](0904-answer-gpt.md#q19)已讲：H4与H1/H2/H3同VLAN1，H6的 `192.168.3.129` 在VLAN3，H4不能直接ARP学它，**选 D**。本次只加地址题视角：相同`192.168.3.*`字面并不能越过VLAN边界，ARP广播域先于“看起来同网段”。
 
 <details open><summary>同前缀被人为隔开会怎样</summary>
 
@@ -238,4 +238,4 @@ IPv6扩展首部可增加整个头部链的长度，但基本首部固定，不�
 
 掩码先转区间，再决定网络/广播/可用地址；跨网先找下一跳，再区分普通路由器换MAC与NAT换IP源。ARP和DHCP的广播各有时序边界。17题已讲，独立限时表现仍待测。
 
-[« 0904-answer](0904-answer-gpt.md)　　[0906-answer »](0906-answer-gpt.md)
+[« 0904-answer-gpt](0904-answer-gpt.md)　　[0906-answer-gpt »](0906-answer-gpt.md)

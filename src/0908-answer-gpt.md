@@ -1,8 +1,8 @@
-[« 0907-answer](0907-answer-gpt.md)　　[0914-answer »](0914-answer-gpt.md)
+[« 0907-answer-gpt](0907-answer-gpt.md)　　[0914-answer-gpt »](0914-answer-gpt.md)
 
 # 0908 Answer｜一次应用会话的路径
 
-> [原题 17 题](0908.md) · [0907 的 TCP 状态](0907-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 17 题](0908.md) · [0907 的 TCP 状态 · 0907-answer-gpt](0907-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 先问谁向谁请求、走哪条连接，再数往返或判断协议。17/17 已核对原卷；独立限时仍待练习。
 
@@ -184,4 +184,4 @@
 
 第一次不看入口表，能把 DNS 查询、连接、对象请求逐段写出来；第二次按题眼直接找到第一笔，并用一个排错条件检查选项。讲解覆盖不等于已经会做或已达到考场速度，需独立限时复做确认。
 
-[« 0907-answer](0907-answer-gpt.md)　　[0914-answer »](0914-answer-gpt.md)
+[« 0907-answer-gpt](0907-answer-gpt.md)　　[0914-answer-gpt »](0914-answer-gpt.md)

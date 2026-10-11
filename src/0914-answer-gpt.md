@@ -1,8 +1,8 @@
-[« 0908-answer](0908-answer-gpt.md)　　[0915-answer »](0915-answer-gpt.md)
+[« 0908-answer-gpt](0908-answer-gpt.md)　　[0915-answer-gpt »](0915-answer-gpt.md)
 
 # 0914 Answer｜线性结构：扫描时保留什么状态
 
-> [11 道完整原题](0914.md) · [选择题前置](0731-answer-sonnet.md) · [能力账本](answer-quality/learning-ledger.md)
+> [11 道完整原题](0914.md) · [选择题前置 · 0731-answer-gpt](0731-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > 每题先找不可回头的证据：长度差、值域、已有顺序、当前最优状态。这里的“完成”只表示讲解已核原题，不代表已限时独立完成。
 
@@ -327,4 +327,4 @@ void calMulMax(const int A[], int res[], int n) {
 
 首次阅读先做题，卡住才展开对应折叠区；第二次遮住代码，独立写出不变量、边界和复杂度。大题按“能写出的步骤分—完整正确—限时稳定”分别记录，当前只完成讲解，未替用户登记通关。
 
-[« 0908-answer](0908-answer-gpt.md)　　[0915-answer »](0915-answer-gpt.md)
+[« 0908-answer-gpt](0908-answer-gpt.md)　　[0915-answer-gpt »](0915-answer-gpt.md)

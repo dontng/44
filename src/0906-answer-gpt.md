@@ -1,8 +1,8 @@
-[« 0905-answer](0905-answer-gpt.md)　　[0907-answer »](0907-answer-gpt.md)
+[« 0905-answer-gpt](0905-answer-gpt.md)　　[0907-answer-gpt »](0907-answer-gpt.md)
 
 # 0906 Answer｜控制转发路径：从路由知识到下一跳动作
 
-> [原题 18 题](0906.md) · [0905 网络地址](0905-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
+> [原题 18 题](0906.md) · [0905 网络地址 · 0905-answer-gpt](0905-answer-gpt.md) · [能力账本](answer-quality/learning-ledger.md)
 >
 > IP前缀确定“匹配谁”，路由协议生成“表怎么来”，转发时再用ARP找到下一跳MAC。18/18题逐项讲解；交叉题只补这一层判断，限时独立表现待验。
 
@@ -60,7 +60,7 @@ R1从邻居R2收到 `<net1,16>`；RIP约定距离**16为无穷/不可达**，加
 
 <img src="../bank/2011/q37.png" alt="2011-37 原题" width="535" style="display:block; width:33.44em; max-width:100%; height:auto;">
 
-已在[0905-02](0905-answer-gpt.md#q02)推过：R2后方两个/25并成`192.168.2.0/24`，R1的下一跳为R2相邻接口`192.168.1.2`，**选 D**。新增控制视角：路由表只存目的前缀和下一跳，数据平面使用它，不必在R1列两条更细路由。
+已在[0905-02 · 0905-answer-gpt](0905-answer-gpt.md#q02)推过：R2后方两个/25并成`192.168.2.0/24`，R1的下一跳为R2相邻接口`192.168.1.2`，**选 D**。新增控制视角：路由表只存目的前缀和下一跳，数据平面使用它，不必在R1列两条更细路由。
 
 <details open><summary>一条汇总路由何时安全</summary>
 
@@ -72,7 +72,7 @@ R1从邻居R2收到 `<net1,16>`；RIP约定距离**16为无穷/不可达**，加
 
 <img src="../bank/2012/q37.png" alt="2012-37 原题" width="395" style="display:block; width:24.69em; max-width:100%; height:auto;">
 
-已在[0903-04](0903-answer-gpt.md#q04)判 **I、II、IV，选 C**。本次只加时间层次：路由协议先维护路由知识 I，来包时按目的地址查表 IV，队列拥塞可丢包 II；IP首部校验不能保证整份分组送达，III错。
+已在[0903-04 · 0903-answer-gpt](0903-answer-gpt.md#q04)判 **I、II、IV，选 C**。本次只加时间层次：路由协议先维护路由知识 I，来包时按目的地址查表 IV，队列拥塞可丢包 II；IP首部校验不能保证整份分组送达，III错。
 
 <details open><summary>做题保底</summary>
 
@@ -84,7 +84,7 @@ R1从邻居R2收到 `<net1,16>`；RIP约定距离**16为无穷/不可达**，加
 
 <img src="../bank/2012/q38.png" alt="2012-38 原题" width="431" style="display:block; width:26.94em; max-width:100%; height:auto;">
 
-[0905-04](0905-answer-gpt.md#q04)的ARP题，**IP→MAC，选 A**。新动作是排序：先查路由表确定下一跳IP，再在本链路ARP取得下一跳MAC，最后封装帧；不能在查路由前直接ARP远端网站的MAC。
+[0905-04 · 0905-answer-gpt](0905-answer-gpt.md#q04)的ARP题，**IP→MAC，选 A**。新动作是排序：先查路由表确定下一跳IP，再在本链路ARP取得下一跳MAC，最后封装帧；不能在查路由前直接ARP远端网站的MAC。
 
 <details open><summary>控制与数据的接口</summary>
 
@@ -96,11 +96,11 @@ ARP应答产生短期映射缓存；转发平面用缓存填写帧目的MAC。DN
 
 <img src="../bank/2013/q33.png" alt="2013-33 原题" width="393" style="display:block; width:24.56em; max-width:100%; height:auto;">
 
-此交叉题在[0901-08](0901-answer-gpt.md#q08)已解：应用层的相邻层是表示层，格式转换 **选 B**。此处用它防止把所有“格式转换”误放到路由器；路由器主要看网络层地址，不需要理解应用数据格式。
+此交叉题在[0901-08 · 0901-answer-gpt](0901-answer-gpt.md#q08)已解：应用层的相邻层是表示层，格式转换 **选 B**。此处用它防止把所有“格式转换”误放到路由器；路由器主要看网络层地址，不需要理解应用数据格式。
 
 <details open><summary>相邻两题怎样分层判断</summary>
 
-本题的关键词是“应用层的相邻层”和“格式转换”，落在表示层；[0902-03](0902-answer-gpt.md#q03)的信号波形题则落在物理层。先看当前题问的是数据表示还是线路信号，再调用相应机制，不能因题号相邻而把两题条件混用。
+本题的关键词是“应用层的相邻层”和“格式转换”，落在表示层；[0902-03 · 0902-answer-gpt](0902-answer-gpt.md#q03)的信号波形题则落在物理层。先看当前题问的是数据表示还是线路信号，再调用相应机制，不能因题号相邻而把两题条件混用。
 </details>
 
 <a id="q07"></a>
@@ -108,7 +108,7 @@ ARP应答产生短期映射缓存；转发平面用缓存填写帧目的MAC。DN
 
 <img src="../bank/2013/q35.png" alt="2013-35 原题" width="537" style="display:block; width:33.56em; max-width:100%; height:auto;">
 
-[0901-09](0901-answer-gpt.md#q09)已算：整报文两段各800ms共1600ms；10kb分组共800包，两段存储转发流水801ms，**选 D**。路由器若要等整个报文才转，无法与前段传输流水；分组级缓存让不同链路同时工作。
+[0901-09 · 0901-answer-gpt](0901-answer-gpt.md#q09)已算：整报文两段各800ms共1600ms；10kb分组共800包，两段存储转发流水801ms，**选 D**。路由器若要等整个报文才转，无法与前段传输流水；分组级缓存让不同链路同时工作。
 
 <details open><summary>别把“控制转发路径”当最短路题</summary>
 
@@ -120,7 +120,7 @@ ARP应答产生短期映射缓存；转发平面用缓存填写帧目的MAC。DN
 
 <img src="../bank/2014/q34.png" alt="2014-34 原题" width="524" style="display:block; width:32.75em; max-width:100%; height:auto;">
 
-[0904-08](0904-answer-gpt.md#q08)已算：a→c时c未知，泛洪端口{2,3}，学习a→1；c→a确认只走{1}，**选 B**。它与三层路由表不是同一张表：二层由帧源MAC学习，三层由路由配置/协议形成。
+[0904-08 · 0904-answer-gpt](0904-answer-gpt.md#q08)已算：a→c时c未知，泛洪端口{2,3}，学习a→1；c→a确认只走{1}，**选 B**。它与三层路由表不是同一张表：二层由帧源MAC学习，三层由路由配置/协议形成。
 
 <details open><summary>新来一个帧就更新状态</summary>
 
@@ -204,7 +204,7 @@ E到A/B/C/D直连代价为8/10/12/6。逐列相加后取最小：Net1 `min(9,33,
 
 <img src="../bank/2023/q38.png" alt="2023-38 原题" width="549" style="display:block; width:34.31em; max-width:100%; height:auto;">
 
-[0905-13](0905-answer-gpt.md#q13)已讲：私网H的源`192.168.0.3`出R2后变公网接口 `195.123.0.33`，**选 A**。补一个边界：这是NAT主动改写IP源，普通路由转发通常只换当前链路帧的MAC，不换源IP。
+[0905-13 · 0905-answer-gpt](0905-answer-gpt.md#q13)已讲：私网H的源`192.168.0.3`出R2后变公网接口 `195.123.0.33`，**选 A**。补一个边界：这是NAT主动改写IP源，普通路由转发通常只换当前链路帧的MAC，不换源IP。
 
 <details open><summary>公网/30上的.35不能作源</summary>
 
@@ -216,7 +216,7 @@ E到A/B/C/D直连代价为8/10/12/6。逐列相加后取最小：Net1 `min(9,33,
 
 <img src="../bank/2024/q35.png" alt="2024-35 原题" width="540" style="display:block; width:33.75em; max-width:100%; height:auto;">
 
-[0904-19](0904-answer-gpt.md#q19)、[0905-16](0905-answer-gpt.md#q16)已解，H4在VLAN1不会直接学VLAN3 H6的ARP条目，**选 D**。新视角：即使IP地址形式相近，控制报文被二层广播域边界截住，路由知识本身也不能凭空产生邻居MAC。
+[0904-19 · 0904-answer-gpt](0904-answer-gpt.md#q19)、[0905-16 · 0905-answer-gpt](0905-answer-gpt.md#q16)已解，H4在VLAN1不会直接学VLAN3 H6的ARP条目，**选 D**。新视角：即使IP地址形式相近，控制报文被二层广播域边界截住，路由知识本身也不能凭空产生邻居MAC。
 
 <details open><summary>若要跨VLAN</summary>
 
@@ -228,7 +228,7 @@ E到A/B/C/D直连代价为8/10/12/6。逐列相加后取最小：Net1 `min(9,33,
 
 <img src="../bank/2025/q36.png" alt="2025-36 原题" width="492" style="display:block; width:30.75em; max-width:100%; height:auto;">
 
-[0905-17](0905-answer-gpt.md#q17)已讲，REQUEST的IP首部是目的 `255.255.255.255`、源 `0.0.0.0`，**选 C**。这道交叉题与ARP并排：DHCP先获得本机可用IP，之后有了网关和路由信息才进行下一跳ARP。
+[0905-17 · 0905-answer-gpt](0905-answer-gpt.md#q17)已讲，REQUEST的IP首部是目的 `255.255.255.255`、源 `0.0.0.0`，**选 C**。这道交叉题与ARP并排：DHCP先获得本机可用IP，之后有了网关和路由信息才进行下一跳ARP。
 
 <details open><summary>yiaddr不是IP首部源</summary>
 
@@ -251,4 +251,4 @@ IP层有自己的首部校验更新；UDP校验虽不在IP首部，其伪首部�
 
 控制平面形成路由，数据平面按最长前缀选下一跳，再由ARP补当前链路MAC；RIP的16表示不可达，NAT还会改变IP源及传输层校验依据。18题已讲，遮住解释后能否独立限时判定仍待测。
 
-[« 0905-answer](0905-answer-gpt.md)　　[0907-answer »](0907-answer-gpt.md)
+[« 0905-answer-gpt](0905-answer-gpt.md)　　[0907-answer-gpt »](0907-answer-gpt.md)
