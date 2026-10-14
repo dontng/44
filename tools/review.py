@@ -17,8 +17,9 @@ def catalog(root=ROOT):
     key='q:'+qid
     if key in items:
      items[key]['lines'].append(n['line_id']);continue
+    ans=f"src/{n['key']}-answer-sonnet.md" if (root/'src'/f"{n['key']}-answer-sonnet.md").exists() else f"src/{n['key']}-answer-gpt.md"
     items[key]={'id':key,'title':qid+' · '+n['title'],'group':n['line_id'],'lines':[n['line_id']],
-     'path':n['file']+f'#{pos:02d}--{qid}','answer':f"src/{n['key']}-answer.md",'review':f"review/main.md#r{n['key']}",
+     'path':n['file']+f'#{pos:02d}--{qid}','answer':ans,'review':f"review/main.md#r{n['key']}",
      'minutes':20 if name=='written_chain.json' else 4}
  for key,v in json.loads((root/'data/network_lessons.json').read_text()).items():
   k='net:'+key;items[k]={'id':k,'title':v['title'],'group':'net:'+v['skill'],'lines':[],
