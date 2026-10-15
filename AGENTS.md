@@ -48,7 +48,7 @@ Before committing, inspect the staged diff and stage only work in scope. Install
 
 ## Current study architecture
 
-The active teaching artifact is `src/MMDD-answer.md` beside its unchanged question sheet. Read `src/answer-quality/quality-gate.md`, `learning-system.md`, and the relevant dated context before teaching. Their checks govern i+1, executable first steps, fallback reasoning, complete option adjudication, and the difference between explanations and demonstrated mastery. Do not impose their headings on every question.
+The active teaching artifact is `src/answer/MMDD-answer.md`, with its unchanged question sheet in `src/`. Read `src/answer-quality/quality-gate.md`, `learning-system.md`, and the relevant dated context before teaching. Their checks govern i+1, executable first steps, fallback reasoning, complete option adjudication, and the difference between explanations and demonstrated mastery. Do not impose their headings on every question.
 
 `daily-network/YYYY/MMDD.md` holds the original image and source plus independently checked explanation, closed-book recall, a meaningful condition change, and a small number of useful related questions. Never derive an answer from the index keyword alone: inspect the original image. All subquestions in a composite problem must be closed. Ambiguous assumptions must be stated and investigated; never invent a video author's answer.
 

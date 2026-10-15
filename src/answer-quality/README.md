@@ -1,6 +1,6 @@
 # Answer Quality｜教学现场管理
 
-`src/MMDD-answer.md` 是可直接学习和复习的成品；本目录保存生成这些成品所需的教学上下文与质量约束。两者必须分开：Answer 不能混入流程管理和对话复盘，本目录也不能退化为另一套题目答案。
+`src/answer/MMDD-answer.md` 是可直接学习和复习的成品；本目录保存生成这些成品所需的教学上下文与质量约束。两者必须分开：Answer 不能混入流程管理和对话复盘，本目录也不能退化为另一套题目答案。
 
 ## 当前文件
 
@@ -9,7 +9,7 @@
 - [learning-ledger.md](learning-ledger.md)：文档已讲内容与尚待独立验证的能力记录。
 - [quality-gate.md](quality-gate.md)：后续互动讲解与整理 Answer 时必须执行的质量门槛。
 - [rewrite-protocol.md](rewrite-protocol.md)：重写旧 answer 的流程、易错点与交付前自检；一次一篇、独立执行。
-- [answer-writing-rules.md](answer-writing-rules.md)：写作与审核 `MMDD-answer.md` 的可执行规则；审核产出是改好的文件，不是评语。
+- [answer-writing-rules.md](../answer/answer-writing-rules.md)：写作与审核 `MMDD-answer.md` 的可执行规则；审核产出是改好的文件，不是评语。
 
 后续处理某个日期时，先读 `quality-gate.md`，再读该日期已有的 context。若尚无 context，就在教学过程中记录真正改变讲解方式的信息；一组题结束后再去重、校正并保存，不逐句复制聊天。
 

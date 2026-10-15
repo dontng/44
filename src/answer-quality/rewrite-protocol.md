@@ -1,6 +1,6 @@
 # Answer 重写规程｜一次一篇，独立执行
 
-> 把已有 `src/MMDD-answer.md`（GPT 解析并审核过的旧稿）按 [answer-writing-rules.md](answer-writing-rules.md) 重写成新稿。本页只规定**怎样做才不写错、不写成同一个样子、不浪费开销**；教学要求以 answer-writing-rules.md 为准。
+> 把已有 `src/answer/MMDD-answer.md`（GPT 解析并审核过的旧稿）按 [answer-writing-rules.md](../answer/answer-writing-rules.md) 重写成新稿。本页只规定**怎样做才不写错、不写成同一个样子、不浪费开销**；教学要求以 answer-writing-rules.md 为准。
 
 ## 0. 原则
 
@@ -16,7 +16,7 @@
 | answer-writing-rules.md | 唯一的写作与审核标准 |
 | 本页 | 流程与易错点 |
 | `src/MMDD.md` 与 `bank/` 里的原题图 | 逐字读题干与全部选项；**必须看图，不凭旧稿转述** |
-| 旧 `src/MMDD-answer.md` | 事实与旧讲法，供核对 |
+| 旧 `src/answer/MMDD-answer.md` | 事实与旧讲法，供核对 |
 | 前一篇 answer 的头两行（“已有/读完新增”） | 确认哪些能力已教，可调用 |
 | ledger 中本日期那一段 | 确认“沿用”的出处；只用 grep 取这一段 |
 

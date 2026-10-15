@@ -244,7 +244,7 @@ def main():
     parser.add_argument('--only',nargs='*')
     parser.add_argument('--audit',type=Path,default=ROOT/'tmp/pdfs/new-audit.json')
     args=parser.parse_args();register_fonts()
-    sources=sorted(p for p in (ROOT/'src').glob('*-answer.md') if re.fullmatch(r'\d{4}-answer',p.stem))
+    sources=sorted(p for p in (ROOT/'src/answer').glob('*-answer.md') if re.fullmatch(r'\d{4}-answer',p.stem))
     if args.only: sources=[p for p in sources if p.stem[:4] in args.only]
     results=[]
     for source in sources:
