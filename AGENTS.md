@@ -5,6 +5,16 @@ This repository has two modes of work:
 1. Project maintenance: code, scripts, data layout, and documentation.
 2. Study and review: solve, explain, retrieve without hints, vary conditions, and revisit in mixed practice.
 
+## Opt-in reference archives: answer and answer-quality
+
+`src/answer/` and `src/answer-quality/`, including every file and subdirectory beneath them, are retained reference archives. They are not default teaching instructions, required reading, or an authority for judging new answers.
+
+- By default, do not open, read, search, summarize, index, or load their contents into context. Exclude both directories from broad repository content searches and automatic context gathering. A link to an archived file does not authorize following it.
+- Consult archived content only when the user explicitly requests it, or after proposing a specific reference and receiving the user's agreement. A proposal alone is not permission. Read only the agreed files for the agreed purpose; permission is not permanent for the whole archive.
+- Develop new answers and assess their quality from the current user requirements, original question, and independent reasoning. Do not import archive-derived rules, remembered summaries, conclusions, templates, or judgments as default requirements.
+- Preserve these files and the user's chosen locations. Explicitly requested file maintenance may use paths, metadata, hashes, and existing Git blob references without exposing or interpreting archived prose. Do not scan the archives merely to verify this policy.
+- This rule supersedes older mandatory-reading guidance in repository documents, archived material, and remembered project workflows. Other documents' reference links remain optional and do not reinstate priority.
+
 ## Sync discipline
 
 GitHub is the shared source of truth. At the start of any maintenance or study turn, sync the local work copy before making decisions. Do not turn study work into sync management unless the user asks.
@@ -48,7 +58,7 @@ Before committing, inspect the staged diff and stage only work in scope. Install
 
 ## Current study architecture
 
-The active teaching artifact is `src/answer/MMDD-answer.md`, with its unchanged question sheet in `src/`. Read `src/answer-quality/quality-gate.md`, `learning-system.md`, and the relevant dated context before teaching. Their checks govern i+1, executable first steps, fallback reasoning, complete option adjudication, and the difference between explanations and demonstrated mastery. Do not impose their headings on every question.
+Start study and answer-writing work from the current user request and original question sheet in `src/`. Existing answer pages and quality notes remain in the opt-in archives described above; they are not prerequisites for teaching, writing, or review. Follow the current task requirements without automatically applying archived protocols.
 
 `daily-network/YYYY/MMDD.md` holds the original image and source plus independently checked explanation, closed-book recall, a meaningful condition change, and a small number of useful related questions. Never derive an answer from the index keyword alone: inspect the original image. All subquestions in a composite problem must be closed. Ambiguous assumptions must be stated and investigated; never invent a video author's answer.
 
