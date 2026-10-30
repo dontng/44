@@ -1,0 +1,42 @@
+{
+  "verified_at": "2026-10-31 Asia/Shanghai",
+  "2023": {
+    "pages": 8,
+    "question_numbers": "01–47, each exactly once",
+    "native_text": true,
+    "original_diagram_crops": 5,
+    "page_breaks": "Matched to the supplied 8-page scan",
+    "source_note": "q43 array declaration a[24][24] retained from scan, despite j<64 loop",
+    "source_sha256": "48a4836543240c3004b09a5c33e998746677e18c0bbf6dcbec6f75b810bff85a"
+  },
+  "2026": {
+    "pages": 11,
+    "question_numbers": "01–47, each exactly once before continuation fragments",
+    "choice_options": 160,
+    "total_score": 150,
+    "inline_svg_figures": 10,
+    "body_and_option_text": "All saved source text matches after whitespace normalization; the website's duplicate q43 supplement is omitted from q44 in saved source",
+    "clipping": "No page content overflow",
+    "svg_labels": "All 10 original SVG text label sets match rendered diagrams"
+  },
+  "shared": {
+    "browser": "Chromium 131.0.6778.204 via Playwright",
+    "paper_pt": [
+      514.56,
+      742.08
+    ],
+    "font_loading": "All seven embedded font faces loaded",
+    "missing_glyphs": [],
+    "external_resources": "None needed at runtime"
+  },
+  "files": {
+    "408-2023.html": {
+      "sha256": "d3a09384e184f574ed7566d6c68d0eaca075c705fcf2daa96d43c130963fdd62",
+      "bytes": 1333459
+    },
+    "408-2026.html": {
+      "sha256": "9a16d093841eb6b49d97ab4588ce39fe24a6bb82a6d450e0664caa29a0aea7e0",
+      "bytes": 1002400
+    }
+  }
+}
