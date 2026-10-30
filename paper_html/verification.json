@@ -17,7 +17,7 @@
     "inline_svg_figures": 10,
     "body_and_option_text": "All saved source text matches after whitespace normalization; the website's duplicate q43 supplement is omitted from q44 in saved source",
     "clipping": "No page content overflow",
-    "svg_labels": "All 10 original SVG text label sets match rendered diagrams"
+    "svg_labels": "Original SVG text preserved; font source changed only"
   },
   "shared": {
     "browser": "Chromium 131.0.6778.204 via Playwright",
@@ -31,12 +31,19 @@
   },
   "files": {
     "408-2023.html": {
-      "sha256": "d3a09384e184f574ed7566d6c68d0eaca075c705fcf2daa96d43c130963fdd62",
-      "bytes": 1333459
+      "sha256": "4b92324dd464af585bf3085b1629aca0ebf3d4510b30e3414e2f6f306c26d2f9",
+      "bytes": 1175622
     },
     "408-2026.html": {
-      "sha256": "9a16d093841eb6b49d97ab4588ce39fe24a6bb82a6d450e0664caa29a0aea7e0",
-      "bytes": 1002400
+      "sha256": "91e7f760b48114928549244127a0376ee0cd7dd1af10f14f3aaceb3d7ae2b2f2",
+      "bytes": 844563
     }
+  },
+  "typography_revision": {
+    "body": "FandolSong-Regular, 10 pt, 0.025 pt text stroke",
+    "heading": "FandolHei-Bold with Times New Roman cover numerals",
+    "western": "Restored embedded Times New Roman / Courier New glyph subsets with Nimbus fallback",
+    "text_content": "2023-layout.txt and 2026.json unchanged from previous commit",
+    "comparison": "font-comparison.png"
   }
 }
