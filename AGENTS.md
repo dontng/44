@@ -72,8 +72,6 @@ Choice sheets end at 0908. From 0914 onward, each full written problem is indivi
 
 Keep build tools from overwriting manually improved study pages. Validate data separately from page regeneration. For batches, inspect first and last questions at the same depth, verify local links and folds, commit only completed scoped work, and publish small batches to main. Maintain a truthful content progress record; files existing or scripts passing do not prove instructional correctness or user learning.
 
-## Review delivery
+## Retired components
 
-`review/README.md` is the active review entry; `review/main.md` and `review/network.md` are generated navigation/recall aids, not duplicate solution books. Edit the 59 curated cards in `data/review_prompts.json`, then run `python tools/build_review.py`. Existing daily-network lessons are hand-authored; do not replace them with generic summaries.
-
-Use `tools/review.py` only with actual observed attempts. Ask for the missing answer evidence instead of inferring it from reading or project completion. The new queue starts empty, deduplicates original question IDs, keeps complete written problems indivisible, and credits a named earlier question only with explicit independently demonstrated transfer. Its intervals and budgets are adjustable heuristics, not validated mastery scores or promises of never forgetting. Keep future dates and test examples out of real events.
+`navigator/`, `draft/`, `review/`, `tldr/`, `paper_html/`, and `daily-network/2025/` are retired from main and retained in Git history. Do not restore retired planning, flashcard reviews, chapter-writing, or fixed-template tasks unless the user explicitly requests it.
