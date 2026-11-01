@@ -13,7 +13,8 @@ def font_css():
   out.append(f'@font-face{{font-family:{family};src:url("{data_uri(ROOT/"assets"/(file+".woff"),"font/woff")}") format("woff");font-weight:{weight};font-style:{style};font-display:block}}')
  return '\n'.join(out)
 CSS='''
-*{box-sizing:border-box}html{background:#e6e6e6;color:#000}body{margin:0;font-family:PaperRoman,PaperSong,PaperSymbols,serif;font-size:10pt;font-synthesis:weight}button{font:inherit;cursor:pointer}.toolbar{width:686px;max-width:100%;margin:20px auto 16px;display:flex;justify-content:space-between;align-items:center;font:14px system-ui,sans-serif;color:#333;gap:16px;padding:0 10px}.toolbar a{color:#333}.toolbar button{background:white;border:1px solid #aaa;border-radius:3px;padding:6px 14px}.papers{width:max-content;margin:0 auto}.paper{position:relative;width:514.56pt;height:742.08pt;background:white;-webkit-text-stroke:0.025pt #000;margin:0 0 20px;box-shadow:0 1px 5px #0002;overflow:hidden}.paper:last-child{margin-bottom:0}.line{position:absolute;white-space:pre;line-height:13pt;height:13pt;transform-origin:left center;font-size:10pt}.line b{font-family:PaperRoman,PaperSong,PaperSymbols,serif;font-weight:700}.line i{font-family:PaperRoman,PaperSong,PaperSymbols,serif}.line sup{font-size:70%;line-height:0;position:relative;vertical-align:super}.line .node{border:0.5pt solid #333;padding:2pt 4pt}.qno{position:absolute;left:-20.6pt;font-weight:bold}.diagram{position:absolute;display:block}.footer{position:absolute;top:694pt;left:0;width:100%;text-align:center;font-size:10pt;line-height:14pt}.codeblock{position:absolute;background:#e5e5e5;font:10pt/12.3pt PaperMono,PaperSong,monospace;white-space:pre;margin:0;padding:0 18pt;overflow:visible}.codeblock .cn{font-family:PaperSong,serif}.cover-title{position:absolute;top:104pt;left:65pt;width:385pt;text-align:center;font-family:PaperRoman,PaperHei,sans-serif;font-size:20.2pt;line-height:29.5pt;font-weight:700}.cover-code{position:absolute;top:174pt;left:0;width:100%;text-align:center;font-size:14pt}.cover-notice{position:absolute;left:0;top:246pt;width:100%;font-family:PaperHei,sans-serif;font-size:12pt;font-weight:700;text-align:center}.candidate{position:absolute;left:42pt;top:566pt;width:430pt;border-collapse:collapse;font-size:10pt;table-layout:fixed}.candidate td{border:.5pt solid #222;height:24pt;text-align:center}.candidate col:first-child{width:60pt}.candidate td:first-child{width:60pt}.candidate-caption{position:absolute;top:546pt;left:0;width:100%;font-size:10pt;text-align:center}.native-table{border-collapse:collapse;font-size:10pt;line-height:15.7pt}.native-table th,.native-table td{font-weight:normal;padding:0 2pt;text-align:center;border-bottom:.6pt solid #111;border-right:.5pt solid #111}.native-table th:last-child,.native-table td:last-child{border-right:0}.native-table thead{border-top:1pt solid #111}.native-table tr:last-child{border-bottom:1pt solid #111}.assembly{position:absolute;left:64pt;top:216pt;width:411pt;font:9.8pt/15.4pt PaperRoman,PaperSong,PaperSymbols,serif;border-collapse:collapse}.assembly td{padding:0;white-space:pre;height:15.4pt}.assembly td:nth-child(1){width:18pt}.assembly td:nth-child(2){width:50pt}.assembly td:nth-child(3){width:159pt}.assembly .band td{background:#d7d7d7;height:12pt;line-height:12pt;padding-left:18pt}.assembly .bold{font-weight:bold}.pseudocode{position:absolute;top:44pt;height:120pt;border:.5pt solid #111;font-size:9pt;line-height:12.6pt}.pseudocode header{text-align:center;border-bottom:.5pt solid #111;height:13pt;line-height:12pt}.pseudocode .inner{padding:2pt 5pt;white-space:pre}.pseudocode .dashed{border:.5pt dashed #555;margin-right:30pt;position:relative}.pseudocode .zone{position:absolute;right:-32pt;top:50%;transform:translateY(-50%);font-size:9pt}.code-caption{position:absolute;top:166pt;font-size:10pt;text-align:center}.flow-content{position:absolute;left:43.5pt;right:38pt;top:45pt;bottom:67pt;font-size:10pt;line-height:15.3pt}.flow-content p{margin:0}.flow-content .section-heading{font-size:10pt;font-weight:700;margin:0 0 5pt;line-height:15.3pt}.question{margin:0 0 5pt 20.6pt;position:relative}.question .qnum{position:absolute;left:-20.6pt;font-weight:700}.question .score{font-weight:normal}.question p{margin:0}.question figure{margin:3pt auto;text-align:center;break-inside:avoid}.question figure svg{display:block;margin:auto;max-width:100%;height:auto}.question figure svg text{font-family:PaperRoman,PaperSong,PaperSymbols,serif!important}.question table{border-collapse:collapse;margin:3pt auto;font-size:9pt;line-height:13pt}.question th,.question td{padding:1pt 6pt!important;border-bottom:.5pt solid #111;text-align:center!important;font-weight:normal}.question thead{border-top:1pt solid #111}.question tr:last-child{border-bottom:1pt solid #111}.question pre{white-space:pre-wrap;font:9pt/12pt PaperMono,PaperSong,monospace;margin:3pt 0;background:#e7e7e7;padding:3pt 8pt;tab-size:4}.question p code{font-family:PaperRoman,PaperSong,PaperSymbols,serif}.question pre code{font:inherit}.question .options{display:grid;gap:0 5pt;margin:1pt 0 0;line-height:15.3pt}.question .option{display:flex;align-items:baseline;gap:3pt;min-width:0}.question .option-label{flex:none}.question .option-content{min-width:0}.question .options.code-options{font-size:8.8pt;line-height:13.5pt}.question .assertions{display:grid;grid-template-columns:1fr 1fr;column-gap:8pt;margin:1pt 0}.question .assertions p{break-inside:avoid}.question sup,.question sub{font-size:70%;line-height:0}.question .continuation{color:#444;font-size:8pt;margin-bottom:2pt}.question[data-number="26"] figure{float:right;margin:0 0 2pt 7pt}.question[data-number="26"]:after{content:"";display:table;clear:both}.question[data-number="37"] figure{float:none;width:100%;margin:3pt auto}.question[data-number="37"] table{font-size:9pt}.question[data-number="37"] .options{clear:both}
+*{box-sizing:border-box}html{background:#e6e6e6;color:#000}body{margin:0;font-family:PaperRoman,PaperSong,PaperSymbols,serif;font-size:10pt;font-synthesis:weight}button{font:inherit;cursor:pointer}.toolbar{width:686px;max-width:100%;margin:20px auto 16px;display:flex;justify-content:space-between;align-items:center;font:14px system-ui,sans-serif;color:#333;gap:16px;padding:0 10px}.toolbar a{color:#333}.toolbar button{background:white;border:1px solid #aaa;border-radius:3px;padding:6px 14px}.papers{width:max-content;margin:0 auto}.paper{position:relative;width:514.56pt;height:742.08pt;background:white;-webkit-text-stroke:0.025pt #000;margin:0 0 20px;box-shadow:0 1px 5px #0002;overflow:hidden}.paper:last-child{margin-bottom:0}.line{position:absolute;white-space:pre;line-height:13pt;height:13pt;transform-origin:left center;font-size:10pt}.line b{font-family:PaperRoman,PaperSong,PaperSymbols,serif;font-weight:700}.line i{font-family:PaperRoman,PaperSong,PaperSymbols,serif}.line sup{font-size:70%;line-height:0;position:relative;vertical-align:super}.line .node{border:0.5pt solid #333;padding:2pt 4pt}.qno{position:absolute;left:-20.6pt;font-weight:bold}.diagram{position:absolute;display:block}.footer{position:absolute;top:694pt;left:0;width:100%;text-align:center;font-size:10pt;line-height:14pt}.codeblock{position:absolute;background:#e5e5e5;font:10pt/12.3pt PaperMono,PaperSong,monospace;white-space:pre;margin:0;padding:0 18pt;overflow:visible}.codeblock .cn{font-family:PaperSong,serif}.cover-title{position:absolute;top:104pt;left:65pt;width:385pt;text-align:center;font-family:PaperRoman,PaperHei,sans-serif;font-size:20.2pt;line-height:29.5pt;font-weight:700}.cover-code{position:absolute;top:174pt;left:0;width:100%;text-align:center;font-size:14pt}.cover-notice{position:absolute;left:0;top:246pt;width:100%;font-family:PaperHei,sans-serif;font-size:12pt;font-weight:700;text-align:center}.candidate{position:absolute;left:42pt;top:566pt;width:430pt;border-collapse:collapse;font-size:10pt;table-layout:fixed}.candidate td{border:.5pt solid #222;height:24pt;text-align:center}.candidate col:first-child{width:60pt}.candidate td:first-child{width:60pt}.candidate-caption{position:absolute;top:546pt;left:0;width:100%;font-size:10pt;text-align:center}.native-table{border-collapse:collapse;font-size:10pt;line-height:15.7pt}.native-table th,.native-table td{font-weight:normal;padding:0 2pt;text-align:center;border-bottom:.6pt solid #111;border-right:.5pt solid #111}.native-table th:last-child,.native-table td:last-child{border-right:0}.native-table thead{border-top:1pt solid #111}.native-table tr:last-child{border-bottom:1pt solid #111}.assembly{position:absolute;left:64pt;top:216pt;width:411pt;font:9.8pt/15.4pt PaperRoman,PaperSong,PaperSymbols,serif;border-collapse:collapse}.assembly td{padding:0;white-space:pre;height:15.4pt}.assembly td:nth-child(1){width:18pt}.assembly td:nth-child(2){width:50pt}.assembly td:nth-child(3){width:159pt}.assembly .band td{background:#d7d7d7;height:12pt;line-height:12pt;padding-left:18pt}.assembly .bold{font-weight:bold}.pseudocode{position:absolute;top:44pt;height:120pt;border:.5pt solid #111;font-size:9pt;line-height:12.6pt}.pseudocode header{text-align:center;border-bottom:.5pt solid #111;height:13pt;line-height:12pt}.pseudocode .inner{padding:2pt 5pt;white-space:pre}.pseudocode .dashed{border:.5pt dashed #555;margin-right:30pt;position:relative}.pseudocode .zone{position:absolute;right:-32pt;top:50%;transform:translateY(-50%);font-size:9pt}.code-caption{position:absolute;top:166pt;font-size:10pt;text-align:center}.flow-content{position:absolute;left:43.5pt;right:38pt;top:45pt;bottom:67pt;font-size:10pt;line-height:15.3pt}.flow-content p{margin:0}.flow-content .section-heading{font-size:10pt;font-weight:700;margin:0 0 5pt;line-height:15.3pt}.question{margin:0 0 5pt 20.6pt;position:relative}.question .qnum{position:absolute;left:-20.6pt;font-weight:700}.question .score{font-weight:normal}.question p{margin:0}.question figure{margin:3pt auto;text-align:center;break-inside:avoid}.question figure svg{display:block;margin:auto;max-width:100%;height:auto}.question figure svg text{font-family:PaperRoman,PaperSong,PaperSymbols,serif!important}.question table{border-collapse:collapse;margin:3pt auto;font-size:9pt;line-height:13pt}.question th,.question td{padding:1pt 6pt!important;border-bottom:.5pt solid #111;text-align:center!important;font-weight:normal}.question thead{border-top:1pt solid #111}.question tr:last-child{border-bottom:1pt solid #111}.question pre{white-space:pre-wrap;font:9pt/12pt PaperMono,PaperSong,monospace;margin:3pt 0;background:#e7e7e7;padding:3pt 8pt;tab-size:4}.question p code{font-family:PaperRoman,PaperSong,PaperSymbols,serif}.question pre code{font:inherit}.question .options{display:grid;gap:0 5pt;margin:1pt 0 0;line-height:15.3pt}.question .option{display:flex;align-items:baseline;gap:3pt;min-width:0}.question .option-label{flex:none}.question .option-content{min-width:0}.question .options.code-options{font-size:8.8pt;line-height:13.5pt}.question .assertions{display:grid;grid-template-columns:1fr 1fr;column-gap:8pt;margin:1pt 0}.question .assertions p{break-inside:avoid}.question sup,.question sub{font-size:70%;line-height:0}.question .continuation{color:#444;font-size:8pt;margin-bottom:2pt}.question[data-number="26"] figure{float:right;margin:0 0 2pt 7pt}.question[data-number="26"]:after{content:"";display:table;clear:both}.question[data-number="37"] figure{float:none;width:100%;margin:3pt auto}.question[data-number="37"] table{font-size:9pt}.question[data-number="37"] .options{clear:both}.fig-float-right{float:right;margin:-2pt 0 4pt 10pt;clear:right;text-align:right}.fig-table-row{display:flex;align-items:center;justify-content:center;gap:16pt;margin:3pt 0;clear:both}.fig-table-row figure{margin:0}.fig-table-row .table-col{text-align:center}.fig-caption{font-family:PaperSong,PaperRoman,serif;font-size:9.5pt;font-weight:700;text-align:center;margin:2pt 0 1pt;color:#111;line-height:13pt}
+.fig-table-row .table-col p{margin:0 0 2pt;font-size:9.5pt;font-weight:700}.fig-table-row .table-col table{font-size:8.5pt;line-height:12pt}.fig-table-row .table-col td,.fig-table-row .table-col th{padding:1pt 4pt!important}.qstem-bracket{font-weight:normal;letter-spacing:1px}.question:after{content:"";display:table;clear:both}
 @media print{@page{size:514.56pt 742.08pt;margin:0}html,body{background:white;margin:0!important;padding:0!important}.toolbar{display:none!important}.papers{margin:0}.paper{margin:0;box-shadow:none;break-after:page;page-break-after:always}.paper:last-child{break-after:auto;page-break-after:auto}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 '''
 NOTICE=[
@@ -112,7 +113,7 @@ def build_2023():
  (ROOT/'408-2023.html').write_text(shell(2023,out,script))
 
 # Display widths in points, measured for the print column rather than from web-card dimensions.
-FIG_WIDTH={2:110,26:90,28:280,36:395,37:350,43:335,44:395,46:100,47:300}
+FIG_WIDTH={2:100,26:85,28:250,36:260,37:235,43:300,44:360,46:95,47:270}
 
 def clean_2026(q):
  wrap=html.fragment_fromstring('<div>'+q['html']+'</div>')
@@ -127,24 +128,87 @@ def clean_2026(q):
      el.set(k,v)
   width=FIG_WIDTH[q['number']]
   if q['number']==43 and 'fig2' in path.name:width=200
-  minimum={36:19,37:22,44:16,47:16}.get(q['number'],0)
+  minimum={36:34,37:32,44:16,47:16}.get(q['number'],0)
   if minimum:
    for item in svg.xpath('//*[local-name()="text"]'):
     if item.get('font-size'):item.set('font-size',str(max(float(item.get('font-size')),minimum)))
   svg.set('style',f'width:{width}pt;max-width:100%;height:auto')
   svg.set('role','img');svg.set('aria-label',e.get('alt'))
-  e.getparent().replace(e,svg)
- # Roman-numeral statements may share a two-column row, exactly as in the model paper.
+  parent=e.getparent()
+  parent.replace(e,svg)
+  if not (q['number']==43 and 'fig2' in path.name):
+   cap=html.Element('figcaption',{'class':'fig-caption'})
+   cap.text=f"题 {q['number']} 图"
+   parent.append(cap)
+
+ # Align stem text with figure captions
+ for p in wrap.xpath('.//p'):
+  for s in p.xpath('.//span'):
+   t=s.text or ''
+   if q['number']==2 and '结点结构为' in t: s.text=t.replace('结点结构为','结点结构如题 2 图所示')
+   if q['number']==26 and '如右图所示' in t: s.text=t.replace('如右图所示','如题 26 图所示')
+   if q['number'] in (28,36,37) and '如下图所示' in t: s.text=t.replace('如下图所示',f"如题 {q['number']} 图所示")
+   if q['number']==43 and '如下所示' in t: s.text=t.replace('如下所示','如题 43 图所示')
+
+ # Side-by-side figure and table for Q46
+ if q['number']==46:
+  figs=wrap.xpath('.//figure')
+  tp=[p for p in wrap.xpath('.//p') if p.text_content().strip()=='题 46 表']
+  tw=wrap.xpath('.//div[contains(@class,"markdown-table-wrap")]')
+  if figs and tp and tw:
+   fig=figs[0];table_p=tp[0];table_wrap=tw[0]
+   idx=wrap.index(fig)
+   row=html.Element('div',{'class':'fig-table-row'})
+   col=html.Element('div',{'class':'table-col'})
+   wrap.remove(fig);wrap.remove(table_p);wrap.remove(table_wrap)
+   row.append(fig);col.append(table_p);col.append(table_wrap);row.append(col)
+   wrap.insert(idx,row)
+
+ # Side-by-side topology and routing table for Q37
+ if q['number']==37:
+  figs=wrap.xpath('.//figure')
+  tp=[p for p in wrap.xpath('.//p') if p.text_content().strip()=='R1 路由表']
+  tw=wrap.xpath('.//div[contains(@class,"markdown-table-wrap")]')
+  if figs and tp and tw:
+   fig=figs[0];table_p=tp[0];table_wrap=tw[0]
+   idx=wrap.index(fig)
+   row=html.Element('div',{'class':'fig-table-row'})
+   col=html.Element('div',{'class':'table-col'})
+   wrap.remove(fig);wrap.remove(table_p);wrap.remove(table_wrap)
+   row.append(fig);col.append(table_p);col.append(table_wrap);row.append(col)
+   wrap.insert(idx,row)
+
+ # Float figure right for Q26 ("如右图所示的代码片段")
+ if q['number']==26:
+  figs=wrap.xpath('.//figure')
+  if figs:
+   fig=figs[0];fig.set('class','fig-float-right')
+   wrap.remove(fig);wrap.insert(0,fig)
+
+ # Roman-numeral statements and frame lists (F1-F4) share a two-column row
  ps=list(wrap);i=0
  while i<len(ps):
-  if ps[i].tag=='p' and re.match(r'^(?:I{1,3}|IV|V)\.',ps[i].text_content()):
+  txt=ps[i].text_content().strip() if ps[i].tag=='p' else ''
+  if ps[i].tag=='p' and (re.match(r'^(?:I{1,3}|IV|V)\.',txt) or re.match(r'^F[1-4]：',txt)):
    group=[]
-   while i<len(ps) and ps[i].tag=='p' and re.match(r'^(?:I{1,3}|IV|V)\.',ps[i].text_content()):group.append(ps[i]);i+=1
+   while i<len(ps) and ps[i].tag=='p' and (re.match(r'^(?:I{1,3}|IV|V)\.',ps[i].text_content().strip()) or re.match(r'^F[1-4]：',ps[i].text_content().strip())):
+    group.append(ps[i]);i+=1
    grid=html.Element('div',{'class':'assertions'});firstidx=wrap.index(group[0])
    if max(len(e.text_content()) for e in group)>37:grid.set('style','grid-template-columns:1fr')
    for e in group:wrap.remove(e);grid.append(e)
    wrap.insert(firstidx,grid)
   else:i+=1
+
+ # Standard answer bracket （　）。 for choice questions
+ if q['number']<=40:
+  ps=wrap.xpath('.//p')
+  stem_p=ps[1] if q['number'] in (2,28,36) and len(ps)>1 else ps[0]
+  raw_txt=stem_p.text_content().strip()
+  if not any(b in raw_txt for b in ('（　）','（ ）','()')):
+   span=html.Element('span',{'class':'qstem-bracket'})
+   span.text='（　）。'
+   stem_p.append(span)
+
  return ''.join(etree.tostring(e,encoding='unicode',method='html') for e in wrap)
 
 def build_2026():

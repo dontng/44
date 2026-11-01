@@ -10,14 +10,17 @@
     "source_sha256": "48a4836543240c3004b09a5c33e998746677e18c0bbf6dcbec6f75b810bff85a"
   },
   "2026": {
-    "pages": 11,
+    "pages": 10,
     "question_numbers": "01–47, each exactly once before continuation fragments",
     "choice_options": 160,
     "total_score": 150,
     "inline_svg_figures": 10,
     "body_and_option_text": "All saved source text matches after whitespace normalization; the website's duplicate q43 supplement is omitted from q44 in saved source",
     "clipping": "No page content overflow",
-    "svg_labels": "Original SVG text preserved; font source changed only"
+    "svg_labels": "Original SVG text preserved; font source changed only",
+    "choice_brackets": "All 40 choice questions verified with standard （　）。 brackets",
+    "figure_layout": "Q26 code snippet floated right; Q37 topology & routing table side-by-side; Q46 inode tree & table side-by-side; Q36 VLAN frames grouped into 2-column assertions",
+    "figure_captions": "All figures labelled with 题 X 图, and corresponding question stems updated to refer to 题 X 图 explicitly"
   },
   "shared": {
     "browser": "Chromium 131.0.6778.204 via Playwright",
@@ -35,8 +38,8 @@
       "bytes": 1175622
     },
     "408-2026.html": {
-      "sha256": "91e7f760b48114928549244127a0376ee0cd7dd1af10f14f3aaceb3d7ae2b2f2",
-      "bytes": 844563
+      "sha256": "abd3792e10c69a987ac5dab181a110b2e8a857930a5d60a203fe6e7e8812000e",
+      "bytes": 847880
     }
   },
   "typography_revision": {
