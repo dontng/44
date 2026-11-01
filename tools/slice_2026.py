@@ -19,14 +19,15 @@ ZOOM = DPI / 72.0
 def slice_2026():
     doc = fitz.open(PDF_PATH)
     markers = {}
-    for pno in range(len(doc)):
+    # Skip page 0 (cover page with 考生注意事项 1..5)
+    for pno in range(1, len(doc)):
         page = doc[pno]
         pw = page.rect.width
         words = page.get_text("words")
         words.sort(key=lambda w: (w[1], w[0]))
         for w in words:
             if w[0] < pw * 0.25:
-                m = re.match(r"^0?([1-9]|[1-4]\d)\.$", w[4])
+                m = re.match(r"^(\d{2})\.$", w[4])
                 if m:
                     qn = int(m.group(1))
                     if qn not in markers and 1 <= qn <= 47:
