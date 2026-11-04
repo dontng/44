@@ -1,4 +1,4 @@
-"""Build the 20-day teaching route from independently authored, image-checked notes.
+"""Build only the already-authored daily routes and standalone teaching modules.
 
 Only sprint40 is written. src, archived answers and historical attempts are never read
 for explanations or modified. Question images are referenced, not regenerated.
@@ -36,7 +36,11 @@ def build():
         questions = load_questions(node)
         assert [q for _, q in questions] == list(item['answers']), node
         text = f"# {node}｜{item['title']}\n\n"
-        text += f"[← 当天安排](../day{item['day']:02d}.md) · [原题单](../../src/{node}.md)\n\n"
+        if item.get('delivery') == 'standalone':
+            text += f"[← 模块入口](../README.md) · [原题单](../../src/{node}.md)\n\n"
+            text += '本页是已写草稿收尾后的独立模块，未据此新增每日安排。\n\n'
+        else:
+            text += f"[← 当天安排](../day{item['day']:02d}.md) · [原题单](../../src/{node}.md)\n\n"
         text += f"**本轮范围：{len(questions)}道快速题。** 先尝试，卡住再展开讲解；原题前的旧提示不作为依据。本页答案与说明按原图独立核对。\n\n"
         text += fold('卡住先读：完成本组所需的最少知识', item['lesson'])
         text += '\n'

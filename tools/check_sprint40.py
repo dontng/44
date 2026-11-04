@@ -11,8 +11,10 @@ for node, item in modules.items():
     expected = [q for _, q in load_questions(node)]
     if list(item['answers']) != expected:
         errors.append(f'{node}: fast-question coverage/order mismatch')
-    if str(item['day']) not in days:
+    if str(item['day']) not in days and item.get('delivery') != 'standalone':
         errors.append(f'{node}: missing daily route')
+    if not (OUT / 'modules' / f'{node}.md').exists():
+        errors.append(f'{node}: missing rendered module')
     for qid, (answer, explanation) in item['answers'].items():
         if answer not in 'ABCD' or not explanation.strip():
             errors.append(f'{qid}: missing answer/explanation')
