@@ -72,6 +72,14 @@ Choice sheets end at 0908. From 0914 onward, each full written problem is indivi
 
 Keep build tools from overwriting manually improved study pages. Validate data separately from page regeneration. For batches, inspect first and last questions at the same depth, verify local links and folds, commit only completed scoped work, and publish small batches to main. Maintain a truthful content progress record; files existing or scripts passing do not prove instructional correctness or user learning.
 
+### Deep teaching & explanation standard
+
+When explaining problems or reviewing conceptual friction:
+- Address the counter-intuitive friction first: directly state why the learner naturally falls into the trap instead of reciting formal definitions.
+- Ban superficial analogies and psychological guessing: avoid everyday life metaphors and avoid speculating about the examiner's motives; analyze the naked mathematical, architectural, and algorithmic mechanics directly.
+- Anchor twin past-exam contrasts side-by-side in a table: pair the confusing problem against its classic counterpart (e.g. 2014-01 vs 2022-01) where code is nearly identical except for the single decisive variable.
+- Provide a closed decision model rather than piece-meal enumeration: give the learner the overarching physical invariant so they never have to exhaustively enumerate edge cases.
+
 ## Retired components
 
 `navigator/`, `draft/`, `review/`, `tldr/`, `paper_html/`, and `daily-network/2025/` are retired from main and retained in Git history. Do not restore retired planning, flashcard reviews, chapter-writing, or fixed-template tasks unless the user explicitly requests it.
