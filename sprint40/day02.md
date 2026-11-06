@@ -19,7 +19,7 @@
 
 原题定位：[src/0925.md](../src/0925.md)，以年份题号2020-45定位。
 
-![2020-45](../bank/2020/q45.png)
+<img src="../bank/2020/q45.png" alt="2020-45" style="display: block; width: 50.16em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -56,7 +56,7 @@ A和B可并行，D也不必等待A、B、C；C必须等A和B，E必须等C和D�
 
 原题定位：[src/0925.md](../src/0925.md)，以年份题号2024-46定位。
 
-![2024-46](../bank/2024/q46.png)
+<img src="../bank/2024/q46.png" alt="2024-46" style="display: block; width: 46.07em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -129,7 +129,7 @@ P2: P(ready); C2;
 
 原题定位：[src/0925.md 第01题](../src/0925.md)。以年份题号为准，避免原计划题名错位。
 
-![2009-45](../bank/2009/q45.png)
+<img src="../bank/2009/q45.png" alt="2009-45" style="display: block; width: 45.38em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -179,7 +179,7 @@ N=1且放入奇数：empty从1到0、odd从0到1；偶数消费者继续等待�
 
 原题定位：[src/0925.md 第02题](../src/0925.md)。以年份题号为准，避免原计划题名错位。
 
-![2011-45](../bank/2011/q45.png)
+<img src="../bank/2011/q45.png" alt="2011-45" style="display: block; width: 47.6em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>

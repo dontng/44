@@ -19,7 +19,7 @@
 
 原题定位：[src/0920.md](../src/0920.md)，以年份题号2020-43定位。
 
-![2020-43](../bank/2020/q43.png)
+<img src="../bank/2020/q43.png" alt="2020-43" style="display: block; width: 48.0em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -52,7 +52,7 @@
 
 原题定位：[src/0919.md，以年份题号定位](../src/0919.md)。以年份题号为准，避免原计划题名错位。
 
-![2021-43](../bank/2021/q43.png)
+<img src="../bank/2021/q43.png" alt="2021-43" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -122,7 +122,7 @@
 
 原题定位：[src/0919.md 第01题](../src/0919.md)。以年份题号为准，避免原计划题名错位。
 
-![2011-43](../bank/2011/q43.png)
+<img src="../bank/2011/q43.png" alt="2011-43" style="display: block; width: 47.6em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -155,7 +155,7 @@
 
 原题定位：[src/0919.md 第02题](../src/0919.md)。以年份题号为准，避免原计划题名错位。
 
-![2021-43](../bank/2021/q43.png)
+<img src="../bank/2021/q43.png" alt="2021-43" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>

@@ -19,7 +19,7 @@
 
 原题定位：[src/1002.md](../src/1002.md)，以年份题号2020-47定位。
 
-![2020-47](../bank/2020/q47.png)
+<img src="../bank/2020/q47.png" alt="2020-47" style="display: block; width: 48.75em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -56,7 +56,7 @@ R3做源地址转换，R2按静态映射做目的地址转换。R3的外侧临�
 
 原题定位：[src/1002.md](../src/1002.md)，以年份题号2021-47定位。
 
-![2021-47](../bank/2021/q47.png)
+<img src="../bank/2021/q47.png" alt="2021-47" style="display: block; width: 46.72em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -130,7 +130,7 @@ H2未发送帧，因此没有H2→端口3的表项。
 
 原题定位：[src/0929.md 第01题](../src/0929.md)。以年份题号为准，避免原计划题名错位。
 
-![2009-47](../bank/2009/q47.png)
+<img src="../bank/2009/q47.png" alt="2009-47" style="display: block; width: 47.04em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -170,7 +170,7 @@ H2未发送帧，因此没有H2→端口3的表项。
 
 原题定位：[src/0929.md 第02题](../src/0929.md)。以年份题号为准，避免原计划题名错位。
 
-![2013-47](../bank/2013/q47.png)
+<img src="../bank/2013/q47.png" alt="2013-47" style="display: block; width: 47.21em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>

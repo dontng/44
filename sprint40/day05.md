@@ -19,7 +19,7 @@
 
 原题定位：[src/0918.md](../src/0918.md)，以年份题号2021-42定位。
 
-![2021-42](../bank/2021/q42.png)
+<img src="../bank/2021/q42.png" alt="2021-42" style="display: block; width: 46.56em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -57,7 +57,7 @@ else ++count[i];
 
 原题定位：[src/0914.md](../src/0914.md)，以年份题号2022-42定位。
 
-![2022-42](../bank/2022/q42.png)
+<img src="../bank/2022/q42.png" alt="2022-42" style="display: block; width: 47.84em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -121,7 +121,7 @@ else ++count[i];
 
 原题定位：[src/0914.md 第03题](../src/0914.md)。以年份题号为准，避免原计划题名错位。
 
-![2015-41](../bank/2015/q41.png)
+<img src="../bank/2015/q41.png" alt="2015-41" style="display: block; width: 45.17em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -174,7 +174,7 @@ void unique_abs(Node *head, int n) {
 
 原题定位：[src/0914.md 第04题](../src/0914.md)。以年份题号为准，避免原计划题名错位。
 
-![2019-42](../bank/2019/q42.png)
+<img src="../bank/2019/q42.png" alt="2019-42" style="display: block; width: 48.62em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>

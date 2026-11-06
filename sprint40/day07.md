@@ -19,7 +19,7 @@
 
 原题定位：[src/0930.md](../src/0930.md)，以年份题号2023-47定位。
 
-![2023-47](../bank/2023/q47.png)
+<img src="../bank/2023/q47.png" alt="2023-47" style="display: block; width: 46.92em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -63,7 +63,7 @@ ACK2101不是确认“2101个字节”，而是期待下一个字节2101，已�
 
 原题定位：[src/0929.md](../src/0929.md)，以年份题号2024-47定位。
 
-![2024-47](../bank/2024/q47.png)
+<img src="../bank/2024/q47.png" alt="2024-47" style="display: block; width: 48.0em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -133,7 +133,7 @@ ACK2101不是确认“2101个字节”，而是期待下一个字节2101，已�
 
 原题定位：[src/0930.md 第01题](../src/0930.md)。以年份题号为准，避免原计划题名错位。
 
-![2012-47](../bank/2012/q47.png)
+<img src="../bank/2012/q47.png" alt="2012-47" style="display: block; width: 46.64em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -166,7 +166,7 @@ ACK2101不是确认“2101个字节”，而是期待下一个字节2101，已�
 
 原题定位：[src/0930.md 第02题](../src/0930.md)。以年份题号为准，避免原计划题名错位。
 
-![2016-41](../bank/2016/q41.png)
+<img src="../bank/2016/q41.png" alt="2016-41" style="display: block; width: 47.0em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>

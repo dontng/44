@@ -6,6 +6,7 @@ for explanations or modified. Question images are referenced, not regenerated.
 import json
 import re
 from pathlib import Path
+from format_q_img import get_image_tag
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'sprint40'
@@ -21,9 +22,9 @@ def load_questions(node, first_only=True):
     return result
 
 
-def image(qid, prefix='../../'):
+def image(qid, prefix='../../', alt=None):
     year, q = qid.split('-')
-    return f'![{qid}]({prefix}bank/{year}/q{q}.png)'
+    return get_image_tag(year, q, alt_text=alt or qid, prefix=prefix)
 
 
 def fold(title, body):

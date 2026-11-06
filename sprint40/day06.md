@@ -19,7 +19,7 @@
 
 原题定位：[src/0925.md](../src/0925.md)，以年份题号2021-45定位。
 
-![2021-45](../bank/2021/q45.png)
+<img src="../bank/2021/q45.png" alt="2021-45" style="display: block; width: 46.8em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -50,7 +50,7 @@
 
 原题定位：[src/0925.md](../src/0925.md)，以年份题号2023-45定位。
 
-![2023-45](../bank/2023/q45.png)
+<img src="../bank/2023/q45.png" alt="2023-45" style="display: block; width: 46.92em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -123,7 +123,7 @@ lock初值FALSE，甲先swap得到key=FALSE并把lock置TRUE；乙swap后key仍T
 
 原题定位：[src/0925.md 第03题](../src/0925.md)。以年份题号为准，避免原计划题名错位。
 
-![2013-45](../bank/2013/q45.png)
+<img src="../bank/2013/q45.png" alt="2013-45" style="display: block; width: 50.54em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -161,7 +161,7 @@ room=0时新来者只能在P(room)处等待，不占门，馆内人仍能出门�
 
 原题定位：[src/0925.md 第04题](../src/0925.md)。以年份题号为准，避免原计划题名错位。
 
-![2015-45](../bank/2015/q45.png)
+<img src="../bank/2015/q45.png" alt="2015-45" style="display: block; width: 46.96em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>

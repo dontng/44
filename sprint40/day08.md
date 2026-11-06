@@ -19,7 +19,7 @@
 
 原题定位：[src/0923.md](../src/0923.md)，以年份题号2020-44定位。
 
-![2020-44](../bank/2020/q44.png)
+<img src="../bank/2020/q44.png" alt="2020-44" style="display: block; width: 50.2em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -50,7 +50,7 @@
 
 原题定位：[src/0924.md](../src/0924.md)，以年份题号2021-44定位。
 
-![2021-44](../bank/2021/q44.png)
+<img src="../bank/2021/q44.png" alt="2021-44" style="display: block; width: 46.8em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -118,7 +118,7 @@
 
 原题定位：[src/0923.md 第01题](../src/0923.md)。以年份题号为准，避免原计划题名错位。
 
-![2010-44](../bank/2010/q44.png)
+<img src="../bank/2010/q44.png" alt="2010-44" style="display: block; width: 46.69em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -149,7 +149,7 @@ a[0][0]块号5，a[1][0]块号21，也映射行5；这解释了按列扫描的�
 
 原题定位：[src/0923.md 第02题](../src/0923.md)。以年份题号为准，避免原计划题名错位。
 
-![2019-46](../bank/2019/q46.png)
+<img src="../bank/2019/q46.png" alt="2019-46" style="display: block; width: 50.83em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -163,7 +163,7 @@ a[0][0]块号5，a[1][0]块号21，也映射行5；这解释了按列扫描的�
 
 公共题干来自2019-45，包含本题所需的push、call和ret地址：
 
-![2019-45公共汇编题干](../bank/2019/q45.png)
+<img src="../bank/2019/q45.png" alt="2019-45公共汇编题干" style="display: block; width: 51.39em; max-width: 100%; height: auto; margin: 12px 0;">
 
 **同页判断。** push地址00401000H，ret地址0040104AH；页4KiB=2¹²B，两者高20位均00401H，仅页内偏移000H与04AH不同，故在同一虚拟页。不要用是否跨Cache块代替是否跨页。
 

@@ -19,7 +19,7 @@
 
 原题定位：[src/0916.md](../src/0916.md)，以年份题号2021-41定位。
 
-![2021-41](../bank/2021/q41.png)
+<img src="../bank/2021/q41.png" alt="2021-41" style="display: block; width: 46.8em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -61,7 +61,7 @@ int IsExistEL(MGraph G) {
 
 原题定位：[src/0915.md](../src/0915.md)，以年份题号2022-41定位。
 
-![2022-41](../bank/2022/q41.png)
+<img src="../bank/2022/q41.png" alt="2022-41" style="display: block; width: 48.24em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -140,7 +140,7 @@ bool IsBST(SqBiTree T) {
 
 原题定位：[src/0914.md 第01题](../src/0914.md)。以年份题号为准，避免原计划题名错位。
 
-![2009-42](../bank/2009/q42.png)
+<img src="../bank/2009/q42.png" alt="2009-42" style="display: block; width: 45.31em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>
@@ -186,7 +186,7 @@ Node沿用题目的data/link结构。时间O(n)、辅助空间O(1)，不改原�
 
 原题定位：[src/0914.md 第02题](../src/0914.md)。以年份题号为准，避免原计划题名错位。
 
-![2010-42](../bank/2010/q42.png)
+<img src="../bank/2010/q42.png" alt="2010-42" style="display: block; width: 46.41em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>没有入口时的第一步</summary>

@@ -37,6 +37,11 @@ for path in OUT.rglob('*.md'):
             continue
         if not (path.parent / target.split('#')[0]).resolve().exists():
             errors.append(f'{path.relative_to(ROOT)}: broken link {target}')
+    for src in re.findall(r'<img\b[^>]*\bsrc="([^"]+)"', text):
+        if not (path.parent / src).resolve().exists():
+            errors.append(f'{path.relative_to(ROOT)}: broken image {src}')
+    for md_img in re.findall(r'!\[[^\]]*\]\([^)]*bank/[^)]+\)', text):
+        errors.append(f'{path.relative_to(ROOT)}: unconstrained markdown image {md_img}')
 if errors:
     raise SystemExit('\n'.join(errors))
 print(f'PASS: {len(days)} days, {len(modules)} choice modules, '

@@ -1,26 +1,47 @@
 #!/usr/bin/env python3
 """Helper script to calculate exact standard image tag for any 408 question."""
-import json
+import re
 from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA_FILE = ROOT / "data/image_display_widths.json"
-DATA = json.loads(DATA_FILE.read_text(encoding="utf-8"))["images"]
 
-def get_image_tag(year: str, qnum: str, alt_text: str = None) -> str:
-    key = f"{year}-{qnum}"
-    info = DATA.get(key, {})
-    img_path = ROOT / f"bank/{year}/q{qnum}.png"
+
+def _load_src_styles():
+    styles = {}
+    for p in (ROOT / "src").glob("*.md"):
+        if p.name == "README.md":
+            continue
+        for m in re.finditer(
+            r'<img\s+src="[^\"]*bank/(\d{4})/q(\d+)\.png"[^>]*style="([^\"]*)"[^>]*>',
+            p.read_text(),
+        ):
+            year, q, style = m.group(1), f"{int(m.group(2)):02d}", m.group(3)
+            styles[f"{year}-{q}"] = style
+    return styles
+
+
+_STYLES = _load_src_styles()
+
+
+def get_image_tag(year: str, qnum: str, alt_text: str = None, prefix: str = "../") -> str:
+    qn = f"{int(qnum):02d}"
+    key = f"{year}-{qn}"
+    img_path = ROOT / f"bank/{year}/q{qn}.png"
     if not img_path.exists():
         return f"<!-- Missing image: {img_path} -->"
 
-    im = Image.open(img_path)
-    w, h = im.size
-    g = info.get("glyph_height_px") or 26.0
-    w_em = round(w / g, 2)
     alt = alt_text or key
-    return f'<img src="../bank/{year}/q{qnum}.png" alt="{alt}" style="display: block; width: {w_em}em; max-width: 100%; height: auto; margin: 12px 0;">'
+    if key in _STYLES:
+        style = _STYLES[key]
+    else:
+        im = Image.open(img_path)
+        w, _ = im.size
+        w_em = round(w / 26.0, 2)
+        style = f"display: block; width: {w_em}em; max-width: 100%; height: auto; margin: 12px 0;"
+
+    return f'<img src="{prefix}bank/{year}/q{qn}.png" alt="{alt}" style="{style}">'
+
 
 if __name__ == "__main__":
     import sys
