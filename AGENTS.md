@@ -77,6 +77,7 @@ Keep build tools from overwriting manually improved study pages. Validate data s
 When explaining problems or reviewing conceptual friction:
 - Address the counter-intuitive friction first: directly state why the learner naturally falls into the trap instead of reciting formal definitions.
 - Ban superficial analogies and psychological guessing: avoid everyday life metaphors and avoid speculating about the examiner's motives; analyze the naked mathematical, architectural, and algorithmic mechanics directly.
+- Ban utilitarian slogans and hollow formulas: eliminate gimmicky phrasing like "十秒看破", "秒杀", or mechanical tricks that degrade into empty templates; keep explanations sober, pragmatic, and strictly grounded in the problem's mechanics.
 - Anchor twin past-exam contrasts side-by-side in a table: pair the confusing problem against its classic counterpart (e.g. 2014-01 vs 2022-01) where code is nearly identical except for the single decisive variable.
 - Provide a closed decision model rather than piece-meal enumeration: give the learner the overarching physical invariant so they never have to exhaustively enumerate edge cases.
 
