@@ -78,6 +78,7 @@ When explaining problems or reviewing conceptual friction:
 - Address the counter-intuitive friction first: directly state why the learner naturally falls into the trap instead of reciting formal definitions.
 - Ban superficial analogies and psychological guessing: avoid everyday life metaphors and avoid speculating about the examiner's motives; analyze the naked mathematical, architectural, and algorithmic mechanics directly.
 - Ban utilitarian slogans and hollow formulas: eliminate gimmicky phrasing like "十秒看破", "秒杀", or mechanical tricks that degrade into empty templates; keep explanations sober, pragmatic, and strictly grounded in the problem's mechanics.
+- Ban unnecessary formalisms and jargon: explain naturally in plain human language ("说人话"); avoid piling up heavy mathematical symbols (like $\sum$ summation notation) or pseudo-academic buzzwords ("降维坍缩", "互逆抵消", "跨步") when concrete code iteration and intuitive arithmetic make the underlying principle immediately obvious.
 - Anchor twin past-exam contrasts side-by-side in a table: pair the confusing problem against its classic counterpart (e.g. 2014-01 vs 2022-01) where code is nearly identical except for the single decisive variable.
 - Provide a closed decision model rather than piece-meal enumeration: give the learner the overarching physical invariant so they never have to exhaustively enumerate edge cases.
 
