@@ -152,3 +152,29 @@ def check_arithmetic_and_pipeline():
 
 if __name__ == '__main__':
     check_arithmetic_and_pipeline()
+
+def check_sort_and_floyd():
+    records = [(49,'a'),(38,''),(65,''),(97,''),(76,''),(13,''),(27,''),(49,'b')]
+    for gap in [4,2,1]:
+        for i in range(gap,len(records)):
+            key,j=records[i],i
+            while j>=gap and records[j-gap][0]>key[0]: records[j]=records[j-gap];j-=gap
+            records[j]=key
+    assert [tag for value,tag in records if value==49]==['a','b']
+    page=(ROOT/'outline/01-ds/07-sort/05-shell-and-radix-sort.md').read_text()
+    assert '[13, 27, 38, 49, 49*, 65, 76, 97]' in page
+    assert '[13, 27, 38, 49*, 49, 65, 76, 97]' not in page
+    inf=float('inf');matrix=[[0,5,inf,7],[inf,0,4,2],[3,inf,0,1],[inf,inf,inf,0]]
+    page=(ROOT/'outline/01-ds/05-graph/04-shortest-path.md').read_text()
+    for k in range(4):
+        before=[r[:] for r in matrix]
+        matrix=[[min(before[i][j],before[i][k]+before[k][j]) for j in range(4)] for i in range(4)]
+        line=next(l for l in page.splitlines() if l.startswith(f'| $k={k}$'))
+        expected=['['+','.join('INF' if v==inf else str(v) for v in row)+']' for row in matrix]
+        assert re.findall(r'`(\[[^`]+\])`',line)==expected
+    assert (0x12345678<<8)&0xffffffff==0x34567800
+    assert 60//64 != 64//64 and 0//64==4//64
+    print('PASS: labeled Shell result, every Floyd stage, unsigned shift and cache-line boundaries')
+
+if __name__ == '__main__':
+    check_sort_and_floyd()
