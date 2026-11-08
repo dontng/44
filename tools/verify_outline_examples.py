@@ -104,3 +104,51 @@ def check_kmp():
 if __name__ == '__main__':
     check_clock_tables()
     check_kmp()
+
+# Additional arithmetic/state checks for the second correction batch.
+def check_arithmetic_and_pipeline():
+    for x in range(-16,16):
+        for y in range(-16,16):
+            acc, mq, bit = 0, y & 15, 0
+            for t in range(5):
+                digit = (mq & 1) if t < 4 else int(y < 0)
+                acc = (acc + (x if (digit,bit)==(0,1) else -x if (digit,bit)==(1,0) else 0)) & 63
+                if t < 4:
+                    bit, mq = mq & 1, ((acc & 1) << 3) | (mq >> 1)
+                    acc = (acc >> 1) | (acc & 32)
+            encoded = (acc << 4) | mq
+            signed = encoded - 1024 if encoded & 512 else encoded
+            assert signed == x*y, (x,y,signed)
+    for divisor in range(1,16):
+        for dividend in range(divisor):
+            rem, quotient = dividend-divisor, 0
+            for _ in range(4):
+                rem = 2*rem + (divisor if rem < 0 else -divisor)
+                quotient = (quotient << 1) | int(rem >= 0)
+            if rem < 0: rem += divisor
+            assert (quotient,rem) == divmod(dividend*16,divisor)
+    alu = (ROOT/'outline/02-co/02-data-representation/03-alu-and-circuits.md').read_text()
+    assert '00.10001111' in alu and '0.01001001' not in alu
+    eat = .95*8 + (.05-1e-5)*58 + 1e-5*5000054
+    assert abs(eat-60.49996)<1e-8
+    vm=(ROOT/'outline/02-co/03-memory-hierarchy/03-virtual-memory-hardware.md').read_text()
+    assert '60.49996' in vm and '(1 - h_{\\text{tlb}}) p_{\\text{fault}}' not in vm
+    ready, previous_id, schedule = {}, 1, []
+    for dest,sources in [(1,[2]),(3,[1,4]),(5,[3,6]),(7,[1,8]),(9,[5,10])]:
+        decode = max(previous_id+1,max(ready.get(r,0) for r in sources))
+        schedule.append((decode,decode+3));ready[dest]=decode+3;previous_id=decode
+    assert schedule==[(2,5),(5,8),(8,11),(9,12),(11,14)]
+    page=(ROOT/'outline/02-co/05-cpu/03-pipeline-hazards.md').read_text()
+    block=page.split('##### 模式 A 时空图网格')[1].split('\n---')[0]
+    rows=[line for line in block.splitlines() if line.startswith('| $I_')]
+    for line,(decode,writeback) in zip(rows,schedule):
+        cells=[s.strip() for s in line.split('|')[2:-1]]
+        assert len(cells)==14 and cells[decode-1]=='ID' and cells[writeback-1]=='WB'
+    assert len(rows)==5
+    import os
+    r,w=os.pipe();os.write(w,b'AB');os.close(w)
+    assert os.read(r,4)==b'AB' and os.read(r,4)==b'';os.close(r)
+    print('PASS: 1024 Booth products, all 4-bit proper divisions, EAT, pipeline table, pipe EOF')
+
+if __name__ == '__main__':
+    check_arithmetic_and_pipeline()

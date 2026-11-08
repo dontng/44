@@ -147,7 +147,7 @@
 - $t_{\text{fault}} = 5\text{ ms} = 5,000,000\text{ ns}$（操作系统缺页中断服务时间，含磁盘 I/O）
 - $h_{\text{tlb}} = 95\%$（TLB 命中率）
 - $h_{\text{cache}} = 90\%$（Cache 命中率）
-- $p_{\text{fault}} = 0.001\% = 10^{-5}$（缺页率，即主存页表中有效位为 0 的概率）
+- $p_{\text{fault}} = 0.001\% = 10^{-5}$（每次逻辑访存的无条件缺页概率；不是以 TLB 缺失为条件的概率）
 
 ---
 
@@ -168,20 +168,20 @@
 ---
 
 ### (3) 有效访存时间（EAT）加权综合公式
-综合概率加权，平均有效访存时间公式展开如下：
+由于缺页必在 TLB 缺失分支内，三大互斥概率为 $h_{tlb}$、$1-h_{tlb}-p_{fault}$、$p_{fault}$，和为 1。这里 $h_{cache}$ 统一作为驻留页分支内的数据 Cache 条件命中率；缺页服务时间不含最初查表与最后重试，并假定服务结束时目标数据已进入 Cache。若只装入主存，重试需按实际 Cache 状态另计。综合概率加权：
 
 $$\begin{aligned}
 \text{EAT} = &\; h_{\text{tlb}} \left[ h_{\text{cache}} (t_{\text{tlb}} + t_{\text{cache}}) + (1 - h_{\text{cache}})(t_{\text{tlb}} + t_{\text{cache}} + t_{\text{mem}}) \right] \\
-&+ (1 - h_{\text{tlb}}) (1 - p_{\text{fault}}) \left[ h_{\text{cache}} (t_{\text{tlb}} + t_{\text{mem}} + t_{\text{cache}}) + (1 - h_{\text{cache}})(t_{\text{tlb}} + 2t_{\text{mem}} + t_{\text{cache}}) \right] \\
-&+ (1 - h_{\text{tlb}}) p_{\text{fault}} \left[ t_{\text{tlb}} + t_{\text{mem}} + t_{\text{fault}} + (t_{\text{tlb}} + t_{\text{cache}}) \right]
+&+ (1 - h_{\text{tlb}} - p_{\text{fault}}) \left[ h_{\text{cache}} (t_{\text{tlb}} + t_{\text{mem}} + t_{\text{cache}}) + (1 - h_{\text{cache}})(t_{\text{tlb}} + 2t_{\text{mem}} + t_{\text{cache}}) \right] \\
+&+ p_{\text{fault}} \left[ t_{\text{tlb}} + t_{\text{mem}} + t_{\text{fault}} + (t_{\text{tlb}} + t_{\text{cache}}) \right]
 \end{aligned}$$
 
 代入数值验证：
-- TLB 命中子分支均值：$0.95 \times [0.90 \times 3 + 0.10 \times 53] = 0.95 \times [2.7 + 5.3] = 0.95 \times 8 = 7.6\text{ ns}$
-- TLB 缺失但无缺页子分支均值：$0.05 \times (1 - 10^{-5}) \times [0.90 \times 53 + 0.10 \times 103] \approx 0.05 \times [47.7 + 10.3] = 0.05 \times 58 = 2.9\text{ ns}$
-- 缺页子分支均值：$0.05 \times 10^{-5} \times (5 \times 10^6) = 5 \times 10^{-7} \times 5 \times 10^6 = 2.5\text{ ns}$
-- **系统最终总体 EAT**：
-  $$\text{EAT} \approx 7.6 + 2.9 + 2.5 = \mathbf{13.0\text{ ns}}$$
+- TLB 命中子分支：$0.95\times[0.9\times3+0.1\times53]=7.6\text{ ns}$。
+- TLB 缺失但不缺页：$(0.05-10^{-5})\times[0.9\times53+0.1\times103]=2.89942\text{ ns}$。
+- 缺页分支：$10^{-5}\times5{,}000{,}054=50.00054\text{ ns}$。
+- **系统最终总体 EAT**：$7.6+2.89942+50.00054=\mathbf{60.49996\text{ ns}}\approx\mathbf{60.5\text{ ns}}$。
+- **概率口径反例**：若题目另给 $q=P(\text{缺页}\mid\text{TLB 缺失})$，才应使用缺页概率 $(1-h_{tlb})q$。本题的 $p_{fault}$ 已是无条件概率，再乘 0.05 会把缺页代价低估 20 倍。
 
 > **工程现实扩展说明**：在真实现代 CPU 中，页表项（PTE）本身也是物理主存数据，**页表项同样能够被缓存进 L1/L2/L3 Cache**。因此，当 TLB 缺失时，硬件页表遍历器首先在 Cache 中寻找页表项，若 PTE 命中了 Cache，查页表耗时仅为 $t_{\text{cache}}$（数纳秒），而非主存访问 $t_{\text{mem}}$（数十纳秒）。
 
