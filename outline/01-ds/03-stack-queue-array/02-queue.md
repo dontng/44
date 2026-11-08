@@ -176,3 +176,9 @@
 ### (2) 双端队列判定方法论
 - **输入受限队列**：若出现多个元素已被压入队列内部，排在端头中间深处的元素无法跳过两端端点提前出队；
 - **输出受限队列**：所有元素必须通过单一输出端口依次离开，等价于检验能否通过将元素分别从左右两端入队构造出目标排列。
+
+---
+
+## 参考依据
+
+- [Linux Kernel Documentation: CFS Scheduler](https://www.kernel.org/doc/html/latest/scheduler/sched-design-CFS.html) 与 `include/linux/list.h`：内核侵入式双向循环链表 `struct list_head` 与红黑树优先队列组织。

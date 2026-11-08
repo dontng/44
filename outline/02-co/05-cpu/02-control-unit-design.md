@@ -188,7 +188,7 @@ $$\text{微指令总字长} = \text{Width}_{\text{op}} + \text{Width}_{\text{tes
 
 ##### 第四步：计算控制存储器（CM）的总容量
 控制存储器共有 512 个单元，每个单元存储一条 28 位的微指令，因此 CM 的总容量严格为：
-$$\text{CM 容量} = 512 \times 28 \text{ 比特} = 14336 \text{ 位} = \mathbf{1.792 \text{ KB}}$$
+$$\text{CM 容量} = 512 \times 28 \text{ bit} = 14336 \text{ bit} = 1792 \text{ B} = \mathbf{1.75 \text{ KB}} \quad (\text{考场常直接记作 } 512 \times 28\text{ bit})$$
 
 ---
 
@@ -205,7 +205,7 @@ $$\text{CM 容量} = 512 \times 28 \text{ 比特} = 14336 \text{ 位} = \mathbf{
                             ▼
 ┌────────────────────────────────────────────────────────┐
 │ 现代工程实现边界 (以现代 x86-64 处理器为例)               │
-│  1. 现代 CISC/RISC 控制器界限彻底打破 (微架构解码译码器)    │
+│  1. 现代高性能 CISC 处理器采用硬布线解码与微码 ROM 协同的混合控制结构 │
 │     - 常见的简单 x86 指令 (如 ADD/MOV/JMP) 占总指令流 90%: │
 │       由快速硬件硬布线解码器 (Fast Decoders) 瞬间转为 uOPs  │
 │     - 罕见的复杂 x86 指令 (如 STRING/CPUID/SYSENTER):   │
@@ -267,3 +267,9 @@ $$\text{CM 容量} = 512 \times 28 \text{ 比特} = 14336 \text{ 位} = \mathbf{
    - 物理位置在 **CPU 芯片内部**，由专用高速 ROM / WCS 构成，**绝对不是主存储器 DRAM**。
 3. **时钟周期、机器周期与微指令周期的层次**：
    - 时钟周期是硬件最小单位；机器周期是基本操作单位（如取指）；微指令周期通常对应 1 个时钟节拍。
+
+---
+
+## 参考依据
+
+- Maurice V. Wilkes, "The Best Way to Design an Automatic Calculating Machine", *Manchester University Computer Inaugural Conference*, 1951：微程序控制器（Microprogramming）与控制存储器（CM）原始架构定义。

@@ -146,7 +146,7 @@
 │  1. 现代 RISC 寻址极度精简 (Load/Store 架构)            │
 │     - 算术指令 (ADD/SUB) 仅支持纯寄存器寻址             │
 │     - 仅 Load/Store 指令支持基址变址访存: R[rd] = M[R[rs1] + imm] │
-│     - 彻底抛弃复杂的多级主存间接寻址 (访存延迟不可控)   │
+│     - 普遍取消单条指令内的多级主存间接寻址 (访存延迟不可控)   │
 │  2. Cache 使得“访存次数”不再等同于“内存时延”            │
 │     - 所谓“1 次主存访存”，若命中 L1 Data Cache 仅耗时 1 周期 │
 │     - 若 Cache 缺失访问 DRAM 则高达 200 周期            │
@@ -217,3 +217,10 @@
 
 #### 误区 2：“寄存器间接寻址中，操作数保存在寄存器中。”
 - **反例与真相**：错！寄存器中保存的是**主存有效地址**，操作数依然静静躺在主存中，因此必须执行 1 次主存访存才能拿到数据。操作数保存在寄存器中的是“寄存器寻址”。
+
+---
+
+## 参考依据
+
+- The RISC-V Instruction Set Manual, Volume I: Unprivileged ISA：RV32I/RV64I 条件分支（B-type）与跳转（J-type）以当前指令 PC 为基准的 PC 相对寻址规范。
+- Intel® 64 and IA-32 Architectures Software Developer's Manual, Volume 1, Chapter 3.7 (Operand Addressing)：基址加变址比例寻址（Base + Index × Scale + Displacement）与 RIP/EIP 相对寻址（以钩取下条指令地址为基准）。

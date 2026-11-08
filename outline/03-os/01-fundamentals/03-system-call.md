@@ -89,11 +89,11 @@
 
 | 阶段 | 执行主体 | 关键寄存器与硬件状态 | 动作机理与具体语义 |
 | :---: | :---: | :--- | :--- |
-| **1. 用户准备** | C 库包装函数 (用户态) | `RAX` $\leftarrow 0$ (read 的系统调用号)<br>`RDI` $\leftarrow 3$ (fd)<br>`RSI` $\leftarrow$ `&buf`<br>`RDX` $\leftarrow 1024$ (count) | 将参数装入 ABI 约定的寄存器，准备跨界。 |
+| **1. 用户准备** | C 库包装函数 (用户态) | `RAX` $\leftarrow 0$ (read 的系统调用号)<br>`RDI` $\leftarrow 3$ (fd)<br>`RSI` $\leftarrow$ `buf` (用户缓冲区首地址)<br>`RDX` $\leftarrow 1024$ (count) | 将参数装入 ABI 约定的寄存器，准备跨界。 |
 | **2. 陷入内核** | CPU 硬件隐指令 | `RCX` $\leftarrow$ 断点 PC<br>`R11` $\leftarrow$ 用户 RFLAGS<br>模式位 $\leftarrow$ **内核态 (Ring 0)**<br>`PC` $\leftarrow$ `MSR_LSTAR` | 执行非特权指令 `syscall`。硬件自动原子保存返回断点，提升特权级，跳入内核入口。 |
 | **3. 现场保存** | 内核汇编入口 (`entry_SYSCALL_64`) | 内核栈指针 `RSP` 从 TSS 换入<br>内核栈连续 `PUSH` 通用寄存器 | 将用户态上下文（寄存器快照）完整压入该进程专属的内核栈（pt_regs 结构体）。 |
 | **4. 分派查表** | 内核分派器 | 检查 `RAX` 是否越界<br>读取 `sys_call_table[RAX]` | 根据系统调用号 `0`，在系统调用表中检索到 `sys_read` 核心函数地址。 |
-| **5. 内核执行** | 虚拟文件系统 (VFS) 与驱动 | 调用 `vfs_read()`<br>调用 `copy_from_user` 校验指针 | 查进程打开文件表（fd table），获取文件 inode，发起磁盘 I/O 或读取内核 Page Cache。 |
+| **5. 内核执行** | 虚拟文件系统 (VFS) 与驱动 | 调用 `vfs_read()`<br>通过 access_ok / copy_to_user 校验并写回用户缓冲区 | 查进程打开文件表（fd table），获取文件 inode，发起磁盘 I/O 或读取内核 Page Cache。 |
 | **6. 结果写回** | 内核服务例程 | `RAX` $\leftarrow$ 实际读取字节数 (如 1024，或错误码 -EIO) | 将返回值写入保存的栈帧 `pt_regs.rax` 中，作为返回给用户的返回值。 |
 | **7. 现场恢复** | 内核汇编出口 | 内核栈连续 `POP` 通用寄存器 | 从内核栈恢复用户通用寄存器现场。 |
 | **8. 特权返回** | CPU 硬件指令 `sysret` | `PC` $\leftarrow$ `RCX`<br>`RFLAGS` $\leftarrow$ `R11`<br>模式位 $\leftarrow$ **用户态 (Ring 3)** | 硬件原子恢复用户态特权级与断点，用户程序从 `read()` 下一行继续推进！ |
@@ -205,3 +205,10 @@
 1. **模式切换不等于进程切换**：同进程进出内核态仅改变特权级（Ring 3 $\leftrightarrow$ Ring 0），虚拟地址空间未变，**绝不属于进程切换**。
 2. **陷入指令（Trap）合法性**：陷入指令是在用户态合法执行的非特权指令，但执行后引出的系统调用服务例程**绝对在内核态执行**。
 3. **页置换不是系统调用**：虚拟内存缺页调页是由**缺页异常（Fault）**触发的内核内部机制，用户程序无法也绝不需要显式发起“页置换系统调用”。
+
+---
+
+## 参考依据
+
+- [Linux man-pages syscall(2)](https://www.man7.org/linux/man-pages/man2/syscall.2.html)：各体系结构系统调用号与寄存器传参 ABI 约定。
+- [Linux Kernel Documentation: Page Table Isolation (PTI)](https://www.kernel.org/doc/html/latest/x86/pti.html)：KPTI 双页表隔离与 PCID 硬件加速机制。

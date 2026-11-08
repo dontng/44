@@ -202,9 +202,8 @@ mmap 内存映射:
 │     - Linux 使用红黑树与 Maple Tree (Linux 6.1+) 极速检索  │
 │       包含当前虚拟地址的 vm_area_struct 区域               │
 │  3. 现代 Swap 机制的演进                                │
-│     - 许多现代移动端系统 (Android/iOS) 彻底不设磁盘 Swap   │
-│     - 采用 zRAM 压缩内存交换: 页面被换出时是在内存中压缩    │
-│       存放，淘汰直接杀后台进程，彻底避免磁盘写入老化闪存   │
+│     - 许多移动端配置 (如典型 Android 系统) 默认不启用传统闪存 Swap 分区，而采用 zRAM 内存压缩对换│
+│     - 页面被换出时是在内存中压缩存放，淘汰直接杀后台进程，彻底避免磁盘写入老化闪存│
 └────────────────────────────────────────────────────────┘
 ```
 
@@ -268,3 +267,10 @@ mmap 内存映射:
 3. **软硬缺页的判卷分水岭**：
    - 若题目限定在 408 经典请求分页教材模型中 $\to$ 缺页后进程经历“运行态 $\to$ 阻塞态 $\to$ 就绪态”；
    - 若题目考查深层操作系统机制（如 COW、malloc 首次触碰、Page Cache 命中） $\to$ 必须指出属于**软缺页，完全无需磁盘 I/O，进程不被阻塞**。
+
+---
+
+## 参考依据
+
+- [Linux man-pages mmap(2)](https://www.man7.org/linux/man-pages/man2/mmap.2.html)：文件映射与匿名内存分配、MAP_ANONYMOUS 与缺页装载机制。
+- [Linux Kernel Documentation: Memory Management Concepts](https://www.kernel.org/doc/html/latest/admin-guide/mm/concepts.html)：页面置换、匿名页/文件页与内存回收概念。

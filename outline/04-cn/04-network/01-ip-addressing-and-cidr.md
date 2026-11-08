@@ -234,3 +234,12 @@
    - 拿出目的 IP，与所有路由项的掩码逐一做“逻辑与”；
    - 筛选出所有与目标网络匹配的项；
    - 挑出其中掩码数值最大的项作为最终转发出口。
+
+---
+
+## 参考依据
+
+- [RFC 791](https://www.rfc-editor.org/rfc/rfc791.html)：IPv4 协议首部格式与分片重组规范。
+- [RFC 1918](https://www.rfc-editor.org/rfc/rfc1918.html)：专用互联网私有地址空间分配。
+- [RFC 3021](https://www.rfc-editor.org/rfc/rfc3021.html)：在 IPv4 点对点链路中使用 31 位前缀（`/31`）。
+- [RFC 4632](https://www.rfc-editor.org/rfc/rfc4632.html)：无分类域间路由（CIDR）地址体系与路由聚合规范。

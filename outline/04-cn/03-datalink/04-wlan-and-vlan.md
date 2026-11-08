@@ -15,8 +15,19 @@
 
 ---
 
+## 本页子主题索引
+
+- [CSMA/CA 协议与帧间间隔（IFS）](#csma-ca)
+- [RTS/CTS 信道预约与 NAV 精算](#rts-cts)
+- [IEEE 802.11 四地址 MAC 帧格式](#mac-80211)
+- [虚拟局域网（VLAN）与 IEEE 802.1Q](#vlan-8021q)
+- [介质访问控制协议（ALOHA / CSMA / 轮询 / 令牌）对比](#mac-comparison)
+
+---
+
 ## 2. 核心机理与五步推演
 
+<a id="csma-ca"></a>
 ### (1) 为什么无线网络必须使用 CSMA/CA，而不能照搬 CSMA/CD？
 
 以太网的 CSMA/CD 依赖“边发边听（碰撞检测）”，一旦检测到总线电压异常便立即停发。在无线信道环境下，这一套机制物理上彻底失效，必须转向 **CSMA/CA（碰撞避免，Collision Avoidance）**：
@@ -88,6 +99,7 @@ $$\text{SIFS} < \text{PIFS} < \text{DIFS}$$
 
 ---
 
+<a id="rts-cts"></a>
 ### (3) RTS/CTS 信道预约与 NAV 虚拟监听精算
 
 为了彻底消除隐蔽站引起的严重碰撞，802.11 引入了短控制帧握手机制：**RTS（请求发送，Request to Send）**与 **CTS（允许发送，Clear to Send）**。
@@ -141,7 +153,8 @@ $$T_{\text{total}} = \text{DIFS} + T_{\text{RTS}} + \text{SIFS} + T_{\text{CTS}}
 
 ---
 
-### (3) 802.11 MAC 帧格式与四个地址字段变迁
+<a id="mac-80211"></a>
+### (4) 802.11 MAC 帧格式与四个地址字段变迁
 
 以太网帧只需源 MAC 和目的 MAC 两个地址，而 802.11 必须支持无线终端经由接入点（AP）中继进入有线分布式系统（DS, Distribution System），因此帧首部设置了 **4 个 6 字节地址字段**。
 
@@ -173,7 +186,8 @@ $$T_{\text{total}} = \text{DIFS} + T_{\text{RTS}} + \text{SIFS} + T_{\text{CTS}}
 
 ---
 
-### (4) 虚拟局域网（VLAN / IEEE 802.1Q）机制全解
+<a id="vlan-8021q"></a>
+### (5) 虚拟局域网（VLAN / IEEE 802.1Q）机制全解
 
 #### ① VLAN 的物理隔离本质
 - **核心功能**：VLAN 是在二层交换网络中**逻辑划分广播域（Broadcast Domain）**的技术。
@@ -214,7 +228,8 @@ $$T_{\text{total}} = \text{DIFS} + T_{\text{RTS}} + \text{SIFS} + T_{\text{CTS}}
 
 ---
 
-### (5) 典型介质访问控制协议横向闭环对比
+<a id="mac-comparison"></a>
+### (6) 典型介质访问控制协议横向闭环对比
 
 | 协议分类 | 典型协议 | 发送时机与冲突解决 | 理论最大吞吐率 / 适用环境 |
 | :--- | :--- | :--- | :--- |
@@ -227,7 +242,7 @@ $$T_{\text{total}} = \text{DIFS} + T_{\text{RTS}} + \text{SIFS} + T_{\text{CTS}}
 
 ---
 
-### (6) 典型反例证伪（常见认知陷阱）
+### (7) 典型反例证伪（常见认知陷阱）
 
 1. **反例 1：“终端 A 和 C 相互为隐蔽站，只要将发射功率调大，让它们能互相听见，就无需任何防冲突协议。”**
    - **反例证伪**：错误。盲目加大发射功率不仅受无线电管理委员会法定辐射功率上限（EIRP）制约，而且会导致对邻近其他 WLAN 子网产生严重的同频/邻频干扰；同时移动终端电池续航无法承受高功率发射。必须从协议层采用 RTS/CTS 虚拟载波监听解决。

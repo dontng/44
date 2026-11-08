@@ -163,16 +163,16 @@ $$\text{ADD } R_1, \; @(R_2)$$
 | | $T_1$ | $(MDR) \to Y$ | `MDRout, Yin` | $MDR$ | 将源操作数打入 ALU 暂存器 Y 锁存 |
 | | $T_2$ | $(R_1) + (Y) \to Z$ | `R1out, ALU_add, Zin` | $R_1$ | $R_1$ 放上总线，ALU 计算并打入暂存器 Z |
 | | $T_3$ | $(Z) \to R_1$ | `Zout, R1in` | $Z$ | 运算结果写回通用寄存器 $R_1$ |
-| **中断周期 (INT)** | $T_0$ | $(SP) - 4 \to SP$<br>$(SP) \to MAR$ | `SPout, ALU_sub4, SPin, MARin` | $SP$ | 堆栈指针自减并送入 MAR（准备压栈保存 PC） |
-| | $T_1$ | $(PC) \to MDR$ | `PCout, MDRin` | $PC$ | 将断点 PC 送入数据寄存器 |
-| | $T_2$ | $(MDR) \to M(MAR)$ | `MDRoutE, Mem_Write` | **无内部总线占用** | 启动主存写，将断点写入栈顶 |
-| | $T_3$ | 向量地址 $\to PC$ | `Vector_out, PCin, Clear_IF` | 向量发生器 | 将中断服务入口送 PC，关中断（清 IF） |
+| **中断周期 (INT)** | $T_0$ | $(SP) - 4 \to Z$ | `SPout, ALU_sub4, Zin` | $SP$ | 栈指针送入 ALU 减 4，新栈顶地址锁存入暂存器 Z |
+| | $T_1$ | $(Z) \to SP, MAR$ | `Zout, SPin, MARin` | $Z$ | 更新栈指针 SP，并将新栈顶地址送入 MAR |
+| | $T_2$ | $(PC) \to MDR$ | `PCout, MDRin` | $PC$ | 将返回地址（断点 PC）装入 MDR |
+| | $T_3$ | $(MDR) \to M(MAR)$<br>向量地址 $\to PC$<br>$0 \to EINT$ | `MDRoutE, Mem_Write, Vector_out, PCin` | 向量发生器 | 断点写入主存栈顶，同时将中断向量地址装入 PC 并关中断 |
 
 > [!IMPORTANT]
 > **总线互斥绝对铁律（考场阅卷核心得分点）**：
 > 在任意一个时钟节拍（Clock Step）内：
 > 1. **有效输出信号（`_out`）最多只能有 1 个**（若同时出现两个 `_out` 必定导致总线短路烧毁）；
-> 2. **有效输入信号（`_in`）可以同时有多个**（总线数据广播给多个寄存器并行锁存，如 $T_0$ 的 `SPin, MARin`）。
+> 2. **有效输入信号（`_in`）可以同时有多个**（总线数据广播给多个寄存器并行锁存，如 $T_1$ 的 `SPin, MARin`）。
 
 ---
 
@@ -189,7 +189,7 @@ $$\text{ADD } R_1, \; @(R_2)$$
                             ▼
 ┌────────────────────────────────────────────────────────┐
 │ 现代工程实现边界                                        │
-│  1. 彻底弃用内部单总线，全面转向专用数据通路 (MUX 直连) │
+│  1. 高性能处理器不再采用内部单总线，转向多端口寄存器堆与专用多路选择器（MUX）数据通路 │
 │     - 寄存器堆配备多个独立读写端口 (如 2 读 1 写)       │
 │     - 两个源操作数在 1 个时钟内直接送达 ALU，无需暂存器 Y │
 │  2. 旁路网络 (Forwarding Network) 直通                 │
@@ -256,3 +256,9 @@ $$\text{ADD } R_1, \; @(R_2)$$
    - **中断周期（INT）**：仅在指令执行末尾检测到未屏蔽中断请求时才出现。
 2. **PC 自增的时机**：
    - 可以在读主存的等待期间（$T_1$）由专用自增器自动完成，避免占用公共内部总线。
+
+---
+
+## 参考依据
+
+- Carl Hamacher et al., *Computer Organization and Embedded Systems*, Chapter 7 (Processor Structure and Function)：经典单总线与多总线 CPU 数据通路、暂存器 Y/Z 时序约束与微操作节拍设计。

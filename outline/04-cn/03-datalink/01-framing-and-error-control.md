@@ -273,5 +273,12 @@ $$\mathbf{S_3 S_2 S_1 = 101_2 = \text{十进制 } 5}$$
   - **共同机制**：海明不等式 $2^r \ge k + r + 1$ 与配偶校验方程的完全数学一致性。
   - **关键差异**：
     - **计组侧**：海明码广泛应用于服务器 ECC 物理内存（DRAM 颗粒单比特翻转软错误在线硬件纠错）；
-    - **网络侧**：由于信道延迟大且检错重传开销低，网络数据链路层极少采用海明码在线纠错（编码膨胀率高），而是全面采用高效的 CRC 检错结合 ARQ 重传。
+    - **网络侧**：经典有线局域网链路层极少采用海明码在线纠错，而是普遍采用高效的 **CRC 检错结合 ARQ 重传**（注：在无线通信、光传输与 100G+ 高速以太网物理层中，则广泛采用 LDPC、Reed-Solomon 等高阶前向纠错码 FEC）。
   - **不可直接迁移的判据**：计组 ECC 内存无法重传数据，必须采用前向纠错码（FEC）；计算机网络基于双向信道，前向检错结合反向重传（ARQ）的吞吐量效率远高于前向纠错。
+
+---
+
+## 参考依据
+
+- [RFC 1661](https://www.rfc-editor.org/rfc/rfc1661.html) & [RFC 1662](https://www.rfc-editor.org/rfc/rfc1662.html)：点对点协议（PPP）及类 HDLC 字节填充与零比特填充组帧规范。
+- Richard W. Hamming, "Error Detecting and Error Correcting Codes", *Bell System Technical Journal*, 29(2), 1950：海明码码距与纠错不等式 $2^k \ge n + k + 1$。

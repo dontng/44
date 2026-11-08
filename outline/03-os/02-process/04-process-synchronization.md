@@ -259,3 +259,10 @@ while (!condition) {
 - **反例 1：将管程的条件变量等待写为 `if` 导致多线程穿透**
   - 缓冲区为空时，消费者 1 和消费者 2 同时在 `not_empty.wait()` 上阻塞。生产者生产 1 个产品并调用 `not_empty.signal_all()`（广播唤醒）。
   - 若使用 `if`，消费者 1 抢到锁取走产品，消费者 2 随后抢到锁，直接跳过 `if` 强行从已空的缓冲区读取数据，导致段错误或读到脏数据！改用 `while` 后，消费者 2 重新检测发现缓冲区再次为空，安全重新挂起。
+
+---
+
+## 参考依据
+
+- [Linux man-pages futex(2)](https://www.man7.org/linux/man-pages/man2/futex.2.html)：快速用户态互斥锁（Fast Userspace Locking）机制。
+- [POSIX pthread_cond_wait(3p)](https://www.man7.org/linux/man-pages/man3/pthread_cond_wait.3p.html)：条件变量等待语义与虚假唤醒（Spurious Wakeup）`while` 循环重检规范。

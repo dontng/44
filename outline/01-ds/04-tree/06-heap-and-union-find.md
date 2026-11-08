@@ -19,8 +19,16 @@
 
 ---
 
+## 本页子主题索引
+
+- [并查集（Disjoint Set / Union-Find）与路径压缩](#union-find)
+- [堆（Heap）结构、O(n) 原地建堆与动态调整](#heap)
+
+---
+
 ## 2. 核心机理与物理必然性（为什么这么设计？）
 
+<a id="union-find"></a>
 ### (1) 并查集（Union-Find）的物理机理与代码实现
 
 并查集是一种专门用于处理**元素分组、不相交集合合并以及连通性查询**的树形数据结构。
@@ -53,19 +61,19 @@ int Find(int S[], int x) {
 
 ```
 执行 Find(D) 前:                      执行 Find(D) 后:
-        Root                                 Root
-       /    \                               / |  \
-      A      E (旁支)                      A  C   D  E (旁支未受影响)
-     /                                    /          /
-    B                                    B          F
-   / \                                    \
-  C   F (旁支)                             G
+        Root                                   Root
+       /    \                                /  |   \   \   \
+      A      E (旁支)                       A   B    C   D   E (旁支)
+     /                                          |        |
+    B                                           F        G
+   / \
+  C   F (旁支，挂在 B 下)
  /
 D
  \
   G (D 的孩子)
 ```
-*在对 $D$ 执行 `Find` 后，$D$ 和 $C$ 的父节点直接变为了 `Root`，但旁支 $F$ 和 $D$ 的子树 $G$ 的相对深度完全未变。*
+*在对 D 执行 Find 后，上升路径上的 D、C、B、A 均直接挂到 Root 下；但未处于上升路径上的旁支节点 F（仍挂在 B 下）与 D 的子树节点 G（仍挂在 D 下）并未被访问，其与原父节点的挂载关系保持不变。*
 
 #### 2. 按大小合并算法 `Union`（Union-by-Size）
 - **核心机制**：总是将**节点数较少的小树合并到节点数较多的大树**根节点下方，防止树高失控膨胀。
@@ -89,6 +97,7 @@ void Union(int S[], int root1, int root2) {
 
 ---
 
+<a id="heap"></a>
 ### (2) 堆的物理定义与顺序映射
 
 堆在逻辑上是一棵完全二叉树，在物理存储上表现为一个连续的一维数组。
@@ -224,3 +233,10 @@ $$S = 2^h - 1 - h = n - \log_2(n + 1) \implies \mathbf{O(n)}$$
 1. **单次 `Find` 路径压缩** $\iff$ 仅将**该节点到根的直接路径节点**挂至根下，侧翼旁支深度不变。
 2. **完全二叉树数组下标** $\iff$ 最后一个非叶节点下标为 $\lfloor n/2 \rfloor$（1-based）。
 3. **并查集最优组合** $\iff$ 按大小/秩合并 + 路径压缩，均摊时间复杂度为 $O(\alpha(n))$。
+
+---
+
+## 参考依据
+
+- Robert E. Tarjan, "Efficiency of a Good But Not Linear Set Union Algorithm", *Journal of the ACM*, 22(2), 1975：按秩合并与路径压缩并查集的反阿克曼函数 $\alpha(n)$ 摊还复杂度证明。
+- Robert W. Floyd, "Algorithm 245: Treesort 3", *Communications of the ACM*, 7(12), 1964：自底向上 $O(n)$ 线性建堆算法。

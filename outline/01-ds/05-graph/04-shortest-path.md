@@ -15,6 +15,13 @@
 
 ---
 
+## 本页子主题索引
+
+- [Dijkstra 算法：贪心策略与单源求解](#dijkstra)
+- [Floyd 算法：全源动态规划与外层循环必然性](#floyd)
+
+---
+
 ## 2. 核心机理与五步推演
 
 ### (1) 最短路径的子结构最优性与松弛操作（Relaxation）
@@ -33,6 +40,7 @@
 
 ---
 
+<a id="dijkstra"></a>
 ### (2) Dijkstra 算法：贪心策略与单源求解
 
 #### ① 运行机理与三级状态数组
@@ -101,6 +109,7 @@ path  = [ -1,     0,     -1,    -1,    0   ]
 
 ---
 
+<a id="floyd"></a>
 ### (5) Floyd 算法：全源动态规划与外层循环必然性
 
 #### ① 状态转移方程与物理意义
@@ -167,7 +176,7 @@ for (int k = 0; k < n; k++) {          // 【阶段推进】中继节点 k 必�
 
 ---
 
-### (5) 典型反例证伪（常见认知陷阱）
+### (6) 典型反例证伪（常见认知陷阱）
 
 1. **反例 1：“只要图中包含负权边，Dijkstra 算法计算出的所有顶点的最短路径就一定全错。”**
    - **反例证伪**：错误。若负权边处于较深的汇聚层，或者负权值不足以逆转已锁定的拓扑顺序，Dijkstra 完全可能侥幸算出正确结果。科学表述应为：Dijkstra 算法在含负权边图上无法保证贪心策略的正确性。
@@ -220,3 +229,10 @@ for (int k = 0; k < n; k++) {          // 【阶段推进】中继节点 k 必�
    - 负环检测：若运行后出现对角线 $A[i][i] < 0$，必含负权回路。
 3. **路径倒推法则**：
    - 终点 $t \implies \text{path}[t] \implies \text{path}[\text{path}[t]] \dots \implies \text{源点 } s$。
+
+---
+
+## 参考依据
+
+- Edsger W. Dijkstra, "A Note on Two Problems in Connexion with Graphs", *Numerische Mathematik*, 1, 1959：非负权图单源最短路径贪心松弛算法。
+- Robert W. Floyd, "Algorithm 97: Shortest Path", *Communications of the ACM*, 5(6), 1962：全源最短路径动态规划算法；本页 4 阶段矩阵迭代由 [核验脚本](../../../tools/verify_outline_examples.py) 验算。

@@ -195,3 +195,9 @@ inode 包含 **12 个直接块项、1 个一级间接项、1 个二级间接项�
 1. **FAT 随机访问真相**：FAT 表支持随机存取的原因是 **FAT 表常驻内存，寻链过程不发生磁盘 I/O**；但在物理内存中依然是沿着数组链表顺序跳转 $O(k)$，绝非 $O(1)$ 算术直接算出。
 2. **小文件性能特权**：混合多级索引的直接地址项确保了海量小文件在 inode 在内存的前提下，**仅需 1 次磁盘 I/O 即可直达数据**。
 3. **定位两级间址槽位下标公式**：先减去低级覆盖基准 $B' = B - \text{Base}$，再用整除 $\lfloor B' / N \rfloor$ 得高维槽位、用取模 $B' \bmod N$ 得低维槽位。
+
+---
+
+## 参考依据
+
+- [Linux Kernel Documentation: Ext4 Data Structures and Algorithms](https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html)：inode 结构体字段、直接/间接块寻址与 Extent 区段树组织。

@@ -311,3 +311,10 @@ $$R_i = \text{首次开始执行时刻} - A_i$$
   - **共同机制**：优先级队列的高效动态维护。
   - **关键差异**：数据结构侧关注小顶堆/大顶堆在 $O(\log n)$ 时间内的插入与删除；操作系统调度算法关注在时钟中断限定的极短指令周期内完成挑选。
   - **不可直接迁移的判据**：堆结构只能高效获取极值，无法高效支持类似 RR 的 FIFO 遍历，因此现代 Linux 内核就绪队列采用红黑树按虚拟运行时间 `vruntime` 维护。
+
+---
+
+## 参考依据
+
+- [Linux Kernel Documentation: CFS Scheduler](https://www.kernel.org/doc/html/latest/scheduler/sched-design-CFS.html)：完全公平调度器（CFS）虚拟运行时间 `vruntime` 与红黑树组织。
+- Remzi H. Arpaci-Dusseau, Andrea C. Arpaci-Dusseau, *Operating Systems: Three Easy Pieces (OSTEP)*, Chapter 8：多级反馈队列（MLFQ）规则与防饥饿提拔（Priority Boost）机制。

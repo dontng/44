@@ -228,3 +228,9 @@
     - **计组侧（硬件边界）**：关注硬件中断发生当拍，由硬件逻辑自动将当前 PC 和 PSW 压入系统堆栈；
     - **操作系统侧（软件边界）**：关注中断向量表跳转后，内核汇编指令将剩余通用寄存器保存至 PCB（`task_struct->thread`）以及内核栈中，并在进程切换时执行 `switch_to` 切换页表基址寄存器 CR3。
   - **不可直接迁移的判据**：硬件只负责执行中断响应瞬间的现场压栈，无法自行维护 PCB 链表及状态机的逻辑跃迁，所有状态变更全由操作系统内核软件完成。
+
+---
+
+## 参考依据
+
+- [Linux Kernel Source: include/linux/sched.h](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/include/linux/sched.h)：`task_struct` 进程描述符状态位与上下文结构定义。

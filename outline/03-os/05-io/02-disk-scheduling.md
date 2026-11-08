@@ -179,7 +179,7 @@ SSD 闪存拓扑层次:
 
 1. **时延精算核心换算铁律**：
    - 转速 $r\text{ rps} \implies T_{\text{rot}} = \frac{1}{2r}\text{ s}$；
-   - 转速 $R\text{ RPM} \implies T_{\text{rot}} = \frac{30}{R}\text{ s}$，数据传输率 $T_{\text{trans}} = \frac{60 \times b}{R \times N}\text{ s}$。
+   - 转速 $R\text{ RPM} \implies T_{\text{rot}} = \frac{30}{R}\text{ s}$，数据传输时间 $T_{\text{trans}} = \frac{60 \times b}{R \times N}\text{ s}$。
 2. **磁头调度判定金标准**：
    - SSTF 贪心最近，唯一会产生**饥饿**；
    - SCAN 走到底（物理边界），LOOK 走到最远请求；C-SCAN / C-LOOK 单向服务提供最均一等待时间。

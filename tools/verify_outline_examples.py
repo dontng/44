@@ -178,3 +178,79 @@ def check_sort_and_floyd():
 
 if __name__ == '__main__':
     check_sort_and_floyd()
+
+def check_battlefield_cleanup():
+    # 1. CLA 超前进位展开式
+    alu = (ROOT / 'outline/02-co/02-data-representation/03-alu-and-circuits.md').read_text()
+    assert 'C_4 = G_4 + P_4 G_3 + P_4 P_3 G_2 + P_4 P_3 P_2 G_1 + P_4 P_3 P_2 P_1 C_0' in alu
+    assert 'C_4 = G_4 + P_4 G_4' not in alu
+    assert '进位传递项' in alu
+
+    # 2. 30 位物理地址 0x002A5018 的 Cache Index 位切分
+    pa = 0x002A5018
+    offset = pa & 0x3F
+    index = (pa >> 6) & 0x1FF
+    tag = pa >> 15
+    assert offset == 24 and index == 0x140 and index == 320 and tag == 0x54
+    vm = (ROOT / 'outline/02-co/03-memory-hierarchy/03-virtual-memory-hardware.md').read_text()
+    assert '0x140' in vm and '第 320 行' in vm
+    assert '0x001（第 1 行）' not in vm
+
+    # 3. 四级多重中断嵌套 0~45 μs 时序闭合
+    intr = (ROOT / 'outline/02-co/06-bus-and-io/03-interrupt-and-dma.md').read_text()
+    assert '| **15 ~ 18 μs** |' in intr
+    assert (3 + 5 + 2) + 10 + 10 + (5 + 5) + 5 == 45
+
+    # 4. 单总线 CPU 中断周期 T0/T1 无总线冲突
+    cpu = (ROOT / 'outline/02-co/05-cpu/01-cpu-datapath.md').read_text()
+    assert ('(SP) - 4 -> Z' in cpu or '(SP) - 4 \\to Z' in cpu)
+    assert ('(Z) -> SP, MAR' in cpu or '(Z) \\to SP, MAR' in cpu)
+
+    # 5. 系统调用 read() 内核拷贝方向
+    sc = (ROOT / 'outline/03-os/01-fundamentals/03-system-call.md').read_text()
+    assert 'copy_to_user' in sc
+    assert '`copy_from_user` 将数据安全拷贝至用户态' not in sc
+
+    # 6. 微内核 read() IPC 上下文切换次数
+    micro = (ROOT / 'outline/03-os/01-fundamentals/04-os-architecture.md').read_text()
+    assert '1 次进程切换' in micro and '4 次进程上下文切换' in micro
+    assert '2~3 次完整的上下文切换' not in micro
+
+    # 7. 差分曼彻斯特编码 101100 波形
+    level = '-'
+    wave = []
+    for b in '101100':
+        if b == '0':
+            level = '+' if level == '-' else '-'
+        next_level = '+' if level == '-' else '-'
+        chunk = f'{level} {level} {next_level} {next_level}'
+        wave.append(chunk)
+        level = next_level
+    assert wave == ['- - + +', '- - + +', '+ + - -', '- - + +', '- - + +', '- - + +']
+    enc = (ROOT / 'outline/04-cn/02-physical/02-encoding-and-multiplexing.md').read_text()
+    assert '- - + +  - - + +  + + - -  - - + +  - - + +' in enc
+
+    # 8. TCP 经典首部 32 位对齐
+    assert 4 + 6 + 6 + 16 == 32
+    tcp = (ROOT / 'outline/04-cn/05-transport/02-tcp-connection-and-flow.md').read_text()
+    assert '保留 (6 bits)' in tcp and '保留 (4 bits)' not in tcp
+
+    # 9. DHCP 广播目的 MAC 与 ICMP 回送 Type/Code
+    icmp = (ROOT / 'outline/04-cn/04-network/03-routing-devices-and-icmp.md').read_text()
+    assert 'FF-FF-FF-FF-FF-FF' in icmp
+    assert 'Type = 8, Code = 0' in icmp and 'Type = 0, Code = 0' in icmp
+
+    # 10. 无重复三级标题序号
+    for rel in [
+        'outline/01-ds/05-graph/04-shortest-path.md',
+        'outline/03-os/02-process/07-threads-and-ipc.md',
+        'outline/04-cn/03-datalink/04-wlan-and-vlan.md',
+    ]:
+        txt = (ROOT / rel).read_text()
+        headings = re.findall(r'^### \((\d+)\)', txt, re.M)
+        assert len(headings) == len(set(headings)), f'Duplicate heading index in {rel}: {headings}'
+
+    print('PASS: battlefield cleanup checks (CLA, PA cache index, interrupt timeline, bus conflict, syscall, microkernel IPC, Diff-Manchester, TCP header, DHCP/ICMP, heading uniqueness)')
+
+if __name__ == '__main__':
+    check_battlefield_cleanup()

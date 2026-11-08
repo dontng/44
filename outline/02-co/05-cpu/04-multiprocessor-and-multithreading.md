@@ -17,8 +17,17 @@
 
 ---
 
+## 本页子主题索引
+
+- [Flynn 体系结构分类法（SISD / SIMD / MISD / MIMD）](#flynn-taxonomy)
+- [共享内存多处理器（UMA / NUMA）与 MESI 一致性](#multiprocessor-mesi)
+- [硬件多线程技术（细粒度 / 粗粒度 / SMT）](#hardware-multithreading)
+
+---
+
 ## 2. 核心机理与物理必然性（为什么这么设计？）
 
+<a id="flynn-taxonomy"></a>
 ### (1) Flynn 分类法：指令流 $\times$ 数据流二维正交矩阵
 
 #### 分类基准定义
@@ -48,6 +57,7 @@
 
 ---
 
+<a id="multiprocessor-mesi"></a>
 ### (2) 共享内存多处理器（SMP / UMA vs NUMA）与 Cache 一致性
 
 #### 1. 对称多处理器（SMP）与统一存储访问（UMA）
@@ -119,6 +129,7 @@ NUMA 物理拓扑:
 
 ---
 
+<a id="hardware-multithreading"></a>
 ### (3) 硬件多线程（Hardware Multithreading）深度剖析
 
 #### 物理动机：为什么软件多线程不足以解决微架构空转？
@@ -253,7 +264,7 @@ NUMA 物理拓扑:
 - **关键差异**：
   - 普通顺序数据结构分析常采用 RAM 模型；并行算法也可能采用 PRAM 等模型。单位操作抽象不能直接代表真实原子指令与一致性流量的成本；
   - 在真实硬件上，自旋锁（Spinlock）或 CAS（Compare-And-Swap）原子操作会导致 MESI 协议在各个核心私有 Cache 之间疯狂争抢 Cache Line 的独占所有权（Cache Line Bouncing），导致硬件总线瘫痪。
-- **不可直接迁移的判据**：设计高效并发数据结构（如无锁环形队列 Disruptor）时，算法必须在数据节点之间显式加入 64 字节对齐填充以防伪共享，脱离了硬件 Cache 结构的算法复杂度分析在工业并发下完全失真。
+- **不可直接迁移的判据**：设计高效并发数据结构（如无锁环形队列 Disruptor）时，算法必须在数据节点之间显式加入 64 字节对齐填充以防伪共享，脱离了硬件 Cache 与一致性开销的渐近复杂度分析，在高并发争用场景下难以准确反映实际吞吐表现。
 
 ---
 

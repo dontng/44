@@ -129,7 +129,7 @@ $$\text{总位数} = \text{总行数} \times \left( \text{数据块位数} + \te
 
 ### (5) 状态机执行轨迹：2 路组相联 Cache 访存与写回全过程
 
-设定 Cache 组 0 为 2 路组相联（包含 Way 0 与 Way 1 两个槽位），采用写回（Write-Back）+ 写分配（Write-Allocate）+ LRU 替换策略。
+设某 2 路组相联 Cache 共分为 $S = 4$ 组（组号 = 主存块号 $\bmod 4$，标记 $\text{Tag} = \lfloor \text{主存块号} / 4 \rfloor$），考察其组 0（包含 Way 0 与 Way 1 两个槽位，块 0、8、16、24 均映射至组 0，对应 $\text{Tag} = 0, 2, 4, 6$），采用写回（Write-Back）+ 写分配（Write-Allocate）+ LRU 替换策略（1 位 LRU 位：0 表示最近刚访问 MRU，1 表示最久未访问 LRU）。
 
 #### 连续 6 次访问组 0 的执行状态追踪表
 
@@ -211,3 +211,9 @@ $$\text{总位数} = \text{总行数} \times \left( \text{数据块位数} + \te
 - **写直达策略（Write-Through）** $\to$ 标记阵列中**无脏位（0 位）**。
 - **直接映射** $\to$ 每组只有 1 行，新块进入直接覆盖，**不需要任何替换位（0 位）**。
 - **$k$ 路组相联 LRU 计数器模型** $\to$ 每个 Cache 行需要 $\log_2 k$ 位替换位。
+
+---
+
+## 参考依据
+
+- John L. Hennessy, David A. Patterson, *Computer Architecture: A Quantitative Approach*, Chapter 2 (Memory Hierarchy Design)：Cache 映射方式、写回/写直达策略与替换算法硬件开销分析。

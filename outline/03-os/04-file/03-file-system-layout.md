@@ -168,7 +168,7 @@ VFS 屏蔽了不同文件系统（Ext4, FAT32, NTFS, NFS）在扇区组织、寻
 | :--- | :--- | :--- |
 | **超级块单点性** | 多数教材简化描述为分区头部唯一的全局超级块 | 普遍采用**稀疏超级块（Sparse Superblock）**冗余机制，在第 0、1、3、5、7 块组分布式备份 |
 | **文件描述符拓扑** | 进程表直接包含三元组或指针指向系统打开表 | Linux 内部通过 `task_struct -> files_struct -> fdtable -> fd[]` 逐级解引用到 `struct file` |
-| **空闲盘块管理** | 成组链接法作为 UNIX 经典机制在大题中作为代表考查 | 现代生产环境文件系统（Ext4, XFS, ZFS）全面摒弃成组链接法，改用**区段分配（Extent）结合 B+ 树**或位示图配合延迟分配（Delayed Allocation） |
+| **空闲盘块管理** | 成组链接法作为 UNIX 经典机制在大题中作为代表考查 | 现代主流文件系统（如 Ext4、XFS）不再使用传统 UNIX 成组链接法，而普遍采用**区段分配（Extent）结合多级树索引（B+ 树）**或块组位示图配合延迟分配（Delayed Allocation） |
 | **VFS 缓存体系** | 侧重四大对象的静态类图与指针引用 | 工程核心是 **dcache（目录项缓存）与 page cache（页高速缓存）**，路径查找优先全走内存基数树（Radix Tree） |
 
 ---
@@ -179,7 +179,7 @@ VFS 屏蔽了不同文件系统（Ext4, FAT32, NTFS, NFS）在扇区组织、寻
 - $\to$ 关联 [目录结构与文件共享](02-directory-and-links.md)：
   - **共同机制**：硬链接与软链接的底层寻址均最终落地于 VFS inode 对象和物理 inode 表。
   - **关键差异**：目录项属于外存静态树结构；打开文件表（`file`）属于进程运行时的内存动态状态。
-  - **不可直接迁移的判据**：关闭所有打开文件表项（`close`）只会递减内存 `i_count`，绝对不会删除目录项或改变磁盘 `i_nlink`。
+  - **不可直接迁移的判据**：关闭文件描述符（close）会递减系统打开文件表项引用计数 f_count（当所有打开文件对象与映射释放后，教学模型活动引用数 active_refs 归零），但不会删除磁盘目录项或改变磁盘硬链接计数 i_nlink。
 - $\to$ 关联 [进程状态与控制](../02-process/01-process-states.md)：
   - **共同机制**：`fork()` 系统调用不仅复制进程上下文，还完整复制 PCB 中的文件描述符数组。
   - **关键差异**：地址空间（内存页表）在 `fork` 后采用写时复制（COW）分离；而打开文件表项（`file`）在 `fork` 后是**严格物理共享**。
@@ -204,3 +204,10 @@ VFS 屏蔽了不同文件系统（Ext4, FAT32, NTFS, NFS）在扇区组织、寻
 3. **成组链接法换组临界点**：
    - 分配到最后一块（$N=1$）必须**先将下组信息读入超级块栈，再交出物理块**；
    - 回收到满栈（$N=100$）必须**先将当前栈刷入新块，再重置超级块栈底**。
+
+---
+
+## 参考依据
+
+- [Linux Kernel Documentation: Overview of the Linux Virtual File System](https://www.kernel.org/doc/html/latest/filesystems/vfs.html)：VFS 四大核心对象（Superblock, Inode, Dentry, File）与打开文件表引用关系。
+- [Linux Kernel Documentation: Ext4 Data Structures and Algorithms](https://www.kernel.org/doc/html/latest/filesystems/ext4/index.html)：块组布局、稀疏超级块备份（Sparse Superblock）与 Extent 树结构。

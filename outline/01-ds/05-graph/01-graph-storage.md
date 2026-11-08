@@ -109,13 +109,16 @@ $$\text{矩阵 } A^k \text{ 中第 } i \text{ 行第 } j \text{ 列的元素 } A
 考虑 4 个顶点 $V = \{0, 1, 2, 3\}$，边集包含：$e_1(0, 1)$、$e_2(0, 2)$、$e_3(1, 2)$：
 
 ```
-顶点表:
-0: firstedge ──► [ e1: ivex=0, ilink──┐, jvex=1, jlink──┐ ]
-                                      ▼                 ▼
-                 [ e2: ivex=0, ilink=NULL, jvex=2, jlink─┐ ]
-1: firstedge ───────────────────────────────────────────┼─► 指向 e1 的 jvex=1
-                                                        │
-2: firstedge ──► [ e3: ivex=1, ilink=NULL, jvex=2, jlink=NULL ]
+顶点表 (firstedge):
+  0: firstedge ──► e1        (顶点 0 的关联边链: e1 ──ilink──► e2 ──ilink──► NULL)
+  1: firstedge ──► e1        (顶点 1 的关联边链: e1 ──jlink──► e3 ──ilink──► NULL)
+  2: firstedge ──► e2        (顶点 2 的关联边链: e2 ──jlink──► e3 ──jlink──► NULL)
+  3: firstedge ──► NULL      (孤立顶点)
+
+边结点物理表 (每条无向边唯一对应 1 个实体):
+  e1 (边 0-1): [ ivex=0 | ilink=&e2 | jvex=1 | jlink=&e3 ]
+  e2 (边 0-2): [ ivex=0 | ilink=NULL| jvex=2 | jlink=&e3 ]
+  e3 (边 1-2): [ ivex=1 | ilink=NULL| jvex=2 | jlink=NULL]
 ```
 
 - **双向依附编织**：
@@ -142,7 +145,7 @@ $$\text{矩阵 } A^k \text{ 中第 } i \text{ 行第 } j \text{ 列的元素 } A
 
 | 维度 | 408 考场标准模型（学理解题口径） | 现代工程实现边界（工业级图计算框架） |
 | :--- | :--- | :--- |
-| **稀疏图存储表示** | 优先考查标准指针链表形式的邻接表（`Node*` 指针分散动态分配） | 现代图计算（如 PyTorch Geometric, GraphBLAS）全面废弃分散指针，采用 **CSR（Compressed Sparse Row，压缩稀疏行）**或 **CSC**：由两个整型密集数组直接紧凑排布边和偏移量，具备极致的 CPU Cache 命中率和向量化并行能力 |
+| **稀疏图存储表示** | 优先考查标准指针链表形式的邻接表（`Node*` 指针分散动态分配） | 现代静态图计算与算子加速框架（如 PyTorch Geometric, GraphBLAS）通常以 **CSR（Compressed Sparse Row，压缩稀疏行）**或 **CSC** 替代分散指针链表：由两个整型密集数组直接紧凑排布边和偏移量，具备极致的 CPU Cache 命中率和向量化并行能力 |
 | **邻接矩阵内存消耗** | 稠密图默认开辟二维静态数组 `int A[N][N]` | 节点规模突破百万级时，即便稠密图也无法放入连续内存，转为分布式切片分块矩阵（Block-partitioned Matrix） |
 | **十字链表与多重表** | 强调作为指针网络在内存中手写构建 | 现代图数据库（如 Neo4j）将边设计为独立的一级实体，支持双向指针记录边属性（Property Graph 模型），机制在思想上源于多重表 |
 
@@ -178,3 +181,9 @@ $$\text{矩阵 } A^k \text{ 中第 } i \text{ 行第 } j \text{ 列的元素 } A
 3. **结点开销记忆公式**：
    - 邻接表：顶点表 $|V|$ 个结点，无向图边表 $2|E|$ 个结点，有向图边表 $|E|$ 个结点；
    - 邻接多重表：顶点表 $|V|$ 个结点，边表严格只有 $|E|$ 个结点（单边唯一实体）。
+
+---
+
+## 参考依据
+
+- Jeremy Kepner et al., "Mathematical Foundations of the GraphBLAS", *IEEE High Performance Extreme Computing Conference (HPEC)*, 2016：稀疏图 CSR/CSC 压缩矩阵表示与代数图算子规范。

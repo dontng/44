@@ -230,3 +230,10 @@
    - 作为应用程序跑在 Host OS 上的属于 **Type 2**（如 VirtualBox）；
    - Linux KVM 是通过内核模块将宿主内核转变为 **Type 1** 特性的混合架构。
 3. **二维页表访存膨胀公式**：在无 Cache 命中时，$4$ 级 Guest 页表与 $4$ 级 EPT 页表的遍历主存访问次数恒为 $(4+1)\times(4+1)-1 = \mathbf{24}$ 次页表访存，加最终读数据共 **25 次主存访问**。
+
+---
+
+## 参考依据
+
+- Gerald J. Popek, Robert P. Goldberg, "Formal Requirements for Virtualizable Third Generation Architectures", *Communications of the ACM*, 17(7), 1974：敏感指令与特权指令子集定理。
+- Intel® 64 and IA-32 Architectures Software Developer's Manual, Volume 3C, Chapter 24 (VMCS) & Chapter 28 (VMX Support for Address Translation / EPT)。

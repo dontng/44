@@ -153,7 +153,7 @@ $$\mathbf{h_{\max} = \left\lfloor \log_{\lceil m/2 \rceil} \left( \frac{N + 1}{2
 ```
 
 1. **与操作系统现代文件系统索引的物理映射**：
-   - [文件结构与索引节点](../../03-os/04-file/01-file-concepts-and-inode.md)：传统 Ext2 使用多级间接寻址块，面对百 GB 级大文件时磁盘指针寻道链过长。现代 Linux Ext4 全面采用基于 B+ 树的 Extent Tree 组织盘块，确保大文件任意偏移寻址均在 3~4 次 I/O 内完成。
+   - [文件结构与索引节点](../../03-os/04-file/01-file-concepts-and-inode.md)：传统 Ext2 使用多级间接寻址块，面对百 GB 级大文件时磁盘指针寻道链过长。现代 Linux Ext4 默认启用基于 B+ 树变体的 Extent Tree 组织盘块，确保大文件任意偏移寻址均在 3~4 次 I/O 内完成。
 2. **与数据库存储引擎（MySQL InnoDB）的真实契合**：
    - InnoDB 的聚簇索引就是一棵典型的 B+ 树，主键索引页大小默认为 16KB。对于典型的 3 层 B+ 树，根页面常驻内存缓冲池，单表可存储超过 2000 万行记录，任意单行点查仅需 1~2 次物理磁盘读取。
 
@@ -176,3 +176,10 @@ $$\mathbf{h_{\max} = \left\lfloor \log_{\lceil m/2 \rceil} \left( \frac{N + 1}{2
    - 长高：**只有根节点分裂**时，整棵树高度才加 1；
    - 变矮：**只有根节点的最后 1 个关键字被合并下落**导致根节点彻底变空时，树高度才减 1。
 2. **B+ 树范围查询的决定性优势**：所有叶子节点通过双向链表相连，范围检索无需回溯父节点，直接在叶子层完成局部顺序扫描。
+
+---
+
+## 参考依据
+
+- MySQL 8.0 Reference Manual: "InnoDB Multi-Version Concurrency Control and B+Tree Index Structures"：数据库聚簇索引与非聚簇索引设计。
+- Linux Kernel Documentation: "Ext4 Extents Tree Layout" 与 `fs/ext4/extents.c`：现代 Linux 文件系统基于 B+ 树变体的连续物理盘块索引组织。

@@ -170,3 +170,9 @@ $$H(\text{key}) = \text{key} \pmod 7 \quad (p = 7)$$
 ### (2) 冲突处理定性排错
 - **产生堆积（一级聚集）的唯一元凶**：**线性探测法**（跨同义词链的无差别相撞），与散列函数是否均匀无关。
 - **拉链法的绝对隔离性**：不同哈希地址的元素互不干扰，装填因子 $\alpha$ 允许大于 1。
+
+---
+
+## 参考依据
+
+- Linux Kernel Source: `include/linux/list.h` 与 `include/linux/hashtable.h`：内核哈希桶专用单指针表头双向链表 `struct hlist_head` 与 `struct hlist_node` 设计。

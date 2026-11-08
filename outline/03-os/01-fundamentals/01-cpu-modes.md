@@ -171,3 +171,10 @@ CPU 取得一条新指令:
    - 用户态 $\to$ 内核态：**唯一通道是中断/异常/陷入指令**，由硬件自动置位；
    - 内核态 $\to$ 用户态：**必须由内核主动执行特权返回指令**（`iret` 或 `sysret`）。
 3. **特权模式不等于进程切换**：从用户态陷入内核态执行系统调用，仍然是在当前进程的上下文中运行，**并未发生进程上下文切换**。
+
+---
+
+## 参考依据
+
+- Intel® 64 and IA-32 Architectures Software Developer's Manual, Volume 3A, Chapter 5 (Protection, CPL/DPL/RPL) & Chapter 23 (Introduction to Virtual-Machine Extensions)。
+- The RISC-V Instruction Set Manual, Volume II: Privileged Architecture：机器态/监管态/用户态（M/S/U）特权级与 `mstatus`/`sstatus` 状态位规范。

@@ -164,8 +164,7 @@ CPU 内部为每个中断与异常分配一个独一无二的整数标识，称�
 ┌────────────────────────────────────────────────────────┐
 │ 现代工程实现边界                                        │
 │  1. 现代快速系统调用不走 IDT 陷阱门:                   │
-│     - x86-64 废弃了基于 int 0x80 的慢速栈压栈流程，改为 │
-│       使用专用硬件指令 syscall / sysret:                │
+│     - x86-64 的 64 位原生 ABI 改用专用指令 syscall / sysret 替代传统 int 0x80 慢速栈压栈流程（注：开启 32 位兼容模式时仍保留 int 0x80 入口）:│
 │       - syscall 将 RIP 存入 RCX，将 RFLAGS 存入 R11     │
 │       - 直接从专用 MSR (LSTAR) 加载内核入口，0 次栈访存 │
 │  2. 精确异常 (Precise Exception) 与推测执行回滚:        │
@@ -229,3 +228,10 @@ CPU 内部为每个中断与异常分配一个独一无二的整数标识，称�
    - **Fault 必返回到当前指令重新执行**；
    - **Trap 与外中断必返回到下一条指令继续执行**。
 3. **硬件隐指令不可分割**：关中断、存断点 PC/PSW、模式切换和入口引出全部由硬件电路在时钟驱动下原子完成，**软件绝不能在此期间介入**。
+
+---
+
+## 参考依据
+
+- Intel® 64 and IA-32 Architectures Software Developer's Manual, Volume 3A, Chapter 6 (Interrupt and Exception Handling)：Fault、Trap、Abort 分类、IDT 门描述符与特权级栈切换。
+- The RISC-V Instruction Set Manual, Volume II: Privileged Architecture：`mepc`/`sepc` 与 `mcause` 寄存器规范。

@@ -246,3 +246,10 @@ I2: ADD  R3, R1, R4    ;       IF -> ID -> [EX] (起始就必须输入数据!) -
 1. **按序五段流水线只可能发生 RAW 冒险** $\implies$ WAR 和 WAW 绝不可能在此发生。
 2. **Load-Use 冒险即使有完整转发** $\implies$ 依然必须在 ID 阶段插入 **1 个时钟周期的停顿**。
 3. **理想最大吞吐率** $\implies$ 仅由**最长瓶颈流水段耗时**决定，即 $\text{TP}_{\max} = \frac{1}{\Delta t}$。
+
+---
+
+## 参考依据
+
+- David A. Patterson, John L. Hennessy, *Computer Organization and Design*, Chapter 4 (The Processor)：经典五级流水线数据冒险、转发旁路（Forwarding）与 Load-Use 停顿检测逻辑。
+- 本页五级流水线无转发（14 周期）与全转发（10 周期）时空图由 [核验脚本](../../../tools/verify_outline_examples.py) 验算。
