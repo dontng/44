@@ -267,3 +267,8 @@
    - 理论判断题深水区：**简单 CLOCK 算法因不是堆栈型算法，亦会发生 Belady 异常**。
 2. **改进型 CLOCK 第一轮绝对不修改任何标志位**：
    - 凡是题目称“在第 1 轮扫描中将 $u$ 改为 0”者，均为对算法标准流程的违背。
+
+## 参考依据
+
+- [Linux Multi-Gen LRU 文档](https://www.kernel.org/doc/html/latest/admin-guide/mm/multigen_lru.html)：MGLRU 是可配置的回收实现，不等同于教材单指针 CLOCK；是否启用由内核构建和运行配置决定。
+- 本页离散算法数值由 [核验脚本](../../../tools/verify_outline_examples.py) 逐步检查，不以 Linux 工程实现替代题设算法。

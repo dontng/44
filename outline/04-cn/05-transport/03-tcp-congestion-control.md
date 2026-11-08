@@ -187,3 +187,8 @@
    - 以字节为单位：$\Delta = \frac{\text{SMSS}^2}{\text{cwnd}}\text{ Bytes}$。
 3. **有效发送窗口边界**：
    $$\text{swnd} = \min(\text{cwnd}, \text{rwnd})$$
+
+## 参考依据
+
+- [RFC 5681](https://www.rfc-editor.org/rfc/rfc5681.html)，第 3 节：慢启动、拥塞避免、FlightSize 与 Reno 快恢复；本页按轮表为教学近似。
+- [RFC 6928](https://www.rfc-editor.org/rfc/rfc6928.html)：扩大初始窗口的实验性方案。

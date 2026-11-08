@@ -244,7 +244,7 @@ $$T_{\text{total}} = \text{DIFS} + T_{\text{RTS}} + \text{SIFS} + T_{\text{CTS}}
 
 | 维度 | 408 考场标准模型（学理解题口径） | 现代工程实现边界（Wi-Fi 6 / 现代交换技术） |
 | :--- | :--- | :--- |
-| **信道接入控制** | 默认采用经典的 CSMA/CA 分布式竞争（DCF）与 RTS/CTS 机制 | **Wi-Fi 6（802.11ax）全面引入 OFDMA（正交频分多址）与 MU-MIMO**：AP 集中按子载波资源块（RU）精确调度多个终端并发传输，彻底摒弃了传统的随机争用退避碰撞机制 |
+| **信道接入控制** | 默认采用经典的 CSMA/CA 分布式竞争（DCF）与 RTS/CTS 机制 | **Wi-Fi 6（802.11ax）全面引入 OFDMA（正交频分多址）与 MU-MIMO**：AP 集中按子载波资源块（RU）精确调度多个终端并发传输，与传统 EDCA/CSMA 接入共存：AP 通常先竞争取得 TXOP，再在该传输机会内调度多个用户的 RU；OFDMA 不是对争用退避机制的整体废弃 |
 | **小帧传输效率** | 教材设定每个数据帧均独立封包、独立退避、独立回复 ACK | **帧聚合技术（802.11n/ac A-MPDU / A-MSDU）与 Block ACK**：将数十个数据包聚合为超长物理帧一次发送，接收方仅回复一个位图 Block ACK，消除了大量 IFS 与物理前导码开销 |
 | **VLAN 标签层数** | 标准单层 802.1Q Tag（12 bit VID，上限 4094 个） | **QinQ 技术（IEEE 802.1ad 双层 Tag）与 VXLAN 封装**：运营商网络在用户 802.1Q 标签外再套一层运营商 VLAN 标签；数据中心网络采用 VXLAN（24 bit VNI，支持 1600 万租户）穿透三层网络 |
 | **交换机端口分类** | 严格区分为 Access 端口与 Trunk 端口两分法 | 现代数据中心交换机支持 **Hybrid 混合端口**与 **vxlan vtep** 端口，允许根据流表策略任意指定对特定 VLAN 的打标、剥标或多层重写动作 |
@@ -285,3 +285,8 @@ $$T_{\text{total}} = \text{DIFS} + T_{\text{RTS}} + \text{SIFS} + T_{\text{CTS}}
    - 4 字节 Tag 插入在源 MAC 与 Type 之间；
    - 12 bit VID，有效取值 **$1 \sim 4094$**；
    - Access 端口“进打出剥”，连接终端主机；Trunk 端口“透传带标，遇 PVID 剥标”。
+
+## 参考依据
+
+- [Cisco IEEE 802.11ax 白皮书](https://www.cisco.com/c/en/us/products/collateral/wireless/white-paper-c11-740788.html)：OFDMA 与 EDCA/CSMA 的共存，不同 AP 的部署策略可能不同。
+- [RFC 9913](https://datatracker.ietf.org/doc/html/rfc9913)，IEEE 802.11 相关部分：OFDMA 传输机会与获取介质的过程。
