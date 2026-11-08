@@ -1,6 +1,6 @@
 # 最短路径算法（Dijkstra 与 Floyd）
 
-> 所属模块：[数据结构](../../README.md) $\to$ [图](../README.md)
+> 所属模块：[408 考纲知识库](../../README.md) $\to$ [数据结构](../README.md) $\to$ 图
 
 ---
 

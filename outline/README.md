@@ -1,14 +1,21 @@
 # 408 核心考纲知识库（细粒度模块化架构）
 
-> 本知识库严格依照 `27outline.md` 进行细分拆解，**专注沉淀与管理纯粹考纲知识点**。
-> - **无真题题面污染**：不堆砌孤立题面，只沉淀系统机制与物理必然性；
-> - **细粒度切分**：拒绝长篇大论，每个 MD 专注一个核心概念，查阅直达；
-> - **学科内跨章节互联**：建立严密的学科内网状链接，打通知识孤岛；
-> - **供真题外链挂载**：`sprint40` 或 `src` 做题遇到阻碍时，直接超链接挂载深入。
+> 本知识库严格依照 408 最新考纲与命题脉络进行细分拆解，全库共收录 **88 个细粒度考纲专题**（数据结构 29、计算机组成原理 19、操作系统 22、计算机网络 18）。
+>
+> - **无真题题面污染**：不堆砌孤立真题题干或年份代号，只沉淀系统机制与物理必然性；
+> - **细粒度切分**：拒绝长篇大论，每个专题独立成篇，专注一个核心机理，查阅直达；
+> - **网状贯通体系**：严密覆盖学科内跨章节依赖与跨学科协同；
+> - **质量工程把控**：全库专题标准与审查进展详见 [质量审查与修复记录](audit/README.md)。
+
+## 学科分册导航
+- [数据结构（29 专题）](01-ds/README.md)
+- [计算机组成原理（19 专题）](02-co/README.md)
+- [操作系统（22 专题）](03-os/README.md)
+- [计算机网络（18 专题）](04-cn/README.md)
 
 ---
 
-## 数据结构 (`01-ds`)
+## 数据结构 (`01-ds`) · [分册目录](01-ds/README.md)
 
 ### 基本概念与复杂度
 - [数据结构基本概念：逻辑结构、物理结构与运算关系](01-ds/01-concepts/01-data-structures-basics.md)
@@ -44,16 +51,18 @@
 - [平衡二叉树与红黑树：AVL旋转调整与红黑树五大特性](01-ds/06-search/03-balanced-trees.md)
 - [B树与B+树：多路平衡查找树、节点分裂合并与索引应用](01-ds/06-search/04-b-trees.md)
 - [散列表：散列函数构造、冲突解决与装填因子分析](01-ds/06-search/05-hash-tables.md)
+- [字符串模式匹配与KMP算法：朴素匹配回溯缺陷、主串不回溯推导、next与nextval数组手算轨迹](01-ds/06-search/06-string-matching-kmp.md)
 
 ### 排序
 - [简单插入、冒泡与选择：稳定排序与就地排序基础](01-ds/07-sort/01-simple-sorts.md)
 - [快速排序与归并排序：分治思想、轴点划分与二路归并](01-ds/07-sort/02-efficient-sorts.md)
 - [堆排序：堆调整建堆、筛选下沉与原地堆排](01-ds/07-sort/03-heap-sort.md)
 - [外部排序：多路平衡归并、败者树与置换-选择排序](01-ds/07-sort/04-external-sort.md)
+- [希尔排序与基数排序：增量序列分组插入、稳定性反例与多关键字LSD分配收集轨迹](01-ds/07-sort/05-shell-and-radix-sort.md)
 
 ---
 
-## 计算机组成原理 (`02-co`)
+## 计算机组成原理 (`02-co`) · [分册目录](02-co/README.md)
 
 ### 计算机系统概述
 - [计算机硬件层次：冯诺依曼结构、总线架构与部件连接](02-co/01-system-overview/01-computer-architecture.md)
@@ -63,6 +72,7 @@
 - [定点数表示与补码加减：原码反码补码移码、溢出判断与标志位](02-co/02-data-representation/01-fixed-point-numbers.md)
 - [浮点数与IEEE 754：符号位阶码尾数、规格化与特殊值](02-co/02-data-representation/02-floating-point-ieee754.md)
 - [运算器电路：加法器进位链与算术逻辑单元ALU](02-co/02-data-representation/03-alu-and-circuits.md)
+- [大小端对齐与C语言机器级表示：大小端字节序、结构体边界对齐、选择循环分支与过程调用栈帧](02-co/02-data-representation/04-alignment-and-c-machine-code.md)
 
 ### 存储器层次结构
 - [存储器分类与技术：SRAM/DRAM刷新、ROM分类与多模块交替存储](02-co/03-memory-hierarchy/01-memory-types.md)
@@ -78,6 +88,7 @@
 - [CPU数据通路：总线连接、专用数据通路与控制信号时序](02-co/05-cpu/01-cpu-datapath.md)
 - [控制器设计：硬布线控制器与微程序控制器比较](02-co/05-cpu/02-control-unit-design.md)
 - [指令流水线与冲突：结构冲突、数据冲突转发与控制冲突预测](02-co/05-cpu/03-pipeline-hazards.md)
+- [多处理器架构与硬件多线程：Flynn分类SISD/SIMD/MIMD、SMP/UMA/NUMA与细粒度/粗粒度/SMT多线程](02-co/05-cpu/04-multiprocessor-and-multithreading.md)
 
 ### 总线和输入/输出系统
 - [系统总线与仲裁：同步异步定时、集中式仲裁与突发传输](02-co/06-bus-and-io/01-bus-mechanisms.md)
@@ -86,7 +97,7 @@
 
 ---
 
-## 操作系统 (`03-os`)
+## 操作系统 (`03-os`) · [分册目录](03-os/README.md)
 
 ### 操作系统基础与边界
 - [CPU运行模式：内核态与用户态、特权指令与PSW状态标志](03-os/01-fundamentals/01-cpu-modes.md)
@@ -102,6 +113,7 @@
 - [同步与互斥基础：临界区准则、软件方法、硬件指令TSL与互斥锁](03-os/02-process/04-process-synchronization.md)
 - [信号量机制与经典问题：整型与记录型信号量、生产者消费者、读者写者与哲学家](03-os/02-process/05-semaphores-pv.md)
 - [死锁处理策略：死锁四大必要条件、预防避免(银行家算法)与检测解除](03-os/02-process/06-deadlock.md)
+- [线程实现模型与进程间通信IPC：用户级/内核级线程、1:1/N:1/M:N多线程模型与共享存储/消息传递/管道机制](03-os/02-process/07-threads-and-ipc.md)
 
 ### 内存管理
 - [内存管理基础与连续分配：逻辑地址与物理地址、重定位、单一分区/动态分区分配](03-os/03-memory/01-memory-basics.md)
@@ -121,7 +133,7 @@
 
 ---
 
-## 计算机网络 (`04-cn`)
+## 计算机网络 (`04-cn`) · [分册目录](04-cn/README.md)
 
 ### 计算机网络概述
 - [网络体系结构：OSI七层参考模型与TCP/IP四层模型协议封装](04-cn/01-architecture/01-network-layers.md)
@@ -135,11 +147,13 @@
 - [组帧与差错控制：字符填充/比特填充、奇偶校验与循环冗余校验CRC](04-cn/03-datalink/01-framing-and-error-control.md)
 - [点对点可靠传输：停等协议、后退N帧(GBN)与选择重传(SR)窗口限制](04-cn/03-datalink/02-sliding-window-protocols.md)
 - [介质访问与局域网：CSMA/CD碰撞检测、争用期最小帧长、以太网MAC与交换机自学习](04-cn/03-datalink/03-mac-and-ethernet.md)
+- [无线局域网802.11与VLAN虚拟局域网：CSMA/CA碰撞避免、IFS/RTS/CTS隐蔽站、802.11四地址帧、802.1Q标签与ALOHA/令牌](04-cn/03-datalink/04-wlan-and-vlan.md)
 
 ### 网络层
 - [IP编址与子网划分：分类IP、子网掩码、CIDR无分类编址与路由聚合](04-cn/04-network/01-ip-addressing-and-cidr.md)
 - [路由协议原理：距离向量算法(RIP)、链路状态算法(OSPF)与BGP路径向量](04-cn/04-network/02-routing-protocols.md)
 - [网络层辅助协议与设备：ARP地址解析、ICMP差错与询问、路由器转发表结构](04-cn/04-network/03-routing-devices-and-icmp.md)
+- [IPv6、IP组播、移动IP与SDN：IPv6固定首部与过渡机制、IGMP与组播路由、移动IP代理转发与SDN控制数据平面分离](04-cn/04-network/04-ipv6-multicast-sdn.md)
 
 ### 传输层
 - [传输层服务与UDP协议：端口复用分用、UDP报头格式与无连接特性](04-cn/05-transport/01-transport-services-udp.md)
