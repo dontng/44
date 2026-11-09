@@ -1,6 +1,6 @@
 # Day 10｜地址翻译、子网与数据通路
 
-[← Day 09](day09.md) · [总入口](README.md)
+[← Day 09](day09.md) · [总入口](README.md) · [Day 11 →](day11.md)
 
 ## 今天按这个顺序做
 

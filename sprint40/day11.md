@@ -1,6 +1,6 @@
 # Day 11｜平衡树、页面置换与二叉树判定
 
-[← Day 10](day10.md) · [总入口](README.md)
+[← Day 10](day10.md) · [总入口](README.md) · [Day 12 →](day12.md)
 
 ## 今天按这个顺序做
 

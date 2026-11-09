@@ -1,6 +1,6 @@
 # Day 09｜哈夫曼、内存分配与文件系统
 
-[← Day 08](day08.md) · [总入口](README.md)
+[← Day 08](day08.md) · [总入口](README.md) · [Day 10 →](day10.md)
 
 ## 今天按这个顺序做
 
