@@ -1,6 +1,6 @@
 # Day 36｜2023 抽测复盘｜产出时点与原子性
 
-[← Day 35](day35.md) · [总入口](README.md)
+[← Day 35](day35.md) · [总入口](README.md) · [Day 37 →](day37.md)
 
 ## 今天按这个顺序做
 
