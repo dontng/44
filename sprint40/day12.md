@@ -1,6 +1,6 @@
 # Day 12｜有效地址、路由转发与信号量同步
 
-[← Day 11](day11.md) · [总入口](README.md)
+[← Day 11](day11.md) · [总入口](README.md) · [Day 13 →](day13.md)
 
 ## 今天按这个顺序做
 
