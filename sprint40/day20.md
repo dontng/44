@@ -1,6 +1,6 @@
 # Day 20｜总线、I/O 权限与卫星链路
 
-[← Day 19](day19.md) · [总入口](README.md)
+[← Day 19](day19.md) · [总入口](README.md) · [Day 21 →](day21.md)
 
 ## 今天按这个顺序做
 
