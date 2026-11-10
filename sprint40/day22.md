@@ -13,7 +13,7 @@
 
 ## 大题1｜2024-44 · 追踪数组下标、访存与机器码
 
-[原题单 0919](../src/0919.md)
+[原题单 0919](../src/0919.md) · [本题共用的2024-43题图](../bank/2024/q43.png)
 
 <img src="../bank/2024/q44.png" alt="2024-44" style="display: block; width: 46.03em; max-width: 100%; height: auto; margin: 12px 0;">
 

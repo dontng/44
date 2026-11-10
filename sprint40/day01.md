@@ -94,12 +94,12 @@ bool checkBST(const SqBiTree *T, int i, long long lo, long long hi) {
     return checkBST(T, 2*i+1, lo, x)
         && checkBST(T, 2*i+2, x, hi);
 }
-bool IsBST(SqBiTree T) {
-    return checkBST(&T, 0, LLONG_MIN, LLONG_MAX);
+bool IsBST(const SqBiTree *T) {
+    return checkBST(T, 0, LLONG_MIN, LLONG_MAX);
 }
 ```
 
-只访问树中实际结点及其空孩子位置，时间O(v)，v为非空结点数，亦为数组使用长度n的O(n)上界；递归栈O(h)。也可按中序遍历检查严格递增，但不能直接扫描数组，因为数组是层序位置布局。原题只要求算法思想与实现，不虚构分项分值。
+按指针传入顺序存储结构，避免复制整个数组。只访问树中实际结点及其空孩子位置，时间O(v)，v为非空结点数，亦为数组使用长度n的O(n)上界；递归栈O(h)。也可按中序遍历检查严格递增，但不能直接扫描数组，因为数组是层序位置布局。原题只要求算法思想与实现，不虚构分项分值。
 
 </details>
 
