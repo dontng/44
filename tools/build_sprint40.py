@@ -1,12 +1,7 @@
-"""Build only the already-authored daily routes and standalone teaching modules.
-
-Only sprint40 is written. src, archived answers and historical attempts are never read
-for explanations or modified. Question images are referenced, not regenerated.
-"""
+"""Legacy renderer retained for the original Sprint40 draft."""
 import json
 import re
 from pathlib import Path
-from format_q_img import get_image_tag
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'sprint40'
@@ -23,6 +18,8 @@ def load_questions(node, first_only=True):
 
 
 def image(qid, prefix='../../', alt=None):
+    from format_q_img import get_image_tag
+
     year, q = qid.split('-')
     return get_image_tag(year, q, alt_text=alt or qid, prefix=prefix)
 
@@ -86,4 +83,4 @@ def build():
 
 
 if __name__ == '__main__':
-    build()
+    raise SystemExit('Archived renderer. Validate the active Markdown with tools/check_sprint40.py.')
