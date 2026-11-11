@@ -133,7 +133,7 @@ for item in schedule['days']:
     require(written == item['written'] and 1 <= len(written) <= 2, label, 'wrong written list')
     require(all(int(q[-2:]) > 40 for q in written), label, 'choice in written block')
     require(not re.search(r'\]\((?:modules|lessons)/', text), label, 'teaching link still leaves day page')
-    require(not any(s in text for s in ['已有讲解', '补救', '认知罗盘', '到点停止', '到120分钟', '离开前的一个检查']), label, 'retired workflow text remains')
+    require(not any(s in text for s in ['**直接法', '**排除法', '已有讲解', '补救', '认知罗盘', '到点停止', '到120分钟', '离开前的一个检查']), label, 'retired workflow text remains')
     for section in re.split(r'(?=^### (?:选择题|大题)\d+｜)', text, flags=re.M)[1:]:
         q = re.match(rf'### (?:选择题|大题)\d+｜({QID})\b', section)[1]
         y, n = q.split('-')
@@ -146,7 +146,7 @@ for item in schedule['days']:
             require(q not in folds_by_question or folds_by_question[q] == content, label, f'{q} repeated explanation differs')
             folds_by_question[q] = content
         if folded and q in inline_choices:
-            require('**答案：' in folded[1] and '**直接法：**' in folded[1] and '解析待补' not in folded[1], label, f'{q} inline choice explanation lost')
+            require('**答案：' in folded[1] and '解析待补' not in folded[1], label, f'{q} inline choice explanation lost')
         if folded and q in inline_written:
             require(len(folded[1]) > 60 and '解析待补' not in folded[1], label, f'{q} inline written solution lost')
         assigned.setdefault(q, d)
