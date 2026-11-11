@@ -145,6 +145,8 @@ for item in schedule['days']:
             content = folded[1].strip()
             require(q not in folds_by_question or folds_by_question[q] == content, label, f'{q} repeated explanation differs')
             folds_by_question[q] = content
+        if folded:
+            require(not any(x in content for x in ['解析待补', '答案与解析待补', '待逐题复核']), label, f'{q} placeholder answer remains')
         if folded and q in inline_choices:
             require('**答案：' in folded[1] and '解析待补' not in folded[1], label, f'{q} inline choice explanation lost')
         if folded and q in inline_written:
@@ -169,7 +171,7 @@ for y in (2023, 2024, 2025, 2026):
     require(written_days.get(f'{y}-43') == written_days.get(f'{y}-44'), 'schedule.json', f'{y}-43/44 shared stem split')
 for q, d in assigned.items():
     require(f'| {q} | [Day {d:02}](day{d:02}.md) |' in coverage, 'coverage.md', f'{q} first day wrong')
-require(inline_choices <= set(all_choices) and inline_written <= set(all_written), 'schedule.json', 'unassigned explanation IDs')
+require(inline_choices == set(all_choices) and inline_written == set(all_written), 'schedule.json', 'all 329 assigned questions must retain inline explanations')
 check_markdown(SPRINT / 'audit.md')
 if errors:
     raise SystemExit('\n'.join(errors))
