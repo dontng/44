@@ -30,7 +30,8 @@ def exists(path):
     if path.exists():
         return True
     try:
-        return path.relative_to(ROOT).as_posix() in tracked
+        rel = path.relative_to(ROOT).as_posix()
+        return rel.startswith('bank/') and rel in tracked
     except ValueError:
         return False
 
@@ -63,18 +64,38 @@ def check_markdown(path):
 
 
 source = {}
+groups = {}
+family = {}
 for path in sorted((ROOT / 'src').glob('*.md')):
-    for q in re.findall(rf'^### \d+\s*·\s*({QID})\b', visible(path.read_text()), re.M):
+    if not re.fullmatch(r'\d{4}', path.stem):
+        continue
+    ids = re.findall(rf'^### \d+\s*·\s*({QID})\b', visible(path.read_text()), re.M)
+    for q in ids:
         source.setdefault(q, []).append(path.stem)
+    if path.stem <= '0908':
+        choices = [q for q in ids if int(q[-2:]) <= 40]
+        if choices:
+            groups[path.stem] = choices
+            family[path.stem] = ('DS' if path.stem < '0812' else 'CO' if path.stem < '0824'
+                                 else 'OS' if path.stem < '0901' else 'NW')
 expected = {f'{y}-{n:02}' for y in range(2020, 2027) for n in range(1, 48)}
-require(set(source) == expected, 'src', 'expected every question in 2020–2026: 329 unique IDs')
+require(set(source) == expected, 'src', 'expected all 329 source IDs')
 schedule = json.loads((SPRINT / 'content/schedule.json').read_text())
-require(schedule['sources'] == source, 'schedule.json', 'source mappings changed or stale')
-require([x['day'] for x in schedule['days']] == list(range(1, 41)), 'schedule.json', 'expected Day01–40 once')
-all_choices, all_written = [], []
-written_days = {}
+require(schedule['sources'] == source, 'schedule.json', 'stale source mappings')
+require(set(schedule['choice_groups']) == set(groups), 'schedule.json', 'choice group list changed')
+require([x['day'] for x in schedule['days']] == list(range(1, 41)), 'schedule.json', 'expected 40 days')
+require(not (SPRINT / 'modules').exists() and not (SPRINT / 'lessons').exists(), 'sprint40', 'retired teaching directories must not remain')
+for retired in ['modules.json', 'days.json']:
+    require(not (SPRINT / 'content' / retired).exists(), 'content', f'old renderer data remains: {retired}')
 readme = check_markdown(SPRINT / 'README.md')
 coverage = check_markdown(SPRINT / 'coverage.md')
+all_choices, all_written = [], []
+visits = Counter()
+assigned = {}
+written_days = {}
+seen_groups = set()
+inline_choices = set(schedule['choice_explanations'])
+inline_written = set(schedule['written_explanations'])
 for item in schedule['days']:
     d = item['day']
     path = SPRINT / f'day{d:02}.md'
@@ -82,58 +103,71 @@ for item in schedule['days']:
     text = check_markdown(path)
     require(text.startswith(f'# Day {d:02}｜'), label, 'wrong day heading')
     nav = text.split('\n\n', 2)[1]
-    expected_nav = {'README.md'} | {f'day{n:02}.md' for n in (d-1, d+1) if 1 <= n <= 40}
-    require(set(re.findall(r'\]\(([^)]+)\)', nav)) == expected_nav, label, 'wrong adjacent-day navigation')
-    require(f'](day{d:02}.md)' in readme, label, 'missing from README')
+    targets = set(re.findall(r'\]\(([^)]+)\)', nav))
+    wanted_nav = {'README.md'} | {f'day{n:02}.md' for n in (d-1, d+1) if 1 <= n <= 40}
+    require(targets == wanted_nav, label, 'wrong day navigation')
+    require(f'](day{d:02}.md)' in readme, label, 'missing index entry')
+    require(len(item['groups']) == 2, label, 'expected two whole source groups')
+    wanted_subjects = ['DS', 'OS'] if d % 2 else ['CO', 'NW']
+    require([g['subject'] for g in item['groups']] == wanted_subjects, label, 'wrong two-subject rotation')
+    page_group_sections = re.split(r'(?=^## 选择题组\d+｜)', text, flags=re.M)[1:]
+    require(len(page_group_sections) == 2, label, 'missing group headings')
+    flattened = []
+    for i, g in enumerate(item['groups']):
+        node = g['source']
+        wanted = groups.get(node, [])
+        require(g['questions'] == wanted and g['subject'] == family.get(node), label, f'{node} was split, reordered or misclassified')
+        visits[node] += 1
+        require(g['round'] == visits[node], label, f'{node} wrong repeat count')
+        section = page_group_sections[i].split('\n## 解答题', 1)[0]
+        actual = re.findall(rf'^### 选择题\d+｜({QID})\b', section, re.M)
+        require(actual == wanted, label, f'{node} rendered group differs from src')
+        require(f'](../src/{node}.md)' in section, label, f'{node} missing source link')
+        flattened += wanted
+        if d <= 24:
+            seen_groups.add(node)
     choices = re.findall(rf'^### 选择题\d+｜({QID})\b', text, re.M)
     written = re.findall(rf'^### 大题\d+｜({QID})\b', text, re.M)
-    require(choices == item['choices'] and len(choices) == 7, label, 'daily choice list differs from schedule or is not seven')
-    require(written == item['written'] and 1 <= len(written) <= 2, label, 'daily written list differs from schedule or exceeds two')
-    require(all(int(q[-2:]) <= 40 for q in choices), label, 'written question placed in choice block')
-    require(all(int(q[-2:]) > 40 for q in written), label, 'choice question placed in written block')
-    distribution = Counter(subject(q) for q in choices)
-    require(set(distribution) == {0, 1, 2, 3} and all(n in (1, 2) for n in distribution.values()), label, 'each subject must have one or two choices')
-    b = item['budget']
-    wanted = {'choices': 70 if len(written) == 2 else 75, 'written': 40 if len(written) == 2 else 35, 'recall': 10}
-    require(b == wanted and sum(b.values()) == 120 and b['choices'] > b['written'], label, 'wrong budget or written work dominates')
-    periods = [(int(a), int(z)) for a, z in re.findall(r'^\d\. \*\*(\d+)[–—-](\d+)分钟', text, re.M)]
-    require(periods == [(0, b['choices']), (b['choices'], 110), (110, 120)], label, 'rendered budget differs from schedule')
-    sections = re.split(r'(?=^### (?:选择题|大题)\d+｜)', text, flags=re.M)[1:]
-    for section in sections:
+    require(choices == flattened == item['choices'], label, 'wrong rendered choice list')
+    require(written == item['written'] and 1 <= len(written) <= 2, label, 'wrong written list')
+    require(all(int(q[-2:]) > 40 for q in written), label, 'choice in written block')
+    require(not re.search(r'\]\((?:modules|lessons)/', text), label, 'teaching link still leaves day page')
+    require(not any(s in text for s in ['已有讲解', '补救', '认知罗盘', '到点停止', '到120分钟', '离开前的一个检查']), label, 'retired workflow text remains')
+    for section in re.split(r'(?=^### (?:选择题|大题)\d+｜)', text, flags=re.M)[1:]:
         q = re.match(rf'### (?:选择题|大题)\d+｜({QID})\b', section)[1]
-        year, number = q.split('-')
-        expected_image = f'../bank/{year}/q{number}.png'
-        require(f'src="{expected_image}"' in section, label, f'{q} has wrong or missing original image')
-        origins = re.findall(r'\]\(\.\./src/(\d{4})\.md\)', section)
-        require(bool(origins) and all(s in source.get(q, []) for s in origins), label, f'{q} source mismatch')
-        require(f'| {q} | [Day {d:02}](day{d:02}.md) |' in coverage, label, f'{q} coverage row missing or wrong')
+        y, n = q.split('-')
+        require(f'src="../bank/{y}/q{n}.png"' in section, label, f'{q} image mismatch')
+        folded = re.search(r'<details>\s*<summary>答案与解析</summary>\s*(.*?)\s*</details>', section, re.S)
+        require(folded, label, f'{q} needs a local folded answer')
+        if folded and q in inline_choices:
+            require('**答案：' in folded[1] and '**直接法：**' in folded[1] and '解析待补' not in folded[1], label, f'{q} inline choice explanation lost')
+        if folded and q in inline_written:
+            require(len(folded[1]) > 60 and '解析待补' not in folded[1], label, f'{q} inline written solution lost')
+        assigned.setdefault(q, d)
+        if int(n) > 40:
+            require(any(f'](../src/{s}.md)' in section for s in source.get(q, [])), label, f'{q} wrong written source')
+    e = item['estimate']
+    require(e['total'] == [e['choices'][0] + e['written'][0] + 5,
+                           e['choices'][1] + e['written'][1] + 10], label, 'estimate total mismatch')
+    require(e['total'][0] <= e['total'][1], label, 'invalid time estimate range')
+    require(f'预计用时：{e["total"][0]}—{e["total"][1]}分钟' in text, label, 'rendered estimate mismatch')
     all_choices += choices
     all_written += written
     written_days.update({q: d for q in written})
-
-counts = Counter(all_choices + all_written)
-require(set(counts) == set(source), 'coverage', f'missing {sorted(set(source)-set(counts))}; extra {sorted(set(counts)-set(source))}')
-require(all(n == 1 for n in counts.values()), 'coverage', f'duplicate first assignments {[q for q, n in counts.items() if n != 1]}')
-require(len(all_choices) == 280 and len(all_written) == 49, 'coverage', 'expected 280 choices and 49 written questions')
+require(seen_groups == set(groups), 'coverage', 'not all 40 source groups visited by day24')
+require(set(all_choices) == {q for q in source if int(q[-2:]) <= 40}, 'coverage', 'not all 280 choices assigned')
+require(Counter(all_written) == Counter(q for q in source if int(q[-2:]) > 40), 'coverage', '49 written questions must each appear once')
+require(set(assigned) == set(source), 'coverage', 'not all 329 questions assigned')
 require(sum(len(d['written']) == 2 for d in schedule['days']) == 9, 'schedule.json', 'expected nine double-written days')
 for y in (2023, 2024, 2025, 2026):
-    require(written_days.get(f'{y}-43') == written_days.get(f'{y}-44'), 'schedule.json', f'{y}-43/44 shared stem split across days')
-for q, node in schedule['choice_lessons'].items():
-    path = SPRINT / 'modules' / f'{node}.md'
-    require(re.search(rf'^## \d+\s*·\s*{q}\b', visible(path.read_text()), re.M), path.relative_to(ROOT), f'{q} lesson heading missing')
-for q, ref in schedule['written_lessons'].items():
-    path = SPRINT / 'lessons' / ref['page']
-    text = visible(path.read_text())
-    require(ref['heading'] in text and '完整解法与必要补学' in text, path.relative_to(ROOT), f'{q} written lesson missing')
-for q, page in schedule['choice_checks'].items():
-    require(q[:4] in visible((SPRINT/'lessons'/page).read_text()), page, f'{q} check page missing year')
-for path in sorted((SPRINT/'modules').glob('*.md')) + sorted((SPRINT/'lessons').glob('*.md')):
-    check_markdown(path)
-require(len(list((SPRINT/'lessons').glob('day*.md'))) == 40, 'lessons', 'old lessons must be preserved')
-require(len(list((SPRINT/'modules').glob('*.md'))) == 40, 'modules', 'original modules must be preserved')
+    require(written_days.get(f'{y}-43') == written_days.get(f'{y}-44'), 'schedule.json', f'{y}-43/44 shared stem split')
+for q, d in assigned.items():
+    require(f'| {q} | [Day {d:02}](day{d:02}.md) |' in coverage, 'coverage.md', f'{q} first day wrong')
+require(inline_choices <= set(all_choices) and inline_written <= set(all_written), 'schedule.json', 'unassigned explanation IDs')
 check_markdown(SPRINT / 'audit.md')
 if errors:
     raise SystemExit('\n'.join(errors))
-print('PASS: 329/329 unique source questions; 280 choices + 49 written; '
-      '40 days with 7 choices and 1–2 written; choice-first 120-minute budgets; '
-      'shared stems, source images, coverage table, lessons and links checked.')
+print(f'PASS: 329/329 source IDs; 280 unique choices, 49 written; two whole src groups per day; '
+      f'four subjects every two days; all 40 groups by day24; '
+      f'{len(inline_choices)} choice and {len(inline_written)} written explanations inline; '
+      f'estimates, shared stems, links and folds checked.')

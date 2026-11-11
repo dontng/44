@@ -1,133 +1,201 @@
-# Day 40｜选择题主线，全量覆盖
+# Day 40｜组成原理＋计算机网络
 
 [← Day 39](day39.md) · [总入口](README.md)
 
-**本日新题：选择题7道，大题1道。** 选择题先做；同一题号只在一天计为首次覆盖。原有讲解按需展开，不再额外执行旧版每日页的两道大题和复盘排期。
+**选择题：13道，来自两份完整src题单；大题：1道。** 先做选择题，再展开题下解析。组内题目沿用src顺序；标为复做的组，已会的快速通过，重点处理上次错题。
 
-## 今天按这个顺序做
+**预计用时：55—90分钟。** 选择题及核对约25—45分钟，大题约25—35分钟，最后用5—10分钟重做今天最值得记住的一道错题。约两小时是配题目标，不是必须耗满或到点强停；计算卡住时先保留题号，先完成其余选择题。
 
-1. **0–75分钟｜选择题及核对。** 按下方七题逐题作答，写选项和一句依据；单题独立尝试至多2分钟，无入口先标U，再补概念。核对和遮住重做包含在本段，避免一道难题拖住整组。
-2. **75–110分钟｜大题针对训练。** 这一道最多35分钟；保留整题及所有小问，先写能确定的部分。无入口5分钟后再看已有讲解；优先练会建模、公式、状态表或代码的第一步，不为誊写长解挤占选择题。
-3. **110–120分钟｜闭卷回收。** 从今天错误的选择题中选一题遮住重做；若七题均独立正确，再回收大题的一处断点。记录实际完成题号，未完成保留U。
+## 选择题组1｜0819 · 组成原理
 
-**120分钟为预算上限，不保证每个人都能做完。** 题量已排齐不等于已完成；到点停止，用下方记录保留未做和待核对项。
+[数据通路：状态元件、操作元件与控制信号](../src/0819.md) · 5道 · 复做第1次。
 
-## 选择题｜本日必做7题
+### 选择题1｜2021-18
 
-### 选择题1｜2024-11 · 数据结构
-
-[原题单 0811｜外存归并：内存装不下以后怎样排序](../src/0811.md)
-
-<img src="../bank/2024/q11.png" alt="2024-11" style="display: block; width: 47.41em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q18.png" alt="2021-18" style="display: block; width: 52.28em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0811.md)。按年份题号 2024-11 定位，只读本题；读后遮住重做。
+**参考答案：C（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题2｜2026-11 · 数据结构
+### 选择题2｜2022-22
 
-[原题单 0811｜外存归并：内存装不下以后怎样排序](../src/0811.md)
-
-<img src="../bank/2026/q11.png" alt="2026-11" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2022/q22.png" alt="2022-22" style="display: block; width: 39.4em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**答案与独立解析待补。** 本题已排入训练，先保留真实选项和依据；未核对不能记为完成，也不能从相邻题或索引提示猜答案。
+**答案：C。**
+
+**直接法：** 单核也可保留多份线程上下文并交替发射。多核可执行多条指令流，向量计算是单指令作用于多项数据，SMP共享物理地址空间。
 
 </details>
 
-### 选择题3｜2020-18 · 组成原理
+### 选择题3｜2023-18
 
-[原题单 0824｜系统边界：应用如何进入内核](../src/0824.md)
-
-<img src="../bank/2020/q18.png" alt="2020-18" style="display: block; width: 52.32em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2023/q18.png" alt="2023-18" style="display: block; width: 46.88em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：A。** 来自[原有答案PDF抽取键](../data/reference/answers/2020.txt)，本轮未重新逐图复核。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**参考答案：B（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题4｜2023-21 · 组成原理
+### 选择题4｜2025-19
 
-[原题单 0824｜系统边界：应用如何进入内核](../src/0824.md)
-
-<img src="../bank/2023/q21.png" alt="2023-21" style="display: block; width: 29.04em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2025/q19.png" alt="2025-19" style="display: block; width: 30.87em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：D。** 来自[原有答案PDF抽取键](../data/reference/answers/2023.txt)，本轮未重新逐图复核。
+**答案：A。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** PC 是专用寄存器，无须放入通用寄存器组。多周期控制要分执行步骤，流水还要解决冒险。
 
 </details>
 
-### 选择题5｜2026-31 · 操作系统
+### 选择题5｜2026-20
 
-[原题单 0831｜设备服务：缓冲、磁盘与请求调度](../src/0831.md)
-
-<img src="../bank/2026/q31.png" alt="2026-31" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2026/q20.png" alt="2026-20" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0831.md)。按年份题号 2026-31 定位，只读本题；读后遮住重做。
+**答案：A（I、II）。**
+
+**直接法：** 单周期一条指令一拍，CPI=1；多周期一条指令分多拍执行，CPI>1，因此I、II成立。
+
+**排除法／易混点：** III把流水线的理想稳态值当作任何情况下都成立。题目虽排除了异常、中断和额外访存开销，仍未排除启动、数据冒险和控制冒险。
 
 </details>
 
-### 选择题6｜2026-32 · 操作系统
+## 选择题组2｜0905 · 计算机网络
 
-[原题单 0831｜设备服务：缓冲、磁盘与请求调度](../src/0831.md)
+[网络地址：子网、分片与可达范围](../src/0905.md) · 8道 · 复做第2次。
 
-<img src="../bank/2026/q32.png" alt="2026-32" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+### 选择题6｜2021-35
+
+<img src="../bank/2021/q35.png" alt="2021-35" style="display: block; width: 57.55em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**答案与独立解析待补。** 本题已排入训练，先保留真实选项和依据；未核对不能记为完成，也不能从相邻题或索引提示猜答案。
+**参考答案：B（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题7｜2026-40 · 计算机网络
+### 选择题7｜2022-35
 
-[原题单 0908｜应用会话：DNS、Web、邮件与文件传输](../src/0908.md)
-
-<img src="../bank/2026/q40.png" alt="2026-40" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2022/q35.png" alt="2022-35" style="display: block; width: 59.8em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0908.md)。按年份题号 2026-40 定位，只读本题；读后遮住重做。
+**答案：B。**
+
+**直接法：** 第三字节72与192按位与得64；第四字节与0得0，所以网络地址183.80.64.0（/18）。
 
 </details>
 
-## 大题｜整题作答，针对断点
+### 选择题8｜2022-36
 
-### 大题1｜2022-47 · 计算机网络
+<img src="../bank/2022/q36.png" alt="2022-36" style="display: block; width: 38.54em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：D（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题9｜2023-38
+
+<img src="../bank/2023/q38.png" alt="2023-38" style="display: block; width: 46.04em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：A。**
+
+**直接法：** 图中公网链路195.123.0.32/30，可用.33、.34；R1已占.34，R2的公网出口只能是.33，故NAT后源地址195.123.0.33。
+
+</details>
+
+### 选择题10｜2023-39
+
+<img src="../bank/2023/q39.png" alt="2023-39" style="display: block; width: 42.35em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：B（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题11｜2023-40
+
+<img src="../bank/2023/q40.png" alt="2023-40" style="display: block; width: 42.23em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：D。**
+
+**直接法：** III双栈/隧道可过渡，IV Hop Limit等效TTL；地址空间比是2^(128−32)=2⁹⁶倍，不是96倍；IPv6基本首部固定，II错。
+
+</details>
+
+### 选择题12｜2025-36
+
+<img src="../bank/2025/q36.png" alt="2025-36" style="display: block; width: 42.32em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：C。**
+
+**直接法：** 新接入主机对OFFER发初次REQUEST时使用源0.0.0.0、目的255.255.255.255广播，通知各服务器选择结果。题目问目的在前、源在后，顺序别倒。
+
+</details>
+
+### 选择题13｜2026-39
+
+<img src="../bank/2026/q39.png" alt="2026-39" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案与解析待补。**
+
+</details>
+
+## 解答题
+
+### 大题1｜2022-47
 
 [原题单 1002｜网络服务：配置、地址转换与应用会话](../src/1002.md)
 
 <img src="../bank/2022/q47.png" alt="2022-47" style="display: block; width: 47.88em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>独立尝试后打开本题已有讲解</summary>
+<summary>答案与解析</summary>
 
-[进入 2022-47 原有逐问讲解](lessons/day13.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+（1）设备1选100BaseT交换机，设备2选100BaseT集线器。交换机隔离冲突，未划VLAN时仍转发广播；集线器各端口共用冲突域。
+
+（2）64B在100Mb/s上传输用5.12μs。若相距 d，要求 2×[d/(2×10⁸)+1.51μs]≤5.12μs，得 d≤210m。
+
+（3）M是 DHCP Discover。S 对广播帧泛洪，E0 能收到。发往服务器端口的帧目的MAC仍为 FF-FF-FF-FF-FF-FF。
+
+（4）H5收到的是AP发出的帧。地址1为接收者H5（00-11-11-11-11-E1），地址2为发送者AP（00-11-11-11-11-C1），地址3为原始源H4（00-11-11-11-11-D1）。
 
 </details>
 
-## 今日记录
+## 一行记录
 
 ```text
-实际用时__；选择题已作答__/7，已核对__/7，I__/H__/U__
-大题实际完成的小问__；未做或未核对的题号__
-下一次先回收的选择题__；错误发生在__
+实际用时__；未完成或未核对的题号__；今天最容易混淆的是__
 ```

@@ -1,141 +1,226 @@
-# Day 35｜选择题主线，全量覆盖
+# Day 35｜数据结构＋操作系统
 
 [← Day 34](day34.md) · [总入口](README.md) · [Day 36 →](day36.md)
 
-**本日新题：选择题7道，大题1道。** 选择题先做；同一题号只在一天计为首次覆盖。原有讲解按需展开，不再额外执行旧版每日页的两道大题和复盘排期。
+**选择题：16道，来自两份完整src题单；大题：1道。** 先做选择题，再展开题下解析。组内题目沿用src顺序；标为复做的组，已会的快速通过，重点处理上次错题。
 
-## 今天按这个顺序做
+**预计用时：55—85分钟。** 选择题及核对约25—40分钟，大题约25—35分钟，最后用5—10分钟重做今天最值得记住的一道错题。约两小时是配题目标，不是必须耗满或到点强停；计算卡住时先保留题号，先完成其余选择题。
 
-1. **0–75分钟｜选择题及核对。** 按下方七题逐题作答，写选项和一句依据；单题独立尝试至多2分钟，无入口先标U，再补概念。核对和遮住重做包含在本段，避免一道难题拖住整组。
-2. **75–110分钟｜大题针对训练。** 这一道最多35分钟；保留整题及所有小问，先写能确定的部分。无入口5分钟后再看已有讲解；优先练会建模、公式、状态表或代码的第一步，不为誊写长解挤占选择题。
-3. **110–120分钟｜闭卷回收。** 从今天错误的选择题中选一题遮住重做；若七题均独立正确，再回收大题的一处断点。记录实际完成题号，未完成保留U。
+## 选择题组1｜0805 · 数据结构
 
-**120分钟为预算上限，不保证每个人都能做完。** 题量已排齐不等于已完成；到点停止，用下方记录保留未做和待核对项。
+[有序树：从局部旋转到多路分裂](../src/0805.md) · 9道 · 复做第1次。
 
-## 选择题｜本日必做7题
+### 选择题1｜2020-05
 
-### 选择题1｜2022-11 · 数据结构
-
-[原题单 0810｜排序过程：一趟以后什么已经确定](../src/0810.md)
-
-<img src="../bank/2022/q11.png" alt="2022-11" style="display: block; width: 44.52em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2020/q05.png" alt="2020-05" style="display: block; width: 46.8em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：D。** 来自[原有答案PDF抽取键](../data/reference/answers/2022.txt)，本轮未重新逐图复核。
+**答案：B。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** 目标左子树根是2，故2必须在1、3之前插入。B先插1再插2，会把1变成4的左孩子，不能得到题图。
 
 </details>
 
-### 选择题2｜2023-10 · 数据结构
+### 选择题2｜2020-10
 
-[原题单 0810｜排序过程：一趟以后什么已经确定](../src/0810.md)
-
-<img src="../bank/2023/q10.png" alt="2023-10" style="display: block; width: 45.72em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2020/q10.png" alt="2020-10" style="display: block; width: 46.68em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：C。** 来自[原有答案PDF抽取键](../data/reference/answers/2023.txt)，本轮未重新逐图复核。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**参考答案：B（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题3｜2021-21 · 组成原理
+### 选择题3｜2021-06
 
-[原题单 0823｜I/O路径：轮询、中断与DMA怎样交接控制权](../src/0823.md)
-
-<img src="../bank/2021/q21.png" alt="2021-21" style="display: block; width: 52.28em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q06.png" alt="2021-06" style="display: block; width: 38.76em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：B。** 来自[原有答案PDF抽取键](../data/reference/answers/2021.txt)，本轮未重新逐图复核。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**参考答案：D（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题4｜2021-22 · 组成原理
+### 选择题4｜2021-09
 
-[原题单 0823｜I/O路径：轮询、中断与DMA怎样交接控制权](../src/0823.md)
-
-<img src="../bank/2021/q22.png" alt="2021-22" style="display: block; width: 39.16em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q09.png" alt="2021-09" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：A。** 来自[原有答案PDF抽取键](../data/reference/answers/2021.txt)，本轮未重新逐图复核。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**参考答案：A（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题5｜2025-29 · 操作系统
+### 选择题5｜2022-08
 
-[原题单 0830｜文件路径：名字、索引、数据块与共享](../src/0830.md)
-
-<img src="../bank/2025/q29.png" alt="2025-29" style="display: block; width: 42.39em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2022/q08.png" alt="2022-08" style="display: block; width: 47.6em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**待核对线索：C。** 来自[仓内2025参考答案](../data/reference/answers/2025.txt)，该文件明确标为模型手解、待官方核对，本轮未独立复核，不将该字母当作定论。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**参考答案：D（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题6｜2025-31 · 操作系统
+### 选择题6｜2023-07
 
-[原题单 0830｜文件路径：名字、索引、数据块与共享](../src/0830.md)
-
-<img src="../bank/2025/q31.png" alt="2025-31" style="display: block; width: 35.19em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2023/q07.png" alt="2023-07" style="display: block; width: 43.23em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有简要核对](lessons/day38.md)，按题号 2025-31 定位；旧页排期不执行，核对后遮住写出依据。
+**答案：B。**
+
+**直接法：** I插入根分裂可增高；II删除最终在叶层移除或调整关键字，会改变叶；III错，B树可在内部命中；IV错，插入关键字可分裂提升。选I、II。
 
 </details>
 
-### 选择题7｜2024-39 · 计算机网络
+### 选择题7｜2024-07
 
-[原题单 0907｜端到端状态：TCP序号、窗口与拥塞](../src/0907.md)
-
-<img src="../bank/2024/q39.png" alt="2024-39" style="display: block; width: 46.0em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2024/q07.png" alt="2024-07" style="display: block; width: 45.4em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：C。** 来自[原有答案PDF抽取键](../data/reference/answers/2024.txt)，本轮未重新逐图复核。
+**答案：D。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** T在k3右侧且在k2左侧，所有x满足k3<x<k2，同时继承k1<x。D给出有效的更紧区间。
 
 </details>
 
-## 大题｜整题作答，针对断点
+### 选择题8｜2025-08
 
-### 大题1｜2025-47 · 计算机网络
+<img src="../bank/2025/q08.png" alt="2025-08" style="display: block; width: 36.74em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：C（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题9｜2026-08
+
+<img src="../bank/2026/q08.png" alt="2026-08" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案与解析待补。**
+
+</details>
+
+## 选择题组2｜0831 · 操作系统
+
+[设备服务：缓冲、磁盘与请求调度](../src/0831.md) · 7道 · 复做第2次。
+
+### 选择题10｜2021-26
+
+<img src="../bank/2021/q26.png" alt="2021-26" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：C（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题11｜2022-32
+
+<img src="../bank/2022/q32.png" alt="2022-32" style="display: block; width: 26.04em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：A（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题12｜2023-32
+
+<img src="../bank/2023/q32.png" alt="2023-32" style="display: block; width: 44.04em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：D（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题13｜2024-31
+
+<img src="../bank/2024/q31.png" alt="2024-31" style="display: block; width: 33.23em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：C。**
+
+**直接法：** 中断例程把字符放入内核缓冲区。CPU寄存器只是临时载体，用户缓冲区属于后续交付。
+
+</details>
+
+### 选择题14｜2024-32
+
+<img src="../bank/2024/q32.png" alt="2024-32" style="display: block; width: 47.59em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：C（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题15｜2026-31
+
+<img src="../bank/2026/q31.png" alt="2026-31" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：D。**
+
+**直接法：** 块设备和字符设备的传输单位与设备特性不同，I/O控制方式可以不同。它们仍可在内核规定的接口下提供启动和读写操作。
+
+</details>
+
+### 选择题16｜2026-32
+
+<img src="../bank/2026/q32.png" alt="2026-32" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案与解析待补。**
+
+</details>
+
+## 解答题
+
+### 大题1｜2025-47
 
 [原题单 0930｜传输窗口：序号空间、确认与超时共同推进](../src/0930.md)
 
 <img src="../bank/2025/q47.png" alt="2025-47" style="display: block; width: 42.55em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>独立尝试后打开本题已有讲解</summary>
+<summary>答案与解析</summary>
 
-[进入 2025-47 原有逐问讲解](lessons/day20.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+（1）单程传播时延为2×36000/300000=0.24s，单方向吞吐量由卫星链路限制为200kb/s。4000B序列化耗时0.16s，在题设忽略开销且按瓶颈链路下界计时的口径下，共0.40s。
+
+（2）每帧1500×8/200000=0.06s，首帧发出到ACK返回需0.06+2×0.24=0.54s。利用率至少80%要求 W×0.06≥0.8×0.54，向上取整得8帧。GBN要求 W≤2ᵏ−1，最少4位序号。
+
+（3）生活区需/25，另两区需/26。H1=10.10.10.33/26锁定管理区为10.10.10.0/26。作业区为10.10.10.64/26，生活区为10.10.10.128/25。
 
 </details>
 
-## 今日记录
+## 一行记录
 
 ```text
-实际用时__；选择题已作答__/7，已核对__/7，I__/H__/U__
-大题实际完成的小问__；未做或未核对的题号__
-下一次先回收的选择题__；错误发生在__
+实际用时__；未完成或未核对的题号__；今天最容易混淆的是__
 ```

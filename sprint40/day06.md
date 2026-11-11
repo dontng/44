@@ -1,133 +1,207 @@
-# Day 06｜选择题主线，全量覆盖
+# Day 06｜组成原理＋计算机网络
 
 [← Day 05](day05.md) · [总入口](README.md) · [Day 07 →](day07.md)
 
-**本日新题：选择题7道，大题1道。** 选择题先做；同一题号只在一天计为首次覆盖。原有讲解按需展开，不再额外执行旧版每日页的两道大题和复盘排期。
+**选择题：12道，来自两份完整src题单；大题：2道。** 先做选择题，再展开题下解析。组内题目沿用src顺序；标为复做的组，已会的快速通过，重点处理上次错题。
 
-## 今天按这个顺序做
+**预计用时：85—125分钟。** 选择题及核对约40—60分钟，大题约40—55分钟，最后用5—10分钟重做今天最值得记住的一道错题。约两小时是配题目标，不是必须耗满或到点强停；计算卡住时先保留题号，先完成其余选择题。
 
-1. **0–75分钟｜选择题及核对。** 按下方七题逐题作答，写选项和一句依据；单题独立尝试至多2分钟，无入口先标U，再补概念。核对和遮住重做包含在本段，避免一道难题拖住整组。
-2. **75–110分钟｜大题针对训练。** 这一道最多35分钟；保留整题及所有小问，先写能确定的部分。无入口5分钟后再看已有讲解；优先练会建模、公式、状态表或代码的第一步，不为誊写长解挤占选择题。
-3. **110–120分钟｜闭卷回收。** 从今天错误的选择题中选一题遮住重做；若七题均独立正确，再回收大题的一处断点。记录实际完成题号，未完成保留U。
+## 选择题组1｜0814 · 组成原理
 
-**120分钟为预算上限，不保证每个人都能做完。** 题量已排齐不等于已完成；到点停止，用下方记录保留未做和待核对项。
+[存储器拼装：容量、长宽与片选](../src/0814.md) · 4道 · 首次。
 
-## 选择题｜本日必做7题
+### 选择题1｜2021-15
 
-### 选择题1｜2024-01 · 数据结构
-
-[原题单 0801｜位置关系：指针、下标与压缩存储](../src/0801.md)
-
-<img src="../bank/2024/q01.png" alt="2024-01" style="display: block; width: 45.97em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q15.png" alt="2021-15" style="display: block; width: 52.24em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0801.md)。按年份题号 2024-01 定位，只读本题；读后遮住重做。
+**答案：C。**
+
+**直接法：** 原题按字编址，每个地址对应32位。000000H—3FFFFFH 共4M个字地址。先用4片512K×8位芯片并联，组成512K×32位；再用8组扩为4M×32位，共32片。也可用总容量复核：4M个字×4B=16MiB，除以每片512KiB，仍为32片。
 
 </details>
 
-### 选择题2｜2026-02 · 数据结构
+### 选择题2｜2022-17
 
-[原题单 0801｜位置关系：指针、下标与压缩存储](../src/0801.md)
-
-<img src="../bank/2026/q02.png" alt="2026-02" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2022/q17.png" alt="2022-17" style="display: block; width: 45.85em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**答案与独立解析待补。** 本题已排入训练，先保留真实选项和依据；未核对不能记为完成，也不能从相邻题或索引提示猜答案。
+**参考答案：C（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题3｜2025-13 · 组成原理
+### 选择题3｜2023-15
 
-[原题单 0812｜位模式的解释权：整数、浮点与类型转换](../src/0812.md)
-
-<img src="../bank/2025/q13.png" alt="2025-13" style="display: block; width: 42.52em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2023/q15.png" alt="2023-15" style="display: block; width: 46.85em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0812.md)。按年份题号 2025-13 定位，只读本题；读后遮住重做。
+**答案：C。**
+
+**直接法：** 30 位字节地址共有 2^30 B，合法地址为 00000000H—3FFFFFFFH。ROM 占四分之一，即 2^28 B，位于最高的四分之一区域，所以范围为 30000000H—3FFFFFFFH。上端点是总容量减1，不是40000000H。
 
 </details>
 
-### 选择题4｜2025-15 · 组成原理
+### 选择题4｜2026-15
 
-[原题单 0812｜位模式的解释权：整数、浮点与类型转换](../src/0812.md)
-
-<img src="../bank/2025/q15.png" alt="2025-15" style="display: block; width: 42.29em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2026/q15.png" alt="2026-15" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**待核对线索：C。** 来自[仓内2025参考答案](../data/reference/answers/2025.txt)，该文件明确标为模型手解、待官方核对，本轮未独立复核，不将该字母当作定论。
+**答案：A。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** 8片芯片、每片8位、总线64位，每次读取连续8字节组成一个64位字；按本题低位交叉编址，字节地址最低3位标识芯片。0018001DH 的低3位是101（芯片5）。A的000001D5H也以101结尾；B、C、D分别对应0、7、4，故选A。
 
 </details>
 
-### 选择题5｜2024-23 · 操作系统
+## 选择题组2｜0904 · 计算机网络
 
-[原题单 0824｜系统边界：应用如何进入内核](../src/0824.md)
+[局域网转发：介质竞争、MAC与交换机](../src/0904.md) · 8道 · 首次。
 
-<img src="../bank/2024/q23.png" alt="2024-23" style="display: block; width: 31.07em; max-width: 100%; height: auto; margin: 12px 0;">
+### 选择题5｜2020-35
+
+<img src="../bank/2020/q35.png" alt="2020-35" style="display: block; width: 40.92em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0824.md)。按年份题号 2024-23 定位，只读本题；读后遮住重做。
+**答案：C。**
+
+**直接法：** 四个集线器各连到交换机独立端口，形成4个共享冲突域；中间路由器把左右分成2个广播域。按题目的统计口径，交换机与路由器间的点到点全双工链路不计为共享冲突域。
 
 </details>
 
-### 选择题6｜2025-23 · 操作系统
+### 选择题6｜2020-37
 
-[原题单 0824｜系统边界：应用如何进入内核](../src/0824.md)
-
-<img src="../bank/2025/q23.png" alt="2025-23" style="display: block; width: 42.58em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2020/q37.png" alt="2020-37" style="display: block; width: 48.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**待核对线索：D。** 来自[仓内2025参考答案](../data/reference/answers/2025.txt)，该文件明确标为模型手解、待官方核对，本轮未独立复核，不将该字母当作定论。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**参考答案：A（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题7｜2021-34 · 计算机网络
+### 选择题7｜2022-37
 
-[原题单 0902｜信号与速率：带宽怎样限制可传数据](../src/0902.md)
-
-<img src="../bank/2021/q34.png" alt="2021-34" style="display: block; width: 41.0em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2022/q37.png" alt="2022-37" style="display: block; width: 45.92em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0902.md)。按年份题号 2021-34 定位，只读本题；读后遮住重做。
+**答案：B。**
+
+**直接法：** 控制平面向数据平面下发流表用南向接口；北向连接应用与控制器。
 
 </details>
 
-## 大题｜整题作答，针对断点
+### 选择题8｜2023-36
 
-### 大题1｜2020-42 · 数据结构
-
-[原题单 0915｜树的递归含义：路径、编码、表达式与存储形态](../src/0915.md)
-
-<img src="../bank/2020/q42.png" alt="2020-42" style="display: block; width: 46.16em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2023/q36.png" alt="2023-36" style="display: block; width: 46.92em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>独立尝试后打开本题已有讲解</summary>
+<summary>答案与解析</summary>
 
-[进入 2020-42 原有逐问讲解](lessons/day11.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+**参考答案：C（待逐题复核）。** 解析待补。
 
 </details>
 
-## 今日记录
+### 选择题9｜2024-35
+
+<img src="../bank/2024/q35.png" alt="2024-35" style="display: block; width: 45.97em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：D。**
+
+**直接法：** H4在VLAN1，能ARP解析同广播域的H1、H2、H3；H6在VLAN3，其MAC不会通过普通跨VLAN ARP出现在H4表。IP看似同网段也不能越过VLAN广播隔离。
+
+</details>
+
+### 选择题10｜2024-36
+
+<img src="../bank/2024/q36.png" alt="2024-36" style="display: block; width: 46.07em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：B（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题11｜2025-35
+
+<img src="../bank/2025/q35.png" alt="2025-35" style="display: block; width: 42.32em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：C（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题12｜2026-36
+
+<img src="../bank/2026/q36.png" alt="2026-36" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案与解析待补。**
+
+</details>
+
+## 解答题
+
+### 大题1｜2026-43
+
+[原题单 0919｜表示到汇编：同一位模式在类型、指令与调用中怎样解释](../src/0919.md)
+
+<img src="../bank/2026/q43.png" alt="2026-43" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+（1）按字节编址，主存可编址单元8位。通用寄存器16位。
+
+（2）op1 在R型低4位，高4位已用0000识别R型，所以可以与op2重码。op2与op3都在高4位，用来区分指令及格式，不能重码。
+
+（3）该指令做 R2←R2+R9，保留低16位。ABCDH+F001H=19BCEH，R2为9BCEH，R9仍为F001H。
+
+（4）①1110，从R15+0取x到R0。②0000 0100，rt=0、左移4位。③1111 1011，为−5的8位补码。④0000 0000 0010，写回R15+2的y。
+
+</details>
+
+### 大题2｜2026-44
+
+[原题单 0920｜指令落到数据通路：寄存器、部件与控制信号协同](../src/0920.md)
+
+<img src="../bank/2026/q44.png" alt="2026-44" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+本题沿用本日43题的题干。
+
+<details>
+<summary>答案与解析</summary>
+
+（1）①、②均为二选一多路选择器，分别选寄存器组读地址。
+
+（2）至少2位。至少区分 imm8 零扩展、imm8 符号扩展、offset12 符号扩展三个模式。左移量 num 的提取也可用第四种模式编码。
+
+（3）取指周期 MARsrc=0，使MAR接PC。ALUAsrc=0，ALUBsrc=1，用PC与常量2相加更新PC。RegWr=0，不写通用寄存器组。
+
+（4）左移量来自扩展器，ALUBsrc=2。写回ALU，RegWsrc=1。目标是rt，RegDst=1，RegWr=1。ExtOp须与M型不同。左移仅取IR[7:4]的无符号 num，M型要对IR[11:0]整体符号扩展；若套用后者，rt和op1会一起混入移位操作数。
+
+</details>
+
+## 一行记录
 
 ```text
-实际用时__；选择题已作答__/7，已核对__/7，I__/H__/U__
-大题实际完成的小问__；未做或未核对的题号__
-下一次先回收的选择题__；错误发生在__
+实际用时__；未完成或未核对的题号__；今天最容易混淆的是__
 ```

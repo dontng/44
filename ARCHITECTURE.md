@@ -11,6 +11,7 @@
 | `src/` | 59份题单；原有解析与专项材料集中保存在 `answer/` |
 | `src/answer/` | 旧解析、专项材料与写作规则存档；默认不读取或用于评判新稿 |
 | `src/answer-quality/` | 旧教学结论与上下文存档；保留但不作为默认约束 |
+| `sprint40/` | day直接承载src题组与折叠解析；每日两科、两日四科，约两小时，逐题覆盖见coverage.md |
 | `plan/` | 40天多学科并行冲刺计划、全景题单映射、大题前置介入与三阶段课表（含 65 天归档） |
 | `27outline.md` | 2027年408考试大纲原文与层级结构 |
 | `daily-network/` | 2026年每日一题原视频题图与解析（观望中） |
@@ -30,6 +31,7 @@
 以下半途而废、过度工程或未启用的历史内容已彻底移出当前工作树，完整保存在 Git 历史中：
 - `draft/` 与 `navigator/`：在分支 `archive/pre-review-20261004` 及提交历史中保留原貌。
 - `review/` 及相关调度脚本（`tools/review.py`、`tools/build_review.py`、`tools/check_review.py`、`tests/test_review.py`、`data/review_prompts.json`、`data/network_lessons.json`、`data/review_events/`）：荒废的复盘卡片系统。
+- `sprint40/modules/`、`sprint40/lessons/`及旧生成器：解释已合入day，原目录保存在Git历史。
 - `paper_html/`：HTML 字体与排版复刻实验。
 - `tldr/`：7月早期教学记录。
 - `src/gpt/`：题单备份副本。

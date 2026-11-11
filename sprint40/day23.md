@@ -1,133 +1,213 @@
-# Day 23｜选择题主线，全量覆盖
+# Day 23｜数据结构＋操作系统
 
 [← Day 22](day22.md) · [总入口](README.md) · [Day 24 →](day24.md)
 
-**本日新题：选择题7道，大题1道。** 选择题先做；同一题号只在一天计为首次覆盖。原有讲解按需展开，不再额外执行旧版每日页的两道大题和复盘排期。
+**选择题：15道，来自两份完整src题单；大题：1道。** 先做选择题，再展开题下解析。组内题目沿用src顺序；标为复做的组，已会的快速通过，重点处理上次错题。
 
-## 今天按这个顺序做
+**预计用时：60—90分钟。** 选择题及核对约30—45分钟，大题约25—35分钟，最后用5—10分钟重做今天最值得记住的一道错题。约两小时是配题目标，不是必须耗满或到点强停；计算卡住时先保留题号，先完成其余选择题。
 
-1. **0–75分钟｜选择题及核对。** 按下方七题逐题作答，写选项和一句依据；单题独立尝试至多2分钟，无入口先标U，再补概念。核对和遮住重做包含在本段，避免一道难题拖住整组。
-2. **75–110分钟｜大题针对训练。** 这一道最多35分钟；保留整题及所有小问，先写能确定的部分。无入口5分钟后再看已有讲解；优先练会建模、公式、状态表或代码的第一步，不为誊写长解挤占选择题。
-3. **110–120分钟｜闭卷回收。** 从今天错误的选择题中选一题遮住重做；若七题均独立正确，再回收大题的一处断点。记录实际完成题号，未完成保留U。
+## 选择题组1｜0811 · 数据结构
 
-**120分钟为预算上限，不保证每个人都能做完。** 题量已排齐不等于已完成；到点停止，用下方记录保留未做和待核对项。
+[外存归并：内存装不下以后怎样排序](../src/0811.md) · 2道 · 首次。
 
-## 选择题｜本日必做7题
+### 选择题1｜2024-11
 
-### 选择题1｜2022-06 · 数据结构
-
-[原题单 0806｜图的骨架：表示、遍历与连通](../src/0806.md)
-
-<img src="../bank/2022/q06.png" alt="2022-06" style="display: block; width: 29.68em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2024/q11.png" alt="2024-11" style="display: block; width: 47.41em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0806.md)。按年份题号 2022-06 定位，只读本题；读后遮住重做。
+**答案：D。**
+
+**直接法：** 升序归并的冠军对应各段当前最小段首。冠军结点保存该关键字所在的归并段号，由段号读取元素和补入下一条。
 
 </details>
 
-### 选择题2｜2023-06 · 数据结构
+### 选择题2｜2026-11
 
-[原题单 0806｜图的骨架：表示、遍历与连通](../src/0806.md)
-
-<img src="../bank/2023/q06.png" alt="2023-06" style="display: block; width: 46.88em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2026/q11.png" alt="2026-11" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：B。** 来自[原有答案PDF抽取键](../data/reference/answers/2023.txt)，本轮未重新逐图复核。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**答案与解析待补。**
 
 </details>
 
-### 选择题3｜2026-12 · 组成原理
+## 选择题组2｜0825 · 操作系统
 
-[原题单 0818｜程序层级：从源程序到CPU真正执行的对象](../src/0818.md)
+[执行生命线：进程、线程、状态与调度](../src/0825.md) · 13道 · 复做第1次。
 
-<img src="../bank/2026/q12.png" alt="2026-12" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+### 选择题3｜2020-26
+
+<img src="../bank/2020/q26.png" alt="2020-26" style="display: block; width: 46.75em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**答案与独立解析待补。** 本题已排入训练，先保留真实选项和依据；未核对不能记为完成，也不能从相邻题或索引提示猜答案。
+**参考答案：D（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题4｜2026-16 · 组成原理
+### 选择题4｜2020-29
 
-[原题单 0818｜程序层级：从源程序到CPU真正执行的对象](../src/0818.md)
-
-<img src="../bank/2026/q16.png" alt="2026-16" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2020/q29.png" alt="2020-29" style="display: block; width: 30.5em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**答案与独立解析待补。** 本题已排入训练，先保留真实选项和依据；未核对不能记为完成，也不能从相邻题或索引提示猜答案。
+**参考答案：B（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题5｜2026-28 · 操作系统
+### 选择题5｜2021-24
 
-[原题单 0828｜内存边界：分配、回收与保护](../src/0828.md)
-
-<img src="../bank/2026/q28.png" alt="2026-28" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q24.png" alt="2021-24" style="display: block; width: 44.76em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**答案与独立解析待补。** 本题已排入训练，先保留真实选项和依据；未核对不能记为完成，也不能从相邻题或索引提示猜答案。
+**参考答案：B（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题6｜2020-28 · 操作系统
+### 选择题6｜2021-25
 
-[原题单 0829｜页面驻留：置换、工作集与缺页代价](../src/0829.md)
-
-<img src="../bank/2020/q28.png" alt="2020-28" style="display: block; width: 44.71em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q25.png" alt="2021-25" style="display: block; width: 44.96em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0829.md)。按年份题号 2020-28 定位，只读本题；读后遮住重做。
+**答案：C。**
+
+**直接法：** 时间片轮转需PCB记录上下文、时钟中断计时、就绪队列轮换；不因采用轮转就必须用阻塞队列，选I、II、III。
 
 </details>
 
-### 选择题7｜2023-39 · 计算机网络
+### 选择题7｜2021-27
 
-[原题单 0905｜网络地址：子网、分片与可达范围](../src/0905.md)
-
-<img src="../bank/2023/q39.png" alt="2023-39" style="display: block; width: 42.35em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q27.png" alt="2021-27" style="display: block; width: 45.28em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：B。** 来自[原有答案PDF抽取键](../data/reference/answers/2023.txt)，本轮未重新逐图复核。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**参考答案：D（待逐题复核）。** 解析待补。
 
 </details>
 
-## 大题｜整题作答，针对断点
+### 选择题8｜2022-23
 
-### 大题1｜2022-46 · 操作系统
+<img src="../bank/2022/q23.png" alt="2022-23" style="display: block; width: 40.0em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：D（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题9｜2022-25
+
+<img src="../bank/2022/q25.png" alt="2022-25" style="display: block; width: 47.8em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：C（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题10｜2022-28
+
+<img src="../bank/2022/q28.png" alt="2022-28" style="display: block; width: 42.96em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：D。**
+
+**直接法：** 读文件、申请外设和P操作都可能等待而阻塞；时间片用完转就绪，不转阻塞。选I、III、IV。
+
+</details>
+
+### 选择题11｜2023-27
+
+<img src="../bank/2023/q27.png" alt="2023-27" style="display: block; width: 43.96em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：C（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题12｜2023-29
+
+<img src="../bank/2023/q29.png" alt="2023-29" style="display: block; width: 48.76em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：B（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题13｜2024-24
+
+<img src="../bank/2024/q24.png" alt="2024-24" style="display: block; width: 32.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：A（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题14｜2025-25
+
+<img src="../bank/2025/q25.png" alt="2025-25" style="display: block; width: 42.61em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：C（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题15｜2026-25
+
+<img src="../bank/2026/q25.png" alt="2026-25" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案与解析待补。**
+
+</details>
+
+## 解答题
+
+### 大题1｜2021-45
 
 [原题单 0925｜并发同步：PV 操作大题](../src/0925.md)
 
-<img src="../bank/2022/q46.png" alt="2022-46" style="display: block; width: 47.8em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q45.png" alt="2021-45" style="display: block; width: 46.8em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>独立尝试后打开本题已有讲解</summary>
+<summary>答案与解析</summary>
 
-[进入 2022-46 原有逐问讲解](lessons/day12.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+（1）S是共享资源计数，检查与修改必须互斥。否则两个调用者可能同时看到S=1并都通过等待，导致同一份资源被重复分配。
+
+（2）以本题的单处理器模型判断。方法1错误：S≤0时一直关中断忙等，能执行 signal 的进程得不到调度，S可能一直无法增大。方法2正确：只有检查得到 S≤0 才进入循环体临时开中断，给其他进程运行机会；重新关中断后再检查。最后一次检查得到 S>0 时直接跳过循环体，接着执行 S--，这两步始终关中断。signal 修改 S 时也关中断。
+
+题图中方法2的左花括号排印有误。可对照[公开题面转写](https://csgraduates.com/study_methods/408quiz/2021/#45)核对开、关中断的位置。
+
+（3）用户程序不能用开/关中断指令实现临界区互斥，因为它们是特权指令，只能在内核态执行；用户态应通过提供的同步机制或原子操作实现互斥。即使在内核使用，单纯屏蔽本CPU中断也不能自动解决多核之间的互斥。
 
 </details>
 
-## 今日记录
+## 一行记录
 
 ```text
-实际用时__；选择题已作答__/7，已核对__/7，I__/H__/U__
-大题实际完成的小问__；未做或未核对的题号__
-下一次先回收的选择题__；错误发生在__
+实际用时__；未完成或未核对的题号__；今天最容易混淆的是__
 ```

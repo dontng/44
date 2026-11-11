@@ -1,137 +1,188 @@
-# Day 10｜选择题主线，全量覆盖
+# Day 10｜组成原理＋计算机网络
 
 [← Day 09](day09.md) · [总入口](README.md) · [Day 11 →](day11.md)
 
-**本日新题：选择题7道，大题1道。** 选择题先做；同一题号只在一天计为首次覆盖。原有讲解按需展开，不再额外执行旧版每日页的两道大题和复盘排期。
+**选择题：12道，来自两份完整src题单；大题：1道。** 先做选择题，再展开题下解析。组内题目沿用src顺序；标为复做的组，已会的快速通过，重点处理上次错题。
 
-## 今天按这个顺序做
+**预计用时：80—125分钟。** 选择题及核对约50—80分钟，大题约25—35分钟，最后用5—10分钟重做今天最值得记住的一道错题。约两小时是配题目标，不是必须耗满或到点强停；计算卡住时先保留题号，先完成其余选择题。
 
-1. **0–75分钟｜选择题及核对。** 按下方七题逐题作答，写选项和一句依据；单题独立尝试至多2分钟，无入口先标U，再补概念。核对和遮住重做包含在本段，避免一道难题拖住整组。
-2. **75–110分钟｜大题针对训练。** 这一道最多35分钟；保留整题及所有小问，先写能确定的部分。无入口5分钟后再看已有讲解；优先练会建模、公式、状态表或代码的第一步，不为誊写长解挤占选择题。
-3. **110–120分钟｜闭卷回收。** 从今天错误的选择题中选一题遮住重做；若七题均独立正确，再回收大题的一处断点。记录实际完成题号，未完成保留U。
+## 选择题组1｜0816 · 组成原理
 
-**120分钟为预算上限，不保证每个人都能做完。** 题量已排齐不等于已完成；到点停止，用下方记录保留未做和待核对项。
+[地址翻译链：虚拟地址怎样到达数据](../src/0816.md) · 5道 · 首次。
 
-## 选择题｜本日必做7题
+### 选择题1｜2020-15
 
-### 选择题1｜2020-04 · 数据结构
-
-[原题单 0803｜树的形状：遍历序列如何约束结构](../src/0803.md)
-
-<img src="../bank/2020/q04.png" alt="2020-04" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2020/q15.png" alt="2020-15" style="display: block; width: 37.58em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：C。** 来自[原有答案PDF抽取键](../data/reference/answers/2020.txt)，本轮未重新逐图复核。
+**答案：D。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** Cache一般用SRAM，TLB通常是相联查找结构，不能说两者都由DRAM组成。按本题模型，缺失后的下级信息位于主存，硬件可以处理查询。
 
 </details>
 
-### 选择题2｜2021-04 · 数据结构
+### 选择题2｜2022-15
 
-[原题单 0803｜树的形状：遍历序列如何约束结构](../src/0803.md)
-
-<img src="../bank/2021/q04.png" alt="2021-04" style="display: block; width: 46.8em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2022/q15.png" alt="2022-15" style="display: block; width: 45.85em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：C。** 来自[原有答案PDF抽取键](../data/reference/answers/2021.txt)，本轮未重新逐图复核。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**参考答案：C（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题3｜2026-13 · 组成原理
+### 选择题3｜2024-17
 
-[原题单 0813｜有限位运算：溢出、标志与乘除](../src/0813.md)
-
-<img src="../bank/2026/q13.png" alt="2026-13" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2024/q17.png" alt="2024-17" style="display: block; width: 46.0em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**答案与独立解析待补。** 本题已排入训练，先保留真实选项和依据；未核对不能记为完成，也不能从相邻题或索引提示猜答案。
+**参考答案：C（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题4｜2021-15 · 组成原理
+### 选择题4｜2024-18
 
-[原题单 0814｜存储器拼装：容量、长宽与片选](../src/0814.md)
-
-<img src="../bank/2021/q15.png" alt="2021-15" style="display: block; width: 52.24em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2024/q18.png" alt="2024-18" style="display: block; width: 39.77em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0814.md)。按年份题号 2021-15 定位，只读本题；读后遮住重做。
+**答案：B。**
+
+**直接法：** MMU检测翻译和保护相关的TLB缺失、页面缺失、越权；Cache缺失由Cache访问与标记比较检测，不是MMU翻译的职责。
 
 </details>
 
-### 选择题5｜2021-24 · 操作系统
+### 选择题5｜2026-19
 
-[原题单 0825｜执行生命线：进程、线程、状态与调度](../src/0825.md)
-
-<img src="../bank/2021/q24.png" alt="2021-24" style="display: block; width: 44.76em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2026/q19.png" alt="2026-19" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：B。** 来自[原有答案PDF抽取键](../data/reference/answers/2021.txt)，本轮未重新逐图复核。
-
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**答案与解析待补。**
 
 </details>
 
-### 选择题6｜2021-25 · 操作系统
+## 选择题组2｜0902 · 计算机网络
 
-[原题单 0825｜执行生命线：进程、线程、状态与调度](../src/0825.md)
+[信号与速率：带宽怎样限制可传数据](../src/0902.md) · 7道 · 首次。
 
-<img src="../bank/2021/q25.png" alt="2021-25" style="display: block; width: 44.96em; max-width: 100%; height: auto; margin: 12px 0;">
+### 选择题6｜2020-34
+
+<img src="../bank/2020/q34.png" alt="2020-34" style="display: block; width: 27.16em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0825.md)。按年份题号 2021-25 定位，只读本题；读后遮住重做。
+**参考答案：B（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题7｜2020-36 · 计算机网络
+### 选择题7｜2021-34
 
-[原题单 0903｜链路可靠性：帧、窗口与重传状态](../src/0903.md)
-
-<img src="../bank/2020/q36.png" alt="2020-36" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q34.png" alt="2021-34" style="display: block; width: 41.0em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：D。** 来自[原有答案PDF抽取键](../data/reference/answers/2020.txt)，本轮未重新逐图复核。
+**答案：A。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** 差分曼彻斯特看每个位起点是否跳变，而非中点方向。由图逐位判得10111001；每位中点的必有跳变只用于时钟同步。
 
 </details>
 
-## 大题｜整题作答，针对断点
+### 选择题8｜2022-34
 
-### 大题1｜2026-42 · 数据结构
+<img src="../bank/2022/q34.png" alt="2022-34" style="display: block; width: 59.7em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：C（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题9｜2023-34
+
+<img src="../bank/2023/q34.png" alt="2023-34" style="display: block; width: 46.88em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：C（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题10｜2024-34
+
+<img src="../bank/2024/q34.png" alt="2024-34" style="display: block; width: 38.17em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：C。**
+
+**直接法：** FSK用不同频率表示0和1；ASK改变幅度，PSK改变相位，DPSK用相邻码元相位差。
+
+</details>
+
+### 选择题11｜2025-34
+
+<img src="../bank/2025/q34.png" alt="2025-34" style="display: block; width: 42.35em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：C。**
+
+**直接法：** 逐对异或：最小汉明距离为4。因此最多保证检出3位错，最多纠正1位错；两位错的纠错球会重叠，不能保证纠2位。
+
+</details>
+
+### 选择题12｜2026-34
+
+<img src="../bank/2026/q34.png" alt="2026-34" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：D。**
+
+**直接法：** 香农容量=200kHz×log₂(1+1023)=2Mb/s。1500B=12000bit，传输时延至少为12000÷2000000=0.006s=6ms。
+
+**排除法／易混点：** 先把字节乘8变成bit；再用分组比特数除以信道容量。这里求传输时延，不另外加传播时延。
+
+</details>
+
+## 解答题
+
+### 大题1｜2026-42
 
 [原题单 0916｜图的结构判定：从邻接信息恢复全局性质](../src/0916.md)
 
 <img src="../bank/2026/q42.png" alt="2026-42" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>独立尝试后打开本题已有讲解</summary>
+<summary>答案与解析</summary>
 
-[进入 2026-42 原有逐问讲解](lessons/day28.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+（1）第一列不行。输出6前需压入4、5、6，弹出6后5挡在4上方。第二列可行。依次输出2、3、1，再压入4和5输出5，之后输出6、7、4，再输出9、8。
+
+（2）若 i<j<k 且 Pᵢ>Pₖ>Pⱼ，Pᵢ 出栈时后两者都已入栈，较大的 Pₖ 在较小的 Pⱼ 上面，却被要求更晚出栈，矛盾。反过来，按目标需要才继续压栈，如果已入栈的目标被一个更大的值挡住，一定是更早的某次输出更大的值迫使挡住者先入栈，三者构成同一禁形。
+
+（3）首个输出2后，1已压在栈里，3、4尚未压入。剩余的有效序列为134、143、314、341、431，一共5种。
+
+（4）首项为1时，删掉这次立即入栈出栈，余下 k−1 个数的方案是 M。首项为2时，删掉2的入栈出栈，余下 1、3、…、k 等价于 k−1 个数，且第一次操作本来就必须先压入1，因此也是 M。全部方案数为 Catalan 数 Cₖ。合法操作是 k 次入栈、k 次出栈且任一前缀出栈不多于入栈，故 Cₖ=binom(2k,k)/(k+1)=[(4k−2)/(k+1)]M。
 
 </details>
 
-## 今日记录
+## 一行记录
 
 ```text
-实际用时__；选择题已作答__/7，已核对__/7，I__/H__/U__
-大题实际完成的小问__；未做或未核对的题号__
-下一次先回收的选择题__；错误发生在__
+实际用时__；未完成或未核对的题号__；今天最容易混淆的是__
 ```

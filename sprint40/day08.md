@@ -1,148 +1,210 @@
-# Day 08｜选择题主线，全量覆盖
+# Day 08｜组成原理＋计算机网络
 
 [← Day 07](day07.md) · [总入口](README.md) · [Day 09 →](day09.md)
 
-**本日新题：选择题7道，大题2道。** 选择题先做；同一题号只在一天计为首次覆盖。原有讲解按需展开，不再额外执行旧版每日页的两道大题和复盘排期。
+**选择题：13道，来自两份完整src题单；大题：1道。** 先做选择题，再展开题下解析。组内题目沿用src顺序；标为复做的组，已会的快速通过，重点处理上次错题。
 
-## 今天按这个顺序做
+**预计用时：85—130分钟。** 选择题及核对约55—85分钟，大题约25—35分钟，最后用5—10分钟重做今天最值得记住的一道错题。约两小时是配题目标，不是必须耗满或到点强停；计算卡住时先保留题号，先完成其余选择题。
 
-1. **0–70分钟｜选择题及核对。** 按下方七题逐题作答，写选项和一句依据；单题独立尝试至多2分钟，无入口先标U，再补概念。核对和遮住重做包含在本段，避免一道难题拖住整组。
-2. **70–110分钟｜大题针对训练。** 两道各约20分钟，共用题干先一起读；保留整题及所有小问，先写能确定的部分。无入口5分钟后再看已有讲解；优先练会建模、公式、状态表或代码的第一步，不为誊写长解挤占选择题。
-3. **110–120分钟｜闭卷回收。** 从今天错误的选择题中选一题遮住重做；若七题均独立正确，再回收大题的一处断点。记录实际完成题号，未完成保留U。
+## 选择题组1｜0815 · 组成原理
 
-**120分钟为预算上限，不保证每个人都能做完。** 题量已排齐不等于已完成；到点停止，用下方记录保留未做和待核对项。
+[Cache访问：地址切分、局部性与替换](../src/0815.md) · 5道 · 首次。
 
-## 选择题｜本日必做7题
+### 选择题1｜2020-15
 
-### 选择题1｜2022-02 · 数据结构
-
-[原题单 0802｜受限容器：栈与队列的状态推进](../src/0802.md)
-
-<img src="../bank/2022/q02.png" alt="2022-02" style="display: block; width: 47.72em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2020/q15.png" alt="2020-15" style="display: block; width: 37.58em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：D。** 来自[原有答案PDF抽取键](../data/reference/answers/2022.txt)，本轮未重新逐图复核。
+**答案：D。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** Cache一般用SRAM，TLB通常是相联查找结构，不能说两者都由DRAM组成。按本题模型，缺失后的下级信息位于主存，硬件可以处理查询。
 
 </details>
 
-### 选择题2｜2024-02 · 数据结构
+### 选择题2｜2021-16
 
-[原题单 0802｜受限容器：栈与队列的状态推进](../src/0802.md)
-
-<img src="../bank/2024/q02.png" alt="2024-02" style="display: block; width: 26.37em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2021/q16.png" alt="2021-16" style="display: block; width: 52.24em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0802.md)。按年份题号 2024-02 定位，只读本题；读后遮住重做。
+**参考答案：A（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题3｜2023-16 · 组成原理
+### 选择题3｜2022-16
 
-[原题单 0813｜有限位运算：溢出、标志与乘除](../src/0813.md)
-
-<img src="../bank/2023/q16.png" alt="2023-16" style="display: block; width: 46.81em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2022/q16.png" alt="2022-16" style="display: block; width: 45.85em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：B。** 来自[原有答案PDF抽取键](../data/reference/answers/2023.txt)，本轮未重新逐图复核。
+**答案：A。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** 32KiB/64B=512行，8路得64组，组号6位，偏移6位，tag=32−6−6=20位；8路需要8个20位比较器。
 
 </details>
 
-### 选择题4｜2024-15 · 组成原理
+### 选择题4｜2024-16
 
-[原题单 0813｜有限位运算：溢出、标志与乘除](../src/0813.md)
-
-<img src="../bank/2024/q15.png" alt="2024-15" style="display: block; width: 35.43em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2024/q16.png" alt="2024-16" style="display: block; width: 42.33em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0813.md)。按年份题号 2024-15 定位，只读本题；读后遮住重做。
+**答案：D。**
+
+**直接法：** 主存页框不是虚拟页的固定直接映射槽位，虚拟页可装入可用页框。Cache可直接映射；主存—外存页面映射通常是全相联的灵活装入。
 
 </details>
 
-### 选择题5｜2026-23 · 操作系统
+### 选择题5｜2026-18
 
-[原题单 0824｜系统边界：应用如何进入内核](../src/0824.md)
-
-<img src="../bank/2026/q23.png" alt="2026-23" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2026/q18.png" alt="2026-18" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**答案与独立解析待补。** 本题已排入训练，先保留真实选项和依据；未核对不能记为完成，也不能从相邻题或索引提示猜答案。
+**答案与解析待补。**
 
 </details>
 
-### 选择题6｜2026-24 · 操作系统
+## 选择题组2｜0905 · 计算机网络
 
-[原题单 0824｜系统边界：应用如何进入内核](../src/0824.md)
+[网络地址：子网、分片与可达范围](../src/0905.md) · 8道 · 首次。
 
-<img src="../bank/2026/q24.png" alt="2026-24" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+### 选择题6｜2021-35
+
+<img src="../bank/2021/q35.png" alt="2021-35" style="display: block; width: 57.55em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**答案与独立解析待补。** 本题已排入训练，先保留真实选项和依据；未核对不能记为完成，也不能从相邻题或索引提示猜答案。
+**参考答案：B（待逐题复核）。** 解析待补。
 
 </details>
 
-### 选择题7｜2024-34 · 计算机网络
+### 选择题7｜2022-35
 
-[原题单 0902｜信号与速率：带宽怎样限制可传数据](../src/0902.md)
-
-<img src="../bank/2024/q34.png" alt="2024-34" style="display: block; width: 38.17em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2022/q35.png" alt="2022-35" style="display: block; width: 59.8em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0902.md)。按年份题号 2024-34 定位，只读本题；读后遮住重做。
+**答案：B。**
+
+**直接法：** 第三字节72与192按位与得64；第四字节与0得0，所以网络地址183.80.64.0（/18）。
 
 </details>
 
-## 大题｜整题作答，针对断点
+### 选择题8｜2022-36
 
-### 大题1｜2026-43 · 组成原理
-
-[原题单 0919｜表示到汇编：同一位模式在类型、指令与调用中怎样解释](../src/0919.md)
-
-<img src="../bank/2026/q43.png" alt="2026-43" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../bank/2022/q36.png" alt="2022-36" style="display: block; width: 38.54em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>独立尝试后打开本题已有讲解</summary>
+<summary>答案与解析</summary>
 
-[进入 2026-43 原有逐问讲解](lessons/day23.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+**参考答案：D（待逐题复核）。** 解析待补。
 
 </details>
 
-### 大题2｜2026-44 · 组成原理
+### 选择题9｜2023-38
 
-[原题单 0920｜指令落到数据通路：寄存器、部件与控制信号协同](../src/0920.md)
-
-<img src="../bank/2026/q44.png" alt="2026-44" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
-
-**共用题干：** 先读本日上一道43题，再做本题；两道均保留全部小问。
+<img src="../bank/2023/q38.png" alt="2023-38" style="display: block; width: 46.04em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>独立尝试后打开本题已有讲解</summary>
+<summary>答案与解析</summary>
 
-[进入 2026-44 原有逐问讲解](lessons/day23.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+**答案：A。**
+
+**直接法：** 图中公网链路195.123.0.32/30，可用.33、.34；R1已占.34，R2的公网出口只能是.33，故NAT后源地址195.123.0.33。
 
 </details>
 
-## 今日记录
+### 选择题10｜2023-39
+
+<img src="../bank/2023/q39.png" alt="2023-39" style="display: block; width: 42.35em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**参考答案：B（待逐题复核）。** 解析待补。
+
+</details>
+
+### 选择题11｜2023-40
+
+<img src="../bank/2023/q40.png" alt="2023-40" style="display: block; width: 42.23em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：D。**
+
+**直接法：** III双栈/隧道可过渡，IV Hop Limit等效TTL；地址空间比是2^(128−32)=2⁹⁶倍，不是96倍；IPv6基本首部固定，II错。
+
+</details>
+
+### 选择题12｜2025-36
+
+<img src="../bank/2025/q36.png" alt="2025-36" style="display: block; width: 42.32em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案：C。**
+
+**直接法：** 新接入主机对OFFER发初次REQUEST时使用源0.0.0.0、目的255.255.255.255广播，通知各服务器选择结果。题目问目的在前、源在后，顺序别倒。
+
+</details>
+
+### 选择题13｜2026-39
+
+<img src="../bank/2026/q39.png" alt="2026-39" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**答案与解析待补。**
+
+</details>
+
+## 解答题
+
+### 大题1｜2022-41
+
+[原题单 0915｜树的递归含义：路径、编码、表达式与存储形态](../src/0915.md)
+
+<img src="../bank/2022/q41.png" alt="2022-41" style="display: block; width: 48.24em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>答案与解析</summary>
+
+**思想。** 从根开始，为每棵子树携带允许的开区间(lo,hi)。当前值必须严格落在区间中；左子树收紧上界，右子树收紧下界。越过ElemNum或遇到−1表示空结点，直接返回真。
+
+```c
+#include <stdbool.h>
+#include <limits.h>
+bool checkBST(const SqBiTree *T, int i, long long lo, long long hi) {
+    if (i >= T->ElemNum || T->SqBiTNode[i] == -1) return true;
+    int x = T->SqBiTNode[i];
+    if (x <= lo || x >= hi) return false;
+    return checkBST(T, 2*i+1, lo, x)
+        && checkBST(T, 2*i+2, x, hi);
+}
+bool IsBST(const SqBiTree *T) {
+    return checkBST(T, 0, LLONG_MIN, LLONG_MAX);
+}
+```
+
+按指针传入顺序存储结构，避免复制整个数组。只访问树中实际结点及其空孩子位置，时间O(v)，v为非空结点数，亦为数组使用长度n的O(n)上界；递归栈O(h)。也可按中序遍历检查严格递增，但不能直接扫描数组，因为数组是层序位置布局。原题只要求算法思想与实现，不虚构分项分值。
+
+</details>
+
+## 一行记录
 
 ```text
-实际用时__；选择题已作答__/7，已核对__/7，I__/H__/U__
-大题实际完成的小问__；未做或未核对的题号__
-下一次先回收的选择题__；错误发生在__
+实际用时__；未完成或未核对的题号__；今天最容易混淆的是__
 ```
