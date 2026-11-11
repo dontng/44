@@ -1,112 +1,146 @@
-# Day 12｜有效地址、路由转发与信号量同步
+# Day 12｜选择题主线，全量覆盖
 
 [← Day 11](day11.md) · [总入口](README.md) · [Day 13 →](day13.md)
 
+**本日新题：选择题7道，大题2道。** 选择题先做；同一题号只在一天计为首次覆盖。原有讲解按需展开，不再额外执行旧版每日页的两道大题和复盘排期。
+
 ## 今天按这个顺序做
 
-1. **回忆至多10分钟。** 闭卷重做昨天留的一处断点。
-2. **选择题及补学至多50分钟。** 共3道指定题，先作答再展开。
-   - [0817｜寻址：先找有效地址，再取数据](modules/0817.md) · [原题单](../src/0817.md) · `2023-17`
-   - [0906｜控制转发：协议承载与NAT字段](modules/0906.md) · [原题单](../src/0906.md) · `2025-37`、`2026-38`
-3. **两道大题及补学至多50分钟。** 单题先独立尝试5分钟，卡住才打开提示。两题都先动笔，剩余时间用于遮住解法重做。
-4. **闭卷检查至多10分钟。** 到120分钟收笔，按 I／H／U 记真实状态。
+1. **0–70分钟｜选择题及核对。** 按下方七题逐题作答，写选项和一句依据；单题独立尝试至多2分钟，无入口先标U，再补概念。核对和遮住重做包含在本段，避免一道难题拖住整组。
+2. **70–110分钟｜大题针对训练。** 两道各约20分钟，共用题干先一起读；保留整题及所有小问，先写能确定的部分。无入口5分钟后再看已有讲解；优先练会建模、公式、状态表或代码的第一步，不为誊写长解挤占选择题。
+3. **110–120分钟｜闭卷回收。** 从今天错误的选择题中选一题遮住重做；若七题均独立正确，再回收大题的一处断点。记录实际完成题号，未完成保留U。
 
-## 大题1｜2022-46 · 两个线程的最小前趋同步
+**120分钟为预算上限，不保证每个人都能做完。** 题量已排齐不等于已完成；到点停止，用下方记录保留未做和待核对项。
 
-[原题单 0925](../src/0925.md)
+## 选择题｜本日必做7题
 
-<img src="../bank/2022/q46.png" alt="2022-46" style="display: block; width: 47.8em; max-width: 100%; height: auto; margin: 12px 0;">
+### 选择题1｜2023-05 · 数据结构
+
+[原题单 0803｜树的形状：遍历序列如何约束结构](../src/0803.md)
+
+<img src="../bank/2023/q05.png" alt="2023-05" style="display: block; width: 46.81em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>没有入口时的第一步</summary>
+<summary>作答后展开核对与补学入口</summary>
 
-把操作分到各自线程，圈出跨线程的箭头。线程内按程序顺序写即可。
+[本题已有讲解](modules/0803.md)。按年份题号 2023-05 定位，只读本题；读后遮住重做。
 
 </details>
 
-<details>
-<summary>完整解法与必要补学</summary>
+### 选择题2｜2024-03 · 数据结构
 
-设 aDone、cDone 初值均为0，分别表示 A 完成与 C 完成。
+[原题单 0803｜树的形状：遍历序列如何约束结构](../src/0803.md)
+
+<img src="../bank/2024/q03.png" alt="2024-03" style="display: block; width: 47.45em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+[本题已有讲解](modules/0803.md)。按年份题号 2024-03 定位，只读本题；读后遮住重做。
+
+</details>
+
+### 选择题3｜2026-15 · 组成原理
+
+[原题单 0814｜存储器拼装：容量、长宽与片选](../src/0814.md)
+
+<img src="../bank/2026/q15.png" alt="2026-15" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+[本题已有讲解](modules/0814.md)。按年份题号 2026-15 定位，只读本题；读后遮住重做。
+
+</details>
+
+### 选择题4｜2020-15 · 组成原理
+
+[原题单 0815｜Cache访问：地址切分、局部性与替换](../src/0815.md)
+
+<img src="../bank/2020/q15.png" alt="2020-15" style="display: block; width: 37.58em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+[本题已有讲解](modules/0815.md)。按年份题号 2020-15 定位，只读本题；读后遮住重做。
+
+</details>
+
+### 选择题5｜2022-23 · 操作系统
+
+[原题单 0825｜执行生命线：进程、线程、状态与调度](../src/0825.md)
+
+<img src="../bank/2022/q23.png" alt="2022-23" style="display: block; width: 40.0em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+**仓内参考答案：D。** 来自[原有答案PDF抽取键](../data/reference/answers/2022.txt)，本轮未重新逐图复核。
+
+本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+
+</details>
+
+### 选择题6｜2022-25 · 操作系统
+
+[原题单 0825｜执行生命线：进程、线程、状态与调度](../src/0825.md)
+
+<img src="../bank/2022/q25.png" alt="2022-25" style="display: block; width: 47.8em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+**仓内参考答案：C。** 来自[原有答案PDF抽取键](../data/reference/answers/2022.txt)，本轮未重新逐图复核。
+
+本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+
+</details>
+
+### 选择题7｜2023-37 · 计算机网络
+
+[原题单 0903｜链路可靠性：帧、窗口与重传状态](../src/0903.md)
+
+<img src="../bank/2023/q37.png" alt="2023-37" style="display: block; width: 46.88em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+[本题已有讲解](modules/0903.md)。按年份题号 2023-37 定位，只读本题；读后遮住重做。
+
+</details>
+
+## 大题｜整题作答，针对断点
+
+### 大题1｜2020-43 · 组成原理
+
+[原题单 0920｜指令落到数据通路：寄存器、部件与控制信号协同](../src/0920.md)
+
+<img src="../bank/2020/q43.png" alt="2020-43" style="display: block; width: 48.0em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>独立尝试后打开本题已有讲解</summary>
+
+[进入 2020-43 原有逐问讲解](lessons/day04.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+
+</details>
+
+### 大题2｜2022-43 · 组成原理
+
+[原题单 0920｜指令落到数据通路：寄存器、部件与控制信号协同](../src/0920.md)
+
+<img src="../bank/2022/q43.png" alt="2022-43" style="display: block; width: 45.96em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>独立尝试后打开本题已有讲解</summary>
+
+[进入 2022-43 原有逐问讲解](lessons/day10.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+
+</details>
+
+## 今日记录
 
 ```text
-T1: A; signal(aDone); wait(cDone); E; F
-T2: B; wait(aDone); C; signal(cDone); D
+实际用时__；选择题已作答__/7，已核对__/7，I__/H__/U__
+大题实际完成的小问__；未做或未核对的题号__
+下一次先回收的选择题__；错误发生在__
 ```
-
-T2 的 C 由程序顺序保证在 B 后，再由 wait(aDone) 保证在 A 后。T1 通过 wait(cDone) 在 C 后执行 E，其后才是 F。T2 内 D 写在 C 后。D 与 E 之间没有额外顺序要求。
-
-</details>
-
-<details>
-<summary>重做后检查</summary>
-
-让T2最早运行，走到C前必须等待。让T1最早运行，走到E前必须等待。两个次序均能继续。
-
-</details>
-
-## 大题2｜2025-45 · 植树的容量、工序和铁锹互斥
-
-[原题单 0925](../src/0925.md)
-
-<img src="../bank/2025/q45.png" alt="2025-45" style="display: block; width: 42.48em; max-width: 100%; height: auto; margin: 12px 0;">
-
-<details>
-<summary>没有入口时的第一步</summary>
-
-画出两条数量线。一条数空闲坑配额，一条数已挖未填的坑。填完坑后才能返还配额。
-
-</details>
-
-<details>
-<summary>完整解法与必要补学</summary>
-
-四个信号量：slots=3 表示还能挖的坑配额，dug=0 表示可供乙种植的空坑，planted=0 表示可浇的树，spade=1 表示铁锹可用。
-
-```text
-甲重复：
-    wait(slots)
-    wait(spade)
-    挖坑
-    signal(spade)
-    signal(dug)
-
-乙重复：
-    wait(dug)
-    放树苗
-    wait(spade)
-    填土
-    signal(spade)
-    signal(slots)
-    signal(planted)
-
-丙重复：
-    wait(planted)
-    浇水
-```
-
-甲在动工前预扣坑配额，乙在填土后归还，因此未填满的坑最多三个。乙须等甲挖完，丙须等乙填完。铁锹只覆盖挖坑、填土，不持有铁锹等待坑位或空坑。水桶只有丙一个使用者，丙顺序执行即可。
-
-</details>
-
-<details>
-<summary>重做后检查</summary>
-
-若甲已经挖满3个坑，它等待slots时手上没有铁锹，乙仍能取得铁锹填土并归还配额。
-
-</details>
-
-## 最后闭卷检查
-
-1. 间接寻址中，给出的地址指向最终操作数还是有效地址？
-2. 目的地址同时匹配两条路由，先比较什么？
-3. 信号量初值为0与1在植树题中各控制什么？
-
-<details>
-<summary>检查答案</summary>
-
-1. 它指向保存有效地址的位置，继续取数得到操作数。2. 先看前缀长度，最长匹配优先。3. 0用于等待工序产出，1用于铁锹互斥。
-
-</details>
-
-记录：实际用时__；选择 I__/H__/U__；大题1__、大题2__；下次先修的题号与卡点__。

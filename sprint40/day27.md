@@ -1,87 +1,135 @@
-# Day 27｜树与图攻坚｜BST 区间、相邻候选
+# Day 27｜选择题主线，全量覆盖
 
 [← Day 26](day26.md) · [总入口](README.md) · [Day 28 →](day28.md)
 
-**今日判断。** 用BST的顺序丢掉整棵无关子树。最近关键字最多来自 k 两侧各一个候选，等距时必须同时输出。
+**本日新题：选择题7道，大题1道。** 选择题先做；同一题号只在一天计为首次覆盖。原有讲解按需展开，不再额外执行旧版每日页的两道大题和复盘排期。
 
 ## 今天按这个顺序做
 
-1. **0–10分钟｜回收。** 闭卷重写昨天的一处断点，写不出就标U。
-2. **10–35分钟｜前置题。** 先做 [0805 模块](modules/0805.md) 的BST与B树题，再用 [Day 11 前缀树](day11.md) 对比两个结构向下走时各凭什么选分支。
-3. **35–100分钟｜整题。** 两道题各给约30分钟，先完整写出步骤，剩余时间修正关键一步。先尝试5分钟，再开提示。
-4. **100–120分钟｜验收。** 回答下方条件变化，订正后闭卷再写一次。到120分钟停止。
+1. **0–75分钟｜选择题及核对。** 按下方七题逐题作答，写选项和一句依据；单题独立尝试至多2分钟，无入口先标U，再补概念。核对和遮住重做包含在本段，避免一道难题拖住整组。
+2. **75–110分钟｜大题针对训练。** 这一道最多35分钟；保留整题及所有小问，先写能确定的部分。无入口5分钟后再看已有讲解；优先练会建模、公式、状态表或代码的第一步，不为誊写长解挤占选择题。
+3. **110–120分钟｜闭卷回收。** 从今天错误的选择题中选一题遮住重做；若七题均独立正确，再回收大题的一处断点。记录实际完成题号，未完成保留U。
 
-## 大题1｜2026-41 · 沿BST查找路径保留前驱与后继
+**120分钟为预算上限，不保证每个人都能做完。** 题量已排齐不等于已完成；到点停止，用下方记录保留未做和待核对项。
 
-[原题单 0915](../src/0915.md)
+## 选择题｜本日必做7题
 
-<img src="../bank/2026/q41.png" alt="2026-41" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+### 选择题1｜2021-08 · 数据结构
+
+[原题单 0807｜图上的推进：拓扑、最短路与关键路径](../src/0807.md)
+
+<img src="../bank/2021/q08.png" alt="2021-08" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>没有入口时的第一步</summary>
+<summary>作答后展开核对与补学入口</summary>
 
-遇到 x<k 时记录候选 x 并向右，否则向左。命中 k 时最小差已是0。
+**仓内参考答案：C。** 来自[原有答案PDF抽取键](../data/reference/answers/2021.txt)，本轮未重新逐图复核。
+
+本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
 
 </details>
 
+### 选择题2｜2022-07 · 数据结构
+
+[原题单 0807｜图上的推进：拓扑、最短路与关键路径](../src/0807.md)
+
+<img src="../bank/2022/q07.png" alt="2022-07" style="display: block; width: 47.72em; max-width: 100%; height: auto; margin: 12px 0;">
+
 <details>
-<summary>完整解法与必要补学</summary>
+<summary>作答后展开核对与补学入口</summary>
 
-（1）按严格BST约定，关键字互异。若当前值小于 k，当前结点及其左子树都不大于当前值，保留当前值后可以舍弃左子树。大于 k 时对称。未命中时只比较小于 k 的最大值和大于 k 的最小值。可能只有一侧，也可能两侧等距。
+[本题已有讲解](modules/0807.md)。按年份题号 2022-07 定位，只读本题；读后遮住重做。
 
-（2）下面用 long long 先扩宽再相减，避免32位 int 边界处的差值溢出。时间 O(h)，辅助空间 O(1)。
+</details>
 
-```c
-#include <stdio.h>
+### 选择题3｜2023-19 · 组成原理
 
-void searchX(BTree root, int k) {
-    BTree lo = NULL, hi = NULL;
-    for (BTree p = root; p != NULL; ) {
-        if (p->data == k) {
-            printf("0 %d\n", k);
-            return;
-        }
-        if (p->data < k) {
-            lo = p;
-            p = p->right;
-        } else {
-            hi = p;
-            p = p->left;
-        }
-    }
-    if (lo == NULL && hi == NULL) return;
-    long long dl = lo ? (long long)k - lo->data : -1;
-    long long dh = hi ? (long long)hi->data - k : -1;
-    long long best = (dl >= 0 && (dh < 0 || dl <= dh)) ? dl : dh;
-    printf("%lld", best);
-    if (dl == best) printf(" %d", lo->data);
-    if (dh == best) printf(" %d", hi->data);
-    putchar('\n');
-}
+[原题单 0820｜流水线：结果何时产生，下一条何时需要](../src/0820.md)
+
+<img src="../bank/2023/q19.png" alt="2023-19" style="display: block; width: 46.88em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+[本题已有讲解](modules/0820.md)。按年份题号 2023-19 定位，只读本题；读后遮住重做。
+
+</details>
+
+### 选择题4｜2024-19 · 组成原理
+
+[原题单 0820｜流水线：结果何时产生，下一条何时需要](../src/0820.md)
+
+<img src="../bank/2024/q19.png" alt="2024-19" style="display: block; width: 45.97em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+[本题已有讲解](modules/0820.md)。按年份题号 2024-19 定位，只读本题；读后遮住重做。
+
+</details>
+
+### 选择题5｜2023-28 · 操作系统
+
+[原题单 0829｜页面驻留：置换、工作集与缺页代价](../src/0829.md)
+
+<img src="../bank/2023/q28.png" alt="2023-28" style="display: block; width: 44.62em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+**仓内参考答案：D。** 来自[原有答案PDF抽取键](../data/reference/answers/2023.txt)，本轮未重新逐图复核。
+
+本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+
+</details>
+
+### 选择题6｜2021-37 · 计算机网络
+
+[原题单 0906｜控制转发路径：ARP、路由协议与下一跳](../src/0906.md)
+
+<img src="../bank/2021/q37.png" alt="2021-37" style="display: block; width: 49.24em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+**仓内参考答案：D。** 来自[原有答案PDF抽取键](../data/reference/answers/2021.txt)，本轮未重新逐图复核。
+
+本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+
+</details>
+
+### 选择题7｜2025-37 · 计算机网络
+
+[原题单 0906｜控制转发路径：ARP、路由协议与下一跳](../src/0906.md)
+
+<img src="../bank/2025/q37.png" alt="2025-37" style="display: block; width: 42.29em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>作答后展开核对与补学入口</summary>
+
+[本题已有讲解](modules/0906.md)。按年份题号 2025-37 定位，只读本题；读后遮住重做。
+
+</details>
+
+## 大题｜整题作答，针对断点
+
+### 大题1｜2025-45 · 操作系统
+
+[原题单 0925｜并发同步：PV 操作大题](../src/0925.md)
+
+<img src="../bank/2025/q45.png" alt="2025-45" style="display: block; width: 42.48em; max-width: 100%; height: auto; margin: 12px 0;">
+
+<details>
+<summary>独立尝试后打开本题已有讲解</summary>
+
+[进入 2025-45 原有逐问讲解](lessons/day12.md)，按本题号定位。该页保留旧讲解和变式，只读本题，页内旧时间安排不执行。
+
+</details>
+
+## 今日记录
+
+```text
+实际用时__；选择题已作答__/7，已核对__/7，I__/H__/U__
+大题实际完成的小问__；未做或未核对的题号__
+下一次先回收的选择题__；错误发生在__
 ```
-
-</details>
-
-<details>
-<summary>重做后检查</summary>
-
-用键值{2,6}分别查4、1、6，应得到差2且输出2和6、差1只输出2、差0只输出6。
-
-</details>
-
-## 大题2｜2022-41 · 顺序存储BST判定（闭卷重做）
-
-[Day 01 原图与折叠讲解](day01.md)。只做原页大题2。先检查整棵树满足区间约束，再解释为什么此前提成立时新题只走一条路径。
-
-## 闭卷变式
-
-查 k=4 时，候选2和6同时存在。能在首次遇到差2的结点就停止吗？
-
-<details>
-<summary>检查答案</summary>
-
-不能。另一侧可能还有差更小或等距的结点。只有命中 k 才能立即结束。
-
-</details>
-
-记录：实际用时__；两次作答状态 I／H／U__；卡住的题号与第一处断点__。
