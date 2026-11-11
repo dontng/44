@@ -94,6 +94,7 @@ visits = Counter()
 assigned = {}
 written_days = {}
 seen_groups = set()
+folds_by_question = {}
 inline_choices = set(schedule['choice_explanations'])
 inline_written = set(schedule['written_explanations'])
 for item in schedule['days']:
@@ -139,6 +140,11 @@ for item in schedule['days']:
         require(f'src="../bank/{y}/q{n}.png"' in section, label, f'{q} image mismatch')
         folded = re.search(r'<details>\s*<summary>答案与解析</summary>\s*(.*?)\s*</details>', section, re.S)
         require(folded, label, f'{q} needs a local folded answer')
+        require(f'alt="{q}"' in section, label, f'{q} image alt label mismatch')
+        if folded:
+            content = folded[1].strip()
+            require(q not in folds_by_question or folds_by_question[q] == content, label, f'{q} repeated explanation differs')
+            folds_by_question[q] = content
         if folded and q in inline_choices:
             require('**答案：' in folded[1] and '**直接法：**' in folded[1] and '解析待补' not in folded[1], label, f'{q} inline choice explanation lost')
         if folded and q in inline_written:
