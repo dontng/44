@@ -1,3 +1,9 @@
+# 解析补齐｜第七批
+
+前批已push：b885e85。本批补20题，现有240道选择题、46道大题解析。包括虚拟内存、ISA层次、IP分片／路由聚合、最短路与安全序列。2026-37允许/24较宽路由加/26更具体路由，聚合后4项；2021-08保留每次确定顶点后的松弛时点。2026-12将微架构组织与物理布局布线分开，技术依据参考Arm官方架构说明及物理实现说明：https://www.arm.com/architecture/cpu ，https://developer.arm.com/community/arm-community-blogs/b/architectures-and-processors-blog/posts/innovation-on-arm-cortex-processors 。本题按给定层次区分，不将“微架构不实现ISA”当作结论。复做页及结构检查通过。
+
+---
+
 # 解析补齐｜第六批
 
 前批已push：e2a6c41。本批补20题，现有220道选择题、46道大题解析。包括B树计数、AVL极值、多级页表、扩展操作码、滑动窗口及图论。B树9种逐层计数；SR独立ACK与超时只重传F1区别于GBN；邻接表入度复杂度包含表头扫描；页缓冲减少I/O与减少缺页分开说明。逐图核对，复做页及结构检查通过。
