@@ -1,3 +1,9 @@
+# 解析补齐｜第八批
+
+前批已push：8a349e8。本批补20题，现有260道选择题、46道大题解析。包括查找、散列删除标记、堆和排序、CPU性能与HTTP／DNS／POP3。2023-09失败探查平均1.8保留删除槽探查；2021-11按逐个插入上滤而非整体建堆；2020-40分别核算缓存命中和三级DNS查询。原图逐题核对，复做页及结构检查通过。
+
+---
+
 # 解析补齐｜第七批
 
 前批已push：b885e85。本批补20题，现有240道选择题、46道大题解析。包括虚拟内存、ISA层次、IP分片／路由聚合、最短路与安全序列。2026-37允许/24较宽路由加/26更具体路由，聚合后4项；2021-08保留每次确定顶点后的松弛时点。2026-12将微架构组织与物理布局布线分开，技术依据参考Arm官方架构说明及物理实现说明：https://www.arm.com/architecture/cpu ，https://developer.arm.com/community/arm-community-blogs/b/architectures-and-processors-blog/posts/innovation-on-arm-cortex-processors 。本题按给定层次区分，不将“微架构不实现ISA”当作结论。复做页及结构检查通过。
