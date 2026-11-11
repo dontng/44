@@ -21,9 +21,13 @@
 <img src="../bank/2022/q01.png" alt="2022-01" style="display: block; width: 48.32em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0731.md)。按年份题号 2022-01 定位，只读本题；读后遮住重做。
+**答案：B。**
+
+**直接法：** i依次取1、2、4、8……，每轮内层执行i次。设最后一轮i=L，总次数1+2+4+…+L=2L−1；L与n同量级，所以是O(n)。
+
+**排除法／易混点：** A的O(log n)只数了外层轮数；C的O(n log n)把每轮内层都当成n次；D的O(n²)忽略了i每次翻倍。内层上限跟着i变，不能直接把两层的最大次数相乘。
 
 </details>
 
@@ -34,9 +38,13 @@
 <img src="../bank/2023/q01.png" alt="2023-01" style="display: block; width: 46.96em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0731.md)。按年份题号 2023-01 定位，只读本题；读后遮住重做。
+**答案：D。**
+
+**直接法：** 顺序表按下标取第i个元素，地址=首地址+(i−1)×元素大小，一次计算即可，O(1)。
+
+**排除法／易混点：** A是按值查找：有序只能帮助二分，平均O(log n)，不是直接知道下标；B插入、C删除一般要移动后续元素，平均O(n)。分清“给值找位置”和“给位置取值”。
 
 </details>
 
@@ -47,11 +55,13 @@
 <img src="../bank/2020/q13.png" alt="2020-13" style="display: block; width: 46.72em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：A。** 来自[原有答案PDF抽取键](../data/reference/answers/2020.txt)，本轮未重新逐图复核。
+**答案：A。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** 先按32位补码解释：C8000000H的符号位为1，真值=C8000000H−100000000H=−38000000H=−7×2²⁷，所以A成立。
+
+**排除法／易混点：** 同一位串若按float解释，符号为负、阶码144，值为−2¹⁷，并非B的−2¹⁶；C、D为正数，与符号位不符。题目问“可能”，找到合法解释即可，但不能把整数与浮点的解码规则混用。
 
 </details>
 
@@ -62,11 +72,13 @@
 <img src="../bank/2020/q14.png" alt="2020-14" style="display: block; width: 50.12em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：D。** 来自[原有答案PDF抽取键](../data/reference/answers/2020.txt)，本轮未重新逐图复核。
+**答案：D。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** short占偏移0、1，偏移2、3用于对齐，int成员x2从偏移4开始。小端存12340000H时，低地址依次为00、00、34、12，因此34H位于首址+6=2020FE06H。
+
+**排除法／易混点：** C的偏移5相当于漏算了对齐填充；B只找到了x2的起始地址，还没定位34H。先确定成员起址，再按小端排列字节。
 
 </details>
 
@@ -77,11 +89,13 @@
 <img src="../bank/2020/q25.png" alt="2020-25" style="display: block; width: 42.32em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：D。** 来自[原有答案PDF抽取键](../data/reference/answers/2020.txt)，本轮未重新逐图复核。
+**答案：D。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** II中断服务、III初始化中断向量表、IV保存中断屏蔽字都由操作系统代码完成；I保存断点在中断响应阶段由硬件完成。故选II、III、IV。
+
+**排除法／易混点：** 排除所有包含I的A、B；C少了操作系统执行的中断服务II。关键是“响应阶段的硬件动作”与“处理程序的软件动作”分开。
 
 </details>
 
@@ -92,11 +106,13 @@
 <img src="../bank/2021/q23.png" alt="2021-23" style="display: block; width: 44.64em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-**仓内参考答案：B。** 来自[原有答案PDF抽取键](../data/reference/answers/2021.txt)，本轮未重新逐图复核。
+**答案：B。**
 
-本题已补入全量训练，**尚无Sprint40独立解析**。若无法解释选项依据，记U；不要把看见参考字母记为掌握。
+**直接法：** I/O指令直接控制设备，属于特权指令，只能在内核态执行。
+
+**排除法／易混点：** A的trap恰是用户程序请求进入内核的入口，因此允许在用户态执行；C普通数据传送、D程序调试用断点也不是本题所指的特权I/O操作。
 
 </details>
 
@@ -107,9 +123,13 @@
 <img src="../bank/2020/q33.png" alt="2020-33" style="display: block; width: 42.42em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
-<summary>作答后展开核对与补学入口</summary>
+<summary>答案与解析</summary>
 
-[本题已有讲解](modules/0901.md)。按年份题号 2020-33 定位，只读本题；读后遮住重做。
+**答案：C。**
+
+**直接法：** 图只展示消息发送、接收的先后顺序，描述协议的时序，因此只选III。
+
+**排除法／易混点：** 语法说明消息格式，语义说明字段含义和应做的动作，图中都没给出。看到消息箭头不能把语法、语义一起选上。
 
 </details>
 
@@ -121,7 +141,40 @@
 
 <img src="../bank/2020/q41.png" alt="2020-41" style="display: block; width: 46.84em; max-width: 100%; height: auto; margin: 12px 0;">
 
-**本轮补入的遗漏整题；独立解析待补。** 先写清输入、已知条件、所求结果，再逐小问作答；保留未完成小问，不能用已安排替代已核对。
+<details>
+<summary>答案与解析</summary>
+
+**思路。** 三个数排序为最小lo、中间mid、最大hi后，距离为(mid−lo)+(hi−mid)+(hi−lo)=2(hi−lo)。三个数组各放一个指针，算当前距离并更新最小值，然后只把当前最小值所在数组的指针后移。保持这个最小值不动而让另外两个值增大，区间不会变窄，因此不必再枚举包含这个最小值的后续组合。任一数组走完就结束。
+
+```c
+#include <limits.h>
+#include <stdio.h>
+long long min_distance(const int A[], int m,
+                       const int B[], int n,
+                       const int C[], int p) {
+    int i = 0, j = 0, k = 0;
+    long long best = LLONG_MAX;
+    while (i < m && j < n && k < p) {
+        long long lo = A[i], hi = A[i];
+        if (B[j] < lo) lo = B[j];
+        if (C[k] < lo) lo = C[k];
+        if (B[j] > hi) hi = B[j];
+        if (C[k] > hi) hi = C[k];
+        long long d = 2 * (hi - lo);
+        if (d < best) best = d;
+        if (best == 0) break;
+        if (A[i] == lo) ++i;
+        else if (B[j] == lo) ++j;
+        else ++k;
+    }
+    return best;
+}
+/* 题设三个集合非空；调用后输出返回值即可。 */
+```
+
+**复杂度。** 每轮至少一个指针前进，时间O(m+n+p)，辅助空间O(1)。使用long long计算差值，避免两个int相减时溢出。题中样例取(9,10,9)，距离为2；相同最小值出现多处时，先移动其中任意一个即可。
+
+</details>
 
 ## 今日记录
 
