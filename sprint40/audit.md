@@ -1,3 +1,21 @@
+# 知识沉淀｜第一批：建立分层 insights/ 核心机制卡片库
+
+- **建立分层知识库结构**：
+  - 目录划分：`insights/os/`、`insights/co/`、`insights/ds/`、`insights/nw/` 与中心索引 `insights/README.md`。
+- **首批归档主题与内容**：
+  1. `insights/os/kernel_mode_vs_user_mode.md`：
+     - 归档我们在 Day01 第 19 题（2026-23）关于内核态与用户态边界的深度研讨；
+     - 提炼 CPU 硬件特权级（CPL/Ring 0 vs Ring 3）与软件安全身份（UID=0）的核心物理判据，梳理 15+ 种极易混淆场景全景对照表。
+  2. `insights/os/interrupt_and_trap_mechanisms.md`：
+     - 归档关于“INT 3 为什么是自陷”、“为什么做成 0xCC 单字节防踩踏后序指令”与中断处理全链路中硬件隐指令 vs 软件 ISR 严格分工的研讨（关联 2026-24、2023-46）。
+  3. `insights/co/cache_stride_and_conflict_mapping.md`：
+     - 归档关于 Day20（2023-43）二维数组按列遍历时，跨行步长 256B 导致 Cache 组号以 8 为周期循环、24 行均分至 8 个组（每组 3 块 < 4 路无置换冲突）、命中率保持 87.5% 的严密推演。
+- **验证与提交**：
+  - `python3 tools/check_sprint40.py` 验证全量 PASS；
+  - 严格遵循仓库协作规范，署名注明 `Generated with Antigravity` 与 `Co-authored-by: Gemini <176961590+gemini-code-assist[bot]@users.noreply.github.com>`。
+
+---
+
 # 解析审查订正｜基于 Codex 审查反馈专项订正
 
 - **订正题号与依据**：
