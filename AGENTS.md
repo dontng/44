@@ -30,14 +30,17 @@ Agent-created commits are collaborative records, not opaque user commits. Attrib
 - For a local Git commit, keep the configured agent identity as the commit author and add the user as co-author.
 - When a connected GitHub interface necessarily records the user as the commit author, do not repeat the user as co-author. Instead, identify the agent in the commit body and add the agent as co-author.
 
-Use the applicable trailer, never both for the same person:
+Use the applicable trailer, never both for the same person, and always match the actual agent performing the commit:
 
 ```text
 Co-authored-by: dontng <djology.w@icloud.com>
 Co-authored-by: Codex <codex@openai.com>
+Co-authored-by: Gemini <176961590+gemini-code-assist[bot]@users.noreply.github.com>
 ```
 
-For GitHub-interface commits completed by Codex, include `Generated with Codex` immediately before the Codex trailer. This mirrors agent-assisted commit attribution without claiming that Codex is a linked GitHub account.
+When `dontng` is recorded as the commit author:
+- For commits completed by **Codex**, include `Generated with Codex` immediately before `Co-authored-by: Codex <codex@openai.com>`.
+- For commits completed by **Antigravity / Gemini**, include `Generated with Antigravity` immediately before `Co-authored-by: Gemini <176961590+gemini-code-assist[bot]@users.noreply.github.com>` (which resolves on GitHub to Google's official `gemini-code-assist[bot]` account and Gemini avatar; never use `antigravity@google.com` or `noreply@google.com`, and never misattribute Gemini work to Codex).
 
 Every commit message must contain a specific subject and these non-empty sections:
 

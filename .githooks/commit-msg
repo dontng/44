@@ -21,3 +21,14 @@ if ! awk '
   echo "Implemented, Why, and Verified each need at least one bullet." >&2
   exit 1
 fi
+
+if ! grep -q "^Co-authored-by: " "$message_file"; then
+  echo "Commit message must include a 'Co-authored-by:' trailer." >&2
+  exit 1
+fi
+
+author_name="${GIT_AUTHOR_NAME:-$(git config user.name || true)}"
+if [ "$author_name" = "dontng" ] && grep -qi "^Co-authored-by: dontng " "$message_file"; then
+  echo "Commit author is already 'dontng'; Co-authored-by must identify the collaborating AI agent (Codex or Gemini), not repeat 'dontng'." >&2
+  exit 1
+fi
