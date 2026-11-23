@@ -88,7 +88,7 @@
             "outline/01-ds/06-search/06-string-matching-kmp.md"
           ],
           "choice_groups": ["0808", "0809"],
-          "written": ["2026-41"]
+          "written": ["2024-42", "2026-41"]
         },
         {
           "id": "ds-07",
@@ -103,7 +103,7 @@
             "outline/01-ds/07-sort/05-shell-and-radix-sort.md"
           ],
           "choice_groups": ["0810", "0811"],
-          "written": ["2021-42", "2023-42", "2024-42"]
+          "written": ["2021-42", "2023-42"]
         }
       ]
     },
@@ -223,7 +223,7 @@
             "outline/03-os/02-process/07-threads-and-ipc.md"
           ],
           "choice_groups": ["0825"],
-          "written": []
+          "written": ["2026-45"]
         },
         {
           "id": "os-03",
@@ -235,7 +235,7 @@
             "outline/03-os/02-process/05-semaphores-pv.md"
           ],
           "choice_groups": ["0826"],
-          "written": ["2020-45", "2021-45", "2022-46", "2023-45", "2024-46", "2025-45", "2026-45"]
+          "written": ["2020-45", "2021-45", "2022-46", "2023-45", "2024-46", "2025-45"]
         },
         {
           "id": "os-04",
