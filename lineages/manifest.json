@@ -241,7 +241,7 @@
           "id": "os-04",
           "file": "03-os/04-deadlock.md",
           "chapter": "死锁",
-          "title": "资源闭环：死锁条件、预防、银行家避免与检测解除",
+          "title": "死锁条件、预防、银行家避免与检测解除",
           "outlines": [
             "outline/03-os/02-process/06-deadlock.md"
           ],

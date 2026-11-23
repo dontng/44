@@ -61,7 +61,7 @@ def main() -> int:
             for w in lin["written"]:
                 mapped_written.append(w)
 
-            # Check authored file links if file exists
+            # Check authored file links and question references if file exists
             fpath = os.path.join(ROOT, "lineages", lin["file"])
             if os.path.exists(fpath):
                 authored += 1
@@ -74,6 +74,25 @@ def main() -> int:
                     resolved = os.path.normpath(os.path.join(os.path.dirname(fpath), target))
                     if not os.path.exists(resolved):
                         errors.append(f"Broken link in lineages/{lin['file']}: {target}")
+                for g in lin["choice_groups"]:
+                    if g not in content:
+                        errors.append(f"Choice group {g} not referenced in lineages/{lin['file']}")
+                for w in lin["written"]:
+                    if w not in content:
+                        errors.append(f"Written question {w} not referenced in lineages/{lin['file']}")
+
+    # Check README.md links
+    readme_path = os.path.join(ROOT, "lineages", "README.md")
+    if os.path.exists(readme_path):
+        with open(readme_path, encoding="utf-8") as f:
+            rcontent = f.read()
+        for m in re.finditer(r"\[[^\]]+\]\(([^)#]+)(?:#[^)]+)?\)", rcontent):
+            target = m.group(1)
+            if target.startswith(("http://", "https://", "mailto:")):
+                continue
+            resolved = os.path.normpath(os.path.join(os.path.dirname(readme_path), target))
+            if not os.path.exists(resolved):
+                errors.append(f"Broken link in lineages/README.md: {target}")
 
     # Check outline coverage
     outline_set = set(mapped_outlines)
