@@ -77,9 +77,12 @@ def main() -> int:
                 for g in lin["choice_groups"]:
                     if g not in content:
                         errors.append(f"Choice group {g} not referenced in lineages/{lin['file']}")
+                body = content.split("## 关联真题归拢")[0]
                 for w in lin["written"]:
                     if w not in content:
                         errors.append(f"Written question {w} not referenced in lineages/{lin['file']}")
+                    elif w not in body:
+                        errors.append(f"Written question {w} missing from main body (before 关联真题归拢) in lineages/{lin['file']}")
 
     # Check README.md links
     readme_path = os.path.join(ROOT, "lineages", "README.md")
