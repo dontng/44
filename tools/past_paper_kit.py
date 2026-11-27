@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
+import os
 import re
+import shutil
 import subprocess
 import sys
 from collections import Counter
@@ -16,13 +18,21 @@ HTML_DIR = PAST_PAPERS_DIR / "html"
 PDF_DIR = PAST_PAPERS_DIR / "pdf"
 
 TEMPLATE_CSS = """\
+@font-face {
+  font-family: "Noto Serif Exam";
+  src: url("../fonts/NotoSerifSC-SemiBold.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
 @page {
   size: A4;
   margin: 18mm 20mm 21mm 20mm;
   @bottom-center {
     content: "计算机学科专业基础试题　第 " counter(page) " 页（共 " counter(pages) " 页）";
-    font-family: "Songti SC", "SimSun", "STSong", "Noto Serif CJK SC", serif;
+    font-family: "Times New Roman", "Liberation Serif", "Noto Serif Exam", "Songti SC", "SimSun", "Noto Serif CJK SC", serif;
     font-size: 9.5pt;
+    font-weight: 500;
     color: #000;
   }
 }
@@ -43,10 +53,10 @@ html, body {
   padding: 0;
   background: #eef0f3;
   color: #000;
-  font-family: "Times New Roman", "Songti SC", "SimSun", "STSong", "Noto Serif CJK SC", serif;
+  font-family: "Times New Roman", "Liberation Serif", "Noto Serif Exam", "Songti SC", "SimSun", "Noto Serif CJK SC", serif;
   font-size: 10.5pt;
+  font-weight: 500;
   line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
 }
 
 .toolbar {
@@ -213,7 +223,7 @@ html, body {
 }
 
 .q-num {
-  font-weight: 400;
+  font-weight: 500;
   margin-right: 0.25em;
 }
 
@@ -520,10 +530,16 @@ def export_pdf(year: int) -> Path:
         raise FileNotFoundError(f"Missing HTML: {html_path}")
     PDF_DIR.mkdir(parents=True, exist_ok=True)
 
+    chromium_path = (
+        os.environ.get("PAST_PAPERS_CHROMIUM")
+        or shutil.which("google-chrome")
+        or shutil.which("chromium")
+    )
     with sync_playwright() as p:
-        browser = p.chromium.launch(executable_path="/usr/bin/google-chrome")
+        browser = p.chromium.launch(executable_path=chromium_path)
         page = browser.new_page()
-        page.goto(html_path.resolve().as_uri(), wait_until="networkidle")
+        page.goto(html_path.resolve().as_uri(), wait_until="load")
+        page.evaluate("document.fonts.ready")
         page.pdf(
             path=str(pdf_path),
             prefer_css_page_size=True,
