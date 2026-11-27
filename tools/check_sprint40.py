@@ -1,6 +1,6 @@
 """Validate the active full-coverage Sprint40 against source questions and Git paths.
 
-No page regeneration. Sparse checkouts validate omitted tracked images against
+No page regeneration. Sparse checkouts validate omitted tracked question crops against
 Git's tree; existing local files must still have correct links and question IDs.
 """
 from collections import Counter
@@ -31,7 +31,7 @@ def exists(path):
         return True
     try:
         rel = path.relative_to(ROOT).as_posix()
-        return rel.startswith('bank/') and rel in tracked
+        return rel.startswith(('bank/', 'past_papers/crops/')) and rel in tracked
     except ValueError:
         return False
 
@@ -137,10 +137,10 @@ for item in schedule['days']:
     for section in re.split(r'(?=^### (?:选择题|大题)\d+｜)', text, flags=re.M)[1:]:
         q = re.match(rf'### (?:选择题|大题)\d+｜({QID})\b', section)[1]
         y, n = q.split('-')
-        require(f'src="../bank/{y}/q{n}.png"' in section, label, f'{q} image mismatch')
+        image = f'<img src="../past_papers/crops/{y}/q{n}.png" alt="{q}" width="683"'
+        require(image in section, label, f'{q} image path or width mismatch')
         folded = re.search(r'<details>\s*<summary>答案与解析</summary>\s*(.*?)\s*</details>', section, re.S)
         require(folded, label, f'{q} needs a local folded answer')
-        require(f'alt="{q}"' in section, label, f'{q} image alt label mismatch')
         if folded:
             content = folded[1].strip()
             require(q not in folds_by_question or folds_by_question[q] == content, label, f'{q} repeated explanation differs')

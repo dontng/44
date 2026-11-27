@@ -12,7 +12,7 @@
 
 ### 选择题1｜2021-15
 
-<img src="../bank/2021/q15.png" alt="2021-15" style="display: block; width: 52.24em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2021/q15.png" alt="2021-15" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -37,7 +37,7 @@
 
 ### 选择题2｜2022-17
 
-<img src="../bank/2022/q17.png" alt="2022-17" style="display: block; width: 45.85em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2022/q17.png" alt="2022-17" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -62,7 +62,7 @@
 
 ### 选择题3｜2023-15
 
-<img src="../bank/2023/q15.png" alt="2023-15" style="display: block; width: 46.85em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q15.png" alt="2023-15" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -87,7 +87,7 @@
 
 ### 选择题4｜2026-15
 
-<img src="../bank/2026/q15.png" alt="2026-15" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q15.png" alt="2026-15" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -117,7 +117,7 @@
 
 ### 选择题5｜2020-33
 
-<img src="../bank/2020/q33.png" alt="2020-33" style="display: block; width: 42.42em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q33.png" alt="2020-33" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -135,7 +135,7 @@
 
 ### 选择题6｜2021-33
 
-<img src="../bank/2021/q33.png" alt="2021-33" style="display: block; width: 33.72em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2021/q33.png" alt="2021-33" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -155,7 +155,7 @@
 
 ### 选择题7｜2023-33
 
-<img src="../bank/2023/q33.png" alt="2023-33" style="display: block; width: 42.15em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q33.png" alt="2023-33" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -181,7 +181,7 @@
 
 ### 选择题8｜2024-33
 
-<img src="../bank/2024/q33.png" alt="2024-33" style="display: block; width: 42.47em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2024/q33.png" alt="2024-33" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -200,7 +200,7 @@
 
 ### 选择题9｜2025-33
 
-<img src="../bank/2025/q33.png" alt="2025-33" style="display: block; width: 42.55em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2025/q33.png" alt="2025-33" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -225,7 +225,7 @@
 
 ### 选择题10｜2026-33
 
-<img src="../bank/2026/q33.png" alt="2026-33" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q33.png" alt="2026-33" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -247,7 +247,7 @@
 
 [原题单 0925｜并发同步：PV 操作大题](../src/0925.md)
 
-<img src="../bank/2026/q45.png" alt="2026-45" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q45.png" alt="2026-45" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -300,7 +300,7 @@
 
 [原题单 0926｜页面驻留：分配、置换与缺页过程](../src/0926.md)
 
-<img src="../bank/2020/q46.png" alt="2020-46" style="display: block; width: 50.16em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q46.png" alt="2020-46" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>

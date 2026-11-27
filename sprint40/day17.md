@@ -14,7 +14,7 @@
 
 ### 选择题1｜2022-09
 
-<img src="../bank/2022/q09.png" alt="2022-09" style="display: block; width: 41.04em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2022/q09.png" alt="2022-09" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -40,7 +40,7 @@
 
 ### 选择题2｜2023-08
 
-<img src="../bank/2023/q08.png" alt="2023-08" style="display: block; width: 40.42em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q08.png" alt="2023-08" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -70,7 +70,7 @@
 
 ### 选择题3｜2023-09
 
-<img src="../bank/2023/q09.png" alt="2023-09" style="display: block; width: 46.88em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q09.png" alt="2023-09" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -117,7 +117,7 @@
 
 ### 选择题4｜2024-05
 
-<img src="../bank/2024/q05.png" alt="2024-05" style="display: block; width: 28.53em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2024/q05.png" alt="2024-05" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -145,7 +145,7 @@
 
 ### 选择题5｜2025-07
 
-<img src="../bank/2025/q07.png" alt="2025-07" style="display: block; width: 42.13em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2025/q07.png" alt="2025-07" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -181,7 +181,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题6｜2025-09
 
-<img src="../bank/2025/q09.png" alt="2025-09" style="display: block; width: 33.13em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2025/q09.png" alt="2025-09" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -213,7 +213,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题7｜2020-23
 
-<img src="../bank/2020/q23.png" alt="2020-23" style="display: block; width: 34.68em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q23.png" alt="2020-23" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -238,7 +238,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题8｜2020-30
 
-<img src="../bank/2020/q30.png" alt="2020-30" style="display: block; width: 34.08em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q30.png" alt="2020-30" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -260,7 +260,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题9｜2020-31
 
-<img src="../bank/2020/q31.png" alt="2020-31" style="display: block; width: 46.84em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q31.png" alt="2020-31" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -284,7 +284,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题10｜2021-30
 
-<img src="../bank/2021/q30.png" alt="2021-30" style="display: block; width: 43.46em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2021/q30.png" alt="2021-30" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -306,7 +306,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题11｜2023-31
 
-<img src="../bank/2023/q31.png" alt="2023-31" style="display: block; width: 46.88em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q31.png" alt="2023-31" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -328,7 +328,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题12｜2024-26
 
-<img src="../bank/2024/q26.png" alt="2024-26" style="display: block; width: 46.0em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2024/q26.png" alt="2024-26" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -348,7 +348,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题13｜2024-29
 
-<img src="../bank/2024/q29.png" alt="2024-29" style="display: block; width: 31.07em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2024/q29.png" alt="2024-29" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -368,7 +368,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题14｜2025-28
 
-<img src="../bank/2025/q28.png" alt="2025-28" style="display: block; width: 30.42em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2025/q28.png" alt="2025-28" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -392,7 +392,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题15｜2025-29
 
-<img src="../bank/2025/q29.png" alt="2025-29" style="display: block; width: 42.39em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2025/q29.png" alt="2025-29" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -414,7 +414,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题16｜2025-31
 
-<img src="../bank/2025/q31.png" alt="2025-31" style="display: block; width: 35.19em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2025/q31.png" alt="2025-31" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -438,7 +438,7 @@ $$\text{ASL} = L_I + L_S$$
 
 ### 选择题17｜2025-32
 
-<img src="../bank/2025/q32.png" alt="2025-32" style="display: block; width: 34.9em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2025/q32.png" alt="2025-32" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -464,7 +464,7 @@ $$\text{ASL} = L_I + L_S$$
 
 [原题单 0919｜表示到汇编：同一位模式在类型、指令与调用中怎样解释](../src/0919.md)
 
-<img src="../bank/2021/q43.png" alt="2021-43" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2021/q43.png" alt="2021-43" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>

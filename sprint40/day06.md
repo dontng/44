@@ -12,7 +12,7 @@
 
 ### 选择题1｜2021-15
 
-<img src="../bank/2021/q15.png" alt="2021-15" style="display: block; width: 52.24em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2021/q15.png" alt="2021-15" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -37,7 +37,7 @@
 
 ### 选择题2｜2022-17
 
-<img src="../bank/2022/q17.png" alt="2022-17" style="display: block; width: 45.85em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2022/q17.png" alt="2022-17" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -62,7 +62,7 @@
 
 ### 选择题3｜2023-15
 
-<img src="../bank/2023/q15.png" alt="2023-15" style="display: block; width: 46.85em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q15.png" alt="2023-15" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -87,7 +87,7 @@
 
 ### 选择题4｜2026-15
 
-<img src="../bank/2026/q15.png" alt="2026-15" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q15.png" alt="2026-15" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -117,7 +117,7 @@
 
 ### 选择题5｜2020-35
 
-<img src="../bank/2020/q35.png" alt="2020-35" style="display: block; width: 40.92em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q35.png" alt="2020-35" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -137,7 +137,7 @@
 
 ### 选择题6｜2020-37
 
-<img src="../bank/2020/q37.png" alt="2020-37" style="display: block; width: 48.67em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q37.png" alt="2020-37" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -157,7 +157,7 @@
 
 ### 选择题7｜2022-37
 
-<img src="../bank/2022/q37.png" alt="2022-37" style="display: block; width: 45.92em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2022/q37.png" alt="2022-37" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -173,7 +173,7 @@
 
 ### 选择题8｜2023-36
 
-<img src="../bank/2023/q36.png" alt="2023-36" style="display: block; width: 46.92em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q36.png" alt="2023-36" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -196,7 +196,7 @@
 
 ### 选择题9｜2024-35
 
-<img src="../bank/2024/q35.png" alt="2024-35" style="display: block; width: 45.97em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2024/q35.png" alt="2024-35" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -217,7 +217,7 @@
 
 ### 选择题10｜2024-36
 
-<img src="../bank/2024/q36.png" alt="2024-36" style="display: block; width: 46.07em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2024/q36.png" alt="2024-36" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -242,7 +242,7 @@
 
 ### 选择题11｜2025-35
 
-<img src="../bank/2025/q35.png" alt="2025-35" style="display: block; width: 42.32em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2025/q35.png" alt="2025-35" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -264,7 +264,7 @@
 
 ### 选择题12｜2026-36
 
-<img src="../bank/2026/q36.png" alt="2026-36" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q36.png" alt="2026-36" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -290,7 +290,7 @@
 
 [原题单 0919｜表示到汇编：同一位模式在类型、指令与调用中怎样解释](../src/0919.md)
 
-<img src="../bank/2026/q43.png" alt="2026-43" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q43.png" alt="2026-43" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -324,7 +324,7 @@
 
 [原题单 0920｜指令落到数据通路：寄存器、部件与控制信号协同](../src/0920.md)
 
-<img src="../bank/2026/q44.png" alt="2026-44" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q44.png" alt="2026-44" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 本题沿用本日43题的题干。
 

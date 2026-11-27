@@ -12,7 +12,7 @@
 
 ### 选择题1｜2020-07
 
-<img src="../bank/2020/q07.png" alt="2020-07" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q07.png" alt="2020-07" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -52,7 +52,7 @@
 
 ### 选择题2｜2020-08
 
-<img src="../bank/2020/q08.png" alt="2020-08" style="display: block; width: 33.96em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q08.png" alt="2020-08" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -73,7 +73,7 @@
 
 ### 选择题3｜2021-07
 
-<img src="../bank/2021/q07.png" alt="2021-07" style="display: block; width: 33.92em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2021/q07.png" alt="2021-07" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -101,7 +101,7 @@
 
 ### 选择题4｜2021-08
 
-<img src="../bank/2021/q08.png" alt="2021-08" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2021/q08.png" alt="2021-08" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -137,7 +137,7 @@
 
 ### 选择题5｜2022-07
 
-<img src="../bank/2022/q07.png" alt="2022-07" style="display: block; width: 47.72em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2022/q07.png" alt="2022-07" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -177,7 +177,7 @@
 
 ### 选择题6｜2023-06
 
-<img src="../bank/2023/q06.png" alt="2023-06" style="display: block; width: 46.88em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q06.png" alt="2023-06" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -204,7 +204,7 @@
 
 ### 选择题7｜2026-07
 
-<img src="../bank/2026/q07.png" alt="2026-07" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q07.png" alt="2026-07" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -231,7 +231,7 @@
 
 ### 选择题8｜2020-27
 
-<img src="../bank/2020/q27.png" alt="2020-27" style="display: block; width: 39.76em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q27.png" alt="2020-27" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -273,7 +273,7 @@
 
 ### 选择题9｜2021-31
 
-<img src="../bank/2021/q31.png" alt="2021-31" style="display: block; width: 46.8em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2021/q31.png" alt="2021-31" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -298,7 +298,7 @@
 
 ### 选择题10｜2022-26
 
-<img src="../bank/2022/q26.png" alt="2022-26" style="display: block; width: 45.92em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2022/q26.png" alt="2022-26" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -333,7 +333,7 @@
 
 [原题单 0920｜指令落到数据通路：寄存器、部件与控制信号协同](../src/0920.md)
 
-<img src="../bank/2024/q43.png" alt="2024-43" style="display: block; width: 46.07em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2024/q43.png" alt="2024-43" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -414,7 +414,7 @@
 
 [原题单 0919｜表示到汇编：同一位模式在类型、指令与调用中怎样解释](../src/0919.md)
 
-<img src="../bank/2024/q44.png" alt="2024-44" style="display: block; width: 46.03em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2024/q44.png" alt="2024-44" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 本题沿用本日43题的题干。
 

@@ -12,7 +12,7 @@
 
 ### 选择题1｜2020-16
 
-<img src="../bank/2020/q16.png" alt="2020-16" style="display: block; width: 52.32em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q16.png" alt="2020-16" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -40,7 +40,7 @@
 
 ### 选择题2｜2022-19
 
-<img src="../bank/2022/q19.png" alt="2022-19" style="display: block; width: 47.12em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2022/q19.png" alt="2022-19" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -78,7 +78,7 @@
 
 ### 选择题3｜2023-17
 
-<img src="../bank/2023/q17.png" alt="2023-17" style="display: block; width: 46.81em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q17.png" alt="2023-17" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -100,7 +100,7 @@
 
 ### 选择题4｜2026-17
 
-<img src="../bank/2026/q17.png" alt="2026-17" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q17.png" alt="2026-17" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -127,7 +127,7 @@
 
 ### 选择题5｜2020-36
 
-<img src="../bank/2020/q36.png" alt="2020-36" style="display: block; width: 46.76em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q36.png" alt="2020-36" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -160,7 +160,7 @@
 
 ### 选择题6｜2022-33
 
-<img src="../bank/2022/q33.png" alt="2022-33" style="display: block; width: 38.46em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2022/q33.png" alt="2022-33" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -180,7 +180,7 @@
 
 ### 选择题7｜2023-35
 
-<img src="../bank/2023/q35.png" alt="2023-35" style="display: block; width: 46.92em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q35.png" alt="2023-35" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -209,7 +209,7 @@
 
 ### 选择题8｜2023-37
 
-<img src="../bank/2023/q37.png" alt="2023-37" style="display: block; width: 46.88em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2023/q37.png" alt="2023-37" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -239,7 +239,7 @@
 
 ### 选择题9｜2024-37
 
-<img src="../bank/2024/q37.png" alt="2024-37" style="display: block; width: 46.0em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2024/q37.png" alt="2024-37" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -271,7 +271,7 @@
 
 ### 选择题10｜2026-35
 
-<img src="../bank/2026/q35.png" alt="2026-35" style="display: block; width: 46.5em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2026/q35.png" alt="2026-35" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -305,7 +305,7 @@
 
 [原题单 0920｜指令落到数据通路：寄存器、部件与控制信号协同](../src/0920.md)
 
-<img src="../bank/2020/q43.png" alt="2020-43" style="display: block; width: 48.0em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2020/q43.png" alt="2020-43" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
@@ -348,7 +348,7 @@
 
 [原题单 0920｜指令落到数据通路：寄存器、部件与控制信号协同](../src/0920.md)
 
-<img src="../bank/2022/q43.png" alt="2022-43" style="display: block; width: 45.96em; max-width: 100%; height: auto; margin: 12px 0;">
+<img src="../past_papers/crops/2022/q43.png" alt="2022-43" width="683" style="display: block; width: 42.67em; max-width: 100%; height: auto; margin: 12px 0;">
 
 <details>
 <summary>答案与解析</summary>
