@@ -7,4 +7,6 @@
 
 重排题卷仅收题目。保留原件供逐页对照。
 
+题图以 HTML 内嵌 SVG 绘制。节点、连线和框线是矢量图元，图注是独立文字，导出 PDF 后仍能放大并检索。图中文字使用粗字重，2025 年第 42、47 题的密集标注另调大了字号。
+
 HTML 从相邻的 [fonts/](fonts/) 读取思源宋体同系的 Noto Serif CJK SC SemiBold 字形子集，离线打开时请保留 `html/` 与 `fonts/` 的目录关系。字体已嵌入导出的 PDF。字体来自 [Noto CJK](https://github.com/notofonts/noto-cjk/tree/main/Serif)，以 [SIL OFL 1.1](fonts/OFL.txt) 授权分发。
