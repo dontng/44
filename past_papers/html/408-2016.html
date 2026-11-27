@@ -1,0 +1,1658 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>2016 年计算机学科专业基础综合（408）真题</title>
+  <style>
+@page {
+  size: A4;
+  margin: 18mm 20mm 21mm 20mm;
+  @bottom-center {
+    content: "计算机学科专业基础综合试题　第 " counter(page) " 页（共 " counter(pages) " 页）";
+    font-family: "Songti SC", "SimSun", "STSong", "Noto Serif CJK SC", serif;
+    font-size: 9.5pt;
+    color: #000;
+  }
+}
+@page cover {
+  size: A4;
+  margin: 16mm 20mm 18mm 20mm;
+  @bottom-center {
+    content: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #eef0f3;
+  color: #000;
+  font-family: "Times New Roman", "Songti SC", "SimSun", "STSong", "Noto Serif CJK SC", serif;
+  font-size: 10.5pt;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  background: #1f2937;
+  color: #f9fafb;
+  font-family: "Heiti SC", "Noto Sans CJK SC", sans-serif;
+  font-size: 13px;
+}
+
+.toolbar button {
+  padding: 5px 14px;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  background: #fff;
+  color: #111827;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.toolbar button:hover {
+  background: #f3f4f6;
+}
+
+.exam-wrapper {
+  width: 210mm;
+  margin: 16px auto 32px;
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Cover Page (2025 Official Replica) ===== */
+.cover-page {
+  page: cover;
+  break-after: page;
+  min-height: 263mm;
+  padding: 16mm 20mm 18mm 20mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover-secret {
+  font-family: "Heiti SC", "SimHei", "STHeiti", "Noto Sans CJK SC", sans-serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0 0 18mm 0;
+}
+
+.cover-header {
+  text-align: center;
+  margin-bottom: 14mm;
+}
+
+.cover-year {
+  font-size: 16pt;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin: 0 0 7mm 0;
+}
+
+.cover-subject {
+  font-family: "Heiti SC", "SimHei", "STHeiti", "Noto Sans CJK SC", sans-serif;
+  font-size: 24pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 6mm 0;
+}
+
+.cover-code {
+  font-size: 13.5pt;
+  margin: 0;
+}
+
+.cover-notice-title {
+  text-align: center;
+  font-family: "Heiti SC", "SimHei", "STHeiti", "Noto Sans CJK SC", sans-serif;
+  font-size: 13pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 10mm 0 6mm 0;
+}
+
+.cover-notice {
+  margin: 0;
+  padding-left: 1.8em;
+  font-size: 11pt;
+  line-height: 1.95;
+  text-align: justify;
+}
+
+.cover-notice li {
+  margin-bottom: 4pt;
+}
+
+.cover-info-wrap {
+  margin-top: auto;
+  padding-top: 14mm;
+}
+
+.cover-info-hint {
+  text-align: center;
+  font-size: 10.5pt;
+  margin: 0 0 5pt 0;
+}
+
+.cover-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: 1.4pt solid #000;
+}
+
+.cover-info-table td {
+  border: 1pt solid #000;
+  height: 11.5mm;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 10.5pt;
+}
+
+.cover-info-table td.label-cell {
+  width: 24mm;
+  letter-spacing: 0.08em;
+}
+
+/* ===== Exam Body ===== */
+.exam-body {
+  padding: 18mm 20mm 20mm 20mm;
+}
+
+.section-title {
+  font-family: "Heiti SC", "SimHei", "STHeiti", "Noto Sans CJK SC", sans-serif;
+  font-size: 11pt;
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 10pt 0 8pt 0;
+  text-indent: 0;
+  break-after: avoid;
+}
+
+.section-title:first-child {
+  margin-top: 0;
+}
+
+.question {
+  margin: 0 0 7.5pt 0;
+}
+
+.question.mcq {
+  break-inside: avoid;
+}
+
+.q-stem {
+  margin: 0 0 2.5pt 0;
+  text-align: justify;
+}
+
+.q-num {
+  font-weight: 400;
+  margin-right: 0.25em;
+}
+
+.q-score {
+  margin-right: 0.2em;
+}
+
+.q-items {
+  margin: 2pt 0 3pt 1.8em;
+  padding: 0;
+  list-style: none;
+}
+
+.q-items.cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 12pt;
+}
+
+.q-items.cols-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 8pt;
+}
+
+.options {
+  margin: 2pt 0 0 1.6em;
+  display: grid;
+  row-gap: 1.5pt;
+  column-gap: 12pt;
+}
+
+.options.cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.options.cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.options.cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25em;
+  min-width: 0;
+}
+
+.opt-label {
+  flex: 0 0 auto;
+}
+
+.opt-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.subquestions {
+  margin: 4pt 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subquestions li {
+  margin: 2.5pt 0;
+  text-indent: 2em;
+  text-align: justify;
+}
+
+.q-para {
+  margin: 3pt 0;
+  text-indent: 2em;
+  text-align: justify;
+}
+
+/* Code blocks */
+.code-box {
+  margin: 5pt auto;
+  padding: 6pt 10pt;
+  border: 0.9pt solid #000;
+  background: #fff;
+  font-family: "Times New Roman", "Noto Sans Mono CJK SC", "Courier New", monospace;
+  font-size: 9.8pt;
+  line-height: 1.48;
+  white-space: pre-wrap;
+  word-break: break-word;
+  break-inside: avoid;
+}
+
+.code-plain {
+  margin: 3.5pt 0 4pt 2em;
+  padding: 4pt 8pt;
+  background: #f5f5f5;
+  font-family: "Times New Roman", "Noto Sans Mono CJK SC", "Courier New", monospace;
+  font-size: 9.8pt;
+  line-height: 1.48;
+  white-space: pre-wrap;
+  word-break: break-word;
+  break-inside: avoid;
+}
+
+.code-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10pt;
+  margin: 6pt 0;
+  break-inside: avoid;
+}
+
+/* Tables */
+table.exam-table {
+  border-collapse: collapse;
+  margin: 6pt auto;
+  font-size: 9.5pt;
+  line-height: 1.45;
+  max-width: 100%;
+  break-inside: avoid;
+}
+
+table.exam-table th,
+table.exam-table td {
+  border: 0.8pt solid #000;
+  padding: 3pt 6pt;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table.exam-table th {
+  font-weight: 700;
+}
+
+table.exam-table td.left,
+table.exam-table th.left {
+  text-align: left;
+}
+
+.table-caption {
+  text-align: center;
+  font-size: 9.8pt;
+  margin: 5pt 0 2pt 0;
+  break-after: avoid;
+}
+
+/* Figures & SVGs */
+.figure {
+  margin: 6pt auto;
+  text-align: center;
+  break-inside: avoid;
+}
+
+.figure svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.fig-caption {
+  text-align: center;
+  font-size: 9.8pt;
+  margin: 3pt 0 0 0;
+}
+
+.stem-with-fig {
+  display: flex;
+  align-items: flex-start;
+  gap: 12pt;
+}
+
+.stem-with-fig .stem-col {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.stem-with-fig .fig-col {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+/* Math & inline helpers */
+.math, var {
+  font-family: "Times New Roman", "STIX Two Math", serif;
+  font-style: italic;
+}
+
+.blank {
+  display: inline-block;
+  min-width: 2.6em;
+  border-bottom: 0.75pt solid #000;
+  vertical-align: baseline;
+}
+
+.paren {
+  display: inline-block;
+  min-width: 2.4em;
+  text-align: center;
+}
+
+sub, sup {
+  font-size: 74%;
+  line-height: 0;
+}
+
+@media print {
+  html, body {
+    background: #fff;
+  }
+  .toolbar {
+    display: none !important;
+  }
+  .exam-wrapper {
+    width: auto;
+    margin: 0;
+    box-shadow: none;
+  }
+  .cover-page {
+    min-height: 263mm;
+    padding: 0;
+  }
+  .exam-body {
+    padding: 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav class="toolbar" aria-label="试卷操作">
+    <span>2016 年 · 计算机学科专业基础综合（408）</span>
+    <button type="button" onclick="window.print()">打印 / 导出 A4 PDF</button>
+  </nav>
+  <div class="exam-wrapper">
+  <section class="cover-page" aria-label="2016 年试卷封面">
+    <div>
+      <p class="cover-secret">绝密★启用前</p>
+      <header class="cover-header">
+        <p class="cover-year">2016 年全国硕士研究生招生考试</p>
+        <h1 class="cover-subject">计算机学科专业基础综合</h1>
+        <p class="cover-code">（科目代码：408）</p>
+      </header>
+      <p class="cover-notice-title">考生注意事项</p>
+      <ol class="cover-notice">
+        <li>答题前，考生须在答题卡指定位置上填写考生编号和考生姓名；在答题卡指定位置上填写报考单位、考生姓名和考生编号，并涂写考生编号信息点。</li>
+        <li>选择题的答案必须涂写在答题卡相应题号的选项上，非选择题的答案必须书写在答题卡指定位置的边框区域内。超出答题区域书写的答案无效；在草稿纸、试题册上答题无效。</li>
+        <li>填（书）写部分必须使用黑色字迹签字笔书写，字迹工整、笔迹清楚；涂写部分必须使用 2B 铅笔填涂。</li>
+        <li>考试结束，将答题卡和试题册按规定交回。</li>
+      </ol>
+    </div>
+    <div class="cover-info-wrap">
+      <p class="cover-info-hint">（以下信息考生必须认真填写）</p>
+      <table class="cover-info-table" aria-label="考生信息填写栏">
+        <tr>
+          <td class="label-cell">考生编号</td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </tr>
+        <tr>
+          <td class="label-cell">考生姓名</td>
+          <td colspan="15"></td>
+        </tr>
+      </table>
+    </div>
+  </section>
+    <main class="exam-body" aria-label="2016 年 408 真题正文">
+      <h2 class="section-title">一、单项选择题（第 1～40 小题，每小题 2 分，共 80 分。下列每题给出的四个选项中，只有一个选项最符合试题要求）</h2>
+
+      <article class="question mcq" id="q1">
+        <p class="q-stem"><span class="q-num">1.</span>已知表头元素为 c 的单链表在内存中的存储状态如下表所示。</p>
+        <table class="exam-table" aria-label="题 1 单链表存储状态表" style="border:none;">
+          <thead>
+            <tr>
+              <th style="border:none;font-weight:400;">地址</th>
+              <th style="border:none;font-weight:400;">元素</th>
+              <th style="border:none;font-weight:400;">链接地址</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border:none;padding:2.5pt 10pt;">1000H</td>
+              <td style="width:54pt;">a</td>
+              <td style="width:92pt;">1010H</td>
+            </tr>
+            <tr>
+              <td style="border:none;padding:2.5pt 10pt;">1004H</td>
+              <td>b</td>
+              <td>100CH</td>
+            </tr>
+            <tr>
+              <td style="border:none;padding:2.5pt 10pt;">1008H</td>
+              <td>c</td>
+              <td>1000H</td>
+            </tr>
+            <tr>
+              <td style="border:none;padding:2.5pt 10pt;">100CH</td>
+              <td>d</td>
+              <td>NULL</td>
+            </tr>
+            <tr>
+              <td style="border:none;padding:2.5pt 10pt;">1010H</td>
+              <td>e</td>
+              <td>1004H</td>
+            </tr>
+            <tr>
+              <td style="border:none;padding:2.5pt 10pt;">1014H</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="q-para" style="margin-top:2pt;">现将 f 存放于 1014H 处并插入到单链表中，若 f 在逻辑上位于 a 和 e 之间，则 a, e, f 的“链接地址”依次是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">1010H, 1014H, 1004H</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">1010H, 1004H, 1014H</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">1014H, 1010H, 1004H</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">1014H, 1004H, 1010H</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q2">
+        <p class="q-stem"><span class="q-num">2.</span>已知一个带有表头结点的双向循环链表 L，结点结构为 <span style="display:inline-flex;border:0.75pt solid #000;vertical-align:middle;line-height:1.25;margin:0 2pt;font-size:9.5pt;"><span style="padding:0.5pt 5pt;border-right:0.75pt solid #000;">prev</span><span style="padding:0.5pt 5pt;border-right:0.75pt solid #000;">data</span><span style="padding:0.5pt 5pt;">next</span></span>，其中，prev 和 next 分别是指向其直接前驱和直接后继结点的指针。现要删除指针 p 所指的结点，正确的语句序列是<span class="blank"></span>。</p>
+        <div class="options cols-1">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text"><code>p-&gt;next-&gt;prev = p-&gt;prev; p-&gt;prev-&gt;next = p-&gt;prev; free(p);</code></span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text"><code>p-&gt;next-&gt;prev = p-&gt;next; p-&gt;prev-&gt;next = p-&gt;next; free(p);</code></span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text"><code>p-&gt;next-&gt;prev = p-&gt;next; p-&gt;prev-&gt;next = p-&gt;prev; free(p);</code></span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text"><code>p-&gt;next-&gt;prev = p-&gt;prev; p-&gt;prev-&gt;next = p-&gt;next; free(p);</code></span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q3">
+        <p class="q-stem"><span class="q-num">3.</span>设有如下图所示的火车车轨，入口到出口之间有 <i>n</i> 条轨道，列车的行进方向均为从左至右，列车可驶入任意一条轨道。现有编号为 1～9 的 9 列列车，驶入的次序依次是 8, 4, 2, 5, 3, 9, 1, 6, 7。若期望驶出的次序依次为 1～9，则 <i>n</i> 至少是<span class="blank"></span>。</p>
+        <div class="figure">
+          <svg xmlns="http://www.w3.org/2000/svg" width="430" height="122" viewBox="0 0 430 122" role="img" aria-label="题 3 火车车轨示意图">
+            <defs>
+              <marker id="arr3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0 1.5L9 5L0 8.5Z" fill="#000"/>
+              </marker>
+            </defs>
+            <g stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" font-family="Times New Roman, Songti SC, SimSun, serif">
+              <!-- Entry & exit tracks (two rails each) -->
+              <path d="M12 52H96 M12 58H96" fill="none"/>
+              <path d="M334 52H418 M334 58H418" fill="none"/>
+              <!-- Middle straight track -->
+              <path d="M96 52H334 M96 58H334" fill="none"/>
+              <!-- Top curved branch track -->
+              <path d="M92 52C112 52 114 14 148 14H282C316 14 318 52 338 52" fill="none"/>
+              <path d="M96 58C118 58 120 20 148 20H282C310 20 312 58 334 58" fill="none"/>
+              <!-- Bottom curved branch track -->
+              <path d="M96 52C118 52 120 90 148 90H282C310 90 312 52 334 52" fill="none"/>
+              <path d="M92 58C112 58 114 96 148 96H282C316 96 318 58 338 58" fill="none"/>
+
+              <!-- Sleepers on straight entry/middle/exit -->
+              <path d="M18 49v12 M26 49v12 M34 49v12 M42 49v12 M50 49v12 M58 49v12 M66 49v12 M74 49v12 M82 49v12 M90 49v12" fill="none"/>
+              <path d="M104 49v12 M112 49v12 M120 49v12 M128 49v12 M136 49v12 M144 49v12 M152 49v12 M160 49v12 M168 49v12 M176 49v12 M184 49v12 M192 49v12 M200 49v12 M208 49v12 M216 49v12 M224 49v12 M232 49v12 M240 49v12 M248 49v12 M256 49v12 M264 49v12 M272 49v12 M280 49v12 M288 49v12 M296 49v12 M304 49v12 M312 49v12 M320 49v12 M328 49v12" fill="none"/>
+              <path d="M342 49v12 M350 49v12 M358 49v12 M366 49v12 M374 49v12 M382 49v12 M390 49v12 M398 49v12 M406 49v12 M414 49v12" fill="none"/>
+
+              <!-- Sleepers on top straight section & curves -->
+              <path d="M148 11v12 M156 11v12 M164 11v12 M172 11v12 M180 11v12 M188 11v12 M196 11v12 M204 11v12 M212 11v12 M220 11v12 M228 11v12 M236 11v12 M244 11v12 M252 11v12 M260 11v12 M268 11v12 M276 11v12 M284 11v12" fill="none"/>
+              <path d="M105 42l6 8 M113 31l7 8 M122 22l6 9 M133 16l4 10 M141 13l2 10" fill="none"/>
+              <path d="M325 42l-6 8 M317 31l-7 8 M308 22l-6 9 M297 16l-4 10 M289 13l-2 10" fill="none"/>
+
+              <!-- Sleepers on bottom straight section & curves -->
+              <path d="M148 87v12 M156 87v12 M164 87v12 M172 87v12 M180 87v12 M188 87v12 M196 87v12 M204 87v12 M212 87v12 M220 87v12 M228 87v12 M236 87v12 M244 87v12 M252 87v12 M260 87v12 M268 87v12 M276 87v12 M284 87v12" fill="none"/>
+              <path d="M105 68l6-8 M113 79l7-8 M122 88l6-9 M133 94l4-10 M141 97l2-10" fill="none"/>
+              <path d="M325 68l-6-8 M317 79l-7-8 M308 88l-6-9 M297 94l-4-10 M289 97l-2-10" fill="none"/>
+
+              <!-- Ellipsis dots between tracks -->
+              <circle cx="215" cy="31" r="1" fill="#000" stroke="none"/>
+              <circle cx="215" cy="36" r="1" fill="#000" stroke="none"/>
+              <circle cx="215" cy="41" r="1" fill="#000" stroke="none"/>
+              <circle cx="215" cy="69" r="1" fill="#000" stroke="none"/>
+              <circle cx="215" cy="74" r="1" fill="#000" stroke="none"/>
+              <circle cx="215" cy="79" r="1" fill="#000" stroke="none"/>
+
+              <!-- Train number labels -->
+              <text x="52" y="42" font-size="10.5" letter-spacing="1.2" text-anchor="middle" fill="#000" stroke="none">761935248</text>
+              <text x="378" y="42" font-size="10.5" letter-spacing="1.2" text-anchor="middle" fill="#000" stroke="none">987654321</text>
+
+              <!-- Arrows and labels -->
+              <line x1="28" y1="71" x2="75" y2="71" marker-end="url(#arr3)"/>
+              <text x="52" y="85" font-size="10" text-anchor="middle" fill="#000" stroke="none">入口</text>
+
+              <line x1="354" y1="71" x2="401" y2="71" marker-end="url(#arr3)"/>
+              <text x="378" y="85" font-size="10" text-anchor="middle" fill="#000" stroke="none">出口</text>
+
+              <line x1="168" y1="106" x2="262" y2="106" marker-end="url(#arr3)"/>
+              <text x="215" y="119" font-size="10" text-anchor="middle" fill="#000" stroke="none">轨道</text>
+            </g>
+          </svg>
+        </div>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">2</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">3</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">4</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">5</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q4">
+        <p class="q-stem"><span class="q-num">4.</span>有一个 100 阶的三对角矩阵 <i>M</i>，其元素 <i>m</i><sub><i>i,j</i></sub>（1 ≤ <i>i</i> ≤ 100，1 ≤ <i>j</i> ≤ 100）按行优先依次压缩存入下标从 0 开始的一维数组 <i>N</i> 中。元素 <i>m</i><sub>30,30</sub> 在 <i>N</i> 中的下标是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">86</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">87</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">88</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">89</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q5">
+        <p class="q-stem"><span class="q-num">5.</span>若森林 F 有 15 条边、25 个结点，则 F 包含树的个数是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">8</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">9</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">10</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">11</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q6">
+        <p class="q-stem"><span class="q-num">6.</span>下列选项中，不是下图深度优先搜索序列的是<span class="blank"></span>。</p>
+        <div class="figure">
+          <svg xmlns="http://www.w3.org/2000/svg" width="120" height="122" viewBox="0 0 120 122" role="img" aria-label="题 6 有向图">
+            <defs>
+              <marker id="arr6" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0 1.5L9 5L0 8.5Z" fill="#000"/>
+              </marker>
+            </defs>
+            <g stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" font-family="Times New Roman, serif">
+              <!-- Directed edges terminating on circle radius r=12 -->
+              <!-- V1(60,16) -> V2(24,52): dx=-36, dy=36, unit=(-0.707,0.707) -->
+              <line x1="51.5" y1="24.5" x2="32.5" y2="43.5" marker-end="url(#arr6)"/>
+              <!-- V1(60,16) -> V3(96,52): dx=36, dy=36 -->
+              <line x1="68.5" y1="24.5" x2="87.5" y2="43.5" marker-end="url(#arr6)"/>
+              <!-- V1(60,16) -> V5(96,102): dx=36, dy=86, len=93.23, unit=(0.386,0.922) -->
+              <line x1="64.6" y1="27.1" x2="91.4" y2="90.9" marker-end="url(#arr6)"/>
+              <!-- V3(96,52) -> V2(24,52) -->
+              <line x1="84" y1="52" x2="36" y2="52" marker-end="url(#arr6)"/>
+              <!-- V2(24,52) -> V5(96,102): dx=72, dy=50, len=87.66, unit=(0.821,0.570) -->
+              <line x1="33.9" y1="58.8" x2="86.1" y2="95.2" marker-end="url(#arr6)"/>
+              <!-- V4(24,102) -> V3(96,52): dx=72, dy=-50, len=87.66, unit=(0.821,-0.570) -->
+              <line x1="33.9" y1="95.2" x2="86.1" y2="58.8" marker-end="url(#arr6)"/>
+              <!-- V5(96,102) -> V4(24,102) -->
+              <line x1="84" y1="102" x2="36" y2="102" marker-end="url(#arr6)"/>
+
+              <!-- Nodes -->
+              <circle cx="60" cy="16" r="12" fill="#fff"/>
+              <text x="60" y="19.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">V<tspan dy="2" font-size="7.5">1</tspan></text>
+              <circle cx="24" cy="52" r="12" fill="#fff"/>
+              <text x="24" y="55.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">V<tspan dy="2" font-size="7.5">2</tspan></text>
+              <circle cx="96" cy="52" r="12" fill="#fff"/>
+              <text x="96" y="55.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">V<tspan dy="2" font-size="7.5">3</tspan></text>
+              <circle cx="24" cy="102" r="12" fill="#fff"/>
+              <text x="24" y="105.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">V<tspan dy="2" font-size="7.5">4</tspan></text>
+              <circle cx="96" cy="102" r="12" fill="#fff"/>
+              <text x="96" y="105.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">V<tspan dy="2" font-size="7.5">5</tspan></text>
+            </g>
+          </svg>
+        </div>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">V<sub>1</sub>, V<sub>5</sub>, V<sub>4</sub>, V<sub>3</sub>, V<sub>2</sub></span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">V<sub>1</sub>, V<sub>3</sub>, V<sub>2</sub>, V<sub>5</sub>, V<sub>4</sub></span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">V<sub>1</sub>, V<sub>2</sub>, V<sub>5</sub>, V<sub>4</sub>, V<sub>3</sub></span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">V<sub>1</sub>, V<sub>2</sub>, V<sub>3</sub>, V<sub>4</sub>, V<sub>5</sub></span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q7">
+        <p class="q-stem"><span class="q-num">7.</span>若将 <i>n</i> 个顶点 <i>e</i> 条弧的有向图采用邻接表存储，则拓扑排序算法的时间复杂度是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text"><i>O</i>(<i>n</i>)</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text"><i>O</i>(<i>n</i> + <i>e</i>)</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text"><i>O</i>(<i>n</i><sup>2</sup>)</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text"><i>O</i>(<i>ne</i>)</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q8">
+        <p class="q-stem"><span class="q-num">8.</span>使用迪杰斯特拉（Dijkstra）算法求下图中从顶点 1 到其他各顶点的最短路径，依次得到的各最短路径的目标顶点是<span class="blank"></span>。</p>
+        <div class="figure">
+          <svg xmlns="http://www.w3.org/2000/svg" width="250" height="106" viewBox="0 0 250 106" role="img" aria-label="题 8 带权有向图">
+            <defs>
+              <marker id="arr8" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0 1.5L9 5L0 8.5Z" fill="#000"/>
+              </marker>
+            </defs>
+            <g stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" font-family="Times New Roman, serif">
+              <!-- Nodes at (25,18), (125,18), (225,18), (25,88), (125,88), (225,88), radius=12 -->
+              <!-- 1 -> 2 (5) -->
+              <line x1="37" y1="18" x2="113" y2="18" marker-end="url(#arr8)"/>
+              <text x="75" y="13" font-size="10" text-anchor="middle" fill="#000" stroke="none">5</text>
+              <!-- 2 -> 3 (2) -->
+              <line x1="137" y1="18" x2="213" y2="18" marker-end="url(#arr8)"/>
+              <text x="175" y="13" font-size="10" text-anchor="middle" fill="#000" stroke="none">2</text>
+              <!-- 4 -> 1 (2) -->
+              <line x1="25" y1="76" x2="25" y2="30" marker-end="url(#arr8)"/>
+              <text x="15" y="56" font-size="10" text-anchor="middle" fill="#000" stroke="none">2</text>
+              <!-- 5 -> 2 (6) -->
+              <line x1="125" y1="76" x2="125" y2="30" marker-end="url(#arr8)"/>
+              <text x="134" y="56" font-size="10" text-anchor="middle" fill="#000" stroke="none">6</text>
+              <!-- 6 -> 3 (2) -->
+              <line x1="225" y1="76" x2="225" y2="30" marker-end="url(#arr8)"/>
+              <text x="235" y="56" font-size="10" text-anchor="middle" fill="#000" stroke="none">2</text>
+              <!-- 5 -> 4 (7) -->
+              <line x1="113" y1="88" x2="37" y2="88" marker-end="url(#arr8)"/>
+              <text x="75" y="101" font-size="10" text-anchor="middle" fill="#000" stroke="none">7</text>
+              <!-- 5 -> 6 (5) -->
+              <line x1="137" y1="88" x2="213" y2="88" marker-end="url(#arr8)"/>
+              <text x="175" y="101" font-size="10" text-anchor="middle" fill="#000" stroke="none">5</text>
+              <!-- 1 -> 5 (4): dx=100, dy=70, len=122.07, unit=(0.819,0.573) -->
+              <line x1="34.8" y1="24.9" x2="115.2" y2="81.1" marker-end="url(#arr8)"/>
+              <text x="58" y="55" font-size="10" text-anchor="middle" fill="#000" stroke="none">4</text>
+              <!-- 2 -> 4 (9): dx=-100, dy=70 -->
+              <line x1="115.2" y1="24.9" x2="34.8" y2="81.1" marker-end="url(#arr8)"/>
+              <text x="92" y="55" font-size="10" text-anchor="middle" fill="#000" stroke="none">9</text>
+              <!-- 3 -> 5 (6): dx=-100, dy=70 -->
+              <line x1="215.2" y1="24.9" x2="134.8" y2="81.1" marker-end="url(#arr8)"/>
+              <text x="186" y="61" font-size="10" text-anchor="middle" fill="#000" stroke="none">6</text>
+
+              <!-- Circles -->
+              <circle cx="25" cy="18" r="12" fill="#fff"/>
+              <text x="25" y="21.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">1</text>
+              <circle cx="125" cy="18" r="12" fill="#fff"/>
+              <text x="125" y="21.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">2</text>
+              <circle cx="225" cy="18" r="12" fill="#fff"/>
+              <text x="225" y="21.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">3</text>
+              <circle cx="25" cy="88" r="12" fill="#fff"/>
+              <text x="25" y="91.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">4</text>
+              <circle cx="125" cy="88" r="12" fill="#fff"/>
+              <text x="125" y="91.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">5</text>
+              <circle cx="225" cy="88" r="12" fill="#fff"/>
+              <text x="225" y="91.5" font-size="10.5" text-anchor="middle" fill="#000" stroke="none">6</text>
+            </g>
+          </svg>
+        </div>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">5, 2, 3, 4, 6</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">5, 2, 3, 6, 4</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">5, 2, 4, 3, 6</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">5, 2, 6, 3, 4</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q9">
+        <p class="q-stem"><span class="q-num">9.</span>在有 <i>n</i>（<i>n</i> &gt; 1000）个元素的升序数组 A 中查找关键字 x。查找算法的伪代码如下所示。</p>
+        <pre class="code-plain" style="background:none;">k = 0;
+while(k &lt; n 且 A[k] &lt; x) k = k + 3;
+if(k &lt; n 且 A[k] == x) 查找成功;
+else if(k-1 &lt; n 且 A[k-1] == x) 查找成功;
+     else if(k-2 &lt; n 且 A[k-2] == x) 查找成功;
+          else 查找失败;</pre>
+        <p class="q-para" style="text-indent:0;margin-left:1.6em;">本算法与折半查找算法相比，有可能具有更少比较次数的情形是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">当 x 不在数组中</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">当 x 接近数组开头处</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">当 x 接近数组结尾处</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">当 x 位于数组中间位置</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q10">
+        <p class="q-stem"><span class="q-num">10.</span>B+ 树不同于 B 树的特点之一是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">能支持顺序查找</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">结点中含有关键字</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">根结点至少有两个分支</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">所有叶结点都在同一层上</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q11">
+        <p class="q-stem"><span class="q-num">11.</span>对 10TB 的数据文件进行排序，应使用的方法是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">希尔排序</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">堆排序</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">快速排序</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">归并排序</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q12">
+        <p class="q-stem"><span class="q-num">12.</span>将高级语言源程序转换为机器级目标代码文件的程序是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">汇编程序</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">链接程序</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">编译程序</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">解释程序</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q13">
+        <p class="q-stem"><span class="q-num">13.</span>有如下 C 语言程序段</p>
+        <pre class="code-plain" style="background:none;">short si = -32767;
+unsigned short usi = si;</pre>
+        <p class="q-para" style="text-indent:0;margin-left:1.6em;">执行上述两条语句后，usi 的值为<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">−32767</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">32767</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">32768</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">32769</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q14">
+        <p class="q-stem"><span class="q-num">14.</span>某计算机字长为 32 位，按字节编址，采用小端（Little Endian）方式存放数据。假定有一个 double 型变量，其机器数表示为 1122 3344 5566 7788H，存放在 0000 8040H 开始的连续存储单元中，则存储单元 0000 8046H 中存放的是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">22H</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">33H</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">77H</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">66H</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q15">
+        <p class="q-stem"><span class="q-num">15.</span>有如下 C 语言程序段：</p>
+        <pre class="code-plain" style="background:none;">for(k=0; k&lt;1000; k++)
+    a[k] = a[k] + 32;</pre>
+        <p class="q-para" style="text-indent:0;margin-left:1.6em;">若数组 a 及变量 k 均为 int 型，int 型数据占 4B，数据 Cache 采用直接映射方式，数据区大小为 1KB、块大小为 16B，该程序段执行前 Cache 为空，则该程序段执行过程中访问数组 a 的 Cache 缺失率约为<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">1.25%</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">2.5%</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">12.5%</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">25%</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q16">
+        <p class="q-stem"><span class="q-num">16.</span>某存储器容量为 64KB，按字节编址，地址 4000H～5FFFH 为 ROM 区，其余为 RAM 区。若采用 8K×4 位的 SRAM 芯片进行设计，则需要该芯片的数量是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">7</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">8</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">14</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">16</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q17">
+        <p class="q-stem"><span class="q-num">17.</span>某指令格式如下所示。</p>
+        <table class="exam-table" aria-label="题 17 指令格式表" style="width:38%;">
+          <tbody>
+            <tr>
+              <td style="width:25%;">OP</td>
+              <td style="width:25%;">M</td>
+              <td style="width:25%;">I</td>
+              <td style="width:25%;">D</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="q-para" style="text-indent:0;margin-left:1.6em;">其中 M 为寻址方式，I 为变址寄存器编号，D 为形式地址。若采用先变址后间址的寻址方式，则操作数的有效地址是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">I + D</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">(I) + D</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">((I) + D)</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">((I)) + D</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q18">
+        <p class="q-stem"><span class="q-num">18.</span>某计算机主存空间为 4GB，字长为 32 位，按字节编址，采用 32 位字长指令字格式。若指令按字边界对齐存放，则程序计数器（PC）和指令寄存器（IR）的位数至少分别是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">30、30</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">30、32</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">32、30</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">32、32</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q19">
+        <p class="q-stem"><span class="q-num">19.</span>在无转发机制的五段基本流水线（取指、译码/读寄存器、运算、访存、写回寄存器）中，下列指令序列存在数据冒险的指令对是<span class="blank"></span>。</p>
+        <pre class="code-plain" style="background:none;">I1: add  R1, R2, R3;  (R2)+(R3)→R1
+I2: add  R5, R2, R4;  (R2)+(R4)→R5
+I3: add  R4, R5, R3;  (R5)+(R3)→R4
+I4: add  R5, R2, R6;  (R2)+(R6)→R5</pre>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">I1 和 I2</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">I2 和 I3</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">I2 和 I4</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">I3 和 I4</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q20">
+        <p class="q-stem"><span class="q-num">20.</span>单周期处理器中所有指令的指令周期为一个时钟周期。下列关于单周期处理器的叙述中，错误的是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">可以采用单总线结构数据通路</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">处理器时钟频率较低</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">在指令执行过程中控制信号不变</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">每条指令的 CPI 为 1</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q21">
+        <p class="q-stem"><span class="q-num">21.</span>下列关于总线设计的叙述中，错误的是<span class="blank"></span>。</p>
+        <div class="options cols-1">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">并行总线传输比串行总线传输速度快</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">采用信号线复用技术可减少信号线数量</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">采用突发传输方式可提高总线数据传输率</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">采用分离事务通信方式可提高总线利用率</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q22">
+        <p class="q-stem"><span class="q-num">22.</span>异常是指令执行过程中在处理器内部发生的特殊事件，中断是来自处理器外部的请求事件。下列关于中断或异常情况的叙述中，错误的是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">“访存时缺页”属于中断</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">“整数除以 0”属于异常</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">“DMA 传送结束”属于中断</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">“存储保护错”属于异常</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q23">
+        <p class="q-stem"><span class="q-num">23.</span>下列关于批处理系统的叙述中，正确的是<span class="blank"></span>。</p>
+        <ul class="q-items cols-1">
+          <li>I. 批处理系统允许多个用户与计算机直接交互</li>
+          <li>II. 批处理系统分为单道批处理系统和多道批处理系统</li>
+          <li>III. 中断技术使得多道批处理系统和 I/O 设备可与 CPU 并行工作</li>
+        </ul>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">仅 II、III</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">仅 II</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">仅 I、II</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">仅 I、III</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q24">
+        <p class="q-stem"><span class="q-num">24.</span>某单 CPU 系统中有输入和输出设备各 1 台，现有 3 个并发执行的作业，每个作业的输入、计算和输出时间均分别为 2ms、3ms 和 4ms，且都按输入、计算和输出的顺序执行，则执行完 3 个作业需要的时间最少是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">15ms</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">17ms</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">22ms</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">27ms</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q25">
+        <p class="q-stem"><span class="q-num">25.</span>系统中有 3 个不同的临界资源 R<sub>1</sub>、R<sub>2</sub> 和 R<sub>3</sub>，被 4 个进程 p<sub>1</sub>、p<sub>2</sub>、p<sub>3</sub> 及 p<sub>4</sub> 共享。各进程对资源的需求为：p<sub>1</sub> 申请 R<sub>1</sub> 和 R<sub>2</sub>，p<sub>2</sub> 申请 R<sub>2</sub> 和 R<sub>3</sub>，p<sub>3</sub> 申请 R<sub>1</sub> 和 R<sub>3</sub>，p<sub>4</sub> 申请 R<sub>2</sub>。若系统出现死锁，则处于死锁状态的进程数至少是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">1</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">2</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">3</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">4</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q26">
+        <p class="q-stem"><span class="q-num">26.</span>某系统采用改进型 CLOCK 置换算法，页表项中字段 A 为访问位，M 为修改位。A = 0 表示页最近没有被访问，A = 1 表示页最近被访问过。M = 0 表示页没有被修改过，M = 1 表示页被修改过。按 (A, M) 所有可能的取值，将页分为四类：(0, 0), (1, 0), (0, 1) 和 (1, 1)，则该算法淘汰页的次序为<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">(0, 0), (0, 1), (1, 0), (1, 1)</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">(0, 0), (1, 0), (0, 1), (1, 1)</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">(0, 0), (0, 1), (1, 1), (1, 0)</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">(0, 0), (1, 1), (0, 1), (1, 0)</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q27">
+        <p class="q-stem"><span class="q-num">27.</span>使用 TSL（Test and Set Lock）指令实现进程互斥的伪代码如下所示。</p>
+        <pre class="code-plain" style="background:none;">do{
+    ...
+    while(TSL(&amp;lock));
+    critical section;
+    lock = FALSE;
+    ...
+} while(TRUE);</pre>
+        <p class="q-para" style="text-indent:0;margin-left:1.6em;">下列与该实现机制相关的叙述中，正确的是<span class="blank"></span>。</p>
+        <div class="options cols-1">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">退出临界区的进程负责唤醒阻塞态进程</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">等待进入临界区的进程不会主动放弃 CPU</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">上述伪代码满足“让权等待”的同步准则</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text"><code>while(TSL(&amp;lock))</code> 语句应在关中断状态下执行</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q28">
+        <p class="q-stem"><span class="q-num">28.</span>某进程的段表内容如下所示。</p>
+        <table class="exam-table" aria-label="题 28 段表" style="border:none;">
+          <thead>
+            <tr>
+              <th style="border:none;font-weight:400;">段号</th>
+              <th style="font-weight:400;">段长</th>
+              <th style="font-weight:400;">内存起始地址</th>
+              <th style="font-weight:400;">权限</th>
+              <th style="font-weight:400;">状态</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border:none;">0</td>
+              <td>100</td>
+              <td>6000</td>
+              <td>只读</td>
+              <td>在内存</td>
+            </tr>
+            <tr>
+              <td style="border:none;">1</td>
+              <td>200</td>
+              <td>…</td>
+              <td>读写</td>
+              <td>不在内存</td>
+            </tr>
+            <tr>
+              <td style="border:none;">2</td>
+              <td>300</td>
+              <td>4000</td>
+              <td>读写</td>
+              <td>在内存</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="q-para" style="text-indent:0;margin-left:1.6em;">当访问段号为 2、段内地址为 400 的逻辑地址时，进行地址转换的结果是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">段缺失异常</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">得到内存地址 4400</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">越权异常</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">越界异常</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q29">
+        <p class="q-stem"><span class="q-num">29.</span>某进程访问页面的序列如下所示。</p>
+        <div class="figure">
+          <svg xmlns="http://www.w3.org/2000/svg" width="260" height="38" viewBox="0 0 260 38" role="img" aria-label="题 29 页面访问序列时间轴">
+            <defs>
+              <marker id="arr29" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0 1.5L9 5L0 8.5Z" fill="#000"/>
+              </marker>
+            </defs>
+            <g stroke="#000" stroke-width="0.95" stroke-linecap="round" stroke-linejoin="round" font-family="Times New Roman, Songti SC, SimSun, serif">
+              <text x="128" y="12" font-size="10" text-anchor="end" fill="#000" stroke="none">…, 1, 3, 4, 5, 6, 0, 3, 2, 3, 2,</text>
+              <text x="139" y="12" font-size="10" text-anchor="start" fill="#000" stroke="none">0, 4, 0, 3, 2, 9, 2, 1, …</text>
+              <line x1="12" y1="18" x2="245" y2="18" marker-end="url(#arr29)"/>
+              <line x1="133.5" y1="31" x2="133.5" y2="11" marker-end="url(#arr29)"/>
+              <text x="126" y="32" font-size="10" font-style="italic" text-anchor="middle" fill="#000" stroke="none">t</text>
+              <text x="236" y="32" font-size="10" text-anchor="middle" fill="#000" stroke="none">时间</text>
+            </g>
+          </svg>
+        </div>
+        <p class="q-para" style="text-indent:0;margin-left:1.6em;">若工作集的窗口大小为 6，则在 <i>t</i> 时刻的工作集为<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">{6, 0, 3, 2}</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">{2, 3, 0, 4}</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">{0, 4, 3, 2, 9}</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">{4, 5, 6, 0, 3, 2}</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q30">
+        <p class="q-stem"><span class="q-num">30.</span>进程 P<sub>1</sub> 和 P<sub>2</sub> 均包含并发执行的线程，部分伪代码描述如下所示。</p>
+        <table class="exam-table" aria-label="题 30 进程 P1 与 P2 伪代码" style="width:76%;">
+          <tbody>
+            <tr>
+              <td class="left" style="width:50%;vertical-align:top;padding:6pt 10pt;">
+                <pre style="margin:0;font-family:'Times New Roman',monospace;font-size:9.5pt;line-height:1.45;">//进程 P1
+int x = 0;
+Thread1()
+{  int a;
+   a = 1;  x += 1;
+}
+Thread2()
+{  int a;
+   a = 2;  x += 2;
+}</pre>
+              </td>
+              <td class="left" style="width:50%;vertical-align:top;padding:6pt 10pt;">
+                <pre style="margin:0;font-family:'Times New Roman',monospace;font-size:9.5pt;line-height:1.45;">//进程 P2
+int x = 0;
+Thread3()
+{  int a;
+   a = x;  x += 3;
+}
+Thread4()
+{  int b;
+   b = x;  x += 4;
+}</pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="q-para" style="text-indent:0;margin-left:1.6em;">下列选项中，需要互斥执行的操作是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">a = 1 与 a = 2</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">a = x 与 b = x</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">x += 1 与 x += 2</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">x += 1 与 x += 3</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q31">
+        <p class="q-stem"><span class="q-num">31.</span>下列关于 SPOOLing 技术的叙述中，错误的是<span class="blank"></span>。</p>
+        <div class="options cols-1">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">需要外存的支持</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">需要多道程序设计技术的支持</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">可以让多个作业共享一台独占设备</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">由用户作业控制设备与输入/输出井之间的数据传送</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q32">
+        <p class="q-stem"><span class="q-num">32.</span>下列关于管程的叙述中，错误的是<span class="blank"></span>。</p>
+        <div class="options cols-1">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">管程只能用于实现进程的互斥</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">管程是由编程语言支持的进程同步机制</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">任何时候只能有一个进程在管程中执行</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">管程中定义的变量只能被管程内的过程访问</span></div>
+        </div>
+      </article>
+
+      <p class="q-para" style="text-indent:0;font-weight:700;margin:8pt 0 4pt 0;break-after:avoid;">题 33～41 均依据题 33～41 图回答。</p>
+      <div class="figure">
+        <svg xmlns="http://www.w3.org/2000/svg" width="468" height="225" viewBox="0 0 468 225" role="img" aria-label="题 33～41 网络拓扑示意图">
+          <g stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" font-family="Times New Roman, Songti SC, SimSun, serif">
+            <!-- Legend Box -->
+            <rect x="285" y="4" width="177" height="72" fill="#fff"/>
+            <text x="291" y="16" font-size="9" text-anchor="start" fill="#000" stroke="none">图中：</text>
+            <text x="291" y="28" font-size="9" text-anchor="start" fill="#000" stroke="none">R1～R3 为路由器；</text>
+            <text x="291" y="40" font-size="9" text-anchor="start" fill="#000" stroke="none">Switch 为 100Base-T 交换机；</text>
+            <text x="291" y="52" font-size="9" text-anchor="start" fill="#000" stroke="none">Hub 为 100Base-T 集线器；</text>
+            <text x="291" y="64" font-size="9" text-anchor="start" fill="#000" stroke="none">主机 H1～H4 的默认域名服务</text>
+            <text x="291" y="74" font-size="9" text-anchor="start" fill="#000" stroke="none">器均配置为 201.1.1.1。</text>
+
+            <!-- Internet Cloud (top left) -->
+            <path d="M35,54 C14,54 8,37 22,27 C16,13 38,4 58,12 C69,2 102,2 115,13 C136,7 154,18 148,32 C161,39 152,55 130,54 C118,62 92,62 82,55 C68,62 46,61 35,54 Z" fill="#f3f4f6"/>
+            <text x="82" y="22" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">Internet</text>
+            <text x="82" y="34" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">130.18.10.1</text>
+            <text x="82" y="46" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">Web服务器 S</text>
+
+            <!-- 201.1.1.0/24 Cloud (mid left) -->
+            <path d="M26,113 C14,113 10,102 18,95 C14,85 28,79 42,84 C50,77 72,77 80,84 C94,80 105,88 100,97 C109,102 103,113 88,113 C80,118 62,118 55,114 C46,118 33,117 26,113 Z" fill="#f3f4f6"/>
+            <text x="58" y="102" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">201.1.1.0/24</text>
+
+            <!-- 201.1.2.0/25 Cloud (mid right) -->
+            <path d="M335,113 C323,113 319,102 327,95 C323,85 337,79 351,84 C359,77 381,77 389,84 C403,80 414,88 409,97 C418,102 412,113 397,113 C389,118 371,118 364,114 C355,118 342,117 335,113 Z" fill="#f3f4f6"/>
+            <text x="367" y="102" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">201.1.2.0/25</text>
+
+            <!-- Links upper -->
+            <line x1="149" y1="24" x2="167" y2="24"/>
+            <line x1="185" y1="36" x2="185" y2="85"/>
+            <line x1="102" y1="97" x2="167" y2="97"/>
+            <line x1="203" y1="97" x2="275" y2="97"/>
+            <line x1="311" y1="97" x2="325" y2="97"/>
+            <line x1="58" y1="116" x2="58" y2="140"/>
+            <line x1="185" y1="109" x2="185" y2="140"/>
+
+            <!-- R1 -->
+            <g transform="translate(167,10)">
+              <path d="M0,7 V21 C0,26 36,26 36,21 V7 Z" fill="#d1d5db"/>
+              <ellipse cx="18" cy="7" rx="18" ry="6" fill="#e5e7eb"/>
+              <line x1="8" y1="4.6" x2="15" y2="6.4" stroke-width="0.9"/>
+              <line x1="28" y1="4.6" x2="21" y2="6.4" stroke-width="0.9"/>
+              <line x1="9" y1="8.8" x2="15" y2="7.2" stroke-width="0.9"/>
+              <line x1="27" y1="8.8" x2="21" y2="7.2" stroke-width="0.9"/>
+              <text x="18" y="21" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">R1</text>
+            </g>
+            <text x="192" y="51" font-size="9.2" text-anchor="start" fill="#000" stroke="none">201.1.3.9</text>
+
+            <!-- R2 -->
+            <g transform="translate(167,85)">
+              <path d="M0,7 V21 C0,26 36,26 36,21 V7 Z" fill="#d1d5db"/>
+              <ellipse cx="18" cy="7" rx="18" ry="6" fill="#e5e7eb"/>
+              <line x1="8" y1="4.6" x2="15" y2="6.4" stroke-width="0.9"/>
+              <line x1="28" y1="4.6" x2="21" y2="6.4" stroke-width="0.9"/>
+              <line x1="9" y1="8.8" x2="15" y2="7.2" stroke-width="0.9"/>
+              <line x1="27" y1="8.8" x2="21" y2="7.2" stroke-width="0.9"/>
+              <text x="18" y="21" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">R2</text>
+            </g>
+            <text x="172" y="79" font-size="9" text-anchor="middle" fill="#000" stroke="none">NAT</text>
+            <text x="196" y="79" font-size="9" text-anchor="middle" fill="#000" stroke="none">L0</text>
+            <text x="155" y="92" font-size="9" text-anchor="middle" fill="#000" stroke="none">E0</text>
+            <text x="213" y="92" font-size="9" text-anchor="middle" fill="#000" stroke="none">L1</text>
+            <text x="176" y="123" font-size="9" text-anchor="end" fill="#000" stroke="none">E1</text>
+            <text x="193" y="123" font-size="9.2" text-anchor="start" fill="#000" stroke="none">192.168.3.254</text>
+
+            <!-- R3 -->
+            <g transform="translate(275,85)">
+              <path d="M0,7 V21 C0,26 36,26 36,21 V7 Z" fill="#d1d5db"/>
+              <ellipse cx="18" cy="7" rx="18" ry="6" fill="#e5e7eb"/>
+              <line x1="8" y1="4.6" x2="15" y2="6.4" stroke-width="0.9"/>
+              <line x1="28" y1="4.6" x2="21" y2="6.4" stroke-width="0.9"/>
+              <line x1="9" y1="8.8" x2="15" y2="7.2" stroke-width="0.9"/>
+              <line x1="27" y1="8.8" x2="21" y2="7.2" stroke-width="0.9"/>
+              <text x="18" y="21" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">R3</text>
+            </g>
+            <text x="249" y="92" font-size="9.2" text-anchor="middle" fill="#000" stroke="none">201.1.3.1</text>
+
+            <!-- DNS Server -->
+            <g transform="translate(47,140)">
+              <rect x="0" y="0" width="22" height="32" fill="#fff"/>
+              <rect x="3" y="4" width="16" height="4" fill="#d1d5db"/>
+              <rect x="3" y="10" width="16" height="4" fill="#d1d5db"/>
+              <line x1="5" y1="20" x2="17" y2="20"/>
+              <line x1="5" y1="24" x2="17" y2="24"/>
+            </g>
+            <text x="58" y="185" font-size="9.2" text-anchor="middle" fill="#000" stroke="none">DNS服务器</text>
+            <text x="58" y="197" font-size="9.2" text-anchor="middle" fill="#000" stroke="none">201.1.1.1</text>
+
+            <!-- Switch -->
+            <g transform="translate(164,140)">
+              <polygon points="0,8 22,0 44,8 22,16" fill="#fff"/>
+              <polygon points="0,8 22,16 22,26 0,18" fill="#d1d5db"/>
+              <polygon points="22,16 44,8 44,18 22,26" fill="#e5e7eb"/>
+              <path d="M10 7.5l10-3.5 M20 4l-3 .2 M20 4l-1.5 2.5" fill="none" stroke-width="0.85"/>
+              <path d="M23 12l10-3.5 M23 12l3-.2 M23 12l1.5-2.5" fill="none" stroke-width="0.85"/>
+            </g>
+            <text x="148" y="145" font-size="9.2" text-anchor="middle" fill="#000" stroke="none">Switch</text>
+
+            <!-- Hub -->
+            <g transform="translate(274,140)">
+              <polygon points="0,8 22,0 44,8 22,16" fill="#fff"/>
+              <polygon points="0,8 22,16 22,26 0,18" fill="#d1d5db"/>
+              <polygon points="22,16 44,8 44,18 22,26" fill="#e5e7eb"/>
+              <path d="M13 5.5l16 5 M29 10.5l-3-.2 M29 10.5l-1.2-2.6" fill="none" stroke-width="1"/>
+            </g>
+            <text x="260" y="145" font-size="9.2" text-anchor="middle" fill="#000" stroke="none">Hub</text>
+
+            <!-- Switch-Hub, Switch-H1/H2, Hub-H3/H4 links -->
+            <line x1="208" y1="153" x2="274" y2="153"/>
+            <line x1="175" y1="162" x2="148" y2="190"/>
+            <line x1="196" y1="162" x2="223" y2="190"/>
+            <line x1="318" y1="153" x2="355" y2="153"/>
+            <line x1="311" y1="160" x2="355" y2="190"/>
+
+            <!-- H1 -->
+            <g transform="translate(132,190)">
+              <rect x="4" y="0" width="20" height="14" rx="1" fill="#fff"/>
+              <rect x="7" y="2.5" width="14" height="9" fill="#e5e7eb"/>
+              <polygon points="0,16 28,16 25,21 3,21" fill="#d1d5db"/>
+            </g>
+            <text x="166" y="198" font-size="9.2" text-anchor="start" fill="#000" stroke="none">H1</text>
+            <text x="146" y="221" font-size="9.2" text-anchor="middle" fill="#000" stroke="none">192.168.3.2</text>
+
+            <!-- H2 -->
+            <g transform="translate(212,190)">
+              <rect x="4" y="0" width="20" height="14" rx="1" fill="#fff"/>
+              <rect x="7" y="2.5" width="14" height="9" fill="#e5e7eb"/>
+              <polygon points="0,16 28,16 25,21 3,21" fill="#d1d5db"/>
+            </g>
+            <text x="246" y="198" font-size="9.2" text-anchor="start" fill="#000" stroke="none">H2</text>
+            <text x="226" y="221" font-size="9.2" text-anchor="middle" fill="#000" stroke="none">192.168.3.3</text>
+
+            <!-- H4 -->
+            <g transform="translate(355,140)">
+              <rect x="4" y="0" width="20" height="14" rx="1" fill="#fff"/>
+              <rect x="7" y="2.5" width="14" height="9" fill="#e5e7eb"/>
+              <polygon points="0,16 28,16 25,21 3,21" fill="#d1d5db"/>
+            </g>
+            <text x="369" y="135" font-size="9.2" text-anchor="middle" fill="#000" stroke="none">H4</text>
+            <text x="388" y="156" font-size="9.2" text-anchor="start" fill="#000" stroke="none">192.168.3.252</text>
+
+            <!-- H3 -->
+            <g transform="translate(355,182)">
+              <rect x="4" y="0" width="20" height="14" rx="1" fill="#fff"/>
+              <rect x="7" y="2.5" width="14" height="9" fill="#e5e7eb"/>
+              <polygon points="0,16 28,16 25,21 3,21" fill="#d1d5db"/>
+            </g>
+            <text x="369" y="177" font-size="9.2" text-anchor="middle" fill="#000" stroke="none">H3</text>
+            <text x="388" y="198" font-size="9.2" text-anchor="start" fill="#000" stroke="none">192.168.3.251</text>
+          </g>
+        </svg>
+        <p class="fig-caption">题 33～41 图</p>
+      </div>
+
+      <article class="question mcq" id="q33">
+        <p class="q-stem"><span class="q-num">33.</span>在 OSI 参考模型中，R1、Switch、Hub 实现的最高功能层分别是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">2、2、1</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">2、2、2</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">3、2、1</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">3、2、2</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q34">
+        <p class="q-stem"><span class="q-num">34.</span>若连接 R2 和 R3 链路的频率带宽为 8kHz，信噪比为 30dB，该链路实际数据传输速率约为理论最大数据传输速率的 50%，则该链路的实际数据传输速率约是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">8kbps</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">20kbps</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">40kbps</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">80kbps</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q35">
+        <p class="q-stem"><span class="q-num">35.</span>若主机 H2 向主机 H4 发送 1 个数据帧，主机 H4 向主机 H2 立即发送一个确认帧，则除 H4 外，从物理层上能够收到该确认帧的主机还有<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">仅 H2</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">仅 H3</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">仅 H1、H2</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">仅 H2、H3</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q36">
+        <p class="q-stem"><span class="q-num">36.</span>若 Hub 再生比特流过程中，会产生 1.535μs 延时，信号传播速度为 200m/μs，不考虑以太网帧的前导码，则 H3 与 H4 之间理论上可以相距的最远距离是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">200m</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">205m</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">359m</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">512m</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q37">
+        <p class="q-stem"><span class="q-num">37.</span>假设 R1、R2、R3 采用 RIP 协议交换路由信息，且均已收敛。若 R3 检测到网络 201.1.2.0/25 不可达，并向 R2 通告一次新的距离向量，则 R2 更新后，其到达该网络的距离是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">2</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">3</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">16</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">17</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q38">
+        <p class="q-stem"><span class="q-num">38.</span>假设连接 R1、R2 和 R3 之间的点对点链路使用 201.1.3.x/30 地址，当 H3 访问 Web 服务器 S 时，R2 转发出去的封装 HTTP 请求报文的 IP 分组的源 IP 地址和目的 IP 地址分别是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">192.168.3.251, 130.18.10.1</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">192.168.3.251, 201.1.3.9</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">201.1.3.8, 130.18.10.1</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">201.1.3.10, 130.18.10.1</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q39">
+        <p class="q-stem"><span class="q-num">39.</span>若 H1 与 H2 的默认网关和子网掩码均分别配置为 192.168.3.1 和 255.255.255.128，H3 和 H4 的默认网关和子网掩码均分别配置为 192.168.3.254 和 255.255.255.128，则下列现象中可能发生的是<span class="blank"></span>。</p>
+        <div class="options cols-2">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">H1 不能与 H2 进行正常 IP 通信</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">H2 与 H4 均不能访问 Internet</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">H1 不能与 H3 进行正常 IP 通信</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">H3 不能与 H4 进行正常 IP 通信</span></div>
+        </div>
+      </article>
+
+      <article class="question mcq" id="q40">
+        <p class="q-stem"><span class="q-num">40.</span>假设所有域名服务器均采用迭代查询方式进行域名解析。当 H4 访问规范域名为 www.abc.xyz.com 的网站时，域名服务器 201.1.1.1 在完成该域名解析过程中，可能发出 DNS 查询的最少和最多次数分别是<span class="blank"></span>。</p>
+        <div class="options cols-4">
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text">0, 3</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">1, 3</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">0, 4</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">1, 4</span></div>
+        </div>
+      </article>
+
+      <h2 class="section-title">二、综合应用题（第 41～47 小题，共 70 分）</h2>
+
+      <article class="question written" id="q41">
+        <p class="q-stem"><span class="q-num">41.</span><span class="q-score">（9 分）</span>假设题 33～41 图中的 H3 访问 Web 服务器 S 时，S 为新建的 TCP 连接分配了 20KB（K = 1024）的接收缓存，最大段长 MSS = 1KB，平均往返时间 RTT = 200ms。H3 建立连接时的初始序号为 100，且持续以 MSS 大小的段向 S 发送数据，拥塞窗口初始阈值为 32KB；S 对收到的每个段进行确认，并通告新的接收窗口。假定 TCP 连接建立完成后，S 端的 TCP 接收缓存仅有数据存入而无数据取出。请回答下列问题。</p>
+        <ol class="subquestions">
+          <li>（1）在 TCP 连接建立过程中，H3 收到的 S 发送过来的第二次握手 TCP 段的 SYN 和 ACK 标志位的值分别是多少？确认序号是多少？</li>
+          <li>（2）H3 收到的第 8 个确认段所通告的接收窗口是多少？此时 H3 的拥塞窗口变为多少？H3 的发送窗口变为多少？</li>
+          <li>（3）当 H3 的发送窗口等于 0 时，下一个待发送的数据段序号是多少？H3 从发送第 1 个数据段到发送窗口等于 0 时刻为止，平均数据传输速率是多少（忽略段的传输延时）？</li>
+          <li>（4）若 H3 与 S 之间通信已经结束，在 <i>t</i> 时刻 H3 请求断开该连接，则从 <i>t</i> 时刻起，S 释放该连接的最短时间是多少？</li>
+        </ol>
+      </article>
+
+      <article class="question written" id="q42">
+        <p class="q-stem"><span class="q-num">42.</span><span class="q-score">（8 分）</span>如果一棵非空 <i>k</i>（<i>k</i> ≥ 2）叉树 T 中每个非叶结点都有 <i>k</i> 个孩子，则称 T 为正则 <i>k</i> 叉树。请回答下列问题并给出推导过程。</p>
+        <ol class="subquestions">
+          <li>（1）若 T 有 <i>m</i> 个非叶结点，则 T 中的叶结点有多少个？</li>
+          <li>（2）若 T 的高度为 <i>h</i>（单结点的树 <i>h</i> = 1），则 T 的结点数最多为多少个？最少为多少个？</li>
+        </ol>
+      </article>
+
+      <article class="question written" id="q43">
+        <p class="q-stem"><span class="q-num">43.</span><span class="q-score">（15 分）</span>已知由 <i>n</i>（<i>n</i> ≥ 2）个正整数构成的集合 <i>A</i> = {<i>a</i><sub><i>k</i></sub> | 0 ≤ <i>k</i> &lt; <i>n</i>}，将其划分为两个不相交的子集 <i>A</i><sub>1</sub> 和 <i>A</i><sub>2</sub>，元素个数分别是 <i>n</i><sub>1</sub> 和 <i>n</i><sub>2</sub>，<i>A</i><sub>1</sub> 和 <i>A</i><sub>2</sub> 中元素之和分别为 <i>S</i><sub>1</sub> 和 <i>S</i><sub>2</sub>。设计一个尽可能高效的划分算法，满足 |<i>n</i><sub>1</sub> − <i>n</i><sub>2</sub>| 最小且 |<i>S</i><sub>1</sub> − <i>S</i><sub>2</sub>| 最大。要求：</p>
+        <ol class="subquestions">
+          <li>（1）给出算法的基本设计思想。</li>
+          <li>（2）根据设计思想，采用 C 或 C++ 语言描述算法，关键之处给出注释。</li>
+          <li>（3）说明你所设计算法的平均时间复杂度和空间复杂度。</li>
+        </ol>
+      </article>
+
+      <article class="question written" id="q44">
+        <p class="q-stem"><span class="q-num">44.</span><span class="q-score">（11 分）</span>假定 CPU 主频为 50MHz，CPI 为 4。设备 D 采用异步串行通信方式向主机传送 7 位 ASCII 字符，通信规程中有 1 位奇校验位和 1 位停止位，从 D 接收启动命令到字符送入 I/O 端口需要 0.5ms。请回答下列问题，要求说明理由。</p>
+        <ol class="subquestions">
+          <li>（1）每传送一个字符，在异步串行通信线上共需传输多少位？在设备 D 持续工作过程中，每秒钟最多可向 I/O 端口送入多少个字符？</li>
+          <li>（2）设备 D 采用中断方式进行输入/输出，示意图如下。
+            <div class="figure">
+              <svg xmlns="http://www.w3.org/2000/svg" width="368" height="98" viewBox="0 0 380 106" role="img" aria-label="题 44 中断方式输入输出示意图">
+                <defs>
+                  <marker id="arr44" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto">
+                    <path d="M0 1.5L9 5L0 8.5Z" fill="#000"/>
+                  </marker>
+                </defs>
+                <g stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" font-family="Times New Roman, Songti SC, SimSun, serif">
+                  <text x="26" y="28" font-size="9.8" text-anchor="middle" fill="#000" stroke="none">外设D</text>
+                  <text x="26" y="65" font-size="9.8" text-anchor="middle" fill="#000" stroke="none">CPU</text>
+
+                  <!-- Baseline CPU line -->
+                  <path d="M48 70H68" fill="none"/>
+                  <!-- Cycle 1: Work (68..140), Response (152..182) -->
+                  <path d="M68 25H140" fill="none"/>
+                  <text x="104" y="18" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">工作</text>
+                  <text x="150" y="13" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">完</text>
+                  <text x="150" y="24" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">成</text>
+                  <path d="M68 70H152" fill="none"/>
+                  <path d="M152 70V52H192V70" fill="none"/>
+                  <!-- Vertical dashed arrows -->
+                  <line x1="68" y1="68" x2="68" y2="25" stroke-dasharray="3 2"/>
+                  <line x1="140" y1="25" x2="140" y2="66" stroke-dasharray="3 2" marker-end="url(#arr44)"/>
+                  <line x1="152" y1="70" x2="152" y2="54" stroke-dasharray="3 2" marker-end="url(#arr44)"/>
+                  <line x1="184" y1="52" x2="184" y2="25" stroke-dasharray="3 2"/>
+                  <line x1="192" y1="52" x2="192" y2="67" stroke-dasharray="3 2" marker-end="url(#arr44)"/>
+
+                  <!-- Cycle 2: Work (184..246), Response (258..298) -->
+                  <path d="M184 25H246" fill="none"/>
+                  <text x="215" y="18" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">工作</text>
+                  <text x="256" y="13" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">完</text>
+                  <text x="256" y="24" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">成</text>
+                  <path d="M192 70H258" fill="none"/>
+                  <path d="M258 70V52H298V70" fill="none"/>
+                  <line x1="246" y1="25" x2="246" y2="66" stroke-dasharray="3 2" marker-end="url(#arr44)"/>
+                  <line x1="258" y1="70" x2="258" y2="54" stroke-dasharray="3 2" marker-end="url(#arr44)"/>
+                  <line x1="290" y1="52" x2="290" y2="25" stroke-dasharray="3 2"/>
+                  <line x1="298" y1="52" x2="298" y2="67" stroke-dasharray="3 2" marker-end="url(#arr44)"/>
+
+                  <!-- Cycle 3: Work (290..346), Response (358..372) -->
+                  <path d="M290 25H346" fill="none"/>
+                  <text x="318" y="18" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">工作</text>
+                  <text x="356" y="13" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">完</text>
+                  <text x="356" y="24" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">成</text>
+                  <path d="M298 70H358" fill="none"/>
+                  <path d="M358 70V52H374" fill="none"/>
+                  <line x1="346" y1="25" x2="346" y2="66" stroke-dasharray="3 2" marker-end="url(#arr44)"/>
+                  <line x1="358" y1="70" x2="358" y2="54" stroke-dasharray="3 2" marker-end="url(#arr44)"/>
+
+                  <!-- Bottom labels -->
+                  <text x="68" y="83" font-size="9" text-anchor="middle" fill="#000" stroke="none">启</text>
+                  <text x="68" y="94" font-size="9" text-anchor="middle" fill="#000" stroke="none">动</text>
+                  <text x="140" y="83" font-size="9" text-anchor="middle" fill="#000" stroke="none">请</text>
+                  <text x="140" y="94" font-size="9" text-anchor="middle" fill="#000" stroke="none">求</text>
+                  <text x="155" y="83" font-size="9" text-anchor="middle" fill="#000" stroke="none">响</text>
+                  <text x="155" y="94" font-size="9" text-anchor="middle" fill="#000" stroke="none">应</text>
+                  <text x="177" y="64" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">启</text>
+                  <text x="177" y="75" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">动</text>
+                  <text x="196" y="83" font-size="9" text-anchor="middle" fill="#000" stroke="none">返</text>
+                  <text x="196" y="94" font-size="9" text-anchor="middle" fill="#000" stroke="none">回</text>
+
+                  <text x="246" y="83" font-size="9" text-anchor="middle" fill="#000" stroke="none">请</text>
+                  <text x="246" y="94" font-size="9" text-anchor="middle" fill="#000" stroke="none">求</text>
+                  <text x="261" y="83" font-size="9" text-anchor="middle" fill="#000" stroke="none">响</text>
+                  <text x="261" y="94" font-size="9" text-anchor="middle" fill="#000" stroke="none">应</text>
+                  <text x="283" y="64" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">启</text>
+                  <text x="283" y="75" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">动</text>
+                  <text x="302" y="83" font-size="9" text-anchor="middle" fill="#000" stroke="none">返</text>
+                  <text x="302" y="94" font-size="9" text-anchor="middle" fill="#000" stroke="none">回</text>
+
+                  <text x="346" y="83" font-size="9" text-anchor="middle" fill="#000" stroke="none">请</text>
+                  <text x="346" y="94" font-size="9" text-anchor="middle" fill="#000" stroke="none">求</text>
+                  <text x="361" y="83" font-size="9" text-anchor="middle" fill="#000" stroke="none">响</text>
+                  <text x="361" y="94" font-size="9" text-anchor="middle" fill="#000" stroke="none">应</text>
+                </g>
+              </svg>
+            </div>
+            <p class="q-para" style="text-indent:0;margin-top:2pt;">I/O 端口每收到一个字符申请一次中断，中断响应需 10 个时钟周期，中断服务程序共有 20 条指令，其中第 15 条指令启动 D 工作。若 CPU 需从 D 读取 1000 个字符，则完成这一任务所需时间大约是多少个时钟周期？CPU 用于完成这一任务的时间大约是多少个时钟周期？在中断响应阶段 CPU 进行了哪些操作？</p>
+          </li>
+        </ol>
+      </article>
+
+      <article class="question written" id="q45">
+        <p class="q-stem"><span class="q-num">45.</span><span class="q-score">（12 分）</span>某计算机采用页式虚拟存储管理方式，按字节编址，虚拟地址为 32 位，物理地址为 24 位，页大小为 8KB；TLB 采用全相联映射；Cache 数据区大小为 64KB，按 2 路组相联方式组织，主存块大小为 64B。存储访问过程的示意图如下。</p>
+        <div class="figure">
+          <svg xmlns="http://www.w3.org/2000/svg" width="420" height="175" viewBox="0 0 465 205" role="img" aria-label="题 45 存储访问过程示意图">
+            <defs>
+              <marker id="arr45" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto">
+                <path d="M0 1.5L9 5L0 8.5Z" fill="#000"/>
+              </marker>
+            </defs>
+            <g stroke="#000" stroke-width="0.95" stroke-linecap="round" stroke-linejoin="round" font-family="Times New Roman, Songti SC, SimSun, serif">
+              <!-- Virtual Address -->
+              <text x="48" y="25" font-size="9.5" text-anchor="end" fill="#000" stroke="none">虚拟地址</text>
+              <rect x="52" y="14" width="66" height="15" fill="#fff"/>
+              <rect x="118" y="14" width="44" height="15" fill="#fff"/>
+              <text x="85" y="25" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">A</text>
+
+              <!-- Physical Address -->
+              <text x="275" y="25" font-size="9.5" text-anchor="end" fill="#000" stroke="none">物理地址</text>
+              <rect x="279" y="14" width="52" height="15" fill="#fff"/>
+              <rect x="331" y="14" width="44" height="15" fill="#fff"/>
+              <text x="305" y="25" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">C</text>
+              <text x="353" y="25" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">D</text>
+
+              <!-- Offset link from VA to PA -->
+              <path d="M140 14V5H353V11" fill="none" marker-end="url(#arr45)"/>
+
+              <!-- TLB -->
+              <text x="103" y="47" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">标记</text>
+              <text x="136" y="47" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">页框号</text>
+              <rect x="86" y="52" width="34" height="44" fill="#fff"/>
+              <rect x="120" y="52" width="36" height="44" fill="#fff"/>
+              <path d="M86 63H156 M86 74H156 M86 85H156" fill="none"/>
+              <text x="103" y="82.5" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">B</text>
+              <text x="160" y="76" font-size="9.5" text-anchor="start" fill="#000" stroke="none">TLB</text>
+
+              <!-- Comparators -->
+              <rect x="26" y="52" width="36" height="13" fill="#fff"/>
+              <text x="44" y="61.5" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">比较器</text>
+              <rect x="26" y="75" width="36" height="13" fill="#fff"/>
+              <text x="44" y="84.5" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">比较器</text>
+              <circle cx="44" cy="68.5" r="0.8" fill="#000" stroke="none"/>
+              <circle cx="44" cy="71" r="0.8" fill="#000" stroke="none"/>
+              <circle cx="44" cy="73.5" r="0.8" fill="#000" stroke="none"/>
+
+              <!-- VA[A] to comparators and page table -->
+              <path d="M85 29V39H12V158H82" fill="none" marker-end="url(#arr45)"/>
+              <path d="M12 58.5H23" fill="none" marker-end="url(#arr45)"/>
+              <path d="M12 81.5H23" fill="none" marker-end="url(#arr45)"/>
+
+              <!-- TLB tags to comparators -->
+              <circle cx="91" cy="58.5" r="1.8" fill="#000" stroke="none"/>
+              <line x1="91" y1="58.5" x2="65" y2="58.5" marker-end="url(#arr45)"/>
+              <circle cx="91" cy="80" r="1.8" fill="#000" stroke="none"/>
+              <line x1="91" y1="80" x2="65" y2="80" marker-end="url(#arr45)"/>
+
+              <!-- Page Table -->
+              <text x="103" y="114" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">存在位</text>
+              <text x="138" y="114" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">页框号</text>
+              <rect x="86" y="119" width="34" height="62" fill="#fff"/>
+              <rect x="120" y="119" width="36" height="62" fill="#fff"/>
+              <path d="M86 131H156 M86 143H156 M86 155H156 M86 168H156" fill="none"/>
+              <text x="160" y="152" font-size="9.5" text-anchor="start" fill="#000" stroke="none">页表</text>
+
+              <!-- TLB & Page Table output to PA[C] -->
+              <circle cx="145" cy="90" r="1.8" fill="#000" stroke="none"/>
+              <circle cx="145" cy="161" r="1.8" fill="#000" stroke="none"/>
+              <path d="M145 90H202" fill="none"/>
+              <path d="M145 161H202V39H305V32" fill="none" marker-end="url(#arr45)"/>
+
+              <!-- PA to E F G -->
+              <rect x="275" y="45" width="34" height="15" fill="#fff"/>
+              <rect x="309" y="45" width="34" height="15" fill="#fff"/>
+              <rect x="343" y="45" width="34" height="15" fill="#fff"/>
+              <text x="292" y="56" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">E</text>
+              <text x="326" y="56" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">F</text>
+              <text x="360" y="56" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">G</text>
+              <line x1="326" y1="29" x2="326" y2="42" marker-end="url(#arr45)"/>
+
+              <!-- Cache Array -->
+              <text x="266" y="80" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">标记</text>
+              <text x="306" y="80" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">数据</text>
+              <text x="345" y="80" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">标记</text>
+              <text x="385" y="80" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">数据</text>
+              <rect x="247" y="86" width="158" height="52" fill="#fff"/>
+              <path d="M286 86V138 M326 86V138 M365 86V138" fill="none"/>
+              <path d="M247 99H405 M247 112H405 M247 125H405" fill="none"/>
+              <text x="266.5" y="122" font-size="9.5" text-anchor="middle" fill="#000" stroke="none">H</text>
+              <text x="410" y="114" font-size="9.5" text-anchor="start" fill="#000" stroke="none">Cache</text>
+
+              <!-- F index to Cache row -->
+              <path d="M326 60V66H236V118.5H244" fill="none" marker-end="url(#arr45)"/>
+
+              <!-- Cache comparators -->
+              <rect x="249" y="164" width="36" height="13" fill="#fff"/>
+              <text x="267" y="173.5" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">比较器</text>
+              <rect x="328" y="164" width="36" height="13" fill="#fff"/>
+              <text x="346" y="173.5" font-size="8.8" text-anchor="middle" fill="#000" stroke="none">比较器</text>
+              <line x1="267" y1="138" x2="267" y2="161" marker-end="url(#arr45)"/>
+              <line x1="346" y1="138" x2="346" y2="161" marker-end="url(#arr45)"/>
+
+              <!-- E tag to Cache comparators -->
+              <path d="M292 60V66H222V188H346V180" fill="none" marker-end="url(#arr45)"/>
+              <line x1="267" y1="188" x2="267" y2="180" marker-end="url(#arr45)"/>
+            </g>
+          </svg>
+        </div>
+        <p class="q-para" style="text-indent:0;">请回答下列问题。</p>
+        <ol class="subquestions">
+          <li>（1）图中字段 A～G 的位数各是多少？TLB 标记字段 B 中存放的是什么信息？</li>
+          <li>（2）将块号为 4099 的主存块装入到 Cache 中时，所映射的 Cache 组号是多少？对应的 H 字段内容是什么？</li>
+          <li>（3）Cache 缺失处理的时间开销大还是缺页处理的时间开销大？为什么？</li>
+          <li>（4）为什么 Cache 可以采用直写（Write Through）策略，而修改页面内容时总是采用回写（Write Back）策略？</li>
+        </ol>
+      </article>
+
+      <article class="question written" id="q46">
+        <p class="q-stem"><span class="q-num">46.</span><span class="q-score">（8 分）</span>某进程调度程序采用基于优先数（priority）的调度策略，即选择优先数最小的进程运行，进程创建时由用户指定一个 nice 作为静态优先数。为了动态调整优先数，引入运行时间 cpuTime 和等待时间 waitTime，初值均为 0。进程处于执行态时，cpuTime 定时加 1，且 waitTime 置 0；进程处于就绪态时，cpuTime 置 0，waitTime 定时加 1。请回答下列问题。</p>
+        <ol class="subquestions">
+          <li>（1）若调度程序只将 nice 的值作为进程的优先数，即 priority = nice，则可能会出现饥饿现象，为什么？</li>
+          <li>（2）使用 nice、cpuTime 和 waitTime 设计一种动态优先数计算方法，以避免产生饥饿现象，并说明 waitTime 的作用。</li>
+        </ol>
+      </article>
+
+      <article class="question written" id="q47">
+        <p class="q-stem"><span class="q-num">47.</span><span class="q-score">（7 分）</span>某磁盘文件系统使用链接分配方式组织文件，簇大小为 4KB。目录文件的每个目录项包括文件名和文件的第一个簇号，其他簇号存放在文件分配表 FAT 中。</p>
+        <ol class="subquestions">
+          <li>（1）假定目录树如下图所示，各文件占用的簇号及顺序如下表所示，其中 dir、dir1 是目录，file1、file2 是用户文件。请给出所有目录文件的内容。
+            <div style="display:flex;align-items:center;justify-content:center;gap:28pt;margin:3pt 0;break-inside:avoid;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="144" height="96" viewBox="0 0 160 114" role="img" aria-label="题 47 目录树">
+                <g stroke="#000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" font-family="Times New Roman, Songti SC, serif">
+                  <!-- Tree connectors -->
+                  <path d="M24 22V38H52" fill="none"/>
+                  <path d="M62 46V70H94 M62 70V100H94" fill="none"/>
+
+                  <!-- Folder icon dir -->
+                  <g transform="translate(12,6)">
+                    <polygon points="0,3 8,3 10,6 24,6 24,18 0,18" fill="#d1d5db"/>
+                    <polygon points="0,7 20,7 24,18 4,18" fill="#fff"/>
+                  </g>
+                  <text x="41" y="16" font-size="10" text-anchor="start" fill="#000" stroke="none">dir</text>
+
+                  <!-- Folder icon dir1 -->
+                  <g transform="translate(50,30)">
+                    <polygon points="0,3 8,3 10,6 24,6 24,18 0,18" fill="#d1d5db"/>
+                    <polygon points="0,7 20,7 24,18 4,18" fill="#fff"/>
+                  </g>
+                  <text x="79" y="41" font-size="10" text-anchor="start" fill="#000" stroke="none">dir1</text>
+
+                  <!-- File icon file1 -->
+                  <g transform="translate(94,58)">
+                    <polygon points="0,0 11,0 15,4 15,20 0,20" fill="#fff"/>
+                    <polyline points="11,0 11,4 15,4" fill="none"/>
+                    <line x1="3" y1="8" x2="12" y2="8" stroke-width="0.7"/>
+                    <line x1="3" y1="12" x2="12" y2="12" stroke-width="0.7"/>
+                    <line x1="3" y1="16" x2="12" y2="16" stroke-width="0.7"/>
+                  </g>
+                  <text x="114" y="72" font-size="10" text-anchor="start" fill="#000" stroke="none">file1</text>
+
+                  <!-- File icon file2 -->
+                  <g transform="translate(94,88)">
+                    <polygon points="0,0 11,0 15,4 15,20 0,20" fill="#fff"/>
+                    <polyline points="11,0 11,4 15,4" fill="none"/>
+                    <line x1="3" y1="8" x2="12" y2="8" stroke-width="0.7"/>
+                    <line x1="3" y1="12" x2="12" y2="12" stroke-width="0.7"/>
+                    <line x1="3" y1="16" x2="12" y2="16" stroke-width="0.7"/>
+                  </g>
+                  <text x="114" y="102" font-size="10" text-anchor="start" fill="#000" stroke="none">file2</text>
+                </g>
+              </svg>
+              <table class="exam-table" aria-label="题 47 文件占用簇号表" style="margin:0;">
+                <thead>
+                  <tr>
+                    <th style="font-weight:400;">文件名</th>
+                    <th style="font-weight:400;">簇号</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>dir</td><td class="left">1</td></tr>
+                  <tr><td>dir1</td><td class="left">48</td></tr>
+                  <tr><td>file1</td><td class="left">100、106、108</td></tr>
+                  <tr><td>file2</td><td class="left">200、201、202</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </li>
+          <li>（2）若 FAT 的每个表项仅存放簇号，占 2 字节，则 FAT 的最大长度为多少字节？该文件系统支持的文件长度最大是多少？</li>
+          <li>（3）系统通过目录文件和 FAT 实现对文件的按名存取，说明 file1 的 106、108 两个簇号分别存放在 FAT 的哪个表项中。</li>
+          <li>（4）假设仅 FAT 和 dir 目录文件已读入内存，若需将文件 dir/dir1/file1 的第 5000 个字节读入内存，则要访问哪几个簇？</li>
+        </ol>
+      </article>
+
+    </main>
+  </div>
+</body>
+</html>
