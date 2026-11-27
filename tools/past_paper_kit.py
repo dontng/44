@@ -565,6 +565,13 @@ def audit_paper(year: int) -> tuple[bool, list[str]]:
     if ans_h:
         issues.append(f"HTML has answer leak keywords: {ans_h}")
 
+    scores = [
+        int(score)
+        for score in re.findall(r'class="q-score">\s*[（(]\s*(\d+)\s*分\s*[）)]', h)
+    ]
+    if len(scores) != 7 or sum(scores) != 70:
+        issues.append(f"Written section requires 7 scores totaling 70: {scores}")
+
     # 4. PDF checks
     info = subprocess.check_output(["pdfinfo", str(pdf_path)], text=True)
     m_pages = re.search(r"Pages:\s+(\d+)", info)

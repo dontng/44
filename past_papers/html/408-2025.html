@@ -473,9 +473,9 @@ sub, sup {
 
       <article class="question mcq">
         <p class="q-stem"><span class="q-num">1.</span>下列程序段的时间复杂度是<span class="paren">（　）</span></p>
-        <pre class="code-plain">int count = 0, i, j;
-for (i = 1; i * i &lt;= n; i++)
-    for (j = 1; j &lt;= i; j++)
+        <pre class="code-plain">int count = 0; i, j;
+for (i = l; i * i &lt;= n; i++)
+    for (j = l; j =&lt; i; j++)
         count++;</pre>
         <div class="options cols-4">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text"><i>O</i>(log<i>n</i>)</span></div>
@@ -489,7 +489,7 @@ for (i = 1; i * i &lt;= n; i++)
         <p class="q-stem"><span class="q-num">2.</span>已知算法 A 用于检查字符串中各类括号是否匹配，A 执行过程中使用初始为空的栈保存遇到的括号。若栈的容量是 3，则下列选项中，A 不能处理的是<span class="paren">（　）</span></p>
         <div class="options cols-2">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">(a+[b+(c+d))/e]+f)+9−h</span></div>
-          <div class="option"><span class="opt-label">B.</span><span class="opt-text">[(a*(b+c)/(d−e)+f)/g−h]</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">[(a*(b+c)/(d−e)+/g−h]</span></div>
           <div class="option"><span class="opt-label">C.</span><span class="opt-text">(a*[b−(c−d)*e/(f+g))−h]</span></div>
           <div class="option"><span class="opt-label">D.</span><span class="opt-text">[a−(b+[c*(d+e)−f]+g+h)</span></div>
         </div>
@@ -511,12 +511,12 @@ for (i = 1; i * i &lt;= n; i++)
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">完全二叉树中不存在度为 1 的节点</span></div>
           <div class="option"><span class="opt-label">B.</span><span class="opt-text">任意一个森林都可以转换为一棵二叉树</span></div>
           <div class="option"><span class="opt-label">C.</span><span class="opt-text">二叉树的分支节点个数比叶节点个数少</span></div>
-          <div class="option"><span class="opt-label">D.</span><span class="opt-text">表达式树的根中保存的是最先计算的运算符</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">链式树的根中保存的是最先计算的运算符</span></div>
         </div>
       </article>
 
       <article class="question mcq">
-        <p class="q-stem"><span class="q-num">5.</span>设字符集 S 包含 7 个字符，各字符的出现的频次分别为 2, 3, 4, 6, 10, 11。为 S 中的各字符构造哈夫曼编码，编码长度不小于 3 的字符个数是<span class="paren">（　）</span></p>
+        <p class="q-stem"><span class="q-num">5.</span>设字符集 S 包含 7 个字符，各字符的出现的的频次分别为 2, 3, 4, 6, 10, 11。为 S 中的各字符构造哈曼编码，编码长度不小于 3 的字符个数是<span class="paren">（　）</span></p>
         <div class="options cols-4">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">2</span></div>
           <div class="option"><span class="opt-label">B.</span><span class="opt-text">3</span></div>
@@ -536,7 +536,7 @@ for (i = 1; i * i &lt;= n; i++)
       </article>
 
       <article class="question mcq">
-        <p class="q-stem"><span class="q-num">7.</span>已知查找表中有 400 个元素，查找元素概率相同。采用分块查找法且均匀分块。若采用顺序查找法确定元素所在块，且块内也用顺序查找法，为效率最高，每块包含元素应为<span class="paren">（　）</span></p>
+        <p class="q-stem"><span class="q-num">7.</span>已知查找表中有 400 个元素，查找元素概率相同。采用分块查找法找且均匀分块。若采用顺序查找法确定元素所在块，且块内也用顺序查找法，为效率最高，每块包含元素应为<span class="paren">（　）</span></p>
         <div class="options cols-4">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">8</span></div>
           <div class="option"><span class="opt-label">B.</span><span class="opt-text">10</span></div>
@@ -625,7 +625,7 @@ unsigned int ui = si;</pre>
       </article>
 
       <article class="question mcq">
-        <p class="q-stem"><span class="q-num">15.</span>某 32 位计算机按字节编址，采用小端方式存放数据，编译器按边界对齐方式为下列 C 语言结构型数组变量 <code>employee</code> 分配存储空间。数组 <code>employee</code> 的起始地址为 0000A0B0H，<code>employee[1].id</code> 的机器数为 12345678H，则 56H 的地址是<span class="paren">（　）</span></p>
+        <p class="q-stem"><span class="q-num">15.</span>某 32 计算机按字节编制，采用小端方式存放数据，编译器按边界对齐方式为下列 C 语言结构型数组变量 <code>employee</code> 分配储存空间。数组 <code>employee</code> 的起始地址为 0000A0B0H，<code>employee[1].id</code> 的机器数为 12345678H，则 56H 的地址是<span class="paren">（　）</span></p>
         <pre class="code-plain">struct record
 {
     int id;
@@ -635,7 +635,7 @@ unsigned int ui = si;</pre>
         <div class="options cols-4">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">0000 A0C3H</span></div>
           <div class="option"><span class="opt-label">B.</span><span class="opt-text">0000 A0C4H</span></div>
-          <div class="option"><span class="opt-label">C.</span><span class="opt-text">0000 A0C5H</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">00000 A0C5H</span></div>
           <div class="option"><span class="opt-label">D.</span><span class="opt-text">0000 A0C6H</span></div>
         </div>
       </article>
@@ -664,7 +664,7 @@ unsigned int ui = si;</pre>
         <p class="q-stem"><span class="q-num">18.</span>下列关于 CPI 和 CPU 时钟周期的叙述中，<u>错误</u>的是<span class="paren">（　）</span></p>
         <div class="options cols-1">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">不同类型指令的 CPI 可能不一样</span></div>
-          <div class="option"><span class="opt-label">B.</span><span class="opt-text">程序的 CPI 与 Cache 缺失率无关</span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text">程序的 CPI Cache 缺失率无关</span></div>
           <div class="option"><span class="opt-label">C.</span><span class="opt-text">单周期 CPU 的时钟周期以最耗时指令所用的时间为准</span></div>
           <div class="option"><span class="opt-label">D.</span><span class="opt-text">流水线 CPU 的时钟周期以最长流水段所用时间为准</span></div>
         </div>
@@ -681,7 +681,7 @@ unsigned int ui = si;</pre>
       </article>
 
       <article class="question mcq">
-        <p class="q-stem"><span class="q-num">20.</span>某处理器总线采用同步、并行传输方式，每个总线时钟周期传送 4 次数据（quadpumped 技术），若该总线的工作频率为 1333MHz（实际单位是 MT/s，表示每秒传送 1333M 次），总线宽度为 64 位，则总线带宽约为<span class="paren">（　）</span></p>
+        <p class="q-stem"><span class="q-num">20.</span>某处理器总线采用同步、并行传输方式，每个总线时钟周期传送 4 次数据（quadpumped 技术），若该总线的工作频率为 1333MHz（实际单位是 MT/s，表示每秒传送 1333M/次），总线宽度为 64 位，则总线带宽约为<span class="paren">（　）</span></p>
         <div class="options cols-4">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">10.66GB/s</span></div>
           <div class="option"><span class="opt-label">B.</span><span class="opt-text">42.66GB/s</span></div>
@@ -721,7 +721,7 @@ unsigned int ui = si;</pre>
         <div class="options cols-2">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">通用寄存器</span></div>
           <div class="option"><span class="opt-label">B.</span><span class="opt-text">页表基址寄存器</span></div>
-          <div class="option"><span class="opt-label">C.</span><span class="opt-text">程序计数器</span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text">程序寄存器</span></div>
           <div class="option"><span class="opt-label">D.</span><span class="opt-text">内核中断向量表基址寄存器</span></div>
         </div>
       </article>
@@ -732,12 +732,12 @@ unsigned int ui = si;</pre>
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">操作系统可以在虚拟机上运行</span></div>
           <div class="option"><span class="opt-label">B.</span><span class="opt-text">一台主机可以支持多个虚拟机</span></div>
           <div class="option"><span class="opt-label">C.</span><span class="opt-text">VMM 与操作系统特权级相同</span></div>
-          <div class="option"><span class="opt-label">D.</span><span class="opt-text">通过虚拟机技术，可以在一台主机上模拟多种 ISA</span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text">通过虚拟机技术，可以用一台主机上模拟多种 ISA</span></div>
         </div>
       </article>
 
       <article class="question mcq">
-        <p class="q-stem"><span class="q-num">25.</span>某系统采用优先权调度，采用单链表保存进程就绪队列，高优先级进程在队头。就绪队列长度为 <i>n</i>，则插入进程、选出进程的时间复杂度分别是<span class="paren">（　）</span></p>
+        <p class="q-stem"><span class="q-num">25.</span>某进程采用优先权调度，采用单链表保存进程就绪队列，高优先级进程在队头。就绪队列长度为 <i>n</i>，则插入进程、选出进程的时间复杂度分别是<span class="paren">（　）</span></p>
         <div class="options cols-4">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text"><i>O</i>(1), <i>O</i>(1)</span></div>
           <div class="option"><span class="opt-label">B.</span><span class="opt-text"><i>O</i>(1), <i>O</i>(<i>n</i>)</span></div>
@@ -823,7 +823,7 @@ unsigned int ui = si;</pre>
       </article>
 
       <article class="question mcq">
-        <p class="q-stem"><span class="q-num">33.</span>如下图所示，主机 H1 向 H2 发送一个 2MB（1M=10<sup>6</sup>B）文件有三种方式：①电路交换，建立时间为 32μs，速度为 10Mbps；②分组交换，分组长度为 400B，忽略首部；③报文交换。电路交换的时间为 <i>T</i><sub>cs</sub>，报文交换的时间为 <i>T</i><sub>ms</sub>，分组交换的时间为 <i>T</i><sub>ps</sub>，则三者的大小关系是<span class="paren">（　）</span></p>
+        <p class="q-stem"><span class="q-num">33.</span>如下图所示，主机 H1 向 H2 发送一个 2MB（1M=10<sup>6</sup>B）文件有三种方式：①电路交换，建立时间为 32μs，速度为 10Mbps；②分组交换，文件长度为 400B，忽略首部；③报文交换。电路交换的时间为 <i>T</i><sub>cs</sub>，报文交换的时间为 <i>T</i><sub>ms</sub>，分组交换的时间为 <i>T</i><sub>ps</sub>，则三者的大小关系是<span class="paren">（　）</span></p>
         <div class="figure">
           <svg xmlns="http://www.w3.org/2000/svg" width="444" height="76" viewBox="0 0 444 76" role="img" aria-label="题 33：主机 H1、H2 与路由器 R1、R2 的链路">
   <g stroke="#171717" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif">
@@ -887,7 +887,7 @@ unsigned int ui = si;</pre>
       </article>
 
       <article class="question mcq">
-        <p class="q-stem"><span class="q-num">35.</span>现有一 10BaseT 以太网，主机甲、乙同属一个冲突域，连续发生 11 次冲突，甲再次发送的最大时间间隔为<span class="paren">（　）</span></p>
+        <p class="q-stem"><span class="q-num">35.</span>现有一 BaseT 以太网，主机甲、乙同属一个冲突域，连续发生 11 次冲突，甲再次发送的最大时间间隔为<span class="paren">（　）</span></p>
         <div class="options cols-4">
           <div class="option"><span class="opt-label">A.</span><span class="opt-text">0.512ms</span></div>
           <div class="option"><span class="opt-label">B.</span><span class="opt-text">0.5632ms</span></div>
@@ -939,7 +939,7 @@ unsigned int ui = si;</pre>
       </article>
 
       <article class="question mcq">
-        <p class="q-stem"><span class="q-num">38.</span>主机甲通过 TCP 向主机乙发送数据的部分过程如下图，seq 为序号，ack_seq 为确认序号，rcwnd 为接收窗口。甲在 <i>t</i><sub>0</sub> 时刻的拥塞窗口和发送窗口均为 2000B，拥塞控制阈值为 8000B，MSS=1000B。甲始终以 MSS 发送 TCP 段。若甲在 <i>t</i><sub>1</sub> 时刻收到如图所示的确认段，则甲在未收到新的确认段之前，还可以继续向乙发送的 TCP 段数是<span class="paren">（　）</span></p>
+        <p class="q-stem"><span class="q-num">38.</span>主机甲通过 TCP 向主机乙发送数据的部分过程如下图，seq 为序号，ack-seq 为确认序号，rcwnd 为接收窗口。甲在 <i>t</i><sub>0</sub> 时刻的拥塞窗口和发送窗口均为 2000B，拥塞控制阀值为 8000B，MSS=1000B。甲始终以 MSS 发送 TCP 段。若甲在 <i>t</i><sub>1</sub> 时刻收到如图所示的确认段，则甲在未收到新的确认段之前，还可以继续向乙发送的 TCP 段数是<span class="paren">（　）</span></p>
         <div class="figure">
           <svg xmlns="http://www.w3.org/2000/svg" width="364" height="148" viewBox="0 0 364 148" role="img" aria-label="题 38：TCP 数据段与确认段">
   <g stroke="#171717" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif">
@@ -982,8 +982,8 @@ unsigned int ui = si;</pre>
       <article class="question mcq">
         <p class="q-stem"><span class="q-num">40.</span>下列关于 POP3 协议的叙述，正确的是<span class="paren">（　）</span></p>
         <ul class="q-items">
-          <li>I. 支持用户代理从邮件服务器读取邮件</li>
-          <li>II. 支持用户代理从邮件服务器发送邮件</li>
+          <li>I. 支持用户代理从邮件服务读取邮件</li>
+          <li>II. 支持用户代理从邮件服务发送邮件</li>
           <li>III. 支持邮件服务器之间发送和接收邮件</li>
           <li>IV. 支持通过一条 TCP 连接收取多封邮件</li>
         </ul>
@@ -1007,7 +1007,7 @@ unsigned int ui = si;</pre>
       </article>
 
       <article class="question written">
-        <p class="q-stem"><span class="q-num">42.</span><span class="q-score">（10 分）</span>某工程包含 12 个活动，使用题 42 图所示的 AOE 网描述，图中各边上标注了活动及其持续时间。</p>
+        <p class="q-stem"><span class="q-num">42.</span><span class="q-score">（10 分）</span>某工程包含 12 活动，使用题 42 图所示的 AOE 网描述，图中各边上标注了活动及其持续时间。</p>
         <div class="figure">
           <svg xmlns="http://www.w3.org/2000/svg" width="344" height="116" viewBox="0 0 344 116" role="img" aria-label="题 42：AOE 网络图">
   <g stroke="#171717" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif">
@@ -1094,11 +1094,11 @@ for (i = 0; i &lt; 2048; i++)
       <article class="question written">
         <p class="q-stem"><span class="q-num">44.</span><span class="q-score">（9 分）</span>对于题 43 中计算机 M 和程序 P，假定 P 的部分机器级代码如题 44（a）图所示，其中，R0～R4 为通用寄存器，SEXT 表示按符号扩展；M 中补码除法器逻辑结构如题 44（b）图所示。</p>
         <pre class="code-box" style="width:320pt;padding:4pt 10pt;line-height:1.4;">……
-// x 在 R2 中，i 在 R4 中
+// X 在 R2 中，i 在 R4 中
 // 数组 d 的首地址在 R3 中
 mov  R1, (R3 + R4*4)      // R1 &lt;- d[i]
-scov R1                   // {R0, R1} &lt;- SEXT(R1)
-idiv R1, R3               // R1 &lt;- ({R0, R1} / R2)
+scov R1                   // {RO, R1} &lt;- SEXT(R1)
+idiv R1, R3               // R1 &lt;- ({RO, R1} / R2)
 ……</pre>
         <p class="fig-caption">题 44（a）图　程序代码</p>
         <div class="figure">
@@ -1152,12 +1152,12 @@ idiv R1, R3               // R1 &lt;- ({R0, R1} / R2)
         <p class="q-para" style="margin:2pt 0;">请回答下列问题，并说明理由。</p>
         <ol class="subquestions">
           <li>（1）若执行题 44（a）图中 <code>idiv</code> 指令的除运算时，<code>d[i] = 0x87654321</code>，<code>x = 0xff</code>，则补码除法器中寄存器 R、Q 和 Y 的初始内容分别是什么（用十六进制表示）？题 44（b）图中哪个部件包含计数器？在补码除法器执行过程中，由 ALUop 所控制的 ALU 运算有哪几种？（4 分）</li>
-          <li>（2）假设 <code>idiv</code> 指令执行过程中会检测并触发除法异常，则执行 <code>idiv</code> 指令时，哪些情况下会发生除法异常（要求给出此时 <code>d[i]</code> 和 <code>x</code> 的十六进制表示机器数）？发生除法异常时，在异常响应过程中 CPU 需要完成哪些操作？（5 分）</li>
+          <li>（2）假设 <code>idiv</code> 指令执行过程中会检测并触发除法异常，则执行 <code>idiv</code> 指令时，哪些情况下会发生除法异常（要求给出此时 <code>d 用</code> 和 <code>x</code> 的十六进制表示机器数）？发生除法异常时，在异常响应过程中 CPU 需要完成哪些操作？（5 分）</li>
         </ol>
       </article>
 
       <article class="question written">
-        <p class="q-stem"><span class="q-num">45.</span><span class="q-score">（8 分）</span>三个人一起植树，甲挖坑，乙放树苗入坑并填土，丙负责为新种树苗浇水。步骤依次为：挖树坑，放树苗，填土和浇水。现在有铁锹和水桶各一个，铁锹用于挖树坑、填土，水桶用于浇水。当树坑数量小于 3 时，甲才可以挖树坑。设初始坑数为 0，铁锹、水桶均可用，定义尽可能少的信号量，用 <code>wait()</code> 和 <code>signal()</code> 操作描述植树过程中三人的同步互斥关系，并说明所用信号量的作用及其初值。</p>
+        <p class="q-stem"><span class="q-num">45.</span><span class="q-score">（8 分）</span>三个人一起植树，甲挖坑，乙放树苗入坑并填土，丙负责为新种树苗浇水。步骤依次为：挖树坑，放树苗，填土和浇水。现在有铁锹和水桶各一个，铁锹用于挖树坑、填土，水桶用于浇水。当树坑数量小于 3 时，甲才可以挖树坑。设初始坑 = 0，铁锹水桶均可用，定义尽可能少的信号量，用 <code>wait()</code> 和 <code>signal()</code> 操作描述植树过程中三人的同步互斥关系，并说明所用信号量的作用及其初值。</p>
       </article>
 
       <article class="question written">
@@ -1178,7 +1178,7 @@ idiv R1, R3               // R1 &lt;- ({R0, R1} / R2)
 void main()
 {
     int length;
-    ptr = (char*)malloc(sizeof(char));
+    ptr = (char*)malloc(size of(char));
     scanf("%s", ptr);
     length = strlen(ptr);
     printf("length=%d\n", length);
@@ -1254,9 +1254,9 @@ void main()
         </div>
         <p class="q-para" style="margin:2pt 0;">请回答下列问题，并说明理由。</p>
         <ol class="subquestions">
-          <li>（1）忽略卫星信号中继、TR1 与 TR2 调制解调开销，则 R1 到 R2 之间的卫星链路单向传播时延是多少？主机 H1 向公司总部服务器传输数据时可达到的最大吞吐量是多少？若忽略各层协议首部开销，以及以太网的传播时延，则 H1 → 公司总部服务器上传一个 4000B 的文件，至少需要多长时间？（3 分）</li>
-          <li>（2）基于 GBN 为卫星链路设计单向可靠的链路层协议 SLP，支持 R1 → R2 发送数据。SLP 数据帧长 1500B，忽略 ACK 帧长度，要求 SLP 单向信道利用率不低于 80%，则发送窗口至少为多少？SLP 帧序号至少为多少位？（3 分）</li>
-          <li>（3）总部给工程部分配 IP 地址空间 10.10.10.0/24，再划分为 3 个子网，生活区子网不少于 120 个 IP，作业区子网、管理区子网 IP 均不少于 60 个，H1 已正确配置 IP。问作业区子网、管理区子网、生活区子网地址各是多少？（3 分）</li>
+          <li>（1）忽略卫星信号中继，TR1、TR2 调制解调开销，则 R1 到 R2 之间的卫星链路单向传播时延是多少？主机 H 向总部服务器传输数据时可达到的最大吞吐量是多少？若忽略各层协议首部开销，以及以太网的传播时延，则 H → sever 上传一个 4000B 的文件，至少需要多长时间？（3 分）</li>
+          <li>（2）基于 GBN 为卫星链路设计单向可靠的链路层协议 SLP，支持 R1 → R2 发送数据。SLP 数据帧长 1500B，忽略 ACK 帧长度，要求 SLP 单向信道利用率不低于 80%，则发送窗口至少为多少？SLP 帧序号至少为多少？（3 分）</li>
+          <li>（3）总部给工程部分配 IP 地址空间 10.10.10.0/24，再划分为 3 个子网，生活区子网不少于 120 个，作业子网、管理区子网 IP 均不少于 60 个，H 已正确配置 IP。问作业区子网、管理区子网、生活区子网地址各是多少？（3 分）</li>
         </ol>
       </article>
     </main>
