@@ -421,6 +421,11 @@ table.exam-table th.left {
   font-style: italic;
 }
 
+code {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 .blank {
   display: inline-block;
   min-width: 2.6em;
@@ -534,7 +539,7 @@ def export_pdf(year: int) -> Path:
     from playwright.sync_api import sync_playwright
 
     html_path = HTML_DIR / f"408-{year}.html"
-    pdf_path = PDF_DIR / f"408-{year}.pdf"
+    pdf_path = PDF_DIR / f"{year}.pdf"
     if not html_path.exists():
         raise FileNotFoundError(f"Missing HTML: {html_path}")
     PDF_DIR.mkdir(parents=True, exist_ok=True)
@@ -561,7 +566,7 @@ def export_pdf(year: int) -> Path:
 def audit_paper(year: int) -> tuple[bool, list[str]]:
     issues: list[str] = []
     html_path = HTML_DIR / f"408-{year}.html"
-    pdf_path = PDF_DIR / f"408-{year}.pdf"
+    pdf_path = PDF_DIR / f"{year}.pdf"
 
     if not html_path.exists():
         return False, [f"Missing {html_path}"]

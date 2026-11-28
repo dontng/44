@@ -408,6 +408,11 @@ table.exam-table th.left {
   font-style: italic;
 }
 
+code {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 .blank {
   display: inline-block;
   min-width: 2.6em;
@@ -498,12 +503,12 @@ sub, sup {
       </article>
 
       <article class="question mcq" id="q2">
-        <p class="q-stem"><span class="q-num">02.</span>现有非空双向链表 L，其结点结构为：<span style="display:inline-flex;border:0.75pt solid #000;vertical-align:middle;line-height:1.25;margin:0 2pt;font-size:9.5pt;"><span style="padding:0.5pt 5pt;border-right:0.75pt solid #000;">prev</span><span style="padding:0.5pt 5pt;border-right:0.75pt solid #000;">data</span><span style="padding:0.5pt 5pt;">next</span></span>，prev 是指向直接前驱结点的指针，next 是指向后继结点的指针。若要在 L 中指针 p 所指向的节点（非尾结点）之后插入指针 s 指向的新结点，则在执行了语句序列“<code>s -&gt; next = p -&gt; next; p -&gt; next = s</code>”后，下列语句序列中还需要执行的是<span style="white-space:nowrap;">（<span class="paren"></span>）。</span></p>
+        <p class="q-stem"><span class="q-num">02.</span>现有非空双向链表 L，其结点结构为：<span style="display:inline-flex;border:0.75pt solid #000;vertical-align:middle;line-height:1.25;margin:0 2pt;font-size:9.5pt;"><span style="padding:0.5pt 5pt;border-right:0.75pt solid #000;">prev</span><span style="padding:0.5pt 5pt;border-right:0.75pt solid #000;">data</span><span style="padding:0.5pt 5pt;">next</span></span>，prev 是指向直接前驱结点的指针，next 是指向后继结点的指针。若要在 L 中指针 p 所指向的节点（非尾结点）之后插入指针 s 指向的新结点，则在执行了语句序列“<code>s-&gt;next = p-&gt;next; p-&gt;next = s</code>”后，下列语句序列中还需要执行的是<span style="white-space:nowrap;">（<span class="paren"></span>）。</span></p>
         <div class="options cols-1">
-          <div class="option"><span class="opt-label">A.</span><span class="opt-text"><code>s -&gt; next -&gt; prev = p; s -&gt; prev = p;</code></span></div>
-          <div class="option"><span class="opt-label">B.</span><span class="opt-text"><code>p -&gt; next -&gt; prev = s; s -&gt; prev = p;</code></span></div>
-          <div class="option"><span class="opt-label">C.</span><span class="opt-text"><code>s -&gt; prev = s -&gt; next -&gt; prev; s -&gt; next -&gt; prev = s;</code></span></div>
-          <div class="option"><span class="opt-label">D.</span><span class="opt-text"><code>p -&gt; next -&gt; prev = s -&gt; prev; s -&gt; next -&gt; prev = p;</code></span></div>
+          <div class="option"><span class="opt-label">A.</span><span class="opt-text"><code>s-&gt;next-&gt;prev = p; s-&gt;prev = p;</code></span></div>
+          <div class="option"><span class="opt-label">B.</span><span class="opt-text"><code>p-&gt;next-&gt;prev = s; s-&gt;prev = p;</code></span></div>
+          <div class="option"><span class="opt-label">C.</span><span class="opt-text"><code>s-&gt;prev = s-&gt;next-&gt;prev; s-&gt;next-&gt;prev = s;</code></span></div>
+          <div class="option"><span class="opt-label">D.</span><span class="opt-text"><code>p-&gt;next-&gt;prev = s-&gt;prev; s-&gt;next-&gt;prev = p;</code></span></div>
         </div>
       </article>
 
