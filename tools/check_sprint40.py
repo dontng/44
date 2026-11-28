@@ -105,7 +105,7 @@ for item in schedule['days']:
     require(text.startswith(f'# Day {d:02}｜'), label, 'wrong day heading')
     nav = text.split('\n\n', 2)[1]
     targets = set(re.findall(r'\]\(([^)]+)\)', nav))
-    wanted_nav = {'README.md'} | {f'day{n:02}.md' for n in (d-1, d+1) if 1 <= n <= 40}
+    wanted_nav = {f'day{n:02}.md' for n in (d-1, d+1) if 1 <= n <= 40}
     require(targets == wanted_nav, label, 'wrong day navigation')
     require(f'](day{d:02}.md)' in readme, label, 'missing index entry')
     require(len(item['groups']) == 2, label, 'expected two whole source groups')
